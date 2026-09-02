@@ -51,7 +51,10 @@ export async function seedCatalogs(db: any, files: string[] = CATALOG_FILES) {
 /// Idempotenter Start-Bootstrap: Schema anlegen, falls es fehlt; Kataloge
 /// laden, falls noch keine Regelversion existiert. Sicher bei jedem Deploy
 /// aufrufbar – berührt nur das Engine-Schema.
-export async function bootstrapDb(db: any): Promise<{ schemaCreated: boolean; seeded: boolean }> {
+export async function bootstrapDb(
+  db: any,
+  opts: { force?: boolean } = {},
+): Promise<{ schemaCreated: boolean; seeded: boolean }> {
   const schema = engineSchema() ?? 'public';
   const reg = await db.query('SELECT to_regclass($1) AS t', [`${schema}.rule_versions`]);
   let schemaCreated = false;
@@ -60,10 +63,12 @@ export async function bootstrapDb(db: any): Promise<{ schemaCreated: boolean; se
     schemaCreated = true;
   }
   // Seeden, solange nicht alle Kataloge vorhanden sind (fängt einen zuvor
-  // abgebrochenen Seed-Lauf ab; loadSeedIntoDb ist per Upsert idempotent).
+  // abgebrochenen Seed-Lauf ab) – oder erzwungen bei force. loadSeedIntoDb ist
+  // per Upsert idempotent, aktualisiert also bestehende Regeln (z. B. neue
+  // Risikostufen) ohne Datenverlust.
   const cnt = await db.query(`SELECT count(*)::int AS n FROM ${schema}.rule_versions`);
   let seeded = false;
-  if (cnt.rows[0].n < CATALOG_FILES.length) {
+  if (opts.force || cnt.rows[0].n < CATALOG_FILES.length) {
     await seedCatalogs(db);
     seeded = true;
   }

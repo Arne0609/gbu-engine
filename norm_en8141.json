@@ -2776,7 +2776,7 @@
     "operator": "EQ",
     "value": "01-B"
    },
-   "result": "MEDIUM",
+   "result": "LOW",
    "origin": "NORM_DERIVED",
    "evidence": "DIRECT",
    "quality_status": "VERIFIED",
@@ -2876,7 +2876,7 @@
     "operator": "EQ",
     "value": "02-B"
    },
-   "result": "MEDIUM",
+   "result": "LOW",
    "origin": "NORM_DERIVED",
    "evidence": "DIRECT",
    "quality_status": "VERIFIED",
@@ -2976,7 +2976,7 @@
     "operator": "EQ",
     "value": "03-B"
    },
-   "result": "MEDIUM",
+   "result": "LOW",
    "origin": "NORM_DERIVED",
    "evidence": "DIRECT",
    "quality_status": "VERIFIED",
@@ -3076,7 +3076,7 @@
     "operator": "EQ",
     "value": "04-B"
    },
-   "result": "MEDIUM",
+   "result": "LOW",
    "origin": "NORM_DERIVED",
    "evidence": "DIRECT",
    "quality_status": "VERIFIED",
@@ -3176,7 +3176,7 @@
     "operator": "EQ",
     "value": "05-B"
    },
-   "result": "MEDIUM",
+   "result": "LOW",
    "origin": "NORM_DERIVED",
    "evidence": "DIRECT",
    "quality_status": "VERIFIED",
@@ -3276,7 +3276,7 @@
     "operator": "EQ",
     "value": "06-B"
    },
-   "result": "MEDIUM",
+   "result": "LOW",
    "origin": "NORM_DERIVED",
    "evidence": "DIRECT",
    "quality_status": "VERIFIED",
@@ -3376,7 +3376,7 @@
     "operator": "EQ",
     "value": "07-B"
    },
-   "result": "MEDIUM",
+   "result": "LOW",
    "origin": "NORM_DERIVED",
    "evidence": "DIRECT",
    "quality_status": "VERIFIED",
@@ -3476,7 +3476,7 @@
     "operator": "EQ",
     "value": "08-B"
    },
-   "result": "MEDIUM",
+   "result": "LOW",
    "origin": "NORM_DERIVED",
    "evidence": "DIRECT",
    "quality_status": "VERIFIED",
@@ -3576,7 +3576,7 @@
     "operator": "EQ",
     "value": "09-B"
    },
-   "result": "MEDIUM",
+   "result": "LOW",
    "origin": "NORM_DERIVED",
    "evidence": "DIRECT",
    "quality_status": "VERIFIED",
@@ -3676,7 +3676,7 @@
     "operator": "EQ",
     "value": "10-B"
    },
-   "result": "MEDIUM",
+   "result": "LOW",
    "origin": "NORM_DERIVED",
    "evidence": "DIRECT",
    "quality_status": "VERIFIED",
@@ -3776,7 +3776,7 @@
     "operator": "EQ",
     "value": "11-B"
    },
-   "result": "MEDIUM",
+   "result": "LOW",
    "origin": "NORM_DERIVED",
    "evidence": "DIRECT",
    "quality_status": "VERIFIED",
@@ -3876,7 +3876,7 @@
     "operator": "EQ",
     "value": "12-B"
    },
-   "result": "MEDIUM",
+   "result": "LOW",
    "origin": "NORM_DERIVED",
    "evidence": "DIRECT",
    "quality_status": "VERIFIED",
@@ -3976,7 +3976,7 @@
     "operator": "EQ",
     "value": "13-B"
    },
-   "result": "MEDIUM",
+   "result": "LOW",
    "origin": "NORM_DERIVED",
    "evidence": "DIRECT",
    "quality_status": "VERIFIED",
@@ -4076,7 +4076,7 @@
     "operator": "EQ",
     "value": "14-B"
    },
-   "result": "MEDIUM",
+   "result": "LOW",
    "origin": "NORM_DERIVED",
    "evidence": "DIRECT",
    "quality_status": "VERIFIED",
@@ -4176,7 +4176,7 @@
     "operator": "EQ",
     "value": "15-B"
    },
-   "result": "MEDIUM",
+   "result": "LOW",
    "origin": "NORM_DERIVED",
    "evidence": "DIRECT",
    "quality_status": "VERIFIED",
@@ -4276,7 +4276,7 @@
     "operator": "EQ",
     "value": "16-B"
    },
-   "result": "MEDIUM",
+   "result": "LOW",
    "origin": "NORM_DERIVED",
    "evidence": "DIRECT",
    "quality_status": "VERIFIED",
@@ -4376,7 +4376,7 @@
     "operator": "EQ",
     "value": "17-B"
    },
-   "result": "MEDIUM",
+   "result": "LOW",
    "origin": "NORM_DERIVED",
    "evidence": "DIRECT",
    "quality_status": "VERIFIED",
@@ -4476,7 +4476,7 @@
     "operator": "EQ",
     "value": "18-B"
    },
-   "result": "MEDIUM",
+   "result": "LOW",
    "origin": "NORM_DERIVED",
    "evidence": "DIRECT",
    "quality_status": "VERIFIED",
@@ -4576,7 +4576,7 @@
     "operator": "EQ",
     "value": "19-B"
    },
-   "result": "MEDIUM",
+   "result": "LOW",
    "origin": "NORM_DERIVED",
    "evidence": "DIRECT",
    "quality_status": "VERIFIED",
@@ -4676,7 +4676,7 @@
     "operator": "EQ",
     "value": "20-B"
    },
-   "result": "MEDIUM",
+   "result": "LOW",
    "origin": "NORM_DERIVED",
    "evidence": "DIRECT",
    "quality_status": "VERIFIED",
@@ -4776,7 +4776,7 @@
     "operator": "EQ",
     "value": "21-B"
    },
-   "result": "MEDIUM",
+   "result": "LOW",
    "origin": "NORM_DERIVED",
    "evidence": "DIRECT",
    "quality_status": "VERIFIED",
@@ -4876,7 +4876,7 @@
     "operator": "EQ",
     "value": "22-B"
    },
-   "result": "MEDIUM",
+   "result": "LOW",
    "origin": "NORM_DERIVED",
    "evidence": "DIRECT",
    "quality_status": "VERIFIED",
@@ -4976,7 +4976,7 @@
     "operator": "EQ",
     "value": "23-B"
    },
-   "result": "MEDIUM",
+   "result": "LOW",
    "origin": "NORM_DERIVED",
    "evidence": "DIRECT",
    "quality_status": "VERIFIED",
@@ -5076,7 +5076,7 @@
     "operator": "EQ",
     "value": "24-B"
    },
-   "result": "MEDIUM",
+   "result": "LOW",
    "origin": "NORM_DERIVED",
    "evidence": "DIRECT",
    "quality_status": "VERIFIED",
@@ -5176,7 +5176,7 @@
     "operator": "EQ",
     "value": "25-B"
    },
-   "result": "MEDIUM",
+   "result": "LOW",
    "origin": "NORM_DERIVED",
    "evidence": "DIRECT",
    "quality_status": "VERIFIED",
@@ -5276,7 +5276,7 @@
     "operator": "EQ",
     "value": "26-B"
    },
-   "result": "MEDIUM",
+   "result": "LOW",
    "origin": "NORM_DERIVED",
    "evidence": "DIRECT",
    "quality_status": "VERIFIED",
@@ -5376,7 +5376,7 @@
     "operator": "EQ",
     "value": "27-B"
    },
-   "result": "MEDIUM",
+   "result": "LOW",
    "origin": "NORM_DERIVED",
    "evidence": "DIRECT",
    "quality_status": "VERIFIED",
@@ -5476,7 +5476,7 @@
     "operator": "EQ",
     "value": "28-B"
    },
-   "result": "MEDIUM",
+   "result": "LOW",
    "origin": "NORM_DERIVED",
    "evidence": "DIRECT",
    "quality_status": "VERIFIED",
@@ -5576,7 +5576,7 @@
     "operator": "EQ",
     "value": "29-B"
    },
-   "result": "MEDIUM",
+   "result": "LOW",
    "origin": "NORM_DERIVED",
    "evidence": "DIRECT",
    "quality_status": "VERIFIED",
@@ -5676,7 +5676,7 @@
     "operator": "EQ",
     "value": "30-B"
    },
-   "result": "MEDIUM",
+   "result": "LOW",
    "origin": "NORM_DERIVED",
    "evidence": "DIRECT",
    "quality_status": "VERIFIED",
@@ -5776,7 +5776,7 @@
     "operator": "EQ",
     "value": "31-B"
    },
-   "result": "MEDIUM",
+   "result": "LOW",
    "origin": "NORM_DERIVED",
    "evidence": "DIRECT",
    "quality_status": "VERIFIED",
@@ -5876,7 +5876,7 @@
     "operator": "EQ",
     "value": "32-B"
    },
-   "result": "MEDIUM",
+   "result": "LOW",
    "origin": "NORM_DERIVED",
    "evidence": "DIRECT",
    "quality_status": "VERIFIED",
@@ -5976,7 +5976,7 @@
     "operator": "EQ",
     "value": "33-B"
    },
-   "result": "MEDIUM",
+   "result": "LOW",
    "origin": "NORM_DERIVED",
    "evidence": "DIRECT",
    "quality_status": "VERIFIED",
@@ -6076,7 +6076,7 @@
     "operator": "EQ",
     "value": "34-B"
    },
-   "result": "MEDIUM",
+   "result": "LOW",
    "origin": "NORM_DERIVED",
    "evidence": "DIRECT",
    "quality_status": "VERIFIED",
@@ -6176,7 +6176,7 @@
     "operator": "EQ",
     "value": "35-B"
    },
-   "result": "MEDIUM",
+   "result": "LOW",
    "origin": "NORM_DERIVED",
    "evidence": "DIRECT",
    "quality_status": "VERIFIED",
@@ -6276,7 +6276,7 @@
     "operator": "EQ",
     "value": "36-B"
    },
-   "result": "MEDIUM",
+   "result": "LOW",
    "origin": "NORM_DERIVED",
    "evidence": "DIRECT",
    "quality_status": "VERIFIED",
@@ -6376,7 +6376,7 @@
     "operator": "EQ",
     "value": "37-B"
    },
-   "result": "MEDIUM",
+   "result": "LOW",
    "origin": "NORM_DERIVED",
    "evidence": "DIRECT",
    "quality_status": "VERIFIED",
@@ -6476,7 +6476,7 @@
     "operator": "EQ",
     "value": "38-B"
    },
-   "result": "MEDIUM",
+   "result": "LOW",
    "origin": "NORM_DERIVED",
    "evidence": "DIRECT",
    "quality_status": "VERIFIED",
@@ -6576,7 +6576,7 @@
     "operator": "EQ",
     "value": "39-B"
    },
-   "result": "MEDIUM",
+   "result": "LOW",
    "origin": "NORM_DERIVED",
    "evidence": "DIRECT",
    "quality_status": "VERIFIED",
@@ -6676,7 +6676,7 @@
     "operator": "EQ",
     "value": "40-B"
    },
-   "result": "MEDIUM",
+   "result": "LOW",
    "origin": "NORM_DERIVED",
    "evidence": "DIRECT",
    "quality_status": "VERIFIED",
@@ -6776,7 +6776,7 @@
     "operator": "EQ",
     "value": "41-B"
    },
-   "result": "MEDIUM",
+   "result": "LOW",
    "origin": "NORM_DERIVED",
    "evidence": "DIRECT",
    "quality_status": "VERIFIED",
@@ -6876,7 +6876,7 @@
     "operator": "EQ",
     "value": "42-B"
    },
-   "result": "MEDIUM",
+   "result": "LOW",
    "origin": "NORM_DERIVED",
    "evidence": "DIRECT",
    "quality_status": "VERIFIED",
@@ -6976,7 +6976,7 @@
     "operator": "EQ",
     "value": "43-B"
    },
-   "result": "MEDIUM",
+   "result": "LOW",
    "origin": "NORM_DERIVED",
    "evidence": "DIRECT",
    "quality_status": "VERIFIED",
@@ -7076,7 +7076,7 @@
     "operator": "EQ",
     "value": "44-B"
    },
-   "result": "MEDIUM",
+   "result": "LOW",
    "origin": "NORM_DERIVED",
    "evidence": "DIRECT",
    "quality_status": "VERIFIED",
@@ -7176,7 +7176,7 @@
     "operator": "EQ",
     "value": "45-B"
    },
-   "result": "MEDIUM",
+   "result": "LOW",
    "origin": "NORM_DERIVED",
    "evidence": "DIRECT",
    "quality_status": "VERIFIED",
@@ -7276,7 +7276,7 @@
     "operator": "EQ",
     "value": "46-B"
    },
-   "result": "MEDIUM",
+   "result": "LOW",
    "origin": "NORM_DERIVED",
    "evidence": "DIRECT",
    "quality_status": "VERIFIED",
@@ -7376,7 +7376,7 @@
     "operator": "EQ",
     "value": "47-B"
    },
-   "result": "MEDIUM",
+   "result": "LOW",
    "origin": "NORM_DERIVED",
    "evidence": "DIRECT",
    "quality_status": "VERIFIED",
@@ -7476,7 +7476,7 @@
     "operator": "EQ",
     "value": "48-B"
    },
-   "result": "MEDIUM",
+   "result": "LOW",
    "origin": "NORM_DERIVED",
    "evidence": "DIRECT",
    "quality_status": "VERIFIED",

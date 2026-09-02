@@ -44,8 +44,12 @@ if (isEntry) {
     // eslint-disable-next-line no-console
     console.log(`GBU-Engine-API läuft auf Port ${port} · DB: ${src}`);
     // Idempotenter Selbst-Seed (Schema + Kataloge), abschaltbar via SEED_ON_BOOT=off.
+    // SEED_ON_BOOT=force spielt die Kataloge bei jedem Start neu ein (Upsert) –
+    // damit werden geänderte Regeln (z. B. Risikostufen) in einer bestehenden
+    // DB aktualisiert.
     if (process.env.SEED_ON_BOOT !== 'off') {
-      bootstrapDb(pool)
+      const force = process.env.SEED_ON_BOOT === 'force';
+      bootstrapDb(pool, { force })
         .then((r) => {
           if (r.schemaCreated || r.seeded) {
             // eslint-disable-next-line no-console

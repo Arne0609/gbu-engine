@@ -14,6 +14,8 @@ Modell-Abbildung:
 
 Ampel-Abbildung:  gruen->NO_RISK, gelb->MEDIUM, rot->HIGH;
                   "Nicht anwendbar/zutreffend" -> NOT_APPLICABLE.
+EN 81-41 (xlsx) nutzt eine 4-stufige Skala mit eigener Risikospalte:
+                  kein->NO_RISK, Niedriges->LOW, Mittleres->MEDIUM, Hohes->HIGH.
 Sofort-/Mittelfristmassnahme werden (vorerst) in rule.notes erhalten.
 """
 import re, json, hashlib, os
@@ -198,7 +200,7 @@ def build_en8141():
     import openpyxl
     wb = openpyxl.load_workbook(XLSX, data_only=True)
     kat = wb['Katalog_EN81-41']
-    RISK = {'kein Risiko': 'NO_RISK', 'Niedriges Risiko': 'MEDIUM',
+    RISK = {'kein Risiko': 'NO_RISK', 'Niedriges Risiko': 'LOW',
             'Mittleres Risiko': 'MEDIUM', 'Hohes Risiko': 'HIGH',
             'Nicht zutreffend': 'NOT_APPLICABLE'}
     from collections import OrderedDict
