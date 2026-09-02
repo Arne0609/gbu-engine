@@ -1,0 +1,709 @@
+[
+ {
+  "id": "K-Z01",
+  "bereich": "Zugang",
+  "thema": "Schlüsseltresor",
+  "frage": "Ist ein Zugang „jederzeit über Schlüsseltresor\" wirklich „Kein Risiko\" – oder ein niedriges Restrisiko (Tresor kann fehlen/defekt sein)?",
+  "vorschlag": "Kein Risiko (wie App-Katalog Z5)",
+  "alternativen": "Niedrig (so bewertet es die Schindler-App bei „Ja, über Schlüsseltresor\")",
+  "grund": "App und Schindler weichen voneinander ab.",
+  "hazards": [
+   "MF-Z09"
+  ],
+  "entscheidung": "Vorschlag",
+  "festlegung": "Schlüsseltresor = Kein Risiko.",
+  "datum": "2026-09-02"
+ },
+ {
+  "id": "K-Z02",
+  "bereich": "Zugang",
+  "thema": "Fluchtweg Triebwerksraum",
+  "frage": "Versperrter Flucht-/Rettungsweg im Triebwerksraum: Hoch oder Niedrig?",
+  "vorschlag": "Hoch (App-Katalog Z10)",
+  "alternativen": "Niedrig (Schindler M120, da nur Instandhaltungspersonal betroffen; an den Fahrkorbausgängen dagegen Mittel)",
+  "grund": "App und Schindler weichen deutlich voneinander ab.",
+  "hazards": [
+   "MF-Z08"
+  ],
+  "entscheidung": "Alternative",
+  "festlegung": "Flucht-/Rettungsweg Triebwerksraum: Niedrig (alle drei Befunde).",
+  "datum": "2026-09-02"
+ },
+ {
+  "id": "K-Z03",
+  "bereich": "Zugang",
+  "thema": "Enge Durchgänge",
+  "frage": "Enge/niedrige Durchgänge (< 0,60 m / < 2,00 m) als eigene Stufe Mittel – oder nur als Hinweis ohne Stufe?",
+  "vorschlag": "Mittel",
+  "alternativen": "Nur Dokumentation",
+  "grund": "Schindler zählt es zu M019 (Hoch im Worst Case), der App-Katalog kennt es nicht.",
+  "hazards": [],
+  "entscheidung": "Alternative",
+  "festlegung": "Enge Durchgänge nur Dokumentation, keine Stufe.",
+  "datum": "2026-09-02"
+ },
+ {
+  "id": "K-Z04",
+  "bereich": "Zugang",
+  "thema": "Mobile Leiter",
+  "frage": "Zugang nur über mobile Anlegeleiter: Mittel oder Hoch?",
+  "vorschlag": "Mittel",
+  "alternativen": "Hoch (Absturz)",
+  "grund": "Im App-Katalog nicht als eigene Option enthalten.",
+  "hazards": [
+   "MF-Z03"
+  ],
+  "entscheidung": "Alternative",
+  "festlegung": "Zugang nur über mobile Leiter: Hoch.",
+  "datum": "2026-09-02"
+ },
+ {
+  "id": "K-M01",
+  "bereich": "Triebwerksraum",
+  "thema": "DGUV-V3-Nachweis",
+  "frage": "Fehlender Nachweis der Prüfung nach DGUV Vorschrift 3: Hoch (wie App M1) oder Mittel (organisatorischer Mangel, kein unmittelbarer Schaden)?",
+  "vorschlag": "Hoch (App-Katalog M1)",
+  "alternativen": "Mittel",
+  "grund": "Rein organisatorischer Befund mit Stufe Hoch.",
+  "hazards": [
+   "MF-M02"
+  ],
+  "entscheidung": "Alternative",
+  "festlegung": "Fehlender DGUV-V3-Nachweis: Mittel.",
+  "datum": "2026-09-02"
+ },
+ {
+  "id": "K-M02",
+  "bereich": "Triebwerksraum",
+  "thema": "Hauptschalter nicht abschließbar",
+  "frage": "Hauptschalter vorhanden, aber nicht abschließbar: Mittel (App M9) oder Hoch (App M5)?",
+  "vorschlag": "Mittel (M9 ist die neuere Kategorie)",
+  "alternativen": "Hoch (M5)",
+  "grund": "Die beiden App-Kategorien M5 und M9 widersprechen sich.",
+  "hazards": [
+   "MF-M07"
+  ],
+  "entscheidung": "Alternative",
+  "festlegung": "Hauptschalter nicht abschließbar: Hoch (App M5).",
+  "datum": "2026-09-02"
+ },
+ {
+  "id": "K-M03",
+  "bereich": "Antrieb",
+  "thema": "Motorschutz",
+  "frage": "Fehlender Schutz gegen Überhitzen des Antriebs: Hoch (App M10) oder Mittel (Schindler M006)?",
+  "vorschlag": "Hoch (App)",
+  "alternativen": "Mittel (Schindler)",
+  "grund": "Abweichung App/Schindler.",
+  "hazards": [
+   "MF-M09"
+  ],
+  "entscheidung": "Alternative",
+  "festlegung": "Fehlender Motorschutz: Mittel.",
+  "datum": "2026-09-02"
+ },
+ {
+  "id": "K-M04",
+  "bereich": "Antrieb",
+  "thema": "Ein Fahrschütz mit selbstüberwachender Steuerung",
+  "frage": "Nur ein Fahrschütz, aber selbstüberwachende Steuerung mit Baumusterprüfung: Kein Risiko (App M5) oder Mittel (App M10)?",
+  "vorschlag": "Kein Risiko",
+  "alternativen": "Mittel",
+  "grund": "Die App-Kategorien M5 und M10 widersprechen sich.",
+  "hazards": [
+   "MF-M10"
+  ],
+  "entscheidung": "Vorschlag",
+  "festlegung": "Ein Fahrschütz mit selbstüberwachender Steuerung: Kein Risiko.",
+  "datum": "2026-09-02"
+ },
+ {
+  "id": "K-M05",
+  "bereich": "Antrieb",
+  "thema": "Phasenumkehrschutz bei geregelten Antrieben",
+  "frage": "Darf der Phasenumkehrschutz bei Frequenzumrichter-Antrieben als „nicht zutreffend\" gelten (Schutz ist im Umrichter enthalten)?",
+  "vorschlag": "Ja, nicht zutreffend",
+  "alternativen": "Nein, immer prüfen",
+  "grund": "Eigene Annahme; im App-Katalog nicht geregelt.",
+  "hazards": [
+   "MF-M12"
+  ],
+  "entscheidung": "Vorschlag",
+  "festlegung": "Phasenumkehrschutz bei geregelten Antrieben: nicht zutreffend.",
+  "datum": "2026-09-02"
+ },
+ {
+  "id": "K-M06",
+  "bereich": "Elektrik",
+  "thema": "Potenzialausgleich",
+  "frage": "Fehlender Hauptpotenzialausgleich: Hoch (App M14) oder Mittel (Schindler M110)?",
+  "vorschlag": "Hoch (App)",
+  "alternativen": "Mittel (Schindler)",
+  "grund": "Abweichung App/Schindler.",
+  "hazards": [
+   "MF-M16"
+  ],
+  "entscheidung": "Alternative",
+  "festlegung": "Fehlender Potenzialausgleich: Mittel.",
+  "datum": "2026-09-02"
+ },
+ {
+  "id": "K-M07",
+  "bereich": "Personenbefreiung",
+  "thema": "Notbefreiungsanleitung",
+  "frage": "Fehlende oder veraltete Notbefreiungsanleitung: Mittel (App M13) oder Hoch (Schindler M116)?",
+  "vorschlag": "Hoch, wenn sie fehlt; Mittel, wenn nur veraltet",
+  "alternativen": "Immer Mittel",
+  "grund": "Abweichung App/Schindler; hier als abgestufte Regel vorgeschlagen.",
+  "hazards": [
+   "MF-D02"
+  ],
+  "entscheidung": "Vorschlag",
+  "festlegung": "Notbefreiungsanleitung fehlt: Hoch; veraltet oder nicht zur Anlage passend: Mittel.",
+  "datum": "2026-09-02"
+ },
+ {
+  "id": "K-M08",
+  "bereich": "Elektrik",
+  "thema": "Ohne Maschinenraum",
+  "frage": "Bei maschinenraumlosen Anlagen: Gelten die Fragen zu Berührungssicherheit, Hauptschalter, Kennzeichnung und Stromlaufplan unverändert für den Steuerschrank?",
+  "vorschlag": "Ja (so umgesetzt: nur raumbezogene Gefährdungen entfallen)",
+  "alternativen": "Eigener Fragensatz",
+  "grund": "Eigene Annahme.",
+  "hazards": [
+   "MF-M02",
+   "MF-M07",
+   "MF-M17"
+  ],
+  "entscheidung": "Vorschlag",
+  "festlegung": "Ohne Maschinenraum gelten die Elektrik-Fragen für den Steuerschrank.",
+  "datum": "2026-09-02"
+ },
+ {
+  "id": "K-M09",
+  "bereich": "Antrieb",
+  "thema": "Zweikreisbremse ohne Überwachung",
+  "frage": "Zweikreisbremse vorhanden, aber kein Bremskontrollschalter: Mittel (App K4.2) – auch wenn kein SR-Modul / keine Nachregulierung mit offener Tür vorhanden ist?",
+  "vorschlag": "Mittel",
+  "alternativen": "Kein Risiko ohne Türüberbrückung",
+  "grund": "Eigene Nachfrage.",
+  "hazards": [
+   "MF-M08"
+  ],
+  "entscheidung": "Alternative",
+  "festlegung": "Zweikreisbremse ohne Überwachung: Mittel nur mit Türüberbrückung (SR-Modul), sonst Kein Risiko.",
+  "datum": "2026-09-02"
+ },
+ {
+  "id": "K-K01",
+  "bereich": "Fahrkorb",
+  "thema": "Notruf ohne 24-h-Aufschaltung",
+  "frage": "Notruf vorhanden, aber nicht auf eine rund um die Uhr besetzte Stelle aufgeschaltet: eigene Stufe Mittel?",
+  "vorschlag": "Mittel",
+  "alternativen": "Kein eigener Beitrag (so verhält sich die Schindler-App)",
+  "grund": "Schindler M032 wertet nur „Notruf vorhanden?\"; 24 h und EN 81-28 ohne Beitrag – fachlich fragwürdig.",
+  "hazards": [
+   "MF-K01"
+  ],
+  "entscheidung": "Vorschlag",
+  "festlegung": "Notruf ohne 24-h-Aufschaltung: Mittel.",
+  "datum": "2026-09-02"
+ },
+ {
+  "id": "K-K02",
+  "bereich": "Fahrkorb",
+  "thema": "Fehlende Notbeleuchtung",
+  "frage": "Keine Notbeleuchtung im Fahrkorb: Mittel (App K10) oder Hoch (Schindler M023)?",
+  "vorschlag": "Mittel (App)",
+  "alternativen": "Hoch (Schindler)",
+  "grund": "Abweichung App/Schindler.",
+  "hazards": [
+   "MF-K02"
+  ],
+  "entscheidung": "Alternative",
+  "festlegung": "Keine Notbeleuchtung im Fahrkorb: Hoch.",
+  "datum": "2026-09-02"
+ },
+ {
+  "id": "K-K03",
+  "bereich": "Fahrkorb",
+  "thema": "Stufenbildung bei Personen mit eingeschränkter Mobilität",
+  "frage": "Stufenbildung 10–20 mm bei zu erwartender Nutzung durch Personen mit eingeschränkter Mobilität: Hochstufung auf Hoch?",
+  "vorschlag": "Ja (Modifier)",
+  "alternativen": "Nein, bleibt Mittel",
+  "grund": "Eigene Regel nach Schindler-Muster (A73 Behindertennutzung als Modifier bei M001).",
+  "hazards": [
+   "MF-K03"
+  ],
+  "entscheidung": "Vorschlag",
+  "festlegung": "Stufenbildung 10–20 mm bei PmeM-Nutzung: Hoch.",
+  "datum": "2026-09-02"
+ },
+ {
+  "id": "K-K04",
+  "bereich": "Fahrkorb",
+  "thema": "Schwellenabstand",
+  "frage": "Abstand Fahrkorbschwelle–Schachtwand > 150 mm mit verriegelter Fahrkorbtür: Kein Risiko (App K8) – reicht die Verriegelung als vollständige Kompensation?",
+  "vorschlag": "Kein Risiko",
+  "alternativen": "Niedrig",
+  "grund": "Eigene Nachfrage.",
+  "hazards": [
+   "MF-K05"
+  ],
+  "entscheidung": "Anders",
+  "festlegung": "Kein Risiko nur mit Fahrkorbtür-Verriegelung UND Zusatzverriegelung an der Schachttür (neue Frage 8.15a).",
+  "datum": "2026-09-02"
+ },
+ {
+  "id": "K-K05",
+  "bereich": "Fahrkorb",
+  "thema": "Überlastkontrolle nicht geprüft",
+  "frage": "Überlastkontrolle vorhanden, Funktion nicht nachweislich geprüft: Mittel?",
+  "vorschlag": "Mittel (App K13)",
+  "alternativen": "Niedrig",
+  "grund": "Eigene Nachfrage.",
+  "hazards": [
+   "MF-K06"
+  ],
+  "entscheidung": "Alternative",
+  "festlegung": "Überlastkontrolle nicht nachweislich geprüft: Niedrig.",
+  "datum": "2026-09-02"
+ },
+ {
+  "id": "K-K06",
+  "bereich": "Türen",
+  "thema": "Notentriegelung nicht an allen Zugängen",
+  "frage": "Notentriegelung fehlt an einzelnen Schachttüren: Mittel (App F5) oder Hoch (Schindler M079)?",
+  "vorschlag": "Mittel, wenn einzelne fehlen; Hoch, wenn Dreikant/Werkzeug fehlt",
+  "alternativen": "Immer Hoch",
+  "grund": "Abweichung App/Schindler.",
+  "hazards": [
+   "MF-T02"
+  ],
+  "entscheidung": "Alternative",
+  "festlegung": "Notentriegelung fehlt an einzelnen Schachttüren: Hoch.",
+  "datum": "2026-09-02"
+ },
+ {
+  "id": "K-K07",
+  "bereich": "Türen",
+  "thema": "Feuerwiderstand unbekannt",
+  "frage": "Feuerwiderstand der Schachttüren unbekannt (kein Nachweis): Mittel oder nur Dokumentation?",
+  "vorschlag": "Mittel",
+  "alternativen": "Dokumentation",
+  "grund": "Schindler M083 = Mittel; im App-Katalog nicht enthalten.",
+  "hazards": [
+   "MF-T05"
+  ],
+  "entscheidung": "Vorschlag",
+  "festlegung": "Feuerwiderstand unbekannt: Mittel.",
+  "datum": "2026-09-02"
+ },
+ {
+  "id": "K-K08",
+  "bereich": "Fahrkorb",
+  "thema": "UCM „nicht notwendig\"",
+  "frage": "Kein UCM, aber kein SR-Modul, Zweikreisbremse mit Schalter und statisch bestimmte Lagerung: Mittel (App K4.2) oder Kein Risiko / Niedrig?",
+  "vorschlag": "Mittel (App)",
+  "alternativen": "Niedrig",
+  "grund": "Der App-Text sagt „UCM nicht notwendig\", bewertet aber gelb.",
+  "hazards": [
+   "MF-K12"
+  ],
+  "entscheidung": "Alternative",
+  "festlegung": "UCM „nicht notwendig\" (kein SR-Modul, 2K-Bremse mit Schalter, statisch bestimmt): Niedrig.",
+  "datum": "2026-09-02"
+ },
+ {
+  "id": "K-K09",
+  "bereich": "Fahrkorb",
+  "thema": "Fahrkorb ohne Tür",
+  "frage": "Fahrkorb ohne Abschlusstür, aber mit Sicherheitslichtgitter: Mittel (App K2.2). Bei Nutzung durch Personen mit eingeschränkter Mobilität oder Kinder Hoch?",
+  "vorschlag": "Ja (Modifier)",
+  "alternativen": "Nein",
+  "grund": "Schindler M076 nutzt A73 Behindertennutzung als Modifier.",
+  "hazards": [
+   "MF-T06"
+  ],
+  "entscheidung": "Vorschlag",
+  "festlegung": "Fahrkorb ohne Tür bei PmeM-/Kindernutzung: Hoch.",
+  "datum": "2026-09-02"
+ },
+ {
+  "id": "K-T01",
+  "bereich": "Türen",
+  "thema": "Drahtglas (TRBS-Matrix)",
+  "frage": "TRBS 3121 Anh. 1 Nr. 9 nennt das Risiko bei intaktem, sicher befestigtem Drahtglas ausdrücklich niedrig; der App-Katalog K9 bewertet Gitterglas gelb (Mittel). Umgesetzt: Niedrig.",
+  "vorschlag": "Niedrig (TRBS-explizit)",
+  "alternativen": "Mittel (App K9)",
+  "grund": "Neu aus der TRBS-Risikomatrix vom 02.09.2026.",
+  "hazards": [
+   "MF-T04"
+  ],
+  "entscheidung": "Vorschlag",
+  "festlegung": "Intaktes Drahtglas: Niedrig (TRBS 3121 Anh. 1 Nr. 9).",
+  "datum": "2026-09-02"
+ },
+ {
+  "id": "K-T02",
+  "bereich": "Türen",
+  "thema": "Einzel-Lichtschranke (TRBS-Matrix)",
+  "frage": "Neue Option „Einzel-Lichtschranke mit 150 N / 10 J\": TRBS 3121 Anh. 1 Nr. 10 = ausdrücklich Mittel, bei behinderten/alten/gebrechlichen Personen höher. Umgesetzt: Mittel, Hoch mit PmeM-Nutzung.",
+  "vorschlag": "Mittel / Hoch mit PmeM",
+  "alternativen": "Option nicht aufnehmen",
+  "grund": "Neu aus der TRBS-Risikomatrix vom 02.09.2026.",
+  "hazards": [
+   "MF-T06"
+  ],
+  "entscheidung": "Vorschlag",
+  "festlegung": "Einzel-Lichtschranke 150 N / 10 J: Mittel, Hoch mit PmeM-Nutzung.",
+  "datum": "2026-09-02"
+ },
+ {
+  "id": "K-K10",
+  "bereich": "Fahrkorb",
+  "thema": "Warnhinweis als Kompensation bei Stufenbildung (TRBS-Matrix)",
+  "frage": "TRBS 3121 Anh. 1 Nr. 1 lässt einen Warnhinweis nur bei eingeschränktem Benutzerkreis zu, nicht bei behindertengerechten Aufzügen. Umgesetzt: Stufe 10–20 mm + eingewiesener Benutzerkreis + Warnhinweis, keine PmeM-Nutzung = Niedrig (neue Frage 8.10a).",
+  "vorschlag": "Niedrig als Kompensation",
+  "alternativen": "Keine Kompensation, bleibt Mittel",
+  "grund": "Neu aus der TRBS-Risikomatrix vom 02.09.2026.",
+  "hazards": [
+   "MF-K03"
+  ],
+  "entscheidung": "Alternative",
+  "festlegung": "Kein Warnhinweis als Kompensation bei Stufenbildung; 10–20 mm bleibt Mittel.",
+  "datum": "2026-09-02"
+ },
+ {
+  "id": "K-K11",
+  "bereich": "Fahrkorb",
+  "thema": "UCM ohne Bremsüberwachung (TRBS-Matrix)",
+  "frage": "TRBS 3121 Anh. 1 Nr. 16: statisch bestimmte Lagerung und Zweikreisbremse OHNE Überwachung = ausdrücklich Mittel (bisher fiel dieser Fall auf Hoch). Mit Überwachung bleibt es bei der Entscheidung K-K08 (Niedrig).",
+  "vorschlag": "Mittel (TRBS-explizit)",
+  "alternativen": "Hoch",
+  "grund": "Neu aus der TRBS-Risikomatrix vom 02.09.2026.",
+  "hazards": [
+   "MF-K12"
+  ],
+  "entscheidung": "Vorschlag",
+  "festlegung": "Statisch bestimmte Lagerung + Zweikreisbremse ohne Überwachung: Mittel.",
+  "datum": "2026-09-02"
+ },
+ {
+  "id": "K-K12",
+  "bereich": "Fahrkorb",
+  "thema": "Hydraulikaufzug ohne UCM",
+  "frage": "Hydraulikaufzug ohne UCM-Schutz und ohne Türüberbrückung: Mittel (eigene Annahme; Absinken wird über MF-M13 Hydraulikeinrichtungen bewertet) – oder Hoch wie bei Seilaufzügen?",
+  "vorschlag": "Mittel",
+  "alternativen": "Hoch",
+  "grund": "Letzte Regel ohne Vorlage (HYPOTHESIS); aus dem Review vom 02.09.2026. Entscheidung: der Fall existiert nicht – ein Hydraulikaufzug hat immer eine Türüberbrückung (Nachregulieren bei Druckverlust).",
+  "hazards": [
+   "MF-K12"
+  ],
+  "entscheidung": "Anders",
+  "festlegung": "Fall existiert nicht: ein Hydraulikaufzug hat immer eine Türüberbrückung (Nachregulieren bei Druckverlust). Ohne UCM daher Hoch (MF-K12-R1); Frage 8.27 wird bei Hydraulik nicht gestellt.",
+  "datum": "2026-09-02"
+ },
+ {
+  "id": "K-F01",
+  "bereich": "Fahrkorbdach",
+  "thema": "Geländerhöhe bei großem Spalt",
+  "frage": "Spalt > 850 mm und Geländer unter 1.100 mm: Hoch (eigene Regel) – App F1 nennt nur „Geländerhöhe 70 cm bei Spalt > 50 ≤ 85 cm = Mittel\"?",
+  "vorschlag": "Hoch",
+  "alternativen": "Mittel",
+  "grund": "Lücke im App-Katalog; nach EN 81-20 5.4.7.4 ist ab 850 mm ein Geländer 1.100 mm gefordert.",
+  "hazards": [
+   "MF-F01"
+  ],
+  "entscheidung": "Vorschlag",
+  "festlegung": "Spalt > 850 mm und Geländer < 1.100 mm: Hoch.",
+  "datum": "2026-09-02"
+ },
+ {
+  "id": "K-F02",
+  "bereich": "Fahrkorbdach",
+  "thema": "Absturz gesamt",
+  "frage": "Schindler bewertet die Absturzsicherung auf dem Fahrkorbdach (M028) im Worst Case nur mit Niedrig, der App-Katalog mit Hoch. Bleibt es bei Hoch?",
+  "vorschlag": "Hoch (App F1)",
+  "alternativen": "Niedrig (Schindler M028)",
+  "grund": "Deutliche Abweichung.",
+  "hazards": [
+   "MF-F01"
+  ],
+  "entscheidung": "Vorschlag",
+  "festlegung": "Absturzsicherung Fahrkorbdach bleibt Hoch.",
+  "datum": "2026-09-02"
+ },
+ {
+  "id": "K-F03",
+  "bereich": "Fahrkorbdach",
+  "thema": "Reduzierter Schachtkopf",
+  "frage": "Reduzierter Schachtkopf mit wirksamer Zusatzeinrichtung: Mittel (App F8) oder Kein Risiko (App F5 „Flacher Schachtkopf, aber Schutzraum durch temporäre Maßnahme gegeben\")?",
+  "vorschlag": "Mittel",
+  "alternativen": "Kein Risiko",
+  "grund": "Die App-Kategorien F5 und F8 widersprechen sich.",
+  "hazards": [
+   "MF-F04",
+   "MF-G02"
+  ],
+  "entscheidung": "Alternative",
+  "festlegung": "Reduzierter Schachtkopf / reduzierte Grube mit wirksamer Zusatzeinrichtung: Kein Risiko.",
+  "datum": "2026-09-02"
+ },
+ {
+  "id": "K-F04",
+  "bereich": "Fahrkorbdach",
+  "thema": "Notbeleuchtung auf dem Dach",
+  "frage": "Fehlende Notbeleuchtung auf dem Fahrkorbdach: Mittel (eigener Vorschlag) oder Hoch (Schindler M023 gemeinsam mit Fahrkorb)?",
+  "vorschlag": "Mittel",
+  "alternativen": "Hoch",
+  "grund": "Im App-Katalog nicht als eigene Option enthalten.",
+  "hazards": [
+   "MF-F08"
+  ],
+  "entscheidung": "Alternative",
+  "festlegung": "Fehlende Notbeleuchtung auf dem Fahrkorbdach: Hoch.",
+  "datum": "2026-09-02"
+ },
+ {
+  "id": "K-F05",
+  "bereich": "Fahrkorbdach",
+  "thema": "Schutzraum nach Altnorm (TRBS-Matrix)",
+  "frage": "Neue Option „Schutzraum nach TRA 200 / EN 81-1/-2 (kleiner als EN 81-20)\" für Schachtkopf und Grube: TRBS 3121 Anh. 1 Nr. 5 nennt das Risiko dafür niedrig. Umgesetzt: Niedrig statt Kein Risiko.",
+  "vorschlag": "Niedrig (TRBS-explizit)",
+  "alternativen": "Kein Risiko / Option nicht aufnehmen",
+  "grund": "Neu aus der TRBS-Risikomatrix vom 02.09.2026.",
+  "hazards": [
+   "MF-F04",
+   "MF-G02"
+  ],
+  "entscheidung": "Vorschlag",
+  "festlegung": "Schutzraum nach TRA 200 / EN 81-1/-2 als eigene Option: Niedrig (TRBS 3121 Anh. 1 Nr. 5).",
+  "datum": "2026-09-02"
+ },
+ {
+  "id": "K-S01",
+  "bereich": "Schachtgrube",
+  "thema": "Inspektionssteuerung Grube",
+  "frage": "Fehlende Inspektionssteuerung in der Schachtgrube: Hoch (App S8) oder Mittel (Schindler M051)?",
+  "vorschlag": "Hoch (App)",
+  "alternativen": "Mittel (Schindler)",
+  "grund": "Abweichung App/Schindler.",
+  "hazards": [
+   "MF-G03"
+  ],
+  "entscheidung": "Alternative",
+  "festlegung": "Fehlende Inspektionssteuerung in der Grube: Mittel.",
+  "datum": "2026-09-02"
+ },
+ {
+  "id": "K-S02",
+  "bereich": "Schachtgrube",
+  "thema": "Leiter im Fahrzeug",
+  "frage": "Grubenleiter wird nur im Kundendienstfahrzeug mitgeführt: Mittel (App S3) – auch für die beauftragte Person des Betreibers, die kein Fahrzeug hat?",
+  "vorschlag": "Mittel",
+  "alternativen": "Hoch für Betreiber-Kontrollen",
+  "grund": "Eigene Nachfrage.",
+  "hazards": [
+   "MF-G04"
+  ],
+  "entscheidung": "Alternative",
+  "festlegung": "Grubenleiter nur im Kundendienstfahrzeug: Hoch.",
+  "datum": "2026-09-02"
+ },
+ {
+  "id": "K-S03",
+  "bereich": "Schacht",
+  "thema": "Aufzugsfremde Leitungen fachgerecht",
+  "frage": "Aufzugsfremde Leitungen vorhanden, aber fachgerecht verlegt und gekennzeichnet: Mittel (App S12) oder Niedrig?",
+  "vorschlag": "Mittel",
+  "alternativen": "Niedrig",
+  "grund": "Eigene Nachfrage.",
+  "hazards": [
+   "MF-S06"
+  ],
+  "entscheidung": "Vorschlag",
+  "festlegung": "Aufzugsfremde Leitungen fachgerecht verlegt: Mittel.",
+  "datum": "2026-09-02"
+ },
+ {
+  "id": "K-S04",
+  "bereich": "Schacht",
+  "thema": "Puffer bei > 1,0 m/s",
+  "frage": "Energiespeichernde Puffer bei Nenngeschwindigkeit über 1,0 m/s: Mittel (App S9)?",
+  "vorschlag": "Mittel",
+  "alternativen": "Hoch",
+  "grund": "Eigene Nachfrage; EN 81-20 5.8.2.1 begrenzt auf 1,0 m/s.",
+  "hazards": [
+   "MF-G06"
+  ],
+  "entscheidung": "Alternative",
+  "festlegung": "Energiespeichernde Puffer über 1,0 m/s: Hoch.",
+  "datum": "2026-09-02"
+ },
+ {
+  "id": "K-S05",
+  "bereich": "Schacht",
+  "thema": "Teilumwehrter Schacht",
+  "frage": "Teilumwehrter Schacht, nach aktuellen Vorgaben zulässig ausgeführt: Mittel (App S6) – oder Kein Risiko, wenn zulässig?",
+  "vorschlag": "Mittel",
+  "alternativen": "Kein Risiko",
+  "grund": "Die App-Option ist gelb, obwohl „zulässig\".",
+  "hazards": [
+   "MF-S03"
+  ],
+  "entscheidung": "Alternative",
+  "festlegung": "Zulässig ausgeführte Teilumwehrung: Kein Risiko.",
+  "datum": "2026-09-02"
+ },
+ {
+  "id": "K-U01",
+  "bereich": "Umfeld",
+  "thema": "Ortsfragen Pflicht oder optional",
+  "frage": "Sollen die vier Ortsfragen (Zugang / Triebwerksraum / Schacht / Grube) je Mangeltyp alle beantwortet sein, bevor die Gefährdung bewertet wird (Pflicht -> sonst Unvollständig)?",
+  "vorschlag": "Ja, alle Pflicht (ehrlicher Stand)",
+  "alternativen": "Nein, eine Ja-Antwort genügt, Rest optional (Schindler-Verhalten M087/M090/M103)",
+  "grund": "Bewusste Abweichung vom Original.",
+  "hazards": [
+   "MF-U01",
+   "MF-U02",
+   "MF-U03"
+  ],
+  "entscheidung": "Vorschlag",
+  "festlegung": "Ortsfragen sind alle Pflicht.",
+  "datum": "2026-09-02"
+ },
+ {
+  "id": "K-U02",
+  "bereich": "Umfeld",
+  "thema": "Gefahrstofflagerung",
+  "frage": "Chemische / biologische Gefahrstoffe in der Nähe gelagert: Niedrig (Schindler M101/M102) – oder Mittel wie bei brennbaren Stoffen?",
+  "vorschlag": "Niedrig",
+  "alternativen": "Mittel",
+  "grund": "Nur aus Schindler ableitbar; die Ergänzung 2026 (G5) kennt nur Hoch für „unbekannt/unbewertet\".",
+  "hazards": [
+   "MF-U04"
+  ],
+  "entscheidung": "Alternative",
+  "festlegung": "Chemische/biologische Gefahrstoffe gelagert: Mittel.",
+  "datum": "2026-09-02"
+ },
+ {
+  "id": "K-U03",
+  "bereich": "Umfeld",
+  "thema": "Explosionsfähiges Gemisch",
+  "frage": "Explosionsfähiges Gemisch möglich, Explosionsschutz bewertet: Mittel? Nicht bewertet: Hoch?",
+  "vorschlag": "Mittel / Hoch",
+  "alternativen": "Immer Mittel (Schindler M092)",
+  "grund": "Ergänzung 2026 G5 sagt Hoch für „ohne Bewertung\".",
+  "hazards": [
+   "MF-U06"
+  ],
+  "entscheidung": "Vorschlag",
+  "festlegung": "Ex-Gemisch bewertet: Mittel; nicht bewertet: Hoch.",
+  "datum": "2026-09-02"
+ },
+ {
+  "id": "K-U04",
+  "bereich": "Umfeld",
+  "thema": "Lärm und Unfallhistorie",
+  "frage": "Lärm (Niedrig), Unfälle mit Sachschaden (Niedrig) und mit Personenschaden (Hoch) sind aus der Schindler-Kundenbefragung übernommen – sinnvoll für die eigene GBU?",
+  "vorschlag": "Übernehmen",
+  "alternativen": "Nur dokumentieren, keine Stufe",
+  "grund": "Im App-Katalog nicht enthalten.",
+  "hazards": [],
+  "entscheidung": "Alternative",
+  "festlegung": "Lärm und Unfallhistorie nur Dokumentation, keine Stufe (MF-U16 entfällt).",
+  "datum": "2026-09-02"
+ },
+ {
+  "id": "K-U05",
+  "bereich": "Umfeld",
+  "thema": "Angrenzende Verkehrswege",
+  "frage": "Aufzugszugang an Fahrwegen: Mittel nur bei Nutzung durch Personen mit eingeschränkter Mobilität (Schindler M106) – oder immer Mittel?",
+  "vorschlag": "Immer Mittel, Hoch mit PmeM-Nutzung",
+  "alternativen": "Nur mit PmeM-Nutzung",
+  "grund": "Eigene Verschärfung.",
+  "hazards": [
+   "MF-U14"
+  ],
+  "entscheidung": "Vorschlag",
+  "festlegung": "Angrenzende Verkehrswege: Mittel, Hoch mit PmeM-Nutzung.",
+  "datum": "2026-09-02"
+ },
+ {
+  "id": "K-D01",
+  "bereich": "Organisation",
+  "thema": "Notfallplan",
+  "frage": "Fehlender oder veralteter Notfallplan: Hoch (Schindler M113) – oder Mittel?",
+  "vorschlag": "Hoch",
+  "alternativen": "Mittel",
+  "grund": "Im App-Katalog nur als Stammdatenfeld 3.2, ohne Stufe.",
+  "hazards": [
+   "MF-D01"
+  ],
+  "entscheidung": "Vorschlag",
+  "festlegung": "Fehlender Notfallplan: Hoch.",
+  "datum": "2026-09-02"
+ },
+ {
+  "id": "K-D02",
+  "bereich": "Organisation",
+  "thema": "Keine regelmäßige Instandhaltung",
+  "frage": "Anlage ohne regelmäßige Instandhaltung durch ein Fachunternehmen: Hoch (eigener Vorschlag)?",
+  "vorschlag": "Hoch",
+  "alternativen": "Mittel",
+  "grund": "Im App-Katalog nur als Stammdatenfeld 3.10, ohne Stufe.",
+  "hazards": [
+   "MF-D03"
+  ],
+  "entscheidung": "Vorschlag",
+  "festlegung": "Keine regelmäßige Instandhaltung: Hoch.",
+  "datum": "2026-09-02"
+ },
+ {
+  "id": "K-D03",
+  "bereich": "Organisation",
+  "thema": "Überschrittene Prüffrist",
+  "frage": "ZÜS-Prüffrist überschritten: Hoch (eigener Vorschlag); Plakette fehlt, Frist eingehalten: Mittel (Schindler M115)?",
+  "vorschlag": "Hoch / Mittel",
+  "alternativen": "Immer Mittel",
+  "grund": "Abgestufter eigener Vorschlag.",
+  "hazards": [
+   "MF-D04"
+  ],
+  "entscheidung": "Vorschlag",
+  "festlegung": "Prüffrist überschritten: Hoch; Plakette fehlt: Mittel.",
+  "datum": "2026-09-02"
+ },
+ {
+  "id": "K-D04",
+  "bereich": "Organisation",
+  "thema": "Beauftragte Person, Unterweisung, Betriebsanweisung",
+  "frage": "Fehlende beauftragte Person, fehlende Unterweisung, fehlende Betriebsanweisung: jeweils Mittel (eigener Vorschlag nach BetrSichV § 12 / Anh. 1 Nr. 4)?",
+  "vorschlag": "Mittel",
+  "alternativen": "Niedrig / Hoch",
+  "grund": "Eigene Ergänzung E1–E5, nicht aus einer Vorlage.",
+  "hazards": [
+   "MF-D05"
+  ],
+  "entscheidung": "Vorschlag",
+  "festlegung": "Beauftragte Person, Unterweisung, Betriebsanweisung, Zutritt: jeweils Mittel.",
+  "datum": "2026-09-02"
+ },
+ {
+  "id": "K-SF1",
+  "bereich": "Sonderfunktionen",
+  "thema": "Feuerwehraufzug Einzelpunkte",
+  "frage": "Jeder der zehn Feuerwehraufzug-Punkte ergibt bei Nein Hoch (wie Ergänzung 2026 SF1). Sollen einzelne Punkte (Cyber, Dokumentation) nur Mittel ergeben?",
+  "vorschlag": "Alle Hoch",
+  "alternativen": "Cyber und Dokumentation Mittel",
+  "grund": "Ergänzung 2026 kennt nur Hoch.",
+  "hazards": [
+   "MF-SF01"
+  ],
+  "entscheidung": "Alternative",
+  "festlegung": "Feuerwehraufzug: Unterlagen, Fremdgewerk-Nachweise, Feuerwehr-Doku und Cyber = Mittel, übrige Punkte Hoch.",
+  "datum": "2026-09-02"
+ }
+]

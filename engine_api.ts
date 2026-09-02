@@ -21,14 +21,16 @@ export async function loadCatalogForClient(db: Pool, ruleVersionId: string): Pro
 
   const hazardRows = (await db.query(
     `SELECT DISTINCT h.id, h.code, h.domain, h.title, h.description, h.category,
-            h.aggregation_type, h.evaluation_mode, h.not_implemented
+            h.aggregation_type, h.evaluation_mode, h.not_implemented,
+            h.hazard_factor, h.person_groups
        FROM hazards h JOIN evaluation_rules r ON r.hazard_id = h.id
       WHERE r.rule_version_id = $1
       ORDER BY h.code`, [ruleVersionId])).rows;
   const hazardIds = hazardRows.map((h) => h.id);
 
   const hqRows = hazardIds.length ? (await db.query(
-    `SELECT h.code AS hazard_code, q.code AS question_code, hq.role, hq.required_mode
+    `SELECT h.code AS hazard_code, q.code AS question_code, hq.role, hq.required_mode,
+            hq.required_expression, hq.applicable_expression
        FROM hazard_questions hq JOIN questions q ON q.id = hq.question_id
        JOIN hazards h ON h.id = hq.hazard_id
       WHERE hq.hazard_id = ANY($1) ORDER BY hq.sort_order`, [hazardIds])).rows : [];
@@ -41,11 +43,16 @@ export async function loadCatalogForClient(db: Pool, ruleVersionId: string): Pro
 
   const qCodes = [...new Set(hqRows.map((r) => r.question_code))];
   const qRows = qCodes.length ? (await db.query(
-    `SELECT q.code, q.question_type, q.text,
-            c.code AS cat_code, c.title AS cat_title, c.sort_order AS cat_sort
+    `SELECT q.code, q.question_type, q.text, q.ui_number, q.help_text, q.sort_order,
+            q.min_value, q.max_value,
+            c.code AS cat_code, c.title AS cat_title, c.sort_order AS cat_sort,
+            (SELECT v.expression FROM question_visibility_rules v
+              WHERE v.question_id = q.id AND v.effect = 'SHOW' AND v.active
+              ORDER BY v.priority DESC LIMIT 1) AS visible_when
        FROM questions q
        LEFT JOIN question_categories c ON c.id = q.category_id
-      WHERE q.code = ANY($1)`, [qCodes])).rows : [];
+      WHERE q.code = ANY($1)
+      ORDER BY c.sort_order NULLS LAST, q.sort_order`, [qCodes])).rows : [];
   const optRows = qCodes.length ? (await db.query(
     `SELECT q.code AS qcode, o.value, o.label FROM question_options o
        JOIN questions q ON q.id = o.question_id
@@ -74,6 +81,11 @@ export async function loadCatalogForClient(db: Pool, ruleVersionId: string): Pro
   const questions = qRows.map((q) => ({
     code: q.code, type: q.question_type, text: q.text, options: optByQ.get(q.code) ?? [],
     ...(q.cat_title ? { category: q.cat_title } : {}),
+    ...(q.ui_number ? { ui_number: q.ui_number } : {}),
+    ...(q.help_text ? { help_text: q.help_text } : {}),
+    ...(q.min_value != null ? { min: Number(q.min_value) } : {}),
+    ...(q.max_value != null ? { max: Number(q.max_value) } : {}),
+    ...(q.visible_when ? { visible_when: q.visible_when } : {}),
   }));
 
   // Erhebungs-/Anzeigestruktur: geordnete, eindeutige Kategorienliste.
@@ -87,7 +99,9 @@ export async function loadCatalogForClient(db: Pool, ruleVersionId: string): Pro
 
   const hqByHaz = new Map<string, any[]>();
   for (const r of hqRows) (hqByHaz.get(r.hazard_code) ?? hqByHaz.set(r.hazard_code, []).get(r.hazard_code))!
-    .push({ question: r.question_code, role: r.role, required_mode: r.required_mode });
+    .push({ question: r.question_code, role: r.role, required_mode: r.required_mode,
+            ...(r.required_expression ? { required_when: r.required_expression } : {}),
+            ...(r.applicable_expression ? { applicable_when: r.applicable_expression } : {}) });
   const srcByHaz = new Map<string, any[]>();
   for (const s of srcRows) (srcByHaz.get(s.hazard_code) ?? srcByHaz.set(s.hazard_code, []).get(s.hazard_code))!
     .push({ type: s.type, document: s.document, ...(s.section ? { section: s.section } : {}) });
@@ -95,6 +109,8 @@ export async function loadCatalogForClient(db: Pool, ruleVersionId: string): Pro
     code: h.code, domain: h.domain, title: h.title, description: h.description ?? undefined,
     category: h.category ?? undefined, aggregation_type: h.aggregation_type,
     evaluation_mode: h.evaluation_mode, not_implemented: h.not_implemented,
+    ...(h.hazard_factor ? { hazard_factor: h.hazard_factor } : {}),
+    ...(h.person_groups ? { person_groups: h.person_groups } : {}),
     questions: hqByHaz.get(h.code) ?? [], sources: srcByHaz.get(h.code) ?? [],
   }));
 

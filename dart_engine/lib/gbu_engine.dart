@@ -71,12 +71,16 @@ class HazardQuestion {
   final String role; // APPLICABILITY/TRIGGER/COMPENSATION/MODIFIER/ACCESS_FACTOR/OPTIONAL/DOCUMENTATION
   final String requiredMode; // NEVER | ALWAYS | CONDITIONAL
   final Map<String, dynamic>? requiredWhen;
+  /// Nur bei role = APPLICABILITY: Gefährdung anwendbar, wenn der Ausdruck
+  /// wahr ist. Fehlt er, gilt die boolesche Regel (Nein -> NOT_APPLICABLE).
+  final Map<String, dynamic>? applicableWhen;
 
   const HazardQuestion({
     required this.question,
     required this.role,
     this.requiredMode = 'NEVER',
     this.requiredWhen,
+    this.applicableWhen,
   });
 
   factory HazardQuestion.fromJson(Map<String, dynamic> j) => HazardQuestion(
@@ -84,6 +88,7 @@ class HazardQuestion {
         role: j['role'] as String,
         requiredMode: (j['required_mode'] as String?) ?? 'NEVER',
         requiredWhen: (j['required_when'] as Map?)?.cast<String, dynamic>(),
+        applicableWhen: (j['applicable_when'] as Map?)?.cast<String, dynamic>(),
       );
 }
 
@@ -98,6 +103,9 @@ class Hazard {
   final bool notImplemented;
   final List<HazardQuestion> questions;
   final List<SourceRef> sources; // Norm-/Quellenbezug (Anzeige)
+  final String? hazardFactor; // Gefährdungsfaktor (Anzeige/Bericht)
+  final List<String> personGroups; // betroffene Personengruppen
+  final List<String> reviewIds; // Klärungs-IDs (fachliche Gegenlesung)
 
   const Hazard({
     required this.code,
@@ -110,6 +118,9 @@ class Hazard {
     this.notImplemented = false,
     this.questions = const [],
     this.sources = const [],
+    this.hazardFactor,
+    this.personGroups = const [],
+    this.reviewIds = const [],
   });
 
   factory Hazard.fromJson(Map<String, dynamic> j) => Hazard(
@@ -127,6 +138,13 @@ class Hazard {
         sources: ((j['sources'] as List?) ?? const [])
             .map((e) => SourceRef.fromJson((e as Map).cast<String, dynamic>()))
             .toList(),
+        hazardFactor: j['hazard_factor'] as String?,
+        personGroups: ((j['person_groups'] as List?) ?? const [])
+            .map((e) => e.toString())
+            .toList(),
+        reviewIds: ((j['review_ids'] as List?) ?? const [])
+            .map((e) => e.toString())
+            .toList(),
       );
 }
 
@@ -140,6 +158,8 @@ class Rule {
   final String? aggregation;
   final String origin; // RECONSTRUCTED_ORIGINAL/NORM_DERIVED/OWN_RULE
   final List<MeasureBinding> measures; // Maßnahmen dieser Regel (Anzeige)
+  final String? evidence; // HIGH_CONFIDENCE/INFERRED/HYPOTHESIS/DIRECT
+  final String? notes; // Hinweistext zur Regel (Anzeige)
 
   const Rule({
     required this.hazard,
@@ -151,6 +171,8 @@ class Rule {
     this.aggregation,
     this.origin = 'RECONSTRUCTED_ORIGINAL',
     this.measures = const [],
+    this.evidence,
+    this.notes,
   });
 
   factory Rule.fromJson(Map<String, dynamic> j) => Rule(
@@ -165,6 +187,8 @@ class Rule {
         measures: ((j['measures'] as List?) ?? const [])
             .map((e) => MeasureBinding.fromJson((e as Map).cast<String, dynamic>()))
             .toList(),
+        evidence: j['evidence'] as String?,
+        notes: j['notes'] as String?,
       );
 }
 
@@ -180,12 +204,29 @@ class OptionDef {
 /// Definition einer Frage inkl. Typ, Antwortoptionen und Kategorie.
 class QuestionDef {
   final String code;
-  final String type; // YES_NO/SELECT/…
+  final String type; // YES_NO/SELECT/NUMBER/…
   final String? text;
   final String? category; // Erhebungs-/Anzeigestruktur (Titel)
   final List<OptionDef> options;
-  const QuestionDef(
-      {required this.code, required this.type, this.text, this.category, this.options = const []});
+  final String? uiNumber; // Anzeige-Nummer im Fragebogen (z. B. "8.10")
+  final String? helpText;
+  /// Sichtbarkeitsregel (Ausdruck über andere Antworten); null = immer sichtbar.
+  final Map<String, dynamic>? visibleWhen;
+  /// NUMBER: fachlich plausibler Wertebereich (Eingabegrenzen).
+  final num? min;
+  final num? max;
+  const QuestionDef({
+    required this.code,
+    required this.type,
+    this.text,
+    this.category,
+    this.options = const [],
+    this.uiNumber,
+    this.helpText,
+    this.visibleWhen,
+    this.min,
+    this.max,
+  });
   factory QuestionDef.fromJson(Map<String, dynamic> j) => QuestionDef(
         code: j['code'] as String,
         type: (j['type'] as String?) ?? 'YES_NO',
@@ -194,7 +235,16 @@ class QuestionDef {
         options: ((j['options'] as List?) ?? const [])
             .map((e) => OptionDef.fromJson((e as Map).cast<String, dynamic>()))
             .toList(),
+        uiNumber: j['ui_number'] as String?,
+        helpText: j['help_text'] as String?,
+        visibleWhen: (j['visible_when'] as Map?)?.cast<String, dynamic>(),
+        min: j['min'] as num?,
+        max: j['max'] as num?,
       );
+
+  /// true, wenn die Frage bei den gegebenen Antworten sichtbar ist.
+  bool isVisible(AnswerMap answers) =>
+      visibleWhen == null || evalExpression(visibleWhen!, answers);
 }
 
 /// Erhebungs-/Anzeigekategorie (Gruppierung der Prüfpunkte).
@@ -317,6 +367,20 @@ class EvaluationResult {
   final RiskStatus status;
   final RiskStatus automaticStatus;
   final String? matchedRule;
+  /// Regeln, deren Maßnahmen gelten (Gewinner zuerst). Bei aggregation_type
+  /// NONE nur der Gewinner – niedrigere Prioritäten sind bewusst übersteuert
+  /// (Kompensation). Bei MAXIMUM/ANY zusätzlich alle weiteren risikotragenden
+  /// Treffer (unabhängige Mängel derselben Gefährdung).
+  final List<String> matchedRules;
+  /// Zutreffende Befundregeln (LOW/MEDIUM/HIGH), deren Maßnahmen nicht gelten,
+  /// weil der Gewinner sie übersteuert – nur zur Nachvollziehbarkeit.
+  final List<String> overriddenRules;
+  /// true: keine Regel traf zu, obwohl alle Pflichtfragen beantwortet sind –
+  /// Daten-/Regeldefekt; Status ist dann INCOMPLETE (fail-closed).
+  final bool ruleGap;
+  /// true: NO_RISK nur, weil keine Regel passt und die Gefährdung keine
+  /// ausdrückliche NO_RISK-Regel kennt (Altstil / Rekonstruktion).
+  final bool implicitNoRisk;
   final Map<String, dynamic> inputSnapshot;
 
   const EvaluationResult({
@@ -324,6 +388,10 @@ class EvaluationResult {
     required this.status,
     required this.automaticStatus,
     required this.matchedRule,
+    this.matchedRules = const [],
+    this.overriddenRules = const [],
+    this.ruleGap = false,
+    this.implicitNoRisk = false,
     required this.inputSnapshot,
   });
 }
@@ -339,6 +407,9 @@ class EvaluateOptions {
 
 bool _isAnswered(AnswerMap answers, String q) =>
     answers.containsKey(q) && answers[q] != null;
+
+/// Öffentliche Variante von [_isAnswered] für Oberflächen (Fortschritt).
+bool isAnswered(AnswerMap answers, String q) => _isAnswered(answers, q);
 
 /// „Ausdrückliches Nein" für Applicability-Fragen.
 bool _isNegative(dynamic v) {
@@ -427,7 +498,11 @@ EvaluationResult evaluateHazard(
 }) {
   final snapshotKeys = <String>{for (final q in hazard.questions) q.question};
 
-  EvaluationResult build(RiskStatus status, String? matched) {
+  EvaluationResult build(RiskStatus status, String? matched,
+      [List<String> all = const [],
+      List<String> overridden = const [],
+      bool gap = false,
+      bool implicit = false]) {
     final snap = <String, dynamic>{};
     for (final k in snapshotKeys) {
       if (_isAnswered(answers, k)) snap[k] = answers[k];
@@ -437,6 +512,10 @@ EvaluationResult evaluateHazard(
       status: status,
       automaticStatus: status,
       matchedRule: matched,
+      matchedRules: all,
+      overriddenRules: overridden,
+      ruleGap: gap,
+      implicitNoRisk: implicit,
       inputSnapshot: snap,
     );
   }
@@ -445,13 +524,28 @@ EvaluationResult evaluateHazard(
   if (hazard.notImplemented) return build(RiskStatus.notApplicable, null);
 
   // 1) Applicability
+  //    a) mit Ausdruck (applicable_when): falsch -> NOT_APPLICABLE, sofern alle
+  //       referenzierten Fragen beantwortet sind, sonst INCOMPLETE.
+  //    b) ohne Ausdruck: boolesche Regel (Nein -> NOT_APPLICABLE, leer -> INCOMPLETE).
   final appQs = hazard.questions.where((q) => q.role == 'APPLICABILITY');
   for (final q in appQs) {
+    final aw = q.applicableWhen;
+    if (aw != null) {
+      if (evalExpression(aw, answers)) continue;
+      final refs = <String>{};
+      _collectQuestions(aw, refs);
+      snapshotKeys.addAll(refs);
+      for (final k in refs) {
+        if (!_isAnswered(answers, k)) return build(RiskStatus.incomplete, null);
+      }
+      return build(RiskStatus.notApplicable, null);
+    }
     if (_isAnswered(answers, q.question) && _isNegative(answers[q.question])) {
       return build(RiskStatus.notApplicable, null);
     }
   }
   for (final q in appQs) {
+    if (q.applicableWhen != null) continue;
     if (!_isAnswered(answers, q.question)) return build(RiskStatus.incomplete, null);
   }
 
@@ -478,7 +572,16 @@ EvaluationResult evaluateHazard(
   final matching =
       applicable.where((r) => evalExpression(r.condition, answers)).toList();
 
-  if (matching.isEmpty) return build(RiskStatus.noRisk, null);
+  // Keine Regel passt, obwohl alle Pflichtfragen beantwortet sind: mit
+  // ausdrücklicher NO_RISK-Regel ist das eine Regellücke (Defekt) -> INCOMPLETE
+  // + ruleGap (fail-closed); ohne jede NO_RISK-Regel (Altstil, Rekonstruktion)
+  // weiterhin NO_RISK + implicitNoRisk.
+  if (matching.isEmpty) {
+    final explicitNoRisk = rules.any((r) => r.result == RiskStatus.noRisk);
+    return explicitNoRisk
+        ? build(RiskStatus.incomplete, null, const [], const [], true)
+        : build(RiskStatus.noRisk, null, const [], const [], false, true);
+  }
 
   // 4) Aggregation / höchste Priorität
   final hazardAgg = hazard.aggregationType;
@@ -496,7 +599,22 @@ EvaluationResult evaluateHazard(
     _collectQuestions(winner.applicability!, snapshotKeys);
   }
   _collectQuestions(winner.condition, snapshotKeys);
-  return build(winner.result, winner.code);
+  final others = matching.where((r) => r != winner).toList()
+    ..sort((a, b) => _severity[b.result]!.compareTo(_severity[a.result]!));
+  // Maßnahmen: bei NONE nur der Gewinner (Priorität = bewusste Übersteuerung),
+  // bei MAXIMUM/ANY alle weiteren risikotragenden Treffer.
+  final merge = (hazardAgg == 'MAXIMUM' || hazardAgg == 'ANY') &&
+      _severity[winner.result]! > 0;
+  final effective =
+      merge ? others.where((r) => _severity[r.result]! > 0).toList() : <Rule>[];
+  // Übersteuert = zutreffende Befundregeln, deren Maßnahmen nicht gelten; die
+  // Kein-Risiko-Auffangregel ist kein Befund.
+  final overridden = others
+      .where((r) => !effective.contains(r) && _severity[r.result]! > 0)
+      .map((r) => r.code)
+      .toList();
+  return build(winner.result, winner.code,
+      [winner.code, ...effective.map((r) => r.code)], overridden);
 }
 
 /// Wertet alle Gefährdungen des Regelwerks aus.
@@ -522,4 +640,18 @@ Map<RiskStatus, int> summarize(List<EvaluationResult> results) {
     out[r.status] = out[r.status]! + 1;
   }
   return out;
+}
+
+/// Antworten, die in der Oberfläche als „beantwortet" zählen: nur sichtbare
+/// Fragen. Liefert (beantwortet, sichtbar) für die Fortschrittsanzeige.
+(int, int) answeredProgress(Ruleset rs, AnswerMap answers,
+    {String? category}) {
+  var done = 0, total = 0;
+  for (final q in rs.questions) {
+    if (category != null && q.category != category) continue;
+    if (!q.isVisible(answers)) continue;
+    total++;
+    if (_isAnswered(answers, q.code)) done++;
+  }
+  return (done, total);
 }

@@ -26,6 +26,7 @@ export const CATALOG_FILES = [
   'norm_en8141.json',
   'norm_cyber_voll.json',
   'norm_cyber_minimal.json',
+  'norm_81_20_mf.json',
 ];
 
 export async function applySchema(db: any): Promise<void> {
@@ -36,6 +37,22 @@ export async function applySchema(db: any): Promise<void> {
     sql = `CREATE SCHEMA IF NOT EXISTS ${schema};\nSET search_path TO ${schema}, public;\n${sql}`;
   }
   await db.query(sql);
+}
+
+/// Idempotente Spalten-Erweiterungen für bereits angelegte Datenbanken
+/// (entspricht dem Migrationsblock am Ende von gbu_engine_schema.sql).
+export const MIGRATIONS = [
+  'ALTER TABLE hazards          ADD COLUMN IF NOT EXISTS hazard_factor text',
+  'ALTER TABLE hazards          ADD COLUMN IF NOT EXISTS person_groups text[]',
+  'ALTER TABLE hazard_questions ADD COLUMN IF NOT EXISTS applicable_expression jsonb',
+  'ALTER TABLE questions        ADD COLUMN IF NOT EXISTS min_value numeric',
+  'ALTER TABLE questions        ADD COLUMN IF NOT EXISTS max_value numeric',
+];
+
+export async function applyMigrations(db: any): Promise<void> {
+  const schema = engineSchema();
+  if (schema) await db.query(`SET search_path TO ${schema}, public`);
+  for (const sql of MIGRATIONS) await db.query(sql);
 }
 
 export async function seedCatalogs(db: any, files: string[] = CATALOG_FILES) {
@@ -61,6 +78,8 @@ export async function bootstrapDb(
   if (!reg.rows[0].t) {
     await applySchema(db);
     schemaCreated = true;
+  } else {
+    await applyMigrations(db);
   }
   // Seeden, solange nicht alle Kataloge vorhanden sind (fängt einen zuvor
   // abgebrochenen Seed-Lauf ab) – oder erzwungen bei force. loadSeedIntoDb ist
@@ -85,6 +104,8 @@ if (isEntry) {
       // eslint-disable-next-line no-console
       console.log('Schema wird eingespielt …');
       await applySchema(client);
+    } else {
+      await applyMigrations(client);
     }
     const res = await seedCatalogs(client);
     for (const r of res) {

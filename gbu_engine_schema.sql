@@ -264,6 +264,8 @@ CREATE TABLE questions (
     question_type    question_type NOT NULL,
     required_default boolean NOT NULL DEFAULT false,
     help_text        text,
+    min_value        numeric,                    -- NUMBER: plausibler Wertebereich (UI-Eingabegrenze)
+    max_value        numeric,
     help_media_id    uuid,                       -- optionale Grafik (Media-Store extern)
     active           boolean NOT NULL DEFAULT true,
     active_from      varchar(40),                -- Regelversion, ab der die Frage gilt
@@ -352,6 +354,8 @@ CREATE TABLE hazards (
     evaluation_mode    evaluation_mode  NOT NULL DEFAULT 'STANDARD',
     active             boolean NOT NULL DEFAULT true,
     not_implemented    boolean NOT NULL DEFAULT false, -- z. B. MC13 im Original
+    hazard_factor      text,                          -- Gefährdungsfaktor (ISO 12100 / GDA), Anzeige
+    person_groups      text[],                        -- betroffene Personengruppen, Anzeige
     default_sort_order integer NOT NULL DEFAULT 0,
     created_at         timestamptz NOT NULL DEFAULT now(),
     updated_at         timestamptz NOT NULL DEFAULT now()
@@ -372,6 +376,10 @@ CREATE TABLE hazard_questions (
     -- fehlender Antwort -> Gefährdung INCOMPLETE (nie NO_RISK).
     required_mode       required_mode NOT NULL DEFAULT 'NEVER',
     required_expression jsonb,        -- nur bei required_mode = CONDITIONAL
+    -- Nur bei role = APPLICABILITY: Gefährdung anwendbar, wenn der Ausdruck wahr
+    -- ist (z. B. Aufzugsart IN [seil, trommel]). NULL = boolesche Regel
+    -- (ausdrückliches Nein -> NOT_APPLICABLE).
+    applicable_expression jsonb,
     sort_order          integer NOT NULL DEFAULT 0,
     notes               text,
     UNIQUE (hazard_id, question_id, role),
@@ -702,3 +710,12 @@ CREATE INDEX idx_rule_change_rule ON rule_change_log(rule_id);
 --   answers, question_visibility_rules, question_options, questions,
 --   question_categories, assessments, rule_versions, assets, users, tenants
 --   und danach die ENUM-Typen (DROP TYPE …).
+
+-- ----------------------------------------------------------------------------
+-- Migrationen (idempotent; werden bei jedem Bootstrap ausgeführt, siehe
+-- seed_catalogs.ts applyMigrations). Für Datenbanken, die vor der jeweiligen
+-- Erweiterung angelegt wurden.
+-- ----------------------------------------------------------------------------
+ALTER TABLE hazards          ADD COLUMN IF NOT EXISTS hazard_factor text;
+ALTER TABLE hazards          ADD COLUMN IF NOT EXISTS person_groups text[];
+ALTER TABLE hazard_questions ADD COLUMN IF NOT EXISTS applicable_expression jsonb;

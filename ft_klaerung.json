@@ -1,0 +1,242 @@
+[
+ {
+  "id": "K-B01",
+  "bereich": "Betrieb/Zugang",
+  "thema": "Stauraum",
+  "frage": "Fehlender freier Stauraum am Abgang: Mittel oder Hoch?",
+  "vorschlag": "Mittel; Hoch, wenn zusätzlich Publikumsverkehr und eine Engstelle unmittelbar am Abgang zusammentreffen",
+  "alternativen": "Durchgängig Hoch (Gefahr des Personenrückstaus mit Sturzfolge)",
+  "grund": "ASR A1.8 fordert den Stauraum, quantifiziert die Folge aber nicht.",
+  "hazards": [
+   "FT-B01"
+  ]
+ },
+ {
+  "id": "K-B02",
+  "bereich": "Betrieb/Zugang",
+  "thema": "Warenpräsentation im Zugang",
+  "frage": "Warenpräsentation und Aufsteller im Zu-/Abgangsbereich: eigene Stufe oder nur Dokumentation?",
+  "vorschlag": "Mittel (Sturz- und Staugefahr)",
+  "alternativen": "Niedrig, solange die geforderte freie Breite eingehalten bleibt",
+  "grund": "",
+  "hazards": [
+   "FT-B02"
+  ]
+ },
+ {
+  "id": "K-B03",
+  "bereich": "Betrieb/Zugang",
+  "thema": "Kreuzungshöhe",
+  "frage": "Freie Höhe unter 2,30 m ohne wirksamen Abweiser: Hoch oder Mittel?",
+  "vorschlag": "Hoch (Kopfanprall, Quetschgefahr an der Kreuzungsstelle)",
+  "alternativen": "Mittel, wenn die Unterschreitung gering ist und der Bereich gekennzeichnet ist",
+  "grund": "EN 115-1 fordert 2,30 m; für Bestandsanlagen ist die Kompensation über Abweiser üblich.",
+  "hazards": [
+   "FT-B05"
+  ]
+ },
+ {
+  "id": "K-B04",
+  "bereich": "Betrieb/Zugang",
+  "thema": "Besteigen der Balustrade",
+  "frage": "Besteigbare Balustrade ohne Schutzmaßnahme: Hoch auch ohne Kindernutzung?",
+  "vorschlag": "Hoch bei erwarteter Kindernutzung, sonst Mittel",
+  "alternativen": "Immer Hoch (Absturz aus großer Höhe)",
+  "grund": "Die Unfallschwerpunkte betreffen ganz überwiegend Kinder und Jugendliche.",
+  "hazards": [
+   "FT-B06"
+  ]
+ },
+ {
+  "id": "K-B05",
+  "bereich": "Betrieb/Anlage",
+  "thema": "Sockelbürsten",
+  "frage": "Fehlende Sockelbürsten: Mittel (DGUV 209-085 stuft sie im Instandhaltungs-kontext gelb ein) oder Hoch aus Nutzersicht?",
+  "vorschlag": "Mittel",
+  "alternativen": "Hoch bei erwarteter Kindernutzung",
+  "grund": "Die DGUV-Einstufung gilt für den Monteur, nicht für Fahrgäste; der Einzug weicher Schuhe und Kinderfüße ist der typische Unfallhergang.",
+  "hazards": [
+   "FT-B12"
+  ]
+ },
+ {
+  "id": "K-B06",
+  "bereich": "Betrieb/Anlage",
+  "thema": "Kammzähne",
+  "frage": "Abgebrochene Kammzähne: Mittel wie in DGUV 209-085 Anhang 2, oder Hoch, solange die Kammplattenabschaltung wirksam ist?",
+  "vorschlag": "Mittel, solange die Kammplattenabschaltung geprüft und wirksam ist; ohne wirksame Abschaltung Hoch",
+  "alternativen": "Durchgängig Hoch",
+  "grund": "DGUV bewertet den Arbeitsplatz des Monteurs; für Fahrgäste ist der Kamm die häufigste Einzugsstelle.",
+  "hazards": [
+   "FT-B17"
+  ]
+ },
+ {
+  "id": "K-B07",
+  "bereich": "Betrieb/Anlage",
+  "thema": "Handlaufgleichlauf",
+  "frage": "Spürbarer Vor-/Nachlauf des Handlaufs: eigene Stufe Mittel oder nur Hinweis?",
+  "vorschlag": "Mittel",
+  "alternativen": "Niedrig, wenn die Abweichung gering ist und keine Sturzfolge droht",
+  "grund": "EN 115-1 fordert Gleichlauf mit enger Toleranz; die Betriebspraxis toleriert kleine Abweichungen.",
+  "hazards": [
+   "FT-B11"
+  ]
+ },
+ {
+  "id": "K-B08",
+  "bereich": "Betrieb/Anlage",
+  "thema": "Stufenspalt",
+  "frage": "Spalt über 4 mm: Mittel oder Hoch?",
+  "vorschlag": "Hoch bei erwarteter Kindernutzung, sonst Mittel",
+  "alternativen": "Immer Hoch (Einzug von Schuhen und Kinderfüßen)",
+  "grund": "",
+  "hazards": [
+   "FT-B16"
+  ]
+ },
+ {
+  "id": "K-B09",
+  "bereich": "Betrieb/Anlage",
+  "thema": "Glasbalustrade",
+  "frage": "Riss oder Sprung in der Glasbalustrade: sofortige Außerbetriebnahme?",
+  "vorschlag": "Hoch mit Sofortmaßnahme Außerbetriebnahme",
+  "alternativen": "Mittel, wenn die Scheibe gesichert und der Bereich abgesperrt ist",
+  "grund": "",
+  "hazards": [
+   "FT-B13"
+  ]
+ },
+ {
+  "id": "K-B10",
+  "bereich": "Betrieb/Anlage",
+  "thema": "Wiederanlauf",
+  "frage": "Automatischer Wiederanlauf nach Störung ohne Kontrolle des Bandes: Hoch?",
+  "vorschlag": "Hoch",
+  "alternativen": "Mittel, wenn die Anlage von einer besetzten Stelle einsehbar ist",
+  "grund": "",
+  "hazards": [
+   "FT-B21"
+  ]
+ },
+ {
+  "id": "K-B11",
+  "bereich": "Betreiberorganisation",
+  "thema": "Prüffrist",
+  "frage": "Prüfabstand über 24 Monate ohne besondere Begründung: Mittel oder Hoch?",
+  "vorschlag": "Mittel; Hoch nur, wenn zusätzlich Mängel aus der letzten Prüfung offen sind",
+  "alternativen": "Hoch (faktisch ungeprüfte Anlage im Publikumsverkehr)",
+  "grund": "Die BetrSichV nennt keine feste Frist; jährlich ist die bewährte Orientierung der DGUV Information 208-028.",
+  "hazards": [
+   "FT-B31"
+  ]
+ },
+ {
+  "id": "K-B12",
+  "bereich": "Betreiberorganisation",
+  "thema": "Fehlende tägliche Kontrolle",
+  "frage": "Keine tägliche Sicht- und Funktionskontrolle: Mittel oder Hoch?",
+  "vorschlag": "Mittel; Hoch bei öffentlich zugänglicher Anlage",
+  "alternativen": "Durchgängig Mittel (organisatorischer Mangel ohne unmittelbare Gefährdung)",
+  "grund": "",
+  "hazards": [
+   "FT-B30"
+  ]
+ },
+ {
+  "id": "K-B13",
+  "bereich": "Betreiberorganisation",
+  "thema": "Reinigung im laufenden Betrieb",
+  "frage": "Reinigung des laufenden Bandes durch Reinigungskräfte: eigene Stufe Hoch?",
+  "vorschlag": "Hoch, wenn die Reinigungskräfte nicht unterwiesen sind; sonst Mittel",
+  "alternativen": "Immer Hoch (Einzugsgefahr an Kamm und Sockel)",
+  "grund": "",
+  "hazards": [
+   "FT-B35"
+  ]
+ },
+ {
+  "id": "K-B14",
+  "bereich": "Betreiberorganisation",
+  "thema": "Dokumentation der Kontrolle",
+  "frage": "Kontrolle wird durchgeführt, aber nicht dokumentiert: Niedrig oder nur Hinweis?",
+  "vorschlag": "Niedrig",
+  "alternativen": "Nur Dokumentation ohne Stufe",
+  "grund": "Ohne Nachweis ist die Durchführung im Schadensfall nicht belegbar.",
+  "hazards": [
+   "FT-B30"
+  ]
+ },
+ {
+  "id": "K-I01",
+  "bereich": "Instandhaltung",
+  "thema": "Absperrung",
+  "frage": "Fehlende Absperrung gegen Publikumsverkehr: Hoch wie in DGUV 209-085?",
+  "vorschlag": "Hoch (Übernahme der DGUV-Einstufung)",
+  "alternativen": "Mittel bei geringem Publikumsaufkommen und ständiger Sichtverbindung",
+  "grund": "DGUV stuft rot ein, weist die Einstufung aber ausdrücklich als Orientierung aus.",
+  "hazards": [
+   "FT-I01"
+  ]
+ },
+ {
+  "id": "K-I02",
+  "bereich": "Instandhaltung",
+  "thema": "Einknopf-Inspektionssteuerung",
+  "frage": "Einknopf-Inspektionssteuerung: Mittel (DGUV) oder Hoch?",
+  "vorschlag": "Mittel (Übernahme der DGUV-Einstufung)",
+  "alternativen": "Hoch, wenn zugleich im geöffneten Band gearbeitet wird",
+  "grund": "",
+  "hazards": [
+   "FT-I30"
+  ]
+ },
+ {
+  "id": "K-I03",
+  "bereich": "Instandhaltung",
+  "thema": "Bandbreite unter 0,80 m",
+  "frage": "Arbeiten im Band unter 0,80 m Breite: Hoch mit Tätigkeitsverbot?",
+  "vorschlag": "Hoch; Arbeiten im Band erst nach zusätzlichen Maßnahmen (z. B. Arbeiten von außen, Demontage weiterer Stufen)",
+  "alternativen": "Mittel, wenn nur kurzzeitig und mit Zustimmungssteuerung gearbeitet wird",
+  "grund": "DGUV führt die Unterschreitung als roten Zustand.",
+  "hazards": [
+   "FT-I31"
+  ]
+ },
+ {
+  "id": "K-I04",
+  "bereich": "Instandhaltung",
+  "thema": "Hauptschalter nicht abschließbar",
+  "frage": "Hauptschalter nicht in Aus-Stellung abschließbar: Hoch oder Mittel?",
+  "vorschlag": "Hoch (entspricht der Festlegung beim Aufzugstyp, K-M02)",
+  "alternativen": "Mittel, wenn der Schalter im abgesperrten Bereich liegt und beaufsichtigt wird",
+  "grund": "Beim mehrfragigen Aufzugstyp wurde Hoch entschieden – Konsistenz prüfen.",
+  "hazards": [
+   "FT-I10"
+  ]
+ },
+ {
+  "id": "K-I05",
+  "bereich": "Instandhaltung",
+  "thema": "Alleinarbeit",
+  "frage": "Alleinarbeit an der geöffneten Anlage ohne Überwachung: Hoch oder Mittel?",
+  "vorschlag": "Hoch bei Arbeiten im geöffneten Band, sonst Mittel",
+  "alternativen": "Durchgängig Mittel",
+  "grund": "Die DGUV-Information nennt Alleinarbeit nicht als eigenen Zustand; die Einstufung ist eigene Festlegung.",
+  "hazards": [
+   "FT-I41"
+  ]
+ },
+ {
+  "id": "K-I06",
+  "bereich": "Instandhaltung",
+  "thema": "Vogelkot und biologische Stoffe",
+  "frage": "Verunreinigung durch Vogelkot oder Nagerbefall in der Station: Mittel?",
+  "vorschlag": "Mittel mit Sofortmaßnahme fachgerechte Reinigung und Atemschutz",
+  "alternativen": "Niedrig, wenn nur kleinflächig",
+  "grund": "",
+  "hazards": [
+   "FT-I25"
+  ]
+ }
+]

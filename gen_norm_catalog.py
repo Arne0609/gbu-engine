@@ -113,6 +113,15 @@ def measure_bindings(measures, sofort, mittel):
     return mb
 
 # ---- Dart-Kataloge parsen --------------------------------------------------
+# Eigene Ergänzungen zu App-Optionen ohne hinterlegte Maßnahme (Review 02.09.2026,
+# Punkt 5): jede Risikooption braucht mindestens eine Maßnahme. Schlüssel = Optionstext.
+ERGAENZUNGEN = {
+    'UCM nicht notwendig, weil kein SR-Modul, 2K-Bremse mit Schalter und statisch bestimmte Lagerung vorhanden': {
+        'sofort': 'Bremsüberwachung und Bremsprüfung im Wartungsumfang halten',
+        'mittel': 'Bei Steuerungs- oder Antriebsmodernisierung UCM-Schutz nach EN 81-20 5.6.7 vorsehen',
+    },
+}
+
 def parse_dart():
     cats = {'81_80': [], '81_20': [], '2026': []}  # type -> list[(key, [opt...])]
     name2type = {'optionen': '81_80', 'optionen81_20': '81_20', 'optionen2026': '2026'}
@@ -144,10 +153,11 @@ def parse_dart():
             ampel = arg(line, 'ampel')
             if text is None:
                 continue
+            ext = ERGAENZUNGEN.get(text, {}) if ampel in ('gelb', 'rot') else {}
             cur_opts.append({
                 'text': text, 'ampel': ampel,
-                'sofort': arg(line, 'sofortMassnahme'),
-                'mittel': arg(line, 'mittelfristigMassnahme'),
+                'sofort': arg(line, 'sofortMassnahme') or ext.get('sofort'),
+                'mittel': arg(line, 'mittelfristigMassnahme') or ext.get('mittel'),
             })
     return cats
 

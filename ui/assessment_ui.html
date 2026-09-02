@@ -14,6 +14,7 @@
   --r-norisk:#2b855a;--r-norisk-bg:#dcefe4;
   --r-na:#6b7684;    --r-na-bg:#e7eaef;
   --r-incomplete:#356aa0; --r-incomplete-bg:#e0e9f4;
+  --review:#8a4bb8; --review-bg:#efe6f7;
   --shadow:0 1px 2px rgba(20,30,45,.06),0 8px 24px rgba(20,30,45,.05);
   --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
   --sans:"IBM Plex Sans",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
@@ -29,6 +30,7 @@
   --r-norisk:#4ec489;--r-norisk-bg:#153027;
   --r-na:#8b97a6;    --r-na-bg:#242d38;
   --r-incomplete:#6ea6e6; --r-incomplete-bg:#152535;
+  --review:#c69cf0; --review-bg:#2d2140;
   --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35);
 }}
 :root[data-theme="dark"]{
@@ -42,36 +44,36 @@
   --r-norisk:#4ec489;--r-norisk-bg:#153027;
   --r-na:#8b97a6;    --r-na-bg:#242d38;
   --r-incomplete:#6ea6e6; --r-incomplete-bg:#152535;
+  --review:#c69cf0; --review-bg:#2d2140;
   --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35);
 }
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);
   font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
-.wrap{max-width:1240px;margin:0 auto;padding:0 20px 64px}
+.wrap{max-width:1320px;margin:0 auto;padding:0 20px 64px}
 h1,h2,h3{margin:0;text-wrap:balance}
 .mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
-.eyebrow{font-size:11px;letter-spacing:.09em;text-transform:uppercase;
-  color:var(--ink-faint);font-weight:600}
+button{font-family:var(--sans)}
 
 /* header */
 header{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--bg) 88%,transparent);
   backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-.head{max-width:1240px;margin:0 auto;padding:14px 20px;display:flex;gap:18px;
+.head{max-width:1320px;margin:0 auto;padding:14px 20px;display:flex;gap:18px;
   align-items:center;flex-wrap:wrap}
 .brand{display:flex;flex-direction:column;gap:1px;margin-right:auto}
 .brand .t{font-weight:700;font-size:18px;letter-spacing:-.01em}
 .brand .s{font-size:12px;color:var(--ink-soft)}
 .brand .s b{color:var(--accent);font-weight:600}
-.ctl{display:flex;align-items:center;gap:8px}
 label.fld{display:flex;flex-direction:column;gap:3px;font-size:11px;
   letter-spacing:.06em;text-transform:uppercase;color:var(--ink-faint);font-weight:600}
-select,.iconbtn{font-family:var(--sans);color:var(--ink);background:var(--surface);
+select,.iconbtn,.btn,input[type=number]{font-family:var(--sans);color:var(--ink);background:var(--surface);
   border:1px solid var(--line-strong);border-radius:8px}
-select.big{padding:8px 30px 8px 11px;font-size:14px;font-weight:500;min-width:260px;
+select.big{padding:8px 30px 8px 11px;font-size:14px;font-weight:500;min-width:280px;
   appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%238592a0' stroke-width='2'><path d='M6 9l6 6 6-6'/></svg>");
   background-repeat:no-repeat;background-position:right 9px center}
 .iconbtn{width:38px;height:38px;display:grid;place-items:center;cursor:pointer;font-size:16px}
-.iconbtn:hover{border-color:var(--accent)}
+.iconbtn:hover,.btn:hover{border-color:var(--accent)}
+.btn{padding:8px 12px;font-size:13px;font-weight:500;cursor:pointer}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 
 /* overview */
@@ -80,8 +82,8 @@ select.big{padding:8px 30px 8px 11px;font-size:14px;font-weight:500;min-width:26
 .ov-top{display:flex;align-items:baseline;gap:14px;padding:14px 18px 0;flex-wrap:wrap}
 .ov-top h2{font-size:15px;font-weight:600}
 .ov-note{font-size:12px;color:var(--ink-faint);margin-left:auto}
-.progress{padding:10px 18px 0;display:flex;align-items:center;gap:12px}
-.bar{flex:1;height:7px;border-radius:99px;background:var(--surface-3);overflow:hidden}
+.progress{padding:10px 18px 0;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.bar{flex:1;min-width:160px;height:7px;border-radius:99px;background:var(--surface-3);overflow:hidden}
 .bar>i{display:block;height:100%;background:var(--accent);border-radius:99px;transition:width .35s ease}
 .progress .n{font-size:12.5px;color:var(--ink-soft);white-space:nowrap}
 .tiles{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--line);
@@ -97,9 +99,13 @@ select.big{padding:8px 30px 8px 11px;font-size:14px;font-weight:500;min-width:26
 
 /* main grid */
 .grid{margin-top:22px;display:grid;grid-template-columns:1fr 360px;gap:22px;align-items:start}
-@media (max-width:900px){.grid{grid-template-columns:1fr}.detail{position:static !important}}
+.grid.multi{grid-template-columns:minmax(0,1fr) minmax(360px,440px)}
+.grid.multi #side{position:sticky;top:82px;max-height:calc(100vh - 96px);overflow:auto;padding-right:2px}
+.grid.multi .detail{position:static}
+.grid.multi .detail .body{max-height:none}
+@media (max-width:980px){.grid,.grid.multi{grid-template-columns:1fr}.detail{position:static !important}}
 
-/* questionnaire */
+/* single-question questionnaire (bestehende Kataloge) */
 .cat{margin-bottom:14px;border:1px solid var(--line);border-radius:12px;background:var(--surface);
   box-shadow:var(--shadow);overflow:hidden}
 .cat>summary{list-style:none;cursor:pointer;padding:12px 16px;display:flex;align-items:center;
@@ -121,7 +127,7 @@ select.big{padding:8px 30px 8px 11px;font-size:14px;font-weight:500;min-width:26
 .pp .q .code{font-family:var(--mono);font-size:11.5px;color:var(--ink-faint);flex:none;margin-top:1px}
 .pp .q .txt{font-size:13.5px;line-height:1.42}
 .pp .row2{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
-.pp select{flex:1;min-width:0;padding:7px 28px 7px 10px;font-size:13px;border-radius:7px;appearance:none;
+.pp select,.qrow select{flex:1;min-width:0;padding:7px 28px 7px 10px;font-size:13px;border-radius:7px;appearance:none;
   background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%238592a0' stroke-width='2'><path d='M6 9l6 6 6-6'/></svg>");
   background-repeat:no-repeat;background-position:right 8px center}
 .badge{font-size:11px;font-weight:600;letter-spacing:.03em;padding:3px 9px;border-radius:99px;
@@ -129,19 +135,69 @@ select.big{padding:8px 30px 8px 11px;font-size:14px;font-weight:500;min-width:26
 .b-high{color:var(--r-high);background:var(--r-high-bg)} .b-medium{color:var(--r-medium);background:var(--r-medium-bg)}
 .b-low{color:var(--r-low);background:var(--r-low-bg)} .b-norisk{color:var(--r-norisk);background:var(--r-norisk-bg)}
 .b-na{color:var(--r-na);background:var(--r-na-bg)} .b-incomplete{color:var(--r-incomplete);background:var(--r-incomplete-bg)}
+.b-review{color:var(--review);background:var(--review-bg)}
+
+/* multi-question questionnaire */
+.tabs{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:12px}
+.tab{border:1px solid var(--line);background:var(--surface);border-radius:99px;padding:6px 12px;
+  font-size:12.5px;font-weight:500;cursor:pointer;color:var(--ink-soft);display:flex;gap:7px;align-items:center}
+.tab.on{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.tab .c{font-family:var(--mono);font-size:10.5px;opacity:.75}
+.qcard{border:1px solid var(--line);border-radius:12px;background:var(--surface);box-shadow:var(--shadow);overflow:hidden}
+.qcard .qh{padding:12px 16px;background:var(--surface-2);font-weight:600;font-size:14px;display:flex;gap:10px;align-items:center}
+.qcard .qh .cnt{margin-left:auto;font-size:11.5px;color:var(--ink-faint);font-weight:500}
+.qrow{padding:12px 16px;border-top:1px solid var(--line);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 14px;align-items:center;
+  transition:background .2s}
+.qrow.hl{background:var(--accent-soft)}
+.qrow .qt{display:flex;gap:9px;align-items:flex-start}
+.qrow .num{font-family:var(--mono);font-size:11px;color:var(--ink-faint);flex:none;min-width:34px;margin-top:2px}
+.qrow .txt{font-size:13.5px;line-height:1.42}
+.qrow .help{font-size:12px;color:var(--ink-faint);margin-top:2px}
+.qrow .aff{display:flex;flex-wrap:wrap;gap:4px;margin-top:5px}
+.chip{font-family:var(--mono);font-size:10px;padding:1px 6px;border-radius:5px;background:var(--surface-3);color:var(--ink-soft);
+  cursor:pointer;border:1px solid transparent}
+.chip:hover{border-color:var(--accent);color:var(--accent)}
+.chip.st-high{color:var(--r-high);background:var(--r-high-bg)} .chip.st-medium{color:var(--r-medium);background:var(--r-medium-bg)}
+.chip.st-low{color:var(--r-low);background:var(--r-low-bg)} .chip.st-norisk{color:var(--r-norisk);background:var(--r-norisk-bg)}
+.chip.st-na{color:var(--r-na);background:var(--r-na-bg)} .chip.st-incomplete{color:var(--r-incomplete);background:var(--r-incomplete-bg)}
+.seg{display:inline-flex;border:1px solid var(--line-strong);border-radius:8px;overflow:hidden}
+.seg button{border:0;background:var(--surface);color:var(--ink-soft);padding:6px 13px;font-size:13px;font-weight:500;cursor:pointer;
+  border-right:1px solid var(--line)}
+.seg button:last-child{border-right:0}
+.seg button.on{background:var(--accent);color:var(--accent-ink)}
+.seg button.clr{color:var(--ink-faint);font-family:var(--mono)}
+.qrow select{min-width:220px;max-width:340px}
+input[type=number]{padding:6px 10px;font-size:13px;width:120px}
+.unit{font-size:12px;color:var(--ink-faint);margin-left:6px}
+.hid{display:none}
+
+/* hazard list (multi) */
+.hlist{border:1px solid var(--line);border-radius:14px;background:var(--surface);box-shadow:var(--shadow);overflow:hidden;margin-top:16px}
+.hlist .hh{padding:12px 16px;background:var(--surface-2);font-weight:600;font-size:14px;display:flex;align-items:center;gap:10px}
+.hlist .hh .cnt{margin-left:auto;font-size:11.5px;color:var(--ink-faint);font-weight:500}
+.hgrp{border-top:1px solid var(--line)}
+.hgrp>summary{list-style:none;cursor:pointer;padding:9px 16px;font-size:12.5px;font-weight:600;color:var(--ink-soft);
+  display:flex;align-items:center;gap:8px}
+.hgrp>summary::-webkit-details-marker{display:none}
+.hgrp>summary .cnt{margin-left:auto;font-weight:500;color:var(--ink-faint);font-family:var(--mono);font-size:11px}
+.hrow{display:flex;gap:9px;align-items:center;padding:8px 16px 8px 14px;border-top:1px solid var(--line);cursor:pointer;
+  border-left:3px solid transparent;font-size:13px}
+.hrow:hover{background:var(--surface-2)}
+.hrow.sel{background:var(--accent-soft);border-left-color:var(--accent)}
+.hrow .code{font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);flex:none;min-width:58px}
+.hrow .t{flex:1;line-height:1.35}
+.hrow .badge{font-size:10px;padding:2px 7px}
 
 /* detail */
 .detail{position:sticky;top:82px;border:1px solid var(--line);border-radius:14px;background:var(--surface);
   box-shadow:var(--shadow);overflow:hidden}
-.detail .dh{padding:14px 16px;border-bottom:1px solid var(--line);
-  border-top:4px solid var(--dc,var(--accent))}
+.detail .dh{padding:14px 16px;border-bottom:1px solid var(--line);border-top:4px solid var(--dc,var(--accent))}
 .detail .dh .code{font-family:var(--mono);font-size:12px;color:var(--ink-faint)}
 .detail .dh h3{font-size:15px;font-weight:600;margin-top:3px;line-height:1.35}
-.detail .dh .stat{margin-top:10px;display:inline-flex;align-items:center;gap:7px;font-weight:600;font-size:13px}
+.detail .dh .stat{margin-top:10px;display:flex;align-items:center;gap:8px;font-weight:600;font-size:13px;flex-wrap:wrap}
 .detail .dh .stat .pill{width:11px;height:11px;border-radius:99px;background:var(--dc)}
-.detail .body{padding:14px 16px;display:flex;flex-direction:column;gap:15px}
-.sec .h{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);
-  font-weight:600;margin-bottom:6px}
+.detail .body{padding:14px 16px;display:flex;flex-direction:column;gap:14px;max-height:calc(100vh - 220px);overflow:auto}
+.sec .h{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);font-weight:600;margin-bottom:6px}
 .sec .val{font-size:13.5px;line-height:1.5;color:var(--ink)}
 .sec .val.soft{color:var(--ink-soft)}
 .mlist{display:flex;flex-direction:column;gap:8px}
@@ -155,10 +211,31 @@ select.big{padding:8px 30px 8px 11px;font-size:14px;font-weight:500;min-width:26
   background:var(--accent);border-radius:4px;padding:2px 5px}
 .src .sec2{color:var(--ink-soft)}
 .empty{color:var(--ink-faint);font-size:13px;font-style:italic}
+.qq{display:flex;flex-direction:column;gap:7px;font-size:12.5px}
+.qq .qi{display:grid;grid-template-columns:max-content minmax(0,1fr) max-content;gap:8px;align-items:start}
+.qq .role{font-family:var(--mono);font-size:9.5px;font-weight:600;padding:2px 5px;border-radius:4px;background:var(--surface-3);color:var(--ink-soft);margin-top:2px;white-space:nowrap}
+.qq .role.r-APPLICABILITY{color:var(--r-na)} .qq .role.r-TRIGGER{color:var(--r-high)} .qq .role.r-COMPENSATION{color:var(--r-norisk)}
+.qq .role.r-MODIFIER{color:var(--r-medium)}
+.qq .qtx{cursor:pointer;line-height:1.4}
+.qq .qtx:hover{color:var(--accent)}
+.qq .qtx .n{font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);margin-right:5px}
+.qq .ans{font-family:var(--mono);font-size:11.5px;color:var(--ink-soft);max-width:140px;text-align:right;line-height:1.35;margin-top:2px}
+.qq .ans.miss{color:var(--r-incomplete);font-style:italic}
+.qq .req{color:var(--r-incomplete);font-size:9px;vertical-align:super}
+.mlist .rc{font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);margin-left:6px}
+input[type=number].bad{border-color:var(--r-high);background:var(--r-high-bg)}
+.dh .more{font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);font-weight:400}
+.hgrp>summary .badge,.cat>summary .badge{font-size:10px;padding:1px 6px}
+.kl{border:1px solid var(--review);background:var(--review-bg);border-radius:9px;padding:9px 11px;font-size:12.5px;line-height:1.45}
+.kl b{color:var(--review);font-family:var(--mono);font-size:11px}
+.kl .alt{color:var(--ink-soft);margin-top:3px}
+.rule{font-size:12px;color:var(--ink-soft);font-family:var(--mono)}
 .legend{font-size:11.5px;color:var(--ink-faint);margin-top:10px;padding:0 2px;line-height:1.6}
-footer{margin-top:26px;font-size:12px;color:var(--ink-faint);line-height:1.6;
-  border-top:1px solid var(--line);padding-top:14px}
+footer{margin-top:26px;font-size:12px;color:var(--ink-faint);line-height:1.6;border-top:1px solid var(--line);padding-top:14px}
 footer b{color:var(--ink-soft);font-weight:600}
+.toolbar{display:flex;gap:8px;align-items:center;margin:0 0 12px;flex-wrap:wrap}
+.toolbar .sp{flex:1}
+.toolbar .info{font-size:12px;color:var(--ink-faint)}
 </style>
 
 <header>
@@ -183,126 +260,167 @@ footer b{color:var(--ink-soft);font-weight:600}
     <div class="progress">
       <div class="bar"><i id="progBar" style="width:0"></i></div>
       <span class="n mono" id="progTxt">0 / 0</span>
+      <span class="n mono" id="progQ"></span>
     </div>
     <div class="tiles" id="tiles"></div>
   </section>
 
-  <div class="grid">
+  <div class="grid" id="grid">
     <main id="quest" aria-label="Fragebogen"></main>
-    <aside class="detail" id="detail" aria-live="polite"></aside>
+    <aside id="side">
+      <div class="detail" id="detail" aria-live="polite"></div>
+      <div class="hlist hid" id="hlist"></div>
+    </aside>
   </div>
 
   <p class="legend" id="legend"></p>
   <footer>
     <b>Prototyp.</b> Dieselbe Auswertungslogik wie der geprüfte Referenz-Evaluator
     (Applicability → Pflichtfrage → Regel → Aggregation). Eine noch nicht bewertete
-    Gefährdung ist <b>Unvollständig</b>, nicht „Kein Risiko". Kataloge, Maßnahmen und
-    Normbezüge stammen aus den erzeugten Engine-Seeds (<span class="mono">origin = NORM_DERIVED</span>).
+    Gefährdung ist <b>Unvollständig</b>, nicht „Kein Risiko". Beim mehrfragigen Typ
+    (<span class="mono">MF</span>) filtern Anlagenmerkmale die Gefährdungen
+    (<b>Nicht zutreffend</b>), mehrere Fragen wirken auf eine Gefährdung, und
+    <span class="badge b-review">Klären</span> markiert offene Punkte der fachlichen Gegenlesung.
   </footer>
 </div>
 
 <script>
 const CATALOGS = __CATALOGS__;
+const KLAERUNG = __KLAERUNG__;
 
-/* ---------- Evaluator (Port von evaluator.ts) ---------- */
+/* ---------- Evaluator (Port von evaluator.ts, inkl. applicable_when) ---------- */
 const SEV={INCOMPLETE:-2,NOT_APPLICABLE:-1,NO_RISK:0,LOW:1,MEDIUM:2,HIGH:3};
 const answered=(a,q)=>Object.prototype.hasOwnProperty.call(a,q)&&a[q]!==null&&a[q]!==undefined&&a[q]!=="";
+const isNeg=v=>v===false||v===0||(typeof v==='string'&&['nein','no','false','na'].includes(v.toLowerCase()));
 function evalLeaf(l,a){const q=l.question,op=l.operator,ok=answered(a,q),v=ok?a[q]:null,e=l.value;
   switch(op){case'ANSWERED':return ok;case'NOT_ANSWERED':return !ok;
     case'EQ':return ok&&v===e;case'NEQ':return ok&&v!==e;
+    case'GT':return ok&&typeof v==='number'&&v>e;case'GTE':return ok&&typeof v==='number'&&v>=e;
+    case'LT':return ok&&typeof v==='number'&&v<e;case'LTE':return ok&&typeof v==='number'&&v<=e;
     case'IN':return ok&&Array.isArray(e)&&e.includes(v);
     case'NOT_IN':return ok&&Array.isArray(e)&&!e.includes(v);
     default:return false;}}
 function ev(x,a){if('all'in x)return x.all.every(e=>ev(e,a));
   if('any'in x)return x.any.some(e=>ev(e,a));if('not'in x)return !ev(x.not,a);return evalLeaf(x,a);}
+function collectQ(x,into){if(!x)return;if('all'in x){x.all.forEach(e=>collectQ(e,into));return;}
+  if('any'in x){x.any.forEach(e=>collectQ(e,into));return;}if('not'in x){collectQ(x.not,into);return;}into.add(x.question);}
 function evalHazard(h,rules,a){
   const qs=h.questions||[];
   const app=qs.filter(q=>q.role==='APPLICABILITY');
-  for(const q of app)if(answered(a,q.question)&&(a[q.question]===false||a[q.question]==='na'))return{status:'NOT_APPLICABLE',rule:null};
-  for(const q of app)if(!answered(a,q.question))return{status:'INCOMPLETE',rule:null};
+  for(const q of app){
+    if(q.applicable_when){
+      if(ev(q.applicable_when,a))continue;
+      const refs=new Set();collectQ(q.applicable_when,refs);
+      for(const k of refs)if(!answered(a,k))return{status:'INCOMPLETE',rule:null,rules:[]};
+      return{status:'NOT_APPLICABLE',rule:null,rules:[]};
+    }
+    if(answered(a,q.question)&&isNeg(a[q.question]))return{status:'NOT_APPLICABLE',rule:null,rules:[]};
+  }
+  for(const q of app){if(q.applicable_when)continue;if(!answered(a,q.question))return{status:'INCOMPLETE',rule:null,rules:[]};}
   for(const q of qs){const m=q.required_mode||'NEVER';
     const req=m==='ALWAYS'||(m==='CONDITIONAL'&&q.required_when&&ev(q.required_when,a));
-    if(req&&!answered(a,q.question))return{status:'INCOMPLETE',rule:null};}
+    if(req&&!answered(a,q.question))return{status:'INCOMPLETE',rule:null,rules:[]};}
   const applic=rules.filter(r=>!r.applicability||ev(r.applicability,a));
   const match=applic.filter(r=>ev(r.condition,a));
-  if(!match.length)return{status:'NO_RISK',rule:null};
+  if(!match.length){if(rules.some(x=>x.result==='NO_RISK'))return{status:'INCOMPLETE',rule:null,rules:[],over:[],gap:true};
+    return{status:'NO_RISK',rule:null,rules:[],over:[],implicit:true};}
   const agg=h.aggregation_type||'NONE';let w;
   if(agg==='MAXIMUM'||agg==='ANY')w=match.reduce((x,y)=>SEV[y.result]>SEV[x.result]?y:x);
   else w=match.reduce((x,y)=>y.priority!==x.priority?(y.priority>x.priority?y:x):(SEV[y.result]>SEV[x.result]?y:x));
-  return{status:w.result,rule:w};
+  const others=match.filter(x=>x!==w).sort((x,y)=>SEV[y.result]-SEV[x.result]);
+  /* Maßnahmen: bei NONE nur der Gewinner (Priorität = bewusste Übersteuerung), bei MAXIMUM/ANY alle weiteren risikotragenden Treffer */
+  const eff=((agg==='MAXIMUM'||agg==='ANY')&&SEV[w.result]>0)?others.filter(x=>SEV[x.result]>0):[];
+  return{status:w.result,rule:w,rules:[w,...eff],over:others.filter(x=>!eff.includes(x)&&SEV[x.result]>0)};
 }
 function buildIndex(cat){
   const byHaz={};for(const r of cat.rules){(byHaz[r.hazard]=byHaz[r.hazard]||[]).push(r);}
   const measures={};for(const m of (cat.measures||[]))measures[m.code]=m;
   const qByCode={};for(const q of (cat.questions||[]))qByCode[q.code]=q;
-  return{byHaz,measures,qByCode};
+  const hazByQ={};for(const h of cat.hazards)for(const hq of (h.questions||[]))(hazByQ[hq.question]=hazByQ[hq.question]||[]).push(h.code);
+  const multi=cat.hazards.some(h=>(h.questions||[]).length>1)||cat.questions.some(q=>q.type!=='SELECT');
+  return{byHaz,measures,qByCode,hazByQ,multi};
 }
 function evaluate(cat,idx,a){return cat.hazards.map(h=>({hazard:h,...evalHazard(h,idx.byHaz[h.code]||[],a)}));}
 
-/* ---------- UI ---------- */
+/* ---------- UI-State ---------- */
 const RISK=[['HIGH','Hoch','high'],['MEDIUM','Mittel','medium'],['LOW','Niedrig','low'],
   ['NO_RISK','Kein Risiko','norisk'],['NOT_APPLICABLE','Nicht zutreffend','na'],['INCOMPLETE','Unvollständig','incomplete']];
 const CLS={HIGH:'high',MEDIUM:'medium',LOW:'low',NO_RISK:'norisk',NOT_APPLICABLE:'na',INCOMPLETE:'incomplete'};
 const LAB={HIGH:'Hoch',MEDIUM:'Mittel',LOW:'Niedrig',NO_RISK:'Kein Risiko',NOT_APPLICABLE:'Nicht zutreffend',INCOMPLETE:'Unvollständig'};
+const ROLE={APPLICABILITY:'Filter',TRIGGER:'Auslöser',COMPENSATION:'Kompensation',MODIFIER:'Modifier',OPTIONAL:'optional',DOCUMENTATION:'Doku',ACCESS_FACTOR:'Zugang'};
 const catKeys=Object.keys(CATALOGS);
-let curKey=catKeys.find(k=>/81-41/i.test(k))||catKeys[0];
-let answers={};           // per catalog
-const store={};           // key -> answers
-let selected=null;        // hazard code
-let filter=null;          // risk filter from tiles
+let curKey=catKeys.find(k=>/mehrfragig|MF/i.test(k))||catKeys[0];
+let answers={};const store={};
+let selected=null;let filter=null;let curTab=null;let hlQ=null;
 
 const $=s=>document.querySelector(s);
 const el=(t,c,h)=>{const e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e;};
-function esc(s){return (s==null?'':String(s)).replace(/[&<>]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[m]));}
-
+function esc(s){return (s==null?'':String(s)).replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));}
 function catObj(){return CATALOGS[curKey];}
 function idx(){return catObj()._idx||(catObj()._idx=buildIndex(catObj()));}
+function results(){return evaluate(catObj(),idx(),answers);}
+function klOf(id){return KLAERUNG.find(k=>k.id===id);}
 
-/* fill dropdown */
 const sel=$('#catSel');
 catKeys.forEach(k=>{const o=el('option');o.value=k;o.textContent=k;if(k===curKey)o.selected=true;sel.appendChild(o);});
-sel.onchange=()=>{store[curKey]=answers;curKey=sel.value;answers=store[curKey]||prefill(curKey);selected=null;filter=null;renderAll();};
+sel.onchange=()=>{store[curKey]=answers;curKey=sel.value;answers=store[curKey]||{};selected=null;filter=null;curTab=null;renderAll();};
 
-/* example prefill so the tool opens in a working state */
+/* ---------- Vorbelegung ---------- */
 function prefill(key){
-  const c=CATALOGS[key],a={},id=CATALOGS[key]._idx||buildIndex(c);
-  // beantworte die ersten ~5 Prüfpunkte mit gemischten Stufen als Beispiel
+  const c=CATALOGS[key];
+  if(c.demo_answers)return Object.assign({},c.demo_answers);
+  const a={},id=CATALOGS[key]._idx||buildIndex(c);
   const wanted=['HIGH','NO_RISK','MEDIUM','NOT_APPLICABLE','NO_RISK'];let wi=0;
   for(const h of c.hazards){
     if(wi>=wanted.length)break;
     const q=(h.questions||[])[0];if(!q)continue;
-    const rules=id.byHaz[h.code]||[];
-    const want=wanted[wi];
-    const r=rules.find(x=>x.result===want&&x.condition&&x.condition.question===q.question);
+    const r=(id.byHaz[h.code]||[]).find(x=>x.result===wanted[wi]&&x.condition&&x.condition.question===q.question);
     if(r){a[q.question]=r.condition.value;wi++;}
   }
   return a;
 }
-answers=prefill(curKey);
+answers={};
 
-function results(){return evaluate(catObj(),idx(),answers);}
+/* ---------- Werkzeugleiste (beide Modi) ---------- */
+function toolbar(info){
+  const tb=el('div','toolbar');
+  const btnReset=el('button','btn','Neue GBU (alle Antworten löschen)');btnReset.onclick=()=>{answers={};selected=null;renderAll();};
+  const btnDemo=el('button','btn','Beispielanlage laden');btnDemo.onclick=()=>{answers=prefill(curKey);renderAll();};
+  tb.append(btnReset,btnDemo,el('span','sp'),el('span','info',info||''));
+  return tb;
+}
 
+/* ---------- Übersicht ---------- */
 function renderOverview(res){
   const counts={HIGH:0,MEDIUM:0,LOW:0,NO_RISK:0,NOT_APPLICABLE:0,INCOMPLETE:0};
   res.forEach(r=>counts[r.status]++);
   const total=res.length, ans=res.filter(r=>r.status!=='INCOMPLETE').length;
   $('#progBar').style.width=(total?Math.round(ans/total*100):0)+'%';
-  $('#progTxt').textContent=ans+' / '+total+' Prüfpunkte bewertet';
+  $('#progTxt').textContent=ans+' / '+total+' Gefährdungen bewertet';
+  if(idx().multi){
+    const vis=catObj().questions.filter(q=>!q.visible_when||ev(q.visible_when,answers));
+    const qa=vis.filter(q=>answered(answers,q.code)).length;
+    $('#progQ').textContent='· '+qa+' / '+vis.length+' Fragen beantwortet';
+  }else $('#progQ').textContent='';
   const t=$('#tiles');t.innerHTML='';
   RISK.forEach(([k,lab,cls])=>{
     const d=el('div','tile t-'+cls+(filter===k?' on':''));
     d.innerHTML=`<span class="num">${counts[k]}</span><span class="lab">${lab}</span>`;
-    d.onclick=()=>{filter=filter===k?null:k;renderQuest(results());};
+    d.onclick=()=>{filter=filter===k?null:k;renderMain(results());};
     t.appendChild(d);
   });
-  $('#ovNote').textContent=catObj().rule_version?('Regelwerk '+catObj().rule_version):'';
+  const open=counts.INCOMPLETE;
+  $('#ovNote').innerHTML=(catObj().rule_version?'Regelwerk '+esc(catObj().rule_version)+' · ':'')+
+    (open?`<span class="badge b-incomplete">Bewertung unvollständig · ${open} offen</span>`:
+      `<span class="badge b-norisk">Bewertung vollständig · ${counts.HIGH} Hoch / ${counts.MEDIUM} Mittel / ${counts.LOW} Niedrig</span>`);
 }
 
-function renderQuest(res){
+/* ---------- Einfrage-Fragebogen (bestehende Kataloge) ---------- */
+function renderQuestSingle(res){
   const map={};res.forEach(r=>map[r.hazard.code]=r);
   const groups={};catObj().hazards.forEach(h=>{(groups[h.category||'Ohne Kategorie']=groups[h.category||'Ohne Kategorie']||[]).push(h);});
-  const host=$('#quest');host.innerHTML='';
-  let shown=0;
+  const host=$('#quest');host.innerHTML='';let shown=0;
+  host.appendChild(toolbar('Ein Prüfpunkt = eine Frage. Unbewertete Punkte bleiben „Unvollständig“.'));
   for(const [cat,hs] of Object.entries(groups)){
     const vis=hs.filter(h=>!filter||map[h.code].status===filter);
     if(!vis.length)continue;
@@ -311,22 +429,17 @@ function renderQuest(res){
     const det=el('details','cat');det.open=true;
     const sum=el('summary');
     sum.innerHTML=`<span class="chev">▸</span><span>${esc(cat)}</span>
-      <span class="cnt"><span class="dot" style="--d:var(--r-${CLS[wkey]})"></span>${vis.length} Prüfpunkt${vis.length>1?'e':''}</span>`;
+      <span class="cnt"><span class="dot" style="--d:var(--r-${CLS[wkey]})"></span>${vis.length} Prüfpunkt${vis.length>1?'e':''}${(n=>n?` · <span class="badge b-incomplete">${n} offen</span>`:'')(hs.filter(h=>map[h.code].status==='INCOMPLETE').length)}</span>`;
     det.appendChild(sum);
     vis.forEach(h=>{shown++;
-      const r=map[h.code],q=(h.questions||[])[0],qc=q?q.question:null;
-      const st=CLS[r.status];
+      const r=map[h.code],q=(h.questions||[])[0],qc=q?q.question:null,st=CLS[r.status];
       const pp=el('div','pp stat-'+st+(selected===h.code?' sel':''));
-      pp.dataset.h=h.code;
       const opts=(idx().qByCode[qc]?.options)||[];
-      let optHtml='<option value="">— nicht bewertet —</option>'+opts.map(o=>
+      const optHtml='<option value="">— nicht bewertet —</option>'+opts.map(o=>
         `<option value="${esc(o.value)}"${answers[qc]===o.value?' selected':''}>${esc(o.label)}</option>`).join('');
       pp.innerHTML=`<div class="q"><span class="code">${esc(h.code)}</span><span class="txt">${esc(h.title)}</span></div>
-        <div class="row2"><select aria-label="Istzustand">${optHtml}</select>
-        <span class="badge b-${st}">${LAB[r.status]}</span></div>`;
-      const s=pp.querySelector('select');
-      s.onchange=e=>{const v=e.target.value;if(v==='')delete answers[qc];else answers[qc]=v;
-        selected=h.code;renderAll();};
+        <div class="row2"><select aria-label="Istzustand">${optHtml}</select><span class="badge b-${st}">${LAB[r.status]}</span></div>`;
+      pp.querySelector('select').onchange=e=>{const v=e.target.value;if(v==='')delete answers[qc];else answers[qc]=v;selected=h.code;renderAll();};
       pp.onclick=e=>{if(e.target.tagName==='SELECT')return;selected=h.code;renderDetail(results());
         document.querySelectorAll('.pp.sel').forEach(x=>x.classList.remove('sel'));pp.classList.add('sel');};
       det.appendChild(pp);
@@ -336,55 +449,184 @@ function renderQuest(res){
   if(!shown)host.innerHTML=`<div class="cat" style="padding:26px;text-align:center;color:var(--ink-faint)">Keine Prüfpunkte mit Status „${filter?LAB[filter]:''}".</div>`;
 }
 
+/* ---------- Mehrfragen-Fragebogen (MF) ---------- */
+function setAnswer(code,v){if(v===null||v===undefined||v==='')delete answers[code];else answers[code]=v;}
+function renderQuestMulti(res){
+  const c=catObj(),id=idx(),host=$('#quest');host.innerHTML='';
+  const map={};res.forEach(r=>map[r.hazard.code]=r);
+  const cats=[];const byCat={};
+  c.questions.forEach(q=>{const k=q.category||'Sonstige';if(!byCat[k]){byCat[k]=[];cats.push(k);}byCat[k].push(q);});
+  if(!curTab||!byCat[curTab])curTab=cats[0];
+  host.appendChild(toolbar('Erhebungsbereich ≠ Baugruppe: die Bewertung rechts gruppiert nach Baugruppe.'));
+  const tabs=el('div','tabs');
+  cats.forEach(k=>{
+    const vis=byCat[k].filter(q=>!q.visible_when||ev(q.visible_when,answers));
+    const done=vis.filter(q=>answered(answers,q.code)).length;
+    const t=el('button','tab'+(k===curTab?' on':''),`<span>${esc(k)}</span><span class="c">${done}/${vis.length}</span>`);
+    t.onclick=()=>{curTab=k;renderQuestMulti(results());};
+    tabs.appendChild(t);
+  });
+  host.appendChild(tabs);
+  const card=el('div','qcard');
+  const vis=byCat[curTab].filter(q=>!q.visible_when||ev(q.visible_when,answers));
+  card.appendChild(el('div','qh',`<span>${esc(curTab)}</span><span class="cnt">${vis.length} Fragen</span>`));
+  vis.forEach(q=>{
+    const row=el('div','qrow'+(hlQ===q.code?' hl':''));row.id='q-'+q.code;
+    const hz=(id.hazByQ[q.code]||[]).map(hc=>{const r=map[hc];const st=r?CLS[r.status]:'incomplete';
+      return `<span class="chip st-${st}" data-h="${esc(hc)}" title="${esc(c.hazards.find(h=>h.code===hc)?.title||hc)}">${esc(hc)}</span>`;}).join('');
+    row.innerHTML=`<div class="qt"><span class="num">${esc(q.ui_number||'')}</span><div><div class="txt">${esc(q.text)}</div>
+      ${q.help_text?`<div class="help">${esc(q.help_text)}</div>`:''}<div class="aff">${hz}</div></div></div><div class="ctl"></div>`;
+    const ctl=row.querySelector('.ctl');
+    if(q.type==='YES_NO'||q.type==='YES_NO_NA'){
+      const seg=el('div','seg');
+      const v=answers[q.code];
+      const mk=(lab,val,cls)=>{const b=el('button',(cls||'')+(v===val?' on':''),lab);b.onclick=()=>{setAnswer(q.code,v===val?null:val);renderAll();};return b;};
+      seg.append(mk('Ja',true),mk('Nein',false));
+      if(q.type==='YES_NO_NA')seg.append(mk('n. z.','na'));
+      ctl.appendChild(seg);
+    }else if(q.type==='NUMBER'){
+      const inp=el('input');inp.type='number';inp.step='any';inp.value=answered(answers,q.code)?answers[q.code]:'';
+      if(q.min!=null)inp.min=q.min;if(q.max!=null)inp.max=q.max;
+      inp.title=(q.min!=null||q.max!=null)?`zulässig ${q.min??'…'} bis ${q.max??'…'}`:'';
+      inp.onchange=e=>{const v=e.target.value;const n=v===''?null:Number(v);
+        const bad=n!=null&&(!isFinite(n)||(q.min!=null&&n<q.min)||(q.max!=null&&n>q.max));
+        if(bad){setAnswer(q.code,null);renderAll();const e2=document.querySelector('#q-'+q.code+' input');if(e2){e2.value=v;e2.classList.add('bad');e2.focus();}return;}
+        setAnswer(q.code,n);renderAll();};
+      ctl.appendChild(inp);
+      const u=(q.text.match(/\[(.+?)\]/)||[])[1];if(u)ctl.appendChild(el('span','unit',esc(u)));
+    }else{
+      const s=el('select');s.innerHTML='<option value="">— bitte wählen —</option>'+(q.options||[]).map(o=>
+        `<option value="${esc(o.value)}"${answers[q.code]===o.value?' selected':''}>${esc(o.label)}</option>`).join('');
+      s.onchange=e=>{setAnswer(q.code,e.target.value);renderAll();};
+      ctl.appendChild(s);
+    }
+    row.querySelectorAll('.chip').forEach(ch=>ch.onclick=()=>{selected=ch.dataset.h;renderSide(results());});
+    card.appendChild(row);
+  });
+  if(!vis.length)card.appendChild(el('div','qrow','<span class="empty">In diesem Bereich sind bei den gewählten Anlagenmerkmalen keine Fragen sichtbar.</span>'));
+  host.appendChild(card);
+}
+
+function renderHazardList(res){
+  const host=$('#hlist');host.classList.remove('hid');host.innerHTML='';
+  const map={};res.forEach(r=>map[r.hazard.code]=r);
+  const groups={};const order=[];
+  catObj().hazards.forEach(h=>{const k=h.category||'Sonstige';if(!groups[k]){groups[k]=[];order.push(k);}groups[k].push(h);});
+  const total=res.filter(r=>!filter||r.status===filter).length;
+  host.appendChild(el('div','hh',`<span>Gefährdungen nach Baugruppe</span><span class="cnt">${total}${filter?' · '+LAB[filter]:''}</span>`));
+  order.forEach(k=>{
+    const hs=groups[k].filter(h=>!filter||map[h.code].status===filter);if(!hs.length)return;
+    const worst=groups[k].map(h=>SEV[map[h.code].status]).reduce((a,b)=>Math.max(a,b),-2);
+    const wkey=Object.keys(SEV).find(x=>SEV[x]===worst)||'INCOMPLETE';
+    const det=el('details','hgrp');det.open=true;
+    const nOpen=groups[k].filter(h=>map[h.code].status==='INCOMPLETE').length;
+    det.appendChild(el('summary','',`<span class="dot" style="--d:var(--r-${CLS[wkey]})"></span><span>${esc(k)}</span>${nOpen?`<span class="badge b-incomplete">${nOpen} offen</span>`:''}<span class="cnt">${hs.length}</span>`));
+    hs.forEach(h=>{const r=map[h.code],st=CLS[r.status];
+      const row=el('div','hrow'+(selected===h.code?' sel':''));
+      row.innerHTML=`<span class="code">${esc(h.code)}</span><span class="t">${esc(h.title)}</span>
+        ${(h.review_ids||[]).some(id=>{const k=klOf(id);return k&&!k.entscheidung;})?'<span class="badge b-review" title="offene Klärung">K</span>':''}<span class="badge b-${st}">${LAB[r.status]}</span>`;
+      row.onclick=()=>{selected=h.code;renderSide(results());};
+      det.appendChild(row);
+    });
+    host.appendChild(det);
+  });
+}
+
+function jumpToQuestion(code){
+  const q=idx().qByCode[code];if(!q)return;
+  curTab=q.category;hlQ=code;renderQuestMulti(results());
+  const elq=document.getElementById('q-'+code);if(elq)elq.scrollIntoView({behavior:'smooth',block:'center'});
+  setTimeout(()=>{hlQ=null;const e=document.getElementById('q-'+code);if(e)e.classList.remove('hl');},1800);
+}
+
+function fmtAnswer(q,v){
+  if(!answered(answers,q.code))return null;
+  if(q.type==='SELECT'){const o=(q.options||[]).find(o=>o.value===v);return o?o.label:String(v);}
+  if(v===true)return 'Ja';if(v===false)return 'Nein';return String(v);
+}
+
+/* ---------- Detail ---------- */
 function renderDetail(res){
   const host=$('#detail');
   const r=res.find(x=>x.hazard.code===selected)||res.find(x=>x.status==='HIGH')||res[0];
   if(!r){host.innerHTML='';return;}
-  const h=r.hazard,st=CLS[r.status];
-  const q=(h.questions||[])[0],qc=q?q.question:null;
-  const chosen=answers[qc];
-  const opt=chosen!=null?(idx().qByCode[qc]?.options||[]).find(o=>o.value===chosen):null;
-  // Maßnahmen der zutreffenden Regel
-  let mHtml='<div class="empty">Keine Maßnahme hinterlegt.</div>';
-  if(r.rule&&r.rule.measures&&r.rule.measures.length){
-    mHtml='<div class="mlist">'+r.rule.measures.map(mb=>{
-      const m=idx().measures[mb.measure]||{title:mb.measure,type:''};
-      const kind=m.type==='ORGANISATIONAL'?'ORG':m.type==='TECHNICAL'?'TECH':(m.type||'').slice(0,4);
-      return `<div class="m"><span class="k">${esc(kind)}</span><span>${esc(m.title)}</span></div>`;
-    }).join('')+'</div>';
+  const h=r.hazard,st=CLS[r.status],multi=idx().multi;
+  let qHtml='';
+  if(multi){
+    const rows=(h.questions||[]).map(hq=>{
+      const q=idx().qByCode[hq.question];if(!q)return'';
+      const a=fmtAnswer(q,answers[q.code]);
+      const req=hq.required_mode==='ALWAYS'||(hq.required_mode==='CONDITIONAL'&&hq.required_when&&ev(hq.required_when,answers));
+      return `<div class="qi"><span class="role r-${esc(hq.role)}">${esc(ROLE[hq.role]||hq.role)}</span>
+        <span class="qtx" data-q="${esc(q.code)}"><span class="n">${esc(q.ui_number||'')}</span>${esc(q.text)}${req?'<span class="req">Pflicht</span>':''}</span>
+        <span class="ans ${a==null?'miss':''}">${a==null?'offen':esc(a)}</span></div>`;
+    }).join('');
+    qHtml=`<div class="sec"><div class="h">Zugeordnete Fragen</div><div class="qq">${rows}</div></div>`;
+  }else{
+    const q=(h.questions||[])[0],qc=q?q.question:null;const chosen=answers[qc];
+    const opt=chosen!=null?(idx().qByCode[qc]?.options||[]).find(o=>o.value===chosen):null;
+    qHtml=`<div class="sec"><div class="h">Gewählter Istzustand</div><div class="val ${opt?'':'soft'}">${opt?esc(opt.label):'— noch nicht bewertet (Unvollständig) —'}</div></div>`;
   }
-  // Quellen
+  let mHtml='<div class="empty">Keine Maßnahme hinterlegt.</div>';
+  const rel=r.rules||[],over=r.over||[];
+  const mrules=rel.filter(x=>x.measures&&x.measures.length);
+  if(r.gap)mHtml='<div class="empty">Regellücke: alle Pflichtfragen beantwortet, aber keine Regel trifft zu. Das ist ein Defekt im Regelwerk – bitte melden; die Gefährdung gilt bis zur Korrektur als unbewertet.</div>';
+  else if(r.status==='INCOMPLETE')mHtml='<div class="empty">Maßnahmen erst nach vollständiger Beantwortung der Pflichtfragen.</div>';
+  else if(r.status==='NOT_APPLICABLE')mHtml='<div class="empty">Nicht zutreffend – keine Maßnahme.</div>';
+  else if(mrules.length){
+    const seen=new Set();const parts=[];
+    mrules.forEach((ru,i)=>{ru.measures.forEach(mb=>{if(seen.has(mb.measure))return;seen.add(mb.measure);
+      const m=idx().measures[mb.measure]||{title:mb.measure,type:''};
+      const kind=m.type==='ORGANISATIONAL'?'SOFORT':m.type==='TECHNICAL'?'TECH':(m.type||'').slice(0,5);
+      parts.push(`<div class="m"><span class="k">${esc(kind)}</span><span>${esc(m.title)}${mrules.length>1?` <span class="rc">${esc(ru.code)}${i?' · '+esc(LAB[ru.result]):''}</span>`:''}</span></div>`);});});
+    mHtml='<div class="mlist">'+parts.join('')+'</div>';
+  }else if(r.implicit)mHtml='<div class="empty">Kein Risiko ohne ausdrückliche Regel (Altstil: keine Mangeloption gewählt). Für neue Kataloge gilt: jede Gefährdung braucht eine Kein-Risiko-Regel.</div>';
   let sHtml='<div class="empty">Kein Normbezug hinterlegt.</div>';
   if(h.sources&&h.sources.length){
     sHtml='<div class="srcs">'+h.sources.map(s=>
-      `<span class="src"><span class="ty">${esc(s.type)}</span><span>${esc(s.document)}</span>${s.section?`<span class="sec2">${esc(s.section)}</span>`:''}</span>`
-    ).join('')+'</div>';
+      `<span class="src"><span class="ty">${esc(s.type)}</span><span>${esc(s.document)}</span>${s.section?`<span class="sec2">${esc(s.section)}</span>`:''}</span>`).join('')+'</div>';
   }
+  const kl=(h.review_ids||[]).map(id=>klOf(id)).filter(Boolean);
+  const klHtml=kl.length?`<div class="sec"><div class="h">Offene Klärung (fachliche Gegenlesung)</div><div class="mlist">${kl.map(k=>
+    `<div class="kl"><b>${esc(k.id)}</b> · ${esc(k.thema)}${k.entscheidung?` <span class="badge b-norisk">entschieden</span>`:` <span class="badge b-review">offen</span>`}<div>${esc(k.frage)}</div>${k.entscheidung?`<div class="alt"><b>Entscheidung ${esc(k.datum||'')}:</b> ${esc(k.festlegung||k.entscheidung)}</div>`:`<div class="alt">Vorschlag: ${esc(k.vorschlag)}${k.alternativen?' · Alternative: '+esc(k.alternativen):''}</div>`}</div>`).join('')}</div></div>`:'';
+  const meta=[];
+  if(h.hazard_factor)meta.push(`<div class="sec"><div class="h">Gefährdungsfaktor</div><div class="val soft">${esc(h.hazard_factor)}</div></div>`);
+  if(h.person_groups&&h.person_groups.length)meta.push(`<div class="sec"><div class="h">Betroffene Personengruppen</div><div class="val soft">${esc(h.person_groups.join(', '))}</div></div>`);
   host.style.setProperty('--dc','var(--r-'+st+')');
   host.innerHTML=`
     <div class="dh" style="--dc:var(--r-${st})">
-      <div class="code">${esc(h.code)}${r.rule?' · '+esc(r.rule.code):''}</div>
+      <div class="code">${esc(h.code)}${r.rule?' · '+esc(r.rule.code):''}${rel.length>1?` <span class="more" title="${esc(rel.slice(1).map(x=>x.code+' ('+LAB[x.result]+')').join(', '))}">(+${rel.length-1} weitere zutreffend)</span>`:''}${over.length?` <span class="more" title="Zutreffend, aber durch die Gewinnerregel übersteuert – Maßnahmen gelten nicht: ${esc(over.map(x=>x.code+' ('+LAB[x.result]+')').join(', '))}">(${over.length} übersteuert)</span>`:''}${h.aggregation_type&&h.aggregation_type!=='NONE'?' · '+esc(h.aggregation_type):''}</div>
       <h3>${esc(h.title)}</h3>
-      <div class="stat" style="color:var(--r-${st})"><span class="pill"></span>${LAB[r.status]}</div>
+      <div class="stat" style="color:var(--r-${st})"><span class="pill"></span>${LAB[r.status]}${r.gap?' <span class="badge b-high" title="keine Regel zutreffend">Regellücke</span>':''}
+        ${r.rule&&r.rule.evidence?`<span class="badge b-na" title="Belegtiefe">${esc(r.rule.evidence)}</span>`:''}
+        ${kl.some(k=>!k.entscheidung)?'<span class="badge b-review">Klären</span>':''}</div>
+      ${r.rule&&r.rule.notes?`<div class="rule" style="margin-top:6px">${esc(r.rule.notes)}</div>`:''}
     </div>
     <div class="body">
       ${h.description?`<div class="sec"><div class="h">Sollzustand / Kriterium</div><div class="val soft">${esc(h.description)}</div></div>`:''}
-      <div class="sec"><div class="h">Gewählter Istzustand</div>
-        <div class="val ${opt?'':'soft'}">${opt?esc(opt.label):'— noch nicht bewertet (Unvollständig) —'}</div></div>
+      ${qHtml}
       <div class="sec"><div class="h">Maßnahmen</div>${mHtml}</div>
+      ${meta.join('')}
       <div class="sec"><div class="h">Norm-/Quellenbezug</div>${sHtml}</div>
+      ${klHtml}
     </div>`;
+  host.querySelectorAll('.qtx').forEach(e=>e.onclick=()=>jumpToQuestion(e.dataset.q));
 }
 
-function renderAll(){const res=results();renderOverview(res);renderQuest(res);renderDetail(res);}
+function renderMain(res){
+  const multi=idx().multi;
+  $('#grid').classList.toggle('multi',multi);
+  if(multi){renderQuestMulti(res);renderHazardList(res);}
+  else{renderQuestSingle(res);$('#hlist').classList.add('hid');}
+}
+function renderSide(res){renderDetail(res);if(idx().multi){renderHazardList(res);const sd=$('#side');if(sd)sd.scrollTop=0;}
+  document.querySelectorAll('.pp.sel').forEach(x=>x.classList.remove('sel'));}
+function renderAll(){const res=results();renderOverview(res);renderMain(res);renderDetail(res);}
 
-/* legend + theme */
-$('#legend').innerHTML='Ampel-Abbildung: '+RISK.map(([k,lab,cls])=>
-  `<span style="color:var(--r-${cls});font-weight:600">■</span> ${lab}`).join(' &nbsp; ');
+$('#legend').innerHTML='Stufen: '+RISK.map(([k,lab,cls])=>`<span style="color:var(--r-${cls});font-weight:600">■</span> ${lab}`).join(' &nbsp; ');
 const tb=$('#themeBtn');
 tb.onclick=()=>{const r=document.documentElement;
   const cur=r.getAttribute('data-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
   r.setAttribute('data-theme',cur==='dark'?'light':'dark');};
-
 renderAll();
 </script>

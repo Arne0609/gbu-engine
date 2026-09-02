@@ -12,7 +12,11 @@
 //   2. Pflichtfragen (hazard_questions.required_mode = ALWAYS | CONDITIONAL)
 //        eine fehlt       -> INCOMPLETE
 //   3. Regeln auswerten (kontrollierte Ausdruckssprache)
-//        keine passt      -> NO_RISK
+//        keine passt      -> INCOMPLETE + rule_gap, sobald die Gefaehrdung eine
+//                            ausdrueckliche NO_RISK-Regel hat (Regelluecke =
+//                            Defekt, fail-closed). Nur Regelwerke ohne jede
+//                            NO_RISK-Regel (Rekonstruktion des Originals) fallen
+//                            weiter auf NO_RISK + implicit_no_risk.
 //   4. Aggregation / hoechste Prioritaet -> result_status
 //
 // Bewusst ohne Fremdabhaengigkeiten, damit der Code 1:1 nach Dart (Flutter,
@@ -51,6 +55,10 @@ export interface HazardQuestion {
   role: Role;
   required_mode?: RequiredMode;
   required_when?: Expression;
+  /** Nur bei role = APPLICABILITY: Gefaehrdung anwendbar, wenn der Ausdruck
+   *  wahr ist (z. B. Aufzugsart IN [seil, trommel]). Fehlt er, gilt die
+   *  boolesche Regel (ausdrueckliches Nein -> NOT_APPLICABLE). */
+  applicable_when?: Expression;
 }
 export interface Hazard {
   code: string;
@@ -82,6 +90,20 @@ export interface EvaluationResult {
   status: RiskStatus;
   automatic_status: RiskStatus;
   matched_rule: string | null;
+  /** Regeln, deren Massnahmen gelten (Gewinner zuerst). Bei aggregation_type
+   *  NONE nur der Gewinner – niedrigere Prioritaeten sind bewusst uebersteuert
+   *  (Kompensation). Bei MAXIMUM/ANY zusaetzlich alle weiteren risikotragenden
+   *  Treffer (unabhaengige Maengel derselben Gefaehrdung). */
+  matched_rules: string[];
+  /** Zutreffende Befundregeln (LOW/MEDIUM/HIGH), deren Massnahmen nicht gelten,
+   *  weil der Gewinner sie uebersteuert – nur zur Nachvollziehbarkeit. */
+  overridden_rules: string[];
+  /** true: keine Regel traf zu, obwohl alle Pflichtfragen beantwortet sind –
+   *  Daten-/Regeldefekt, Status ist dann INCOMPLETE (fail-closed). */
+  rule_gap?: boolean;
+  /** true: NO_RISK nur, weil keine Regel passt und die Gefaehrdung keine
+   *  ausdrueckliche NO_RISK-Regel kennt (Altstil / Rekonstruktion). */
+  implicit_no_risk?: boolean;
   input_snapshot: Record<string, AnswerValue>;
 }
 
@@ -157,23 +179,40 @@ export function evaluateHazard(
   const snapshotKeys = new Set<string>();
   for (const hq of questions) snapshotKeys.add(hq.question);
 
-  const build = (status: RiskStatus, matched: string | null): EvaluationResult => {
+  const build = (status: RiskStatus, matched: string | null, all: string[] = [],
+                 overridden: string[] = [], gap = false, implicit = false): EvaluationResult => {
     const input_snapshot: Record<string, AnswerValue> = {};
     for (const k of snapshotKeys) if (isAnswered(answers, k)) input_snapshot[k] = answers[k];
-    return { hazard: hazard.code, status, automatic_status: status, matched_rule: matched, input_snapshot };
+    const r: EvaluationResult = { hazard: hazard.code, status, automatic_status: status,
+      matched_rule: matched, matched_rules: all, overridden_rules: overridden, input_snapshot };
+    if (gap) r.rule_gap = true;
+    if (implicit) r.implicit_no_risk = true;
+    return r;
   };
 
   // Nicht implementierte Gefaehrdungen (z. B. MC13) nie bewerten.
   if (hazard.not_implemented) return build('NOT_APPLICABLE', null);
 
   // 1) Applicability -----------------------------------------------------
+  //    a) mit Ausdruck (applicable_when): Ausdruck falsch -> NOT_APPLICABLE,
+  //       sofern alle referenzierten Fragen beantwortet sind, sonst INCOMPLETE.
+  //    b) ohne Ausdruck: boolesche Regel (Nein -> NOT_APPLICABLE, leer -> INCOMPLETE).
   const appQs = questions.filter((q) => q.role === 'APPLICABILITY');
   for (const q of appQs) {
+    if (q.applicable_when) {
+      if (evalExpression(q.applicable_when, answers)) continue;
+      const refs = new Set<string>();
+      collectQuestions(q.applicable_when, refs);
+      for (const k of refs) snapshotKeys.add(k);
+      for (const k of refs) if (!isAnswered(answers, k)) return build('INCOMPLETE', null);
+      return build('NOT_APPLICABLE', null);
+    }
     if (isAnswered(answers, q.question) && isNegative(answers[q.question])) {
       return build('NOT_APPLICABLE', null);
     }
   }
   for (const q of appQs) {
+    if (q.applicable_when) continue;
     if (!isAnswered(answers, q.question)) return build('INCOMPLETE', null);
   }
 
@@ -196,7 +235,16 @@ export function evaluateHazard(
   });
   const matching = applicable.filter((r) => evalExpression(r.condition, answers));
 
-  if (matching.length === 0) return build('NO_RISK', null);
+  // Keine Regel passt, obwohl alle Pflichtfragen beantwortet sind:
+  //  - Gefaehrdung mit ausdruecklicher NO_RISK-Regel -> Regelluecke = Defekt im
+  //    Regelwerk, kein Befund: INCOMPLETE + rule_gap (fail-closed).
+  //  - Gefaehrdung ohne jede NO_RISK-Regel (Altstil, Rekonstruktion des
+  //    Originals) -> NO_RISK + implicit_no_risk.
+  if (matching.length === 0) {
+    const explicitNoRisk = rules.some((r) => r.result === 'NO_RISK');
+    return explicitNoRisk ? build('INCOMPLETE', null, [], [], true)
+                          : build('NO_RISK', null, [], [], false, true);
+  }
 
   // 4) Aggregation / hoechste Prioritaet ---------------------------------
   const hazardAgg = hazard.aggregation_type ?? 'NONE';
@@ -213,7 +261,17 @@ export function evaluateHazard(
     });
   }
   for (const k of collectWinnerKeys(winner)) snapshotKeys.add(k);
-  return build(winner.result, winner.code);
+  const others = matching.filter((r) => r !== winner)
+    .sort((a, b) => SEVERITY[b.result] - SEVERITY[a.result]);
+  // Massnahmen: bei NONE nur der Gewinner (Prioritaet = bewusste Uebersteuerung),
+  // bei MAXIMUM/ANY alle weiteren risikotragenden Treffer.
+  const effective = (hazardAgg === 'MAXIMUM' || hazardAgg === 'ANY') && SEVERITY[winner.result] > 0
+    ? others.filter((r) => SEVERITY[r.result] > 0) : [];
+  // Uebersteuert = zutreffende Befundregeln, deren Massnahmen nicht gelten. Die
+  // Kein-Risiko-Auffangregel ist kein Befund und wird nicht als uebersteuert gefuehrt.
+  const overridden = others.filter((r) => !effective.includes(r) && SEVERITY[r.result] > 0);
+  return build(winner.result, winner.code, [winner.code, ...effective.map((r) => r.code)],
+               overridden.map((r) => r.code));
 }
 
 function collectWinnerKeys(rule: Rule): Set<string> {

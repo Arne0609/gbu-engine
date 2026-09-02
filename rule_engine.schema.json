@@ -100,6 +100,8 @@
                            "description": "Gefährdungsspezifisch: muss diese Frage FÜR DIESE Gefährdung beantwortet sein, damit sie bewertet wird? ALWAYS+leer -> INCOMPLETE." },
         "required_when": { "$ref": "#/$defs/expression",
                            "description": "Nur bei required_mode = CONDITIONAL." },
+        "applicable_when": { "$ref": "#/$defs/expression",
+                           "description": "Nur bei role = APPLICABILITY: Gefährdung ist anwendbar, wenn der Ausdruck wahr ist (z. B. Aufzugsart IN [seil, trommel]). Fehlt er, gilt die boolesche Regel: ausdrückliches Nein -> NOT_APPLICABLE. Ist der Ausdruck falsch und eine referenzierte Frage unbeantwortet -> INCOMPLETE, sonst NOT_APPLICABLE." },
         "notes":         { "type": "string" }
       },
       "allOf": [
@@ -131,7 +133,15 @@
         "questions":       { "type": "array", "items": { "$ref": "#/$defs/hazardQuestion" },
                              "description": "hazard_questions: Rollen + gefährdungsspezifisches required_mode." },
         "sources":         { "type": "array", "items": { "$ref": "#/$defs/sourceRef" },
-                             "description": "Norm-/Quellenbezug der Gefährdung (hazard_sources)." }
+                             "description": "Norm-/Quellenbezug der Gefährdung (hazard_sources)." },
+        "hazard_factor":   { "type": "string",
+                             "description": "Gefährdungsfaktor nach DIN EN ISO 12100 / GDA-Schema (Anzeige, Bericht)." },
+        "person_groups":   { "type": "array", "items": { "type": "string" },
+                             "description": "Betroffene Personengruppen (Nutzer, Beauftragte Person, Wartungspersonal, …)." },
+        "ui_group":        { "type": "string",
+                             "description": "Erhebungsbereich, unter dem die Gefährdung in der Erfassung primär geführt wird (informativ)." },
+        "review_ids":      { "type": "array", "items": { "type": "string" },
+                             "description": "Kennungen offener Klärungspunkte (Klärungsliste), z. B. K-M02." }
       }
     },
 
@@ -229,6 +239,12 @@
         "text":    { "type": "string" },
         "category":{ "type": "string" },
         "legacy_id": { "type": "string" },
+        "ui_number": { "type": "string", "description": "Anzeige-Nummer im Fragebogen (questions.ui_number)." },
+        "help_text": { "type": "string" },
+        "min": { "type": "number", "description": "Untere Eingabegrenze (NUMBER), fachlich plausibler Bereich." },
+        "max": { "type": "number", "description": "Obere Eingabegrenze (NUMBER)." },
+        "visible_when": { "$ref": "#/$defs/expression",
+                          "description": "Sichtbarkeitsregel (question_visibility_rules, effect SHOW). Reine UI-Logik, keine Risikologik." },
         "options": { "type": "array", "items": { "$ref": "#/$defs/questionOption" } }
       }
     },

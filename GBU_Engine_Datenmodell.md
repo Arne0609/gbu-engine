@@ -103,9 +103,15 @@ Fragen), Einzeltrigger, den A73-Modifier und die Statusübersicht.
 2. Pflichtfragen (rule_required_questions) prüfen
      eine fehlt       → INCOMPLETE
 3. Regeln der Gefährdung auswerten (condition_expression)
-     keine passt      → NO_RISK
+     keine passt      → INCOMPLETE + rule_gap, wenn die Gefährdung eine
+                        ausdrückliche NO_RISK-Regel hat (Regellücke = Defekt,
+                        fail-closed); nur Regelwerke ohne jede NO_RISK-Regel
+                        (Rekonstruktion des Originals) → NO_RISK + implicit_no_risk
 4. Kompensations- und Modifier-Rollen berücksichtigen
 5. höchste priority der zutreffenden Regeln gewinnt → result_status
+   matched_rules = Regeln, deren Maßnahmen gelten: bei aggregation NONE nur der
+   Gewinner (niedrigere Priorität = bewusst übersteuert), bei MAXIMUM/ANY alle
+   weiteren risikotragenden Treffer; overridden_rules = übersteuerte Befundregeln
 6. evaluation_results schreiben (inkl. input_snapshot der genutzten Antworten)
 ```
 

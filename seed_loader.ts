@@ -59,19 +59,33 @@ export async function loadSeedIntoDb(db: Queryable, seed: any): Promise<SeedResu
   }
 
   // 2a) Explizit definierter Fragenkatalog (Typ + Antwortoptionen + Kategorie).
+  let questionSort = 0;
   for (const q of seed.questions ?? []) {
     const categoryId = await ensureCategory(q.category, q.domain ?? 'BOTH');
     const row = (await db.query(
-      `INSERT INTO questions (code, legacy_id, category_id, domain, text, question_type)
-       VALUES ($1, $2, $3, $4, $5, $6)
+      `INSERT INTO questions (code, legacy_id, category_id, domain, text, question_type,
+                              ui_number, help_text, sort_order, min_value, max_value)
+       VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)
        ON CONFLICT (code) DO UPDATE SET
          text = EXCLUDED.text, question_type = EXCLUDED.question_type,
-         domain = EXCLUDED.domain, category_id = EXCLUDED.category_id
+         domain = EXCLUDED.domain, category_id = EXCLUDED.category_id,
+         ui_number = EXCLUDED.ui_number, help_text = EXCLUDED.help_text,
+         sort_order = EXCLUDED.sort_order, min_value = EXCLUDED.min_value,
+         max_value = EXCLUDED.max_value
        RETURNING id`,
       [q.code, q.legacy_id ?? null, categoryId, q.domain ?? 'BOTH', q.text ?? q.code,
-       q.type ?? 'YES_NO'],
+       q.type ?? 'YES_NO', q.ui_number ?? null, q.help_text ?? null, questionSort++,
+       q.min ?? null, q.max ?? null],
     )).rows[0];
     questionIdByCode.set(q.code, row.id);
+    // Sichtbarkeitsregel (reine UI-Logik): bestehende SHOW-Regeln ersetzen.
+    await db.query(
+      `DELETE FROM question_visibility_rules WHERE question_id = $1 AND effect = 'SHOW'`, [row.id]);
+    if (q.visible_when) {
+      await db.query(
+        `INSERT INTO question_visibility_rules (question_id, priority, expression, effect)
+         VALUES ($1, 100, $2::jsonb, 'SHOW')`, [row.id, JSON.stringify(q.visible_when)]);
+    }
     let sort = 0;
     for (const o of q.options ?? []) {
       await db.query(
@@ -129,16 +143,19 @@ export async function loadSeedIntoDb(db: Queryable, seed: any): Promise<SeedResu
   for (const h of seed.hazards ?? []) {
     const row = (await db.query(
       `INSERT INTO hazards (code, domain, title, description, category,
-                            aggregation_type, evaluation_mode, not_implemented)
-       VALUES ($1,$2,$3,$4,$5,$6,$7,$8)
+                            aggregation_type, evaluation_mode, not_implemented,
+                            hazard_factor, person_groups)
+       VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10)
        ON CONFLICT (code) DO UPDATE SET
          title = EXCLUDED.title, description = EXCLUDED.description,
+         category = EXCLUDED.category,
          aggregation_type = EXCLUDED.aggregation_type,
-         evaluation_mode = EXCLUDED.evaluation_mode
+         evaluation_mode = EXCLUDED.evaluation_mode,
+         hazard_factor = EXCLUDED.hazard_factor, person_groups = EXCLUDED.person_groups
        RETURNING id`,
       [h.code, h.domain, h.title, h.description ?? null, h.category ?? null,
        h.aggregation_type ?? 'NONE', h.evaluation_mode ?? 'STANDARD',
-       h.not_implemented ?? false],
+       h.not_implemented ?? false, h.hazard_factor ?? null, h.person_groups ?? null],
     )).rows[0];
     hazardIdByCode.set(h.code, row.id);
 
@@ -146,13 +163,17 @@ export async function loadSeedIntoDb(db: Queryable, seed: any): Promise<SeedResu
     for (const q of h.questions ?? []) {
       await db.query(
         `INSERT INTO hazard_questions (hazard_id, question_id, role, required_mode,
-                                       required_expression, sort_order, notes)
-         VALUES ($1,$2,$3,$4,$5::jsonb,$6,$7)
+                                       required_expression, applicable_expression, sort_order, notes)
+         VALUES ($1,$2,$3,$4,$5::jsonb,$6::jsonb,$7,$8)
          ON CONFLICT (hazard_id, question_id, role) DO UPDATE SET
-           required_mode = EXCLUDED.required_mode`,
+           required_mode = EXCLUDED.required_mode,
+           required_expression = EXCLUDED.required_expression,
+           applicable_expression = EXCLUDED.applicable_expression,
+           sort_order = EXCLUDED.sort_order`,
         [row.id, questionIdByCode.get(q.question), q.role,
          q.required_mode ?? 'NEVER',
          q.required_when ? JSON.stringify(q.required_when) : null,
+         q.applicable_when ? JSON.stringify(q.applicable_when) : null,
          sort++, q.notes ?? null],
       );
     }

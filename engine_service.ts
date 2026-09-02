@@ -45,7 +45,7 @@ export async function loadRulesetFromDb(db: Queryable, ruleVersionId: string): P
   const hazardIds = hazardRows.map((h) => h.id);
   const hqRows = hazardIds.length === 0 ? [] : (await db.query(
     `SELECT h.code AS hazard_code, q.code AS question_code, hq.role,
-            hq.required_mode, hq.required_expression
+            hq.required_mode, hq.required_expression, hq.applicable_expression
        FROM hazard_questions hq
        JOIN questions q ON q.id = hq.question_id
        JOIN hazards   h ON h.id = hq.hazard_id
@@ -72,6 +72,7 @@ export async function loadRulesetFromDb(db: Queryable, ruleVersionId: string): P
       role: q.role,
       required_mode: q.required_mode,
       ...(q.required_expression ? { required_when: q.required_expression } : {}),
+      ...(q.applicable_expression ? { applicable_when: q.applicable_expression } : {}),
     });
     questionsByHazard.set(q.hazard_code, list);
   }
