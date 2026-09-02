@@ -1,0 +1,242 @@
+{
+  "rule_version": "GBU-Regelwerk 2026.1",
+
+  "hazards": [
+    {
+      "code": "M032", "domain": "GBU",
+      "title": "Fehlende oder unzulaengliche Notrufeinrichtung",
+      "category": "NOTRUF",
+      "aggregation_type": "NONE", "evaluation_mode": "STANDARD",
+      "questions": [
+        { "question": "q_emergency_call_present", "role": "TRIGGER", "required_mode": "NEVER",
+          "notes": "f033 / UI 8.1" },
+        { "question": "q_emergency_call_24h", "role": "OPTIONAL", "required_mode": "NEVER",
+          "notes": "f211 / UI 8.2 – im Original ohne eigenen Risikobeitrag" },
+        { "question": "q_emergency_call_en8128", "role": "OPTIONAL", "required_mode": "NEVER",
+          "notes": "f189 / UI 8.3 – im Original ohne eigenen Risikobeitrag" }
+      ]
+    },
+    {
+      "code": "MC4", "domain": "CYBER",
+      "title": "Schnittstellen zur Aufzugssteuerung sind vorhanden und frei zugaenglich",
+      "aggregation_type": "DECISION_TABLE", "evaluation_mode": "STRICT_REQUIRED",
+      "questions": [
+        { "question": "q_ctrl_digital",     "role": "APPLICABILITY", "required_mode": "NEVER" },
+        { "question": "q_ctrl_free_access",  "role": "ACCESS_FACTOR", "required_mode": "NEVER" },
+        { "question": "q_ctrl_wireless",     "role": "TRIGGER", "required_mode": "ALWAYS",
+          "notes": "Beide Schnittstellenfragen Pflicht: fehlt eine -> INCOMPLETE (behebt PARTIAL_EVALUATION_BUG)." },
+        { "question": "q_ctrl_physical",     "role": "TRIGGER", "required_mode": "ALWAYS" }
+      ]
+    },
+    {
+      "code": "MC11", "domain": "CYBER",
+      "title": "Elektronische Schnittstelle (Aufzugswaertermodul) zur Aufzugssteuerung vorhanden",
+      "aggregation_type": "NONE", "evaluation_mode": "STANDARD",
+      "questions": [
+        { "question": "q_attendant_module", "role": "TRIGGER", "required_mode": "NEVER",
+          "notes": "f253 / UI 14.37" }
+      ]
+    },
+
+    {
+      "code": "M087", "domain": "GBU",
+      "title": "Vorhandensein schaedlicher Stoffe (Asbest)",
+      "category": "GEFAHRSTOFFE",
+      "aggregation_type": "ANY", "evaluation_mode": "PARTIAL_ALLOWED",
+      "questions": [
+        { "question": "q_asbestos_access",       "role": "TRIGGER", "required_mode": "NEVER", "notes": "a141 / 15.11" },
+        { "question": "q_asbestos_machine_room",  "role": "TRIGGER", "required_mode": "NEVER", "notes": "a243 / 15.12" },
+        { "question": "q_asbestos_shaft_car",     "role": "TRIGGER", "required_mode": "NEVER", "notes": "a346 / 15.13" },
+        { "question": "q_asbestos_pit",           "role": "TRIGGER", "required_mode": "NEVER", "notes": "a443 / 15.14" }
+      ]
+    },
+    {
+      "code": "M090", "domain": "GBU",
+      "title": "In unmittelbarer Naehe der Aufzugsanlage sind Verschmutzungen",
+      "category": "UMGEBUNG",
+      "aggregation_type": "ANY", "evaluation_mode": "PARTIAL_ALLOWED",
+      "questions": [
+        { "question": "q_contamination_access",      "role": "TRIGGER", "required_mode": "NEVER", "notes": "a142 / 15.15" },
+        { "question": "q_contamination_machine_room", "role": "TRIGGER", "required_mode": "NEVER", "notes": "a241 / 15.16" },
+        { "question": "q_contamination_shaft_car",    "role": "TRIGGER", "required_mode": "NEVER", "notes": "a350 / 15.17" },
+        { "question": "q_contamination_pit",          "role": "TRIGGER", "required_mode": "NEVER", "notes": "a442 / 15.18" }
+      ]
+    },
+    {
+      "code": "M103", "domain": "GBU",
+      "title": "Lagerung von brennbaren / leicht entzuendlichen Gefahrstoffen in unmittelbarer Naehe der Aufzugsanlage",
+      "category": "GEFAHRSTOFFE",
+      "aggregation_type": "ANY", "evaluation_mode": "PARTIAL_ALLOWED",
+      "questions": [
+        { "question": "q_flammable_storage_machine_room", "role": "TRIGGER", "required_mode": "NEVER", "notes": "a249 / 15.19" },
+        { "question": "q_flammable_storage_shaft_car",    "role": "TRIGGER", "required_mode": "NEVER", "notes": "a351 / 15.20" },
+        { "question": "q_flammable_storage_pit",          "role": "TRIGGER", "required_mode": "NEVER", "notes": "a447 / 15.21" },
+        { "question": "q_flammable_storage_other",        "role": "TRIGGER", "required_mode": "NEVER", "notes": "a460 / 15.22" }
+      ]
+    },
+
+    { "code": "M088", "domain": "GBU", "title": "Transport von chemischen Gefahrstoffen mit der Aufzugsanlage",
+      "category": "GEFAHRSTOFFE", "aggregation_type": "NONE", "evaluation_mode": "STANDARD",
+      "questions": [ { "question": "q_transport_chemical", "role": "TRIGGER", "required_mode": "NEVER", "notes": "f104 / 15.32" } ] },
+    { "code": "M089", "domain": "GBU", "title": "Transport von biologischen Gefahrstoffen mit der Aufzugsanlage",
+      "category": "GEFAHRSTOFFE", "aggregation_type": "NONE", "evaluation_mode": "STANDARD",
+      "questions": [ { "question": "q_transport_biological", "role": "TRIGGER", "required_mode": "NEVER", "notes": "f105 / 15.33" } ] },
+    { "code": "M091", "domain": "GBU", "title": "Transport von brennbaren / leicht entzuendlichen Stoffen mit der Aufzugsanlage",
+      "category": "GEFAHRSTOFFE", "aggregation_type": "NONE", "evaluation_mode": "STANDARD",
+      "description": "Titel INFERRED (Scrollposition nicht abgelesen); M-ID DIRECT.",
+      "questions": [ { "question": "q_transport_flammable", "role": "TRIGGER", "required_mode": "NEVER", "notes": "f106 / 15.34" } ] },
+    { "code": "M092", "domain": "GBU", "title": "Explosionsfaehiges Gemisch kann durch die Aufzugsanlage gezuendet werden",
+      "category": "EXPLOSION", "aggregation_type": "NONE", "evaluation_mode": "STANDARD",
+      "questions": [ { "question": "q_explosive_ignition", "role": "TRIGGER", "required_mode": "NEVER", "notes": "f095 / 15.25" } ] },
+    { "code": "M093", "domain": "GBU", "title": "Transport von radioaktiven Stoffen mit der Aufzugsanlage",
+      "category": "GEFAHRSTOFFE", "aggregation_type": "NONE", "evaluation_mode": "STANDARD",
+      "questions": [ { "question": "q_transport_radioactive", "role": "TRIGGER", "required_mode": "NEVER", "notes": "f107 / 15.35" } ] },
+    { "code": "M108", "domain": "GBU", "title": "Belastung durch CO2 Emissionen oder andere Abgase",
+      "category": "UMGEBUNG", "aggregation_type": "NONE", "evaluation_mode": "STANDARD",
+      "questions": [ { "question": "q_co2_exhaust", "role": "TRIGGER", "required_mode": "NEVER", "notes": "f094 / 15.24" } ] },
+    { "code": "M106", "domain": "GBU", "title": "Direkt angrenzende Transport- und/oder Verkehrswege an Haltestellen",
+      "category": "UMGEBUNG", "aggregation_type": "DECISION_TABLE", "evaluation_mode": "STANDARD",
+      "questions": [
+        { "question": "q_adjacent_traffic_routes", "role": "TRIGGER", "required_mode": "NEVER", "notes": "f097 / 15.27" },
+        { "question": "q_disabled_use", "role": "MODIFIER", "required_mode": "NEVER",
+          "notes": "Anlagenmerkmal A73 'Behindertennutzung?' – wirkt katalogweit als MODIFIER (auch M001, M076)." }
+      ] }
+  ],
+
+  "rules": [
+    {
+      "hazard": "M032", "code": "M032-R001", "priority": 100,
+      "condition": { "question": "q_emergency_call_present", "operator": "EQ", "value": false },
+      "result": "HIGH",
+      "evidence": "DIRECT", "origin": "RECONSTRUCTED_ORIGINAL", "quality_status": "REVIEW_REQUIRED",
+      "measures": [ { "measure": "m_emergency_call_install", "relation": "SINGLE", "mandatory": true } ],
+      "sources": [ { "type": "TRBS", "document": "TRBS 3121" }, { "type": "EN", "document": "EN 81-28" } ],
+      "notes": "Original: f033=Nein -> HOCH; f189/f211 ohne eigenen Risikobeitrag. REVIEW_REQUIRED, weil vorhandener, aber nicht aufgeschalteter/nicht EN-81-28-konformer Notruf im Original KEIN RISIKO ergibt (fachlich fragwuerdig)."
+    },
+    {
+      "hazard": "M032", "code": "M032-T010", "priority": 50,
+      "applicability": { "question": "q_emergency_call_present", "operator": "EQ", "value": true },
+      "condition": {
+        "any": [
+          { "question": "q_emergency_call_24h", "operator": "EQ", "value": false },
+          { "question": "q_emergency_call_en8128", "operator": "EQ", "value": false }
+        ]
+      },
+      "result": "MEDIUM",
+      "evidence": "HYPOTHESIS", "origin": "OWN_RULE", "quality_status": "REVIEW_REQUIRED",
+      "notes": "ZIEL-Logik (bewusste Abweichung): Notruf vorhanden, aber ohne 24h-Aufschaltung oder nicht EN-81-28-konform -> MITTEL. Erst nach normativer Pruefung aktivieren."
+    },
+
+    {
+      "hazard": "MC4", "code": "MC4-R001", "priority": 100,
+      "applicability": { "question": "q_ctrl_digital", "operator": "EQ", "value": true },
+      "condition": {
+        "all": [
+          { "question": "q_ctrl_free_access", "operator": "EQ", "value": true },
+          { "any": [
+            { "question": "q_ctrl_wireless", "operator": "EQ", "value": true },
+            { "question": "q_ctrl_physical", "operator": "EQ", "value": true }
+          ] }
+        ]
+      },
+      "result": "MEDIUM",
+      "evidence": "HIGH_CONFIDENCE", "origin": "RECONSTRUCTED_ORIGINAL", "quality_status": "VERIFIED",
+      "sources": [ { "type": "TRBS", "document": "TRBS 1115 Teil 1" } ],
+      "notes": "Bauplan MC4-MC9. ODER zwischen Drahtlos/Physik. Pflicht-Sein der beiden Schnittstellenfragen liegt in hazard_questions (required_mode=ALWAYS) -> fehlt eine, INCOMPLETE statt NO_RISK."
+    },
+
+    {
+      "hazard": "MC11", "code": "MC11-R001", "priority": 100,
+      "condition": { "question": "q_attendant_module", "operator": "EQ", "value": true },
+      "result": "LOW",
+      "evidence": "HYPOTHESIS", "origin": "RECONSTRUCTED_ORIGINAL", "quality_status": "REVIEW_REQUIRED",
+      "notes": "Analogieschluss aus MC10/MC12 (Existenz -> NIEDRIG), ungetestet."
+    },
+
+    {
+      "hazard": "M087", "code": "M087-R001", "priority": 100,
+      "condition": { "any": [
+        { "question": "q_asbestos_access",      "operator": "EQ", "value": true },
+        { "question": "q_asbestos_machine_room", "operator": "EQ", "value": true },
+        { "question": "q_asbestos_shaft_car",   "operator": "EQ", "value": true },
+        { "question": "q_asbestos_pit",         "operator": "EQ", "value": true }
+      ] },
+      "result": "HIGH", "aggregation": "ANY",
+      "evidence": "HIGH_CONFIDENCE", "origin": "RECONSTRUCTED_ORIGINAL", "quality_status": "VERIFIED",
+      "notes": "Ortsblock: eine einzige Ja-Ortsfrage genuegt; uebrige duerfen leer bleiben (evaluation_mode=PARTIAL_ALLOWED)."
+    },
+    {
+      "hazard": "M090", "code": "M090-R001", "priority": 100,
+      "condition": { "any": [
+        { "question": "q_contamination_access",      "operator": "EQ", "value": true },
+        { "question": "q_contamination_machine_room", "operator": "EQ", "value": true },
+        { "question": "q_contamination_shaft_car",    "operator": "EQ", "value": true },
+        { "question": "q_contamination_pit",          "operator": "EQ", "value": true }
+      ] },
+      "result": "MEDIUM", "aggregation": "ANY",
+      "evidence": "HIGH_CONFIDENCE", "origin": "RECONSTRUCTED_ORIGINAL", "quality_status": "VERIFIED"
+    },
+    {
+      "hazard": "M103", "code": "M103-R001", "priority": 100,
+      "condition": { "any": [
+        { "question": "q_flammable_storage_machine_room", "operator": "EQ", "value": true },
+        { "question": "q_flammable_storage_shaft_car",    "operator": "EQ", "value": true },
+        { "question": "q_flammable_storage_pit",          "operator": "EQ", "value": true },
+        { "question": "q_flammable_storage_other",        "operator": "EQ", "value": true }
+      ] },
+      "result": "MEDIUM", "aggregation": "ANY",
+      "evidence": "HIGH_CONFIDENCE", "origin": "RECONSTRUCTED_ORIGINAL", "quality_status": "VERIFIED"
+    },
+
+    { "hazard": "M088", "code": "M088-R001", "priority": 100,
+      "condition": { "question": "q_transport_chemical", "operator": "EQ", "value": true },
+      "result": "MEDIUM", "evidence": "DIRECT", "origin": "RECONSTRUCTED_ORIGINAL", "quality_status": "VERIFIED" },
+    { "hazard": "M089", "code": "M089-R001", "priority": 100,
+      "condition": { "question": "q_transport_biological", "operator": "EQ", "value": true },
+      "result": "MEDIUM", "evidence": "DIRECT", "origin": "RECONSTRUCTED_ORIGINAL", "quality_status": "VERIFIED" },
+    { "hazard": "M091", "code": "M091-R001", "priority": 100,
+      "condition": { "question": "q_transport_flammable", "operator": "EQ", "value": true },
+      "result": "MEDIUM", "evidence": "DIRECT", "origin": "RECONSTRUCTED_ORIGINAL", "quality_status": "REVIEW_REQUIRED",
+      "notes": "Titel INFERRED." },
+    { "hazard": "M092", "code": "M092-R001", "priority": 100,
+      "condition": { "question": "q_explosive_ignition", "operator": "EQ", "value": true },
+      "result": "MEDIUM", "evidence": "DIRECT", "origin": "RECONSTRUCTED_ORIGINAL", "quality_status": "VERIFIED" },
+    { "hazard": "M093", "code": "M093-R001", "priority": 100,
+      "condition": { "question": "q_transport_radioactive", "operator": "EQ", "value": true },
+      "result": "MEDIUM", "evidence": "DIRECT", "origin": "RECONSTRUCTED_ORIGINAL", "quality_status": "VERIFIED" },
+    { "hazard": "M108", "code": "M108-R001", "priority": 100,
+      "condition": { "question": "q_co2_exhaust", "operator": "EQ", "value": true },
+      "result": "MEDIUM", "evidence": "DIRECT", "origin": "RECONSTRUCTED_ORIGINAL", "quality_status": "VERIFIED" },
+    {
+      "hazard": "M106", "code": "M106-R001", "priority": 100,
+      "condition": { "all": [
+        { "question": "q_adjacent_traffic_routes", "operator": "EQ", "value": true },
+        { "question": "q_disabled_use", "operator": "EQ", "value": false }
+      ] },
+      "result": "MEDIUM", "aggregation": "DECISION_TABLE",
+      "evidence": "DIRECT", "origin": "RECONSTRUCTED_ORIGINAL", "quality_status": "REVIEW_REQUIRED",
+      "notes": "A73 (Behindertennutzung) als MODIFIER; Wirkung von A73=Ja nicht gemessen."
+    }
+  ],
+
+  "rule_templates": [
+    { "template": "DIGITAL_COMPONENT_ACCESS",
+      "parameters": { "device": "q_ctrl_digital", "wireless": "q_ctrl_wireless", "physical": "q_ctrl_physical", "access": "q_ctrl_free_access" },
+      "required": ["wireless", "physical"], "result": "MEDIUM" },
+    { "template": "DIGITAL_COMPONENT_ACCESS",
+      "parameters": { "device": "q_vfd_digital", "wireless": "q_vfd_wireless", "physical": "q_vfd_physical", "access": "q_ctrl_free_access" },
+      "required": ["wireless", "physical"], "result": "MEDIUM" },
+    { "template": "DIGITAL_COMPONENT_ACCESS",
+      "parameters": { "device": "q_door_ctrl_digital", "wireless": "q_door_ctrl_wireless", "physical": "q_door_ctrl_physical", "access": "q_shaft_free_access" },
+      "required": ["wireless", "physical"], "result": "MEDIUM" },
+    { "template": "DIGITAL_COMPONENT_ACCESS",
+      "parameters": { "device": "q_shaft_copy_digital", "wireless": "q_shaft_copy_wireless", "physical": "q_shaft_copy_physical", "access": "q_shaft_free_access" },
+      "required": ["wireless", "physical"], "result": "MEDIUM" },
+    { "template": "DIGITAL_COMPONENT_ACCESS",
+      "parameters": { "device": "q_overspeed_digital", "wireless": "q_overspeed_wireless", "physical": "q_overspeed_physical", "access": "q_shaft_free_access" },
+      "required": ["wireless", "physical"], "result": "MEDIUM" },
+    { "template": "DIGITAL_COMPONENT_ACCESS",
+      "parameters": { "device": "q_safetygear_digital", "wireless": "q_safetygear_wireless", "physical": "q_safetygear_physical", "access": "q_shaft_free_access" },
+      "required": ["wireless", "physical"], "result": "MEDIUM" }
+  ]
+}

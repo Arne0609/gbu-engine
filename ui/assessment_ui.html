@@ -1,0 +1,390 @@
+<title>GBU-Bewertung</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --bg:#eef1f5; --surface:#ffffff; --surface-2:#f3f5f8; --surface-3:#e9edf2;
+  --ink:#18222e; --ink-soft:#53616f; --ink-faint:#8592a0;
+  --line:#dbe1e9; --line-strong:#c3ccd7;
+  --accent:#2f5d86; --accent-ink:#ffffff; --accent-soft:#e4edf5;
+  --r-high:#c62d43;  --r-high-bg:#f9e3e6;
+  --r-medium:#bd6f16;--r-medium-bg:#f8ecdc;
+  --r-low:#8f7c0e;   --r-low-bg:#f4efd6;
+  --r-norisk:#2b855a;--r-norisk-bg:#dcefe4;
+  --r-na:#6b7684;    --r-na-bg:#e7eaef;
+  --r-incomplete:#356aa0; --r-incomplete-bg:#e0e9f4;
+  --shadow:0 1px 2px rgba(20,30,45,.06),0 8px 24px rgba(20,30,45,.05);
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0e141b; --surface:#161e28; --surface-2:#1b2530; --surface-3:#222e3b;
+  --ink:#e7edf4; --ink-soft:#a4b1bf; --ink-faint:#6c7a89;
+  --line:#26313d; --line-strong:#33404e;
+  --accent:#6ba0d6; --accent-ink:#0e141b; --accent-soft:#1c2c3d;
+  --r-high:#ff6a7e;  --r-high-bg:#3a1c22;
+  --r-medium:#f0a24e;--r-medium-bg:#382718;
+  --r-low:#d8c257;   --r-low-bg:#332f16;
+  --r-norisk:#4ec489;--r-norisk-bg:#153027;
+  --r-na:#8b97a6;    --r-na-bg:#242d38;
+  --r-incomplete:#6ea6e6; --r-incomplete-bg:#152535;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35);
+}}
+:root[data-theme="dark"]{
+  --bg:#0e141b; --surface:#161e28; --surface-2:#1b2530; --surface-3:#222e3b;
+  --ink:#e7edf4; --ink-soft:#a4b1bf; --ink-faint:#6c7a89;
+  --line:#26313d; --line-strong:#33404e;
+  --accent:#6ba0d6; --accent-ink:#0e141b; --accent-soft:#1c2c3d;
+  --r-high:#ff6a7e;  --r-high-bg:#3a1c22;
+  --r-medium:#f0a24e;--r-medium-bg:#382718;
+  --r-low:#d8c257;   --r-low-bg:#332f16;
+  --r-norisk:#4ec489;--r-norisk-bg:#153027;
+  --r-na:#8b97a6;    --r-na-bg:#242d38;
+  --r-incomplete:#6ea6e6; --r-incomplete-bg:#152535;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);
+  font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1240px;margin:0 auto;padding:0 20px 64px}
+h1,h2,h3{margin:0;text-wrap:balance}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.eyebrow{font-size:11px;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--ink-faint);font-weight:600}
+
+/* header */
+header{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.head{max-width:1240px;margin:0 auto;padding:14px 20px;display:flex;gap:18px;
+  align-items:center;flex-wrap:wrap}
+.brand{display:flex;flex-direction:column;gap:1px;margin-right:auto}
+.brand .t{font-weight:700;font-size:18px;letter-spacing:-.01em}
+.brand .s{font-size:12px;color:var(--ink-soft)}
+.brand .s b{color:var(--accent);font-weight:600}
+.ctl{display:flex;align-items:center;gap:8px}
+label.fld{display:flex;flex-direction:column;gap:3px;font-size:11px;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--ink-faint);font-weight:600}
+select,.iconbtn{font-family:var(--sans);color:var(--ink);background:var(--surface);
+  border:1px solid var(--line-strong);border-radius:8px}
+select.big{padding:8px 30px 8px 11px;font-size:14px;font-weight:500;min-width:260px;
+  appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%238592a0' stroke-width='2'><path d='M6 9l6 6 6-6'/></svg>");
+  background-repeat:no-repeat;background-position:right 9px center}
+.iconbtn{width:38px;height:38px;display:grid;place-items:center;cursor:pointer;font-size:16px}
+.iconbtn:hover{border-color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* overview */
+.overview{margin-top:20px;background:var(--surface);border:1px solid var(--line);
+  border-radius:14px;box-shadow:var(--shadow);overflow:hidden}
+.ov-top{display:flex;align-items:baseline;gap:14px;padding:14px 18px 0;flex-wrap:wrap}
+.ov-top h2{font-size:15px;font-weight:600}
+.ov-note{font-size:12px;color:var(--ink-faint);margin-left:auto}
+.progress{padding:10px 18px 0;display:flex;align-items:center;gap:12px}
+.bar{flex:1;height:7px;border-radius:99px;background:var(--surface-3);overflow:hidden}
+.bar>i{display:block;height:100%;background:var(--accent);border-radius:99px;transition:width .35s ease}
+.progress .n{font-size:12.5px;color:var(--ink-soft);white-space:nowrap}
+.tiles{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--line);
+  margin:14px 0 0;border-top:1px solid var(--line)}
+.tile{background:var(--surface);padding:12px 14px;display:flex;flex-direction:column;gap:3px;
+  cursor:pointer;border-top:3px solid var(--tc,var(--line));transition:background .15s}
+.tile:hover{background:var(--surface-2)}
+.tile.on{background:var(--surface-2)}
+.tile .num{font-family:var(--mono);font-size:26px;font-weight:600;line-height:1;color:var(--tc)}
+.tile .lab{font-size:11.5px;color:var(--ink-soft);font-weight:500}
+.t-high{--tc:var(--r-high)} .t-medium{--tc:var(--r-medium)} .t-low{--tc:var(--r-low)}
+.t-norisk{--tc:var(--r-norisk)} .t-na{--tc:var(--r-na)} .t-incomplete{--tc:var(--r-incomplete)}
+
+/* main grid */
+.grid{margin-top:22px;display:grid;grid-template-columns:1fr 360px;gap:22px;align-items:start}
+@media (max-width:900px){.grid{grid-template-columns:1fr}.detail{position:static !important}}
+
+/* questionnaire */
+.cat{margin-bottom:14px;border:1px solid var(--line);border-radius:12px;background:var(--surface);
+  box-shadow:var(--shadow);overflow:hidden}
+.cat>summary{list-style:none;cursor:pointer;padding:12px 16px;display:flex;align-items:center;
+  gap:10px;font-weight:600;font-size:14px;background:var(--surface-2)}
+.cat>summary::-webkit-details-marker{display:none}
+.cat>summary .chev{color:var(--ink-faint);transition:transform .2s;font-family:var(--mono)}
+.cat[open]>summary .chev{transform:rotate(90deg)}
+.cat>summary .cnt{margin-left:auto;font-size:11.5px;color:var(--ink-faint);font-weight:500;
+  display:flex;gap:5px;align-items:center}
+.dot{width:9px;height:9px;border-radius:99px;display:inline-block;background:var(--d,var(--line-strong))}
+.pp{padding:13px 16px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:9px;
+  border-left:3px solid transparent;cursor:pointer;transition:background .12s}
+.pp:hover{background:var(--surface-2)}
+.pp.sel{background:var(--accent-soft);border-left-color:var(--accent)}
+.pp.stat-high{border-left-color:var(--r-high)} .pp.stat-medium{border-left-color:var(--r-medium)}
+.pp.stat-low{border-left-color:var(--r-low)} .pp.stat-norisk{border-left-color:var(--r-norisk)}
+.pp.stat-na{border-left-color:var(--r-na)} .pp.stat-incomplete{border-left-color:var(--r-incomplete)}
+.pp .q{display:flex;gap:10px;align-items:flex-start}
+.pp .q .code{font-family:var(--mono);font-size:11.5px;color:var(--ink-faint);flex:none;margin-top:1px}
+.pp .q .txt{font-size:13.5px;line-height:1.42}
+.pp .row2{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.pp select{flex:1;min-width:0;padding:7px 28px 7px 10px;font-size:13px;border-radius:7px;appearance:none;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%238592a0' stroke-width='2'><path d='M6 9l6 6 6-6'/></svg>");
+  background-repeat:no-repeat;background-position:right 8px center}
+.badge{font-size:11px;font-weight:600;letter-spacing:.03em;padding:3px 9px;border-radius:99px;
+  white-space:nowrap;font-family:var(--mono);border:1px solid transparent}
+.b-high{color:var(--r-high);background:var(--r-high-bg)} .b-medium{color:var(--r-medium);background:var(--r-medium-bg)}
+.b-low{color:var(--r-low);background:var(--r-low-bg)} .b-norisk{color:var(--r-norisk);background:var(--r-norisk-bg)}
+.b-na{color:var(--r-na);background:var(--r-na-bg)} .b-incomplete{color:var(--r-incomplete);background:var(--r-incomplete-bg)}
+
+/* detail */
+.detail{position:sticky;top:82px;border:1px solid var(--line);border-radius:14px;background:var(--surface);
+  box-shadow:var(--shadow);overflow:hidden}
+.detail .dh{padding:14px 16px;border-bottom:1px solid var(--line);
+  border-top:4px solid var(--dc,var(--accent))}
+.detail .dh .code{font-family:var(--mono);font-size:12px;color:var(--ink-faint)}
+.detail .dh h3{font-size:15px;font-weight:600;margin-top:3px;line-height:1.35}
+.detail .dh .stat{margin-top:10px;display:inline-flex;align-items:center;gap:7px;font-weight:600;font-size:13px}
+.detail .dh .stat .pill{width:11px;height:11px;border-radius:99px;background:var(--dc)}
+.detail .body{padding:14px 16px;display:flex;flex-direction:column;gap:15px}
+.sec .h{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);
+  font-weight:600;margin-bottom:6px}
+.sec .val{font-size:13.5px;line-height:1.5;color:var(--ink)}
+.sec .val.soft{color:var(--ink-soft)}
+.mlist{display:flex;flex-direction:column;gap:8px}
+.m{display:flex;gap:9px;align-items:flex-start;font-size:13px;line-height:1.45}
+.m .k{font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.04em;color:var(--ink-soft);
+  background:var(--surface-3);border-radius:5px;padding:2px 6px;flex:none;margin-top:1px}
+.srcs{display:flex;flex-wrap:wrap;gap:6px}
+.src{display:inline-flex;align-items:center;gap:6px;font-size:12px;border:1px solid var(--line-strong);
+  border-radius:7px;padding:3px 8px 3px 3px;background:var(--surface-2)}
+.src .ty{font-family:var(--mono);font-size:9.5px;font-weight:600;letter-spacing:.04em;color:var(--accent-ink);
+  background:var(--accent);border-radius:4px;padding:2px 5px}
+.src .sec2{color:var(--ink-soft)}
+.empty{color:var(--ink-faint);font-size:13px;font-style:italic}
+.legend{font-size:11.5px;color:var(--ink-faint);margin-top:10px;padding:0 2px;line-height:1.6}
+footer{margin-top:26px;font-size:12px;color:var(--ink-faint);line-height:1.6;
+  border-top:1px solid var(--line);padding-top:14px}
+footer b{color:var(--ink-soft);font-weight:600}
+</style>
+
+<header>
+  <div class="head">
+    <div class="brand">
+      <div class="t">GBU-Bewertung</div>
+      <div class="s">Regelengine-Prototyp · <b>Frage → Gefährdung → Regel → Risikostufe</b></div>
+    </div>
+    <label class="fld">GBU-Typ
+      <select id="catSel" class="big"></select>
+    </label>
+    <button class="iconbtn" id="themeBtn" title="Hell/Dunkel" aria-label="Theme wechseln">◐</button>
+  </div>
+</header>
+
+<div class="wrap">
+  <section class="overview" aria-label="Bewertungsübersicht">
+    <div class="ov-top">
+      <h2>Bewertungsübersicht</h2>
+      <span class="ov-note" id="ovNote"></span>
+    </div>
+    <div class="progress">
+      <div class="bar"><i id="progBar" style="width:0"></i></div>
+      <span class="n mono" id="progTxt">0 / 0</span>
+    </div>
+    <div class="tiles" id="tiles"></div>
+  </section>
+
+  <div class="grid">
+    <main id="quest" aria-label="Fragebogen"></main>
+    <aside class="detail" id="detail" aria-live="polite"></aside>
+  </div>
+
+  <p class="legend" id="legend"></p>
+  <footer>
+    <b>Prototyp.</b> Dieselbe Auswertungslogik wie der geprüfte Referenz-Evaluator
+    (Applicability → Pflichtfrage → Regel → Aggregation). Eine noch nicht bewertete
+    Gefährdung ist <b>Unvollständig</b>, nicht „Kein Risiko". Kataloge, Maßnahmen und
+    Normbezüge stammen aus den erzeugten Engine-Seeds (<span class="mono">origin = NORM_DERIVED</span>).
+  </footer>
+</div>
+
+<script>
+const CATALOGS = __CATALOGS__;
+
+/* ---------- Evaluator (Port von evaluator.ts) ---------- */
+const SEV={INCOMPLETE:-2,NOT_APPLICABLE:-1,NO_RISK:0,LOW:1,MEDIUM:2,HIGH:3};
+const answered=(a,q)=>Object.prototype.hasOwnProperty.call(a,q)&&a[q]!==null&&a[q]!==undefined&&a[q]!=="";
+function evalLeaf(l,a){const q=l.question,op=l.operator,ok=answered(a,q),v=ok?a[q]:null,e=l.value;
+  switch(op){case'ANSWERED':return ok;case'NOT_ANSWERED':return !ok;
+    case'EQ':return ok&&v===e;case'NEQ':return ok&&v!==e;
+    case'IN':return ok&&Array.isArray(e)&&e.includes(v);
+    case'NOT_IN':return ok&&Array.isArray(e)&&!e.includes(v);
+    default:return false;}}
+function ev(x,a){if('all'in x)return x.all.every(e=>ev(e,a));
+  if('any'in x)return x.any.some(e=>ev(e,a));if('not'in x)return !ev(x.not,a);return evalLeaf(x,a);}
+function evalHazard(h,rules,a){
+  const qs=h.questions||[];
+  const app=qs.filter(q=>q.role==='APPLICABILITY');
+  for(const q of app)if(answered(a,q.question)&&(a[q.question]===false||a[q.question]==='na'))return{status:'NOT_APPLICABLE',rule:null};
+  for(const q of app)if(!answered(a,q.question))return{status:'INCOMPLETE',rule:null};
+  for(const q of qs){const m=q.required_mode||'NEVER';
+    const req=m==='ALWAYS'||(m==='CONDITIONAL'&&q.required_when&&ev(q.required_when,a));
+    if(req&&!answered(a,q.question))return{status:'INCOMPLETE',rule:null};}
+  const applic=rules.filter(r=>!r.applicability||ev(r.applicability,a));
+  const match=applic.filter(r=>ev(r.condition,a));
+  if(!match.length)return{status:'NO_RISK',rule:null};
+  const agg=h.aggregation_type||'NONE';let w;
+  if(agg==='MAXIMUM'||agg==='ANY')w=match.reduce((x,y)=>SEV[y.result]>SEV[x.result]?y:x);
+  else w=match.reduce((x,y)=>y.priority!==x.priority?(y.priority>x.priority?y:x):(SEV[y.result]>SEV[x.result]?y:x));
+  return{status:w.result,rule:w};
+}
+function buildIndex(cat){
+  const byHaz={};for(const r of cat.rules){(byHaz[r.hazard]=byHaz[r.hazard]||[]).push(r);}
+  const measures={};for(const m of (cat.measures||[]))measures[m.code]=m;
+  const qByCode={};for(const q of (cat.questions||[]))qByCode[q.code]=q;
+  return{byHaz,measures,qByCode};
+}
+function evaluate(cat,idx,a){return cat.hazards.map(h=>({hazard:h,...evalHazard(h,idx.byHaz[h.code]||[],a)}));}
+
+/* ---------- UI ---------- */
+const RISK=[['HIGH','Hoch','high'],['MEDIUM','Mittel','medium'],['LOW','Niedrig','low'],
+  ['NO_RISK','Kein Risiko','norisk'],['NOT_APPLICABLE','Nicht zutreffend','na'],['INCOMPLETE','Unvollständig','incomplete']];
+const CLS={HIGH:'high',MEDIUM:'medium',LOW:'low',NO_RISK:'norisk',NOT_APPLICABLE:'na',INCOMPLETE:'incomplete'};
+const LAB={HIGH:'Hoch',MEDIUM:'Mittel',LOW:'Niedrig',NO_RISK:'Kein Risiko',NOT_APPLICABLE:'Nicht zutreffend',INCOMPLETE:'Unvollständig'};
+const catKeys=Object.keys(CATALOGS);
+let curKey=catKeys.find(k=>/81-41/i.test(k))||catKeys[0];
+let answers={};           // per catalog
+const store={};           // key -> answers
+let selected=null;        // hazard code
+let filter=null;          // risk filter from tiles
+
+const $=s=>document.querySelector(s);
+const el=(t,c,h)=>{const e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e;};
+function esc(s){return (s==null?'':String(s)).replace(/[&<>]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[m]));}
+
+function catObj(){return CATALOGS[curKey];}
+function idx(){return catObj()._idx||(catObj()._idx=buildIndex(catObj()));}
+
+/* fill dropdown */
+const sel=$('#catSel');
+catKeys.forEach(k=>{const o=el('option');o.value=k;o.textContent=k;if(k===curKey)o.selected=true;sel.appendChild(o);});
+sel.onchange=()=>{store[curKey]=answers;curKey=sel.value;answers=store[curKey]||prefill(curKey);selected=null;filter=null;renderAll();};
+
+/* example prefill so the tool opens in a working state */
+function prefill(key){
+  const c=CATALOGS[key],a={},id=CATALOGS[key]._idx||buildIndex(c);
+  // beantworte die ersten ~5 Prüfpunkte mit gemischten Stufen als Beispiel
+  const wanted=['HIGH','NO_RISK','MEDIUM','NOT_APPLICABLE','NO_RISK'];let wi=0;
+  for(const h of c.hazards){
+    if(wi>=wanted.length)break;
+    const q=(h.questions||[])[0];if(!q)continue;
+    const rules=id.byHaz[h.code]||[];
+    const want=wanted[wi];
+    const r=rules.find(x=>x.result===want&&x.condition&&x.condition.question===q.question);
+    if(r){a[q.question]=r.condition.value;wi++;}
+  }
+  return a;
+}
+answers=prefill(curKey);
+
+function results(){return evaluate(catObj(),idx(),answers);}
+
+function renderOverview(res){
+  const counts={HIGH:0,MEDIUM:0,LOW:0,NO_RISK:0,NOT_APPLICABLE:0,INCOMPLETE:0};
+  res.forEach(r=>counts[r.status]++);
+  const total=res.length, ans=res.filter(r=>r.status!=='INCOMPLETE').length;
+  $('#progBar').style.width=(total?Math.round(ans/total*100):0)+'%';
+  $('#progTxt').textContent=ans+' / '+total+' Prüfpunkte bewertet';
+  const t=$('#tiles');t.innerHTML='';
+  RISK.forEach(([k,lab,cls])=>{
+    const d=el('div','tile t-'+cls+(filter===k?' on':''));
+    d.innerHTML=`<span class="num">${counts[k]}</span><span class="lab">${lab}</span>`;
+    d.onclick=()=>{filter=filter===k?null:k;renderQuest(results());};
+    t.appendChild(d);
+  });
+  $('#ovNote').textContent=catObj().rule_version?('Regelwerk '+catObj().rule_version):'';
+}
+
+function renderQuest(res){
+  const map={};res.forEach(r=>map[r.hazard.code]=r);
+  const groups={};catObj().hazards.forEach(h=>{(groups[h.category||'Ohne Kategorie']=groups[h.category||'Ohne Kategorie']||[]).push(h);});
+  const host=$('#quest');host.innerHTML='';
+  let shown=0;
+  for(const [cat,hs] of Object.entries(groups)){
+    const vis=hs.filter(h=>!filter||map[h.code].status===filter);
+    if(!vis.length)continue;
+    const worst=hs.map(h=>SEV[map[h.code].status]).reduce((a,b)=>Math.max(a,b),-2);
+    const wkey=Object.keys(SEV).find(k=>SEV[k]===worst)||'INCOMPLETE';
+    const det=el('details','cat');det.open=true;
+    const sum=el('summary');
+    sum.innerHTML=`<span class="chev">▸</span><span>${esc(cat)}</span>
+      <span class="cnt"><span class="dot" style="--d:var(--r-${CLS[wkey]})"></span>${vis.length} Prüfpunkt${vis.length>1?'e':''}</span>`;
+    det.appendChild(sum);
+    vis.forEach(h=>{shown++;
+      const r=map[h.code],q=(h.questions||[])[0],qc=q?q.question:null;
+      const st=CLS[r.status];
+      const pp=el('div','pp stat-'+st+(selected===h.code?' sel':''));
+      pp.dataset.h=h.code;
+      const opts=(idx().qByCode[qc]?.options)||[];
+      let optHtml='<option value="">— nicht bewertet —</option>'+opts.map(o=>
+        `<option value="${esc(o.value)}"${answers[qc]===o.value?' selected':''}>${esc(o.label)}</option>`).join('');
+      pp.innerHTML=`<div class="q"><span class="code">${esc(h.code)}</span><span class="txt">${esc(h.title)}</span></div>
+        <div class="row2"><select aria-label="Istzustand">${optHtml}</select>
+        <span class="badge b-${st}">${LAB[r.status]}</span></div>`;
+      const s=pp.querySelector('select');
+      s.onchange=e=>{const v=e.target.value;if(v==='')delete answers[qc];else answers[qc]=v;
+        selected=h.code;renderAll();};
+      pp.onclick=e=>{if(e.target.tagName==='SELECT')return;selected=h.code;renderDetail(results());
+        document.querySelectorAll('.pp.sel').forEach(x=>x.classList.remove('sel'));pp.classList.add('sel');};
+      det.appendChild(pp);
+    });
+    host.appendChild(det);
+  }
+  if(!shown)host.innerHTML=`<div class="cat" style="padding:26px;text-align:center;color:var(--ink-faint)">Keine Prüfpunkte mit Status „${filter?LAB[filter]:''}".</div>`;
+}
+
+function renderDetail(res){
+  const host=$('#detail');
+  const r=res.find(x=>x.hazard.code===selected)||res.find(x=>x.status==='HIGH')||res[0];
+  if(!r){host.innerHTML='';return;}
+  const h=r.hazard,st=CLS[r.status];
+  const q=(h.questions||[])[0],qc=q?q.question:null;
+  const chosen=answers[qc];
+  const opt=chosen!=null?(idx().qByCode[qc]?.options||[]).find(o=>o.value===chosen):null;
+  // Maßnahmen der zutreffenden Regel
+  let mHtml='<div class="empty">Keine Maßnahme hinterlegt.</div>';
+  if(r.rule&&r.rule.measures&&r.rule.measures.length){
+    mHtml='<div class="mlist">'+r.rule.measures.map(mb=>{
+      const m=idx().measures[mb.measure]||{title:mb.measure,type:''};
+      const kind=m.type==='ORGANISATIONAL'?'ORG':m.type==='TECHNICAL'?'TECH':(m.type||'').slice(0,4);
+      return `<div class="m"><span class="k">${esc(kind)}</span><span>${esc(m.title)}</span></div>`;
+    }).join('')+'</div>';
+  }
+  // Quellen
+  let sHtml='<div class="empty">Kein Normbezug hinterlegt.</div>';
+  if(h.sources&&h.sources.length){
+    sHtml='<div class="srcs">'+h.sources.map(s=>
+      `<span class="src"><span class="ty">${esc(s.type)}</span><span>${esc(s.document)}</span>${s.section?`<span class="sec2">${esc(s.section)}</span>`:''}</span>`
+    ).join('')+'</div>';
+  }
+  host.style.setProperty('--dc','var(--r-'+st+')');
+  host.innerHTML=`
+    <div class="dh" style="--dc:var(--r-${st})">
+      <div class="code">${esc(h.code)}${r.rule?' · '+esc(r.rule.code):''}</div>
+      <h3>${esc(h.title)}</h3>
+      <div class="stat" style="color:var(--r-${st})"><span class="pill"></span>${LAB[r.status]}</div>
+    </div>
+    <div class="body">
+      ${h.description?`<div class="sec"><div class="h">Sollzustand / Kriterium</div><div class="val soft">${esc(h.description)}</div></div>`:''}
+      <div class="sec"><div class="h">Gewählter Istzustand</div>
+        <div class="val ${opt?'':'soft'}">${opt?esc(opt.label):'— noch nicht bewertet (Unvollständig) —'}</div></div>
+      <div class="sec"><div class="h">Maßnahmen</div>${mHtml}</div>
+      <div class="sec"><div class="h">Norm-/Quellenbezug</div>${sHtml}</div>
+    </div>`;
+}
+
+function renderAll(){const res=results();renderOverview(res);renderQuest(res);renderDetail(res);}
+
+/* legend + theme */
+$('#legend').innerHTML='Ampel-Abbildung: '+RISK.map(([k,lab,cls])=>
+  `<span style="color:var(--r-${cls});font-weight:600">■</span> ${lab}`).join(' &nbsp; ');
+const tb=$('#themeBtn');
+tb.onclick=()=>{const r=document.documentElement;
+  const cur=r.getAttribute('data-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
+  r.setAttribute('data-theme',cur==='dark'?'light':'dark');};
+
+renderAll();
+</script>

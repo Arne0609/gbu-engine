@@ -1,0 +1,24 @@
+name: gbu_bewertung_ui
+description: >-
+  Bewertungsoberfläche auf Basis der GBU-Regelengine (gbu_engine): GBU-Typ
+  wählen, Prüfpunkte bewerten, Live-Übersicht (6 Zustände) und Gefährdungs-
+  detail mit Maßnahmen und Normquellen. Referenz-UX für die Integration in
+  die GBU-App.
+publish_to: none
+version: 0.1.0
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+  flutter: '>=3.10.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  gbu_engine:
+    path: ../dart_engine
+  http: ^1.2.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/catalogs/

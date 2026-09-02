@@ -1,0 +1,2206 @@
+{
+ "rule_version": "cyber-voll-2026.1",
+ "questions": [
+  {
+   "code": "q_cyv_1",
+   "type": "SELECT",
+   "domain": "CYBER",
+   "text": "Systemabgrenzung und Schnittstellen — Sollzustand: Alle sicherheitsrelevanten Einrichtungen sowie kabelgebundenen und kabellosen Datenschnittstellen sind erfasst. Temporäre Servicezugänge und externe Kommunikationspartner sind einbezogen. Sind keine kompromittierbaren Schnittstellen vorhanden, ist dies begründet dokumentiert.",
+   "category": "Cybersicherheit (TRBS 1115-1)",
+   "options": [
+    {
+     "value": "erfuellt",
+     "label": "Anforderung erfüllt"
+    },
+    {
+     "value": "teilweise",
+     "label": "Teilweise erfüllt"
+    },
+    {
+     "value": "nicht_erfuellt",
+     "label": "Nicht erfüllt"
+    },
+    {
+     "value": "na",
+     "label": "Nicht anwendbar (begründet)"
+    }
+   ]
+  },
+  {
+   "code": "q_cyv_2",
+   "type": "SELECT",
+   "domain": "CYBER",
+   "text": "Cyberrelevanz und mögliche Folgen — Sollzustand: Für jede relevante Komponente ist bewertet, ob Manipulation oder Ausfall zu einer Gefährdung führen kann, z. B. Fehlbündigkeit, Türbewegung, unzulässige Geschwindigkeit, Ausfall des Notrufs oder Stillstand mit eingeschlossenen Personen.",
+   "category": "Cybersicherheit (TRBS 1115-1)",
+   "options": [
+    {
+     "value": "erfuellt",
+     "label": "Anforderung erfüllt"
+    },
+    {
+     "value": "teilweise",
+     "label": "Teilweise erfüllt"
+    },
+    {
+     "value": "nicht_erfuellt",
+     "label": "Nicht erfüllt"
+    },
+    {
+     "value": "na",
+     "label": "Nicht anwendbar (begründet)"
+    }
+   ]
+  },
+  {
+   "code": "q_cyv_3",
+   "type": "SELECT",
+   "domain": "CYBER",
+   "text": "Aufzugssteuerung / PESSRAL-Logik — Sollzustand: Zugänge, Softwarestände, Parameter und Schnittstellen der Steuerung sind bekannt und geschützt. Schaltschränke sind verschlossen; Parameteränderungen erfolgen nur durch Berechtigte und werden dokumentiert.",
+   "category": "Cybersicherheit (TRBS 1115-1)",
+   "options": [
+    {
+     "value": "erfuellt",
+     "label": "Anforderung erfüllt"
+    },
+    {
+     "value": "teilweise",
+     "label": "Teilweise erfüllt"
+    },
+    {
+     "value": "nicht_erfuellt",
+     "label": "Nicht erfüllt"
+    },
+    {
+     "value": "na",
+     "label": "Nicht anwendbar (begründet)"
+    }
+   ]
+  },
+  {
+   "code": "q_cyv_4",
+   "type": "SELECT",
+   "domain": "CYBER",
+   "text": "PESSRAL-/SIL-Komponenten und Sicherheitskreise — Sollzustand: Digitale sicherheitsbezogene Komponenten und deren Verbindungen sind erfasst. Eine Manipulation oder Störung darf Sicherheitsfunktionen, Fang-, Brems-, Tür- oder Schutzeinrichtungen nicht unzulässig beeinflussen.",
+   "category": "Cybersicherheit (TRBS 1115-1)",
+   "options": [
+    {
+     "value": "erfuellt",
+     "label": "Anforderung erfüllt"
+    },
+    {
+     "value": "teilweise",
+     "label": "Teilweise erfüllt"
+    },
+    {
+     "value": "nicht_erfuellt",
+     "label": "Nicht erfüllt"
+    },
+    {
+     "value": "na",
+     "label": "Nicht anwendbar (begründet)"
+    }
+   ]
+  },
+  {
+   "code": "q_cyv_5",
+   "type": "SELECT",
+   "domain": "CYBER",
+   "text": "Frequenzumrichter / STO — Sollzustand: Sicherheitsrelevante Parameter, STO-Funktionen und Servicezugänge sind vor unbefugter Änderung geschützt. Software- oder Parameteränderungen dürfen keine unzulässige Bewegung oder Geschwindigkeit verursachen.",
+   "category": "Cybersicherheit (TRBS 1115-1)",
+   "options": [
+    {
+     "value": "erfuellt",
+     "label": "Anforderung erfüllt"
+    },
+    {
+     "value": "teilweise",
+     "label": "Teilweise erfüllt"
+    },
+    {
+     "value": "nicht_erfuellt",
+     "label": "Nicht erfüllt"
+    },
+    {
+     "value": "na",
+     "label": "Nicht anwendbar (begründet)"
+    }
+   ]
+  },
+  {
+   "code": "q_cyv_6",
+   "type": "SELECT",
+   "domain": "CYBER",
+   "text": "Türsteuergerät / Türantrieb / Nivellierung — Sollzustand: Servicezugänge und Parameter sind geschützt. Eine Manipulation darf Türkräfte, Türbewegung, Entriegelung oder Haltegenauigkeit nicht sicherheitswidrig verändern.",
+   "category": "Cybersicherheit (TRBS 1115-1)",
+   "options": [
+    {
+     "value": "erfuellt",
+     "label": "Anforderung erfüllt"
+    },
+    {
+     "value": "teilweise",
+     "label": "Teilweise erfüllt"
+    },
+    {
+     "value": "nicht_erfuellt",
+     "label": "Nicht erfüllt"
+    },
+    {
+     "value": "na",
+     "label": "Nicht anwendbar (begründet)"
+    }
+   ]
+  },
+  {
+   "code": "q_cyv_7",
+   "type": "SELECT",
+   "domain": "CYBER",
+   "text": "Notruf / Zweiwegekommunikation — Sollzustand: Rufnummern, Parameter und Fernzugänge sind geschützt. Das Notrufsystem bleibt verfügbar; eine unbefugte Umleitung, Deaktivierung oder Veränderung der Notrufverbindung ist verhindert.",
+   "category": "Cybersicherheit (TRBS 1115-1)",
+   "options": [
+    {
+     "value": "erfuellt",
+     "label": "Anforderung erfüllt"
+    },
+    {
+     "value": "teilweise",
+     "label": "Teilweise erfüllt"
+    },
+    {
+     "value": "nicht_erfuellt",
+     "label": "Nicht erfüllt"
+    },
+    {
+     "value": "na",
+     "label": "Nicht anwendbar (begründet)"
+    }
+   ]
+  },
+  {
+   "code": "q_cyv_8",
+   "type": "SELECT",
+   "domain": "CYBER",
+   "text": "Gateway / Router / Modem / WLAN-/Service-Dongle — Sollzustand: Externe Kommunikationsgeräte sind vollständig erfasst und auf das notwendige Maß beschränkt. Zugriffe sind individuell authentifiziert, segmentiert, freigegeben und nachvollziehbar.",
+   "category": "Cybersicherheit (TRBS 1115-1)",
+   "options": [
+    {
+     "value": "erfuellt",
+     "label": "Anforderung erfüllt"
+    },
+    {
+     "value": "teilweise",
+     "label": "Teilweise erfüllt"
+    },
+    {
+     "value": "nicht_erfuellt",
+     "label": "Nicht erfüllt"
+    },
+    {
+     "value": "na",
+     "label": "Nicht anwendbar (begründet)"
+    }
+   ]
+  },
+  {
+   "code": "q_cyv_9",
+   "type": "SELECT",
+   "domain": "CYBER",
+   "text": "Schachtentrauchung / Brandfallsteuerung / bauseitige Systeme — Sollzustand: Schnittstellen zu Entrauchung, Brandmeldeanlage, Gebäudeleittechnik, Zutrittskontrolle oder anderen bauseitigen Systemen sind erfasst. Fremdsysteme dürfen keine unzulässigen Befehle oder Rückwirkungen auslösen.",
+   "category": "Cybersicherheit (TRBS 1115-1)",
+   "options": [
+    {
+     "value": "erfuellt",
+     "label": "Anforderung erfüllt"
+    },
+    {
+     "value": "teilweise",
+     "label": "Teilweise erfüllt"
+    },
+    {
+     "value": "nicht_erfuellt",
+     "label": "Nicht erfüllt"
+    },
+    {
+     "value": "na",
+     "label": "Nicht anwendbar (begründet)"
+    }
+   ]
+  },
+  {
+   "code": "q_cyv_10",
+   "type": "SELECT",
+   "domain": "CYBER",
+   "text": "Physischer und logischer Zugang — Sollzustand: Maschinenraum, Schaltschränke, Steuerungen und Serviceanschlüsse sind gegen unbefugten Zugang geschützt. Berechtigungen folgen dem Prinzip der minimalen Rechte; Standard- und Sammelkonten sind vermieden.",
+   "category": "Cybersicherheit (TRBS 1115-1)",
+   "options": [
+    {
+     "value": "erfuellt",
+     "label": "Anforderung erfüllt"
+    },
+    {
+     "value": "teilweise",
+     "label": "Teilweise erfüllt"
+    },
+    {
+     "value": "nicht_erfuellt",
+     "label": "Nicht erfüllt"
+    },
+    {
+     "value": "na",
+     "label": "Nicht anwendbar (begründet)"
+    }
+   ]
+  },
+  {
+   "code": "q_cyv_11",
+   "type": "SELECT",
+   "domain": "CYBER",
+   "text": "Härtung / Servicegeräte / Wechseldatenträger — Sollzustand: Nicht benötigte Dienste, Software und Schnittstellen sind deaktiviert. Service-Laptops, USB-Sticks und Konfigurationsgeräte werden kontrolliert eingesetzt und sind gegen Schadsoftware und unbefugte Nutzung geschützt.",
+   "category": "Cybersicherheit (TRBS 1115-1)",
+   "options": [
+    {
+     "value": "erfuellt",
+     "label": "Anforderung erfüllt"
+    },
+    {
+     "value": "teilweise",
+     "label": "Teilweise erfüllt"
+    },
+    {
+     "value": "nicht_erfuellt",
+     "label": "Nicht erfüllt"
+    },
+    {
+     "value": "na",
+     "label": "Nicht anwendbar (begründet)"
+    }
+   ]
+  },
+  {
+   "code": "q_cyv_12",
+   "type": "SELECT",
+   "domain": "CYBER",
+   "text": "Fernzugriff und Netztrennung — Sollzustand: Fernwartung erfolgt nur nach ausdrücklicher Freigabe, zeitlich begrenzt und protokolliert. Aufzugssteuerung und sicherheitsrelevante Komponenten sind von Büro-, Gebäude- und Fremdnetzen angemessen getrennt.",
+   "category": "Cybersicherheit (TRBS 1115-1)",
+   "options": [
+    {
+     "value": "erfuellt",
+     "label": "Anforderung erfüllt"
+    },
+    {
+     "value": "teilweise",
+     "label": "Teilweise erfüllt"
+    },
+    {
+     "value": "nicht_erfuellt",
+     "label": "Nicht erfüllt"
+    },
+    {
+     "value": "na",
+     "label": "Nicht anwendbar (begründet)"
+    }
+   ]
+  },
+  {
+   "code": "q_cyv_13",
+   "type": "SELECT",
+   "domain": "CYBER",
+   "text": "Herstellerunterlagen / Versionen / Updates / Schwachstellen — Sollzustand: Betriebsanleitungen, IT-Sicherheitshinweise und Herstellerfestlegungen liegen vor. Software-, Firmware- und Parameterstände sind bekannt. Updates und Schwachstellenmeldungen werden bewertet, geprüft und dokumentiert.",
+   "category": "Cybersicherheit (TRBS 1115-1)",
+   "options": [
+    {
+     "value": "erfuellt",
+     "label": "Anforderung erfüllt"
+    },
+    {
+     "value": "teilweise",
+     "label": "Teilweise erfüllt"
+    },
+    {
+     "value": "nicht_erfuellt",
+     "label": "Nicht erfüllt"
+    },
+    {
+     "value": "na",
+     "label": "Nicht anwendbar (begründet)"
+    }
+   ]
+  },
+  {
+   "code": "q_cyv_14",
+   "type": "SELECT",
+   "domain": "CYBER",
+   "text": "Unabhängigkeit und sicherer Zustand — Sollzustand: Ausfall, Kommunikationsverlust oder Kompromittierung der IT/OT- Umgebung darf Sicherheitsfunktionen nicht unzulässig beeinträchtigen. Ein sicherer Zustand kann über einen nicht gleichartig kompromittierbaren Weg erreicht werden.",
+   "category": "Cybersicherheit (TRBS 1115-1)",
+   "options": [
+    {
+     "value": "erfuellt",
+     "label": "Anforderung erfüllt"
+    },
+    {
+     "value": "teilweise",
+     "label": "Teilweise erfüllt"
+    },
+    {
+     "value": "nicht_erfuellt",
+     "label": "Nicht erfüllt"
+    },
+    {
+     "value": "na",
+     "label": "Nicht anwendbar (begründet)"
+    }
+   ]
+  },
+  {
+   "code": "q_cyv_15",
+   "type": "SELECT",
+   "domain": "CYBER",
+   "text": "Überwachung / Cybervorfall / Wiederinbetriebnahme — Sollzustand: Unzulässige Zugriffe und Änderungen sind soweit erforderlich erkennbar und nachvollziehbar. Für Cybervorfälle bestehen Meldeweg, Isolation, sicherer Zustand und Kriterien für eine sichere Wiederinbetriebnahme.",
+   "category": "Cybersicherheit (TRBS 1115-1)",
+   "options": [
+    {
+     "value": "erfuellt",
+     "label": "Anforderung erfüllt"
+    },
+    {
+     "value": "teilweise",
+     "label": "Teilweise erfüllt"
+    },
+    {
+     "value": "nicht_erfuellt",
+     "label": "Nicht erfüllt"
+    },
+    {
+     "value": "na",
+     "label": "Nicht anwendbar (begründet)"
+    }
+   ]
+  },
+  {
+   "code": "q_cyv_16",
+   "type": "SELECT",
+   "domain": "CYBER",
+   "text": "Organisation / Verantwortlichkeiten / Wartungsfirma — Sollzustand: Verantwortliche Person, Fachkunde, Zugriffsrechte und Aufgaben von Betreiber, Wartungsfirma und Dritten sind festgelegt. Beschaffung, Reparatur, Wartung und Parameteränderungen unterliegen geregelten Abläufen.",
+   "category": "Cybersicherheit (TRBS 1115-1)",
+   "options": [
+    {
+     "value": "erfuellt",
+     "label": "Anforderung erfüllt"
+    },
+    {
+     "value": "teilweise",
+     "label": "Teilweise erfüllt"
+    },
+    {
+     "value": "nicht_erfuellt",
+     "label": "Nicht erfüllt"
+    },
+    {
+     "value": "na",
+     "label": "Nicht anwendbar (begründet)"
+    }
+   ]
+  },
+  {
+   "code": "q_cyv_17",
+   "type": "SELECT",
+   "domain": "CYBER",
+   "text": "Wirksamkeitsprüfung / Änderungen / Dokumentation — Sollzustand: Sollzustand, Prüfumfang, Prüffristen und Kontrollen sind festgelegt. Organisatorische Maßnahmen werden ordnungsgeprüft, technische Maßnahmen auf Eignung und Funktionsfähigkeit geprüft. Nach Änderungen, Vorfällen oder neuen Erkenntnissen erfolgt eine Neubewertung.",
+   "category": "Cybersicherheit (TRBS 1115-1)",
+   "options": [
+    {
+     "value": "erfuellt",
+     "label": "Anforderung erfüllt"
+    },
+    {
+     "value": "teilweise",
+     "label": "Teilweise erfüllt"
+    },
+    {
+     "value": "nicht_erfuellt",
+     "label": "Nicht erfüllt"
+    },
+    {
+     "value": "na",
+     "label": "Nicht anwendbar (begründet)"
+    }
+   ]
+  }
+ ],
+ "measures": [
+  {
+   "code": "m_c1388c5d68",
+   "title": "Komponenten- und Schnittstellenliste mit Wartungsfirma erstellen; unbekannte oder nicht benötigte Schnittstellen bis zur Klärung nicht verwenden bzw. deaktivieren.",
+   "type": "TECHNICAL",
+   "priority_class": "MASSNAHME"
+  },
+  {
+   "code": "m_8b5edb9f52",
+   "title": "Auswirkungen auf Integrität und Verfügbarkeit ohne Berücksichtigung bestehender Schutzmaßnahmen bewerten; nicht sicherheitsrelevante Komponenten nachvollziehbar ausschließen.",
+   "type": "ORGANISATIONAL",
+   "priority_class": "MASSNAHME"
+  },
+  {
+   "code": "m_c6ef174911",
+   "title": "Offene oder nicht benötigte Schnittstellen deaktivieren; Zugriffsrechte beschränken; Änderungen im Betriebsbuch bzw. Änderungsnachweis dokumentieren.",
+   "type": "TECHNICAL",
+   "priority_class": "MASSNAHME"
+  },
+  {
+   "code": "m_2ea0023257",
+   "title": "Schnittstellen und Abhängigkeiten dokumentieren; Herstellerangaben beachten; nach Änderungen die betroffenen Sicherheitsfunktionen technisch prüfen.",
+   "type": "TECHNICAL",
+   "priority_class": "MASSNAHME"
+  },
+  {
+   "code": "m_3fb2d4723d",
+   "title": "Nicht benötigte Ports deaktivieren; Parameterzugriff schützen; zulässigen Parametersatz sichern; nach Änderungen Antrieb, STO und Fahrverhalten prüfen.",
+   "type": "TECHNICAL",
+   "priority_class": "MASSNAHME"
+  },
+  {
+   "code": "m_0af5495108",
+   "title": "Schnittstellen nur für Berechtigte zugänglich machen; Parameter sichern; nach Eingriffen Türfunktionen, Schutzeinrichtungen und Haltegenauigkeit prüfen.",
+   "type": "TECHNICAL",
+   "priority_class": "MASSNAHME"
+  },
+  {
+   "code": "m_ba1794218b",
+   "title": "Default-Passwörter ändern; individuelle Zugangsdaten verwenden; Konfiguration nur Berechtigten zugänglich machen; Notrufverbindung und Identifikation regelmäßig prüfen.",
+   "type": "TECHNICAL",
+   "priority_class": "MASSNAHME"
+  },
+  {
+   "code": "m_79e4cbd920",
+   "title": "Direkten Internetzugang vermeiden; individuelle Passwörter verwenden; Netzwerk trennen; Geräte nur bei Bedarf aktivieren und nicht benötigte Funktionen deaktivieren.",
+   "type": "TECHNICAL",
+   "priority_class": "MASSNAHME"
+  },
+  {
+   "code": "m_5e8a859172",
+   "title": "Kommunikationsbeziehungen und Brandfallfunktionen dokumentieren; nur erforderliche Signale zulassen; Änderungen gemeinsam mit den beteiligten Gewerken prüfen.",
+   "type": "TECHNICAL",
+   "priority_class": "MASSNAHME"
+  },
+  {
+   "code": "m_21185067ef",
+   "title": "Räume und Schränke verschließen; individuelle Benutzer und starke Passwörter einrichten; Default-Zugänge ändern oder sperren; ausgeschiedene Berechtigungen entziehen.",
+   "type": "TECHNICAL",
+   "priority_class": "MASSNAHME"
+  },
+  {
+   "code": "m_77219bdcae",
+   "title": "Freigegebene Servicegeräte und Datenträger festlegen; unnötige Funktionen abschalten; Datenträger prüfen; Konfigurationsänderungen und eingesetzte Geräte nachvollziehbar dokumentieren.",
+   "type": "TECHNICAL",
+   "priority_class": "MASSNAHME"
+  },
+  {
+   "code": "m_ae6580519d",
+   "title": "Fernzugang standardmäßig deaktivieren; sichere Zugangslösung und Freigabeprozess festlegen; während eingeschränkter Schutzmaßnahmen geeignete Ersatzmaßnahmen vorsehen.",
+   "type": "TECHNICAL",
+   "priority_class": "MASSNAHME"
+  },
+  {
+   "code": "m_9b63ebe815",
+   "title": "Versionsübersicht und Informationsquellen festlegen; Updates vor Einspielen bewerten und sichern; Herstellervorgaben umsetzen oder Abweichungen begründen.",
+   "type": "ORGANISATIONAL",
+   "priority_class": "MASSNAHME"
+  },
+  {
+   "code": "m_4acc2ab3e1",
+   "title": "Sicheres Verhalten bei Kommunikationsverlust festlegen und prüfen; Abhängigkeiten reduzieren; unabhängige Abschalt- bzw. Sicherheitsfunktion erhalten.",
+   "type": "TECHNICAL",
+   "priority_class": "MASSNAHME"
+  },
+  {
+   "code": "m_8252758977",
+   "title": "Cybernotfall-Anweisung erstellen; betroffene Verbindungen isolieren können; vor Wiederinbetriebnahme Integrität, zulässige Konfiguration und Sicherheitsfunktionen prüfen.",
+   "type": "TECHNICAL",
+   "priority_class": "MASSNAHME"
+  },
+  {
+   "code": "m_f20d37528d",
+   "title": "Verantwortlichen benennen; Aufgaben schriftlich zuweisen; Dienstleister einweisen; Zugänge und Änderungen nur durch beauftragte fachkundige Personen zulassen.",
+   "type": "ORGANISATIONAL",
+   "priority_class": "MASSNAHME"
+  },
+  {
+   "code": "m_b739ab9852",
+   "title": "Ist-/Soll-Vergleich und Mängelbewertung dokumentieren; Kontrollen und Prüffristen festlegen; nach prüfpflichtigen Änderungen vor Wiederinbetriebnahme prüfen; Nachweise für die wiederkehrende Prüfung bereithalten.",
+   "type": "TECHNICAL",
+   "priority_class": "MASSNAHME"
+  }
+ ],
+ "hazards": [
+  {
+   "code": "CYV-1",
+   "domain": "CYBER",
+   "title": "Systemabgrenzung und Schnittstellen",
+   "description": "Alle sicherheitsrelevanten Einrichtungen sowie kabelgebundenen und kabellosen Datenschnittstellen sind erfasst. Temporäre Servicezugänge und externe Kommunikationspartner sind einbezogen. Sind keine kompromittierbaren Schnittstellen vorhanden, ist dies begründet dokumentiert.",
+   "category": "Cybersicherheit",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_cyv_1",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "TRBS",
+     "document": "TRBS 1115-1",
+     "section": "Abschn. 1, 3.2, 4.4.3"
+    },
+    {
+     "type": "OTHER",
+     "document": "TÜV SÜD Schritt 1"
+    }
+   ]
+  },
+  {
+   "code": "CYV-2",
+   "domain": "CYBER",
+   "title": "Cyberrelevanz und mögliche Folgen",
+   "description": "Für jede relevante Komponente ist bewertet, ob Manipulation oder Ausfall zu einer Gefährdung führen kann, z. B. Fehlbündigkeit, Türbewegung, unzulässige Geschwindigkeit, Ausfall des Notrufs oder Stillstand mit eingeschlossenen Personen.",
+   "category": "Cybersicherheit",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_cyv_2",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "TRBS",
+     "document": "TRBS 1115-1",
+     "section": "Abschn. 3.1, 4.4.3"
+    },
+    {
+     "type": "OTHER",
+     "document": "TÜV SÜD Schritt 2"
+    }
+   ]
+  },
+  {
+   "code": "CYV-3",
+   "domain": "CYBER",
+   "title": "Aufzugssteuerung / PESSRAL-Logik",
+   "description": "Zugänge, Softwarestände, Parameter und Schnittstellen der Steuerung sind bekannt und geschützt. Schaltschränke sind verschlossen; Parameteränderungen erfolgen nur durch Berechtigte und werden dokumentiert.",
+   "category": "Cybersicherheit",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_cyv_3",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "TRBS",
+     "document": "TRBS 1115-1",
+     "section": "Abschn. 4.5.2"
+    },
+    {
+     "type": "OTHER",
+     "document": "TÜV SÜD Schritte 1-3"
+    }
+   ]
+  },
+  {
+   "code": "CYV-4",
+   "domain": "CYBER",
+   "title": "PESSRAL-/SIL-Komponenten und Sicherheitskreise",
+   "description": "Digitale sicherheitsbezogene Komponenten und deren Verbindungen sind erfasst. Eine Manipulation oder Störung darf Sicherheitsfunktionen, Fang-, Brems-, Tür- oder Schutzeinrichtungen nicht unzulässig beeinflussen.",
+   "category": "Cybersicherheit",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_cyv_4",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "TRBS",
+     "document": "TRBS 1115-1",
+     "section": "Abschn. 3.2, 4.3, 4.5.2"
+    }
+   ]
+  },
+  {
+   "code": "CYV-5",
+   "domain": "CYBER",
+   "title": "Frequenzumrichter / STO",
+   "description": "Sicherheitsrelevante Parameter, STO-Funktionen und Servicezugänge sind vor unbefugter Änderung geschützt. Software- oder Parameteränderungen dürfen keine unzulässige Bewegung oder Geschwindigkeit verursachen.",
+   "category": "Cybersicherheit",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_cyv_5",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "TRBS",
+     "document": "TRBS 1115-1",
+     "section": "Abschn. 4.5.2"
+    },
+    {
+     "type": "OTHER",
+     "document": "TÜV SÜD Schritte 1-3"
+    }
+   ]
+  },
+  {
+   "code": "CYV-6",
+   "domain": "CYBER",
+   "title": "Türsteuergerät / Türantrieb / Nivellierung",
+   "description": "Servicezugänge und Parameter sind geschützt. Eine Manipulation darf Türkräfte, Türbewegung, Entriegelung oder Haltegenauigkeit nicht sicherheitswidrig verändern.",
+   "category": "Cybersicherheit",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_cyv_6",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "TRBS",
+     "document": "TRBS 1115-1",
+     "section": "Abschn. 4.5.2"
+    },
+    {
+     "type": "OTHER",
+     "document": "Praxisbeispiel Cyber-GBU"
+    }
+   ]
+  },
+  {
+   "code": "CYV-7",
+   "domain": "CYBER",
+   "title": "Notruf / Zweiwegekommunikation",
+   "description": "Rufnummern, Parameter und Fernzugänge sind geschützt. Das Notrufsystem bleibt verfügbar; eine unbefugte Umleitung, Deaktivierung oder Veränderung der Notrufverbindung ist verhindert.",
+   "category": "Cybersicherheit",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_cyv_7",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "TRBS",
+     "document": "TRBS 1115-1",
+     "section": "Abschn. 4.5.2"
+    },
+    {
+     "type": "OTHER",
+     "document": "TÜV SÜD Schritte 1-3"
+    }
+   ]
+  },
+  {
+   "code": "CYV-8",
+   "domain": "CYBER",
+   "title": "Gateway / Router / Modem / WLAN-/Service-Dongle",
+   "description": "Externe Kommunikationsgeräte sind vollständig erfasst und auf das notwendige Maß beschränkt. Zugriffe sind individuell authentifiziert, segmentiert, freigegeben und nachvollziehbar.",
+   "category": "Cybersicherheit",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_cyv_8",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "TRBS",
+     "document": "TRBS 1115-1",
+     "section": "Abschn. 4.5.2 Nr. 1-3"
+    },
+    {
+     "type": "OTHER",
+     "document": "TÜV SÜD Schritte 1-3"
+    }
+   ]
+  },
+  {
+   "code": "CYV-9",
+   "domain": "CYBER",
+   "title": "Schachtentrauchung / Brandfallsteuerung / bauseitige Systeme",
+   "description": "Schnittstellen zu Entrauchung, Brandmeldeanlage, Gebäudeleittechnik, Zutrittskontrolle oder anderen bauseitigen Systemen sind erfasst. Fremdsysteme dürfen keine unzulässigen Befehle oder Rückwirkungen auslösen.",
+   "category": "Cybersicherheit",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_cyv_9",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "TRBS",
+     "document": "TRBS 1115-1",
+     "section": "Abschn. 2.4, 4.5.2"
+    },
+    {
+     "type": "OTHER",
+     "document": "Praxisbeispiel Cyber-GBU"
+    }
+   ]
+  },
+  {
+   "code": "CYV-10",
+   "domain": "CYBER",
+   "title": "Physischer und logischer Zugang",
+   "description": "Maschinenraum, Schaltschränke, Steuerungen und Serviceanschlüsse sind gegen unbefugten Zugang geschützt. Berechtigungen folgen dem Prinzip der minimalen Rechte; Standard- und Sammelkonten sind vermieden.",
+   "category": "Cybersicherheit",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_cyv_10",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "TRBS",
+     "document": "TRBS 1115-1",
+     "section": "Abschn. 3.3, 4.5.2 Nr. 2"
+    }
+   ]
+  },
+  {
+   "code": "CYV-11",
+   "domain": "CYBER",
+   "title": "Härtung / Servicegeräte / Wechseldatenträger",
+   "description": "Nicht benötigte Dienste, Software und Schnittstellen sind deaktiviert. Service-Laptops, USB-Sticks und Konfigurationsgeräte werden kontrolliert eingesetzt und sind gegen Schadsoftware und unbefugte Nutzung geschützt.",
+   "category": "Cybersicherheit",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_cyv_11",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "TRBS",
+     "document": "TRBS 1115-1",
+     "section": "Abschn. 4.5.2 Nr. 3"
+    },
+    {
+     "type": "OTHER",
+     "document": "Anhang 2"
+    }
+   ]
+  },
+  {
+   "code": "CYV-12",
+   "domain": "CYBER",
+   "title": "Fernzugriff und Netztrennung",
+   "description": "Fernwartung erfolgt nur nach ausdrücklicher Freigabe, zeitlich begrenzt und protokolliert. Aufzugssteuerung und sicherheitsrelevante Komponenten sind von Büro-, Gebäude- und Fremdnetzen angemessen getrennt.",
+   "category": "Cybersicherheit",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_cyv_12",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "TRBS",
+     "document": "TRBS 1115-1",
+     "section": "Abschn. 4.2, 4.5.2 Nr. 1"
+    },
+    {
+     "type": "OTHER",
+     "document": "TÜV SÜD Maßnahme 1"
+    }
+   ]
+  },
+  {
+   "code": "CYV-13",
+   "domain": "CYBER",
+   "title": "Herstellerunterlagen / Versionen / Updates / Schwachstellen",
+   "description": "Betriebsanleitungen, IT-Sicherheitshinweise und Herstellerfestlegungen liegen vor. Software-, Firmware- und Parameterstände sind bekannt. Updates und Schwachstellenmeldungen werden bewertet, geprüft und dokumentiert.",
+   "category": "Cybersicherheit",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_cyv_13",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "TRBS",
+     "document": "TRBS 1115-1",
+     "section": "Abschn. 3.4, 4.4.1-4.4.3, 8.2"
+    }
+   ]
+  },
+  {
+   "code": "CYV-14",
+   "domain": "CYBER",
+   "title": "Unabhängigkeit und sicherer Zustand",
+   "description": "Ausfall, Kommunikationsverlust oder Kompromittierung der IT/OT- Umgebung darf Sicherheitsfunktionen nicht unzulässig beeinträchtigen. Ein sicherer Zustand kann über einen nicht gleichartig kompromittierbaren Weg erreicht werden.",
+   "category": "Cybersicherheit",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_cyv_14",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "TRBS",
+     "document": "TRBS 1115-1",
+     "section": "Abschn. 4.5.2 Nr. 4 und 6"
+    }
+   ]
+  },
+  {
+   "code": "CYV-15",
+   "domain": "CYBER",
+   "title": "Überwachung / Cybervorfall / Wiederinbetriebnahme",
+   "description": "Unzulässige Zugriffe und Änderungen sind soweit erforderlich erkennbar und nachvollziehbar. Für Cybervorfälle bestehen Meldeweg, Isolation, sicherer Zustand und Kriterien für eine sichere Wiederinbetriebnahme.",
+   "category": "Cybersicherheit",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_cyv_15",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "TRBS",
+     "document": "TRBS 1115-1",
+     "section": "Abschn. 4.5.2 Nr. 5-6, 8.1"
+    },
+    {
+     "type": "OTHER",
+     "document": "TÜV SÜD Schritt 4"
+    }
+   ]
+  },
+  {
+   "code": "CYV-16",
+   "domain": "CYBER",
+   "title": "Organisation / Verantwortlichkeiten / Wartungsfirma",
+   "description": "Verantwortliche Person, Fachkunde, Zugriffsrechte und Aufgaben von Betreiber, Wartungsfirma und Dritten sind festgelegt. Beschaffung, Reparatur, Wartung und Parameteränderungen unterliegen geregelten Abläufen.",
+   "category": "Cybersicherheit",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_cyv_16",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "TRBS",
+     "document": "TRBS 1115-1",
+     "section": "Abschn. 3.3"
+    },
+    {
+     "type": "OTHER",
+     "document": "TÜV SÜD Schritt 4"
+    }
+   ]
+  },
+  {
+   "code": "CYV-17",
+   "domain": "CYBER",
+   "title": "Wirksamkeitsprüfung / Änderungen / Dokumentation",
+   "description": "Sollzustand, Prüfumfang, Prüffristen und Kontrollen sind festgelegt. Organisatorische Maßnahmen werden ordnungsgeprüft, technische Maßnahmen auf Eignung und Funktionsfähigkeit geprüft. Nach Änderungen, Vorfällen oder neuen Erkenntnissen erfolgt eine Neubewertung.",
+   "category": "Cybersicherheit",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_cyv_17",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "TRBS",
+     "document": "TRBS 1115-1",
+     "section": "Abschn. 5-8"
+    },
+    {
+     "type": "TRBS",
+     "document": "TRBS 1201",
+     "section": "Abschn. 2-6"
+    }
+   ]
+  }
+ ],
+ "rules": [
+  {
+   "hazard": "CYV-1",
+   "code": "CYV-1-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_1",
+    "operator": "EQ",
+    "value": "erfuellt"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "CYV-1",
+   "code": "CYV-1-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_1",
+    "operator": "EQ",
+    "value": "teilweise"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_c1388c5d68",
+     "group_id": "massnahme",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "CYV-1",
+   "code": "CYV-1-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_1",
+    "operator": "EQ",
+    "value": "nicht_erfuellt"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_c1388c5d68",
+     "group_id": "massnahme",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "CYV-1",
+   "code": "CYV-1-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_1",
+    "operator": "EQ",
+    "value": "na"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "CYV-2",
+   "code": "CYV-2-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_2",
+    "operator": "EQ",
+    "value": "erfuellt"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "CYV-2",
+   "code": "CYV-2-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_2",
+    "operator": "EQ",
+    "value": "teilweise"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_8b5edb9f52",
+     "group_id": "massnahme",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "CYV-2",
+   "code": "CYV-2-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_2",
+    "operator": "EQ",
+    "value": "nicht_erfuellt"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_8b5edb9f52",
+     "group_id": "massnahme",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "CYV-2",
+   "code": "CYV-2-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_2",
+    "operator": "EQ",
+    "value": "na"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "CYV-3",
+   "code": "CYV-3-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_3",
+    "operator": "EQ",
+    "value": "erfuellt"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "CYV-3",
+   "code": "CYV-3-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_3",
+    "operator": "EQ",
+    "value": "teilweise"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_c6ef174911",
+     "group_id": "massnahme",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "CYV-3",
+   "code": "CYV-3-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_3",
+    "operator": "EQ",
+    "value": "nicht_erfuellt"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_c6ef174911",
+     "group_id": "massnahme",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "CYV-3",
+   "code": "CYV-3-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_3",
+    "operator": "EQ",
+    "value": "na"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "CYV-4",
+   "code": "CYV-4-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_4",
+    "operator": "EQ",
+    "value": "erfuellt"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "CYV-4",
+   "code": "CYV-4-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_4",
+    "operator": "EQ",
+    "value": "teilweise"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_2ea0023257",
+     "group_id": "massnahme",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "CYV-4",
+   "code": "CYV-4-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_4",
+    "operator": "EQ",
+    "value": "nicht_erfuellt"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_2ea0023257",
+     "group_id": "massnahme",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "CYV-4",
+   "code": "CYV-4-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_4",
+    "operator": "EQ",
+    "value": "na"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "CYV-5",
+   "code": "CYV-5-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_5",
+    "operator": "EQ",
+    "value": "erfuellt"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "CYV-5",
+   "code": "CYV-5-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_5",
+    "operator": "EQ",
+    "value": "teilweise"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_3fb2d4723d",
+     "group_id": "massnahme",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "CYV-5",
+   "code": "CYV-5-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_5",
+    "operator": "EQ",
+    "value": "nicht_erfuellt"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_3fb2d4723d",
+     "group_id": "massnahme",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "CYV-5",
+   "code": "CYV-5-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_5",
+    "operator": "EQ",
+    "value": "na"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "CYV-6",
+   "code": "CYV-6-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_6",
+    "operator": "EQ",
+    "value": "erfuellt"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "CYV-6",
+   "code": "CYV-6-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_6",
+    "operator": "EQ",
+    "value": "teilweise"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_0af5495108",
+     "group_id": "massnahme",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "CYV-6",
+   "code": "CYV-6-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_6",
+    "operator": "EQ",
+    "value": "nicht_erfuellt"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_0af5495108",
+     "group_id": "massnahme",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "CYV-6",
+   "code": "CYV-6-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_6",
+    "operator": "EQ",
+    "value": "na"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "CYV-7",
+   "code": "CYV-7-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_7",
+    "operator": "EQ",
+    "value": "erfuellt"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "CYV-7",
+   "code": "CYV-7-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_7",
+    "operator": "EQ",
+    "value": "teilweise"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_ba1794218b",
+     "group_id": "massnahme",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "CYV-7",
+   "code": "CYV-7-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_7",
+    "operator": "EQ",
+    "value": "nicht_erfuellt"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_ba1794218b",
+     "group_id": "massnahme",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "CYV-7",
+   "code": "CYV-7-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_7",
+    "operator": "EQ",
+    "value": "na"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "CYV-8",
+   "code": "CYV-8-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_8",
+    "operator": "EQ",
+    "value": "erfuellt"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "CYV-8",
+   "code": "CYV-8-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_8",
+    "operator": "EQ",
+    "value": "teilweise"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_79e4cbd920",
+     "group_id": "massnahme",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "CYV-8",
+   "code": "CYV-8-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_8",
+    "operator": "EQ",
+    "value": "nicht_erfuellt"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_79e4cbd920",
+     "group_id": "massnahme",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "CYV-8",
+   "code": "CYV-8-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_8",
+    "operator": "EQ",
+    "value": "na"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "CYV-9",
+   "code": "CYV-9-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_9",
+    "operator": "EQ",
+    "value": "erfuellt"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "CYV-9",
+   "code": "CYV-9-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_9",
+    "operator": "EQ",
+    "value": "teilweise"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_5e8a859172",
+     "group_id": "massnahme",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "CYV-9",
+   "code": "CYV-9-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_9",
+    "operator": "EQ",
+    "value": "nicht_erfuellt"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_5e8a859172",
+     "group_id": "massnahme",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "CYV-9",
+   "code": "CYV-9-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_9",
+    "operator": "EQ",
+    "value": "na"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "CYV-10",
+   "code": "CYV-10-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_10",
+    "operator": "EQ",
+    "value": "erfuellt"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "CYV-10",
+   "code": "CYV-10-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_10",
+    "operator": "EQ",
+    "value": "teilweise"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_21185067ef",
+     "group_id": "massnahme",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "CYV-10",
+   "code": "CYV-10-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_10",
+    "operator": "EQ",
+    "value": "nicht_erfuellt"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_21185067ef",
+     "group_id": "massnahme",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "CYV-10",
+   "code": "CYV-10-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_10",
+    "operator": "EQ",
+    "value": "na"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "CYV-11",
+   "code": "CYV-11-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_11",
+    "operator": "EQ",
+    "value": "erfuellt"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "CYV-11",
+   "code": "CYV-11-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_11",
+    "operator": "EQ",
+    "value": "teilweise"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_77219bdcae",
+     "group_id": "massnahme",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "CYV-11",
+   "code": "CYV-11-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_11",
+    "operator": "EQ",
+    "value": "nicht_erfuellt"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_77219bdcae",
+     "group_id": "massnahme",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "CYV-11",
+   "code": "CYV-11-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_11",
+    "operator": "EQ",
+    "value": "na"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "CYV-12",
+   "code": "CYV-12-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_12",
+    "operator": "EQ",
+    "value": "erfuellt"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "CYV-12",
+   "code": "CYV-12-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_12",
+    "operator": "EQ",
+    "value": "teilweise"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_ae6580519d",
+     "group_id": "massnahme",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "CYV-12",
+   "code": "CYV-12-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_12",
+    "operator": "EQ",
+    "value": "nicht_erfuellt"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_ae6580519d",
+     "group_id": "massnahme",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "CYV-12",
+   "code": "CYV-12-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_12",
+    "operator": "EQ",
+    "value": "na"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "CYV-13",
+   "code": "CYV-13-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_13",
+    "operator": "EQ",
+    "value": "erfuellt"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "CYV-13",
+   "code": "CYV-13-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_13",
+    "operator": "EQ",
+    "value": "teilweise"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_9b63ebe815",
+     "group_id": "massnahme",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "CYV-13",
+   "code": "CYV-13-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_13",
+    "operator": "EQ",
+    "value": "nicht_erfuellt"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_9b63ebe815",
+     "group_id": "massnahme",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "CYV-13",
+   "code": "CYV-13-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_13",
+    "operator": "EQ",
+    "value": "na"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "CYV-14",
+   "code": "CYV-14-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_14",
+    "operator": "EQ",
+    "value": "erfuellt"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "CYV-14",
+   "code": "CYV-14-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_14",
+    "operator": "EQ",
+    "value": "teilweise"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_4acc2ab3e1",
+     "group_id": "massnahme",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "CYV-14",
+   "code": "CYV-14-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_14",
+    "operator": "EQ",
+    "value": "nicht_erfuellt"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_4acc2ab3e1",
+     "group_id": "massnahme",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "CYV-14",
+   "code": "CYV-14-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_14",
+    "operator": "EQ",
+    "value": "na"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "CYV-15",
+   "code": "CYV-15-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_15",
+    "operator": "EQ",
+    "value": "erfuellt"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "CYV-15",
+   "code": "CYV-15-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_15",
+    "operator": "EQ",
+    "value": "teilweise"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_8252758977",
+     "group_id": "massnahme",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "CYV-15",
+   "code": "CYV-15-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_15",
+    "operator": "EQ",
+    "value": "nicht_erfuellt"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_8252758977",
+     "group_id": "massnahme",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "CYV-15",
+   "code": "CYV-15-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_15",
+    "operator": "EQ",
+    "value": "na"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "CYV-16",
+   "code": "CYV-16-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_16",
+    "operator": "EQ",
+    "value": "erfuellt"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "CYV-16",
+   "code": "CYV-16-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_16",
+    "operator": "EQ",
+    "value": "teilweise"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_f20d37528d",
+     "group_id": "massnahme",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "CYV-16",
+   "code": "CYV-16-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_16",
+    "operator": "EQ",
+    "value": "nicht_erfuellt"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_f20d37528d",
+     "group_id": "massnahme",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "CYV-16",
+   "code": "CYV-16-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_16",
+    "operator": "EQ",
+    "value": "na"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "CYV-17",
+   "code": "CYV-17-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_17",
+    "operator": "EQ",
+    "value": "erfuellt"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "CYV-17",
+   "code": "CYV-17-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_17",
+    "operator": "EQ",
+    "value": "teilweise"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_b739ab9852",
+     "group_id": "massnahme",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "CYV-17",
+   "code": "CYV-17-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_17",
+    "operator": "EQ",
+    "value": "nicht_erfuellt"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_b739ab9852",
+     "group_id": "massnahme",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "CYV-17",
+   "code": "CYV-17-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_cyv_17",
+    "operator": "EQ",
+    "value": "na"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  }
+ ]
+}

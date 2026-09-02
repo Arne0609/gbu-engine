@@ -1,0 +1,7029 @@
+{
+ "rule_version": "2026add-2026.1",
+ "questions": [
+  {
+   "code": "q_e26_g1",
+   "type": "SELECT",
+   "domain": "GBU",
+   "text": "G1 – Brandmeldeanlage, Brandfall- und Evakuierungssteuerung",
+   "category": "G1 – Brandmeldeanlage, Brandfall- und Evakuierungssteuerung",
+   "options": [
+    {
+     "value": "oea57a19f",
+     "label": "Anforderungen dieser Kategorie vollständig erfüllt und anlagenspezifisch nachgewiesen"
+    },
+    {
+     "value": "oefdbe7cc",
+     "label": "Nicht anwendbar / entsprechende Einrichtung oder Funktion an dieser Anlage nicht vorhanden"
+    },
+    {
+     "value": "o2d90ac21",
+     "label": "BMA vorhanden, Zusammenhang mit Aufzug unbekannt"
+    },
+    {
+     "value": "odc0b2033",
+     "label": "Funktion ungeprüft oder fehlerhaft"
+    },
+    {
+     "value": "o1ca4d0be",
+     "label": "Brandschutzeinrichtung behindert Aufzugsbetrieb oder Rettung"
+    },
+    {
+     "value": "oa8e2a62f",
+     "label": "Evakuierungsfunktion ist vorhanden, aber nicht Teil der GBU"
+    }
+   ]
+  },
+  {
+   "code": "q_e26_g2",
+   "type": "SELECT",
+   "domain": "GBU",
+   "text": "G2 – Schachtentrauchung, Lüftung und RWA",
+   "category": "G2 – Schachtentrauchung, Lüftung und RWA",
+   "options": [
+    {
+     "value": "oea57a19f",
+     "label": "Anforderungen dieser Kategorie vollständig erfüllt und anlagenspezifisch nachgewiesen"
+    },
+    {
+     "value": "oefdbe7cc",
+     "label": "Nicht anwendbar / entsprechende Einrichtung oder Funktion an dieser Anlage nicht vorhanden"
+    },
+    {
+     "value": "oa1de48d1",
+     "label": "Entrauchung unklar, blockiert oder defekt"
+    },
+    {
+     "value": "o0f64ff6e",
+     "label": "Öffnungen verschlossen, verändert oder unzureichend"
+    },
+    {
+     "value": "o3cade75a",
+     "label": "Kein Nachweis oder Funktionsmangel"
+    }
+   ]
+  },
+  {
+   "code": "q_e26_g3",
+   "type": "SELECT",
+   "domain": "GBU",
+   "text": "G3 – Löschanlagen / Sprinkler und elektrische Wechselwirkungen",
+   "category": "G3 – Löschanlagen / Sprinkler und elektrische Wechselwirkungen",
+   "options": [
+    {
+     "value": "oea57a19f",
+     "label": "Anforderungen dieser Kategorie vollständig erfüllt und anlagenspezifisch nachgewiesen"
+    },
+    {
+     "value": "oefdbe7cc",
+     "label": "Nicht anwendbar / entsprechende Einrichtung oder Funktion an dieser Anlage nicht vorhanden"
+    },
+    {
+     "value": "o998db6b8",
+     "label": "Wasserbeaufschlagung oder sonstiger Einfluss ist unbewertet"
+    }
+   ]
+  },
+  {
+   "code": "q_e26_g4",
+   "type": "SELECT",
+   "domain": "GBU",
+   "text": "G4 – Fremdgewerke, Reinigung und sichere Zugänge",
+   "category": "G4 – Fremdgewerke, Reinigung und sichere Zugänge",
+   "options": [
+    {
+     "value": "oea57a19f",
+     "label": "Anforderungen dieser Kategorie vollständig erfüllt und anlagenspezifisch nachgewiesen"
+    },
+    {
+     "value": "oefdbe7cc",
+     "label": "Nicht anwendbar / entsprechende Einrichtung oder Funktion an dieser Anlage nicht vorhanden"
+    },
+    {
+     "value": "o9eddebf3",
+     "label": "Wartung nur über gefährlichen Zugang in den Aufzugsbereich möglich"
+    },
+    {
+     "value": "o668db8d3",
+     "label": "Reinigungspersonal arbeitet ohne Schutz-/Zugangskonzept"
+    }
+   ]
+  },
+  {
+   "code": "q_e26_g5",
+   "type": "SELECT",
+   "domain": "GBU",
+   "text": "G5 – Gefahrstoffe, Biostoffe und Explosionsschutz",
+   "category": "G5 – Gefahrstoffe, Biostoffe und Explosionsschutz",
+   "options": [
+    {
+     "value": "oea57a19f",
+     "label": "Anforderungen dieser Kategorie vollständig erfüllt und anlagenspezifisch nachgewiesen"
+    },
+    {
+     "value": "oefdbe7cc",
+     "label": "Nicht anwendbar / entsprechende Einrichtung oder Funktion an dieser Anlage nicht vorhanden"
+    },
+    {
+     "value": "ofbd5c1d9",
+     "label": "Asbest oder andere Gefahrstoffe unbekannt/unbewertet"
+    },
+    {
+     "value": "o0443ab21",
+     "label": "Kontaminierter Bereich ohne Maßnahmen"
+    },
+    {
+     "value": "o28169483",
+     "label": "Ex-Bereich ohne Bewertung"
+    }
+   ]
+  },
+  {
+   "code": "q_e26_g6",
+   "type": "SELECT",
+   "domain": "GBU",
+   "text": "G6 – Temperatur, Feuchtigkeit, Wasser, Korrosion und wassergefährdende Stoffe",
+   "category": "G6 – Temperatur, Feuchtigkeit, Wasser, Korrosion und wassergefährdende Stoffe",
+   "options": [
+    {
+     "value": "oea57a19f",
+     "label": "Anforderungen dieser Kategorie vollständig erfüllt und anlagenspezifisch nachgewiesen"
+    },
+    {
+     "value": "oefdbe7cc",
+     "label": "Nicht anwendbar / entsprechende Einrichtung oder Funktion an dieser Anlage nicht vorhanden"
+    },
+    {
+     "value": "odde0a184",
+     "label": "Öl-/wassergefährdende Stoffe unberücksichtigt"
+    },
+    {
+     "value": "oe838b134",
+     "label": "Überhitzung, Frost oder unzulässige Temperatur möglich"
+    },
+    {
+     "value": "o157bd812",
+     "label": "Wasser in Schachtgrube oder Feuchtigkeit an sicherheitsrelevanten Teilen"
+    },
+    {
+     "value": "o88ac9086",
+     "label": "Massive Korrosion, Betonabplatzungen oder andere relevante Schäden"
+    }
+   ]
+  },
+  {
+   "code": "q_e26_g7",
+   "type": "SELECT",
+   "domain": "GBU",
+   "text": "G7 – Statik, Baustoffe und baulicher Zustand",
+   "category": "G7 – Statik, Baustoffe und baulicher Zustand",
+   "options": [
+    {
+     "value": "oea57a19f",
+     "label": "Anforderungen dieser Kategorie vollständig erfüllt und anlagenspezifisch nachgewiesen"
+    },
+    {
+     "value": "oefdbe7cc",
+     "label": "Nicht anwendbar / entsprechende Einrichtung oder Funktion an dieser Anlage nicht vorhanden"
+    },
+    {
+     "value": "o68ca06fa",
+     "label": "Bauliche Änderung ohne statische/sicherheitstechnische Bewertung"
+    },
+    {
+     "value": "o96cbef4d",
+     "label": "Nachträgliche Verkleidungen/Änderungen verschlechtern Sicherheitszustand"
+    }
+   ]
+  },
+  {
+   "code": "q_e26_g8",
+   "type": "SELECT",
+   "domain": "GBU",
+   "text": "G8 – Fremdgewerkliche Prüfungen und Verantwortlichkeiten",
+   "category": "G8 – Fremdgewerkliche Prüfungen und Verantwortlichkeiten",
+   "options": [
+    {
+     "value": "oea57a19f",
+     "label": "Anforderungen dieser Kategorie vollständig erfüllt und anlagenspezifisch nachgewiesen"
+    },
+    {
+     "value": "oefdbe7cc",
+     "label": "Nicht anwendbar / entsprechende Einrichtung oder Funktion an dieser Anlage nicht vorhanden"
+    },
+    {
+     "value": "ofb59bf00",
+     "label": "Nachweise fehlen oder Zuständigkeit ist unklar"
+    },
+    {
+     "value": "o849f63db",
+     "label": "Maßnahmen bleiben zwischen Gewerken unbearbeitet"
+    }
+   ]
+  },
+  {
+   "code": "q_e26_sf1",
+   "type": "SELECT",
+   "domain": "GBU",
+   "text": "SF1 – Feuerwehraufzug / gebäudeseitige Sonderfunktionen",
+   "category": "SF1 – Feuerwehraufzug / gebäudeseitige Sonderfunktionen",
+   "options": [
+    {
+     "value": "oea57a19f",
+     "label": "Anforderungen dieser Kategorie vollständig erfüllt und anlagenspezifisch nachgewiesen"
+    },
+    {
+     "value": "oefdbe7cc",
+     "label": "Nicht anwendbar / entsprechende Einrichtung oder Funktion an dieser Anlage nicht vorhanden"
+    },
+    {
+     "value": "o69068d3c",
+     "label": "Sind Anforderungen/Unterlagen des Feuerwehraufzuges vorhanden: Anforderung ist nicht erfüllt, ungeprüft oder nicht abgestimmt"
+    },
+    {
+     "value": "o21db0409",
+     "label": "Sind Brandmeldeanlage und Aufzugsfunktion abgestimmt: Anforderung ist nicht erfüllt, ungeprüft oder nicht abgestimmt"
+    },
+    {
+     "value": "o6018bad9",
+     "label": "Sind Druckbelüftungs-/Rauchschutzanlagen vorhanden und geprüft: Anforderung ist nicht erfüllt, ungeprüft oder nicht abgestimmt"
+    },
+    {
+     "value": "o415993b1",
+     "label": "Sind Löschwasser-/Pumpeneinrichtungen mit relevanter Schnittstelle berücksichtigt: Anforderung ist nicht erfüllt, ungeprüft oder nicht abgestimmt"
+    },
+    {
+     "value": "o61a16544",
+     "label": "Ist die erforderliche Sicherheits-/Ersatzstromversorgung vorhanden und geprüft: Anforderung ist nicht erfüllt, ungeprüft oder nicht abgestimmt"
+    },
+    {
+     "value": "o8c2fb6fa",
+     "label": "Wurde die Funktion des Aufzugs unter Ersatzstrombedingungen geprüft: Anforderung ist nicht erfüllt, ungeprüft oder nicht abgestimmt"
+    },
+    {
+     "value": "oc70081a9",
+     "label": "Sind erforderliche Fremdgewerk-Prüfnachweise verfügbar: Anforderung ist nicht erfüllt, ungeprüft oder nicht abgestimmt"
+    },
+    {
+     "value": "o3c3284ac",
+     "label": "Sind Schnittstellen zur Feuerwehr/Brandschutzdienststelle dokumentiert: Anforderung ist nicht erfüllt, ungeprüft oder nicht abgestimmt"
+    },
+    {
+     "value": "oac3a0a81",
+     "label": "Ist die Betreiberorganisation auf den Sonderbetrieb abgestimmt: Anforderung ist nicht erfüllt, ungeprüft oder nicht abgestimmt"
+    },
+    {
+     "value": "o512a827e",
+     "label": "Sind Cyber-Auswirkungen auf Feuerwehrfunktionen gesondert betrachtet: Anforderung ist nicht erfüllt, ungeprüft oder nicht abgestimmt"
+    }
+   ]
+  },
+  {
+   "code": "q_e26_c1",
+   "type": "SELECT",
+   "domain": "CYBER",
+   "text": "C1 – Anwendbarkeit und Cyber-Screening",
+   "category": "C1 – Anwendbarkeit und Cyber-Screening",
+   "options": [
+    {
+     "value": "oea57a19f",
+     "label": "Anforderungen dieser Kategorie vollständig erfüllt und anlagenspezifisch nachgewiesen"
+    },
+    {
+     "value": "oefdbe7cc",
+     "label": "Nicht anwendbar / entsprechende Einrichtung oder Funktion an dieser Anlage nicht vorhanden"
+    },
+    {
+     "value": "oae06747e",
+     "label": "Digitale sicherheitsrelevante Einrichtungen wurden nicht erfasst"
+    },
+    {
+     "value": "od586de18",
+     "label": "Schnittstellen wie Ethernet/RS232/USB etc. sind unbekannt"
+    },
+    {
+     "value": "o8ff0818e",
+     "label": "Drahtlose Schnittstellen sind unbekannt oder undokumentiert"
+    },
+    {
+     "value": "o074fee35",
+     "label": "Indirekte Erreichbarkeit über Fremdsysteme wurde nicht betrachtet"
+    },
+    {
+     "value": "ofb581423",
+     "label": "Cyberrelevanz wurde ohne technische Prüfung pauschal verneint"
+    },
+    {
+     "value": "oe60b39a3",
+     "label": "Notruftechnik wurde von Cyberbewertung ausgenommen"
+    },
+    {
+     "value": "o8924ec02",
+     "label": "Fernzugriff unbekannt oder unkontrolliert"
+    },
+    {
+     "value": "o8107e4ec",
+     "label": "Router/SIM/Gateway vorhanden, aber nicht dokumentiert"
+    },
+    {
+     "value": "oadad3d0c",
+     "label": "PESSRAL ist vorhanden, aber Cyberrelevanz ungeklärt"
+    },
+    {
+     "value": "o3eb432f0",
+     "label": "Safety-FU/Parameterzugriff nicht bewertet"
+    },
+    {
+     "value": "o105fbf31",
+     "label": "Zugangspfad unbekannt oder ungeschützt"
+    },
+    {
+     "value": "oa5cd3fe5",
+     "label": "Servicegeräte/USB-Medien werden ungeregelt eingesetzt"
+    }
+   ]
+  },
+  {
+   "code": "q_e26_c2",
+   "type": "SELECT",
+   "domain": "CYBER",
+   "text": "C2 – Cyber-Komponenten- und Assetinventar",
+   "category": "C2 – Cyber-Komponenten- und Assetinventar",
+   "options": [
+    {
+     "value": "oea57a19f",
+     "label": "Anforderungen dieser Kategorie vollständig erfüllt und anlagenspezifisch nachgewiesen"
+    },
+    {
+     "value": "oefdbe7cc",
+     "label": "Nicht anwendbar / entsprechende Einrichtung oder Funktion an dieser Anlage nicht vorhanden"
+    },
+    {
+     "value": "o8e729dec",
+     "label": "Typ/Firmwarestand unbekannt"
+    },
+    {
+     "value": "ocbfc5f4c",
+     "label": "Sicherheitssteuerung nicht eindeutig dokumentiert"
+    },
+    {
+     "value": "oeeb77989",
+     "label": "PESSRAL-Bestand/Version unklar"
+    },
+    {
+     "value": "od02c42ed",
+     "label": "FU-/Firmwarestand unbekannt"
+    },
+    {
+     "value": "oc226c03d",
+     "label": "Cyberrelevante Türsteuerung nicht betrachtet"
+    },
+    {
+     "value": "o6832cfb8",
+     "label": "Notrufsystem/Übertragungsweg unklar"
+    },
+    {
+     "value": "od7131c64",
+     "label": "Kommunikationskomponente unbekannt/undokumentiert"
+    },
+    {
+     "value": "obd8f7d55",
+     "label": "Fernüberwachung pauschal/ohne Zugriffsdetails beschrieben"
+    },
+    {
+     "value": "ob3bf6ee5",
+     "label": "Fernwartung ohne dokumentierte Kontrolle"
+    },
+    {
+     "value": "oc162be11",
+     "label": "Serviceport unbekannt/unbewertet"
+    },
+    {
+     "value": "o5cf3c3c1",
+     "label": "GA-Kopplung unklar"
+    },
+    {
+     "value": "oca1aeec9",
+     "label": "Schnittstelle unbewertet"
+    },
+    {
+     "value": "od61cc9b7",
+     "label": "Zutrittsintegration unbekannt/unbewertet"
+    },
+    {
+     "value": "o3d8cba1e",
+     "label": "Cloud-Abhängigkeit unbekannt"
+    },
+    {
+     "value": "o8475a662",
+     "label": "SIM-/Mobilfunkanbindung undokumentiert"
+    },
+    {
+     "value": "o10403192",
+     "label": "Beliebige Servicegeräte können genutzt werden"
+    },
+    {
+     "value": "oda6f68a1",
+     "label": "Unkontrollierte Datenträgernutzung"
+    },
+    {
+     "value": "oa1145b97",
+     "label": "Restkomponenten/Abhängigkeiten fehlen"
+    }
+   ]
+  },
+  {
+   "code": "q_e26_c3",
+   "type": "SELECT",
+   "domain": "CYBER",
+   "text": "C3 – Schnittstelleninventar und Exposition",
+   "category": "C3 – Schnittstelleninventar und Exposition",
+   "options": [
+    {
+     "value": "oea57a19f",
+     "label": "Anforderungen dieser Kategorie vollständig erfüllt und anlagenspezifisch nachgewiesen"
+    },
+    {
+     "value": "oefdbe7cc",
+     "label": "Nicht anwendbar / entsprechende Einrichtung oder Funktion an dieser Anlage nicht vorhanden"
+    },
+    {
+     "value": "o2dd36aa2",
+     "label": "Schnittstellenbestand unvollständig"
+    },
+    {
+     "value": "o4d0c269a",
+     "label": "Unnötige Schnittstelle aktiv"
+    },
+    {
+     "value": "oe53093d3",
+     "label": "Reichweite/Zugriffspfad unbekannt"
+    },
+    {
+     "value": "o0934caf5",
+     "label": "Permanenter Zugriff wird nicht erkannt"
+    },
+    {
+     "value": "o5a922536",
+     "label": "Schnittstelle ohne angemessene Authentifizierung"
+    },
+    {
+     "value": "o3ebd5dd8",
+     "label": "Standardkennwort oder unkontrollierter Gemeinschaftszugang"
+    },
+    {
+     "value": "o5f6a0c69",
+     "label": "Unklare oder zu weitreichende Rechte"
+    },
+    {
+     "value": "od313734d",
+     "label": "Unnötiger Port bleibt aktiv"
+    },
+    {
+     "value": "ob4d33c19",
+     "label": "Offener Zugriff auf Service-/Programmierport"
+    },
+    {
+     "value": "ocf78c03b",
+     "label": "Zugriffe/Änderungen nicht nachvollziehbar"
+    },
+    {
+     "value": "o4f735aed",
+     "label": "Safety-Parameter können ungeschützt verändert werden"
+    },
+    {
+     "value": "ob58cc8d8",
+     "label": "Softwareänderung ohne kontrollierten Prozess möglich"
+    },
+    {
+     "value": "of401fe23",
+     "label": "Sicherheitsrelevantes System aus Fremdnetz ungeschützt erreichbar"
+    }
+   ]
+  },
+  {
+   "code": "q_e26_c4",
+   "type": "SELECT",
+   "domain": "CYBER",
+   "text": "C4 – Zugriff, Authentifizierung und Berechtigungen",
+   "category": "C4 – Zugriff, Authentifizierung und Berechtigungen",
+   "options": [
+    {
+     "value": "oea57a19f",
+     "label": "Anforderungen dieser Kategorie vollständig erfüllt und anlagenspezifisch nachgewiesen"
+    },
+    {
+     "value": "oefdbe7cc",
+     "label": "Nicht anwendbar / entsprechende Einrichtung oder Funktion an dieser Anlage nicht vorhanden"
+    },
+    {
+     "value": "ob07556d2",
+     "label": "Alle Nutzer besitzen gleiche/zu weitgehende Rechte"
+    },
+    {
+     "value": "oda6aa755",
+     "label": "Gemeinschaftszugang ohne Nachvollziehbarkeit"
+    },
+    {
+     "value": "o9ba31b0d",
+     "label": "Schwache/fehlende Authentisierung"
+    },
+    {
+     "value": "odcb038ca",
+     "label": "Werkseitige Standardzugänge aktiv"
+    },
+    {
+     "value": "o12df9731",
+     "label": "Offene oder schwach geschützte Funkverbindung"
+    },
+    {
+     "value": "oc2ac59f0",
+     "label": "Unbefugte können an Steuerung/Ports gelangen"
+    },
+    {
+     "value": "o253563c8",
+     "label": "Ehemalige Nutzer behalten Zugang"
+    },
+    {
+     "value": "oda5c7761",
+     "label": "Rechte wachsen unkontrolliert über Jahre"
+    }
+   ]
+  },
+  {
+   "code": "q_e26_c5",
+   "type": "SELECT",
+   "domain": "CYBER",
+   "text": "C5 – Fernzugriff, Fernwartung und Notrufanbindung",
+   "category": "C5 – Fernzugriff, Fernwartung und Notrufanbindung",
+   "options": [
+    {
+     "value": "oea57a19f",
+     "label": "Anforderungen dieser Kategorie vollständig erfüllt und anlagenspezifisch nachgewiesen"
+    },
+    {
+     "value": "oefdbe7cc",
+     "label": "Nicht anwendbar / entsprechende Einrichtung oder Funktion an dieser Anlage nicht vorhanden"
+    },
+    {
+     "value": "o61efcda1",
+     "label": "Unbekannter/undokumentierter Fernzugang"
+    },
+    {
+     "value": "oc611b6e0",
+     "label": "Fernzugriff technisch unzureichend geschützt"
+    },
+    {
+     "value": "obac40a3d",
+     "label": "Unbefugter Zugriff möglich"
+    },
+    {
+     "value": "o2cbb2fa3",
+     "label": "Dienstleister kann jederzeit ohne Betreiberkenntnis zugreifen"
+    },
+    {
+     "value": "oa8477161",
+     "label": "Dauerhafter Vollzugriff ohne Einschränkung"
+    },
+    {
+     "value": "o7ff78448",
+     "label": "Angeblich lesender Kanal erlaubt Änderungen"
+    },
+    {
+     "value": "oaf52d68c",
+     "label": "Notrufsystem aus öffentlichen/fremden Netzen unnötig offen"
+    },
+    {
+     "value": "o51bc6837",
+     "label": "Keine Nachvollziehbarkeit"
+    }
+   ]
+  },
+  {
+   "code": "q_e26_c6",
+   "type": "SELECT",
+   "domain": "CYBER",
+   "text": "C6 – Netzsegmentierung und Systemhärtung",
+   "category": "C6 – Netzsegmentierung und Systemhärtung",
+   "options": [
+    {
+     "value": "oea57a19f",
+     "label": "Anforderungen dieser Kategorie vollständig erfüllt und anlagenspezifisch nachgewiesen"
+    },
+    {
+     "value": "oefdbe7cc",
+     "label": "Nicht anwendbar / entsprechende Einrichtung oder Funktion an dieser Anlage nicht vorhanden"
+    },
+    {
+     "value": "o6f3f0612",
+     "label": "Unnötige Netzverbindung vorhanden"
+    },
+    {
+     "value": "o40c5df9e",
+     "label": "Unnötiger Funkzugang aktiv"
+    },
+    {
+     "value": "ocac70f0f",
+     "label": "Unnötige Netzwerk-/Softwaredienste aktiv"
+    },
+    {
+     "value": "o2bb66407",
+     "label": "Safety-relevante OT hängt ungeschützt im allgemeinen Netz"
+    },
+    {
+     "value": "o3ef03ba4",
+     "label": "Breite ungefilterte Netzwerkkommunikation möglich"
+    },
+    {
+     "value": "obfa263c4",
+     "label": "Erforderliche Trennung fehlt"
+    },
+    {
+     "value": "o25ec9e3e",
+     "label": "VLAN wird ungeprüft als vollständige Sicherheitsbarriere angenommen"
+    },
+    {
+     "value": "o1b14406d",
+     "label": "Nicht benötigte Funktionen aktiv"
+    },
+    {
+     "value": "o773aeed6",
+     "label": "Bei hohem Risiko keine Begrenzung zulässiger Kommunikation/Programme"
+    },
+    {
+     "value": "oab365004",
+     "label": "Hersteller-Sicherheitsempfehlungen ignoriert"
+    }
+   ]
+  },
+  {
+   "code": "q_e26_c7",
+   "type": "SELECT",
+   "domain": "CYBER",
+   "text": "C7 – Safety-Auswirkungs- und Cyber-Risikoanalyse",
+   "category": "C7 – Safety-Auswirkungs- und Cyber-Risikoanalyse",
+   "options": [
+    {
+     "value": "oea57a19f",
+     "label": "Anforderungen dieser Kategorie vollständig erfüllt und anlagenspezifisch nachgewiesen"
+    },
+    {
+     "value": "oefdbe7cc",
+     "label": "Nicht anwendbar / entsprechende Einrichtung oder Funktion an dieser Anlage nicht vorhanden"
+    },
+    {
+     "value": "oab9ad71f",
+     "label": "Funktion/Schutzziel unbekannt"
+    },
+    {
+     "value": "o739799a7",
+     "label": "Integritätsverlust nicht bewertet"
+    },
+    {
+     "value": "ob9ee3014",
+     "label": "Verfügbarkeitsverlust nicht bewertet"
+    },
+    {
+     "value": "o1141bf98",
+     "label": "Gefährliche Parameterwirkung nicht bewertet"
+    },
+    {
+     "value": "o9f73bfa5",
+     "label": "Safety-Funktion manipulierbar ohne Bewertung"
+    },
+    {
+     "value": "o97adf23b",
+     "label": "Verzögerung einer Safety-Funktion unbewertet"
+    },
+    {
+     "value": "o95e6ef4e",
+     "label": "Kommunikationsintegrität ungeklärt"
+    },
+    {
+     "value": "ofa79a87d",
+     "label": "Manipulation könnte unbemerkt bleiben"
+    },
+    {
+     "value": "o1f53491f",
+     "label": "IT-Kompromittierung kann ungeprüft auf Safety wirken"
+    },
+    {
+     "value": "o39ee0ad1",
+     "label": "Nicht-digitale Schutzebenen unbekannt"
+    },
+    {
+     "value": "o0a8bbd37",
+     "label": "Personenfolgen werden nicht bewertet"
+    },
+    {
+     "value": "o0a8f3188",
+     "label": "Cybermaßnahmen werden zu früh eingerechnet und Risiko dadurch unterschätzt"
+    },
+    {
+     "value": "o9f164e2b",
+     "label": "Keine zweite Bewertung nach Maßnahmen"
+    }
+   ]
+  },
+  {
+   "code": "q_e26_c8",
+   "type": "SELECT",
+   "domain": "CYBER",
+   "text": "C8 – Rückwirkungsfreiheit und sichere Zustände",
+   "category": "C8 – Rückwirkungsfreiheit und sichere Zustände",
+   "options": [
+    {
+     "value": "oea57a19f",
+     "label": "Anforderungen dieser Kategorie vollständig erfüllt und anlagenspezifisch nachgewiesen"
+    },
+    {
+     "value": "oefdbe7cc",
+     "label": "Nicht anwendbar / entsprechende Einrichtung oder Funktion an dieser Anlage nicht vorhanden"
+    },
+    {
+     "value": "oeb7279ca",
+     "label": "IT-System kann Safety direkt beeinflussen"
+    },
+    {
+     "value": "o1bf22c21",
+     "label": "DoS kann gefährliche Zustände erzeugen"
+    },
+    {
+     "value": "ob63fd68b",
+     "label": "Gemeinsame Infrastruktur wird übersehen"
+    },
+    {
+     "value": "oc879cb0e",
+     "label": "Diagnosekanal kann Steuerung verändern"
+    },
+    {
+     "value": "oc5b82dd1",
+     "label": "Safety hängt unzulässig von Kommunikation ab"
+    }
+   ]
+  },
+  {
+   "code": "q_e26_c9",
+   "type": "SELECT",
+   "domain": "CYBER",
+   "text": "C9 – Monitoring, Logging und Nachvollziehbarkeit",
+   "category": "C9 – Monitoring, Logging und Nachvollziehbarkeit",
+   "options": [
+    {
+     "value": "oea57a19f",
+     "label": "Anforderungen dieser Kategorie vollständig erfüllt und anlagenspezifisch nachgewiesen"
+    },
+    {
+     "value": "oefdbe7cc",
+     "label": "Nicht anwendbar / entsprechende Einrichtung oder Funktion an dieser Anlage nicht vorhanden"
+    },
+    {
+     "value": "o1a532674",
+     "label": "Relevante Angriffe/Anomalien bleiben grundsätzlich unentdeckt"
+    },
+    {
+     "value": "o43885d1f",
+     "label": "Keine Protokollierung"
+    },
+    {
+     "value": "od5c98075",
+     "label": "Angreifer kann Spuren problemlos löschen/verändern"
+    },
+    {
+     "value": "o8d452383",
+     "label": "Logs werden erzeugt, aber nie geprüft"
+    },
+    {
+     "value": "o59a5b822",
+     "label": "Parameteränderungen ohne Nachweis"
+    },
+    {
+     "value": "oa9abe50d",
+     "label": "Vorhandene Integritätsprüfung wird nicht genutzt"
+    }
+   ]
+  },
+  {
+   "code": "q_e26_c10",
+   "type": "SELECT",
+   "domain": "CYBER",
+   "text": "C10 – Schwachstellen-, Update- und Patchmanagement",
+   "category": "C10 – Schwachstellen-, Update- und Patchmanagement",
+   "options": [
+    {
+     "value": "oea57a19f",
+     "label": "Anforderungen dieser Kategorie vollständig erfüllt und anlagenspezifisch nachgewiesen"
+    },
+    {
+     "value": "oefdbe7cc",
+     "label": "Nicht anwendbar / entsprechende Einrichtung oder Funktion an dieser Anlage nicht vorhanden"
+    },
+    {
+     "value": "o9b31cf06",
+     "label": "Niemand verfolgt Cyberthemen"
+    },
+    {
+     "value": "o8849e7c8",
+     "label": "Keine Schwachstellenbeobachtung"
+    },
+    {
+     "value": "oe9152cf4",
+     "label": "Relevante Herstellerinformationen werden nicht verfolgt"
+    },
+    {
+     "value": "oa837fd13",
+     "label": "Updates erfolgen ad hoc oder gar nicht"
+    },
+    {
+     "value": "obd2c9a3e",
+     "label": "Softwareänderung ohne Safety-Bewertung"
+    },
+    {
+     "value": "oaf7cc7cc",
+     "label": "Version unbekannt"
+    },
+    {
+     "value": "o6f7f07b6",
+     "label": "Änderung ohne Änderungsnachweis"
+    },
+    {
+     "value": "o35973ce2",
+     "label": "Update ohne anschließende Funktionsprüfung"
+    },
+    {
+     "value": "ob5c91ade",
+     "label": "Cyber-GBU veraltet ohne Review"
+    }
+   ]
+  },
+  {
+   "code": "q_e26_c11",
+   "type": "SELECT",
+   "domain": "CYBER",
+   "text": "C11 – Cyber-Notfallmanagement und Wiederanlauf",
+   "category": "C11 – Cyber-Notfallmanagement und Wiederanlauf",
+   "options": [
+    {
+     "value": "oea57a19f",
+     "label": "Anforderungen dieser Kategorie vollständig erfüllt und anlagenspezifisch nachgewiesen"
+    },
+    {
+     "value": "oefdbe7cc",
+     "label": "Nicht anwendbar / entsprechende Einrichtung oder Funktion an dieser Anlage nicht vorhanden"
+    },
+    {
+     "value": "o2fe09640",
+     "label": "Kein Incident-Prozess"
+    },
+    {
+     "value": "o03d66bc8",
+     "label": "Trotz Cyberverdacht keine Entscheidungsregeln"
+    },
+    {
+     "value": "o89f88c8f",
+     "label": "Keine unabhängige sichere Reaktionsmöglichkeit"
+    },
+    {
+     "value": "o3cc9aa95",
+     "label": "Meldung versandet oder Verantwortliche unbekannt"
+    },
+    {
+     "value": "o4f37c0e2",
+     "label": "Keine koordinierte Reaktion"
+    },
+    {
+     "value": "ofcd0cb44",
+     "label": "Wiederanlauf trotz ungeklärter Ursache"
+    },
+    {
+     "value": "o1c9b0188",
+     "label": "Mögliche Kompromittierung bleibt im System"
+    },
+    {
+     "value": "o391bc4d5",
+     "label": "Vorfall ohne Review der Schutzmaßnahmen"
+    }
+   ]
+  },
+  {
+   "code": "q_e26_c12",
+   "type": "SELECT",
+   "domain": "CYBER",
+   "text": "C12 – Betriebsanweisung, Unterweisung und Dienstleister",
+   "category": "C12 – Betriebsanweisung, Unterweisung und Dienstleister",
+   "options": [
+    {
+     "value": "oea57a19f",
+     "label": "Anforderungen dieser Kategorie vollständig erfüllt und anlagenspezifisch nachgewiesen"
+    },
+    {
+     "value": "oefdbe7cc",
+     "label": "Nicht anwendbar / entsprechende Einrichtung oder Funktion an dieser Anlage nicht vorhanden"
+    },
+    {
+     "value": "o0c81e2e2",
+     "label": "Cyberregeln nur mündlich oder gar nicht festgelegt"
+    },
+    {
+     "value": "o2c0c483f",
+     "label": "Keine/überholte Unterweisung"
+    },
+    {
+     "value": "o21846f00",
+     "label": "Beliebige Geräte/USB-Medien werden genutzt"
+    },
+    {
+     "value": "o75e8a66e",
+     "label": "Passwörter offen geteilt/notiert oder dauerhaft gleich"
+    },
+    {
+     "value": "od30c3c08",
+     "label": "Externe können ohne kontrollierte Freigabe zugreifen"
+    },
+    {
+     "value": "ofe7bb72a",
+     "label": "Mitarbeitende wissen nicht, wie zu reagieren ist"
+    },
+    {
+     "value": "oc493c7f8",
+     "label": "Externe haben unkontrollierte Zugänge"
+    }
+   ]
+  },
+  {
+   "code": "q_e26_c13",
+   "type": "SELECT",
+   "domain": "CYBER",
+   "text": "C13 – Wirksamkeitskontrolle und ZÜS-Cyberprüfung",
+   "category": "C13 – Wirksamkeitskontrolle und ZÜS-Cyberprüfung",
+   "options": [
+    {
+     "value": "oea57a19f",
+     "label": "Anforderungen dieser Kategorie vollständig erfüllt und anlagenspezifisch nachgewiesen"
+    },
+    {
+     "value": "oefdbe7cc",
+     "label": "Nicht anwendbar / entsprechende Einrichtung oder Funktion an dieser Anlage nicht vorhanden"
+    },
+    {
+     "value": "o94228f87",
+     "label": "Papierkonzept ohne technische Kontrolle"
+    },
+    {
+     "value": "o4d5974ea",
+     "label": "Schutzmaßnahme nicht verifiziert"
+    },
+    {
+     "value": "o1ad791d4",
+     "label": "Dokumentation sagt \"aus\", Schnittstelle ist aktiv"
+    },
+    {
+     "value": "oc155528d",
+     "label": "Schloss/Zugangsschutz fehlt oder ist wirkungslos"
+    },
+    {
+     "value": "oc6f92d90",
+     "label": "Firewall/Netzbegrenzung nur behauptet, nicht verifiziert"
+    },
+    {
+     "value": "o59a11311",
+     "label": "Keine Nachweise/Personen kennen Regeln nicht"
+    },
+    {
+     "value": "o24ecac67",
+     "label": "Unklare Prüftiefe"
+    },
+    {
+     "value": "o4e592654",
+     "label": "Einmalprüfung ohne Wiederholung"
+    },
+    {
+     "value": "o6b1150b2",
+     "label": "Keine belastbare Dokumentation"
+    },
+    {
+     "value": "o47a48299",
+     "label": "Unstrukturierte oder lückenhafte Dokumentation"
+    },
+    {
+     "value": "o1490affe",
+     "label": "Generisches Dokument ohne Anlagenbezug"
+    },
+    {
+     "value": "oe0f708b4",
+     "label": "Pauschale Aussagen ohne Bezug zur Sicherheitsfunktion"
+    },
+    {
+     "value": "o29dbfc8b",
+     "label": "Nur Behauptung, kein Nachweis"
+    },
+    {
+     "value": "oef39fc51",
+     "label": "Keine praktische Wirksamkeitsstichprobe möglich"
+    }
+   ]
+  },
+  {
+   "code": "q_e26_c14",
+   "type": "SELECT",
+   "domain": "CYBER",
+   "text": "C14 – Herstellerunterlagen und Zertifikate",
+   "category": "C14 – Herstellerunterlagen und Zertifikate",
+   "options": [
+    {
+     "value": "oea57a19f",
+     "label": "Anforderungen dieser Kategorie vollständig erfüllt und anlagenspezifisch nachgewiesen"
+    },
+    {
+     "value": "oefdbe7cc",
+     "label": "Nicht anwendbar / entsprechende Einrichtung oder Funktion an dieser Anlage nicht vorhanden"
+    },
+    {
+     "value": "o2fc14b17",
+     "label": "Herstellerhinweise unbekannt/ignoriert"
+    },
+    {
+     "value": "of66d0c0d",
+     "label": "Herstellermaßnahme nicht umgesetzt"
+    },
+    {
+     "value": "od020eefd",
+     "label": "Zertifikat einer Komponente ersetzt fälschlich die Anlagenbewertung"
+    },
+    {
+     "value": "o1490affe",
+     "label": "Generisches Dokument ohne Anlagenbezug"
+    },
+    {
+     "value": "o66090174",
+     "label": "Herstellerdokument wird ohne Betreibermaßnahmen übernommen"
+    }
+   ]
+  }
+ ],
+ "measures": [
+  {
+   "code": "m_a0e4a8fa71",
+   "title": "Auffälligkeit bewerten und bei konkreter Gefährdung interimistisch sichern.",
+   "type": "ORGANISATIONAL",
+   "priority_class": "SOFORT"
+  },
+  {
+   "code": "m_94e8a1213a",
+   "title": "Schnittstelle mit Gebäude-/Fachgewerk fachgerecht herstellen bzw. Mangel beseitigen; Zuständigkeit und Prüfnachweis dokumentieren.",
+   "type": "TECHNICAL",
+   "priority_class": "MITTELFRISTIG"
+  },
+  {
+   "code": "m_c7c858f91a",
+   "title": "Gefahrenbereich sofort sichern; bei unmittelbarer Personengefahr Aufzug/Bereich außer Betrieb nehmen.",
+   "type": "ORGANISATIONAL",
+   "priority_class": "SOFORT"
+  },
+  {
+   "code": "m_a351606b26",
+   "title": "Bei Beeinträchtigung einer erforderlichen Feuerwehrfunktion Nutzung/Sonderbetrieb bis zur Klärung absichern.",
+   "type": "ORGANISATIONAL",
+   "priority_class": "SOFORT"
+  },
+  {
+   "code": "m_886ea6cd89",
+   "title": "Anforderung mit Brandschutz-/Feuerwehr-/Aufzugsfachplanung abstimmen und nachweisen.",
+   "type": "TECHNICAL",
+   "priority_class": "MITTELFRISTIG"
+  },
+  {
+   "code": "m_83b3434d8e",
+   "title": "Cyberrelevanz und Safety-Auswirkung bewerten; bei offenem ungeschütztem Zugriff auf sicherheitsrelevante Funktionen Zugriff sofort unterbinden.",
+   "type": "ORGANISATIONAL",
+   "priority_class": "SOFORT"
+  },
+  {
+   "code": "m_17ee45b34c",
+   "title": "Anlagenspezifische Cybermaßnahme festlegen, umsetzen, dokumentieren und auf Wirksamkeit prüfen.",
+   "type": "TECHNICAL",
+   "priority_class": "MITTELFRISTIG"
+  },
+  {
+   "code": "m_ec3ede0595",
+   "title": "Bei offenem ungeschütztem Zugriff auf Safety-Funktionen sofort Zugriff unterbinden.",
+   "type": "ORGANISATIONAL",
+   "priority_class": "SOFORT"
+  },
+  {
+   "code": "m_a7be0dc37c",
+   "title": "Dokumentation/Umsetzung nach BA-017 und B-002 vervollständigen; Wirksamkeit stichprobenartig prüfen.",
+   "type": "TECHNICAL",
+   "priority_class": "MITTELFRISTIG"
+  }
+ ],
+ "hazards": [
+  {
+   "code": "E26-G1",
+   "domain": "GBU",
+   "title": "G1 – Brandmeldeanlage, Brandfall- und Evakuierungssteuerung",
+   "category": "G1 – Brandmeldeanlage, Brandfall- und Evakuierungssteuerung",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_e26_g1",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "TRBS",
+     "document": "TRBS 1201 Teil 4",
+     "section": "Anhang 4"
+    },
+    {
+     "type": "TRBS",
+     "document": "TRBS 3121",
+     "section": "Anhang 4"
+    }
+   ]
+  },
+  {
+   "code": "E26-G2",
+   "domain": "GBU",
+   "title": "G2 – Schachtentrauchung, Lüftung und RWA",
+   "category": "G2 – Schachtentrauchung, Lüftung und RWA",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_e26_g2",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "TRBS",
+     "document": "TRBS 1201 Teil 4",
+     "section": "Anhang 4"
+    },
+    {
+     "type": "TRBS",
+     "document": "TRBS 3121",
+     "section": "Anhang 4"
+    }
+   ]
+  },
+  {
+   "code": "E26-G3",
+   "domain": "GBU",
+   "title": "G3 – Löschanlagen / Sprinkler und elektrische Wechselwirkungen",
+   "category": "G3 – Löschanlagen / Sprinkler und elektrische Wechselwirkungen",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_e26_g3",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "TRBS",
+     "document": "TRBS 1201 Teil 4",
+     "section": "Anhang 4"
+    },
+    {
+     "type": "TRBS",
+     "document": "TRBS 3121",
+     "section": "Anhang 4"
+    }
+   ]
+  },
+  {
+   "code": "E26-G4",
+   "domain": "GBU",
+   "title": "G4 – Fremdgewerke, Reinigung und sichere Zugänge",
+   "category": "G4 – Fremdgewerke, Reinigung und sichere Zugänge",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_e26_g4",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "TRBS",
+     "document": "TRBS 1201 Teil 4",
+     "section": "Anhang 4"
+    },
+    {
+     "type": "TRBS",
+     "document": "TRBS 3121",
+     "section": "Anhang 4"
+    }
+   ]
+  },
+  {
+   "code": "E26-G5",
+   "domain": "GBU",
+   "title": "G5 – Gefahrstoffe, Biostoffe und Explosionsschutz",
+   "category": "G5 – Gefahrstoffe, Biostoffe und Explosionsschutz",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_e26_g5",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "TRBS",
+     "document": "TRBS 1201 Teil 4",
+     "section": "Anhang 4"
+    },
+    {
+     "type": "TRBS",
+     "document": "TRBS 3121",
+     "section": "Anhang 4"
+    }
+   ]
+  },
+  {
+   "code": "E26-G6",
+   "domain": "GBU",
+   "title": "G6 – Temperatur, Feuchtigkeit, Wasser, Korrosion und wassergefährdende Stoffe",
+   "category": "G6 – Temperatur, Feuchtigkeit, Wasser, Korrosion und wassergefährdende Stoffe",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_e26_g6",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "TRBS",
+     "document": "TRBS 1201 Teil 4",
+     "section": "Anhang 4"
+    },
+    {
+     "type": "TRBS",
+     "document": "TRBS 3121",
+     "section": "Anhang 4"
+    }
+   ]
+  },
+  {
+   "code": "E26-G7",
+   "domain": "GBU",
+   "title": "G7 – Statik, Baustoffe und baulicher Zustand",
+   "category": "G7 – Statik, Baustoffe und baulicher Zustand",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_e26_g7",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "TRBS",
+     "document": "TRBS 1201 Teil 4",
+     "section": "Anhang 4"
+    },
+    {
+     "type": "TRBS",
+     "document": "TRBS 3121",
+     "section": "Anhang 4"
+    }
+   ]
+  },
+  {
+   "code": "E26-G8",
+   "domain": "GBU",
+   "title": "G8 – Fremdgewerkliche Prüfungen und Verantwortlichkeiten",
+   "category": "G8 – Fremdgewerkliche Prüfungen und Verantwortlichkeiten",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_e26_g8",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "TRBS",
+     "document": "TRBS 1201 Teil 4",
+     "section": "Anhang 4"
+    },
+    {
+     "type": "TRBS",
+     "document": "TRBS 3121",
+     "section": "Anhang 4"
+    }
+   ]
+  },
+  {
+   "code": "E26-SF1",
+   "domain": "GBU",
+   "title": "SF1 – Feuerwehraufzug / gebäudeseitige Sonderfunktionen",
+   "category": "SF1 – Feuerwehraufzug / gebäudeseitige Sonderfunktionen",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_e26_sf1",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "TRBS",
+     "document": "TRBS 3121",
+     "section": "Anhang 3"
+    },
+    {
+     "type": "TRBS",
+     "document": "TRBS 1201 Teil 4",
+     "section": "Anhang 4"
+    }
+   ]
+  },
+  {
+   "code": "E26-C1",
+   "domain": "CYBER",
+   "title": "C1 – Anwendbarkeit und Cyber-Screening",
+   "category": "C1 – Anwendbarkeit und Cyber-Screening",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_e26_c1",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "TRBS",
+     "document": "TRBS 1115 Teil 1"
+    },
+    {
+     "type": "OTHER",
+     "document": "EK ZÜS B-002 rev. 5"
+    },
+    {
+     "type": "OTHER",
+     "document": "EK ZÜS BA-017 rev. 1"
+    }
+   ]
+  },
+  {
+   "code": "E26-C2",
+   "domain": "CYBER",
+   "title": "C2 – Cyber-Komponenten- und Assetinventar",
+   "category": "C2 – Cyber-Komponenten- und Assetinventar",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_e26_c2",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "TRBS",
+     "document": "TRBS 1115 Teil 1"
+    },
+    {
+     "type": "OTHER",
+     "document": "EK ZÜS BA-017 rev. 1"
+    }
+   ]
+  },
+  {
+   "code": "E26-C3",
+   "domain": "CYBER",
+   "title": "C3 – Schnittstelleninventar und Exposition",
+   "category": "C3 – Schnittstelleninventar und Exposition",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_e26_c3",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "TRBS",
+     "document": "TRBS 1115 Teil 1"
+    },
+    {
+     "type": "OTHER",
+     "document": "EK ZÜS BA-017 rev. 1"
+    }
+   ]
+  },
+  {
+   "code": "E26-C4",
+   "domain": "CYBER",
+   "title": "C4 – Zugriff, Authentifizierung und Berechtigungen",
+   "category": "C4 – Zugriff, Authentifizierung und Berechtigungen",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_e26_c4",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "TRBS",
+     "document": "TRBS 1115 Teil 1"
+    },
+    {
+     "type": "OTHER",
+     "document": "EK ZÜS BA-017 rev. 1"
+    }
+   ]
+  },
+  {
+   "code": "E26-C5",
+   "domain": "CYBER",
+   "title": "C5 – Fernzugriff, Fernwartung und Notrufanbindung",
+   "category": "C5 – Fernzugriff, Fernwartung und Notrufanbindung",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_e26_c5",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "TRBS",
+     "document": "TRBS 1115 Teil 1"
+    },
+    {
+     "type": "OTHER",
+     "document": "EK ZÜS BA-017 rev. 1"
+    }
+   ]
+  },
+  {
+   "code": "E26-C6",
+   "domain": "CYBER",
+   "title": "C6 – Netzsegmentierung und Systemhärtung",
+   "category": "C6 – Netzsegmentierung und Systemhärtung",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_e26_c6",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "TRBS",
+     "document": "TRBS 1115 Teil 1"
+    }
+   ]
+  },
+  {
+   "code": "E26-C7",
+   "domain": "CYBER",
+   "title": "C7 – Safety-Auswirkungs- und Cyber-Risikoanalyse",
+   "category": "C7 – Safety-Auswirkungs- und Cyber-Risikoanalyse",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_e26_c7",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "TRBS",
+     "document": "TRBS 1115 Teil 1"
+    },
+    {
+     "type": "OTHER",
+     "document": "EK ZÜS BA-017 rev. 1"
+    }
+   ]
+  },
+  {
+   "code": "E26-C8",
+   "domain": "CYBER",
+   "title": "C8 – Rückwirkungsfreiheit und sichere Zustände",
+   "category": "C8 – Rückwirkungsfreiheit und sichere Zustände",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_e26_c8",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "TRBS",
+     "document": "TRBS 1115 Teil 1"
+    }
+   ]
+  },
+  {
+   "code": "E26-C9",
+   "domain": "CYBER",
+   "title": "C9 – Monitoring, Logging und Nachvollziehbarkeit",
+   "category": "C9 – Monitoring, Logging und Nachvollziehbarkeit",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_e26_c9",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "TRBS",
+     "document": "TRBS 1115 Teil 1"
+    }
+   ]
+  },
+  {
+   "code": "E26-C10",
+   "domain": "CYBER",
+   "title": "C10 – Schwachstellen-, Update- und Patchmanagement",
+   "category": "C10 – Schwachstellen-, Update- und Patchmanagement",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_e26_c10",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "TRBS",
+     "document": "TRBS 1115 Teil 1"
+    },
+    {
+     "type": "OTHER",
+     "document": "EK ZÜS BA-017 rev. 1"
+    }
+   ]
+  },
+  {
+   "code": "E26-C11",
+   "domain": "CYBER",
+   "title": "C11 – Cyber-Notfallmanagement und Wiederanlauf",
+   "category": "C11 – Cyber-Notfallmanagement und Wiederanlauf",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_e26_c11",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "TRBS",
+     "document": "TRBS 1115 Teil 1"
+    },
+    {
+     "type": "OTHER",
+     "document": "EK ZÜS B-002 rev. 5"
+    }
+   ]
+  },
+  {
+   "code": "E26-C12",
+   "domain": "CYBER",
+   "title": "C12 – Betriebsanweisung, Unterweisung und Dienstleister",
+   "category": "C12 – Betriebsanweisung, Unterweisung und Dienstleister",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_e26_c12",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "TRBS",
+     "document": "TRBS 1115 Teil 1"
+    }
+   ]
+  },
+  {
+   "code": "E26-C13",
+   "domain": "CYBER",
+   "title": "C13 – Wirksamkeitskontrolle und ZÜS-Cyberprüfung",
+   "category": "C13 – Wirksamkeitskontrolle und ZÜS-Cyberprüfung",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_e26_c13",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "TRBS",
+     "document": "TRBS 1115 Teil 1"
+    },
+    {
+     "type": "OTHER",
+     "document": "EK ZÜS B-002 rev. 5"
+    },
+    {
+     "type": "OTHER",
+     "document": "EK ZÜS BA-017 rev. 1"
+    }
+   ]
+  },
+  {
+   "code": "E26-C14",
+   "domain": "CYBER",
+   "title": "C14 – Herstellerunterlagen und Zertifikate",
+   "category": "C14 – Herstellerunterlagen und Zertifikate",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_e26_c14",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "TRBS",
+     "document": "TRBS 1115 Teil 1"
+    },
+    {
+     "type": "OTHER",
+     "document": "EK ZÜS BA-017 rev. 1"
+    }
+   ]
+  }
+ ],
+ "rules": [
+  {
+   "hazard": "E26-G1",
+   "code": "E26-G1-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_g1",
+    "operator": "EQ",
+    "value": "oea57a19f"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "E26-G1",
+   "code": "E26-G1-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_g1",
+    "operator": "EQ",
+    "value": "oefdbe7cc"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "E26-G1",
+   "code": "E26-G1-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_g1",
+    "operator": "EQ",
+    "value": "o2d90ac21"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_a0e4a8fa71",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_94e8a1213a",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-G1",
+   "code": "E26-G1-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_g1",
+    "operator": "EQ",
+    "value": "odc0b2033"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_c7c858f91a",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_94e8a1213a",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-G1",
+   "code": "E26-G1-R5",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_g1",
+    "operator": "EQ",
+    "value": "o1ca4d0be"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_c7c858f91a",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_94e8a1213a",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-G1",
+   "code": "E26-G1-R6",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_g1",
+    "operator": "EQ",
+    "value": "oa8e2a62f"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_c7c858f91a",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_94e8a1213a",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-G2",
+   "code": "E26-G2-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_g2",
+    "operator": "EQ",
+    "value": "oea57a19f"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "E26-G2",
+   "code": "E26-G2-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_g2",
+    "operator": "EQ",
+    "value": "oefdbe7cc"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "E26-G2",
+   "code": "E26-G2-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_g2",
+    "operator": "EQ",
+    "value": "oa1de48d1"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_c7c858f91a",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_94e8a1213a",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-G2",
+   "code": "E26-G2-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_g2",
+    "operator": "EQ",
+    "value": "o0f64ff6e"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_a0e4a8fa71",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_94e8a1213a",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-G2",
+   "code": "E26-G2-R5",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_g2",
+    "operator": "EQ",
+    "value": "o3cade75a"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_a0e4a8fa71",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_94e8a1213a",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-G3",
+   "code": "E26-G3-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_g3",
+    "operator": "EQ",
+    "value": "oea57a19f"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "E26-G3",
+   "code": "E26-G3-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_g3",
+    "operator": "EQ",
+    "value": "oefdbe7cc"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "E26-G3",
+   "code": "E26-G3-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_g3",
+    "operator": "EQ",
+    "value": "o998db6b8"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_c7c858f91a",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_94e8a1213a",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-G4",
+   "code": "E26-G4-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_g4",
+    "operator": "EQ",
+    "value": "oea57a19f"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "E26-G4",
+   "code": "E26-G4-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_g4",
+    "operator": "EQ",
+    "value": "oefdbe7cc"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "E26-G4",
+   "code": "E26-G4-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_g4",
+    "operator": "EQ",
+    "value": "o9eddebf3"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_c7c858f91a",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_94e8a1213a",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-G4",
+   "code": "E26-G4-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_g4",
+    "operator": "EQ",
+    "value": "o668db8d3"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_c7c858f91a",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_94e8a1213a",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-G5",
+   "code": "E26-G5-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_g5",
+    "operator": "EQ",
+    "value": "oea57a19f"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "E26-G5",
+   "code": "E26-G5-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_g5",
+    "operator": "EQ",
+    "value": "oefdbe7cc"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "E26-G5",
+   "code": "E26-G5-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_g5",
+    "operator": "EQ",
+    "value": "ofbd5c1d9"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_c7c858f91a",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_94e8a1213a",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-G5",
+   "code": "E26-G5-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_g5",
+    "operator": "EQ",
+    "value": "o0443ab21"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_a0e4a8fa71",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_94e8a1213a",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-G5",
+   "code": "E26-G5-R5",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_g5",
+    "operator": "EQ",
+    "value": "o28169483"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_c7c858f91a",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_94e8a1213a",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-G6",
+   "code": "E26-G6-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_g6",
+    "operator": "EQ",
+    "value": "oea57a19f"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "E26-G6",
+   "code": "E26-G6-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_g6",
+    "operator": "EQ",
+    "value": "oefdbe7cc"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "E26-G6",
+   "code": "E26-G6-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_g6",
+    "operator": "EQ",
+    "value": "odde0a184"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_a0e4a8fa71",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_94e8a1213a",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-G6",
+   "code": "E26-G6-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_g6",
+    "operator": "EQ",
+    "value": "oe838b134"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_a0e4a8fa71",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_94e8a1213a",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-G6",
+   "code": "E26-G6-R5",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_g6",
+    "operator": "EQ",
+    "value": "o157bd812"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_c7c858f91a",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_94e8a1213a",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-G6",
+   "code": "E26-G6-R6",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_g6",
+    "operator": "EQ",
+    "value": "o88ac9086"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_c7c858f91a",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_94e8a1213a",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-G7",
+   "code": "E26-G7-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_g7",
+    "operator": "EQ",
+    "value": "oea57a19f"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "E26-G7",
+   "code": "E26-G7-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_g7",
+    "operator": "EQ",
+    "value": "oefdbe7cc"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "E26-G7",
+   "code": "E26-G7-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_g7",
+    "operator": "EQ",
+    "value": "o68ca06fa"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_c7c858f91a",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_94e8a1213a",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-G7",
+   "code": "E26-G7-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_g7",
+    "operator": "EQ",
+    "value": "o96cbef4d"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_a0e4a8fa71",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_94e8a1213a",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-G8",
+   "code": "E26-G8-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_g8",
+    "operator": "EQ",
+    "value": "oea57a19f"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "E26-G8",
+   "code": "E26-G8-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_g8",
+    "operator": "EQ",
+    "value": "oefdbe7cc"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "E26-G8",
+   "code": "E26-G8-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_g8",
+    "operator": "EQ",
+    "value": "ofb59bf00"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_a0e4a8fa71",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_94e8a1213a",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-G8",
+   "code": "E26-G8-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_g8",
+    "operator": "EQ",
+    "value": "o849f63db"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_a0e4a8fa71",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_94e8a1213a",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-SF1",
+   "code": "E26-SF1-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_sf1",
+    "operator": "EQ",
+    "value": "oea57a19f"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "E26-SF1",
+   "code": "E26-SF1-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_sf1",
+    "operator": "EQ",
+    "value": "oefdbe7cc"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "E26-SF1",
+   "code": "E26-SF1-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_sf1",
+    "operator": "EQ",
+    "value": "o69068d3c"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_a351606b26",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_886ea6cd89",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-SF1",
+   "code": "E26-SF1-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_sf1",
+    "operator": "EQ",
+    "value": "o21db0409"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_a351606b26",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_886ea6cd89",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-SF1",
+   "code": "E26-SF1-R5",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_sf1",
+    "operator": "EQ",
+    "value": "o6018bad9"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_a351606b26",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_886ea6cd89",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-SF1",
+   "code": "E26-SF1-R6",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_sf1",
+    "operator": "EQ",
+    "value": "o415993b1"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_a351606b26",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_886ea6cd89",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-SF1",
+   "code": "E26-SF1-R7",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_sf1",
+    "operator": "EQ",
+    "value": "o61a16544"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_a351606b26",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_886ea6cd89",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-SF1",
+   "code": "E26-SF1-R8",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_sf1",
+    "operator": "EQ",
+    "value": "o8c2fb6fa"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_a351606b26",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_886ea6cd89",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-SF1",
+   "code": "E26-SF1-R9",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_sf1",
+    "operator": "EQ",
+    "value": "oc70081a9"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_a351606b26",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_886ea6cd89",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-SF1",
+   "code": "E26-SF1-R10",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_sf1",
+    "operator": "EQ",
+    "value": "o3c3284ac"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_a351606b26",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_886ea6cd89",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-SF1",
+   "code": "E26-SF1-R11",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_sf1",
+    "operator": "EQ",
+    "value": "oac3a0a81"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_a351606b26",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_886ea6cd89",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-SF1",
+   "code": "E26-SF1-R12",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_sf1",
+    "operator": "EQ",
+    "value": "o512a827e"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_a351606b26",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_886ea6cd89",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C1",
+   "code": "E26-C1-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c1",
+    "operator": "EQ",
+    "value": "oea57a19f"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "E26-C1",
+   "code": "E26-C1-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c1",
+    "operator": "EQ",
+    "value": "oefdbe7cc"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "E26-C1",
+   "code": "E26-C1-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c1",
+    "operator": "EQ",
+    "value": "oae06747e"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C1",
+   "code": "E26-C1-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c1",
+    "operator": "EQ",
+    "value": "od586de18"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C1",
+   "code": "E26-C1-R5",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c1",
+    "operator": "EQ",
+    "value": "o8ff0818e"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C1",
+   "code": "E26-C1-R6",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c1",
+    "operator": "EQ",
+    "value": "o074fee35"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C1",
+   "code": "E26-C1-R7",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c1",
+    "operator": "EQ",
+    "value": "ofb581423"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C1",
+   "code": "E26-C1-R8",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c1",
+    "operator": "EQ",
+    "value": "oe60b39a3"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C1",
+   "code": "E26-C1-R9",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c1",
+    "operator": "EQ",
+    "value": "o8924ec02"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C1",
+   "code": "E26-C1-R10",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c1",
+    "operator": "EQ",
+    "value": "o8107e4ec"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C1",
+   "code": "E26-C1-R11",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c1",
+    "operator": "EQ",
+    "value": "oadad3d0c"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C1",
+   "code": "E26-C1-R12",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c1",
+    "operator": "EQ",
+    "value": "o3eb432f0"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C1",
+   "code": "E26-C1-R13",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c1",
+    "operator": "EQ",
+    "value": "o105fbf31"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C1",
+   "code": "E26-C1-R14",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c1",
+    "operator": "EQ",
+    "value": "oa5cd3fe5"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C2",
+   "code": "E26-C2-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c2",
+    "operator": "EQ",
+    "value": "oea57a19f"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "E26-C2",
+   "code": "E26-C2-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c2",
+    "operator": "EQ",
+    "value": "oefdbe7cc"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "E26-C2",
+   "code": "E26-C2-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c2",
+    "operator": "EQ",
+    "value": "o8e729dec"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C2",
+   "code": "E26-C2-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c2",
+    "operator": "EQ",
+    "value": "ocbfc5f4c"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C2",
+   "code": "E26-C2-R5",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c2",
+    "operator": "EQ",
+    "value": "oeeb77989"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C2",
+   "code": "E26-C2-R6",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c2",
+    "operator": "EQ",
+    "value": "od02c42ed"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C2",
+   "code": "E26-C2-R7",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c2",
+    "operator": "EQ",
+    "value": "oc226c03d"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C2",
+   "code": "E26-C2-R8",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c2",
+    "operator": "EQ",
+    "value": "o6832cfb8"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C2",
+   "code": "E26-C2-R9",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c2",
+    "operator": "EQ",
+    "value": "od7131c64"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C2",
+   "code": "E26-C2-R10",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c2",
+    "operator": "EQ",
+    "value": "obd8f7d55"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C2",
+   "code": "E26-C2-R11",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c2",
+    "operator": "EQ",
+    "value": "ob3bf6ee5"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C2",
+   "code": "E26-C2-R12",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c2",
+    "operator": "EQ",
+    "value": "oc162be11"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C2",
+   "code": "E26-C2-R13",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c2",
+    "operator": "EQ",
+    "value": "o5cf3c3c1"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C2",
+   "code": "E26-C2-R14",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c2",
+    "operator": "EQ",
+    "value": "oca1aeec9"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C2",
+   "code": "E26-C2-R15",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c2",
+    "operator": "EQ",
+    "value": "od61cc9b7"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C2",
+   "code": "E26-C2-R16",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c2",
+    "operator": "EQ",
+    "value": "o3d8cba1e"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C2",
+   "code": "E26-C2-R17",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c2",
+    "operator": "EQ",
+    "value": "o8475a662"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C2",
+   "code": "E26-C2-R18",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c2",
+    "operator": "EQ",
+    "value": "o10403192"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C2",
+   "code": "E26-C2-R19",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c2",
+    "operator": "EQ",
+    "value": "oda6f68a1"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C2",
+   "code": "E26-C2-R20",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c2",
+    "operator": "EQ",
+    "value": "oa1145b97"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C3",
+   "code": "E26-C3-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c3",
+    "operator": "EQ",
+    "value": "oea57a19f"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "E26-C3",
+   "code": "E26-C3-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c3",
+    "operator": "EQ",
+    "value": "oefdbe7cc"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "E26-C3",
+   "code": "E26-C3-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c3",
+    "operator": "EQ",
+    "value": "o2dd36aa2"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C3",
+   "code": "E26-C3-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c3",
+    "operator": "EQ",
+    "value": "o4d0c269a"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C3",
+   "code": "E26-C3-R5",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c3",
+    "operator": "EQ",
+    "value": "oe53093d3"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C3",
+   "code": "E26-C3-R6",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c3",
+    "operator": "EQ",
+    "value": "o0934caf5"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C3",
+   "code": "E26-C3-R7",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c3",
+    "operator": "EQ",
+    "value": "o5a922536"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C3",
+   "code": "E26-C3-R8",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c3",
+    "operator": "EQ",
+    "value": "o3ebd5dd8"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C3",
+   "code": "E26-C3-R9",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c3",
+    "operator": "EQ",
+    "value": "o5f6a0c69"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C3",
+   "code": "E26-C3-R10",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c3",
+    "operator": "EQ",
+    "value": "od313734d"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C3",
+   "code": "E26-C3-R11",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c3",
+    "operator": "EQ",
+    "value": "ob4d33c19"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C3",
+   "code": "E26-C3-R12",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c3",
+    "operator": "EQ",
+    "value": "ocf78c03b"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C3",
+   "code": "E26-C3-R13",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c3",
+    "operator": "EQ",
+    "value": "o4f735aed"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C3",
+   "code": "E26-C3-R14",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c3",
+    "operator": "EQ",
+    "value": "ob58cc8d8"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C3",
+   "code": "E26-C3-R15",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c3",
+    "operator": "EQ",
+    "value": "of401fe23"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C4",
+   "code": "E26-C4-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c4",
+    "operator": "EQ",
+    "value": "oea57a19f"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "E26-C4",
+   "code": "E26-C4-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c4",
+    "operator": "EQ",
+    "value": "oefdbe7cc"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "E26-C4",
+   "code": "E26-C4-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c4",
+    "operator": "EQ",
+    "value": "ob07556d2"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C4",
+   "code": "E26-C4-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c4",
+    "operator": "EQ",
+    "value": "oda6aa755"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C4",
+   "code": "E26-C4-R5",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c4",
+    "operator": "EQ",
+    "value": "o9ba31b0d"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C4",
+   "code": "E26-C4-R6",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c4",
+    "operator": "EQ",
+    "value": "odcb038ca"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C4",
+   "code": "E26-C4-R7",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c4",
+    "operator": "EQ",
+    "value": "o12df9731"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C4",
+   "code": "E26-C4-R8",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c4",
+    "operator": "EQ",
+    "value": "oc2ac59f0"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C4",
+   "code": "E26-C4-R9",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c4",
+    "operator": "EQ",
+    "value": "o253563c8"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C4",
+   "code": "E26-C4-R10",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c4",
+    "operator": "EQ",
+    "value": "oda5c7761"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C5",
+   "code": "E26-C5-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c5",
+    "operator": "EQ",
+    "value": "oea57a19f"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "E26-C5",
+   "code": "E26-C5-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c5",
+    "operator": "EQ",
+    "value": "oefdbe7cc"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "E26-C5",
+   "code": "E26-C5-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c5",
+    "operator": "EQ",
+    "value": "o61efcda1"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C5",
+   "code": "E26-C5-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c5",
+    "operator": "EQ",
+    "value": "oc611b6e0"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C5",
+   "code": "E26-C5-R5",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c5",
+    "operator": "EQ",
+    "value": "obac40a3d"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C5",
+   "code": "E26-C5-R6",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c5",
+    "operator": "EQ",
+    "value": "o2cbb2fa3"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C5",
+   "code": "E26-C5-R7",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c5",
+    "operator": "EQ",
+    "value": "oa8477161"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C5",
+   "code": "E26-C5-R8",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c5",
+    "operator": "EQ",
+    "value": "o7ff78448"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C5",
+   "code": "E26-C5-R9",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c5",
+    "operator": "EQ",
+    "value": "oaf52d68c"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C5",
+   "code": "E26-C5-R10",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c5",
+    "operator": "EQ",
+    "value": "o51bc6837"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C6",
+   "code": "E26-C6-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c6",
+    "operator": "EQ",
+    "value": "oea57a19f"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "E26-C6",
+   "code": "E26-C6-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c6",
+    "operator": "EQ",
+    "value": "oefdbe7cc"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "E26-C6",
+   "code": "E26-C6-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c6",
+    "operator": "EQ",
+    "value": "o6f3f0612"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C6",
+   "code": "E26-C6-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c6",
+    "operator": "EQ",
+    "value": "o40c5df9e"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C6",
+   "code": "E26-C6-R5",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c6",
+    "operator": "EQ",
+    "value": "ocac70f0f"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C6",
+   "code": "E26-C6-R6",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c6",
+    "operator": "EQ",
+    "value": "o2bb66407"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C6",
+   "code": "E26-C6-R7",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c6",
+    "operator": "EQ",
+    "value": "o3ef03ba4"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C6",
+   "code": "E26-C6-R8",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c6",
+    "operator": "EQ",
+    "value": "obfa263c4"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C6",
+   "code": "E26-C6-R9",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c6",
+    "operator": "EQ",
+    "value": "o25ec9e3e"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C6",
+   "code": "E26-C6-R10",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c6",
+    "operator": "EQ",
+    "value": "o1b14406d"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C6",
+   "code": "E26-C6-R11",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c6",
+    "operator": "EQ",
+    "value": "o773aeed6"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C6",
+   "code": "E26-C6-R12",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c6",
+    "operator": "EQ",
+    "value": "oab365004"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C7",
+   "code": "E26-C7-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c7",
+    "operator": "EQ",
+    "value": "oea57a19f"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "E26-C7",
+   "code": "E26-C7-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c7",
+    "operator": "EQ",
+    "value": "oefdbe7cc"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "E26-C7",
+   "code": "E26-C7-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c7",
+    "operator": "EQ",
+    "value": "oab9ad71f"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C7",
+   "code": "E26-C7-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c7",
+    "operator": "EQ",
+    "value": "o739799a7"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C7",
+   "code": "E26-C7-R5",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c7",
+    "operator": "EQ",
+    "value": "ob9ee3014"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C7",
+   "code": "E26-C7-R6",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c7",
+    "operator": "EQ",
+    "value": "o1141bf98"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C7",
+   "code": "E26-C7-R7",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c7",
+    "operator": "EQ",
+    "value": "o9f73bfa5"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C7",
+   "code": "E26-C7-R8",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c7",
+    "operator": "EQ",
+    "value": "o97adf23b"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C7",
+   "code": "E26-C7-R9",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c7",
+    "operator": "EQ",
+    "value": "o95e6ef4e"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C7",
+   "code": "E26-C7-R10",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c7",
+    "operator": "EQ",
+    "value": "ofa79a87d"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C7",
+   "code": "E26-C7-R11",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c7",
+    "operator": "EQ",
+    "value": "o1f53491f"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C7",
+   "code": "E26-C7-R12",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c7",
+    "operator": "EQ",
+    "value": "o39ee0ad1"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C7",
+   "code": "E26-C7-R13",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c7",
+    "operator": "EQ",
+    "value": "o0a8bbd37"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C7",
+   "code": "E26-C7-R14",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c7",
+    "operator": "EQ",
+    "value": "o0a8f3188"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C7",
+   "code": "E26-C7-R15",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c7",
+    "operator": "EQ",
+    "value": "o9f164e2b"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C8",
+   "code": "E26-C8-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c8",
+    "operator": "EQ",
+    "value": "oea57a19f"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "E26-C8",
+   "code": "E26-C8-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c8",
+    "operator": "EQ",
+    "value": "oefdbe7cc"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "E26-C8",
+   "code": "E26-C8-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c8",
+    "operator": "EQ",
+    "value": "oeb7279ca"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C8",
+   "code": "E26-C8-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c8",
+    "operator": "EQ",
+    "value": "o1bf22c21"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C8",
+   "code": "E26-C8-R5",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c8",
+    "operator": "EQ",
+    "value": "ob63fd68b"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C8",
+   "code": "E26-C8-R6",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c8",
+    "operator": "EQ",
+    "value": "oc879cb0e"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C8",
+   "code": "E26-C8-R7",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c8",
+    "operator": "EQ",
+    "value": "oc5b82dd1"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C9",
+   "code": "E26-C9-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c9",
+    "operator": "EQ",
+    "value": "oea57a19f"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "E26-C9",
+   "code": "E26-C9-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c9",
+    "operator": "EQ",
+    "value": "oefdbe7cc"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "E26-C9",
+   "code": "E26-C9-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c9",
+    "operator": "EQ",
+    "value": "o1a532674"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C9",
+   "code": "E26-C9-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c9",
+    "operator": "EQ",
+    "value": "o43885d1f"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C9",
+   "code": "E26-C9-R5",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c9",
+    "operator": "EQ",
+    "value": "od5c98075"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C9",
+   "code": "E26-C9-R6",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c9",
+    "operator": "EQ",
+    "value": "o8d452383"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C9",
+   "code": "E26-C9-R7",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c9",
+    "operator": "EQ",
+    "value": "o59a5b822"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C9",
+   "code": "E26-C9-R8",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c9",
+    "operator": "EQ",
+    "value": "oa9abe50d"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C10",
+   "code": "E26-C10-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c10",
+    "operator": "EQ",
+    "value": "oea57a19f"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "E26-C10",
+   "code": "E26-C10-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c10",
+    "operator": "EQ",
+    "value": "oefdbe7cc"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "E26-C10",
+   "code": "E26-C10-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c10",
+    "operator": "EQ",
+    "value": "o9b31cf06"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C10",
+   "code": "E26-C10-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c10",
+    "operator": "EQ",
+    "value": "o8849e7c8"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C10",
+   "code": "E26-C10-R5",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c10",
+    "operator": "EQ",
+    "value": "oe9152cf4"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C10",
+   "code": "E26-C10-R6",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c10",
+    "operator": "EQ",
+    "value": "oa837fd13"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C10",
+   "code": "E26-C10-R7",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c10",
+    "operator": "EQ",
+    "value": "obd2c9a3e"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C10",
+   "code": "E26-C10-R8",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c10",
+    "operator": "EQ",
+    "value": "oaf7cc7cc"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C10",
+   "code": "E26-C10-R9",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c10",
+    "operator": "EQ",
+    "value": "o6f7f07b6"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C10",
+   "code": "E26-C10-R10",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c10",
+    "operator": "EQ",
+    "value": "o35973ce2"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C10",
+   "code": "E26-C10-R11",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c10",
+    "operator": "EQ",
+    "value": "ob5c91ade"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C11",
+   "code": "E26-C11-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c11",
+    "operator": "EQ",
+    "value": "oea57a19f"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "E26-C11",
+   "code": "E26-C11-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c11",
+    "operator": "EQ",
+    "value": "oefdbe7cc"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "E26-C11",
+   "code": "E26-C11-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c11",
+    "operator": "EQ",
+    "value": "o2fe09640"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C11",
+   "code": "E26-C11-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c11",
+    "operator": "EQ",
+    "value": "o03d66bc8"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C11",
+   "code": "E26-C11-R5",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c11",
+    "operator": "EQ",
+    "value": "o89f88c8f"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C11",
+   "code": "E26-C11-R6",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c11",
+    "operator": "EQ",
+    "value": "o3cc9aa95"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C11",
+   "code": "E26-C11-R7",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c11",
+    "operator": "EQ",
+    "value": "o4f37c0e2"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C11",
+   "code": "E26-C11-R8",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c11",
+    "operator": "EQ",
+    "value": "ofcd0cb44"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C11",
+   "code": "E26-C11-R9",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c11",
+    "operator": "EQ",
+    "value": "o1c9b0188"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C11",
+   "code": "E26-C11-R10",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c11",
+    "operator": "EQ",
+    "value": "o391bc4d5"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C12",
+   "code": "E26-C12-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c12",
+    "operator": "EQ",
+    "value": "oea57a19f"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "E26-C12",
+   "code": "E26-C12-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c12",
+    "operator": "EQ",
+    "value": "oefdbe7cc"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "E26-C12",
+   "code": "E26-C12-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c12",
+    "operator": "EQ",
+    "value": "o0c81e2e2"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C12",
+   "code": "E26-C12-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c12",
+    "operator": "EQ",
+    "value": "o2c0c483f"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C12",
+   "code": "E26-C12-R5",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c12",
+    "operator": "EQ",
+    "value": "o21846f00"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C12",
+   "code": "E26-C12-R6",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c12",
+    "operator": "EQ",
+    "value": "o75e8a66e"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C12",
+   "code": "E26-C12-R7",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c12",
+    "operator": "EQ",
+    "value": "od30c3c08"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C12",
+   "code": "E26-C12-R8",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c12",
+    "operator": "EQ",
+    "value": "ofe7bb72a"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C12",
+   "code": "E26-C12-R9",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c12",
+    "operator": "EQ",
+    "value": "oc493c7f8"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C13",
+   "code": "E26-C13-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c13",
+    "operator": "EQ",
+    "value": "oea57a19f"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "E26-C13",
+   "code": "E26-C13-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c13",
+    "operator": "EQ",
+    "value": "oefdbe7cc"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "E26-C13",
+   "code": "E26-C13-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c13",
+    "operator": "EQ",
+    "value": "o94228f87"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C13",
+   "code": "E26-C13-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c13",
+    "operator": "EQ",
+    "value": "o4d5974ea"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C13",
+   "code": "E26-C13-R5",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c13",
+    "operator": "EQ",
+    "value": "o1ad791d4"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C13",
+   "code": "E26-C13-R6",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c13",
+    "operator": "EQ",
+    "value": "oc155528d"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C13",
+   "code": "E26-C13-R7",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c13",
+    "operator": "EQ",
+    "value": "oc6f92d90"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C13",
+   "code": "E26-C13-R8",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c13",
+    "operator": "EQ",
+    "value": "o59a11311"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C13",
+   "code": "E26-C13-R9",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c13",
+    "operator": "EQ",
+    "value": "o24ecac67"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C13",
+   "code": "E26-C13-R10",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c13",
+    "operator": "EQ",
+    "value": "o4e592654"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C13",
+   "code": "E26-C13-R11",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c13",
+    "operator": "EQ",
+    "value": "o6b1150b2"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C13",
+   "code": "E26-C13-R12",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c13",
+    "operator": "EQ",
+    "value": "o47a48299"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_ec3ede0595",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_a7be0dc37c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C13",
+   "code": "E26-C13-R13",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c13",
+    "operator": "EQ",
+    "value": "o1490affe"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_ec3ede0595",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_a7be0dc37c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C13",
+   "code": "E26-C13-R14",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c13",
+    "operator": "EQ",
+    "value": "oe0f708b4"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_ec3ede0595",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_a7be0dc37c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C13",
+   "code": "E26-C13-R15",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c13",
+    "operator": "EQ",
+    "value": "o29dbfc8b"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_ec3ede0595",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_a7be0dc37c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C13",
+   "code": "E26-C13-R16",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c13",
+    "operator": "EQ",
+    "value": "oef39fc51"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_ec3ede0595",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_a7be0dc37c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C14",
+   "code": "E26-C14-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c14",
+    "operator": "EQ",
+    "value": "oea57a19f"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "E26-C14",
+   "code": "E26-C14-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c14",
+    "operator": "EQ",
+    "value": "oefdbe7cc"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED"
+  },
+  {
+   "hazard": "E26-C14",
+   "code": "E26-C14-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c14",
+    "operator": "EQ",
+    "value": "o2fc14b17"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C14",
+   "code": "E26-C14-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c14",
+    "operator": "EQ",
+    "value": "of66d0c0d"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C14",
+   "code": "E26-C14-R5",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c14",
+    "operator": "EQ",
+    "value": "od020eefd"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C14",
+   "code": "E26-C14-R6",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c14",
+    "operator": "EQ",
+    "value": "o1490affe"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "E26-C14",
+   "code": "E26-C14-R7",
+   "priority": 100,
+   "condition": {
+    "question": "q_e26_c14",
+    "operator": "EQ",
+    "value": "o66090174"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_83b3434d8e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_17ee45b34c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  }
+ ]
+}

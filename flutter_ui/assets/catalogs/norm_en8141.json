@@ -1,0 +1,7549 @@
+{
+ "rule_version": "en8141-2026.1",
+ "questions": [
+  {
+   "code": "q_en8141_p1",
+   "type": "SELECT",
+   "domain": "GBU",
+   "text": "Sind CE-Kennzeichnung und Hersteller-/Typenschild vorhanden und eindeutig der Anlage zuzuordnen?",
+   "category": "Grundlagen / Dokumentation",
+   "options": [
+    {
+     "value": "01-A",
+     "label": "Anforderung erfüllt; keine relevante Abweichung erkennbar."
+    },
+    {
+     "value": "01-B",
+     "label": "Geringe Abweichung oder beginnende Verschlechterung; Schutzfunktion ist derzeit noch wirksam."
+    },
+    {
+     "value": "01-C",
+     "label": "Wesentliche Abweichung, fehlende/ausgefallene Schutzfunktion oder sicherheitsrelevanter Zustand nicht beherrscht."
+    },
+    {
+     "value": "01-D",
+     "label": "Nicht anwendbar aufgrund Bauart/Nutzung; Begründung dokumentiert."
+    }
+   ]
+  },
+  {
+   "code": "q_en8141_p2",
+   "type": "SELECT",
+   "domain": "GBU",
+   "text": "Liegt die EG-/EU-Konformitätserklärung bzw. die für die Anlage maßgebliche Herstellerbescheinigung vor?",
+   "category": "Grundlagen / Dokumentation",
+   "options": [
+    {
+     "value": "02-A",
+     "label": "Anforderung erfüllt; keine relevante Abweichung erkennbar."
+    },
+    {
+     "value": "02-B",
+     "label": "Geringe Abweichung oder beginnende Verschlechterung; Schutzfunktion ist derzeit noch wirksam."
+    },
+    {
+     "value": "02-C",
+     "label": "Wesentliche Abweichung, fehlende/ausgefallene Schutzfunktion oder sicherheitsrelevanter Zustand nicht beherrscht."
+    },
+    {
+     "value": "02-D",
+     "label": "Nicht anwendbar aufgrund Bauart/Nutzung; Begründung dokumentiert."
+    }
+   ]
+  },
+  {
+   "code": "q_en8141_p3",
+   "type": "SELECT",
+   "domain": "GBU",
+   "text": "Ist die für das Inverkehrbringen verwendete Norm-/Ausgabebasis dokumentiert?",
+   "category": "Grundlagen / Dokumentation",
+   "options": [
+    {
+     "value": "03-A",
+     "label": "Anforderung erfüllt; keine relevante Abweichung erkennbar."
+    },
+    {
+     "value": "03-B",
+     "label": "Geringe Abweichung oder beginnende Verschlechterung; Schutzfunktion ist derzeit noch wirksam."
+    },
+    {
+     "value": "03-C",
+     "label": "Wesentliche Abweichung, fehlende/ausgefallene Schutzfunktion oder sicherheitsrelevanter Zustand nicht beherrscht."
+    },
+    {
+     "value": "03-D",
+     "label": "Nicht anwendbar aufgrund Bauart/Nutzung; Begründung dokumentiert."
+    }
+   ]
+  },
+  {
+   "code": "q_en8141_p4",
+   "type": "SELECT",
+   "domain": "GBU",
+   "text": "Sind Betriebs-, Wartungs- und Notbefreiungsunterlagen vollständig und am Betriebsort verfügbar?",
+   "category": "Grundlagen / Dokumentation",
+   "options": [
+    {
+     "value": "04-A",
+     "label": "Anforderung erfüllt; keine relevante Abweichung erkennbar."
+    },
+    {
+     "value": "04-B",
+     "label": "Geringe Abweichung oder beginnende Verschlechterung; Schutzfunktion ist derzeit noch wirksam."
+    },
+    {
+     "value": "04-C",
+     "label": "Wesentliche Abweichung, fehlende/ausgefallene Schutzfunktion oder sicherheitsrelevanter Zustand nicht beherrscht."
+    },
+    {
+     "value": "04-D",
+     "label": "Nicht anwendbar aufgrund Bauart/Nutzung; Begründung dokumentiert."
+    }
+   ]
+  },
+  {
+   "code": "q_en8141_p5",
+   "type": "SELECT",
+   "domain": "GBU",
+   "text": "Entspricht die tatsächliche Nutzung der vom Hersteller vorgesehenen bestimmungsgemäßen Verwendung?",
+   "category": "Grundlagen / Dokumentation",
+   "options": [
+    {
+     "value": "05-A",
+     "label": "Anforderung erfüllt; keine relevante Abweichung erkennbar."
+    },
+    {
+     "value": "05-B",
+     "label": "Geringe Abweichung oder beginnende Verschlechterung; Schutzfunktion ist derzeit noch wirksam."
+    },
+    {
+     "value": "05-C",
+     "label": "Wesentliche Abweichung, fehlende/ausgefallene Schutzfunktion oder sicherheitsrelevanter Zustand nicht beherrscht."
+    },
+    {
+     "value": "05-D",
+     "label": "Nicht anwendbar aufgrund Bauart/Nutzung; Begründung dokumentiert."
+    }
+   ]
+  },
+  {
+   "code": "q_en8141_p6",
+   "type": "SELECT",
+   "domain": "GBU",
+   "text": "Sind nachträgliche Änderungen, Umbauten oder Fremdeingriffe vollständig dokumentiert und sicherheitstechnisch bewertet?",
+   "category": "Grundlagen / Dokumentation",
+   "options": [
+    {
+     "value": "06-A",
+     "label": "Anforderung erfüllt; keine relevante Abweichung erkennbar."
+    },
+    {
+     "value": "06-B",
+     "label": "Geringe Abweichung oder beginnende Verschlechterung; Schutzfunktion ist derzeit noch wirksam."
+    },
+    {
+     "value": "06-C",
+     "label": "Wesentliche Abweichung, fehlende/ausgefallene Schutzfunktion oder sicherheitsrelevanter Zustand nicht beherrscht."
+    },
+    {
+     "value": "06-D",
+     "label": "Nicht anwendbar aufgrund Bauart/Nutzung; Begründung dokumentiert."
+    }
+   ]
+  },
+  {
+   "code": "q_en8141_p7",
+   "type": "SELECT",
+   "domain": "GBU",
+   "text": "Ist die vertikale Absturzhöhe ermittelt und die Einstufung als überwachungsbedürftige Aufzugsanlage geklärt?",
+   "category": "Grundlagen / Einstufung",
+   "options": [
+    {
+     "value": "07-A",
+     "label": "Anforderung erfüllt; keine relevante Abweichung erkennbar."
+    },
+    {
+     "value": "07-B",
+     "label": "Geringe Abweichung oder beginnende Verschlechterung; Schutzfunktion ist derzeit noch wirksam."
+    },
+    {
+     "value": "07-C",
+     "label": "Wesentliche Abweichung, fehlende/ausgefallene Schutzfunktion oder sicherheitsrelevanter Zustand nicht beherrscht."
+    },
+    {
+     "value": "07-D",
+     "label": "Nicht anwendbar aufgrund Bauart/Nutzung; Begründung dokumentiert."
+    }
+   ]
+  },
+  {
+   "code": "q_en8141_p8",
+   "type": "SELECT",
+   "domain": "GBU",
+   "text": "Sind alle Haltestellen und Zugänge sicher, frei, ausreichend breit und ohne gefährliche Hindernisse erreichbar?",
+   "category": "Zugänge / Umfeld",
+   "options": [
+    {
+     "value": "08-A",
+     "label": "Anforderung erfüllt; keine relevante Abweichung erkennbar."
+    },
+    {
+     "value": "08-B",
+     "label": "Geringe Abweichung oder beginnende Verschlechterung; Schutzfunktion ist derzeit noch wirksam."
+    },
+    {
+     "value": "08-C",
+     "label": "Wesentliche Abweichung, fehlende/ausgefallene Schutzfunktion oder sicherheitsrelevanter Zustand nicht beherrscht."
+    },
+    {
+     "value": "08-D",
+     "label": "Nicht anwendbar aufgrund Bauart/Nutzung; Begründung dokumentiert."
+    }
+   ]
+  },
+  {
+   "code": "q_en8141_p9",
+   "type": "SELECT",
+   "domain": "GBU",
+   "text": "Sind Schwellen, Rampen und Bodenflächen an den Zugängen eben, rutschhemmend und unbeschädigt?",
+   "category": "Zugänge / Umfeld",
+   "options": [
+    {
+     "value": "09-A",
+     "label": "Anforderung erfüllt; keine relevante Abweichung erkennbar."
+    },
+    {
+     "value": "09-B",
+     "label": "Geringe Abweichung oder beginnende Verschlechterung; Schutzfunktion ist derzeit noch wirksam."
+    },
+    {
+     "value": "09-C",
+     "label": "Wesentliche Abweichung, fehlende/ausgefallene Schutzfunktion oder sicherheitsrelevanter Zustand nicht beherrscht."
+    },
+    {
+     "value": "09-D",
+     "label": "Nicht anwendbar aufgrund Bauart/Nutzung; Begründung dokumentiert."
+    }
+   ]
+  },
+  {
+   "code": "q_en8141_p10",
+   "type": "SELECT",
+   "domain": "GBU",
+   "text": "Sind angrenzende Verkehrswege so gestaltet, dass Nutzer beim Ein-/Ausfahren nicht durch Fahrzeuge, Türen oder andere Bewegungen gefährdet werden?",
+   "category": "Zugänge / Umfeld",
+   "options": [
+    {
+     "value": "10-A",
+     "label": "Anforderung erfüllt; keine relevante Abweichung erkennbar."
+    },
+    {
+     "value": "10-B",
+     "label": "Geringe Abweichung oder beginnende Verschlechterung; Schutzfunktion ist derzeit noch wirksam."
+    },
+    {
+     "value": "10-C",
+     "label": "Wesentliche Abweichung, fehlende/ausgefallene Schutzfunktion oder sicherheitsrelevanter Zustand nicht beherrscht."
+    },
+    {
+     "value": "10-D",
+     "label": "Nicht anwendbar aufgrund Bauart/Nutzung; Begründung dokumentiert."
+    }
+   ]
+  },
+  {
+   "code": "q_en8141_p11",
+   "type": "SELECT",
+   "domain": "GBU",
+   "text": "Ist die Beleuchtung an Plattform, Haltestellen und erforderlichen Wartungszugängen ausreichend?",
+   "category": "Zugänge / Umfeld",
+   "options": [
+    {
+     "value": "11-A",
+     "label": "Anforderung erfüllt; keine relevante Abweichung erkennbar."
+    },
+    {
+     "value": "11-B",
+     "label": "Geringe Abweichung oder beginnende Verschlechterung; Schutzfunktion ist derzeit noch wirksam."
+    },
+    {
+     "value": "11-C",
+     "label": "Wesentliche Abweichung, fehlende/ausgefallene Schutzfunktion oder sicherheitsrelevanter Zustand nicht beherrscht."
+    },
+    {
+     "value": "11-D",
+     "label": "Nicht anwendbar aufgrund Bauart/Nutzung; Begründung dokumentiert."
+    }
+   ]
+  },
+  {
+   "code": "q_en8141_p12",
+   "type": "SELECT",
+   "domain": "GBU",
+   "text": "Sind Außenanlagen gegen Witterung, Wasser, Eis, Korrosion und unzulässige Temperatur-/Umwelteinflüsse ausreichend geschützt?",
+   "category": "Zugänge / Umfeld",
+   "options": [
+    {
+     "value": "12-A",
+     "label": "Anforderung erfüllt; keine relevante Abweichung erkennbar."
+    },
+    {
+     "value": "12-B",
+     "label": "Geringe Abweichung oder beginnende Verschlechterung; Schutzfunktion ist derzeit noch wirksam."
+    },
+    {
+     "value": "12-C",
+     "label": "Wesentliche Abweichung, fehlende/ausgefallene Schutzfunktion oder sicherheitsrelevanter Zustand nicht beherrscht."
+    },
+    {
+     "value": "12-D",
+     "label": "Nicht anwendbar aufgrund Bauart/Nutzung; Begründung dokumentiert."
+    }
+   ]
+  },
+  {
+   "code": "q_en8141_p13",
+   "type": "SELECT",
+   "domain": "GBU",
+   "text": "Ist die Schacht- bzw. Fahrbahnumwehrung vollständig, ausreichend fest und frei von gefährlichen Beschädigungen?",
+   "category": "Schacht / Umwehrung",
+   "options": [
+    {
+     "value": "13-A",
+     "label": "Anforderung erfüllt; keine relevante Abweichung erkennbar."
+    },
+    {
+     "value": "13-B",
+     "label": "Geringe Abweichung oder beginnende Verschlechterung; Schutzfunktion ist derzeit noch wirksam."
+    },
+    {
+     "value": "13-C",
+     "label": "Wesentliche Abweichung, fehlende/ausgefallene Schutzfunktion oder sicherheitsrelevanter Zustand nicht beherrscht."
+    },
+    {
+     "value": "13-D",
+     "label": "Nicht anwendbar aufgrund Bauart/Nutzung; Begründung dokumentiert."
+    }
+   ]
+  },
+  {
+   "code": "q_en8141_p14",
+   "type": "SELECT",
+   "domain": "GBU",
+   "text": "Sind Öffnungen und Abstände so begrenzt, dass kein gefährliches Hineingreifen zu bewegten Teilen möglich ist?",
+   "category": "Schacht / Umwehrung",
+   "options": [
+    {
+     "value": "14-A",
+     "label": "Anforderung erfüllt; keine relevante Abweichung erkennbar."
+    },
+    {
+     "value": "14-B",
+     "label": "Geringe Abweichung oder beginnende Verschlechterung; Schutzfunktion ist derzeit noch wirksam."
+    },
+    {
+     "value": "14-C",
+     "label": "Wesentliche Abweichung, fehlende/ausgefallene Schutzfunktion oder sicherheitsrelevanter Zustand nicht beherrscht."
+    },
+    {
+     "value": "14-D",
+     "label": "Nicht anwendbar aufgrund Bauart/Nutzung; Begründung dokumentiert."
+    }
+   ]
+  },
+  {
+   "code": "q_en8141_p15",
+   "type": "SELECT",
+   "domain": "GBU",
+   "text": "Sind bei mehreren bewegten Anlagen/Komponenten notwendige Abtrennungen vorhanden und wirksam?",
+   "category": "Schacht / Umwehrung",
+   "options": [
+    {
+     "value": "15-A",
+     "label": "Anforderung erfüllt; keine relevante Abweichung erkennbar."
+    },
+    {
+     "value": "15-B",
+     "label": "Geringe Abweichung oder beginnende Verschlechterung; Schutzfunktion ist derzeit noch wirksam."
+    },
+    {
+     "value": "15-C",
+     "label": "Wesentliche Abweichung, fehlende/ausgefallene Schutzfunktion oder sicherheitsrelevanter Zustand nicht beherrscht."
+    },
+    {
+     "value": "15-D",
+     "label": "Nicht anwendbar aufgrund Bauart/Nutzung; Begründung dokumentiert."
+    }
+   ]
+  },
+  {
+   "code": "q_en8141_p16",
+   "type": "SELECT",
+   "domain": "GBU",
+   "text": "Sind Wartungsbereiche, Grube oder Kopfbereich – soweit zugänglich – gegen unbeabsichtigte Bewegung der Plattform geschützt?",
+   "category": "Schacht / Wartungsbereiche",
+   "options": [
+    {
+     "value": "16-A",
+     "label": "Anforderung erfüllt; keine relevante Abweichung erkennbar."
+    },
+    {
+     "value": "16-B",
+     "label": "Geringe Abweichung oder beginnende Verschlechterung; Schutzfunktion ist derzeit noch wirksam."
+    },
+    {
+     "value": "16-C",
+     "label": "Wesentliche Abweichung, fehlende/ausgefallene Schutzfunktion oder sicherheitsrelevanter Zustand nicht beherrscht."
+    },
+    {
+     "value": "16-D",
+     "label": "Nicht anwendbar aufgrund Bauart/Nutzung; Begründung dokumentiert."
+    }
+   ]
+  },
+  {
+   "code": "q_en8141_p17",
+   "type": "SELECT",
+   "domain": "GBU",
+   "text": "Sind Schachttüren, Tore und Plattformtüren mechanisch intakt und schließen sicher?",
+   "category": "Türen / Tore",
+   "options": [
+    {
+     "value": "17-A",
+     "label": "Anforderung erfüllt; keine relevante Abweichung erkennbar."
+    },
+    {
+     "value": "17-B",
+     "label": "Geringe Abweichung oder beginnende Verschlechterung; Schutzfunktion ist derzeit noch wirksam."
+    },
+    {
+     "value": "17-C",
+     "label": "Wesentliche Abweichung, fehlende/ausgefallene Schutzfunktion oder sicherheitsrelevanter Zustand nicht beherrscht."
+    },
+    {
+     "value": "17-D",
+     "label": "Nicht anwendbar aufgrund Bauart/Nutzung; Begründung dokumentiert."
+    }
+   ]
+  },
+  {
+   "code": "q_en8141_p18",
+   "type": "SELECT",
+   "domain": "GBU",
+   "text": "Verhindern Verriegelungen und elektrische Überwachungen eine gefährliche Fahrt bei nicht sicher geschlossenen Zugängen?",
+   "category": "Türen / Tore",
+   "options": [
+    {
+     "value": "18-A",
+     "label": "Anforderung erfüllt; keine relevante Abweichung erkennbar."
+    },
+    {
+     "value": "18-B",
+     "label": "Geringe Abweichung oder beginnende Verschlechterung; Schutzfunktion ist derzeit noch wirksam."
+    },
+    {
+     "value": "18-C",
+     "label": "Wesentliche Abweichung, fehlende/ausgefallene Schutzfunktion oder sicherheitsrelevanter Zustand nicht beherrscht."
+    },
+    {
+     "value": "18-D",
+     "label": "Nicht anwendbar aufgrund Bauart/Nutzung; Begründung dokumentiert."
+    }
+   ]
+  },
+  {
+   "code": "q_en8141_p19",
+   "type": "SELECT",
+   "domain": "GBU",
+   "text": "Kann eine Schachttür außerhalb der vorgesehenen Entriegelungszone unbeabsichtigt geöffnet werden?",
+   "category": "Türen / Tore",
+   "options": [
+    {
+     "value": "19-A",
+     "label": "Anforderung erfüllt; keine relevante Abweichung erkennbar."
+    },
+    {
+     "value": "19-B",
+     "label": "Geringe Abweichung oder beginnende Verschlechterung; Schutzfunktion ist derzeit noch wirksam."
+    },
+    {
+     "value": "19-C",
+     "label": "Wesentliche Abweichung, fehlende/ausgefallene Schutzfunktion oder sicherheitsrelevanter Zustand nicht beherrscht."
+    },
+    {
+     "value": "19-D",
+     "label": "Nicht anwendbar aufgrund Bauart/Nutzung; Begründung dokumentiert."
+    }
+   ]
+  },
+  {
+   "code": "q_en8141_p20",
+   "type": "SELECT",
+   "domain": "GBU",
+   "text": "Sind kraftbetätigte Türen/Tore gegen Quetschen, Scheren und Anstoßen wirksam geschützt?",
+   "category": "Türen / Tore",
+   "options": [
+    {
+     "value": "20-A",
+     "label": "Anforderung erfüllt; keine relevante Abweichung erkennbar."
+    },
+    {
+     "value": "20-B",
+     "label": "Geringe Abweichung oder beginnende Verschlechterung; Schutzfunktion ist derzeit noch wirksam."
+    },
+    {
+     "value": "20-C",
+     "label": "Wesentliche Abweichung, fehlende/ausgefallene Schutzfunktion oder sicherheitsrelevanter Zustand nicht beherrscht."
+    },
+    {
+     "value": "20-D",
+     "label": "Nicht anwendbar aufgrund Bauart/Nutzung; Begründung dokumentiert."
+    }
+   ]
+  },
+  {
+   "code": "q_en8141_p21",
+   "type": "SELECT",
+   "domain": "GBU",
+   "text": "Ist der Plattformboden fest, eben, rutschhemmend und frei von gefährlichen Beschädigungen?",
+   "category": "Plattform / Lastträger",
+   "options": [
+    {
+     "value": "21-A",
+     "label": "Anforderung erfüllt; keine relevante Abweichung erkennbar."
+    },
+    {
+     "value": "21-B",
+     "label": "Geringe Abweichung oder beginnende Verschlechterung; Schutzfunktion ist derzeit noch wirksam."
+    },
+    {
+     "value": "21-C",
+     "label": "Wesentliche Abweichung, fehlende/ausgefallene Schutzfunktion oder sicherheitsrelevanter Zustand nicht beherrscht."
+    },
+    {
+     "value": "21-D",
+     "label": "Nicht anwendbar aufgrund Bauart/Nutzung; Begründung dokumentiert."
+    }
+   ]
+  },
+  {
+   "code": "q_en8141_p22",
+   "type": "SELECT",
+   "domain": "GBU",
+   "text": "Sind Plattformwände, Geländer, Handläufe und sonstige Absturzsicherungen – soweit vorgesehen – vollständig und ausreichend stabil?",
+   "category": "Plattform / Lastträger",
+   "options": [
+    {
+     "value": "22-A",
+     "label": "Anforderung erfüllt; keine relevante Abweichung erkennbar."
+    },
+    {
+     "value": "22-B",
+     "label": "Geringe Abweichung oder beginnende Verschlechterung; Schutzfunktion ist derzeit noch wirksam."
+    },
+    {
+     "value": "22-C",
+     "label": "Wesentliche Abweichung, fehlende/ausgefallene Schutzfunktion oder sicherheitsrelevanter Zustand nicht beherrscht."
+    },
+    {
+     "value": "22-D",
+     "label": "Nicht anwendbar aufgrund Bauart/Nutzung; Begründung dokumentiert."
+    }
+   ]
+  },
+  {
+   "code": "q_en8141_p23",
+   "type": "SELECT",
+   "domain": "GBU",
+   "text": "Sind Rampen, Klappen oder bewegliche Zugangsteile sicher befestigt und gegen gefährliche Bewegung überwacht?",
+   "category": "Plattform / Lastträger",
+   "options": [
+    {
+     "value": "23-A",
+     "label": "Anforderung erfüllt; keine relevante Abweichung erkennbar."
+    },
+    {
+     "value": "23-B",
+     "label": "Geringe Abweichung oder beginnende Verschlechterung; Schutzfunktion ist derzeit noch wirksam."
+    },
+    {
+     "value": "23-C",
+     "label": "Wesentliche Abweichung, fehlende/ausgefallene Schutzfunktion oder sicherheitsrelevanter Zustand nicht beherrscht."
+    },
+    {
+     "value": "23-D",
+     "label": "Nicht anwendbar aufgrund Bauart/Nutzung; Begründung dokumentiert."
+    }
+   ]
+  },
+  {
+   "code": "q_en8141_p24",
+   "type": "SELECT",
+   "domain": "GBU",
+   "text": "Sind die Spalte und Abstände an Plattformkanten, Wänden und Haltestellen ohne gefährliche Quetsch-/Scherstellen?",
+   "category": "Plattform / Lastträger",
+   "options": [
+    {
+     "value": "24-A",
+     "label": "Anforderung erfüllt; keine relevante Abweichung erkennbar."
+    },
+    {
+     "value": "24-B",
+     "label": "Geringe Abweichung oder beginnende Verschlechterung; Schutzfunktion ist derzeit noch wirksam."
+    },
+    {
+     "value": "24-C",
+     "label": "Wesentliche Abweichung, fehlende/ausgefallene Schutzfunktion oder sicherheitsrelevanter Zustand nicht beherrscht."
+    },
+    {
+     "value": "24-D",
+     "label": "Nicht anwendbar aufgrund Bauart/Nutzung; Begründung dokumentiert."
+    }
+   ]
+  },
+  {
+   "code": "q_en8141_p25",
+   "type": "SELECT",
+   "domain": "GBU",
+   "text": "Funktionieren vorhandene Sicherheitsleisten, Kontaktleisten, Lichtschranken oder andere Schutzeinrichtungen zuverlässig?",
+   "category": "Plattform / Schutzleisten",
+   "options": [
+    {
+     "value": "25-A",
+     "label": "Anforderung erfüllt; keine relevante Abweichung erkennbar."
+    },
+    {
+     "value": "25-B",
+     "label": "Geringe Abweichung oder beginnende Verschlechterung; Schutzfunktion ist derzeit noch wirksam."
+    },
+    {
+     "value": "25-C",
+     "label": "Wesentliche Abweichung, fehlende/ausgefallene Schutzfunktion oder sicherheitsrelevanter Zustand nicht beherrscht."
+    },
+    {
+     "value": "25-D",
+     "label": "Nicht anwendbar aufgrund Bauart/Nutzung; Begründung dokumentiert."
+    }
+   ]
+  },
+  {
+   "code": "q_en8141_p26",
+   "type": "SELECT",
+   "domain": "GBU",
+   "text": "Sind Nennlast und zulässige Personenzahl gut lesbar angegeben und wird Überlastung verhindert?",
+   "category": "Plattform / Last",
+   "options": [
+    {
+     "value": "26-A",
+     "label": "Anforderung erfüllt; keine relevante Abweichung erkennbar."
+    },
+    {
+     "value": "26-B",
+     "label": "Geringe Abweichung oder beginnende Verschlechterung; Schutzfunktion ist derzeit noch wirksam."
+    },
+    {
+     "value": "26-C",
+     "label": "Wesentliche Abweichung, fehlende/ausgefallene Schutzfunktion oder sicherheitsrelevanter Zustand nicht beherrscht."
+    },
+    {
+     "value": "26-D",
+     "label": "Nicht anwendbar aufgrund Bauart/Nutzung; Begründung dokumentiert."
+    }
+   ]
+  },
+  {
+   "code": "q_en8141_p27",
+   "type": "SELECT",
+   "domain": "GBU",
+   "text": "Ist die Plattform für Rollstuhl-/Personennutzung frei von unkontrolliertem Wegrollen, Anstoßen oder Kippen nutzbar?",
+   "category": "Plattform / Nutzung",
+   "options": [
+    {
+     "value": "27-A",
+     "label": "Anforderung erfüllt; keine relevante Abweichung erkennbar."
+    },
+    {
+     "value": "27-B",
+     "label": "Geringe Abweichung oder beginnende Verschlechterung; Schutzfunktion ist derzeit noch wirksam."
+    },
+    {
+     "value": "27-C",
+     "label": "Wesentliche Abweichung, fehlende/ausgefallene Schutzfunktion oder sicherheitsrelevanter Zustand nicht beherrscht."
+    },
+    {
+     "value": "27-D",
+     "label": "Nicht anwendbar aufgrund Bauart/Nutzung; Begründung dokumentiert."
+    }
+   ]
+  },
+  {
+   "code": "q_en8141_p28",
+   "type": "SELECT",
+   "domain": "GBU",
+   "text": "Sind Befehlsgeber eindeutig, erreichbar und entsprechend der vorgesehenen Betriebsart funktionsfähig?",
+   "category": "Bedienung / Steuerung",
+   "options": [
+    {
+     "value": "28-A",
+     "label": "Anforderung erfüllt; keine relevante Abweichung erkennbar."
+    },
+    {
+     "value": "28-B",
+     "label": "Geringe Abweichung oder beginnende Verschlechterung; Schutzfunktion ist derzeit noch wirksam."
+    },
+    {
+     "value": "28-C",
+     "label": "Wesentliche Abweichung, fehlende/ausgefallene Schutzfunktion oder sicherheitsrelevanter Zustand nicht beherrscht."
+    },
+    {
+     "value": "28-D",
+     "label": "Nicht anwendbar aufgrund Bauart/Nutzung; Begründung dokumentiert."
+    }
+   ]
+  },
+  {
+   "code": "q_en8141_p29",
+   "type": "SELECT",
+   "domain": "GBU",
+   "text": "Funktioniert eine vorgesehene Totmann-/Dauerdrucksteuerung korrekt und stoppt die Bewegung beim Loslassen?",
+   "category": "Bedienung / Steuerung",
+   "options": [
+    {
+     "value": "29-A",
+     "label": "Anforderung erfüllt; keine relevante Abweichung erkennbar."
+    },
+    {
+     "value": "29-B",
+     "label": "Geringe Abweichung oder beginnende Verschlechterung; Schutzfunktion ist derzeit noch wirksam."
+    },
+    {
+     "value": "29-C",
+     "label": "Wesentliche Abweichung, fehlende/ausgefallene Schutzfunktion oder sicherheitsrelevanter Zustand nicht beherrscht."
+    },
+    {
+     "value": "29-D",
+     "label": "Nicht anwendbar aufgrund Bauart/Nutzung; Begründung dokumentiert."
+    }
+   ]
+  },
+  {
+   "code": "q_en8141_p30",
+   "type": "SELECT",
+   "domain": "GBU",
+   "text": "Sind vorhandene Not-Halt-/Stoppeinrichtungen erreichbar, gekennzeichnet und wirksam?",
+   "category": "Bedienung / Steuerung",
+   "options": [
+    {
+     "value": "30-A",
+     "label": "Anforderung erfüllt; keine relevante Abweichung erkennbar."
+    },
+    {
+     "value": "30-B",
+     "label": "Geringe Abweichung oder beginnende Verschlechterung; Schutzfunktion ist derzeit noch wirksam."
+    },
+    {
+     "value": "30-C",
+     "label": "Wesentliche Abweichung, fehlende/ausgefallene Schutzfunktion oder sicherheitsrelevanter Zustand nicht beherrscht."
+    },
+    {
+     "value": "30-D",
+     "label": "Nicht anwendbar aufgrund Bauart/Nutzung; Begründung dokumentiert."
+    }
+   ]
+  },
+  {
+   "code": "q_en8141_p31",
+   "type": "SELECT",
+   "domain": "GBU",
+   "text": "Funktionieren Betriebsendschalter und erforderliche Endbegrenzungen zuverlässig?",
+   "category": "Bedienung / Steuerung",
+   "options": [
+    {
+     "value": "31-A",
+     "label": "Anforderung erfüllt; keine relevante Abweichung erkennbar."
+    },
+    {
+     "value": "31-B",
+     "label": "Geringe Abweichung oder beginnende Verschlechterung; Schutzfunktion ist derzeit noch wirksam."
+    },
+    {
+     "value": "31-C",
+     "label": "Wesentliche Abweichung, fehlende/ausgefallene Schutzfunktion oder sicherheitsrelevanter Zustand nicht beherrscht."
+    },
+    {
+     "value": "31-D",
+     "label": "Nicht anwendbar aufgrund Bauart/Nutzung; Begründung dokumentiert."
+    }
+   ]
+  },
+  {
+   "code": "q_en8141_p32",
+   "type": "SELECT",
+   "domain": "GBU",
+   "text": "Sind Sicherheitskontakte und Sicherheitsfunktionen frei von Überbrückungen, Manipulationen oder erkennbaren Fehlfunktionen?",
+   "category": "Sicherheitskreis",
+   "options": [
+    {
+     "value": "32-A",
+     "label": "Anforderung erfüllt; keine relevante Abweichung erkennbar."
+    },
+    {
+     "value": "32-B",
+     "label": "Geringe Abweichung oder beginnende Verschlechterung; Schutzfunktion ist derzeit noch wirksam."
+    },
+    {
+     "value": "32-C",
+     "label": "Wesentliche Abweichung, fehlende/ausgefallene Schutzfunktion oder sicherheitsrelevanter Zustand nicht beherrscht."
+    },
+    {
+     "value": "32-D",
+     "label": "Nicht anwendbar aufgrund Bauart/Nutzung; Begründung dokumentiert."
+    }
+   ]
+  },
+  {
+   "code": "q_en8141_p33",
+   "type": "SELECT",
+   "domain": "GBU",
+   "text": "Wird die Plattform bei Halt und bei Energieausfall sicher gehalten und sind unkontrollierte Bewegungen ausgeschlossen?",
+   "category": "Antrieb / Halten",
+   "options": [
+    {
+     "value": "33-A",
+     "label": "Anforderung erfüllt; keine relevante Abweichung erkennbar."
+    },
+    {
+     "value": "33-B",
+     "label": "Geringe Abweichung oder beginnende Verschlechterung; Schutzfunktion ist derzeit noch wirksam."
+    },
+    {
+     "value": "33-C",
+     "label": "Wesentliche Abweichung, fehlende/ausgefallene Schutzfunktion oder sicherheitsrelevanter Zustand nicht beherrscht."
+    },
+    {
+     "value": "33-D",
+     "label": "Nicht anwendbar aufgrund Bauart/Nutzung; Begründung dokumentiert."
+    }
+   ]
+  },
+  {
+   "code": "q_en8141_p34",
+   "type": "SELECT",
+   "domain": "GBU",
+   "text": "Sind die vorgesehenen Einrichtungen gegen Absturz bzw. Übergeschwindigkeit vorhanden und funktionsfähig?",
+   "category": "Antrieb / Absturzschutz",
+   "options": [
+    {
+     "value": "34-A",
+     "label": "Anforderung erfüllt; keine relevante Abweichung erkennbar."
+    },
+    {
+     "value": "34-B",
+     "label": "Geringe Abweichung oder beginnende Verschlechterung; Schutzfunktion ist derzeit noch wirksam."
+    },
+    {
+     "value": "34-C",
+     "label": "Wesentliche Abweichung, fehlende/ausgefallene Schutzfunktion oder sicherheitsrelevanter Zustand nicht beherrscht."
+    },
+    {
+     "value": "34-D",
+     "label": "Nicht anwendbar aufgrund Bauart/Nutzung; Begründung dokumentiert."
+    }
+   ]
+  },
+  {
+   "code": "q_en8141_p35",
+   "type": "SELECT",
+   "domain": "GBU",
+   "text": "Sind Tragmittel, Spindel/Mutter, Ketten, Seile, Zahnstangen, Führungen und Befestigungen ohne erkennbare sicherheitsrelevante Schäden?",
+   "category": "Antrieb / Tragmittel",
+   "options": [
+    {
+     "value": "35-A",
+     "label": "Anforderung erfüllt; keine relevante Abweichung erkennbar."
+    },
+    {
+     "value": "35-B",
+     "label": "Geringe Abweichung oder beginnende Verschlechterung; Schutzfunktion ist derzeit noch wirksam."
+    },
+    {
+     "value": "35-C",
+     "label": "Wesentliche Abweichung, fehlende/ausgefallene Schutzfunktion oder sicherheitsrelevanter Zustand nicht beherrscht."
+    },
+    {
+     "value": "35-D",
+     "label": "Nicht anwendbar aufgrund Bauart/Nutzung; Begründung dokumentiert."
+    }
+   ]
+  },
+  {
+   "code": "q_en8141_p36",
+   "type": "SELECT",
+   "domain": "GBU",
+   "text": "Sind hydraulische Leitungen, Zylinder, Ventile und Anschlüsse dicht und gegen gefährliches Absinken/Leitungsbruch abgesichert?",
+   "category": "Hydraulik",
+   "options": [
+    {
+     "value": "36-A",
+     "label": "Anforderung erfüllt; keine relevante Abweichung erkennbar."
+    },
+    {
+     "value": "36-B",
+     "label": "Geringe Abweichung oder beginnende Verschlechterung; Schutzfunktion ist derzeit noch wirksam."
+    },
+    {
+     "value": "36-C",
+     "label": "Wesentliche Abweichung, fehlende/ausgefallene Schutzfunktion oder sicherheitsrelevanter Zustand nicht beherrscht."
+    },
+    {
+     "value": "36-D",
+     "label": "Nicht anwendbar aufgrund Bauart/Nutzung; Begründung dokumentiert."
+    }
+   ]
+  },
+  {
+   "code": "q_en8141_p37",
+   "type": "SELECT",
+   "domain": "GBU",
+   "text": "Ist die vom Hersteller vorgesehene manuelle Notabsenkung/Notbewegung vorhanden, zugänglich und sicher bedienbar?",
+   "category": "Notbetrieb / Befreiung",
+   "options": [
+    {
+     "value": "37-A",
+     "label": "Anforderung erfüllt; keine relevante Abweichung erkennbar."
+    },
+    {
+     "value": "37-B",
+     "label": "Geringe Abweichung oder beginnende Verschlechterung; Schutzfunktion ist derzeit noch wirksam."
+    },
+    {
+     "value": "37-C",
+     "label": "Wesentliche Abweichung, fehlende/ausgefallene Schutzfunktion oder sicherheitsrelevanter Zustand nicht beherrscht."
+    },
+    {
+     "value": "37-D",
+     "label": "Nicht anwendbar aufgrund Bauart/Nutzung; Begründung dokumentiert."
+    }
+   ]
+  },
+  {
+   "code": "q_en8141_p38",
+   "type": "SELECT",
+   "domain": "GBU",
+   "text": "Ist ein eindeutig gekennzeichneter und gegen unbeabsichtigtes Wiedereinschalten sicherbarer Hauptschalter/Trenneinrichtung vorhanden?",
+   "category": "Elektrik",
+   "options": [
+    {
+     "value": "38-A",
+     "label": "Anforderung erfüllt; keine relevante Abweichung erkennbar."
+    },
+    {
+     "value": "38-B",
+     "label": "Geringe Abweichung oder beginnende Verschlechterung; Schutzfunktion ist derzeit noch wirksam."
+    },
+    {
+     "value": "38-C",
+     "label": "Wesentliche Abweichung, fehlende/ausgefallene Schutzfunktion oder sicherheitsrelevanter Zustand nicht beherrscht."
+    },
+    {
+     "value": "38-D",
+     "label": "Nicht anwendbar aufgrund Bauart/Nutzung; Begründung dokumentiert."
+    }
+   ]
+  },
+  {
+   "code": "q_en8141_p39",
+   "type": "SELECT",
+   "domain": "GBU",
+   "text": "Sind elektrische Betriebsmittel, Schutzleiter/Potentialausgleich, Leitungen und Abdeckungen augenscheinlich sicher und unbeschädigt?",
+   "category": "Elektrik",
+   "options": [
+    {
+     "value": "39-A",
+     "label": "Anforderung erfüllt; keine relevante Abweichung erkennbar."
+    },
+    {
+     "value": "39-B",
+     "label": "Geringe Abweichung oder beginnende Verschlechterung; Schutzfunktion ist derzeit noch wirksam."
+    },
+    {
+     "value": "39-C",
+     "label": "Wesentliche Abweichung, fehlende/ausgefallene Schutzfunktion oder sicherheitsrelevanter Zustand nicht beherrscht."
+    },
+    {
+     "value": "39-D",
+     "label": "Nicht anwendbar aufgrund Bauart/Nutzung; Begründung dokumentiert."
+    }
+   ]
+  },
+  {
+   "code": "q_en8141_p40",
+   "type": "SELECT",
+   "domain": "GBU",
+   "text": "Kann eine eingeschlossene Person zuverlässig Hilfe herbeirufen und ist die Einrichtung erreichbar und funktionsfähig?",
+   "category": "Notruf / Hilfe",
+   "options": [
+    {
+     "value": "40-A",
+     "label": "Anforderung erfüllt; keine relevante Abweichung erkennbar."
+    },
+    {
+     "value": "40-B",
+     "label": "Geringe Abweichung oder beginnende Verschlechterung; Schutzfunktion ist derzeit noch wirksam."
+    },
+    {
+     "value": "40-C",
+     "label": "Wesentliche Abweichung, fehlende/ausgefallene Schutzfunktion oder sicherheitsrelevanter Zustand nicht beherrscht."
+    },
+    {
+     "value": "40-D",
+     "label": "Nicht anwendbar aufgrund Bauart/Nutzung; Begründung dokumentiert."
+    }
+   ]
+  },
+  {
+   "code": "q_en8141_p41",
+   "type": "SELECT",
+   "domain": "GBU",
+   "text": "Sind Notfallplan, Notbefreiungsanleitung, Zugangsmittel und verantwortliche Personen aktuell und verfügbar?",
+   "category": "Notfallorganisation",
+   "options": [
+    {
+     "value": "41-A",
+     "label": "Anforderung erfüllt; keine relevante Abweichung erkennbar."
+    },
+    {
+     "value": "41-B",
+     "label": "Geringe Abweichung oder beginnende Verschlechterung; Schutzfunktion ist derzeit noch wirksam."
+    },
+    {
+     "value": "41-C",
+     "label": "Wesentliche Abweichung, fehlende/ausgefallene Schutzfunktion oder sicherheitsrelevanter Zustand nicht beherrscht."
+    },
+    {
+     "value": "41-D",
+     "label": "Nicht anwendbar aufgrund Bauart/Nutzung; Begründung dokumentiert."
+    }
+   ]
+  },
+  {
+   "code": "q_en8141_p42",
+   "type": "SELECT",
+   "domain": "GBU",
+   "text": "Ist sichergestellt, dass die vorgesehene Personenbefreiung praktisch durchführbar ist und die beauftragten Personen ausreichend eingewiesen sind?",
+   "category": "Notfallorganisation",
+   "options": [
+    {
+     "value": "42-A",
+     "label": "Anforderung erfüllt; keine relevante Abweichung erkennbar."
+    },
+    {
+     "value": "42-B",
+     "label": "Geringe Abweichung oder beginnende Verschlechterung; Schutzfunktion ist derzeit noch wirksam."
+    },
+    {
+     "value": "42-C",
+     "label": "Wesentliche Abweichung, fehlende/ausgefallene Schutzfunktion oder sicherheitsrelevanter Zustand nicht beherrscht."
+    },
+    {
+     "value": "42-D",
+     "label": "Nicht anwendbar aufgrund Bauart/Nutzung; Begründung dokumentiert."
+    }
+   ]
+  },
+  {
+   "code": "q_en8141_p43",
+   "type": "SELECT",
+   "domain": "GBU",
+   "text": "Entspricht die Instandhaltung Art, Intensität der Nutzung und den Herstellervorgaben?",
+   "category": "Instandhaltung",
+   "options": [
+    {
+     "value": "43-A",
+     "label": "Anforderung erfüllt; keine relevante Abweichung erkennbar."
+    },
+    {
+     "value": "43-B",
+     "label": "Geringe Abweichung oder beginnende Verschlechterung; Schutzfunktion ist derzeit noch wirksam."
+    },
+    {
+     "value": "43-C",
+     "label": "Wesentliche Abweichung, fehlende/ausgefallene Schutzfunktion oder sicherheitsrelevanter Zustand nicht beherrscht."
+    },
+    {
+     "value": "43-D",
+     "label": "Nicht anwendbar aufgrund Bauart/Nutzung; Begründung dokumentiert."
+    }
+   ]
+  },
+  {
+   "code": "q_en8141_p44",
+   "type": "SELECT",
+   "domain": "GBU",
+   "text": "Werden regelmäßige Kontrollen auf offensichtliche Mängel durchgeführt und dokumentiert?",
+   "category": "Betriebliche Kontrolle",
+   "options": [
+    {
+     "value": "44-A",
+     "label": "Anforderung erfüllt; keine relevante Abweichung erkennbar."
+    },
+    {
+     "value": "44-B",
+     "label": "Geringe Abweichung oder beginnende Verschlechterung; Schutzfunktion ist derzeit noch wirksam."
+    },
+    {
+     "value": "44-C",
+     "label": "Wesentliche Abweichung, fehlende/ausgefallene Schutzfunktion oder sicherheitsrelevanter Zustand nicht beherrscht."
+    },
+    {
+     "value": "44-D",
+     "label": "Nicht anwendbar aufgrund Bauart/Nutzung; Begründung dokumentiert."
+    }
+   ]
+  },
+  {
+   "code": "q_en8141_p45",
+   "type": "SELECT",
+   "domain": "GBU",
+   "text": "Sind erforderliche Prüfungen, Prüffristen und Prüfberichte aktuell; wurden Mängel fristgerecht beseitigt?",
+   "category": "Prüfungen",
+   "options": [
+    {
+     "value": "45-A",
+     "label": "Anforderung erfüllt; keine relevante Abweichung erkennbar."
+    },
+    {
+     "value": "45-B",
+     "label": "Geringe Abweichung oder beginnende Verschlechterung; Schutzfunktion ist derzeit noch wirksam."
+    },
+    {
+     "value": "45-C",
+     "label": "Wesentliche Abweichung, fehlende/ausgefallene Schutzfunktion oder sicherheitsrelevanter Zustand nicht beherrscht."
+    },
+    {
+     "value": "45-D",
+     "label": "Nicht anwendbar aufgrund Bauart/Nutzung; Begründung dokumentiert."
+    }
+   ]
+  },
+  {
+   "code": "q_en8141_p46",
+   "type": "SELECT",
+   "domain": "GBU",
+   "text": "Sind im unmittelbaren Bereich keine fremden Einrichtungen, Lagerungen oder Bauteile vorhanden, die den sicheren Betrieb beeinträchtigen?",
+   "category": "Umfeld / Fremdeinrichtungen",
+   "options": [
+    {
+     "value": "46-A",
+     "label": "Anforderung erfüllt; keine relevante Abweichung erkennbar."
+    },
+    {
+     "value": "46-B",
+     "label": "Geringe Abweichung oder beginnende Verschlechterung; Schutzfunktion ist derzeit noch wirksam."
+    },
+    {
+     "value": "46-C",
+     "label": "Wesentliche Abweichung, fehlende/ausgefallene Schutzfunktion oder sicherheitsrelevanter Zustand nicht beherrscht."
+    },
+    {
+     "value": "46-D",
+     "label": "Nicht anwendbar aufgrund Bauart/Nutzung; Begründung dokumentiert."
+    }
+   ]
+  },
+  {
+   "code": "q_en8141_p47",
+   "type": "SELECT",
+   "domain": "GBU",
+   "text": "Sind Unfälle, Beinaheereignisse, wiederkehrende Störungen und Beschwerden in der GBU berücksichtigt?",
+   "category": "Ereignisse / Nutzung",
+   "options": [
+    {
+     "value": "47-A",
+     "label": "Anforderung erfüllt; keine relevante Abweichung erkennbar."
+    },
+    {
+     "value": "47-B",
+     "label": "Geringe Abweichung oder beginnende Verschlechterung; Schutzfunktion ist derzeit noch wirksam."
+    },
+    {
+     "value": "47-C",
+     "label": "Wesentliche Abweichung, fehlende/ausgefallene Schutzfunktion oder sicherheitsrelevanter Zustand nicht beherrscht."
+    },
+    {
+     "value": "47-D",
+     "label": "Nicht anwendbar aufgrund Bauart/Nutzung; Begründung dokumentiert."
+    }
+   ]
+  },
+  {
+   "code": "q_en8141_p48",
+   "type": "SELECT",
+   "domain": "GBU",
+   "text": "Sind Fernzugriffe, softwareseitige Änderungen oder vernetzte Komponenten so beherrscht, dass sicherheitsrelevante Funktionen nicht unzulässig beeinflusst werden können?",
+   "category": "Änderungen / Cyber",
+   "options": [
+    {
+     "value": "48-A",
+     "label": "Anforderung erfüllt; keine relevante Abweichung erkennbar."
+    },
+    {
+     "value": "48-B",
+     "label": "Geringe Abweichung oder beginnende Verschlechterung; Schutzfunktion ist derzeit noch wirksam."
+    },
+    {
+     "value": "48-C",
+     "label": "Wesentliche Abweichung, fehlende/ausgefallene Schutzfunktion oder sicherheitsrelevanter Zustand nicht beherrscht."
+    },
+    {
+     "value": "48-D",
+     "label": "Nicht anwendbar aufgrund Bauart/Nutzung; Begründung dokumentiert."
+    }
+   ]
+  }
+ ],
+ "measures": [
+  {
+   "code": "m_0caad29d92",
+   "title": "Regelmäßige Kontrolle / Instandhaltung entsprechend Hersteller- und Betreiberfestlegung fortführen.",
+   "type": "TECHNICAL",
+   "priority_class": "MITTELFRISTIG"
+  },
+  {
+   "code": "m_d472155f3e",
+   "title": "Abweichung dokumentieren; bei Verschlechterungsgefahr Nutzung beobachten bzw. organisatorisch absichern.",
+   "type": "ORGANISATIONAL",
+   "priority_class": "SOFORT"
+  },
+  {
+   "code": "m_2dac5c316c",
+   "title": "Fehlende oder unleserliche Kennzeichnung dokumentieren; Hersteller-/Anlagendaten beschaffen und Zuordnung herstellen.",
+   "type": "TECHNICAL",
+   "priority_class": "MITTELFRISTIG"
+  },
+  {
+   "code": "m_17f8f40ae1",
+   "title": "Gefährdenden Betriebszustand unverzüglich beenden bzw. Anlage/Teilfunktion sperren; weitere Nutzung nur bei wirksamer Ersatzmaßnahme.",
+   "type": "ORGANISATIONAL",
+   "priority_class": "SOFORT"
+  },
+  {
+   "code": "m_5f96ceca27",
+   "title": "Keine Maßnahme; Geltungsbedingung und Begründung in der GBU festhalten.",
+   "type": "TECHNICAL",
+   "priority_class": "MITTELFRISTIG"
+  },
+  {
+   "code": "m_213ac8384e",
+   "title": "Unterlagen beim Hersteller, Errichter oder Vorbetreiber beschaffen; bei fehlender Nachvollziehbarkeit sicherheitsrelevante Funktionen gesondert verifizieren.",
+   "type": "TECHNICAL",
+   "priority_class": "MITTELFRISTIG"
+  },
+  {
+   "code": "m_b0cd52b133",
+   "title": "Normbasis, Baujahr und Konformitätsunterlagen erfassen; Abweichungen zum sicheren Betrieb über die GBU bewerten.",
+   "type": "TECHNICAL",
+   "priority_class": "MITTELFRISTIG"
+  },
+  {
+   "code": "m_bc36b75096",
+   "title": "Gefährdung kurzfristig begrenzen und Abweichung verbindlich terminieren.",
+   "type": "ORGANISATIONAL",
+   "priority_class": "SOFORT"
+  },
+  {
+   "code": "m_9e5e2c0938",
+   "title": "Fehlende Unterlagen beschaffen; bis zur Klärung keine nicht beherrschbaren Eingriffe oder Befreiungsmaßnahmen durchführen.",
+   "type": "TECHNICAL",
+   "priority_class": "MITTELFRISTIG"
+  },
+  {
+   "code": "m_81da5be457",
+   "title": "Nutzung an Herstellerangaben anpassen; unzulässige Nutzungen organisatorisch oder technisch verhindern.",
+   "type": "TECHNICAL",
+   "priority_class": "MITTELFRISTIG"
+  },
+  {
+   "code": "m_a24f4fb04b",
+   "title": "Änderung dokumentieren und durch fachkundige Stelle bewerten; ggf. Prüfung nach prüfpflichtiger Änderung veranlassen.",
+   "type": "TECHNICAL",
+   "priority_class": "MITTELFRISTIG"
+  },
+  {
+   "code": "m_16258582f6",
+   "title": "Absturzhöhe dokumentieren; bei > 3 m ZÜS-/Prüf- und Betreiberpflichten verbindlich klären.",
+   "type": "TECHNICAL",
+   "priority_class": "MITTELFRISTIG"
+  },
+  {
+   "code": "m_946b5158ad",
+   "title": "Verkehrsweg freihalten; Stolperstellen, Engstellen und Hindernisse beseitigen.",
+   "type": "TECHNICAL",
+   "priority_class": "MITTELFRISTIG"
+  },
+  {
+   "code": "m_370e73894d",
+   "title": "Beschädigungen beseitigen; rutschhemmende Oberfläche bzw. sichere Übergänge herstellen.",
+   "type": "TECHNICAL",
+   "priority_class": "MITTELFRISTIG"
+  },
+  {
+   "code": "m_4e32c7a933",
+   "title": "Schutzbereich markieren, Verkehrsführung ändern, Spiegel/Absperrung oder organisatorische Maßnahmen vorsehen.",
+   "type": "TECHNICAL",
+   "priority_class": "MITTELFRISTIG"
+  },
+  {
+   "code": "m_e18e568860",
+   "title": "Beleuchtung instand setzen oder ergänzen; Ausfallursache beheben.",
+   "type": "TECHNICAL",
+   "priority_class": "MITTELFRISTIG"
+  },
+  {
+   "code": "m_34e432fda1",
+   "title": "Entwässerung, Witterungsschutz oder Korrosionsschutz herstellen; vereiste/rutschige Anlage bis zur sicheren Nutzung sperren.",
+   "type": "TECHNICAL",
+   "priority_class": "MITTELFRISTIG"
+  },
+  {
+   "code": "m_61ebdffab4",
+   "title": "Beschädigte oder fehlende Umwehrung sofort sichern; fachgerecht instand setzen.",
+   "type": "TECHNICAL",
+   "priority_class": "MITTELFRISTIG"
+  },
+  {
+   "code": "m_6af0a03018",
+   "title": "Gefahrenstelle absperren; geeignete Abdeckung/Umwehrung oder Schutzsystem nachrüsten.",
+   "type": "TECHNICAL",
+   "priority_class": "MITTELFRISTIG"
+  },
+  {
+   "code": "m_7d46698973",
+   "title": "Geeignete Abtrennung herstellen bzw. Wartungszugang sicher organisieren.",
+   "type": "TECHNICAL",
+   "priority_class": "MITTELFRISTIG"
+  },
+  {
+   "code": "m_4b33324270",
+   "title": "Sicherungseinrichtungen bereitstellen/instand setzen; Zugang bis zur sicheren Stillsetzung beschränken.",
+   "type": "TECHNICAL",
+   "priority_class": "MITTELFRISTIG"
+  },
+  {
+   "code": "m_7ca2c2bdbf",
+   "title": "Defekte Tür/Tor außer Betrieb nehmen oder sichern; fachgerecht reparieren.",
+   "type": "TECHNICAL",
+   "priority_class": "MITTELFRISTIG"
+  },
+  {
+   "code": "m_a224c5ae31",
+   "title": "Anlage bei unwirksamer Verriegelung außer Betrieb nehmen; Verriegelung/Sicherheitskreis instand setzen.",
+   "type": "TECHNICAL",
+   "priority_class": "MITTELFRISTIG"
+  },
+  {
+   "code": "m_b8e03e7b9e",
+   "title": "Anlage sperren; Verriegelung und mechanische Sicherung unverzüglich instand setzen.",
+   "type": "TECHNICAL",
+   "priority_class": "MITTELFRISTIG"
+  },
+  {
+   "code": "m_604fd97d45",
+   "title": "Schutzeinrichtungen prüfen/instand setzen; bei gefährlicher Schließbewegung Betrieb einschränken.",
+   "type": "TECHNICAL",
+   "priority_class": "MITTELFRISTIG"
+  },
+  {
+   "code": "m_4da21178d2",
+   "title": "Bodenbelag instand setzen; lose Teile und Stolperstellen beseitigen.",
+   "type": "TECHNICAL",
+   "priority_class": "MITTELFRISTIG"
+  },
+  {
+   "code": "m_db9933da42",
+   "title": "Fehlende/instabile Absturzsicherung sofort sichern; fachgerecht instand setzen.",
+   "type": "TECHNICAL",
+   "priority_class": "MITTELFRISTIG"
+  },
+  {
+   "code": "m_66612da277",
+   "title": "Defekte Mechanik/Sicherheitsüberwachung instand setzen; Nutzung bis dahin beschränken.",
+   "type": "TECHNICAL",
+   "priority_class": "MITTELFRISTIG"
+  },
+  {
+   "code": "m_81b4ca47ea",
+   "title": "Gefahrenstelle sichern; Abstände oder Schutzsystem nach Herstellervorgabe herstellen.",
+   "type": "TECHNICAL",
+   "priority_class": "MITTELFRISTIG"
+  },
+  {
+   "code": "m_d3d3b5beac",
+   "title": "Bei Ausfall Anlage außer Betrieb nehmen oder Gefahrenbereich wirksam sperren; Schutzeinrichtung instand setzen.",
+   "type": "TECHNICAL",
+   "priority_class": "MITTELFRISTIG"
+  },
+  {
+   "code": "m_825e246d24",
+   "title": "Kennzeichnung erneuern; Nutzer unterweisen; vorhandene Überlastüberwachung prüfen.",
+   "type": "TECHNICAL",
+   "priority_class": "MITTELFRISTIG"
+  },
+  {
+   "code": "m_ea75f776c5",
+   "title": "Nutzungsregeln festlegen; erforderlichenfalls Halte-/Positionierhilfen oder Einschränkungen vorsehen.",
+   "type": "TECHNICAL",
+   "priority_class": "MITTELFRISTIG"
+  },
+  {
+   "code": "m_ffe3dfbdf2",
+   "title": "Beschriftung/Bedienelemente instand setzen; nicht eindeutige Bedienung korrigieren.",
+   "type": "TECHNICAL",
+   "priority_class": "MITTELFRISTIG"
+  },
+  {
+   "code": "m_b83b38af87",
+   "title": "Bei Fehlfunktion Anlage außer Betrieb nehmen; Steuerung/Sicherheitsfunktion instand setzen.",
+   "type": "TECHNICAL",
+   "priority_class": "MITTELFRISTIG"
+  },
+  {
+   "code": "m_c00cf0cbbf",
+   "title": "Defekte Stoppeinrichtung sofort instand setzen; betroffenen Betriebsmodus sperren.",
+   "type": "TECHNICAL",
+   "priority_class": "MITTELFRISTIG"
+  },
+  {
+   "code": "m_189c2ea8a6",
+   "title": "Anlage bei fehlerhafter Endbegrenzung außer Betrieb nehmen; Schalter/Steuerung prüfen.",
+   "type": "TECHNICAL",
+   "priority_class": "MITTELFRISTIG"
+  },
+  {
+   "code": "m_04e6321f82",
+   "title": "Manipulation/Überbrückung unverzüglich beseitigen; Ursache ermitteln und Funktion verifizieren.",
+   "type": "TECHNICAL",
+   "priority_class": "MITTELFRISTIG"
+  },
+  {
+   "code": "m_b6bdc8cbc0",
+   "title": "Bei Absinken/Driften Anlage außer Betrieb nehmen; Bremse/Haltesystem prüfen und instand setzen.",
+   "type": "TECHNICAL",
+   "priority_class": "MITTELFRISTIG"
+  },
+  {
+   "code": "m_3fcd0365b5",
+   "title": "Bei Zweifel an Fang-/Absturzschutz Anlage außer Betrieb nehmen; fachgerechte Prüfung veranlassen.",
+   "type": "TECHNICAL",
+   "priority_class": "MITTELFRISTIG"
+  },
+  {
+   "code": "m_d7178b9bc9",
+   "title": "Beschädigte Komponenten nach Herstellervorgabe bewerten/ersetzen; Anlage ggf. stillsetzen.",
+   "type": "TECHNICAL",
+   "priority_class": "MITTELFRISTIG"
+  },
+  {
+   "code": "m_c0cbccf415",
+   "title": "Leckage/Absinken bewerten; bei sicherheitsrelevantem Fehler Anlage außer Betrieb nehmen und Hydraulik instand setzen.",
+   "type": "TECHNICAL",
+   "priority_class": "MITTELFRISTIG"
+  },
+  {
+   "code": "m_8705d3a461",
+   "title": "Befreiungsmittel instand setzen; bis zur Klärung geeignetes Ersatz-Rettungskonzept sicherstellen oder Nutzung sperren.",
+   "type": "TECHNICAL",
+   "priority_class": "MITTELFRISTIG"
+  },
+  {
+   "code": "m_b70c185ab8",
+   "title": "Sichere Trenneinrichtung herstellen; Lockout/Tagout organisatorisch ergänzen.",
+   "type": "TECHNICAL",
+   "priority_class": "MITTELFRISTIG"
+  },
+  {
+   "code": "m_0ee0c290b2",
+   "title": "Beschädigte elektrische Teile spannungsfrei setzen und durch Elektrofachkraft instand setzen.",
+   "type": "TECHNICAL",
+   "priority_class": "MITTELFRISTIG"
+  },
+  {
+   "code": "m_085ed2f3a4",
+   "title": "Notruf/Hilferuf unverzüglich wiederherstellen; bis dahin organisatorische Ersatzmaßnahme mit gesicherter Erreichbarkeit.",
+   "type": "TECHNICAL",
+   "priority_class": "MITTELFRISTIG"
+  },
+  {
+   "code": "m_afbf18cfab",
+   "title": "Notfallplan aktualisieren; Befreiungsanleitung und erforderliche Hilfsmittel am vorgesehenen Ort bereitstellen.",
+   "type": "TECHNICAL",
+   "priority_class": "MITTELFRISTIG"
+  },
+  {
+   "code": "m_e2aa228613",
+   "title": "Befreiungskonzept prüfen; Einweisung/Übung und sichere Zugänglichkeit organisieren.",
+   "type": "TECHNICAL",
+   "priority_class": "MITTELFRISTIG"
+  },
+  {
+   "code": "m_f6b29d5888",
+   "title": "Wartungsumfang/-intervall an Nutzung und Herstellerangaben anpassen; offene Mängel nachverfolgen.",
+   "type": "TECHNICAL",
+   "priority_class": "MITTELFRISTIG"
+  },
+  {
+   "code": "m_fa90d0e143",
+   "title": "Kontrollintervall und Verantwortliche festlegen; einfache Kontrollliste einführen.",
+   "type": "TECHNICAL",
+   "priority_class": "MITTELFRISTIG"
+  },
+  {
+   "code": "m_b09ab8d190",
+   "title": "Prüfstatus klären; überfällige Prüfung veranlassen; erhebliche Mängel vor Weiterbetrieb beseitigen.",
+   "type": "TECHNICAL",
+   "priority_class": "MITTELFRISTIG"
+  },
+  {
+   "code": "m_7cdab5ebca",
+   "title": "Störende Gegenstände/Einrichtungen entfernen oder Schutzabstand herstellen.",
+   "type": "TECHNICAL",
+   "priority_class": "MITTELFRISTIG"
+  },
+  {
+   "code": "m_bb44ed1e08",
+   "title": "Ereignisse auswerten; Ursachen und erforderliche technische/organisatorische Maßnahmen dokumentieren.",
+   "type": "TECHNICAL",
+   "priority_class": "MITTELFRISTIG"
+  },
+  {
+   "code": "m_52494c0a1b",
+   "title": "Separate Cyber-GBU durchführen; Zugänge, Berechtigungen, Updates und Änderungen kontrollieren und dokumentieren.",
+   "type": "TECHNICAL",
+   "priority_class": "MITTELFRISTIG"
+  }
+ ],
+ "hazards": [
+  {
+   "code": "EN8141-P1",
+   "domain": "GBU",
+   "title": "Sind CE-Kennzeichnung und Hersteller-/Typenschild vorhanden und eindeutig der Anlage zuzuordnen?",
+   "category": "Grundlagen / Dokumentation",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_en8141_p1",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "EN",
+     "document": "DIN EN 81-41",
+     "section": "2024"
+    },
+    {
+     "type": "EU_DIRECTIVE",
+     "document": "Maschinenrichtlinie 2006/42/EG"
+    }
+   ]
+  },
+  {
+   "code": "EN8141-P2",
+   "domain": "GBU",
+   "title": "Liegt die EG-/EU-Konformitätserklärung bzw. die für die Anlage maßgebliche Herstellerbescheinigung vor?",
+   "category": "Grundlagen / Dokumentation",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_en8141_p2",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "EU_DIRECTIVE",
+     "document": "Maschinenrichtlinie 2006/42/EG"
+    },
+    {
+     "type": "EN",
+     "document": "DIN EN 81-41"
+    }
+   ]
+  },
+  {
+   "code": "EN8141-P3",
+   "domain": "GBU",
+   "title": "Ist die für das Inverkehrbringen verwendete Norm-/Ausgabebasis dokumentiert?",
+   "category": "Grundlagen / Dokumentation",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_en8141_p3",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "EN",
+     "document": "DIN EN 81-41",
+     "section": "2010/2024"
+    },
+    {
+     "type": "LAW",
+     "document": "BetrSichV",
+     "section": "§ 3"
+    }
+   ]
+  },
+  {
+   "code": "EN8141-P4",
+   "domain": "GBU",
+   "title": "Sind Betriebs-, Wartungs- und Notbefreiungsunterlagen vollständig und am Betriebsort verfügbar?",
+   "category": "Grundlagen / Dokumentation",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_en8141_p4",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "LAW",
+     "document": "BetrSichV",
+     "section": "Anhang 1 Nr. 4.1"
+    },
+    {
+     "type": "TRBS",
+     "document": "TRBS 3121"
+    }
+   ]
+  },
+  {
+   "code": "EN8141-P5",
+   "domain": "GBU",
+   "title": "Entspricht die tatsächliche Nutzung der vom Hersteller vorgesehenen bestimmungsgemäßen Verwendung?",
+   "category": "Grundlagen / Dokumentation",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_en8141_p5",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "EN",
+     "document": "DIN EN 81-41"
+    },
+    {
+     "type": "LAW",
+     "document": "BetrSichV",
+     "section": "§ 3"
+    }
+   ]
+  },
+  {
+   "code": "EN8141-P6",
+   "domain": "GBU",
+   "title": "Sind nachträgliche Änderungen, Umbauten oder Fremdeingriffe vollständig dokumentiert und sicherheitstechnisch bewertet?",
+   "category": "Grundlagen / Dokumentation",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_en8141_p6",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "LAW",
+     "document": "BetrSichV",
+     "section": "§ 3"
+    },
+    {
+     "type": "TRBS",
+     "document": "TRBS 1201 Teil 4"
+    }
+   ]
+  },
+  {
+   "code": "EN8141-P7",
+   "domain": "GBU",
+   "title": "Ist die vertikale Absturzhöhe ermittelt und die Einstufung als überwachungsbedürftige Aufzugsanlage geklärt?",
+   "category": "Grundlagen / Einstufung",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_en8141_p7",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "LAW",
+     "document": "BetrSichV",
+     "section": "Anhang 2 Abschnitt 2"
+    },
+    {
+     "type": "EU_DIRECTIVE",
+     "document": "Maschinenrichtlinie Anhang IV Nr. 17"
+    }
+   ]
+  },
+  {
+   "code": "EN8141-P8",
+   "domain": "GBU",
+   "title": "Sind alle Haltestellen und Zugänge sicher, frei, ausreichend breit und ohne gefährliche Hindernisse erreichbar?",
+   "category": "Zugänge / Umfeld",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_en8141_p8",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "LAW",
+     "document": "BetrSichV",
+     "section": "§ 3"
+    },
+    {
+     "type": "TRBS",
+     "document": "TRBS 1111"
+    }
+   ]
+  },
+  {
+   "code": "EN8141-P9",
+   "domain": "GBU",
+   "title": "Sind Schwellen, Rampen und Bodenflächen an den Zugängen eben, rutschhemmend und unbeschädigt?",
+   "category": "Zugänge / Umfeld",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_en8141_p9",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "EN",
+     "document": "DIN EN 81-41"
+    },
+    {
+     "type": "LAW",
+     "document": "BetrSichV",
+     "section": "§ 3"
+    }
+   ]
+  },
+  {
+   "code": "EN8141-P10",
+   "domain": "GBU",
+   "title": "Sind angrenzende Verkehrswege so gestaltet, dass Nutzer beim Ein-/Ausfahren nicht durch Fahrzeuge, Türen oder andere Bewegungen gefährdet werden?",
+   "category": "Zugänge / Umfeld",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_en8141_p10",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "LAW",
+     "document": "BetrSichV",
+     "section": "§ 3"
+    },
+    {
+     "type": "TRBS",
+     "document": "TRBS 1111"
+    }
+   ]
+  },
+  {
+   "code": "EN8141-P11",
+   "domain": "GBU",
+   "title": "Ist die Beleuchtung an Plattform, Haltestellen und erforderlichen Wartungszugängen ausreichend?",
+   "category": "Zugänge / Umfeld",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_en8141_p11",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "EN",
+     "document": "DIN EN 81-41"
+    },
+    {
+     "type": "LAW",
+     "document": "BetrSichV",
+     "section": "§ 3"
+    }
+   ]
+  },
+  {
+   "code": "EN8141-P12",
+   "domain": "GBU",
+   "title": "Sind Außenanlagen gegen Witterung, Wasser, Eis, Korrosion und unzulässige Temperatur-/Umwelteinflüsse ausreichend geschützt?",
+   "category": "Zugänge / Umfeld",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_en8141_p12",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "EN",
+     "document": "DIN EN 81-41"
+    },
+    {
+     "type": "OTHER",
+     "document": "Herstellerangaben"
+    },
+    {
+     "type": "LAW",
+     "document": "BetrSichV",
+     "section": "§ 3"
+    }
+   ]
+  },
+  {
+   "code": "EN8141-P13",
+   "domain": "GBU",
+   "title": "Ist die Schacht- bzw. Fahrbahnumwehrung vollständig, ausreichend fest und frei von gefährlichen Beschädigungen?",
+   "category": "Schacht / Umwehrung",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_en8141_p13",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "EN",
+     "document": "DIN EN 81-41"
+    }
+   ]
+  },
+  {
+   "code": "EN8141-P14",
+   "domain": "GBU",
+   "title": "Sind Öffnungen und Abstände so begrenzt, dass kein gefährliches Hineingreifen zu bewegten Teilen möglich ist?",
+   "category": "Schacht / Umwehrung",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_en8141_p14",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "EN",
+     "document": "DIN EN 81-41"
+    },
+    {
+     "type": "LAW",
+     "document": "BetrSichV",
+     "section": "Anhang 1 Nr. 2.4"
+    }
+   ]
+  },
+  {
+   "code": "EN8141-P15",
+   "domain": "GBU",
+   "title": "Sind bei mehreren bewegten Anlagen/Komponenten notwendige Abtrennungen vorhanden und wirksam?",
+   "category": "Schacht / Umwehrung",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_en8141_p15",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "EN",
+     "document": "DIN EN 81-41"
+    },
+    {
+     "type": "OTHER",
+     "document": "Herstellerunterlagen"
+    }
+   ]
+  },
+  {
+   "code": "EN8141-P16",
+   "domain": "GBU",
+   "title": "Sind Wartungsbereiche, Grube oder Kopfbereich – soweit zugänglich – gegen unbeabsichtigte Bewegung der Plattform geschützt?",
+   "category": "Schacht / Wartungsbereiche",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_en8141_p16",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "EN",
+     "document": "DIN EN 81-41"
+    },
+    {
+     "type": "LAW",
+     "document": "BetrSichV",
+     "section": "§ 10"
+    }
+   ]
+  },
+  {
+   "code": "EN8141-P17",
+   "domain": "GBU",
+   "title": "Sind Schachttüren, Tore und Plattformtüren mechanisch intakt und schließen sicher?",
+   "category": "Türen / Tore",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_en8141_p17",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "EN",
+     "document": "DIN EN 81-41"
+    }
+   ]
+  },
+  {
+   "code": "EN8141-P18",
+   "domain": "GBU",
+   "title": "Verhindern Verriegelungen und elektrische Überwachungen eine gefährliche Fahrt bei nicht sicher geschlossenen Zugängen?",
+   "category": "Türen / Tore",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_en8141_p18",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "EN",
+     "document": "DIN EN 81-41"
+    },
+    {
+     "type": "OTHER",
+     "document": "Herstellerunterlagen"
+    }
+   ]
+  },
+  {
+   "code": "EN8141-P19",
+   "domain": "GBU",
+   "title": "Kann eine Schachttür außerhalb der vorgesehenen Entriegelungszone unbeabsichtigt geöffnet werden?",
+   "category": "Türen / Tore",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_en8141_p19",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "EN",
+     "document": "DIN EN 81-41"
+    }
+   ]
+  },
+  {
+   "code": "EN8141-P20",
+   "domain": "GBU",
+   "title": "Sind kraftbetätigte Türen/Tore gegen Quetschen, Scheren und Anstoßen wirksam geschützt?",
+   "category": "Türen / Tore",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_en8141_p20",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "EN",
+     "document": "DIN EN 81-41"
+    },
+    {
+     "type": "LAW",
+     "document": "BetrSichV",
+     "section": "§ 3"
+    }
+   ]
+  },
+  {
+   "code": "EN8141-P21",
+   "domain": "GBU",
+   "title": "Ist der Plattformboden fest, eben, rutschhemmend und frei von gefährlichen Beschädigungen?",
+   "category": "Plattform / Lastträger",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_en8141_p21",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "EN",
+     "document": "DIN EN 81-41"
+    }
+   ]
+  },
+  {
+   "code": "EN8141-P22",
+   "domain": "GBU",
+   "title": "Sind Plattformwände, Geländer, Handläufe und sonstige Absturzsicherungen – soweit vorgesehen – vollständig und ausreichend stabil?",
+   "category": "Plattform / Lastträger",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_en8141_p22",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "EN",
+     "document": "DIN EN 81-41"
+    },
+    {
+     "type": "LAW",
+     "document": "BetrSichV",
+     "section": "Anhang 1 Nr. 2.4"
+    }
+   ]
+  },
+  {
+   "code": "EN8141-P23",
+   "domain": "GBU",
+   "title": "Sind Rampen, Klappen oder bewegliche Zugangsteile sicher befestigt und gegen gefährliche Bewegung überwacht?",
+   "category": "Plattform / Lastträger",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_en8141_p23",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "EN",
+     "document": "DIN EN 81-41"
+    },
+    {
+     "type": "OTHER",
+     "document": "Herstellerunterlagen"
+    }
+   ]
+  },
+  {
+   "code": "EN8141-P24",
+   "domain": "GBU",
+   "title": "Sind die Spalte und Abstände an Plattformkanten, Wänden und Haltestellen ohne gefährliche Quetsch-/Scherstellen?",
+   "category": "Plattform / Lastträger",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_en8141_p24",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "EN",
+     "document": "DIN EN 81-41"
+    }
+   ]
+  },
+  {
+   "code": "EN8141-P25",
+   "domain": "GBU",
+   "title": "Funktionieren vorhandene Sicherheitsleisten, Kontaktleisten, Lichtschranken oder andere Schutzeinrichtungen zuverlässig?",
+   "category": "Plattform / Schutzleisten",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_en8141_p25",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "EN",
+     "document": "DIN EN 81-41"
+    },
+    {
+     "type": "OTHER",
+     "document": "Herstellerunterlagen"
+    }
+   ]
+  },
+  {
+   "code": "EN8141-P26",
+   "domain": "GBU",
+   "title": "Sind Nennlast und zulässige Personenzahl gut lesbar angegeben und wird Überlastung verhindert?",
+   "category": "Plattform / Last",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_en8141_p26",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "EN",
+     "document": "DIN EN 81-41"
+    },
+    {
+     "type": "LAW",
+     "document": "BetrSichV",
+     "section": "Anhang 1 Nr. 2.2"
+    }
+   ]
+  },
+  {
+   "code": "EN8141-P27",
+   "domain": "GBU",
+   "title": "Ist die Plattform für Rollstuhl-/Personennutzung frei von unkontrolliertem Wegrollen, Anstoßen oder Kippen nutzbar?",
+   "category": "Plattform / Nutzung",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_en8141_p27",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "LAW",
+     "document": "BetrSichV",
+     "section": "§ 3"
+    },
+    {
+     "type": "EN",
+     "document": "DIN EN 81-41"
+    }
+   ]
+  },
+  {
+   "code": "EN8141-P28",
+   "domain": "GBU",
+   "title": "Sind Befehlsgeber eindeutig, erreichbar und entsprechend der vorgesehenen Betriebsart funktionsfähig?",
+   "category": "Bedienung / Steuerung",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_en8141_p28",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "EN",
+     "document": "DIN EN 81-41"
+    },
+    {
+     "type": "OTHER",
+     "document": "Herstellerunterlagen"
+    }
+   ]
+  },
+  {
+   "code": "EN8141-P29",
+   "domain": "GBU",
+   "title": "Funktioniert eine vorgesehene Totmann-/Dauerdrucksteuerung korrekt und stoppt die Bewegung beim Loslassen?",
+   "category": "Bedienung / Steuerung",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_en8141_p29",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "EN",
+     "document": "DIN EN 81-41"
+    },
+    {
+     "type": "OTHER",
+     "document": "Herstellerunterlagen"
+    }
+   ]
+  },
+  {
+   "code": "EN8141-P30",
+   "domain": "GBU",
+   "title": "Sind vorhandene Not-Halt-/Stoppeinrichtungen erreichbar, gekennzeichnet und wirksam?",
+   "category": "Bedienung / Steuerung",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_en8141_p30",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "EN",
+     "document": "DIN EN 81-41"
+    },
+    {
+     "type": "OTHER",
+     "document": "Herstellerunterlagen"
+    }
+   ]
+  },
+  {
+   "code": "EN8141-P31",
+   "domain": "GBU",
+   "title": "Funktionieren Betriebsendschalter und erforderliche Endbegrenzungen zuverlässig?",
+   "category": "Bedienung / Steuerung",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_en8141_p31",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "EN",
+     "document": "DIN EN 81-41"
+    },
+    {
+     "type": "OTHER",
+     "document": "Herstellerunterlagen"
+    }
+   ]
+  },
+  {
+   "code": "EN8141-P32",
+   "domain": "GBU",
+   "title": "Sind Sicherheitskontakte und Sicherheitsfunktionen frei von Überbrückungen, Manipulationen oder erkennbaren Fehlfunktionen?",
+   "category": "Sicherheitskreis",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_en8141_p32",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "EN",
+     "document": "DIN EN 81-41"
+    },
+    {
+     "type": "LAW",
+     "document": "BetrSichV",
+     "section": "§ 3"
+    }
+   ]
+  },
+  {
+   "code": "EN8141-P33",
+   "domain": "GBU",
+   "title": "Wird die Plattform bei Halt und bei Energieausfall sicher gehalten und sind unkontrollierte Bewegungen ausgeschlossen?",
+   "category": "Antrieb / Halten",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_en8141_p33",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "EN",
+     "document": "DIN EN 81-41"
+    },
+    {
+     "type": "LAW",
+     "document": "BetrSichV",
+     "section": "Anhang 1 Nr. 2.3.2"
+    }
+   ]
+  },
+  {
+   "code": "EN8141-P34",
+   "domain": "GBU",
+   "title": "Sind die vorgesehenen Einrichtungen gegen Absturz bzw. Übergeschwindigkeit vorhanden und funktionsfähig?",
+   "category": "Antrieb / Absturzschutz",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_en8141_p34",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "EN",
+     "document": "DIN EN 81-41"
+    },
+    {
+     "type": "LAW",
+     "document": "BetrSichV",
+     "section": "Anhang 1 Nr. 2.4"
+    }
+   ]
+  },
+  {
+   "code": "EN8141-P35",
+   "domain": "GBU",
+   "title": "Sind Tragmittel, Spindel/Mutter, Ketten, Seile, Zahnstangen, Führungen und Befestigungen ohne erkennbare sicherheitsrelevante Schäden?",
+   "category": "Antrieb / Tragmittel",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_en8141_p35",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "EN",
+     "document": "DIN EN 81-41"
+    },
+    {
+     "type": "OTHER",
+     "document": "Hersteller-Wartungsvorgaben"
+    }
+   ]
+  },
+  {
+   "code": "EN8141-P36",
+   "domain": "GBU",
+   "title": "Sind hydraulische Leitungen, Zylinder, Ventile und Anschlüsse dicht und gegen gefährliches Absinken/Leitungsbruch abgesichert?",
+   "category": "Hydraulik",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_en8141_p36",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "EN",
+     "document": "DIN EN 81-41"
+    },
+    {
+     "type": "OTHER",
+     "document": "Herstellerunterlagen"
+    }
+   ]
+  },
+  {
+   "code": "EN8141-P37",
+   "domain": "GBU",
+   "title": "Ist die vom Hersteller vorgesehene manuelle Notabsenkung/Notbewegung vorhanden, zugänglich und sicher bedienbar?",
+   "category": "Notbetrieb / Befreiung",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_en8141_p37",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "LAW",
+     "document": "BetrSichV",
+     "section": "Anhang 1 Nr. 4.1"
+    },
+    {
+     "type": "TRBS",
+     "document": "TRBS 3121"
+    }
+   ]
+  },
+  {
+   "code": "EN8141-P38",
+   "domain": "GBU",
+   "title": "Ist ein eindeutig gekennzeichneter und gegen unbeabsichtigtes Wiedereinschalten sicherbarer Hauptschalter/Trenneinrichtung vorhanden?",
+   "category": "Elektrik",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_en8141_p38",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "EN",
+     "document": "DIN EN 81-41"
+    },
+    {
+     "type": "LAW",
+     "document": "BetrSichV",
+     "section": "§ 10"
+    }
+   ]
+  },
+  {
+   "code": "EN8141-P39",
+   "domain": "GBU",
+   "title": "Sind elektrische Betriebsmittel, Schutzleiter/Potentialausgleich, Leitungen und Abdeckungen augenscheinlich sicher und unbeschädigt?",
+   "category": "Elektrik",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_en8141_p39",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "LAW",
+     "document": "BetrSichV",
+     "section": "§ 3"
+    },
+    {
+     "type": "OTHER",
+     "document": "Herstellerunterlagen"
+    }
+   ]
+  },
+  {
+   "code": "EN8141-P40",
+   "domain": "GBU",
+   "title": "Kann eine eingeschlossene Person zuverlässig Hilfe herbeirufen und ist die Einrichtung erreichbar und funktionsfähig?",
+   "category": "Notruf / Hilfe",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_en8141_p40",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "LAW",
+     "document": "BetrSichV",
+     "section": "Anhang 1 Nr. 4.1"
+    },
+    {
+     "type": "TRBS",
+     "document": "TRBS 3121"
+    }
+   ]
+  },
+  {
+   "code": "EN8141-P41",
+   "domain": "GBU",
+   "title": "Sind Notfallplan, Notbefreiungsanleitung, Zugangsmittel und verantwortliche Personen aktuell und verfügbar?",
+   "category": "Notfallorganisation",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_en8141_p41",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "LAW",
+     "document": "BetrSichV",
+     "section": "Anhang 1 Nr. 4.1"
+    },
+    {
+     "type": "TRBS",
+     "document": "TRBS 3121"
+    }
+   ]
+  },
+  {
+   "code": "EN8141-P42",
+   "domain": "GBU",
+   "title": "Ist sichergestellt, dass die vorgesehene Personenbefreiung praktisch durchführbar ist und die beauftragten Personen ausreichend eingewiesen sind?",
+   "category": "Notfallorganisation",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_en8141_p42",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "TRBS",
+     "document": "TRBS 3121"
+    },
+    {
+     "type": "TRBS",
+     "document": "TRBS 1201 Teil 4"
+    }
+   ]
+  },
+  {
+   "code": "EN8141-P43",
+   "domain": "GBU",
+   "title": "Entspricht die Instandhaltung Art, Intensität der Nutzung und den Herstellervorgaben?",
+   "category": "Instandhaltung",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_en8141_p43",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "LAW",
+     "document": "BetrSichV",
+     "section": "Anhang 1 Nr. 4.2"
+    },
+    {
+     "type": "OTHER",
+     "document": "§ 10"
+    },
+    {
+     "type": "TRBS",
+     "document": "TRBS 3121"
+    }
+   ]
+  },
+  {
+   "code": "EN8141-P44",
+   "domain": "GBU",
+   "title": "Werden regelmäßige Kontrollen auf offensichtliche Mängel durchgeführt und dokumentiert?",
+   "category": "Betriebliche Kontrolle",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_en8141_p44",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "LAW",
+     "document": "BetrSichV",
+     "section": "Anhang 1 Nr. 4.6"
+    },
+    {
+     "type": "TRBS",
+     "document": "TRBS 3121"
+    }
+   ]
+  },
+  {
+   "code": "EN8141-P45",
+   "domain": "GBU",
+   "title": "Sind erforderliche Prüfungen, Prüffristen und Prüfberichte aktuell; wurden Mängel fristgerecht beseitigt?",
+   "category": "Prüfungen",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_en8141_p45",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "LAW",
+     "document": "BetrSichV",
+     "section": "§§ 14-16"
+    },
+    {
+     "type": "OTHER",
+     "document": "Anhang 2 Abschnitt 2"
+    },
+    {
+     "type": "TRBS",
+     "document": "TRBS 1201 Teil 4"
+    }
+   ]
+  },
+  {
+   "code": "EN8141-P46",
+   "domain": "GBU",
+   "title": "Sind im unmittelbaren Bereich keine fremden Einrichtungen, Lagerungen oder Bauteile vorhanden, die den sicheren Betrieb beeinträchtigen?",
+   "category": "Umfeld / Fremdeinrichtungen",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_en8141_p46",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "LAW",
+     "document": "BetrSichV",
+     "section": "Anhang 1 Nr. 4.3"
+    }
+   ]
+  },
+  {
+   "code": "EN8141-P47",
+   "domain": "GBU",
+   "title": "Sind Unfälle, Beinaheereignisse, wiederkehrende Störungen und Beschwerden in der GBU berücksichtigt?",
+   "category": "Ereignisse / Nutzung",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_en8141_p47",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "LAW",
+     "document": "BetrSichV",
+     "section": "§ 3"
+    },
+    {
+     "type": "TRBS",
+     "document": "TRBS 1111"
+    }
+   ]
+  },
+  {
+   "code": "EN8141-P48",
+   "domain": "GBU",
+   "title": "Sind Fernzugriffe, softwareseitige Änderungen oder vernetzte Komponenten so beherrscht, dass sicherheitsrelevante Funktionen nicht unzulässig beeinflusst werden können?",
+   "category": "Änderungen / Cyber",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "q_en8141_p48",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    }
+   ],
+   "sources": [
+    {
+     "type": "TRBS",
+     "document": "TRBS 1115 Teil 1"
+    },
+    {
+     "type": "LAW",
+     "document": "BetrSichV",
+     "section": "§ 3"
+    }
+   ]
+  }
+ ],
+ "rules": [
+  {
+   "hazard": "EN8141-P1",
+   "code": "EN8141-P1-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p1",
+    "operator": "EQ",
+    "value": "01-A"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_0caad29d92",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P1",
+   "code": "EN8141-P1-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p1",
+    "operator": "EQ",
+    "value": "01-B"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_d472155f3e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_2dac5c316c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P1",
+   "code": "EN8141-P1-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p1",
+    "operator": "EQ",
+    "value": "01-C"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_17f8f40ae1",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_2dac5c316c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P1",
+   "code": "EN8141-P1-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p1",
+    "operator": "EQ",
+    "value": "01-D"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_5f96ceca27",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P2",
+   "code": "EN8141-P2-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p2",
+    "operator": "EQ",
+    "value": "02-A"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_0caad29d92",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P2",
+   "code": "EN8141-P2-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p2",
+    "operator": "EQ",
+    "value": "02-B"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_d472155f3e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_213ac8384e",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P2",
+   "code": "EN8141-P2-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p2",
+    "operator": "EQ",
+    "value": "02-C"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_17f8f40ae1",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_213ac8384e",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P2",
+   "code": "EN8141-P2-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p2",
+    "operator": "EQ",
+    "value": "02-D"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_5f96ceca27",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P3",
+   "code": "EN8141-P3-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p3",
+    "operator": "EQ",
+    "value": "03-A"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_0caad29d92",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P3",
+   "code": "EN8141-P3-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p3",
+    "operator": "EQ",
+    "value": "03-B"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_d472155f3e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_b0cd52b133",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P3",
+   "code": "EN8141-P3-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p3",
+    "operator": "EQ",
+    "value": "03-C"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_bc36b75096",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_b0cd52b133",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P3",
+   "code": "EN8141-P3-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p3",
+    "operator": "EQ",
+    "value": "03-D"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_5f96ceca27",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P4",
+   "code": "EN8141-P4-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p4",
+    "operator": "EQ",
+    "value": "04-A"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_0caad29d92",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P4",
+   "code": "EN8141-P4-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p4",
+    "operator": "EQ",
+    "value": "04-B"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_d472155f3e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_9e5e2c0938",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P4",
+   "code": "EN8141-P4-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p4",
+    "operator": "EQ",
+    "value": "04-C"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_17f8f40ae1",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_9e5e2c0938",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P4",
+   "code": "EN8141-P4-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p4",
+    "operator": "EQ",
+    "value": "04-D"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_5f96ceca27",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P5",
+   "code": "EN8141-P5-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p5",
+    "operator": "EQ",
+    "value": "05-A"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_0caad29d92",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P5",
+   "code": "EN8141-P5-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p5",
+    "operator": "EQ",
+    "value": "05-B"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_d472155f3e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_81da5be457",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P5",
+   "code": "EN8141-P5-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p5",
+    "operator": "EQ",
+    "value": "05-C"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_17f8f40ae1",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_81da5be457",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P5",
+   "code": "EN8141-P5-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p5",
+    "operator": "EQ",
+    "value": "05-D"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_5f96ceca27",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P6",
+   "code": "EN8141-P6-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p6",
+    "operator": "EQ",
+    "value": "06-A"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_0caad29d92",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P6",
+   "code": "EN8141-P6-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p6",
+    "operator": "EQ",
+    "value": "06-B"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_d472155f3e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_a24f4fb04b",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P6",
+   "code": "EN8141-P6-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p6",
+    "operator": "EQ",
+    "value": "06-C"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_17f8f40ae1",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_a24f4fb04b",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P6",
+   "code": "EN8141-P6-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p6",
+    "operator": "EQ",
+    "value": "06-D"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_5f96ceca27",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P7",
+   "code": "EN8141-P7-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p7",
+    "operator": "EQ",
+    "value": "07-A"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_0caad29d92",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P7",
+   "code": "EN8141-P7-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p7",
+    "operator": "EQ",
+    "value": "07-B"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_d472155f3e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_16258582f6",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P7",
+   "code": "EN8141-P7-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p7",
+    "operator": "EQ",
+    "value": "07-C"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_bc36b75096",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_16258582f6",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P7",
+   "code": "EN8141-P7-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p7",
+    "operator": "EQ",
+    "value": "07-D"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_5f96ceca27",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P8",
+   "code": "EN8141-P8-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p8",
+    "operator": "EQ",
+    "value": "08-A"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_0caad29d92",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P8",
+   "code": "EN8141-P8-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p8",
+    "operator": "EQ",
+    "value": "08-B"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_d472155f3e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_946b5158ad",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P8",
+   "code": "EN8141-P8-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p8",
+    "operator": "EQ",
+    "value": "08-C"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_bc36b75096",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_946b5158ad",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P8",
+   "code": "EN8141-P8-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p8",
+    "operator": "EQ",
+    "value": "08-D"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_5f96ceca27",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P9",
+   "code": "EN8141-P9-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p9",
+    "operator": "EQ",
+    "value": "09-A"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_0caad29d92",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P9",
+   "code": "EN8141-P9-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p9",
+    "operator": "EQ",
+    "value": "09-B"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_d472155f3e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_370e73894d",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P9",
+   "code": "EN8141-P9-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p9",
+    "operator": "EQ",
+    "value": "09-C"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_bc36b75096",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_370e73894d",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P9",
+   "code": "EN8141-P9-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p9",
+    "operator": "EQ",
+    "value": "09-D"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_5f96ceca27",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P10",
+   "code": "EN8141-P10-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p10",
+    "operator": "EQ",
+    "value": "10-A"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_0caad29d92",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P10",
+   "code": "EN8141-P10-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p10",
+    "operator": "EQ",
+    "value": "10-B"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_d472155f3e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_4e32c7a933",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P10",
+   "code": "EN8141-P10-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p10",
+    "operator": "EQ",
+    "value": "10-C"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_bc36b75096",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_4e32c7a933",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P10",
+   "code": "EN8141-P10-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p10",
+    "operator": "EQ",
+    "value": "10-D"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_5f96ceca27",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P11",
+   "code": "EN8141-P11-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p11",
+    "operator": "EQ",
+    "value": "11-A"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_0caad29d92",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P11",
+   "code": "EN8141-P11-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p11",
+    "operator": "EQ",
+    "value": "11-B"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_d472155f3e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_e18e568860",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P11",
+   "code": "EN8141-P11-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p11",
+    "operator": "EQ",
+    "value": "11-C"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_bc36b75096",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_e18e568860",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P11",
+   "code": "EN8141-P11-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p11",
+    "operator": "EQ",
+    "value": "11-D"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_5f96ceca27",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P12",
+   "code": "EN8141-P12-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p12",
+    "operator": "EQ",
+    "value": "12-A"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_0caad29d92",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P12",
+   "code": "EN8141-P12-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p12",
+    "operator": "EQ",
+    "value": "12-B"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_d472155f3e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_34e432fda1",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P12",
+   "code": "EN8141-P12-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p12",
+    "operator": "EQ",
+    "value": "12-C"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_bc36b75096",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_34e432fda1",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P12",
+   "code": "EN8141-P12-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p12",
+    "operator": "EQ",
+    "value": "12-D"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_5f96ceca27",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P13",
+   "code": "EN8141-P13-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p13",
+    "operator": "EQ",
+    "value": "13-A"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_0caad29d92",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P13",
+   "code": "EN8141-P13-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p13",
+    "operator": "EQ",
+    "value": "13-B"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_d472155f3e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_61ebdffab4",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P13",
+   "code": "EN8141-P13-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p13",
+    "operator": "EQ",
+    "value": "13-C"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_17f8f40ae1",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_61ebdffab4",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P13",
+   "code": "EN8141-P13-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p13",
+    "operator": "EQ",
+    "value": "13-D"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_5f96ceca27",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P14",
+   "code": "EN8141-P14-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p14",
+    "operator": "EQ",
+    "value": "14-A"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_0caad29d92",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P14",
+   "code": "EN8141-P14-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p14",
+    "operator": "EQ",
+    "value": "14-B"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_d472155f3e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_6af0a03018",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P14",
+   "code": "EN8141-P14-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p14",
+    "operator": "EQ",
+    "value": "14-C"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_17f8f40ae1",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_6af0a03018",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P14",
+   "code": "EN8141-P14-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p14",
+    "operator": "EQ",
+    "value": "14-D"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_5f96ceca27",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P15",
+   "code": "EN8141-P15-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p15",
+    "operator": "EQ",
+    "value": "15-A"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_0caad29d92",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P15",
+   "code": "EN8141-P15-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p15",
+    "operator": "EQ",
+    "value": "15-B"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_d472155f3e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_7d46698973",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P15",
+   "code": "EN8141-P15-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p15",
+    "operator": "EQ",
+    "value": "15-C"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_bc36b75096",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_7d46698973",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P15",
+   "code": "EN8141-P15-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p15",
+    "operator": "EQ",
+    "value": "15-D"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_5f96ceca27",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P16",
+   "code": "EN8141-P16-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p16",
+    "operator": "EQ",
+    "value": "16-A"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_0caad29d92",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P16",
+   "code": "EN8141-P16-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p16",
+    "operator": "EQ",
+    "value": "16-B"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_d472155f3e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_4b33324270",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P16",
+   "code": "EN8141-P16-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p16",
+    "operator": "EQ",
+    "value": "16-C"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_17f8f40ae1",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_4b33324270",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P16",
+   "code": "EN8141-P16-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p16",
+    "operator": "EQ",
+    "value": "16-D"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_5f96ceca27",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P17",
+   "code": "EN8141-P17-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p17",
+    "operator": "EQ",
+    "value": "17-A"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_0caad29d92",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P17",
+   "code": "EN8141-P17-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p17",
+    "operator": "EQ",
+    "value": "17-B"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_d472155f3e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_7ca2c2bdbf",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P17",
+   "code": "EN8141-P17-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p17",
+    "operator": "EQ",
+    "value": "17-C"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_17f8f40ae1",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_7ca2c2bdbf",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P17",
+   "code": "EN8141-P17-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p17",
+    "operator": "EQ",
+    "value": "17-D"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_5f96ceca27",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P18",
+   "code": "EN8141-P18-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p18",
+    "operator": "EQ",
+    "value": "18-A"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_0caad29d92",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P18",
+   "code": "EN8141-P18-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p18",
+    "operator": "EQ",
+    "value": "18-B"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_d472155f3e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_a224c5ae31",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P18",
+   "code": "EN8141-P18-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p18",
+    "operator": "EQ",
+    "value": "18-C"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_17f8f40ae1",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_a224c5ae31",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P18",
+   "code": "EN8141-P18-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p18",
+    "operator": "EQ",
+    "value": "18-D"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_5f96ceca27",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P19",
+   "code": "EN8141-P19-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p19",
+    "operator": "EQ",
+    "value": "19-A"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_0caad29d92",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P19",
+   "code": "EN8141-P19-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p19",
+    "operator": "EQ",
+    "value": "19-B"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_d472155f3e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_b8e03e7b9e",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P19",
+   "code": "EN8141-P19-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p19",
+    "operator": "EQ",
+    "value": "19-C"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_17f8f40ae1",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_b8e03e7b9e",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P19",
+   "code": "EN8141-P19-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p19",
+    "operator": "EQ",
+    "value": "19-D"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_5f96ceca27",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P20",
+   "code": "EN8141-P20-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p20",
+    "operator": "EQ",
+    "value": "20-A"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_0caad29d92",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P20",
+   "code": "EN8141-P20-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p20",
+    "operator": "EQ",
+    "value": "20-B"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_d472155f3e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_604fd97d45",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P20",
+   "code": "EN8141-P20-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p20",
+    "operator": "EQ",
+    "value": "20-C"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_17f8f40ae1",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_604fd97d45",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P20",
+   "code": "EN8141-P20-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p20",
+    "operator": "EQ",
+    "value": "20-D"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_5f96ceca27",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P21",
+   "code": "EN8141-P21-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p21",
+    "operator": "EQ",
+    "value": "21-A"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_0caad29d92",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P21",
+   "code": "EN8141-P21-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p21",
+    "operator": "EQ",
+    "value": "21-B"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_d472155f3e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_4da21178d2",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P21",
+   "code": "EN8141-P21-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p21",
+    "operator": "EQ",
+    "value": "21-C"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_bc36b75096",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_4da21178d2",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P21",
+   "code": "EN8141-P21-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p21",
+    "operator": "EQ",
+    "value": "21-D"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_5f96ceca27",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P22",
+   "code": "EN8141-P22-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p22",
+    "operator": "EQ",
+    "value": "22-A"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_0caad29d92",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P22",
+   "code": "EN8141-P22-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p22",
+    "operator": "EQ",
+    "value": "22-B"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_d472155f3e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_db9933da42",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P22",
+   "code": "EN8141-P22-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p22",
+    "operator": "EQ",
+    "value": "22-C"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_17f8f40ae1",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_db9933da42",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P22",
+   "code": "EN8141-P22-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p22",
+    "operator": "EQ",
+    "value": "22-D"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_5f96ceca27",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P23",
+   "code": "EN8141-P23-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p23",
+    "operator": "EQ",
+    "value": "23-A"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_0caad29d92",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P23",
+   "code": "EN8141-P23-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p23",
+    "operator": "EQ",
+    "value": "23-B"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_d472155f3e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_66612da277",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P23",
+   "code": "EN8141-P23-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p23",
+    "operator": "EQ",
+    "value": "23-C"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_17f8f40ae1",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_66612da277",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P23",
+   "code": "EN8141-P23-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p23",
+    "operator": "EQ",
+    "value": "23-D"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_5f96ceca27",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P24",
+   "code": "EN8141-P24-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p24",
+    "operator": "EQ",
+    "value": "24-A"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_0caad29d92",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P24",
+   "code": "EN8141-P24-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p24",
+    "operator": "EQ",
+    "value": "24-B"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_d472155f3e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_81b4ca47ea",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P24",
+   "code": "EN8141-P24-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p24",
+    "operator": "EQ",
+    "value": "24-C"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_17f8f40ae1",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_81b4ca47ea",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P24",
+   "code": "EN8141-P24-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p24",
+    "operator": "EQ",
+    "value": "24-D"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_5f96ceca27",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P25",
+   "code": "EN8141-P25-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p25",
+    "operator": "EQ",
+    "value": "25-A"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_0caad29d92",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P25",
+   "code": "EN8141-P25-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p25",
+    "operator": "EQ",
+    "value": "25-B"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_d472155f3e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_d3d3b5beac",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P25",
+   "code": "EN8141-P25-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p25",
+    "operator": "EQ",
+    "value": "25-C"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_17f8f40ae1",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_d3d3b5beac",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P25",
+   "code": "EN8141-P25-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p25",
+    "operator": "EQ",
+    "value": "25-D"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_5f96ceca27",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P26",
+   "code": "EN8141-P26-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p26",
+    "operator": "EQ",
+    "value": "26-A"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_0caad29d92",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P26",
+   "code": "EN8141-P26-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p26",
+    "operator": "EQ",
+    "value": "26-B"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_d472155f3e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_825e246d24",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P26",
+   "code": "EN8141-P26-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p26",
+    "operator": "EQ",
+    "value": "26-C"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_bc36b75096",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_825e246d24",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P26",
+   "code": "EN8141-P26-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p26",
+    "operator": "EQ",
+    "value": "26-D"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_5f96ceca27",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P27",
+   "code": "EN8141-P27-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p27",
+    "operator": "EQ",
+    "value": "27-A"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_0caad29d92",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P27",
+   "code": "EN8141-P27-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p27",
+    "operator": "EQ",
+    "value": "27-B"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_d472155f3e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_ea75f776c5",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P27",
+   "code": "EN8141-P27-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p27",
+    "operator": "EQ",
+    "value": "27-C"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_bc36b75096",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_ea75f776c5",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P27",
+   "code": "EN8141-P27-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p27",
+    "operator": "EQ",
+    "value": "27-D"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_5f96ceca27",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P28",
+   "code": "EN8141-P28-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p28",
+    "operator": "EQ",
+    "value": "28-A"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_0caad29d92",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P28",
+   "code": "EN8141-P28-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p28",
+    "operator": "EQ",
+    "value": "28-B"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_d472155f3e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_ffe3dfbdf2",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P28",
+   "code": "EN8141-P28-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p28",
+    "operator": "EQ",
+    "value": "28-C"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_bc36b75096",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_ffe3dfbdf2",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P28",
+   "code": "EN8141-P28-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p28",
+    "operator": "EQ",
+    "value": "28-D"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_5f96ceca27",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P29",
+   "code": "EN8141-P29-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p29",
+    "operator": "EQ",
+    "value": "29-A"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_0caad29d92",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P29",
+   "code": "EN8141-P29-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p29",
+    "operator": "EQ",
+    "value": "29-B"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_d472155f3e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_b83b38af87",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P29",
+   "code": "EN8141-P29-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p29",
+    "operator": "EQ",
+    "value": "29-C"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_17f8f40ae1",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_b83b38af87",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P29",
+   "code": "EN8141-P29-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p29",
+    "operator": "EQ",
+    "value": "29-D"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_5f96ceca27",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P30",
+   "code": "EN8141-P30-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p30",
+    "operator": "EQ",
+    "value": "30-A"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_0caad29d92",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P30",
+   "code": "EN8141-P30-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p30",
+    "operator": "EQ",
+    "value": "30-B"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_d472155f3e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_c00cf0cbbf",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P30",
+   "code": "EN8141-P30-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p30",
+    "operator": "EQ",
+    "value": "30-C"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_17f8f40ae1",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_c00cf0cbbf",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P30",
+   "code": "EN8141-P30-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p30",
+    "operator": "EQ",
+    "value": "30-D"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_5f96ceca27",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P31",
+   "code": "EN8141-P31-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p31",
+    "operator": "EQ",
+    "value": "31-A"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_0caad29d92",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P31",
+   "code": "EN8141-P31-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p31",
+    "operator": "EQ",
+    "value": "31-B"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_d472155f3e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_189c2ea8a6",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P31",
+   "code": "EN8141-P31-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p31",
+    "operator": "EQ",
+    "value": "31-C"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_17f8f40ae1",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_189c2ea8a6",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P31",
+   "code": "EN8141-P31-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p31",
+    "operator": "EQ",
+    "value": "31-D"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_5f96ceca27",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P32",
+   "code": "EN8141-P32-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p32",
+    "operator": "EQ",
+    "value": "32-A"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_0caad29d92",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P32",
+   "code": "EN8141-P32-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p32",
+    "operator": "EQ",
+    "value": "32-B"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_d472155f3e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_04e6321f82",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P32",
+   "code": "EN8141-P32-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p32",
+    "operator": "EQ",
+    "value": "32-C"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_17f8f40ae1",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_04e6321f82",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P32",
+   "code": "EN8141-P32-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p32",
+    "operator": "EQ",
+    "value": "32-D"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_5f96ceca27",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P33",
+   "code": "EN8141-P33-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p33",
+    "operator": "EQ",
+    "value": "33-A"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_0caad29d92",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P33",
+   "code": "EN8141-P33-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p33",
+    "operator": "EQ",
+    "value": "33-B"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_d472155f3e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_b6bdc8cbc0",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P33",
+   "code": "EN8141-P33-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p33",
+    "operator": "EQ",
+    "value": "33-C"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_17f8f40ae1",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_b6bdc8cbc0",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P33",
+   "code": "EN8141-P33-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p33",
+    "operator": "EQ",
+    "value": "33-D"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_5f96ceca27",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P34",
+   "code": "EN8141-P34-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p34",
+    "operator": "EQ",
+    "value": "34-A"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_0caad29d92",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P34",
+   "code": "EN8141-P34-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p34",
+    "operator": "EQ",
+    "value": "34-B"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_d472155f3e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_3fcd0365b5",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P34",
+   "code": "EN8141-P34-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p34",
+    "operator": "EQ",
+    "value": "34-C"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_17f8f40ae1",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_3fcd0365b5",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P34",
+   "code": "EN8141-P34-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p34",
+    "operator": "EQ",
+    "value": "34-D"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_5f96ceca27",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P35",
+   "code": "EN8141-P35-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p35",
+    "operator": "EQ",
+    "value": "35-A"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_0caad29d92",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P35",
+   "code": "EN8141-P35-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p35",
+    "operator": "EQ",
+    "value": "35-B"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_d472155f3e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_d7178b9bc9",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P35",
+   "code": "EN8141-P35-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p35",
+    "operator": "EQ",
+    "value": "35-C"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_17f8f40ae1",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_d7178b9bc9",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P35",
+   "code": "EN8141-P35-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p35",
+    "operator": "EQ",
+    "value": "35-D"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_5f96ceca27",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P36",
+   "code": "EN8141-P36-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p36",
+    "operator": "EQ",
+    "value": "36-A"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_0caad29d92",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P36",
+   "code": "EN8141-P36-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p36",
+    "operator": "EQ",
+    "value": "36-B"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_d472155f3e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_c0cbccf415",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P36",
+   "code": "EN8141-P36-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p36",
+    "operator": "EQ",
+    "value": "36-C"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_17f8f40ae1",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_c0cbccf415",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P36",
+   "code": "EN8141-P36-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p36",
+    "operator": "EQ",
+    "value": "36-D"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_5f96ceca27",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P37",
+   "code": "EN8141-P37-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p37",
+    "operator": "EQ",
+    "value": "37-A"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_0caad29d92",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P37",
+   "code": "EN8141-P37-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p37",
+    "operator": "EQ",
+    "value": "37-B"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_d472155f3e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_8705d3a461",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P37",
+   "code": "EN8141-P37-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p37",
+    "operator": "EQ",
+    "value": "37-C"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_17f8f40ae1",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_8705d3a461",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P37",
+   "code": "EN8141-P37-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p37",
+    "operator": "EQ",
+    "value": "37-D"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_5f96ceca27",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P38",
+   "code": "EN8141-P38-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p38",
+    "operator": "EQ",
+    "value": "38-A"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_0caad29d92",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P38",
+   "code": "EN8141-P38-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p38",
+    "operator": "EQ",
+    "value": "38-B"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_d472155f3e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_b70c185ab8",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P38",
+   "code": "EN8141-P38-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p38",
+    "operator": "EQ",
+    "value": "38-C"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_17f8f40ae1",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_b70c185ab8",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P38",
+   "code": "EN8141-P38-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p38",
+    "operator": "EQ",
+    "value": "38-D"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_5f96ceca27",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P39",
+   "code": "EN8141-P39-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p39",
+    "operator": "EQ",
+    "value": "39-A"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_0caad29d92",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P39",
+   "code": "EN8141-P39-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p39",
+    "operator": "EQ",
+    "value": "39-B"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_d472155f3e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_0ee0c290b2",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P39",
+   "code": "EN8141-P39-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p39",
+    "operator": "EQ",
+    "value": "39-C"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_17f8f40ae1",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_0ee0c290b2",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P39",
+   "code": "EN8141-P39-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p39",
+    "operator": "EQ",
+    "value": "39-D"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_5f96ceca27",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P40",
+   "code": "EN8141-P40-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p40",
+    "operator": "EQ",
+    "value": "40-A"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_0caad29d92",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P40",
+   "code": "EN8141-P40-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p40",
+    "operator": "EQ",
+    "value": "40-B"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_d472155f3e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_085ed2f3a4",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P40",
+   "code": "EN8141-P40-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p40",
+    "operator": "EQ",
+    "value": "40-C"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_17f8f40ae1",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_085ed2f3a4",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P40",
+   "code": "EN8141-P40-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p40",
+    "operator": "EQ",
+    "value": "40-D"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_5f96ceca27",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P41",
+   "code": "EN8141-P41-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p41",
+    "operator": "EQ",
+    "value": "41-A"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_0caad29d92",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P41",
+   "code": "EN8141-P41-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p41",
+    "operator": "EQ",
+    "value": "41-B"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_d472155f3e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_afbf18cfab",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P41",
+   "code": "EN8141-P41-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p41",
+    "operator": "EQ",
+    "value": "41-C"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_17f8f40ae1",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_afbf18cfab",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P41",
+   "code": "EN8141-P41-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p41",
+    "operator": "EQ",
+    "value": "41-D"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_5f96ceca27",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P42",
+   "code": "EN8141-P42-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p42",
+    "operator": "EQ",
+    "value": "42-A"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_0caad29d92",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P42",
+   "code": "EN8141-P42-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p42",
+    "operator": "EQ",
+    "value": "42-B"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_d472155f3e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_e2aa228613",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P42",
+   "code": "EN8141-P42-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p42",
+    "operator": "EQ",
+    "value": "42-C"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_17f8f40ae1",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_e2aa228613",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P42",
+   "code": "EN8141-P42-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p42",
+    "operator": "EQ",
+    "value": "42-D"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_5f96ceca27",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P43",
+   "code": "EN8141-P43-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p43",
+    "operator": "EQ",
+    "value": "43-A"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_0caad29d92",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P43",
+   "code": "EN8141-P43-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p43",
+    "operator": "EQ",
+    "value": "43-B"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_d472155f3e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_f6b29d5888",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P43",
+   "code": "EN8141-P43-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p43",
+    "operator": "EQ",
+    "value": "43-C"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_bc36b75096",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_f6b29d5888",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P43",
+   "code": "EN8141-P43-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p43",
+    "operator": "EQ",
+    "value": "43-D"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_5f96ceca27",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P44",
+   "code": "EN8141-P44-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p44",
+    "operator": "EQ",
+    "value": "44-A"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_0caad29d92",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P44",
+   "code": "EN8141-P44-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p44",
+    "operator": "EQ",
+    "value": "44-B"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_d472155f3e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_fa90d0e143",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P44",
+   "code": "EN8141-P44-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p44",
+    "operator": "EQ",
+    "value": "44-C"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_bc36b75096",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_fa90d0e143",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P44",
+   "code": "EN8141-P44-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p44",
+    "operator": "EQ",
+    "value": "44-D"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_5f96ceca27",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P45",
+   "code": "EN8141-P45-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p45",
+    "operator": "EQ",
+    "value": "45-A"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_0caad29d92",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P45",
+   "code": "EN8141-P45-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p45",
+    "operator": "EQ",
+    "value": "45-B"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_d472155f3e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_b09ab8d190",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P45",
+   "code": "EN8141-P45-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p45",
+    "operator": "EQ",
+    "value": "45-C"
+   },
+   "result": "HIGH",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_17f8f40ae1",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_b09ab8d190",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P45",
+   "code": "EN8141-P45-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p45",
+    "operator": "EQ",
+    "value": "45-D"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_5f96ceca27",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P46",
+   "code": "EN8141-P46-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p46",
+    "operator": "EQ",
+    "value": "46-A"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_0caad29d92",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P46",
+   "code": "EN8141-P46-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p46",
+    "operator": "EQ",
+    "value": "46-B"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_d472155f3e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_7cdab5ebca",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P46",
+   "code": "EN8141-P46-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p46",
+    "operator": "EQ",
+    "value": "46-C"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_bc36b75096",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_7cdab5ebca",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P46",
+   "code": "EN8141-P46-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p46",
+    "operator": "EQ",
+    "value": "46-D"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_5f96ceca27",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P47",
+   "code": "EN8141-P47-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p47",
+    "operator": "EQ",
+    "value": "47-A"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_0caad29d92",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P47",
+   "code": "EN8141-P47-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p47",
+    "operator": "EQ",
+    "value": "47-B"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_d472155f3e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_bb44ed1e08",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P47",
+   "code": "EN8141-P47-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p47",
+    "operator": "EQ",
+    "value": "47-C"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_bc36b75096",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_bb44ed1e08",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P47",
+   "code": "EN8141-P47-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p47",
+    "operator": "EQ",
+    "value": "47-D"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_5f96ceca27",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P48",
+   "code": "EN8141-P48-R1",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p48",
+    "operator": "EQ",
+    "value": "48-A"
+   },
+   "result": "NO_RISK",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_0caad29d92",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P48",
+   "code": "EN8141-P48-R2",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p48",
+    "operator": "EQ",
+    "value": "48-B"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_d472155f3e",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_52494c0a1b",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P48",
+   "code": "EN8141-P48-R3",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p48",
+    "operator": "EQ",
+    "value": "48-C"
+   },
+   "result": "MEDIUM",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_bc36b75096",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_52494c0a1b",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "EN8141-P48",
+   "code": "EN8141-P48-R4",
+   "priority": 100,
+   "condition": {
+    "question": "q_en8141_p48",
+    "operator": "EQ",
+    "value": "48-D"
+   },
+   "result": "NOT_APPLICABLE",
+   "origin": "NORM_DERIVED",
+   "evidence": "DIRECT",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_5f96ceca27",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,18 @@
+# Läuft nur der API-Server – App und Engine-Paket werden im Image nicht gebraucht.
+node_modules
+flutter_ui
+dart_engine
+ui
+
+# Tests & Werkzeuge
+*.test.ts
+gen_norm_catalog.py
+
+# Git & lokale Umgebung
+.git
+.gitignore
+.env
+.env.*
+
+# Doku
+*.md

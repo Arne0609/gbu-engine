@@ -1,0 +1,22 @@
+# Node
+node_modules/
+npm-debug.log*
+
+# Umgebungen / Secrets
+.env
+.env.*
+!.env.example
+
+# Flutter / Dart
+flutter_ui/build/
+flutter_ui/.dart_tool/
+flutter_ui/.flutter-plugins*
+dart_engine/.dart_tool/
+**/.dart_tool/
+build/
+
+# Editor / OS
+.DS_Store
+.idea/
+*.iml
+.vscode/

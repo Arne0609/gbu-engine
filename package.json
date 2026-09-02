@@ -1,0 +1,20 @@
+{
+  "name": "gbu-engine-backend",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "description": "GBU 4.0 Bewertungsengine – Backend-Anbindung (Node/Express + pg)",
+  "engines": {
+    "node": ">=22.6"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "pg": "^8.23.0"
+  },
+  "scripts": {
+    "seed": "node --experimental-strip-types seed_catalogs.ts --schema",
+    "seed:catalogs": "node --experimental-strip-types seed_catalogs.ts",
+    "start": "node --experimental-strip-types server.ts",
+    "test": "node --test --experimental-strip-types"
+  }
+}

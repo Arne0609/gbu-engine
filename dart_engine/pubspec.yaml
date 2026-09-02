@@ -1,0 +1,12 @@
+name: gbu_engine
+description: >-
+  GBU APP 4.0 – Referenz-Evaluator der Bewertungsengine (reines Dart, ohne
+  Flutter-Abhängigkeiten). Portierung von engine_model/evaluator.ts.
+version: 0.1.0
+publish_to: none
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dev_dependencies:
+  test: ^1.24.0
