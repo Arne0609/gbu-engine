@@ -41,7 +41,11 @@ export async function loadCatalogForClient(db: Pool, ruleVersionId: string): Pro
 
   const qCodes = [...new Set(hqRows.map((r) => r.question_code))];
   const qRows = qCodes.length ? (await db.query(
-    `SELECT code, question_type, text FROM questions WHERE code = ANY($1)`, [qCodes])).rows : [];
+    `SELECT q.code, q.question_type, q.text,
+            c.code AS cat_code, c.title AS cat_title, c.sort_order AS cat_sort
+       FROM questions q
+       LEFT JOIN question_categories c ON c.id = q.category_id
+      WHERE q.code = ANY($1)`, [qCodes])).rows : [];
   const optRows = qCodes.length ? (await db.query(
     `SELECT q.code AS qcode, o.value, o.label FROM question_options o
        JOIN questions q ON q.id = o.question_id
@@ -69,7 +73,17 @@ export async function loadCatalogForClient(db: Pool, ruleVersionId: string): Pro
     .push({ value: o.value, label: o.label });
   const questions = qRows.map((q) => ({
     code: q.code, type: q.question_type, text: q.text, options: optByQ.get(q.code) ?? [],
+    ...(q.cat_title ? { category: q.cat_title } : {}),
   }));
+
+  // Erhebungs-/Anzeigestruktur: geordnete, eindeutige Kategorienliste.
+  const catByCode = new Map<string, any>();
+  for (const q of qRows) {
+    if (q.cat_code && !catByCode.has(q.cat_code)) {
+      catByCode.set(q.cat_code, { code: q.cat_code, title: q.cat_title, sort_order: q.cat_sort ?? 0 });
+    }
+  }
+  const categories = [...catByCode.values()].sort((a, b) => a.sort_order - b.sort_order);
 
   const hqByHaz = new Map<string, any[]>();
   for (const r of hqRows) (hqByHaz.get(r.hazard_code) ?? hqByHaz.set(r.hazard_code, []).get(r.hazard_code))!
@@ -97,7 +111,7 @@ export async function loadCatalogForClient(db: Pool, ruleVersionId: string): Pro
 
   return {
     rule_version_id: rv.id, rule_version: `${rv.name} ${rv.version}`, domain: rv.domain,
-    questions, measures: measRows, hazards, rules,
+    categories, questions, measures: measRows, hazards, rules,
   };
 }
 

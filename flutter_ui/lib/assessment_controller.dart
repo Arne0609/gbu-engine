@@ -48,23 +48,53 @@ class AssessmentController extends ChangeNotifier {
   /// Serverseitige Zählung je RiskStatus für den aktuellen Katalog (oder null).
   Map<String, int>? get serverSummary => current == null ? null : _serverSummary[current];
 
-  Future<void> load() async {
+  Future<void> load() => _runLoad();
+
+  /// Erneuter Versuch nach einem Ladefehler (behält den gewählten Katalog).
+  Future<void> retry() {
+    error = null;
+    loading = true;
+    notifyListeners();
+    return _runLoad();
+  }
+
+  Future<void> _runLoad() async {
     try {
+      error = null;
       final refs = await source.list();
       if (refs.isEmpty) throw StateError('Keine Kataloge verfügbar');
       for (final r in refs) {
         _refs[r.label] = r;
       }
       _labels = refs.map((r) => r.label).toList(growable: false);
-      current = _labels.firstWhere((l) => l.contains('81-41'), orElse: () => _labels.first);
+      current ??= _labels.firstWhere((l) => l.contains('81-41'), orElse: () => _labels.first);
       await _ensureLoaded(current!);
-      _prefill(current!);
+      if ((_answers[current!] ?? const <String, dynamic>{}).isEmpty) _prefill(current!);
       await _syncNow(current!); // erste Persistenz/Gegenprobe im HTTP-Modus
     } catch (e) {
-      error = '$e';
+      error = _friendly(e);
     }
     loading = false;
     notifyListeners();
+  }
+
+  /// Übersetzt technische Fehler in verständliche Hinweise.
+  static String _friendly(Object e) {
+    if (e is GbuApiException) {
+      if (e.status == 401) return 'Nicht autorisiert – API-Token fehlt oder ist ungültig.';
+      if (e.status == 404) return 'Nicht gefunden.';
+      if (e.status != null && e.status! >= 500) return 'Serverfehler – bitte später erneut versuchen.';
+      return e.message;
+    }
+    final s = e.toString();
+    if (s.contains('Failed to fetch') ||
+        s.contains('SocketException') ||
+        s.contains('Connection') ||
+        s.contains('ClientException')) {
+      return 'Server nicht erreichbar – bitte Verbindung prüfen und erneut versuchen.';
+    }
+    if (s.contains('TimeoutException')) return 'Zeitüberschreitung – der Server antwortet nicht.';
+    return s.replaceFirst('Exception: ', '');
   }
 
   List<EvaluationResult> get results => evaluate(catalog, answers);
@@ -93,7 +123,7 @@ class AssessmentController extends ChangeNotifier {
       try {
         await _ensureLoaded(label);
       } catch (e) {
-        error = '$e';
+        error = _friendly(e);
         loading = false;
         notifyListeners();
         return;
@@ -137,6 +167,12 @@ class AssessmentController extends ChangeNotifier {
     _debounce = Timer(const Duration(milliseconds: 500), () => unawaited(_syncNow(label)));
   }
 
+  /// Manueller erneuter Serverabgleich (z. B. nach einem Sync-Fehler).
+  Future<void> retrySync() async {
+    final c = current;
+    if (c != null) await _syncNow(c);
+  }
+
   /// Antworten des Katalogs speichern und Server-Zusammenfassung übernehmen.
   /// Fehler blockieren die Oberfläche nicht (Offline-Fähigkeit bleibt).
   Future<void> _syncNow(String label) async {
@@ -154,7 +190,7 @@ class AssessmentController extends ChangeNotifier {
         for (final e in sum.entries) e.key: (e.value as num).toInt(),
       };
     } catch (e) {
-      syncError = '$e';
+      syncError = _friendly(e);
     }
     syncing = false;
     notifyListeners();

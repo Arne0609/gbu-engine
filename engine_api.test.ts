@@ -69,6 +69,11 @@ test('Katalog + Bewertungsdurchlauf: PUT löst HIGH aus, Ergebnisse + Summary st
   // Katalog über HTTP beziehen und Grundform prüfen.
   const cat = (await get(`/rule-versions/${rv.id}/catalog`)).catalog;
   assert.ok(cat.hazards.length > 0 && cat.rules.length > 0 && cat.questions.length > 0);
+  // Erhebungsstruktur: geordnete Kategorienliste + Kategorie an den Fragen.
+  assert.ok(Array.isArray(cat.categories) && cat.categories.length > 0, 'Kategorienliste vorhanden');
+  const sorts = cat.categories.map((c: any) => c.sort_order);
+  assert.deepEqual(sorts, [...sorts].sort((a: number, b: number) => a - b), 'Kategorien aufsteigend sortiert');
+  assert.ok(cat.questions.some((q: any) => typeof q.category === 'string'), 'Fragen tragen Kategorie');
 
   // Eine (Frage, Option) finden, deren Auswahl HIGH auslöst.
   const hit = (await pool.query(

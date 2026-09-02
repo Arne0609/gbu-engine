@@ -42,10 +42,8 @@ class _BewertungScreenState extends State<BewertungScreen> {
       body: AnimatedBuilder(
         animation: ctrl,
         builder: (context, _) {
-          if (ctrl.loading) return const Center(child: CircularProgressIndicator());
-          if (ctrl.error != null) {
-            return Center(child: Padding(padding: const EdgeInsets.all(24), child: Text('Fehler: ${ctrl.error}')));
-          }
+          if (ctrl.loading) return _loadingView(context, ctrl);
+          if (ctrl.error != null) return _errorView(context, ctrl);
           return LayoutBuilder(builder: (context, cns) {
             final wide = cns.maxWidth >= 900;
             final list = _content(context, ctrl, wide);
@@ -67,6 +65,55 @@ class _BewertungScreenState extends State<BewertungScreen> {
     );
   }
 
+  Widget _loadingView(BuildContext context, AssessmentController ctrl) {
+    final cs = Theme.of(context).colorScheme;
+    return Center(
+      child: Column(mainAxisSize: MainAxisSize.min, children: [
+        const CircularProgressIndicator(),
+        const SizedBox(height: 16),
+        Text(ctrl.isRemote ? 'Katalog wird vom Server geladen …' : 'Katalog wird geladen …',
+            style: TextStyle(fontSize: 13, color: cs.onSurface.withValues(alpha: .6))),
+      ]),
+    );
+  }
+
+  Widget _errorView(BuildContext context, AssessmentController ctrl) {
+    final cs = Theme.of(context).colorScheme;
+    return Center(
+      child: ConstrainedBox(
+        constraints: const BoxConstraints(maxWidth: 420),
+        child: Padding(
+          padding: const EdgeInsets.all(24),
+          child: Container(
+            padding: const EdgeInsets.fromLTRB(20, 22, 20, 18),
+            decoration: BoxDecoration(
+              color: cs.surface,
+              border: Border.all(color: cs.outline),
+              borderRadius: BorderRadius.circular(14),
+            ),
+            child: Column(mainAxisSize: MainAxisSize.min, children: [
+              Icon(Icons.cloud_off_outlined, size: 34, color: cs.onSurface.withValues(alpha: .55)),
+              const SizedBox(height: 12),
+              Text('Katalog konnte nicht geladen werden',
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w600)),
+              const SizedBox(height: 8),
+              Text(ctrl.error ?? '',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 13, height: 1.45, color: cs.onSurface.withValues(alpha: .7))),
+              const SizedBox(height: 18),
+              FilledButton.icon(
+                onPressed: () => ctrl.retry(),
+                icon: const Icon(Icons.refresh, size: 18),
+                label: const Text('Erneut versuchen'),
+              ),
+            ]),
+          ),
+        ),
+      ),
+    );
+  }
+
   Widget _detail(BuildContext context, AssessmentController ctrl) {
     final res = ctrl.results;
     if (res.isEmpty) return const SizedBox.shrink();
@@ -81,10 +128,16 @@ class _BewertungScreenState extends State<BewertungScreen> {
     final total = res.length;
     final answered = res.where((r) => r.status != RiskStatus.incomplete).length;
 
-    // Kategorien gruppieren
+    // Kategorien gruppieren (Reihenfolge aus der Erhebungsstruktur, falls vorhanden).
     final groups = <String, List<Hazard>>{};
     for (final h in ctrl.catalog.hazards) {
       groups.putIfAbsent(h.category ?? 'Ohne Kategorie', () => []).add(h);
+    }
+    final order = ctrl.catalog.categoryOrder();
+    final entries = groups.entries.toList();
+    if (order.isNotEmpty) {
+      const last = 1 << 30;
+      entries.sort((a, b) => (order[a.key] ?? last).compareTo(order[b.key] ?? last));
     }
     final resByCode = {for (final r in res) r.hazard: r};
 
@@ -95,7 +148,7 @@ class _BewertungScreenState extends State<BewertungScreen> {
         const SizedBox(height: 14),
         _overview(context, ctrl, summary, answered, total),
         const SizedBox(height: 18),
-        for (final entry in groups.entries)
+        for (final entry in entries)
           _categorySection(context, ctrl, entry.key, entry.value, resByCode),
       ],
     );
@@ -212,18 +265,28 @@ class _BewertungScreenState extends State<BewertungScreen> {
       dot = const Color(0xFF2E9E6B);
       txt = 'Server';
     }
+    final hasError = ctrl.syncError != null;
+    final chip = Container(
+      padding: EdgeInsets.fromLTRB(8, 3, hasError ? 5 : 8, 3),
+      decoration: BoxDecoration(
+          color: cs.surfaceContainerHighest, borderRadius: BorderRadius.circular(99)),
+      child: Row(mainAxisSize: MainAxisSize.min, children: [
+        Container(width: 8, height: 8, decoration: BoxDecoration(color: dot, shape: BoxShape.circle)),
+        const SizedBox(width: 6),
+        Text(txt, style: TextStyle(fontSize: 11, color: cs.onSurface.withValues(alpha: .7))),
+        if (hasError) ...[
+          const SizedBox(width: 4),
+          Icon(Icons.refresh, size: 13, color: cs.onSurface.withValues(alpha: .7)),
+        ],
+      ]),
+    );
     return Tooltip(
-      message: ctrl.syncError ?? (ctrl.isRemote ? 'Katalog & Persistenz über die Engine-API' : 'Gebündelte Kataloge, lokale Auswertung'),
-      child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
-        decoration: BoxDecoration(
-            color: cs.surfaceContainerHighest, borderRadius: BorderRadius.circular(99)),
-        child: Row(mainAxisSize: MainAxisSize.min, children: [
-          Container(width: 8, height: 8, decoration: BoxDecoration(color: dot, shape: BoxShape.circle)),
-          const SizedBox(width: 6),
-          Text(txt, style: TextStyle(fontSize: 11, color: cs.onSurface.withValues(alpha: .7))),
-        ]),
-      ),
+      message: hasError
+          ? '${ctrl.syncError}\nTippen zum erneuten Speichern.'
+          : (ctrl.isRemote ? 'Katalog & Persistenz über die Engine-API' : 'Gebündelte Kataloge, lokale Auswertung'),
+      child: hasError
+          ? InkWell(borderRadius: BorderRadius.circular(99), onTap: () => ctrl.retrySync(), child: chip)
+          : chip,
     );
   }
 

@@ -9,6 +9,7 @@
 // Idempotent ueber ON CONFLICT.
 // ============================================================================
 
+import { createHash } from 'node:crypto';
 import type { Queryable } from './engine_service.ts';
 
 type Expr = Record<string, any>;
@@ -36,16 +37,38 @@ export async function loadSeedIntoDb(db: Queryable, seed: any): Promise<SeedResu
 
   const questionIdByCode = new Map<string, string>();
 
-  // 2a) Explizit definierter Fragenkatalog (Typ + Antwortoptionen).
-  for (const q of seed.questions ?? []) {
+  // Erhebungs-/Anzeigestruktur: question_categories befüllen. Der Code ist
+  // global eindeutig, daher aus (Katalog + Titel) gehasht; die Reihenfolge
+  // ergibt sich aus dem ersten Auftreten im Seed.
+  const categoryIdByTitle = new Map<string, string>();
+  let categorySort = 0;
+  async function ensureCategory(title: string | undefined | null, domain: string): Promise<string | null> {
+    if (!title) return null;
+    const cached = categoryIdByTitle.get(title);
+    if (cached) return cached;
+    const code = 'k' + createHash('md5').update(`${seed.rule_version ?? ''}|${title}`).digest('hex').slice(0, 12);
     const row = (await db.query(
-      `INSERT INTO questions (code, legacy_id, domain, text, question_type)
-       VALUES ($1, $2, $3, $4, $5)
+      `INSERT INTO question_categories (domain, code, title, sort_order)
+       VALUES ($1,$2,$3,$4)
+       ON CONFLICT (code) DO UPDATE SET title = EXCLUDED.title, sort_order = EXCLUDED.sort_order
+       RETURNING id`,
+      [domain, code, title, categorySort++],
+    )).rows[0];
+    categoryIdByTitle.set(title, row.id);
+    return row.id as string;
+  }
+
+  // 2a) Explizit definierter Fragenkatalog (Typ + Antwortoptionen + Kategorie).
+  for (const q of seed.questions ?? []) {
+    const categoryId = await ensureCategory(q.category, q.domain ?? 'BOTH');
+    const row = (await db.query(
+      `INSERT INTO questions (code, legacy_id, category_id, domain, text, question_type)
+       VALUES ($1, $2, $3, $4, $5, $6)
        ON CONFLICT (code) DO UPDATE SET
          text = EXCLUDED.text, question_type = EXCLUDED.question_type,
-         domain = EXCLUDED.domain
+         domain = EXCLUDED.domain, category_id = EXCLUDED.category_id
        RETURNING id`,
-      [q.code, q.legacy_id ?? null, q.domain ?? 'BOTH', q.text ?? q.code,
+      [q.code, q.legacy_id ?? null, categoryId, q.domain ?? 'BOTH', q.text ?? q.code,
        q.type ?? 'YES_NO'],
     )).rows[0];
     questionIdByCode.set(q.code, row.id);

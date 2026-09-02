@@ -177,21 +177,36 @@ class OptionDef {
       OptionDef(value: j['value'] as String, label: j['label'] as String);
 }
 
-/// Definition einer Frage inkl. Typ und Antwortoptionen (für die Oberfläche).
+/// Definition einer Frage inkl. Typ, Antwortoptionen und Kategorie.
 class QuestionDef {
   final String code;
   final String type; // YES_NO/SELECT/…
   final String? text;
+  final String? category; // Erhebungs-/Anzeigestruktur (Titel)
   final List<OptionDef> options;
   const QuestionDef(
-      {required this.code, required this.type, this.text, this.options = const []});
+      {required this.code, required this.type, this.text, this.category, this.options = const []});
   factory QuestionDef.fromJson(Map<String, dynamic> j) => QuestionDef(
         code: j['code'] as String,
         type: (j['type'] as String?) ?? 'YES_NO',
         text: j['text'] as String?,
+        category: j['category'] as String?,
         options: ((j['options'] as List?) ?? const [])
             .map((e) => OptionDef.fromJson((e as Map).cast<String, dynamic>()))
             .toList(),
+      );
+}
+
+/// Erhebungs-/Anzeigekategorie (Gruppierung der Prüfpunkte).
+class CategoryDef {
+  final String code;
+  final String title;
+  final int sortOrder;
+  const CategoryDef({required this.code, required this.title, this.sortOrder = 0});
+  factory CategoryDef.fromJson(Map<String, dynamic> j) => CategoryDef(
+        code: (j['code'] as String?) ?? '',
+        title: (j['title'] as String?) ?? '',
+        sortOrder: (j['sort_order'] as num?)?.toInt() ?? 0,
       );
 }
 
@@ -237,6 +252,7 @@ class SourceRef {
 
 class Ruleset {
   final String? ruleVersion;
+  final List<CategoryDef> categories;
   final List<QuestionDef> questions;
   final List<MeasureDef> measures;
   final List<Hazard> hazards;
@@ -244,6 +260,7 @@ class Ruleset {
 
   const Ruleset({
     this.ruleVersion,
+    this.categories = const [],
     this.questions = const [],
     this.measures = const [],
     this.hazards = const [],
@@ -252,6 +269,9 @@ class Ruleset {
 
   factory Ruleset.fromJson(Map<String, dynamic> j) => Ruleset(
         ruleVersion: j['rule_version'] as String?,
+        categories: ((j['categories'] as List?) ?? const [])
+            .map((e) => CategoryDef.fromJson((e as Map).cast<String, dynamic>()))
+            .toList(),
         questions: ((j['questions'] as List?) ?? const [])
             .map((e) => QuestionDef.fromJson((e as Map).cast<String, dynamic>()))
             .toList(),
@@ -265,6 +285,15 @@ class Ruleset {
             .map((e) => Rule.fromJson((e as Map).cast<String, dynamic>()))
             .toList(),
       );
+
+  /// Reihenfolge-Index je Kategorietitel (für die Gruppierung in der UI).
+  Map<String, int> categoryOrder() {
+    final m = <String, int>{};
+    for (final c in categories) {
+      m[c.title] = c.sortOrder;
+    }
+    return m;
+  }
 
   /// Frage nach Code (oder null).
   QuestionDef? questionByCode(String code) {
