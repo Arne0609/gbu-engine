@@ -51,9 +51,17 @@ flutter run -d chrome --dart-define=GBU_API_BASE=https://DEIN-SERVICE.up.railway
 
 Der Statuschip zeigt dann „Server"; Katalog und Persistenz kommen aus der Cloud.
 
+## Absicherung (Auth + CORS)
+
+Ohne Konfiguration ist die API offen (Entwicklung). Für den Produktivbetrieb:
+
+- **`API_TOKENS`** (oder `API_TOKEN`) setzen – danach brauchen alle Endpunkte außer `/health` einen Token, per Header `Authorization: Bearer <token>` oder `X-API-Key: <token>`. Mehrere Tokens komma-getrennt (Rotation). `/health` bleibt offen für den Railway-Healthcheck.
+- **`CORS_ORIGINS`** (komma-getrennt) beschränkt CORS auf bekannte Origins; ohne Angabe `*`.
+- Die App sendet den Token per `--dart-define=GBU_API_TOKEN=<token>` (zusätzlich zu `GBU_API_BASE`).
+
 ## Variablen
 
-Siehe `.env.example`: `DATABASE_URL`, `PGSCHEMA`, `PGSSL`, `SEED_ON_BOOT`, `PORT`.
+Siehe `.env.example`: `DATABASE_URL`, `PGSCHEMA`, `PGSSL`, `SEED_ON_BOOT`, `PORT`, `API_TOKENS`, `CORS_ORIGINS`.
 
 ## Tests
 

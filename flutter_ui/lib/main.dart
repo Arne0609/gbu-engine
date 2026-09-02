@@ -9,6 +9,10 @@ import 'theme.dart';
 /// Setzen per: flutter run --dart-define=GBU_API_BASE=http://127.0.0.1:8787
 const String kApiBase = String.fromEnvironment('GBU_API_BASE');
 
+/// Optionaler API-Token (nur nötig, wenn der Server Token-Pflicht hat).
+/// Setzen per: --dart-define=GBU_API_TOKEN=dein-token
+const String kApiToken = String.fromEnvironment('GBU_API_TOKEN');
+
 void main() => runApp(const GbuApp());
 
 class GbuApp extends StatefulWidget {
@@ -25,7 +29,7 @@ class _GbuAppState extends State<GbuApp> {
   void initState() {
     super.initState();
     if (kApiBase.isNotEmpty) {
-      final api = GbuApiClient(kApiBase);
+      final api = GbuApiClient(kApiBase, token: kApiToken.isEmpty ? null : kApiToken);
       ctrl = AssessmentController(source: HttpCatalogSource(api), api: api);
     } else {
       ctrl = AssessmentController(); // Assets, offline

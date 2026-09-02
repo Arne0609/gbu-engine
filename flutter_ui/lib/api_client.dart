@@ -55,12 +55,20 @@ class GbuApiClient {
   final Uri base;
   final http.Client _http;
   final Duration timeout;
+  final String? token;
 
-  GbuApiClient(String baseUrl, {http.Client? client, this.timeout = const Duration(seconds: 12)})
+  GbuApiClient(String baseUrl,
+      {http.Client? client, this.timeout = const Duration(seconds: 12), this.token})
       : base = Uri.parse(baseUrl.endsWith('/') ? baseUrl.substring(0, baseUrl.length - 1) : baseUrl),
         _http = client ?? http.Client();
 
   Uri _u(String path) => Uri.parse('$base$path');
+
+  /// Header inkl. optionalem API-Token (Bearer). `json:true` ergänzt Content-Type.
+  Map<String, String> _headers({bool json = false}) => {
+        if (token != null && token!.isNotEmpty) 'Authorization': 'Bearer $token',
+        if (json) 'Content-Type': 'application/json',
+      };
 
   Map<String, dynamic> _decode(http.Response r) {
     Map<String, dynamic> body;
@@ -77,7 +85,7 @@ class GbuApiClient {
 
   Future<bool> health() async {
     try {
-      final r = await _http.get(_u('/health')).timeout(timeout);
+      final r = await _http.get(_u('/health'), headers: _headers()).timeout(timeout);
       return _decode(r)['ok'] == true;
     } catch (_) {
       return false;
@@ -85,7 +93,7 @@ class GbuApiClient {
   }
 
   Future<List<RuleVersionInfo>> ruleVersions() async {
-    final r = await _http.get(_u('/rule-versions')).timeout(timeout);
+    final r = await _http.get(_u('/rule-versions'), headers: _headers()).timeout(timeout);
     final list = (_decode(r)['rule_versions'] as List?) ?? const [];
     return list
         .map((e) => RuleVersionInfo.fromJson((e as Map).cast<String, dynamic>()))
@@ -94,7 +102,7 @@ class GbuApiClient {
 
   /// Vollständiger Anzeige-Katalog (gleiche Form wie die Seed-Dateien).
   Future<Map<String, dynamic>> catalog(String ruleVersionId) async {
-    final r = await _http.get(_u('/rule-versions/$ruleVersionId/catalog')).timeout(timeout);
+    final r = await _http.get(_u('/rule-versions/$ruleVersionId/catalog'), headers: _headers()).timeout(timeout);
     return (_decode(r)['catalog'] as Map).cast<String, dynamic>();
   }
 
@@ -102,7 +110,7 @@ class GbuApiClient {
   Future<String> createAssessment(String ruleVersionId, {String type = 'GBU'}) async {
     final r = await _http
         .post(_u('/assessments'),
-            headers: const {'Content-Type': 'application/json'},
+            headers: _headers(json: true),
             body: jsonEncode({'rule_version_id': ruleVersionId, 'type': type}))
         .timeout(timeout);
     return _decode(r)['assessment_id'] as String;
@@ -113,20 +121,20 @@ class GbuApiClient {
   Future<Map<String, dynamic>> saveAnswers(String assessmentId, Map<String, dynamic> answers) async {
     final r = await _http
         .put(_u('/assessments/$assessmentId/answers'),
-            headers: const {'Content-Type': 'application/json'},
+            headers: _headers(json: true),
             body: jsonEncode({'answers': answers}))
         .timeout(timeout);
     return (_decode(r)['summary'] as Map?)?.cast<String, dynamic>() ?? const {};
   }
 
   Future<List<Map<String, dynamic>>> results(String assessmentId) async {
-    final r = await _http.get(_u('/assessments/$assessmentId/results')).timeout(timeout);
+    final r = await _http.get(_u('/assessments/$assessmentId/results'), headers: _headers()).timeout(timeout);
     final list = (_decode(r)['results'] as List?) ?? const [];
     return list.map((e) => (e as Map).cast<String, dynamic>()).toList(growable: false);
   }
 
   Future<Map<String, dynamic>> assessment(String assessmentId) async {
-    final r = await _http.get(_u('/assessments/$assessmentId')).timeout(timeout);
+    final r = await _http.get(_u('/assessments/$assessmentId'), headers: _headers()).timeout(timeout);
     return _decode(r);
   }
 
