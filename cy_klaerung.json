@@ -1,0 +1,419 @@
+[
+ {
+  "id": "K-C12",
+  "bereich": "Zugang",
+  "thema": "Frei zugängliche Steuerung",
+  "frage": "Steuerung für Unbefugte frei zugänglich: Mittel (wie Schindler MC1) – und Hoch, wenn zusätzlich die Serviceschnittstellen ungesichert sind?",
+  "vorschlag": "Mittel; Hoch mit ungesicherten Serviceschnittstellen",
+  "alternativen": "Durchgängig Mittel (Schindler-Verhalten)",
+  "grund": "Schindler MC1 kennt nur „Für Unbefugte ist der Zugang möglich\" = Mittel; die Kombination mit offenem Serviceanschluss ist dort nicht abgebildet.",
+  "hazards": [
+   "CY-Z01"
+  ],
+  "entscheidung": "Vorschlag",
+  "festlegung": "Steuerung frei zugänglich: Mittel; mit ungesicherten Serviceschnittstellen: Hoch.",
+  "datum": "2026-09-03"
+ },
+ {
+  "id": "K-C13",
+  "bereich": "Zugang",
+  "thema": "Default-Zugangsdaten",
+  "frage": "Werkszugangsdaten in Gebrauch: Mittel – und Hoch bei vernetzter Anlage?",
+  "vorschlag": "Mittel; Hoch bei Netz-/Fernanbindung",
+  "alternativen": "Immer Mittel",
+  "grund": "Bei Fernanbindung sind Werkspasswörter aus der Ferne ausnutzbar; TRBS 1115-1 nennt Zugangskontrolle (Software) als Mindestmaßnahme.",
+  "hazards": [
+   "CY-Z04"
+  ],
+  "entscheidung": "Vorschlag",
+  "festlegung": "Werkszugangsdaten: Mittel; bei Netz-/Fernanbindung Hoch.",
+  "datum": "2026-09-03"
+ },
+ {
+  "id": "K-C21",
+  "bereich": "Zugang",
+  "thema": "Triebwerksraum und Schacht",
+  "frage": "Freier Zugang zu Triebwerksraum bzw. Schacht als eigene Cyber-Gefährdung (Mittel) – oder nur als Modifier an den Komponenten?",
+  "vorschlag": "Eigene Gefährdung Mittel (Muster MC1) und Modifier",
+  "alternativen": "Nur Modifier, keine eigene Stufe (Zugang wird in der technischen GBU bewertet)",
+  "grund": "Schindler MC2/MC3 sind nicht beobachtet; die Ortsfragen 14.2/14.4 wirken dort nachweislich auf mehrere Komponenten.",
+  "hazards": [
+   "CY-C01"
+  ],
+  "entscheidung": "Alternative",
+  "festlegung": "Freier Zugang zu Triebwerksraum und Schacht nur als Modifier an den Komponenten, keine eigene Cyber-Gefährdung (Zugang wird in der technischen GBU bewertet).",
+  "datum": "2026-09-03"
+ },
+ {
+  "id": "K-C14",
+  "bereich": "Netz",
+  "thema": "Unbekannter Softwarestand",
+  "frage": "Software-/Firmwarestand nicht bekannt: Mittel – oder nur Dokumentation?",
+  "vorschlag": "Mittel",
+  "alternativen": "Niedrig / nur Dokumentation",
+  "grund": "Ohne bekannten Stand kann kein Abgleich mit Schwachstellenhinweisen erfolgen; B-002 Anhang 2 Nr. 5 und 10 verlangen genau das.",
+  "hazards": [
+   "CY-N01"
+  ],
+  "entscheidung": "Alternative",
+  "festlegung": "Software-/Firmwarestand nicht bekannt: Niedrig (statt Mittel).",
+  "datum": "2026-09-03"
+ },
+ {
+  "id": "K-C22",
+  "bereich": "Netz",
+  "thema": "Fehlende Funktionsreduzierung",
+  "frage": "Nicht benötigte Funktionen/Ports aktiv: Niedrig – und Mittel bei vernetzter Anlage?",
+  "vorschlag": "Niedrig; Mittel bei Netz-/Fernanbindung",
+  "alternativen": "Immer Niedrig",
+  "grund": "Funktionsreduzierung ist eine der sechs Maßnahmenkategorien der TRBS 1115-1; ohne Vernetzung ist die Angriffsfläche lokal begrenzt.",
+  "hazards": [
+   "CY-N02"
+  ],
+  "entscheidung": "Vorschlag",
+  "festlegung": "Fehlende Funktionsreduzierung: Niedrig; Mittel bei Netz-/Fernanbindung.",
+  "datum": "2026-09-03"
+ },
+ {
+  "id": "K-C01",
+  "bereich": "Komponenten",
+  "thema": "Stufe Hoch im Cyber-Teil",
+  "frage": "Soll der Cyber-Teil die Stufe Hoch erreichen können (Fernzugriff/kabellos ohne umgesetzte Maßnahmen an sicherheitsrelevanter Komponente)?",
+  "vorschlag": "Ja, Hoch erreichbar",
+  "alternativen": "Deckel bei Mittel (so verhält sich die Schindler-App)",
+  "grund": "In der Schindler-App wurde Hoch im Cyber-Teil mit keiner Kombination erreicht. Bei überwachungsbedürftigen Anlagen ist nach ÜAnlG von erheblichem Risiko auszugehen (B-002 Anhang 2 Nr. 3); ein aus der Ferne manipulierbarer Sicherheitskreis ohne Maßnahmen ist fachlich Hoch.",
+  "hazards": [
+   "CY-C01",
+   "CY-C02",
+   "CY-C03",
+   "CY-C04",
+   "CY-C05",
+   "CY-C06",
+   "CY-C07",
+   "CY-C08",
+   "CY-C09",
+   "CY-C10",
+   "CY-C11",
+   "CY-C12",
+   "CY-C13"
+  ],
+  "entscheidung": "Vorschlag",
+  "festlegung": "Stufe Hoch im Cyber-Teil erreichbar (Fernzugriff/kabellos ohne umgesetzte Maßnahmen an sicherheitsrelevanter Komponente).",
+  "datum": "2026-09-03"
+ },
+ {
+  "id": "K-C02",
+  "bereich": "Komponenten",
+  "thema": "Vorscreening ohne Schnittstelle",
+  "frage": "Komponente ohne kompromittierbare Schnittstelle: Kein Risiko (DEKRA/BA-017 Vorscreening) – oder Niedrig?",
+  "vorschlag": "Kein Risiko",
+  "alternativen": "Niedrig",
+  "grund": "BA-017 und die DEKRA-Ausfüllhilfe schließen die Betrachtung in diesem Fall ab.",
+  "hazards": [
+   "CY-C01",
+   "CY-C02",
+   "CY-C03",
+   "CY-C04",
+   "CY-C05",
+   "CY-C06",
+   "CY-C07",
+   "CY-C08",
+   "CY-C09",
+   "CY-C10"
+  ],
+  "entscheidung": "Vorschlag",
+  "festlegung": "Komponente ohne kompromittierbare Schnittstelle: Kein Risiko (Vorscreening BA-017/DEKRA).",
+  "datum": "2026-09-03"
+ },
+ {
+  "id": "K-C03",
+  "bereich": "Komponenten",
+  "thema": "Eine Schnittstellenkategorie je Komponente",
+  "frage": "Erfasst wird die HÖCHSTE vorhandene Schnittstellenkategorie (eine Auswahl); die konkreten Schnittstellen bleiben Dokumentation in der App. Reicht das?",
+  "vorschlag": "Ja, höchste Kategorie",
+  "alternativen": "Mehrfachauswahl je Komponente (mehr Klicks)",
+  "grund": "Für die Stufe ist nur die angreifbarste Schnittstelle maßgeblich.",
+  "hazards": [
+   "CY-C01"
+  ],
+  "entscheidung": "Vorschlag",
+  "festlegung": "Je Komponente wird die höchste Schnittstellenkategorie erfasst (eine Auswahl); konkrete Schnittstellen bleiben App-Dokumentation.",
+  "datum": "2026-09-03"
+ },
+ {
+  "id": "K-C04",
+  "bereich": "Komponenten",
+  "thema": "Reihenfolge der Schnittstellenkategorien",
+  "frage": "Angreifbarkeit: keine < kabelgebunden < Benutzerschnittstelle < kabellos < Fernzugriff. Benutzerschnittstelle wird wie kabelgebunden (lokal) bewertet – einverstanden?",
+  "vorschlag": "Ja",
+  "alternativen": "Benutzerschnittstelle wie kabellos",
+  "grund": "Ein Bedienfeld setzt physische Anwesenheit voraus; kabellos nicht.",
+  "hazards": [
+   "CY-C01"
+  ],
+  "entscheidung": "Vorschlag",
+  "festlegung": "Reihenfolge keine < kabelgebunden < Benutzerschnittstelle < kabellos < Fernzugriff; Benutzerschnittstelle wird wie lokal bewertet.",
+  "datum": "2026-09-03"
+ },
+ {
+  "id": "K-C05",
+  "bereich": "Komponenten",
+  "thema": "Lokale Schnittstelle ohne Maßnahmen bei freiem Zugang",
+  "frage": "Kabelgebundene Schnittstelle, keine Maßnahmen, Steuerung/Raum frei zugänglich: Hoch – oder Mittel (Schindler-Baum)?",
+  "vorschlag": "Hoch",
+  "alternativen": "Mittel (Schindler MC4-Muster)",
+  "grund": "Der Schindler-Baum stuft nur um eine Stufe hoch (Niedrig -> Mittel). Ohne jede Maßnahme und mit freiem Zugang ist die Sicherheitsfunktion für jedermann manipulierbar.",
+  "hazards": [
+   "CY-C01",
+   "CY-C02",
+   "CY-C03",
+   "CY-C04",
+   "CY-C05",
+   "CY-C06",
+   "CY-C07",
+   "CY-C08",
+   "CY-C09",
+   "CY-C10"
+  ],
+  "entscheidung": "Vorschlag",
+  "festlegung": "Lokale Schnittstelle, keine Maßnahmen, Zugang frei: Hoch.",
+  "datum": "2026-09-03"
+ },
+ {
+  "id": "K-C06",
+  "bereich": "Komponenten",
+  "thema": "Umgesetzte Maßnahmen bei kabellos/Fernzugriff",
+  "frage": "Fernzugriff oder Funk mit umgesetzten, nachgewiesenen Maßnahmen: Niedrig (Restrisiko) – oder Kein Risiko?",
+  "vorschlag": "Niedrig",
+  "alternativen": "Kein Risiko",
+  "grund": "Ein Fernzugang bleibt eine Angriffsfläche; TRBS 1115-1 verlangt hier die laufende Überwachung.",
+  "hazards": [
+   "CY-C01",
+   "CY-C02",
+   "CY-C03",
+   "CY-C04",
+   "CY-C05",
+   "CY-C06",
+   "CY-C07",
+   "CY-C08",
+   "CY-C09",
+   "CY-C10"
+  ],
+  "entscheidung": "Alternative",
+  "festlegung": "Fernzugriff/kabellos mit umgesetzten, nachgewiesenen Maßnahmen: Kein Risiko (statt Niedrig).",
+  "datum": "2026-09-03"
+ },
+ {
+  "id": "K-C07",
+  "bereich": "Komponenten",
+  "thema": "Frequenzumrichter mit unabhängiger Sicherheitskette",
+  "frage": "Umrichter mit unabhängiger elektromechanischer Sicherheitskette (STO/Sicherheitskreis unabhängig): Deckel Niedrig, auch ohne Maßnahmen?",
+  "vorschlag": "Deckel Niedrig",
+  "alternativen": "Wie andere Komponenten (Hoch möglich)",
+  "grund": "BA-017/zues-Katalog: bei mechanischen Rückfallebenen i. d. R. keine Personengefährdung; es bleibt die Verfügbarkeit.",
+  "hazards": [
+   "CY-C03"
+  ],
+  "entscheidung": "Vorschlag",
+  "festlegung": "Frequenzumrichter mit unabhängiger Sicherheitskette: Deckel Niedrig.",
+  "datum": "2026-09-03"
+ },
+ {
+  "id": "K-C08",
+  "bereich": "Komponenten",
+  "thema": "Unabhängige Sicherheitseinrichtung als Kompensation",
+  "frage": "Bleibt die Sicherheitsfunktion bei Manipulation der Komponente durch eine unabhängige, nicht programmierbare Einrichtung gewährleistet: Hoch -> Mittel?",
+  "vorschlag": "Ja, Hoch -> Mittel",
+  "alternativen": "Keine Kompensation",
+  "grund": "TRBS-1115-1-Prüffeld „Unabhängigkeit und sicherer Zustand\".",
+  "hazards": [
+   "CY-C01",
+   "CY-C04",
+   "CY-C05",
+   "CY-C06",
+   "CY-C07",
+   "CY-C08",
+   "CY-C09",
+   "CY-C10"
+  ],
+  "entscheidung": "Vorschlag",
+  "festlegung": "Unabhängige Sicherheitseinrichtung als Kompensation: Hoch -> Mittel.",
+  "datum": "2026-09-03"
+ },
+ {
+  "id": "K-C09",
+  "bereich": "Komponenten",
+  "thema": "Notruf: Testruf als Kompensation",
+  "frage": "Notrufsystem mit automatischem Testruf und Ausfallmeldung (EN 81-28): Hoch -> Mittel?",
+  "vorschlag": "Ja",
+  "alternativen": "Keine Kompensation",
+  "grund": "Ein manipulierter/ausgefallener Notruf wird so innerhalb der Testfrist erkannt.",
+  "hazards": [
+   "CY-C04"
+  ],
+  "entscheidung": "Vorschlag",
+  "festlegung": "Notruf: automatischer Testruf mit Ausfallmeldung (EN 81-28) als Kompensation Hoch -> Mittel.",
+  "datum": "2026-09-03"
+ },
+ {
+  "id": "K-C10",
+  "bereich": "Komponenten",
+  "thema": "Fernüberwachung rein lesend",
+  "frage": "Rein lesende Fernüberwachung ohne Netztrennung: Mittel – oder Niedrig?",
+  "vorschlag": "Mittel",
+  "alternativen": "Niedrig",
+  "grund": "Ohne Segmentierung ist der Lesekanal ein Einstieg ins Aufzugsnetz.",
+  "hazards": [
+   "CY-C11"
+  ],
+  "entscheidung": "Alternative",
+  "festlegung": "Rein lesende Fernüberwachung ohne Netztrennung: Niedrig (statt Mittel).",
+  "datum": "2026-09-03"
+ },
+ {
+  "id": "K-C11",
+  "bereich": "Komponenten",
+  "thema": "Gebäudeschnittstelle ohne Rückwirkungsfreiheit",
+  "frage": "Bauseitige Signale (BMA/Brandfallsteuerung/GLT) können Sicherheitsfunktionen außer Kraft setzen: Hoch?",
+  "vorschlag": "Hoch",
+  "alternativen": "Mittel",
+  "grund": "Eine manipulierte Brandfallsteuerung kann den Aufzug im Brandfall in die Brandetage schicken (EN 81-73).",
+  "hazards": [
+   "CY-C14"
+  ],
+  "entscheidung": "Vorschlag",
+  "festlegung": "Gebäudeschnittstelle ohne Rückwirkungsfreiheit: Hoch.",
+  "datum": "2026-09-03"
+ },
+ {
+  "id": "K-C23",
+  "bereich": "Komponenten",
+  "thema": "Fernwartung dauerhaft aktiv",
+  "frage": "Fernwartungszugang dauerhaft aktiv (keine Freigabe je Bedarf), aber authentifiziert: Mittel?",
+  "vorschlag": "Mittel",
+  "alternativen": "Niedrig",
+  "grund": "TRBS 1115-1 / DEKRA: Fernzugriff nur bei Bedarf und mit Freigabe.",
+  "hazards": [
+   "CY-C12"
+  ],
+  "entscheidung": "Alternative",
+  "festlegung": "Fernwartung dauerhaft aktiv, aber individuell authentifiziert: Niedrig (statt Mittel).",
+  "datum": "2026-09-03"
+ },
+ {
+  "id": "K-C24",
+  "bereich": "Komponenten",
+  "thema": "Platzhalter „weitere Komponente\"",
+  "frage": "Generische Gefährdung „weitere programmierbare sicherheitsrelevante Komponente\" mit Klasse-S-Logik aufnehmen (z. B. Lastmessung, Evakuierungssteuerung, Zutritt mit Fahrtfreigabe)?",
+  "vorschlag": "Ja, ein Platzhalter",
+  "alternativen": "Weglassen; nur Freitext in der App",
+  "grund": "Der zues-Katalog der App kennt „Weitere Komponente\" ohne Logik.",
+  "hazards": [],
+  "entscheidung": "Alternative",
+  "festlegung": "Kein Platzhalter „weitere Komponente\" im Katalog; weitere Komponenten nur als Freitext in der App.",
+  "datum": "2026-09-03"
+ },
+ {
+  "id": "K-C15",
+  "bereich": "Organisation",
+  "thema": "Notfallmanagement",
+  "frage": "Kein Notfallmanagement für Cybervorfälle: Mittel – und Hoch bei vernetzter Anlage?",
+  "vorschlag": "Mittel; Hoch bei Netz-/Fernanbindung",
+  "alternativen": "Immer Mittel",
+  "grund": "TRBS 1115-1 nennt Notfallmanagement als Mindestinhalt (4.5.2); bei Vernetzung ist ein Vorfall wahrscheinlicher und schneller wirksam.",
+  "hazards": [
+   "CY-O03"
+  ],
+  "entscheidung": "Vorschlag",
+  "festlegung": "Kein Notfallmanagement: Mittel; Hoch bei Netz-/Fernanbindung.",
+  "datum": "2026-09-03"
+ },
+ {
+  "id": "K-C16",
+  "bereich": "Organisation",
+  "thema": "Unterweisung",
+  "frage": "Fehlende Cyber-Unterweisung der Beschäftigten: Mittel (wie fehlende Unterweisung im 81-20-Typ, K-D04) – oder Niedrig?",
+  "vorschlag": "Mittel",
+  "alternativen": "Niedrig",
+  "grund": "BetrSichV § 12; B-002 Anhang 2 Nr. 11 fragt ausdrücklich danach.",
+  "hazards": [
+   "CY-O04"
+  ],
+  "entscheidung": "Alternative",
+  "festlegung": "Fehlende Cyber-Unterweisung: Niedrig (statt Mittel).",
+  "datum": "2026-09-03"
+ },
+ {
+  "id": "K-C17",
+  "bereich": "Organisation",
+  "thema": "Nachweise fehlen vollständig",
+  "frage": "Prüffristen, Wirksamkeitsnachweis und Funktionsbestätigung fehlen alle drei: Hoch – oder Mittel (organisatorischer Mangel)?",
+  "vorschlag": "Hoch",
+  "alternativen": "Mittel",
+  "grund": "Ohne jeden Nachweis ist nicht belegbar, dass überhaupt Maßnahmen wirken; die ZÜS wird die GBU als unvollständig werten (Anhang 2 Nr. 8, 12, 13).",
+  "hazards": [
+   "CY-O05"
+  ],
+  "entscheidung": "Vorschlag",
+  "festlegung": "Prüffristen, Wirksamkeitsnachweis und Funktionsbestätigung fehlen alle drei: Hoch.",
+  "datum": "2026-09-03"
+ },
+ {
+  "id": "K-C18",
+  "bereich": "Organisation",
+  "thema": "Ungeprüfte Änderungen",
+  "frage": "Prüfpflichtige Änderung mit Cyber-Einfluss ohne Prüfung: Hoch?",
+  "vorschlag": "Hoch",
+  "alternativen": "Mittel",
+  "grund": "Die Anlage befindet sich möglicherweise nicht mehr im geprüften Zustand (BetrSichV § 15/16; B-002 Anhang 2 Nr. 14).",
+  "hazards": [
+   "CY-O06"
+  ],
+  "entscheidung": "Vorschlag",
+  "festlegung": "Prüfpflichtige Änderung mit Cyber-Einfluss ohne Prüfung: Hoch.",
+  "datum": "2026-09-03"
+ },
+ {
+  "id": "K-C19",
+  "bereich": "Organisation",
+  "thema": "Rückwirkungsfreiheit",
+  "frage": "Rückwirkung der Cyber-Maßnahmen auf Sicherheitsfunktionen nicht ausgeschlossen: Hoch – oder Mittel?",
+  "vorschlag": "Hoch",
+  "alternativen": "Mittel",
+  "grund": "Eine Schutzmaßnahme, die den Notruf oder den Sicherheitskreis stören kann, ist selbst eine Gefährdung (B-002 Anhang 2 Nr. 9).",
+  "hazards": [
+   "CY-O07"
+  ],
+  "entscheidung": "Vorschlag",
+  "festlegung": "Rückwirkungsfreiheit der Cyber-Maßnahmen nicht sichergestellt: Hoch.",
+  "datum": "2026-09-03"
+ },
+ {
+  "id": "K-C20",
+  "bereich": "Organisation",
+  "thema": "ZÜS-Prüfpunkte 1, 2, 3, 5 ohne Frage",
+  "frage": "Die Prüfpunkte 1 (Cyberbedrohungen berücksichtigt), 2 (Komponenten erfasst), 3 (ÜAnlG-Annahme) und 5 (Stand der Technik) werden durch die Struktur des Katalogs erfüllt und im Bericht als erfüllt ausgewiesen – ohne eigene Frage. Einverstanden?",
+  "vorschlag": "Ja, strukturell erfüllt",
+  "alternativen": "Als Dokumentationsfragen aufnehmen",
+  "grund": "Eine Ja/Nein-Frage „Wurden Cyberbedrohungen berücksichtigt?\" in der GBU, die genau das tut, wäre inhaltsleer.",
+  "hazards": [],
+  "entscheidung": "Alternative",
+  "festlegung": "ZÜS-Prüfpunkte 1, 2, 3 und 5 werden als Dokumentationsfragen aufgenommen (Pflicht, ohne eigene Stufe; Fragen 5.11–5.14).",
+  "datum": "2026-09-03"
+ },
+ {
+  "id": "K-C25",
+  "bereich": "Organisation",
+  "thema": "Herstellervorgaben",
+  "frage": "Herstellervorgaben vorhanden, aber nicht berücksichtigt: Mittel; nicht bekannt/nicht angefragt: Niedrig?",
+  "vorschlag": "Mittel / Niedrig",
+  "alternativen": "Beides Mittel",
+  "grund": "B-002 Anhang 2 Nr. 7; ohne Anfrage ist der Stand der Technik nicht vollständig herangezogen.",
+  "hazards": [
+   "CY-O02"
+  ],
+  "entscheidung": "Vorschlag",
+  "festlegung": "Herstellervorgaben nicht berücksichtigt: Mittel; nicht bekannt/nicht angefragt: Niedrig.",
+  "datum": "2026-09-03"
+ }
+]

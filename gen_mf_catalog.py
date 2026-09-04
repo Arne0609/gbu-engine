@@ -25,7 +25,8 @@ for mod in ['anlage', 'zugang', 'triebwerksraum', 'tueren_fahrkorb', 'fahrkorbda
             'schacht_grube', 'umfeld', 'sonderfunktion_doku']:
     importlib.import_module('mf_content.' + mod)
 
-RULE_VERSION = '81-20-mf-2026.2'  # .2: Review 02.09.2026 (Kein-Risiko-Regeln, Pflichtfragen, TRBS-Fundstellen, K-K12)
+RULE_VERSION = '81-20-mf-2026.3'  # .3: Lueckenschluss EN 81-80 04.09.2026 (MF-T07/T08/T09, MF-K15, MF-M21)
+# .2: Review 02.09.2026 (Kein-Risiko-Regeln, Pflichtfragen, TRBS-Fundstellen, K-K12)
 
 
 def collect(expr, into):

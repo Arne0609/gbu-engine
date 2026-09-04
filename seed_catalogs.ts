@@ -27,6 +27,8 @@ export const CATALOG_FILES = [
   'norm_cyber_voll.json',
   'norm_cyber_minimal.json',
   'norm_81_20_mf.json',
+  'norm_cyber_mf.json',
+  'norm_81_80_mf.json',
 ];
 
 export async function applySchema(db: any): Promise<void> {

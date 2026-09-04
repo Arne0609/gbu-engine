@@ -1,5 +1,5 @@
 {
- "rule_version": "81-20-mf-2026.3",
+ "rule_version": "81-80-mf-2026.1",
  "questions": [
   {
    "code": "qa_aufzugsart",
@@ -282,31 +282,6 @@
    "ui_number": "15.10"
   },
   {
-   "code": "qa_ucm_a3",
-   "type": "YES_NO",
-   "domain": "GBU",
-   "text": "UCM-Schutz (unbeabsichtigte Fahrkorbbewegung, A3 / EN 81-20 5.6.7) vorhanden?",
-   "category": "A – Anlagenmerkmale",
-   "ui_number": "4.5"
-  },
-  {
-   "code": "qa_lagerung_statisch_bestimmt",
-   "type": "YES_NO",
-   "domain": "GBU",
-   "text": "Antriebswelle statisch bestimmt gelagert (keine 3-Punkt-Lagerung)?",
-   "category": "A – Anlagenmerkmale",
-   "ui_number": "4.6",
-   "visible_when": {
-    "question": "qa_aufzugsart",
-    "operator": "IN",
-    "value": [
-     "seil",
-     "trommel",
-     "seil_hydraulik"
-    ]
-   }
-  },
-  {
    "code": "qa_grubentiefe",
    "type": "NUMBER",
    "domain": "GBU",
@@ -315,40 +290,6 @@
    "ui_number": "11.1",
    "min": 0,
    "max": 6
-  },
-  {
-   "code": "qz_bel_vorhanden",
-   "type": "YES_NO",
-   "domain": "GBU",
-   "text": "Beleuchtung an den Zuwegen zum Triebwerks-/Steuerungsraum vorhanden?",
-   "category": "Z – Zugang zum Triebwerks-/Steuerungsraum",
-   "ui_number": "5.1"
-  },
-  {
-   "code": "qz_bel_ausreichend",
-   "type": "YES_NO",
-   "domain": "GBU",
-   "text": "Beleuchtung an den Zuwegen ausreichend (mind. 50 Lux, funktionsfähig, Leuchten an geeigneter Stelle)?",
-   "category": "Z – Zugang zum Triebwerks-/Steuerungsraum",
-   "ui_number": "5.2",
-   "visible_when": {
-    "question": "qz_bel_vorhanden",
-    "operator": "EQ",
-    "value": true
-   }
-  },
-  {
-   "code": "qz_bel_defekt",
-   "type": "YES_NO",
-   "domain": "GBU",
-   "text": "Defekte Leuchten oder Leuchtkörper an den Zuwegen?",
-   "category": "Z – Zugang zum Triebwerks-/Steuerungsraum",
-   "ui_number": "5.2a",
-   "visible_when": {
-    "question": "qz_bel_vorhanden",
-    "operator": "EQ",
-    "value": true
-   }
   },
   {
    "code": "qz_weg_sicher",
@@ -448,109 +389,6 @@
    }
   },
   {
-   "code": "qz_absturzkante",
-   "type": "YES_NO",
-   "domain": "GBU",
-   "text": "Führt der Zugang über eine Dachfläche, Dachkante, Empore oder eine andere Absturzkante?",
-   "category": "Z – Zugang zum Triebwerks-/Steuerungsraum",
-   "ui_number": "5.7"
-  },
-  {
-   "code": "qz_absturz_gesichert",
-   "type": "YES_NO",
-   "domain": "GBU",
-   "text": "Absturzkante durch Geländer oder Umwehrung dauerhaft gesichert?",
-   "category": "Z – Zugang zum Triebwerks-/Steuerungsraum",
-   "ui_number": "5.7a",
-   "visible_when": {
-    "question": "qz_absturzkante",
-    "operator": "EQ",
-    "value": true
-   }
-  },
-  {
-   "code": "qz_absturz_gekennzeichnet",
-   "type": "YES_NO",
-   "domain": "GBU",
-   "text": "Verkehrsweg an der Absturzkante festgelegt und gekennzeichnet?",
-   "category": "Z – Zugang zum Triebwerks-/Steuerungsraum",
-   "ui_number": "5.7b",
-   "visible_when": {
-    "all": [
-     {
-      "question": "qz_absturzkante",
-      "operator": "EQ",
-      "value": true
-     },
-     {
-      "question": "qz_absturz_gesichert",
-      "operator": "EQ",
-      "value": false
-     }
-    ]
-   }
-  },
-  {
-   "code": "qz_uebersteigen",
-   "type": "YES_NO",
-   "domain": "GBU",
-   "text": "Muss ein Treppenauge, eine Brüstung oder ein Fenster überstiegen werden?",
-   "category": "Z – Zugang zum Triebwerks-/Steuerungsraum",
-   "ui_number": "5.8"
-  },
-  {
-   "code": "qz_von_innen",
-   "type": "SELECT",
-   "domain": "GBU",
-   "text": "Lässt sich der Zugangsbereich / Triebwerksraum jederzeit von innen verlassen?",
-   "category": "Z – Zugang zum Triebwerks-/Steuerungsraum",
-   "ui_number": "5.9",
-   "options": [
-    {
-     "value": "ja",
-     "label": "Ja, ohne Schlüssel (Panikfunktion, Drücker innen)"
-    },
-    {
-     "value": "schluessel_hinterlegt",
-     "label": "Nur mit Schlüssel, Schlüssel dauerhaft innen hinterlegt"
-    },
-    {
-     "value": "nein",
-     "label": "Nein – Einschließen möglich"
-    }
-   ]
-  },
-  {
-   "code": "qz_durch_fremde",
-   "type": "SELECT",
-   "domain": "GBU",
-   "text": "Führt der Zugang durch fremde Räume?",
-   "category": "Z – Zugang zum Triebwerks-/Steuerungsraum",
-   "ui_number": "5.10",
-   "options": [
-    {
-     "value": "nein",
-     "label": "Nein, direkter Zugang"
-    },
-    {
-     "value": "arbeits_lager",
-     "label": "Durch Arbeits-, Lager- oder Technikräume Dritter"
-    },
-    {
-     "value": "wohnung",
-     "label": "Durch eine Wohnung oder einen nur zeitweise zugänglichen Bereich"
-    }
-   ]
-  },
-  {
-   "code": "qz_material_erschwert",
-   "type": "YES_NO",
-   "domain": "GBU",
-   "text": "Erschwert die Art des Zugangs den Transport von Material und Werkzeug (z. B. nur über Leiter, Dachluke, enge Wendeltreppe)?",
-   "category": "Z – Zugang zum Triebwerks-/Steuerungsraum",
-   "ui_number": "5.11"
-  },
-  {
    "code": "qz_tuer_vorhanden",
    "type": "YES_NO",
    "domain": "GBU",
@@ -601,62 +439,6 @@
     "operator": "EQ",
     "value": true
    }
-  },
-  {
-   "code": "qz_flucht_frei",
-   "type": "YES_NO",
-   "domain": "GBU",
-   "text": "Flucht- und Rettungsweg vom Triebwerks-/Steuerungsraum frei und benutzbar?",
-   "category": "Z – Zugang zum Triebwerks-/Steuerungsraum",
-   "ui_number": "5.13"
-  },
-  {
-   "code": "qz_flucht_gekennz",
-   "type": "YES_NO",
-   "domain": "GBU",
-   "text": "Flucht- und Rettungsweg gekennzeichnet und beleuchtet?",
-   "category": "Z – Zugang zum Triebwerks-/Steuerungsraum",
-   "ui_number": "5.13a",
-   "visible_when": {
-    "question": "qz_flucht_frei",
-    "operator": "EQ",
-    "value": true
-   }
-  },
-  {
-   "code": "qz_flucht_eingeengt",
-   "type": "YES_NO",
-   "domain": "GBU",
-   "text": "Fluchtweg durch Lagerung eingeengt?",
-   "category": "Z – Zugang zum Triebwerks-/Steuerungsraum",
-   "ui_number": "5.13b",
-   "visible_when": {
-    "question": "qz_flucht_frei",
-    "operator": "EQ",
-    "value": true
-   }
-  },
-  {
-   "code": "qz_zugang_befreiung",
-   "type": "SELECT",
-   "domain": "GBU",
-   "text": "Zugang zur Anlage für die Personenbefreiung jederzeit gewährleistet?",
-   "category": "Z – Zugang zum Triebwerks-/Steuerungsraum",
-   "ui_number": "3.4",
-   "options": [
-    {
-     "value": "jederzeit",
-     "label": "Ja, jederzeit (Schlüsseltresor / ständig besetzte Stelle vor Ort)"
-    },
-    {
-     "value": "leitwarte",
-     "label": "Nur über Schlüssel bei Leitwarte, Pforte oder Hausmeister"
-    },
-    {
-     "value": "nein",
-     "label": "Nein, nicht jederzeit möglich"
-    }
-   ]
   },
   {
    "code": "qz_asbest",
@@ -801,30 +583,6 @@
    "text": "Nachweis der elektrischen Prüfung nach DGUV Vorschrift 3 vorhanden (Prüfplakette / Protokoll aktuell)?",
    "category": "M – Triebwerks-/Maschinenraum und Steuerung",
    "ui_number": "5.35"
-  },
-  {
-   "code": "qm_bauseitig_ok",
-   "type": "YES_NO",
-   "domain": "GBU",
-   "text": "Bauseitige Elektroinstallation im Raum (Steckdosen, Schalter, Leitungen) unbeschädigt?",
-   "category": "M – Triebwerks-/Maschinenraum und Steuerung",
-   "ui_number": "5.36"
-  },
-  {
-   "code": "qm_ortsfest_geprueft",
-   "type": "YES_NO",
-   "domain": "GBU",
-   "text": "Prüfung der ortsfesten elektrischen Anlage nachgewiesen?",
-   "category": "M – Triebwerks-/Maschinenraum und Steuerung",
-   "ui_number": "5.37"
-  },
-  {
-   "code": "qm_potenzialausgleich",
-   "type": "YES_NO",
-   "domain": "GBU",
-   "text": "Hauptpotenzialausgleich an der Aufzugskonstruktion vorhanden?",
-   "category": "M – Triebwerks-/Maschinenraum und Steuerung",
-   "ui_number": "5.38"
   },
   {
    "code": "qm_einzug_treibscheibe",
@@ -1438,19 +1196,6 @@
    "ui_number": "5.24",
    "visible_when": {
     "question": "qa_rollenraum",
-    "operator": "EQ",
-    "value": true
-   }
-  },
-  {
-   "code": "qm_fremd_frei",
-   "type": "YES_NO",
-   "domain": "GBU",
-   "text": "Triebwerksraum frei von aufzugsfremden Einrichtungen (Lager, Leitungen, Geräte Dritter)?",
-   "category": "M – Triebwerks-/Maschinenraum und Steuerung",
-   "ui_number": "5.59",
-   "visible_when": {
-    "question": "qa_maschinenraum",
     "operator": "EQ",
     "value": true
    }
@@ -2291,41 +2036,6 @@
    "ui_number": "9.4"
   },
   {
-   "code": "qf_einzugstellen",
-   "type": "YES_NO",
-   "domain": "GBU",
-   "text": "Einzugstellen im Schachtkopf / auf dem Fahrkorbdach vorhanden (Umlenkrollen, Heberrolle, Seilrollen)?",
-   "category": "F – Fahrkorbdach und Schachtkopf",
-   "ui_number": "9.5"
-  },
-  {
-   "code": "qf_einzug_abdeckung",
-   "type": "SELECT",
-   "domain": "GBU",
-   "text": "Abdeckung der Einzugstellen",
-   "category": "F – Fahrkorbdach und Schachtkopf",
-   "ui_number": "9.5a",
-   "visible_when": {
-    "question": "qf_einzugstellen",
-    "operator": "EQ",
-    "value": true
-   },
-   "options": [
-    {
-     "value": "komplett",
-     "label": "Komplett abgedeckt"
-    },
-    {
-     "value": "teilweise",
-     "label": "Teilweise abgedeckt"
-    },
-    {
-     "value": "offen",
-     "label": "Einzugstellen offen"
-    }
-   ]
-  },
-  {
    "code": "qf_nachbar_trennung",
    "type": "SELECT",
    "domain": "GBU",
@@ -2514,14 +2224,6 @@
    }
   },
   {
-   "code": "qf_notbeleuchtung",
-   "type": "YES_NO",
-   "domain": "GBU",
-   "text": "Notbeleuchtung auf dem Fahrkorbdach (mind. 5 Lux, 1 h) vorhanden?",
-   "category": "F – Fahrkorbdach und Schachtkopf",
-   "ui_number": "9.12"
-  },
-  {
    "code": "qf_notruf_dach",
    "type": "YES_NO",
    "domain": "GBU",
@@ -2701,40 +2403,6 @@
     "question": "qa_aufzugsart",
     "operator": "EQ",
     "value": "trommel"
-   }
-  },
-  {
-   "code": "qs_fremd_frei",
-   "type": "YES_NO",
-   "domain": "GBU",
-   "text": "Schacht frei von aufzugsfremden Einrichtungen?",
-   "category": "S – Schacht",
-   "ui_number": "10.12"
-  },
-  {
-   "code": "qs_fremd_fachgerecht",
-   "type": "YES_NO",
-   "domain": "GBU",
-   "text": "Aufzugsfremde Leitungen fachgerecht verlegt und gekennzeichnet?",
-   "category": "S – Schacht",
-   "ui_number": "10.12a",
-   "visible_when": {
-    "question": "qs_fremd_frei",
-    "operator": "EQ",
-    "value": false
-   }
-  },
-  {
-   "code": "qs_fremd_behindert",
-   "type": "YES_NO",
-   "domain": "GBU",
-   "text": "Behindern aufzugsfremde Einrichtungen Arbeiten oder Rettungswege im Schacht?",
-   "category": "S – Schacht",
-   "ui_number": "10.12b",
-   "visible_when": {
-    "question": "qs_fremd_frei",
-    "operator": "EQ",
-    "value": false
    }
   },
   {
@@ -3703,42 +3371,6 @@
  ],
  "measures": [
   {
-   "code": "m_47b4aeebb3",
-   "title": "Handlampe benutzen",
-   "type": "ORGANISATIONAL",
-   "priority_class": "SOFORT"
-  },
-  {
-   "code": "m_2e29560129",
-   "title": "Geeignete Leuchten nachrüsten",
-   "type": "TECHNICAL",
-   "priority_class": "MITTELFRISTIG"
-  },
-  {
-   "code": "m_69dc2c175e",
-   "title": "Leuchten versetzen",
-   "type": "TECHNICAL",
-   "priority_class": "MITTELFRISTIG"
-  },
-  {
-   "code": "m_fceb55b9fb",
-   "title": "Defekte Leuchten umgehend instand setzen",
-   "type": "ORGANISATIONAL",
-   "priority_class": "SOFORT"
-  },
-  {
-   "code": "m_fa94ecf52d",
-   "title": "Beleuchtung der Zuwege dauerhaft instand halten (Prüfintervall festlegen)",
-   "type": "TECHNICAL",
-   "priority_class": "MITTELFRISTIG"
-  },
-  {
-   "code": "m_148f9590b0",
-   "title": "Zustand erhalten; bei der wiederkehrenden Prüfung und der Betreiberkontrolle erneut prüfen",
-   "type": "ORGANISATIONAL",
-   "priority_class": "SOFORT"
-  },
-  {
    "code": "m_f709f602b6",
    "title": "Besondere Vorsicht beim Begehen (Sicherheitsschuhe)",
    "type": "ORGANISATIONAL",
@@ -3749,6 +3381,12 @@
    "title": "Bodenbelag prüfen und häufig reinigen",
    "type": "TECHNICAL",
    "priority_class": "MITTELFRISTIG"
+  },
+  {
+   "code": "m_148f9590b0",
+   "title": "Zustand erhalten; bei der wiederkehrenden Prüfung und der Betreiberkontrolle erneut prüfen",
+   "type": "ORGANISATIONAL",
+   "priority_class": "SOFORT"
   },
   {
    "code": "m_71c6a29682",
@@ -3805,102 +3443,6 @@
    "priority_class": "MITTELFRISTIG"
   },
   {
-   "code": "m_ec525aebc6",
-   "title": "PSA gegen Absturz mit festgelegtem Anschlagpunkt verwenden, sonst Zugangsverbot",
-   "type": "ORGANISATIONAL",
-   "priority_class": "SOFORT"
-  },
-  {
-   "code": "m_479e8dfc86",
-   "title": "Absturzsicherung und Anschlagpunkte herstellen, Verkehrswege festlegen",
-   "type": "TECHNICAL",
-   "priority_class": "MITTELFRISTIG"
-  },
-  {
-   "code": "m_40414264fd",
-   "title": "Festgelegten Verkehrsweg nutzen, besondere Vorsicht",
-   "type": "ORGANISATIONAL",
-   "priority_class": "SOFORT"
-  },
-  {
-   "code": "m_85a4f8634a",
-   "title": "Geländer oder dauerhafte Absturzsicherung anbringen",
-   "type": "TECHNICAL",
-   "priority_class": "MITTELFRISTIG"
-  },
-  {
-   "code": "m_2147973cd8",
-   "title": "Zugang sperren und alternative Zugangsmöglichkeit festlegen",
-   "type": "ORGANISATIONAL",
-   "priority_class": "SOFORT"
-  },
-  {
-   "code": "m_68daecd6c5",
-   "title": "Zugang baulich ändern",
-   "type": "TECHNICAL",
-   "priority_class": "MITTELFRISTIG"
-  },
-  {
-   "code": "m_bf008b7103",
-   "title": "Nur zu zweit betreten, an- und abmelden, Tür gegen Zufallen sichern",
-   "type": "ORGANISATIONAL",
-   "priority_class": "SOFORT"
-  },
-  {
-   "code": "m_2e60d7e71e",
-   "title": "Panikschloss installieren oder zweiten Fluchtweg schaffen",
-   "type": "TECHNICAL",
-   "priority_class": "MITTELFRISTIG"
-  },
-  {
-   "code": "m_ed78c06e8a",
-   "title": "Vor dem Betreten Schlüssel prüfen, beim Betreiber an- und abmelden",
-   "type": "ORGANISATIONAL",
-   "priority_class": "SOFORT"
-  },
-  {
-   "code": "m_58572be54a",
-   "title": "Panikschloss nachrüsten",
-   "type": "TECHNICAL",
-   "priority_class": "MITTELFRISTIG"
-  },
-  {
-   "code": "m_007e0b5551",
-   "title": "Zutritt vorab vereinbaren, im Notfall Dritte hinzuziehen",
-   "type": "ORGANISATIONAL",
-   "priority_class": "SOFORT"
-  },
-  {
-   "code": "m_695de193b1",
-   "title": "Zugang dauerhaft ändern",
-   "type": "TECHNICAL",
-   "priority_class": "MITTELFRISTIG"
-  },
-  {
-   "code": "m_b154da3f2c",
-   "title": "Zutritt mit dem Betreiber abstimmen, besondere Vorsicht",
-   "type": "ORGANISATIONAL",
-   "priority_class": "SOFORT"
-  },
-  {
-   "code": "m_6849d174cb",
-   "title": "Eigenständigen Zugang schaffen oder Wegeführung verbindlich festlegen",
-   "type": "TECHNICAL",
-   "priority_class": "MITTELFRISTIG"
-  },
-  {
-   "code": "m_beb7ce7d5b",
-   "title": "Geeignete Transporthilfen verwenden",
-   "type": "ORGANISATIONAL",
-   "priority_class": "SOFORT"
-  },
-  {
-   "code": "m_060eda56bd",
-   "title": "Zugang so herrichten, dass Material sicher transportiert werden kann",
-   "type": "TECHNICAL",
-   "priority_class": "MITTELFRISTIG"
-  },
-  {
    "code": "m_221df23bf5",
    "title": "Zugang gegen unbefugten Zutritt sichern",
    "type": "ORGANISATIONAL",
@@ -3937,56 +3479,20 @@
    "priority_class": "MITTELFRISTIG"
   },
   {
-   "code": "m_c2c1e40490",
-   "title": "Weg sofort freimachen, bis dahin Bereich nicht allein betreten",
+   "code": "m_47b4aeebb3",
+   "title": "Handlampe benutzen",
    "type": "ORGANISATIONAL",
    "priority_class": "SOFORT"
   },
   {
-   "code": "m_f2d3693652",
-   "title": "Flucht- und Rettungswege nach ASR A2.3 herstellen und dauerhaft freihalten",
+   "code": "m_2e29560129",
+   "title": "Geeignete Leuchten nachrüsten",
    "type": "TECHNICAL",
    "priority_class": "MITTELFRISTIG"
   },
   {
-   "code": "m_387cdf25f4",
-   "title": "Provisorisch kennzeichnen",
-   "type": "ORGANISATIONAL",
-   "priority_class": "SOFORT"
-  },
-  {
-   "code": "m_8b91a99033",
-   "title": "Kennzeichnung nach ASR A1.3 und ASR A2.3 herstellen",
-   "type": "TECHNICAL",
-   "priority_class": "MITTELFRISTIG"
-  },
-  {
-   "code": "m_cf8f43b0db",
-   "title": "Fluchtweg sofort freiräumen",
-   "type": "ORGANISATIONAL",
-   "priority_class": "SOFORT"
-  },
-  {
-   "code": "m_54f17dadcc",
-   "title": "Lagerflächen festlegen und Freihaltung regelmäßig kontrollieren",
-   "type": "TECHNICAL",
-   "priority_class": "MITTELFRISTIG"
-  },
-  {
-   "code": "m_b4c25df55d",
-   "title": "Ständige Zugangsmöglichkeit schaffen, ansonsten Aufzug abschalten",
-   "type": "ORGANISATIONAL",
-   "priority_class": "SOFORT"
-  },
-  {
-   "code": "m_6ca8bc445d",
-   "title": "Schlüsseltresor nachrüsten",
-   "type": "TECHNICAL",
-   "priority_class": "MITTELFRISTIG"
-  },
-  {
-   "code": "m_92e8a845db",
-   "title": "Ständige Besetzung der Leitwarte / Pforte gewährleisten",
+   "code": "m_69dc2c175e",
+   "title": "Leuchten versetzen",
    "type": "TECHNICAL",
    "priority_class": "MITTELFRISTIG"
   },
@@ -4195,6 +3701,12 @@
    "priority_class": "MITTELFRISTIG"
   },
   {
+   "code": "m_387cdf25f4",
+   "title": "Provisorisch kennzeichnen",
+   "type": "ORGANISATIONAL",
+   "priority_class": "SOFORT"
+  },
+  {
    "code": "m_6c23017e17",
    "title": "Dauerhafte Kennzeichnung anbringen",
    "type": "TECHNICAL",
@@ -4375,36 +3887,6 @@
    "priority_class": "MITTELFRISTIG"
   },
   {
-   "code": "m_76368d7b21",
-   "title": "Elektrofachkraft mit der Prüfung der Schutzmaßnahme beauftragen",
-   "type": "ORGANISATIONAL",
-   "priority_class": "SOFORT"
-  },
-  {
-   "code": "m_db40f86a43",
-   "title": "Hauptpotenzialausgleich an Führungsschienen, Maschinenrahmen und Schaltschrank herstellen (DIN VDE 0100-410)",
-   "type": "TECHNICAL",
-   "priority_class": "MITTELFRISTIG"
-  },
-  {
-   "code": "m_e23f71c7f8",
-   "title": "Betroffene Betriebsmittel abschalten und gegen Benutzung sichern",
-   "type": "ORGANISATIONAL",
-   "priority_class": "SOFORT"
-  },
-  {
-   "code": "m_5c610a715a",
-   "title": "Instandsetzung durch eine Elektrofachkraft",
-   "type": "TECHNICAL",
-   "priority_class": "MITTELFRISTIG"
-  },
-  {
-   "code": "m_b7f6ff2b93",
-   "title": "Wiederkehrende Prüfung nach DGUV Vorschrift 3 veranlassen und dokumentieren",
-   "type": "TECHNICAL",
-   "priority_class": "MITTELFRISTIG"
-  },
-  {
    "code": "m_fd9adb8fa4",
    "title": "Arbeiten an der Elektrik nur durch Elektrofachkraft",
    "type": "ORGANISATIONAL",
@@ -4467,18 +3949,6 @@
   {
    "code": "m_b6c75f08fa",
    "title": "Sprechverbindung instand setzen oder erneuern",
-   "type": "TECHNICAL",
-   "priority_class": "MITTELFRISTIG"
-  },
-  {
-   "code": "m_942963274b",
-   "title": "Fremdnutzung mit dem Betreiber klären, Zugang nur für Aufzugspersonal",
-   "type": "ORGANISATIONAL",
-   "priority_class": "SOFORT"
-  },
-  {
-   "code": "m_e007894bda",
-   "title": "Aufzugsfremde Einrichtungen entfernen; Raum ausschließlich für den Aufzug nutzen",
    "type": "TECHNICAL",
    "priority_class": "MITTELFRISTIG"
   },
@@ -5029,36 +4499,6 @@
    "priority_class": "MITTELFRISTIG"
   },
   {
-   "code": "m_45ff96ee2d",
-   "title": "UCM nachrüsten oder SR-Modul ausbauen",
-   "type": "TECHNICAL",
-   "priority_class": "MITTELFRISTIG"
-  },
-  {
-   "code": "m_169a764b0c",
-   "title": "Bremsüberwachung und Bremsprüfung im Wartungsumfang halten",
-   "type": "ORGANISATIONAL",
-   "priority_class": "SOFORT"
-  },
-  {
-   "code": "m_78ee293621",
-   "title": "Bei Steuerungs- oder Antriebsmodernisierung UCM-Schutz nach EN 81-20 5.6.7 vorsehen",
-   "type": "TECHNICAL",
-   "priority_class": "MITTELFRISTIG"
-  },
-  {
-   "code": "m_84c0bed95a",
-   "title": "Regelmäßige Kontrolle durch beauftragte Person",
-   "type": "ORGANISATIONAL",
-   "priority_class": "SOFORT"
-  },
-  {
-   "code": "m_899a1c9193",
-   "title": "Zweikreis-Bremssystem mit Bremsüberwachung nachrüsten",
-   "type": "TECHNICAL",
-   "priority_class": "MITTELFRISTIG"
-  },
-  {
    "code": "m_2c71e5a0e9",
    "title": "Regelmäßige Materialprüfung (z.B. Ultraschall)",
    "type": "ORGANISATIONAL",
@@ -5067,24 +4507,6 @@
   {
    "code": "m_7cbec1d4cc",
    "title": "Sturzverhinderung nach oben nachrüsten",
-   "type": "TECHNICAL",
-   "priority_class": "MITTELFRISTIG"
-  },
-  {
-   "code": "m_19f345ba43",
-   "title": "Schutzmaßnahmen (SAFÜ/Notbremse) weiterhin aufrechterhalten und prüfen",
-   "type": "ORGANISATIONAL",
-   "priority_class": "SOFORT"
-  },
-  {
-   "code": "m_76892426c2",
-   "title": "Bei Modernisierung des Antriebs statisch bestimmte Lagerung vorsehen",
-   "type": "TECHNICAL",
-   "priority_class": "MITTELFRISTIG"
-  },
-  {
-   "code": "m_321509bb31",
-   "title": "Antrieb tauschen, Machinenrahmen oder UCM nachrüsten",
    "type": "TECHNICAL",
    "priority_class": "MITTELFRISTIG"
   },
@@ -5165,12 +4587,6 @@
    "title": "Fußleiste nachrüsten",
    "type": "TECHNICAL",
    "priority_class": "MITTELFRISTIG"
-  },
-  {
-   "code": "m_e024d9d4d2",
-   "title": "Sicherer Stand! Erhöhte Vorsicht!",
-   "type": "ORGANISATIONAL",
-   "priority_class": "SOFORT"
   },
   {
    "code": "m_c3b23d938b",
@@ -5323,18 +4739,6 @@
    "priority_class": "MITTELFRISTIG"
   },
   {
-   "code": "m_af53594a0e",
-   "title": "Handleuchte für Arbeiten auf dem Fahrkorbdach mitführen",
-   "type": "ORGANISATIONAL",
-   "priority_class": "SOFORT"
-  },
-  {
-   "code": "m_b4594e628b",
-   "title": "Notbeleuchtung (mind. 5 Lux, 1 h) auf dem Fahrkorbdach nachrüsten",
-   "type": "TECHNICAL",
-   "priority_class": "MITTELFRISTIG"
-  },
-  {
    "code": "m_29fa5679ba",
    "title": "Schachteinschluss verhindern durch alternative Maßnahme (z.B. Mobilfunk, Funk, 2. Person)",
    "type": "ORGANISATIONAL",
@@ -5421,30 +4825,6 @@
   {
    "code": "m_b9ffae219f",
    "title": "Schlaffseilschalter nachrüsten",
-   "type": "TECHNICAL",
-   "priority_class": "MITTELFRISTIG"
-  },
-  {
-   "code": "m_64ad879f9b",
-   "title": "Bereich absperren, Arbeiten nur nach gesonderter Festlegung",
-   "type": "ORGANISATIONAL",
-   "priority_class": "SOFORT"
-  },
-  {
-   "code": "m_0605883fea",
-   "title": "Aufzugsfremde Einrichtungen nach DIN EN 81-20, 5.2.1.2 entfernen",
-   "type": "TECHNICAL",
-   "priority_class": "MITTELFRISTIG"
-  },
-  {
-   "code": "m_c878ae9539",
-   "title": "Leitungen bei Arbeiten beachten",
-   "type": "ORGANISATIONAL",
-   "priority_class": "SOFORT"
-  },
-  {
-   "code": "m_c759367b33",
-   "title": "Rückbau bei der nächsten Modernisierung vorsehen",
    "type": "TECHNICAL",
    "priority_class": "MITTELFRISTIG"
   },
@@ -5961,54 +5341,6 @@
  ],
  "hazards": [
   {
-   "code": "MF-Z01",
-   "domain": "GBU",
-   "title": "Unzureichende Beleuchtung an den Zuwegen zum Triebwerks-/Steuerungsraum",
-   "category": "Beleuchtung",
-   "aggregation_type": "MAXIMUM",
-   "evaluation_mode": "STANDARD",
-   "questions": [
-    {
-     "question": "qz_bel_vorhanden",
-     "role": "TRIGGER",
-     "required_mode": "ALWAYS"
-    },
-    {
-     "question": "qz_bel_ausreichend",
-     "role": "TRIGGER",
-     "required_mode": "CONDITIONAL",
-     "required_when": {
-      "question": "qz_bel_vorhanden",
-      "operator": "EQ",
-      "value": true
-     }
-    },
-    {
-     "question": "qz_bel_defekt",
-     "role": "OPTIONAL",
-     "required_mode": "CONDITIONAL",
-     "required_when": {
-      "question": "qz_bel_vorhanden",
-      "operator": "EQ",
-      "value": true
-     },
-     "notes": "Pflicht, weil bewertungsrelevant (automatisch gesetzt)."
-    }
-   ],
-   "sources": [
-    {
-     "type": "OTHER",
-     "document": "ASR A3.4"
-    }
-   ],
-   "hazard_factor": "Gefährdung durch Arbeitsumgebungsbedingungen (unzureichende Beleuchtung)",
-   "person_groups": [
-    "Beauftragte Person",
-    "Wartungspersonal"
-   ],
-   "ui_group": "Z – Zugang zum Triebwerks-/Steuerungsraum"
-  },
-  {
    "code": "MF-Z02",
    "domain": "GBU",
    "title": "Unsicherer Verkehrsweg zum Triebwerks-/Steuerungsraum (Rutschen, Stolpern, Enge)",
@@ -6098,128 +5430,6 @@
    ]
   },
   {
-   "code": "MF-Z04",
-   "domain": "GBU",
-   "title": "Absturzgefahr im Zugangsbereich (Dachfläche, Absturzkante, Übersteigen)",
-   "category": "Zugang und Verkehrswege",
-   "aggregation_type": "MAXIMUM",
-   "evaluation_mode": "STANDARD",
-   "questions": [
-    {
-     "question": "qz_absturzkante",
-     "role": "TRIGGER",
-     "required_mode": "ALWAYS"
-    },
-    {
-     "question": "qz_absturz_gesichert",
-     "role": "COMPENSATION",
-     "required_mode": "CONDITIONAL",
-     "required_when": {
-      "question": "qz_absturzkante",
-      "operator": "EQ",
-      "value": true
-     }
-    },
-    {
-     "question": "qz_absturz_gekennzeichnet",
-     "role": "COMPENSATION",
-     "required_mode": "CONDITIONAL",
-     "required_when": {
-      "all": [
-       {
-        "question": "qz_absturzkante",
-        "operator": "EQ",
-        "value": true
-       },
-       {
-        "question": "qz_absturz_gesichert",
-        "operator": "EQ",
-        "value": false
-       }
-      ]
-     }
-    },
-    {
-     "question": "qz_uebersteigen",
-     "role": "TRIGGER",
-     "required_mode": "ALWAYS"
-    }
-   ],
-   "sources": [
-    {
-     "type": "OTHER",
-     "document": "ASR A2.1"
-    }
-   ],
-   "hazard_factor": "Mechanische Gefährdung durch Absturz",
-   "person_groups": [
-    "Beauftragte Person",
-    "Wartungspersonal"
-   ],
-   "ui_group": "Z – Zugang zum Triebwerks-/Steuerungsraum"
-  },
-  {
-   "code": "MF-Z05",
-   "domain": "GBU",
-   "title": "Einschließen im Zugangsbereich / Triebwerksraum (keine Panikfunktion)",
-   "category": "Zugang und Verkehrswege",
-   "aggregation_type": "NONE",
-   "evaluation_mode": "STANDARD",
-   "questions": [
-    {
-     "question": "qz_von_innen",
-     "role": "TRIGGER",
-     "required_mode": "ALWAYS"
-    }
-   ],
-   "sources": [
-    {
-     "type": "EN",
-     "document": "DIN EN 81-20",
-     "section": "5.2.3.3"
-    }
-   ],
-   "hazard_factor": "Sonstige Gefährdung durch Einschließen von Personen",
-   "person_groups": [
-    "Beauftragte Person",
-    "Wartungspersonal"
-   ],
-   "ui_group": "Z – Zugang zum Triebwerks-/Steuerungsraum"
-  },
-  {
-   "code": "MF-Z06",
-   "domain": "GBU",
-   "title": "Zugang über fremde Räume, erschwerter Material- und Werkzeugtransport",
-   "category": "Zugang und Verkehrswege",
-   "aggregation_type": "MAXIMUM",
-   "evaluation_mode": "STANDARD",
-   "questions": [
-    {
-     "question": "qz_durch_fremde",
-     "role": "TRIGGER",
-     "required_mode": "ALWAYS"
-    },
-    {
-     "question": "qz_material_erschwert",
-     "role": "TRIGGER",
-     "required_mode": "ALWAYS"
-    }
-   ],
-   "sources": [
-    {
-     "type": "EN",
-     "document": "DIN EN 81-20",
-     "section": "5.2.2.1"
-    }
-   ],
-   "hazard_factor": "Physische Belastung / ergonomische Gefährdung",
-   "person_groups": [
-    "Beauftragte Person",
-    "Wartungspersonal"
-   ],
-   "ui_group": "Z – Zugang zum Triebwerks-/Steuerungsraum"
-  },
-  {
    "code": "MF-Z07",
    "domain": "GBU",
    "title": "Fehlende oder unzureichende Zugangstür zum Triebwerks-/Maschinenraum",
@@ -6282,97 +5492,6 @@
     "Nutzer"
    ],
    "ui_group": "Z – Zugang zum Triebwerks-/Steuerungsraum"
-  },
-  {
-   "code": "MF-Z08",
-   "domain": "GBU",
-   "title": "Fehlende oder versperrte Flucht- und Rettungswege im Bereich des Triebwerks-/Steuerungsraums",
-   "category": "Zugang und Verkehrswege",
-   "aggregation_type": "MAXIMUM",
-   "evaluation_mode": "STANDARD",
-   "questions": [
-    {
-     "question": "qz_flucht_frei",
-     "role": "TRIGGER",
-     "required_mode": "ALWAYS"
-    },
-    {
-     "question": "qz_flucht_gekennz",
-     "role": "TRIGGER",
-     "required_mode": "CONDITIONAL",
-     "required_when": {
-      "question": "qz_flucht_frei",
-      "operator": "EQ",
-      "value": true
-     }
-    },
-    {
-     "question": "qz_flucht_eingeengt",
-     "role": "TRIGGER",
-     "required_mode": "CONDITIONAL",
-     "required_when": {
-      "question": "qz_flucht_frei",
-      "operator": "EQ",
-      "value": true
-     }
-    }
-   ],
-   "sources": [
-    {
-     "type": "OTHER",
-     "document": "ASR A2.3"
-    },
-    {
-     "type": "LAW",
-     "document": "ArbStättV",
-     "section": "§ 4"
-    }
-   ],
-   "hazard_factor": "Gefährdung durch fehlende oder versperrte Flucht- und Rettungswege",
-   "person_groups": [
-    "Beauftragte Person",
-    "Wartungspersonal"
-   ],
-   "ui_group": "Z – Zugang zum Triebwerks-/Steuerungsraum",
-   "review_ids": [
-    "K-Z02"
-   ]
-  },
-  {
-   "code": "MF-Z09",
-   "domain": "GBU",
-   "title": "Zugang zur Anlage für die Personenbefreiung nicht jederzeit gewährleistet",
-   "category": "Notruf und Personenbefreiung",
-   "aggregation_type": "NONE",
-   "evaluation_mode": "STANDARD",
-   "questions": [
-    {
-     "question": "qz_zugang_befreiung",
-     "role": "TRIGGER",
-     "required_mode": "ALWAYS"
-    }
-   ],
-   "sources": [
-    {
-     "type": "LAW",
-     "document": "BetrSichV",
-     "section": "Anh. 1 Nr. 4.1"
-    },
-    {
-     "type": "TRBS",
-     "document": "TRBS 3121",
-     "section": "4.4"
-    }
-   ],
-   "hazard_factor": "Sonstige Gefährdung durch fehlende oder unzureichende Notfallorganisation",
-   "person_groups": [
-    "Nutzer",
-    "Beauftragte Person"
-   ],
-   "ui_group": "Z – Zugang zum Triebwerks-/Steuerungsraum",
-   "review_ids": [
-    "K-Z01"
-   ]
   },
   {
    "code": "MF-M01",
@@ -7181,55 +6300,6 @@
    "ui_group": "M – Triebwerks-/Maschinenraum und Steuerung"
   },
   {
-   "code": "MF-M16",
-   "domain": "GBU",
-   "title": "Fehlender Potenzialausgleich / mangelhafte bauseitige Elektroinstallation",
-   "category": "Steuerung und Elektrik",
-   "aggregation_type": "MAXIMUM",
-   "evaluation_mode": "STANDARD",
-   "questions": [
-    {
-     "question": "qm_potenzialausgleich",
-     "role": "TRIGGER",
-     "required_mode": "ALWAYS"
-    },
-    {
-     "question": "qm_bauseitig_ok",
-     "role": "TRIGGER",
-     "required_mode": "ALWAYS"
-    },
-    {
-     "question": "qm_ortsfest_geprueft",
-     "role": "TRIGGER",
-     "required_mode": "ALWAYS"
-    }
-   ],
-   "sources": [
-    {
-     "type": "EN",
-     "document": "DIN EN 81-20",
-     "section": "5.10.1.1"
-    },
-    {
-     "type": "OTHER",
-     "document": "DIN VDE 0100-410"
-    },
-    {
-     "type": "DGUV",
-     "document": "DGUV Vorschrift 3"
-    }
-   ],
-   "hazard_factor": "Elektrische Gefährdung durch Berühren spannungsführender Teile",
-   "person_groups": [
-    "Beauftragte Person",
-    "Wartungspersonal"
-   ],
-   "ui_group": "M – Triebwerks-/Maschinenraum und Steuerung",
-   "review_ids": [
-    "K-M06"
-   ]
-  },
-  {
    "code": "MF-M17",
    "domain": "GBU",
    "title": "Fehlende Kennzeichnung elektrischer Einrichtungen, Stromlaufplan, Beschilderung und Betriebsanleitung",
@@ -7330,43 +6400,6 @@
    "person_groups": [
     "Wartungspersonal",
     "Beauftragte Person"
-   ],
-   "ui_group": "M – Triebwerks-/Maschinenraum und Steuerung"
-  },
-  {
-   "code": "MF-M19",
-   "domain": "GBU",
-   "title": "Aufzugsfremde Einrichtungen im Triebwerksraum",
-   "category": "Triebwerksraum – Ausstattung",
-   "aggregation_type": "NONE",
-   "evaluation_mode": "STANDARD",
-   "questions": [
-    {
-     "question": "qa_maschinenraum",
-     "role": "APPLICABILITY",
-     "required_mode": "NEVER"
-    },
-    {
-     "question": "qm_fremd_frei",
-     "role": "TRIGGER",
-     "required_mode": "ALWAYS"
-    }
-   ],
-   "sources": [
-    {
-     "type": "EN",
-     "document": "DIN EN 81-20",
-     "section": "5.2.1.2"
-    },
-    {
-     "type": "EN",
-     "document": "DIN EN 81-20",
-     "section": "5.2.6.1"
-    }
-   ],
-   "hazard_factor": "Mechanische Gefährdung durch Stolpern, Rutschen, Stürzen",
-   "person_groups": [
-    "Wartungspersonal"
    ],
    "ui_group": "M – Triebwerks-/Maschinenraum und Steuerung"
   },
@@ -8448,120 +7481,6 @@
    "ui_group": "K – Fahrkorb"
   },
   {
-   "code": "MF-K12",
-   "domain": "GBU",
-   "title": "Fehlender Schutz gegen unbeabsichtigte Fahrkorbbewegung bei offenen Türen (UCM)",
-   "category": "Sicherheitskomponenten",
-   "aggregation_type": "NONE",
-   "evaluation_mode": "STANDARD",
-   "questions": [
-    {
-     "question": "qa_ucm_a3",
-     "role": "TRIGGER",
-     "required_mode": "ALWAYS"
-    },
-    {
-     "question": "qk_ucm_sr_modul",
-     "role": "TRIGGER",
-     "required_mode": "CONDITIONAL",
-     "required_when": {
-      "all": [
-       {
-        "question": "qa_ucm_a3",
-        "operator": "EQ",
-        "value": false
-       },
-       {
-        "not": {
-         "question": "qa_aufzugsart",
-         "operator": "IN",
-         "value": [
-          "hydraulik",
-          "seil_hydraulik"
-         ]
-        }
-       }
-      ]
-     },
-     "notes": "Bei Hydraulik nicht gefragt: Türüberbrückung immer vorhanden (K-K12)."
-    },
-    {
-     "question": "qm_zweikreisbremse",
-     "role": "COMPENSATION",
-     "required_mode": "CONDITIONAL",
-     "required_when": {
-      "question": "qa_aufzugsart",
-      "operator": "IN",
-      "value": [
-       "seil",
-       "trommel",
-       "seil_hydraulik"
-      ]
-     },
-     "notes": "Pflicht, weil bewertungsrelevant (automatisch gesetzt)."
-    },
-    {
-     "question": "qm_bremse_ueberwacht",
-     "role": "COMPENSATION",
-     "required_mode": "CONDITIONAL",
-     "required_when": {
-      "question": "qm_zweikreisbremse",
-      "operator": "EQ",
-      "value": true
-     },
-     "notes": "Pflicht, weil bewertungsrelevant (automatisch gesetzt)."
-    },
-    {
-     "question": "qa_lagerung_statisch_bestimmt",
-     "role": "COMPENSATION",
-     "required_mode": "CONDITIONAL",
-     "required_when": {
-      "question": "qa_aufzugsart",
-      "operator": "IN",
-      "value": [
-       "seil",
-       "trommel",
-       "seil_hydraulik"
-      ]
-     },
-     "notes": "Pflicht, weil bewertungsrelevant (automatisch gesetzt)."
-    },
-    {
-     "question": "qa_aufzugsart",
-     "role": "MODIFIER",
-     "required_mode": "ALWAYS",
-     "notes": "Pflicht, weil bewertungsrelevant (automatisch gesetzt)."
-    }
-   ],
-   "sources": [
-    {
-     "type": "EN",
-     "document": "DIN EN 81-20",
-     "section": "5.6.7"
-    },
-    {
-     "type": "EN",
-     "document": "DIN EN 81-20",
-     "section": "5.9.2.2.2"
-    },
-    {
-     "type": "TRBS",
-     "document": "TRBS 3121",
-     "section": "Anh. 1 Nr. 16 (UCM und Aufwärts-Übergeschwindigkeit bei Seilaufzügen)"
-    }
-   ],
-   "hazard_factor": "Mechanische Gefährdung durch unkontrollierte Bewegung bei geöffneten Türen",
-   "person_groups": [
-    "Nutzer"
-   ],
-   "ui_group": "K – Fahrkorb",
-   "review_ids": [
-    "K-K08",
-    "K-K11",
-    "K-K12"
-   ]
-  },
-  {
    "code": "MF-K13",
    "domain": "GBU",
    "title": "Fehlender Schutz gegen Übergeschwindigkeit aufwärts / Sturz nach oben",
@@ -8608,76 +7527,6 @@
      "type": "EN",
      "document": "DIN EN 81-20",
      "section": "5.6.6"
-    },
-    {
-     "type": "TRBS",
-     "document": "TRBS 3121",
-     "section": "Anh. 1 Nr. 16 (UCM und Aufwärts-Übergeschwindigkeit bei Seilaufzügen)"
-    }
-   ],
-   "hazard_factor": "Mechanische Gefährdung durch Beschleunigung und Abbremsung (kinetische Energie)",
-   "person_groups": [
-    "Nutzer"
-   ],
-   "ui_group": "K – Fahrkorb"
-  },
-  {
-   "code": "MF-K14",
-   "domain": "GBU",
-   "title": "Statisch unbestimmt gelagerte Antriebswelle (3-Punkt-Lagerung)",
-   "category": "Antrieb, Bremse und Hydraulik",
-   "aggregation_type": "NONE",
-   "evaluation_mode": "STANDARD",
-   "questions": [
-    {
-     "question": "qa_aufzugsart",
-     "role": "APPLICABILITY",
-     "required_mode": "NEVER",
-     "applicable_when": {
-      "question": "qa_aufzugsart",
-      "operator": "IN",
-      "value": [
-       "seil",
-       "trommel",
-       "seil_hydraulik"
-      ]
-     }
-    },
-    {
-     "question": "qa_lagerung_statisch_bestimmt",
-     "role": "TRIGGER",
-     "required_mode": "ALWAYS"
-    },
-    {
-     "question": "qk_schutz_aufwaerts",
-     "role": "COMPENSATION",
-     "required_mode": "CONDITIONAL",
-     "required_when": {
-      "all": [
-       {
-        "question": "qa_aufzugsart",
-        "operator": "IN",
-        "value": [
-         "seil",
-         "trommel",
-         "seil_hydraulik"
-        ]
-       },
-       {
-        "question": "qa_gegengewicht",
-        "operator": "EQ",
-        "value": true
-       }
-      ]
-     },
-     "notes": "Pflicht, weil bewertungsrelevant (automatisch gesetzt)."
-    }
-   ],
-   "sources": [
-    {
-     "type": "EN",
-     "document": "DIN EN 81-20",
-     "section": "5.9.2.2.2"
     },
     {
      "type": "TRBS",
@@ -8804,43 +7653,6 @@
     "K-F01",
     "K-F02"
    ]
-  },
-  {
-   "code": "MF-F02",
-   "domain": "GBU",
-   "title": "Einzugsgefahr an Rollen im Schachtkopf / auf dem Fahrkorbdach",
-   "category": "Fahrkorbdach und Schachtkopf",
-   "aggregation_type": "MAXIMUM",
-   "evaluation_mode": "STANDARD",
-   "questions": [
-    {
-     "question": "qf_einzugstellen",
-     "role": "TRIGGER",
-     "required_mode": "ALWAYS"
-    },
-    {
-     "question": "qf_einzug_abdeckung",
-     "role": "TRIGGER",
-     "required_mode": "CONDITIONAL",
-     "required_when": {
-      "question": "qf_einzugstellen",
-      "operator": "EQ",
-      "value": true
-     }
-    }
-   ],
-   "sources": [
-    {
-     "type": "EN",
-     "document": "DIN EN 81-20",
-     "section": "5.5.7"
-    }
-   ],
-   "hazard_factor": "Mechanische Gefährdung durch rotierende Teile (Erfassen, Einziehen)",
-   "person_groups": [
-    "Wartungspersonal"
-   ],
-   "ui_group": "F – Fahrkorbdach und Schachtkopf"
   },
   {
    "code": "MF-F03",
@@ -9105,36 +7917,6 @@
     "Wartungspersonal"
    ],
    "ui_group": "F – Fahrkorbdach und Schachtkopf"
-  },
-  {
-   "code": "MF-F08",
-   "domain": "GBU",
-   "title": "Fehlende Notbeleuchtung auf dem Fahrkorbdach",
-   "category": "Beleuchtung",
-   "aggregation_type": "NONE",
-   "evaluation_mode": "STANDARD",
-   "questions": [
-    {
-     "question": "qf_notbeleuchtung",
-     "role": "TRIGGER",
-     "required_mode": "ALWAYS"
-    }
-   ],
-   "sources": [
-    {
-     "type": "EN",
-     "document": "DIN EN 81-20",
-     "section": "5.4.10.4"
-    }
-   ],
-   "hazard_factor": "Gefährdung durch Arbeitsumgebungsbedingungen (unzureichende Beleuchtung)",
-   "person_groups": [
-    "Wartungspersonal"
-   ],
-   "ui_group": "F – Fahrkorbdach und Schachtkopf",
-   "review_ids": [
-    "K-F04"
-   ]
   },
   {
    "code": "MF-F09",
@@ -9434,56 +8216,6 @@
     "Nutzer"
    ],
    "ui_group": "S – Schacht"
-  },
-  {
-   "code": "MF-S06",
-   "domain": "GBU",
-   "title": "Aufzugsfremde Einrichtungen im Schacht",
-   "category": "Schacht und Gegengewicht",
-   "aggregation_type": "NONE",
-   "evaluation_mode": "STANDARD",
-   "questions": [
-    {
-     "question": "qs_fremd_frei",
-     "role": "TRIGGER",
-     "required_mode": "ALWAYS"
-    },
-    {
-     "question": "qs_fremd_fachgerecht",
-     "role": "COMPENSATION",
-     "required_mode": "CONDITIONAL",
-     "required_when": {
-      "question": "qs_fremd_frei",
-      "operator": "EQ",
-      "value": false
-     }
-    },
-    {
-     "question": "qs_fremd_behindert",
-     "role": "TRIGGER",
-     "required_mode": "CONDITIONAL",
-     "required_when": {
-      "question": "qs_fremd_frei",
-      "operator": "EQ",
-      "value": false
-     }
-    }
-   ],
-   "sources": [
-    {
-     "type": "EN",
-     "document": "DIN EN 81-20",
-     "section": "5.2.1.2"
-    }
-   ],
-   "hazard_factor": "Mechanische Gefährdung durch Stolpern, Rutschen, Stürzen",
-   "person_groups": [
-    "Wartungspersonal"
-   ],
-   "ui_group": "S – Schacht",
-   "review_ids": [
-    "K-S03"
-   ]
   },
   {
    "code": "MF-S07",
@@ -10999,112 +9731,6 @@
  ],
  "rules": [
   {
-   "hazard": "MF-Z01",
-   "code": "MF-Z01-R1",
-   "priority": 100,
-   "condition": {
-    "question": "qz_bel_vorhanden",
-    "operator": "EQ",
-    "value": false
-   },
-   "result": "HIGH",
-   "origin": "OWN_RULE",
-   "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "REVIEW_REQUIRED",
-   "measures": [
-    {
-     "measure": "m_47b4aeebb3",
-     "group_id": "sofort",
-     "relation": "SINGLE",
-     "mandatory": true
-    },
-    {
-     "measure": "m_2e29560129",
-     "group_id": "mittel",
-     "relation": "SINGLE",
-     "mandatory": true
-    }
-   ]
-  },
-  {
-   "hazard": "MF-Z01",
-   "code": "MF-Z01-R2",
-   "priority": 100,
-   "condition": {
-    "question": "qz_bel_ausreichend",
-    "operator": "EQ",
-    "value": false
-   },
-   "result": "MEDIUM",
-   "origin": "OWN_RULE",
-   "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "REVIEW_REQUIRED",
-   "measures": [
-    {
-     "measure": "m_47b4aeebb3",
-     "group_id": "sofort",
-     "relation": "SINGLE",
-     "mandatory": true
-    },
-    {
-     "measure": "m_69dc2c175e",
-     "group_id": "mittel",
-     "relation": "SINGLE",
-     "mandatory": true
-    }
-   ]
-  },
-  {
-   "hazard": "MF-Z01",
-   "code": "MF-Z01-R3",
-   "priority": 100,
-   "condition": {
-    "question": "qz_bel_defekt",
-    "operator": "EQ",
-    "value": true
-   },
-   "result": "MEDIUM",
-   "origin": "OWN_RULE",
-   "evidence": "INFERRED",
-   "quality_status": "REVIEW_REQUIRED",
-   "measures": [
-    {
-     "measure": "m_fceb55b9fb",
-     "group_id": "sofort",
-     "relation": "SINGLE",
-     "mandatory": true
-    },
-    {
-     "measure": "m_fa94ecf52d",
-     "group_id": "mittel",
-     "relation": "SINGLE",
-     "mandatory": true
-    }
-   ]
-  },
-  {
-   "hazard": "MF-Z01",
-   "code": "MF-Z01-R4",
-   "priority": 1,
-   "condition": {
-    "question": "qz_bel_vorhanden",
-    "operator": "ANSWERED"
-   },
-   "result": "NO_RISK",
-   "origin": "OWN_RULE",
-   "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "REVIEW_REQUIRED",
-   "measures": [
-    {
-     "measure": "m_148f9590b0",
-     "group_id": "sofort",
-     "relation": "SINGLE",
-     "mandatory": true
-    }
-   ],
-   "notes": "Kein Risiko: keine Mangelregel trifft zu, alle Pflichtfragen beantwortet."
-  },
-  {
    "hazard": "MF-Z02",
    "code": "MF-Z02-R1",
    "priority": 100,
@@ -11318,324 +9944,6 @@
    "notes": "Kein Risiko: keine Mangelregel trifft zu, alle Pflichtfragen beantwortet."
   },
   {
-   "hazard": "MF-Z04",
-   "code": "MF-Z04-R1",
-   "priority": 100,
-   "condition": {
-    "all": [
-     {
-      "question": "qz_absturzkante",
-      "operator": "EQ",
-      "value": true
-     },
-     {
-      "question": "qz_absturz_gesichert",
-      "operator": "EQ",
-      "value": false
-     },
-     {
-      "question": "qz_absturz_gekennzeichnet",
-      "operator": "EQ",
-      "value": false
-     }
-    ]
-   },
-   "result": "HIGH",
-   "origin": "OWN_RULE",
-   "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "REVIEW_REQUIRED",
-   "measures": [
-    {
-     "measure": "m_ec525aebc6",
-     "group_id": "sofort",
-     "relation": "SINGLE",
-     "mandatory": true
-    },
-    {
-     "measure": "m_479e8dfc86",
-     "group_id": "mittel",
-     "relation": "SINGLE",
-     "mandatory": true
-    }
-   ]
-  },
-  {
-   "hazard": "MF-Z04",
-   "code": "MF-Z04-R2",
-   "priority": 100,
-   "condition": {
-    "all": [
-     {
-      "question": "qz_absturzkante",
-      "operator": "EQ",
-      "value": true
-     },
-     {
-      "question": "qz_absturz_gesichert",
-      "operator": "EQ",
-      "value": false
-     },
-     {
-      "question": "qz_absturz_gekennzeichnet",
-      "operator": "EQ",
-      "value": true
-     }
-    ]
-   },
-   "result": "MEDIUM",
-   "origin": "OWN_RULE",
-   "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "REVIEW_REQUIRED",
-   "measures": [
-    {
-     "measure": "m_40414264fd",
-     "group_id": "sofort",
-     "relation": "SINGLE",
-     "mandatory": true
-    },
-    {
-     "measure": "m_85a4f8634a",
-     "group_id": "mittel",
-     "relation": "SINGLE",
-     "mandatory": true
-    }
-   ]
-  },
-  {
-   "hazard": "MF-Z04",
-   "code": "MF-Z04-R3",
-   "priority": 100,
-   "condition": {
-    "question": "qz_uebersteigen",
-    "operator": "EQ",
-    "value": true
-   },
-   "result": "HIGH",
-   "origin": "OWN_RULE",
-   "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "REVIEW_REQUIRED",
-   "measures": [
-    {
-     "measure": "m_2147973cd8",
-     "group_id": "sofort",
-     "relation": "SINGLE",
-     "mandatory": true
-    },
-    {
-     "measure": "m_68daecd6c5",
-     "group_id": "mittel",
-     "relation": "SINGLE",
-     "mandatory": true
-    }
-   ]
-  },
-  {
-   "hazard": "MF-Z04",
-   "code": "MF-Z04-R4",
-   "priority": 1,
-   "condition": {
-    "question": "qz_absturzkante",
-    "operator": "ANSWERED"
-   },
-   "result": "NO_RISK",
-   "origin": "OWN_RULE",
-   "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "REVIEW_REQUIRED",
-   "measures": [
-    {
-     "measure": "m_148f9590b0",
-     "group_id": "sofort",
-     "relation": "SINGLE",
-     "mandatory": true
-    }
-   ],
-   "notes": "Kein Risiko: keine Mangelregel trifft zu, alle Pflichtfragen beantwortet."
-  },
-  {
-   "hazard": "MF-Z05",
-   "code": "MF-Z05-R1",
-   "priority": 100,
-   "condition": {
-    "question": "qz_von_innen",
-    "operator": "EQ",
-    "value": "nein"
-   },
-   "result": "HIGH",
-   "origin": "OWN_RULE",
-   "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "REVIEW_REQUIRED",
-   "measures": [
-    {
-     "measure": "m_bf008b7103",
-     "group_id": "sofort",
-     "relation": "SINGLE",
-     "mandatory": true
-    },
-    {
-     "measure": "m_2e60d7e71e",
-     "group_id": "mittel",
-     "relation": "SINGLE",
-     "mandatory": true
-    }
-   ]
-  },
-  {
-   "hazard": "MF-Z05",
-   "code": "MF-Z05-R2",
-   "priority": 100,
-   "condition": {
-    "question": "qz_von_innen",
-    "operator": "EQ",
-    "value": "schluessel_hinterlegt"
-   },
-   "result": "MEDIUM",
-   "origin": "OWN_RULE",
-   "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "REVIEW_REQUIRED",
-   "measures": [
-    {
-     "measure": "m_ed78c06e8a",
-     "group_id": "sofort",
-     "relation": "SINGLE",
-     "mandatory": true
-    },
-    {
-     "measure": "m_58572be54a",
-     "group_id": "mittel",
-     "relation": "SINGLE",
-     "mandatory": true
-    }
-   ]
-  },
-  {
-   "hazard": "MF-Z05",
-   "code": "MF-Z05-R3",
-   "priority": 1,
-   "condition": {
-    "question": "qz_von_innen",
-    "operator": "ANSWERED"
-   },
-   "result": "NO_RISK",
-   "origin": "OWN_RULE",
-   "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "REVIEW_REQUIRED",
-   "measures": [
-    {
-     "measure": "m_148f9590b0",
-     "group_id": "sofort",
-     "relation": "SINGLE",
-     "mandatory": true
-    }
-   ],
-   "notes": "Kein Risiko: keine Mangelregel trifft zu, alle Pflichtfragen beantwortet."
-  },
-  {
-   "hazard": "MF-Z06",
-   "code": "MF-Z06-R1",
-   "priority": 100,
-   "condition": {
-    "question": "qz_durch_fremde",
-    "operator": "EQ",
-    "value": "wohnung"
-   },
-   "result": "HIGH",
-   "origin": "OWN_RULE",
-   "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "REVIEW_REQUIRED",
-   "measures": [
-    {
-     "measure": "m_007e0b5551",
-     "group_id": "sofort",
-     "relation": "SINGLE",
-     "mandatory": true
-    },
-    {
-     "measure": "m_695de193b1",
-     "group_id": "mittel",
-     "relation": "SINGLE",
-     "mandatory": true
-    }
-   ]
-  },
-  {
-   "hazard": "MF-Z06",
-   "code": "MF-Z06-R2",
-   "priority": 100,
-   "condition": {
-    "question": "qz_durch_fremde",
-    "operator": "EQ",
-    "value": "arbeits_lager"
-   },
-   "result": "MEDIUM",
-   "origin": "OWN_RULE",
-   "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "REVIEW_REQUIRED",
-   "measures": [
-    {
-     "measure": "m_b154da3f2c",
-     "group_id": "sofort",
-     "relation": "SINGLE",
-     "mandatory": true
-    },
-    {
-     "measure": "m_6849d174cb",
-     "group_id": "mittel",
-     "relation": "SINGLE",
-     "mandatory": true
-    }
-   ]
-  },
-  {
-   "hazard": "MF-Z06",
-   "code": "MF-Z06-R3",
-   "priority": 100,
-   "condition": {
-    "question": "qz_material_erschwert",
-    "operator": "EQ",
-    "value": true
-   },
-   "result": "MEDIUM",
-   "origin": "OWN_RULE",
-   "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "REVIEW_REQUIRED",
-   "measures": [
-    {
-     "measure": "m_beb7ce7d5b",
-     "group_id": "sofort",
-     "relation": "SINGLE",
-     "mandatory": true
-    },
-    {
-     "measure": "m_060eda56bd",
-     "group_id": "mittel",
-     "relation": "SINGLE",
-     "mandatory": true
-    }
-   ]
-  },
-  {
-   "hazard": "MF-Z06",
-   "code": "MF-Z06-R4",
-   "priority": 1,
-   "condition": {
-    "question": "qz_durch_fremde",
-    "operator": "ANSWERED"
-   },
-   "result": "NO_RISK",
-   "origin": "OWN_RULE",
-   "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "REVIEW_REQUIRED",
-   "measures": [
-    {
-     "measure": "m_148f9590b0",
-     "group_id": "sofort",
-     "relation": "SINGLE",
-     "mandatory": true
-    }
-   ],
-   "notes": "Kein Risiko: keine Mangelregel trifft zu, alle Pflichtfragen beantwortet."
-  },
-  {
    "hazard": "MF-Z07",
    "code": "MF-Z07-R1",
    "priority": 100,
@@ -11753,202 +10061,6 @@
    "priority": 1,
    "condition": {
     "question": "qz_tuer_vorhanden",
-    "operator": "ANSWERED"
-   },
-   "result": "NO_RISK",
-   "origin": "OWN_RULE",
-   "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "REVIEW_REQUIRED",
-   "measures": [
-    {
-     "measure": "m_148f9590b0",
-     "group_id": "sofort",
-     "relation": "SINGLE",
-     "mandatory": true
-    }
-   ],
-   "notes": "Kein Risiko: keine Mangelregel trifft zu, alle Pflichtfragen beantwortet."
-  },
-  {
-   "hazard": "MF-Z08",
-   "code": "MF-Z08-R1",
-   "priority": 100,
-   "condition": {
-    "question": "qz_flucht_frei",
-    "operator": "EQ",
-    "value": false
-   },
-   "result": "LOW",
-   "origin": "OWN_RULE",
-   "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "VERIFIED",
-   "measures": [
-    {
-     "measure": "m_c2c1e40490",
-     "group_id": "sofort",
-     "relation": "SINGLE",
-     "mandatory": true
-    },
-    {
-     "measure": "m_f2d3693652",
-     "group_id": "mittel",
-     "relation": "SINGLE",
-     "mandatory": true
-    }
-   ],
-   "notes": "Entscheidung 02.09.2026: Niedrig (nur Instandhaltungspersonal betroffen, wie Schindler M120). Entschieden 2026-09-02: K-Z02."
-  },
-  {
-   "hazard": "MF-Z08",
-   "code": "MF-Z08-R2",
-   "priority": 100,
-   "condition": {
-    "question": "qz_flucht_gekennz",
-    "operator": "EQ",
-    "value": false
-   },
-   "result": "LOW",
-   "origin": "OWN_RULE",
-   "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "VERIFIED",
-   "measures": [
-    {
-     "measure": "m_387cdf25f4",
-     "group_id": "sofort",
-     "relation": "SINGLE",
-     "mandatory": true
-    },
-    {
-     "measure": "m_8b91a99033",
-     "group_id": "mittel",
-     "relation": "SINGLE",
-     "mandatory": true
-    }
-   ],
-   "notes": "Entschieden 2026-09-02: K-Z02."
-  },
-  {
-   "hazard": "MF-Z08",
-   "code": "MF-Z08-R3",
-   "priority": 100,
-   "condition": {
-    "question": "qz_flucht_eingeengt",
-    "operator": "EQ",
-    "value": true
-   },
-   "result": "LOW",
-   "origin": "OWN_RULE",
-   "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "VERIFIED",
-   "measures": [
-    {
-     "measure": "m_cf8f43b0db",
-     "group_id": "sofort",
-     "relation": "SINGLE",
-     "mandatory": true
-    },
-    {
-     "measure": "m_54f17dadcc",
-     "group_id": "mittel",
-     "relation": "SINGLE",
-     "mandatory": true
-    }
-   ],
-   "notes": "Entschieden 2026-09-02: K-Z02."
-  },
-  {
-   "hazard": "MF-Z08",
-   "code": "MF-Z08-R4",
-   "priority": 1,
-   "condition": {
-    "question": "qz_flucht_frei",
-    "operator": "ANSWERED"
-   },
-   "result": "NO_RISK",
-   "origin": "OWN_RULE",
-   "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "REVIEW_REQUIRED",
-   "measures": [
-    {
-     "measure": "m_148f9590b0",
-     "group_id": "sofort",
-     "relation": "SINGLE",
-     "mandatory": true
-    }
-   ],
-   "notes": "Kein Risiko: keine Mangelregel trifft zu, alle Pflichtfragen beantwortet."
-  },
-  {
-   "hazard": "MF-Z09",
-   "code": "MF-Z09-R1",
-   "priority": 100,
-   "condition": {
-    "question": "qz_zugang_befreiung",
-    "operator": "EQ",
-    "value": "nein"
-   },
-   "result": "HIGH",
-   "origin": "OWN_RULE",
-   "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "REVIEW_REQUIRED",
-   "measures": [
-    {
-     "measure": "m_b4c25df55d",
-     "group_id": "sofort",
-     "relation": "SINGLE",
-     "mandatory": true
-    },
-    {
-     "measure": "m_6ca8bc445d",
-     "group_id": "mittel",
-     "relation": "SINGLE",
-     "mandatory": true
-    }
-   ]
-  },
-  {
-   "hazard": "MF-Z09",
-   "code": "MF-Z09-R2",
-   "priority": 100,
-   "condition": {
-    "question": "qz_zugang_befreiung",
-    "operator": "EQ",
-    "value": "leitwarte"
-   },
-   "result": "MEDIUM",
-   "origin": "OWN_RULE",
-   "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "REVIEW_REQUIRED",
-   "measures": [
-    {
-     "measure": "m_92e8a845db",
-     "group_id": "mittel",
-     "relation": "SINGLE",
-     "mandatory": true
-    }
-   ]
-  },
-  {
-   "hazard": "MF-Z09",
-   "code": "MF-Z09-R3",
-   "priority": 100,
-   "condition": {
-    "question": "qz_zugang_befreiung",
-    "operator": "EQ",
-    "value": "jederzeit"
-   },
-   "result": "NO_RISK",
-   "origin": "OWN_RULE",
-   "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "VERIFIED",
-   "notes": "Entschieden 2026-09-02: K-Z01."
-  },
-  {
-   "hazard": "MF-Z09",
-   "code": "MF-Z09-R4",
-   "priority": 1,
-   "condition": {
-    "question": "qz_zugang_befreiung",
     "operator": "ANSWERED"
    },
    "result": "NO_RISK",
@@ -13525,113 +11637,6 @@
    "notes": "Kein Risiko: keine Mangelregel trifft zu, alle Pflichtfragen beantwortet."
   },
   {
-   "hazard": "MF-M16",
-   "code": "MF-M16-R1",
-   "priority": 100,
-   "condition": {
-    "question": "qm_potenzialausgleich",
-    "operator": "EQ",
-    "value": false
-   },
-   "result": "MEDIUM",
-   "origin": "OWN_RULE",
-   "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "VERIFIED",
-   "measures": [
-    {
-     "measure": "m_76368d7b21",
-     "group_id": "sofort",
-     "relation": "SINGLE",
-     "mandatory": true
-    },
-    {
-     "measure": "m_db40f86a43",
-     "group_id": "mittel",
-     "relation": "SINGLE",
-     "mandatory": true
-    }
-   ],
-   "notes": "Entschieden 2026-09-02: K-M06."
-  },
-  {
-   "hazard": "MF-M16",
-   "code": "MF-M16-R2",
-   "priority": 100,
-   "condition": {
-    "question": "qm_bauseitig_ok",
-    "operator": "EQ",
-    "value": false
-   },
-   "result": "HIGH",
-   "origin": "OWN_RULE",
-   "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "REVIEW_REQUIRED",
-   "measures": [
-    {
-     "measure": "m_e23f71c7f8",
-     "group_id": "sofort",
-     "relation": "SINGLE",
-     "mandatory": true
-    },
-    {
-     "measure": "m_5c610a715a",
-     "group_id": "mittel",
-     "relation": "SINGLE",
-     "mandatory": true
-    }
-   ]
-  },
-  {
-   "hazard": "MF-M16",
-   "code": "MF-M16-R3",
-   "priority": 100,
-   "condition": {
-    "question": "qm_ortsfest_geprueft",
-    "operator": "EQ",
-    "value": false
-   },
-   "result": "MEDIUM",
-   "origin": "OWN_RULE",
-   "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "REVIEW_REQUIRED",
-   "measures": [
-    {
-     "measure": "m_157caa0ef9",
-     "group_id": "sofort",
-     "relation": "SINGLE",
-     "mandatory": true
-    },
-    {
-     "measure": "m_b7f6ff2b93",
-     "group_id": "mittel",
-     "relation": "SINGLE",
-     "mandatory": true
-    }
-   ]
-  },
-  {
-   "hazard": "MF-M16",
-   "code": "MF-M16-R4",
-   "priority": 1,
-   "condition": {
-    "question": "qm_potenzialausgleich",
-    "operator": "ANSWERED"
-   },
-   "result": "NO_RISK",
-   "origin": "OWN_RULE",
-   "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "REVIEW_REQUIRED",
-   "measures": [
-    {
-     "measure": "m_148f9590b0",
-     "group_id": "sofort",
-     "relation": "SINGLE",
-     "mandatory": true
-    }
-   ],
-   "notes": "Kein Risiko: keine Mangelregel trifft zu, alle Pflichtfragen beantwortet."
-  },
-  {
    "hazard": "MF-M17",
    "code": "MF-M17-R1",
    "priority": 100,
@@ -13870,56 +11875,6 @@
    "priority": 1,
    "condition": {
     "question": "qm_sprechverbindung",
-    "operator": "ANSWERED"
-   },
-   "result": "NO_RISK",
-   "origin": "OWN_RULE",
-   "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "REVIEW_REQUIRED",
-   "measures": [
-    {
-     "measure": "m_148f9590b0",
-     "group_id": "sofort",
-     "relation": "SINGLE",
-     "mandatory": true
-    }
-   ],
-   "notes": "Kein Risiko: keine Mangelregel trifft zu, alle Pflichtfragen beantwortet."
-  },
-  {
-   "hazard": "MF-M19",
-   "code": "MF-M19-R1",
-   "priority": 100,
-   "condition": {
-    "question": "qm_fremd_frei",
-    "operator": "EQ",
-    "value": false
-   },
-   "result": "MEDIUM",
-   "origin": "OWN_RULE",
-   "evidence": "INFERRED",
-   "quality_status": "REVIEW_REQUIRED",
-   "measures": [
-    {
-     "measure": "m_942963274b",
-     "group_id": "sofort",
-     "relation": "SINGLE",
-     "mandatory": true
-    },
-    {
-     "measure": "m_e007894bda",
-     "group_id": "mittel",
-     "relation": "SINGLE",
-     "mandatory": true
-    }
-   ]
-  },
-  {
-   "hazard": "MF-M19",
-   "code": "MF-M19-R2",
-   "priority": 1,
-   "condition": {
-    "question": "qm_fremd_frei",
     "operator": "ANSWERED"
    },
    "result": "NO_RISK",
@@ -16292,195 +14247,6 @@
    "notes": "Kein Risiko: keine Mangelregel trifft zu, alle Pflichtfragen beantwortet."
   },
   {
-   "hazard": "MF-K12",
-   "code": "MF-K12-R1",
-   "priority": 300,
-   "condition": {
-    "all": [
-     {
-      "question": "qa_ucm_a3",
-      "operator": "EQ",
-      "value": false
-     },
-     {
-      "any": [
-       {
-        "question": "qk_ucm_sr_modul",
-        "operator": "EQ",
-        "value": true
-       },
-       {
-        "question": "qa_aufzugsart",
-        "operator": "IN",
-        "value": [
-         "hydraulik",
-         "seil_hydraulik"
-        ]
-       }
-      ]
-     }
-    ]
-   },
-   "result": "HIGH",
-   "origin": "OWN_RULE",
-   "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "VERIFIED",
-   "measures": [
-    {
-     "measure": "m_45ff96ee2d",
-     "group_id": "mittel",
-     "relation": "SINGLE",
-     "mandatory": true
-    }
-   ],
-   "notes": "Entscheidung 02.09.2026: Hydraulikaufzug hat immer eine Türüberbrückung (Nachregulieren bei Druckverlust) – ohne UCM daher Hoch wie bei Seilaufzügen mit SR-Modul. Entschieden 2026-09-02: K-K12."
-  },
-  {
-   "hazard": "MF-K12",
-   "code": "MF-K12-R2",
-   "priority": 250,
-   "condition": {
-    "all": [
-     {
-      "question": "qa_ucm_a3",
-      "operator": "EQ",
-      "value": false
-     },
-     {
-      "question": "qk_ucm_sr_modul",
-      "operator": "EQ",
-      "value": false
-     },
-     {
-      "question": "qm_zweikreisbremse",
-      "operator": "EQ",
-      "value": true
-     },
-     {
-      "question": "qm_bremse_ueberwacht",
-      "operator": "EQ",
-      "value": true
-     },
-     {
-      "question": "qa_lagerung_statisch_bestimmt",
-      "operator": "EQ",
-      "value": true
-     }
-    ]
-   },
-   "result": "LOW",
-   "origin": "OWN_RULE",
-   "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "VERIFIED",
-   "measures": [
-    {
-     "measure": "m_169a764b0c",
-     "group_id": "sofort",
-     "relation": "SINGLE",
-     "mandatory": true
-    },
-    {
-     "measure": "m_78ee293621",
-     "group_id": "mittel",
-     "relation": "SINGLE",
-     "mandatory": true
-    }
-   ],
-   "notes": "Entschieden 2026-09-02: K-K08."
-  },
-  {
-   "hazard": "MF-K12",
-   "code": "MF-K12-R3",
-   "priority": 245,
-   "condition": {
-    "all": [
-     {
-      "question": "qa_ucm_a3",
-      "operator": "EQ",
-      "value": false
-     },
-     {
-      "question": "qk_ucm_sr_modul",
-      "operator": "EQ",
-      "value": false
-     },
-     {
-      "question": "qm_zweikreisbremse",
-      "operator": "EQ",
-      "value": true
-     },
-     {
-      "question": "qa_lagerung_statisch_bestimmt",
-      "operator": "EQ",
-      "value": true
-     }
-    ]
-   },
-   "result": "MEDIUM",
-   "origin": "OWN_RULE",
-   "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "VERIFIED",
-   "measures": [
-    {
-     "measure": "m_e8bffc6847",
-     "group_id": "mittel",
-     "relation": "SINGLE",
-     "mandatory": true
-    }
-   ],
-   "notes": "TRBS 3121 Anh. 1 Nr. 16: statisch bestimmte Lagerung und Zweikreisbremse (ohne Überwachung) ausdrücklich mittleres Risiko. Entschieden 2026-09-02: K-K11."
-  },
-  {
-   "hazard": "MF-K12",
-   "code": "MF-K12-R4",
-   "priority": 100,
-   "condition": {
-    "question": "qa_ucm_a3",
-    "operator": "EQ",
-    "value": false
-   },
-   "result": "HIGH",
-   "origin": "OWN_RULE",
-   "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "REVIEW_REQUIRED",
-   "measures": [
-    {
-     "measure": "m_84c0bed95a",
-     "group_id": "sofort",
-     "relation": "SINGLE",
-     "mandatory": true
-    },
-    {
-     "measure": "m_899a1c9193",
-     "group_id": "mittel",
-     "relation": "SINGLE",
-     "mandatory": true
-    }
-   ]
-  },
-  {
-   "hazard": "MF-K12",
-   "code": "MF-K12-R5",
-   "priority": 1,
-   "condition": {
-    "question": "qa_ucm_a3",
-    "operator": "ANSWERED"
-   },
-   "result": "NO_RISK",
-   "origin": "OWN_RULE",
-   "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "REVIEW_REQUIRED",
-   "measures": [
-    {
-     "measure": "m_148f9590b0",
-     "group_id": "sofort",
-     "relation": "SINGLE",
-     "mandatory": true
-    }
-   ],
-   "notes": "Kein Risiko: keine Mangelregel trifft zu, alle Pflichtfragen beantwortet."
-  },
-  {
    "hazard": "MF-K13",
    "code": "MF-K13-R1",
    "priority": 100,
@@ -16514,94 +14280,6 @@
    "priority": 1,
    "condition": {
     "question": "qk_schutz_aufwaerts",
-    "operator": "ANSWERED"
-   },
-   "result": "NO_RISK",
-   "origin": "OWN_RULE",
-   "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "REVIEW_REQUIRED",
-   "measures": [
-    {
-     "measure": "m_148f9590b0",
-     "group_id": "sofort",
-     "relation": "SINGLE",
-     "mandatory": true
-    }
-   ],
-   "notes": "Kein Risiko: keine Mangelregel trifft zu, alle Pflichtfragen beantwortet."
-  },
-  {
-   "hazard": "MF-K14",
-   "code": "MF-K14-R1",
-   "priority": 200,
-   "condition": {
-    "all": [
-     {
-      "question": "qa_lagerung_statisch_bestimmt",
-      "operator": "EQ",
-      "value": false
-     },
-     {
-      "question": "qk_schutz_aufwaerts",
-      "operator": "EQ",
-      "value": "aktiv"
-     }
-    ]
-   },
-   "result": "LOW",
-   "origin": "OWN_RULE",
-   "evidence": "INFERRED",
-   "quality_status": "REVIEW_REQUIRED",
-   "measures": [
-    {
-     "measure": "m_19f345ba43",
-     "group_id": "sofort",
-     "relation": "SINGLE",
-     "mandatory": true
-    },
-    {
-     "measure": "m_76892426c2",
-     "group_id": "mittel",
-     "relation": "SINGLE",
-     "mandatory": true
-    }
-   ],
-   "notes": "Blaupause Schindler M004: 3-Punkt-Lagerung mit SAFÜ = Niedrig (DIRECT belegt)."
-  },
-  {
-   "hazard": "MF-K14",
-   "code": "MF-K14-R2",
-   "priority": 100,
-   "condition": {
-    "question": "qa_lagerung_statisch_bestimmt",
-    "operator": "EQ",
-    "value": false
-   },
-   "result": "HIGH",
-   "origin": "OWN_RULE",
-   "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "REVIEW_REQUIRED",
-   "measures": [
-    {
-     "measure": "m_2c71e5a0e9",
-     "group_id": "sofort",
-     "relation": "SINGLE",
-     "mandatory": true
-    },
-    {
-     "measure": "m_321509bb31",
-     "group_id": "mittel",
-     "relation": "SINGLE",
-     "mandatory": true
-    }
-   ]
-  },
-  {
-   "hazard": "MF-K14",
-   "code": "MF-K14-R3",
-   "priority": 1,
-   "condition": {
-    "question": "qa_lagerung_statisch_bestimmt",
     "operator": "ANSWERED"
    },
    "result": "NO_RISK",
@@ -16951,84 +14629,6 @@
    "priority": 1,
    "condition": {
     "question": "qf_spalt_mm",
-    "operator": "ANSWERED"
-   },
-   "result": "NO_RISK",
-   "origin": "OWN_RULE",
-   "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "REVIEW_REQUIRED",
-   "measures": [
-    {
-     "measure": "m_148f9590b0",
-     "group_id": "sofort",
-     "relation": "SINGLE",
-     "mandatory": true
-    }
-   ],
-   "notes": "Kein Risiko: keine Mangelregel trifft zu, alle Pflichtfragen beantwortet."
-  },
-  {
-   "hazard": "MF-F02",
-   "code": "MF-F02-R1",
-   "priority": 100,
-   "condition": {
-    "question": "qf_einzug_abdeckung",
-    "operator": "EQ",
-    "value": "offen"
-   },
-   "result": "HIGH",
-   "origin": "OWN_RULE",
-   "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "REVIEW_REQUIRED",
-   "measures": [
-    {
-     "measure": "m_e024d9d4d2",
-     "group_id": "sofort",
-     "relation": "SINGLE",
-     "mandatory": true
-    },
-    {
-     "measure": "m_d0583d6d56",
-     "group_id": "mittel",
-     "relation": "SINGLE",
-     "mandatory": true
-    }
-   ]
-  },
-  {
-   "hazard": "MF-F02",
-   "code": "MF-F02-R2",
-   "priority": 100,
-   "condition": {
-    "question": "qf_einzug_abdeckung",
-    "operator": "EQ",
-    "value": "teilweise"
-   },
-   "result": "MEDIUM",
-   "origin": "OWN_RULE",
-   "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "REVIEW_REQUIRED",
-   "measures": [
-    {
-     "measure": "m_e024d9d4d2",
-     "group_id": "sofort",
-     "relation": "SINGLE",
-     "mandatory": true
-    },
-    {
-     "measure": "m_d0583d6d56",
-     "group_id": "mittel",
-     "relation": "SINGLE",
-     "mandatory": true
-    }
-   ]
-  },
-  {
-   "hazard": "MF-F02",
-   "code": "MF-F02-R3",
-   "priority": 1,
-   "condition": {
-    "question": "qf_einzugstellen",
     "operator": "ANSWERED"
    },
    "result": "NO_RISK",
@@ -17601,57 +15201,6 @@
    "notes": "Kein Risiko: keine Mangelregel trifft zu, alle Pflichtfragen beantwortet."
   },
   {
-   "hazard": "MF-F08",
-   "code": "MF-F08-R1",
-   "priority": 100,
-   "condition": {
-    "question": "qf_notbeleuchtung",
-    "operator": "EQ",
-    "value": false
-   },
-   "result": "HIGH",
-   "origin": "OWN_RULE",
-   "evidence": "INFERRED",
-   "quality_status": "VERIFIED",
-   "measures": [
-    {
-     "measure": "m_af53594a0e",
-     "group_id": "sofort",
-     "relation": "SINGLE",
-     "mandatory": true
-    },
-    {
-     "measure": "m_b4594e628b",
-     "group_id": "mittel",
-     "relation": "SINGLE",
-     "mandatory": true
-    }
-   ],
-   "notes": "Entschieden 2026-09-02: K-F04."
-  },
-  {
-   "hazard": "MF-F08",
-   "code": "MF-F08-R2",
-   "priority": 1,
-   "condition": {
-    "question": "qf_notbeleuchtung",
-    "operator": "ANSWERED"
-   },
-   "result": "NO_RISK",
-   "origin": "OWN_RULE",
-   "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "REVIEW_REQUIRED",
-   "measures": [
-    {
-     "measure": "m_148f9590b0",
-     "group_id": "sofort",
-     "relation": "SINGLE",
-     "mandatory": true
-    }
-   ],
-   "notes": "Kein Risiko: keine Mangelregel trifft zu, alle Pflichtfragen beantwortet."
-  },
-  {
    "hazard": "MF-F09",
    "code": "MF-F09-R1",
    "priority": 100,
@@ -18186,122 +15735,6 @@
    "priority": 1,
    "condition": {
     "question": "qs_fang",
-    "operator": "ANSWERED"
-   },
-   "result": "NO_RISK",
-   "origin": "OWN_RULE",
-   "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "REVIEW_REQUIRED",
-   "measures": [
-    {
-     "measure": "m_148f9590b0",
-     "group_id": "sofort",
-     "relation": "SINGLE",
-     "mandatory": true
-    }
-   ],
-   "notes": "Kein Risiko: keine Mangelregel trifft zu, alle Pflichtfragen beantwortet."
-  },
-  {
-   "hazard": "MF-S06",
-   "code": "MF-S06-R1",
-   "priority": 300,
-   "condition": {
-    "question": "qs_fremd_behindert",
-    "operator": "EQ",
-    "value": true
-   },
-   "result": "HIGH",
-   "origin": "OWN_RULE",
-   "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "REVIEW_REQUIRED",
-   "measures": [
-    {
-     "measure": "m_64ad879f9b",
-     "group_id": "sofort",
-     "relation": "SINGLE",
-     "mandatory": true
-    },
-    {
-     "measure": "m_0605883fea",
-     "group_id": "mittel",
-     "relation": "SINGLE",
-     "mandatory": true
-    }
-   ]
-  },
-  {
-   "hazard": "MF-S06",
-   "code": "MF-S06-R2",
-   "priority": 200,
-   "condition": {
-    "all": [
-     {
-      "question": "qs_fremd_frei",
-      "operator": "EQ",
-      "value": false
-     },
-     {
-      "question": "qs_fremd_fachgerecht",
-      "operator": "EQ",
-      "value": false
-     }
-    ]
-   },
-   "result": "HIGH",
-   "origin": "OWN_RULE",
-   "evidence": "INFERRED",
-   "quality_status": "REVIEW_REQUIRED",
-   "measures": [
-    {
-     "measure": "m_64ad879f9b",
-     "group_id": "sofort",
-     "relation": "SINGLE",
-     "mandatory": true
-    },
-    {
-     "measure": "m_0605883fea",
-     "group_id": "mittel",
-     "relation": "SINGLE",
-     "mandatory": true
-    }
-   ]
-  },
-  {
-   "hazard": "MF-S06",
-   "code": "MF-S06-R3",
-   "priority": 100,
-   "condition": {
-    "question": "qs_fremd_frei",
-    "operator": "EQ",
-    "value": false
-   },
-   "result": "MEDIUM",
-   "origin": "OWN_RULE",
-   "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "VERIFIED",
-   "measures": [
-    {
-     "measure": "m_c878ae9539",
-     "group_id": "sofort",
-     "relation": "SINGLE",
-     "mandatory": true
-    },
-    {
-     "measure": "m_c759367b33",
-     "group_id": "mittel",
-     "relation": "SINGLE",
-     "mandatory": true
-    }
-   ],
-   "notes": "Entschieden 2026-09-02: K-S03."
-  },
-  {
-   "hazard": "MF-S06",
-   "code": "MF-S06-R4",
-   "priority": 1,
-   "condition": {
-    "question": "qs_fremd_frei",
     "operator": "ANSWERED"
    },
    "result": "NO_RISK",

@@ -56,6 +56,45 @@ yn('qt_lichtgitter_ohne_tuer', 'Ohne Fahrkorbtür: Sicherheitslichtgitter vorhan
 yn('qt_scherengitter', 'Ohne Fahrkorbtür: Scherengitter vorhanden?', ui='8.9a',
    visible_when=no('qa_fahrkorbtuer'))
 
+# Ergaenzung 04.09.2026 (Lueckenschluss EN 81-80 Nr. 9, 26, 35):
+# EN 81-20 5.2.5.3.2 (Flaeche unterhalb der Schachttuerschwelle),
+# 5.3.5.3.2 (Rueckhalteeinrichtungen der Tuerblaetter),
+# 5.3.11 (Verbindung mehrteiliger Schachttuerblaetter).
+sel('qt_flaeche_unter_schwelle', 'Schachtwand unterhalb der Schachttürschwelle '
+    '(vertikale Fläche zur Entriegelungszone)', ui='7.12',
+    options=[('normgerecht', 'Durchgehende, glatte und harte vertikale Fläche in voller '
+                             'Höhe und Breite (EN 81-20 5.2.5.3.2)'),
+             ('maengel', 'Vorhanden, aber mit Mängeln (Vorsprünge über 5 mm, zu geringe '
+                         'Höhe oder Breite, nachgiebig, offene Fugen)'),
+             ('keine', 'Keine geschlossene Fläche (offene Konstruktion, Gitter, Mauerwerk '
+                       'mit Absätzen)')],
+    help='Schützt beim Verlassen des Fahrkorbs außerhalb der Haltestelle vor Absturz und '
+         'vor dem Einklemmen zwischen Fahrkorbschwelle und Schachtwand. Gefordert sind '
+         'mindestens die halbe Entriegelungszone + 50 mm Höhe und die lichte Zugangsbreite '
+         '+ 25 mm je Seite.')
+yn('qt_rueckhaltung_tuerblatt', 'Rückhalteeinrichtungen an den horizontal bewegten '
+   'Schacht-Schiebetüren vorhanden (Türblatt bleibt in seiner Lage, wenn ein '
+   'Führungselement versagt)?', ui='7.13',
+   help='EN 81-20 5.3.5.3.2. Auch die Aufhängung/Befestigung selbst prüfen: Ein Türblatt, '
+        'das aus der Führung fällt, gibt den Schacht frei.')
+yn('qt_fuehrung_tuerblatt_ok', 'Führungselemente, Hänger und Befestigungen der Türblätter '
+   'unbeschädigt und ohne auffälliges Spiel?', ui='7.13a')
+yn('qt_tuer_mehrteilig', 'Schachttüren mehrteilig (Teleskop- oder Mitteltür mit mehreren '
+   'Türblättern)?', ui='7.14')
+sel('qt_tuerblatt_verbindung', 'Verbindung der Türblätter mehrteiliger Schachttüren',
+    ui='7.14a',
+    options=[('direkt', 'Unmittelbar mechanisch verbunden (Ineinandergreifen, '
+                        'Blechumkantung, Verriegelungselemente am Hänger)'),
+             ('mittelbar_ueberwacht', 'Mittelbar verbunden (Seil, Riemen, Kette); '
+                                      'Schließstellung der nicht verriegelten Türblätter '
+                                      'elektrisch überwacht, keine Griffe'),
+             ('mittelbar_ohne_ueberwachung', 'Mittelbar verbunden, Schließstellung der '
+                                             'übrigen Türblätter nicht überwacht'),
+             ('keine', 'Keine wirksame Verbindung; nur ein Türblatt verriegelt')],
+    visible_when=yes('qt_tuer_mehrteilig'),
+    help='EN 81-20 5.3.11: Die Verbindung gilt als Teil der Verriegelung und muss auch bei '
+         'Bruch eines Führungselements halten.')
+
 # ---- Fragen K --------------------------------------------------------------
 yn('qk_notruf_vorhanden', 'Notrufeinrichtung im Fahrkorb vorhanden?', ui='8.1')
 sel('qk_notruf_art', 'Art der Notrufeinrichtung', ui='8.2',
@@ -127,6 +166,24 @@ sel('qk_schutz_aufwaerts', 'Schutz gegen Übergeschwindigkeit aufwärts / Sturz 
              ('passiv', 'Passive Maßnahme (geringer Beschleunigungsweg, Gegengewichtsverhältnis)'),
              ('nicht', 'Nicht verhindert')],
     visible_when=all_(SEIL, yes('qa_gegengewicht')))
+
+# Ergaenzung 04.09.2026 (Lueckenschluss EN 81-80 Nr. 45): Fahrkorbbeleuchtung im
+# Normalbetrieb, EN 81-20 5.4.10.1 bis 5.4.10.3. Die Notbeleuchtung (8.5) bleibt
+# unveraendert bei MF-K02.
+sel('qk_beleuchtung', 'Beleuchtung im Fahrkorb (Normalbetrieb)', ui='8.29',
+    options=[('normgerecht', 'Mindestens 100 Lux an den Befehlsgebern und 1 m über dem '
+                             'Boden bis 100 mm an die Wände'),
+             ('gemindert', 'Beleuchtung vorhanden, aber unter 100 Lux, einzelne Lampen '
+                           'defekt oder stark vergilbte Abdeckung'),
+             ('keine', 'Keine funktionsfähige Beleuchtung im Fahrkorb')],
+    help='EN 81-20 5.4.10.1: gemessen an den Befehlsgebern und 1 m über dem Boden an allen '
+         'Stellen, die nicht mehr als 100 mm von einer Wand entfernt sind. Schatten durch '
+         'Handlauf oder Klappsitz dürfen vernachlässigt werden.')
+yn('qk_bel_zwei_lampen', 'Mindestens zwei parallel geschaltete Lampen im Fahrkorb?',
+   ui='8.29a', help='EN 81-20 5.4.10.2: Ausfall einer Lampe darf den Fahrkorb nicht '
+   'dunkel werden lassen.')
+yn('qk_bel_staendig', 'Fahrkorb ständig beleuchtet (Ausnahme: Parken mit geschlossenen '
+   'Türen)?', ui='8.29b', help='EN 81-20 5.4.10.3.')
 
 # ---- Klärungen -------------------------------------------------------------
 k('K-K01', 'Fahrkorb', 'Notruf ohne 24-h-Aufschaltung',
@@ -284,6 +341,71 @@ hz('MF-T06', 'Fahrkorb ohne Abschlusstür oder ohne Schließkantensicherung', GR
       klaerung='K-T02', notes='TRBS 3121 Anh. 1 Nr. 10: ausdrücklich mittleres Risiko.')],
    sources=[en8120('5.3'), en8120('5.3.6'), trbs3121('Anh. 1 Nr. 10'), trbs3121('Anh. 1 Nr. 14')],
    factor=F_BEWEGT, persons=[NUTZER], bereich='T')
+
+hz('MF-T07', 'Unzureichende Fläche unterhalb der Schachttürschwelle', GRP_T,
+   [('qt_flaeche_unter_schwelle', 'TRIGGER', 'ALWAYS')],
+   [r(eq('qt_flaeche_unter_schwelle', 'keine'), 'HIGH', prio=200,
+      sofort='Personenbefreiung nur durch fachkundige Personen; Haltestellen mit '
+             'unvollständiger Schachtwand kennzeichnen',
+      mittel='Durchgehende, glatte vertikale Fläche unterhalb jeder Schachttürschwelle '
+             'herstellen (EN 81-20 5.2.5.3.2)',
+      evidence='HIGH_CONFIDENCE'),
+    r(eq('qt_flaeche_unter_schwelle', 'maengel'), 'MEDIUM', prio=100,
+      sofort='Vorsprünge und offene Fugen im Bereich der Türschwelle beseitigen',
+      mittel='Fläche unterhalb der Schachttürschwelle normgerecht ergänzen (Höhe, Breite, '
+             'Festigkeit, Abschrägung)',
+      evidence='HIGH_CONFIDENCE')],
+   sources=[en8120('5.2.5.3.2')], factor=F_ABSTURZ_SCHACHT,
+   persons=[NUTZER, BEAUFTRAGTE, WARTUNG], bereich='T',
+   description='Beim Verlassen eines außerhalb der Haltestelle stehenden Fahrkorbs muss die '
+   'Schachtwand unterhalb der Schwelle eine durchgehende, glatte und harte vertikale Fläche '
+   'bilden (EN 81-20 5.2.5.3.2). Ergänzt EN 81-80 Nr. 9.')
+
+hz('MF-T08', 'Türblatt kann aus der Führung fallen (fehlende Rückhalteeinrichtung)', GRP_T,
+   [('qt_rueckhaltung_tuerblatt', 'TRIGGER', 'ALWAYS'),
+    ('qt_fuehrung_tuerblatt_ok', 'MODIFIER', 'ALWAYS')],
+   [r(all_(no('qt_rueckhaltung_tuerblatt'), no('qt_fuehrung_tuerblatt_ok')), 'HIGH', prio=200,
+      sofort='Beschädigte Führungselemente und Aufhängungen sofort instand setzen; '
+             'Tür bis dahin außer Betrieb nehmen',
+      mittel='Rückhalteeinrichtungen nach EN 81-20 5.3.5.3.2 nachrüsten',
+      evidence='HIGH_CONFIDENCE'),
+    r(no('qt_rueckhaltung_tuerblatt'), 'MEDIUM', prio=100,
+      sofort='Führung, Hänger und Befestigung der Türblätter in die wiederkehrende Prüfung '
+             'aufnehmen',
+      mittel='Rückhalteeinrichtungen nach EN 81-20 5.3.5.3.2 nachrüsten',
+      evidence='HIGH_CONFIDENCE'),
+    r(no('qt_fuehrung_tuerblatt_ok'), 'MEDIUM', prio=90,
+      sofort='Beschädigte Führungselemente, Hänger und Befestigungen instand setzen',
+      mittel='Türführungen in den Wartungsplan aufnehmen und regelmäßig nachstellen',
+      evidence='HIGH_CONFIDENCE')],
+   sources=[en8120('5.3.5.3.2')], factor=F_ABSTURZ_SCHACHT,
+   persons=[NUTZER, WARTUNG], bereich='T',
+   description='Horizontal bewegte Schacht-Schiebetüren müssen Einrichtungen haben, die das '
+   'Türblatt in seiner Lage halten, wenn das Führungselement versagt (EN 81-20 5.3.5.3.2). '
+   'Ergänzt EN 81-80 Nr. 26.')
+
+hz('MF-T09', 'Unzureichende Verbindung der Türblätter mehrteiliger Schachttüren', GRP_T,
+   [('qt_tuer_mehrteilig', 'APPLICABILITY', 'NEVER',
+     {'applicable_when': yes('qt_tuer_mehrteilig')}),
+    ('qt_tuerblatt_verbindung', 'TRIGGER', 'CONDITIONAL',
+     {'required_when': yes('qt_tuer_mehrteilig')})],
+   [r(eq('qt_tuerblatt_verbindung', 'keine'), 'HIGH', prio=200,
+      sofort='Tür außer Betrieb nehmen oder alle Türblätter verriegeln, bis die Verbindung '
+             'hergestellt ist',
+      mittel='Türblätter mechanisch verbinden oder alle Türblätter verriegeln und überwachen '
+             '(EN 81-20 5.3.11)',
+      evidence='HIGH_CONFIDENCE'),
+    r(eq('qt_tuerblatt_verbindung', 'mittelbar_ohne_ueberwachung'), 'HIGH', prio=150,
+      sofort='Griffe an den nicht verriegelten Türblättern entfernen; Schließstellung bei '
+             'jeder Wartung prüfen',
+      mittel='Schließstellung der nicht verriegelten Türblätter durch eine elektrische '
+             'Sicherheitseinrichtung überwachen (EN 81-20 5.3.11.2)',
+      evidence='HIGH_CONFIDENCE')],
+   sources=[en8120('5.3.11'), en8120('5.3.11.3')], factor=F_ABSTURZ_SCHACHT,
+   persons=[NUTZER], bereich='T',
+   description='Bei mehrteiligen Schacht-Schiebetüren gilt die Verbindung der Türblätter als '
+   'Teil der Verriegelung (EN 81-20 5.3.11.3); ohne sie lässt sich ein unverriegeltes '
+   'Türblatt öffnen. Ergänzt EN 81-80 Nr. 35.')
 
 # ---- Gefährdungen K --------------------------------------------------------
 hz('MF-K01', 'Fehlende oder unzulängliche Notrufeinrichtung im Fahrkorb', GRP_NOT,
@@ -484,3 +606,35 @@ hz('MF-K14', 'Statisch unbestimmt gelagerte Antriebswelle (3-Punkt-Lagerung)', G
       mfrom=('N20-K4.2', 'Der Antrieb hat eine statisch'), evidence='HIGH_CONFIDENCE')],
    sources=[en8120('5.9.2.2.2'), trbs3121('Anh. 1 Nr. 16')], factor=F_KINETISCH,
    persons=[NUTZER], bereich='K')
+
+
+hz('MF-K15', 'Unzureichende Beleuchtung im Fahrkorb (Normalbetrieb)', GRP_BEL,
+   [('qk_beleuchtung', 'TRIGGER', 'ALWAYS'),
+    ('qk_bel_zwei_lampen', 'MODIFIER', 'ALWAYS'),
+    ('qk_bel_staendig', 'MODIFIER', 'ALWAYS')],
+   [r(eq('qk_beleuchtung', 'keine'), 'MEDIUM', prio=300,
+      sofort='Beleuchtung instand setzen; bis dahin Notbeleuchtung und Notruf prüfen',
+      mittel='Fest installierte Fahrkorbbeleuchtung nach EN 81-20 5.4.10.1 herstellen '
+             '(mind. 100 Lux)',
+      evidence='HIGH_CONFIDENCE'),
+    r(eq('qk_beleuchtung', 'gemindert'), 'LOW', prio=200,
+      sofort='Defekte Lampen tauschen, Abdeckungen reinigen oder erneuern',
+      mittel='Beleuchtungsstärke auf mindestens 100 Lux anheben (Messung an den '
+             'Befehlsgebern und 1 m über dem Boden)',
+      evidence='HIGH_CONFIDENCE'),
+    r(no('qk_bel_zwei_lampen'), 'LOW', prio=150,
+      sofort='Ausfall der Beleuchtung in die Betriebsanweisung aufnehmen (Verhalten bei '
+             'Dunkelheit im Fahrkorb)',
+      mittel='Mindestens zwei parallel geschaltete Lampen einbauen (EN 81-20 5.4.10.2)',
+      evidence='HIGH_CONFIDENCE'),
+    r(no('qk_bel_staendig'), 'LOW', prio=140,
+      sofort='Abschaltung der Fahrkorbbeleuchtung im Betrieb unterbinden',
+      mittel='Beleuchtung so schalten, dass der Fahrkorb außer beim Parken mit geschlossenen '
+             'Türen ständig beleuchtet ist (EN 81-20 5.4.10.3)',
+      evidence='HIGH_CONFIDENCE')],
+   sources=[en8120('5.4.10.1'), en8120('5.4.10.2'), en8120('5.4.10.3')],
+   factor=F_BELEUCHTUNG, persons=[NUTZER], agg='MAXIMUM', bereich='K',
+   description='Der Fahrkorb muss eine fest installierte Beleuchtung haben, die an den '
+   'Befehlsgebern und 1 m über dem Boden an allen Stellen bis 100 mm an die Wände '
+   'mindestens 100 Lux erreicht (EN 81-20 5.4.10.1). Ergänzt EN 81-80 Nr. 45; die '
+   'Notbeleuchtung wird bei MF-K02 bewertet.')

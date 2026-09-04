@@ -1,0 +1,186 @@
+{
+ "quelle": "EK-ZÜS B-002 rev. 5, Anhang 2",
+ "rule_version": "cyber-mf-2026.2",
+ "punkte": [
+  {
+   "nr": 1,
+   "frage": "Wurden Cyberbedrohungen gemäß TRBS 1115 Teil 1 bei der Gefährdungsbeurteilung berücksichtigt?",
+   "erfuellung": "dokumentiert",
+   "fragen": [
+    "qo_zues_beruecksichtigt"
+   ],
+   "hazards": [
+    "CY-O05"
+   ],
+   "hinweis": "Dokumentationsfrage 5.11 (K-C20)."
+  },
+  {
+   "nr": 2,
+   "frage": "Sind die sicherheitsrelevanten MSR-Einrichtungen und weitere schutzbedürftige Einrichtungen erfasst und dokumentiert?",
+   "erfuellung": "dokumentiert",
+   "fragen": [
+    "qo_zues_erfasst"
+   ],
+   "hazards": [
+    "CY-O05",
+    "CY-C01",
+    "CY-C02",
+    "CY-C03",
+    "CY-C04",
+    "CY-C05",
+    "CY-C06",
+    "CY-C07",
+    "CY-C08",
+    "CY-C09",
+    "CY-C10"
+   ],
+   "hinweis": "Dokumentationsfrage 5.12 (K-C20); Komponentenliste = Erhebungsbereich C."
+  },
+  {
+   "nr": 3,
+   "frage": "Wurde berücksichtigt, dass bei überwachungsbedürftigen Anlagen gemäß ÜAnlG stets von einem erheblichen Risiko auszugehen ist?",
+   "erfuellung": "dokumentiert",
+   "fragen": [
+    "qa_ueberwachungsbeduerftig",
+    "qo_zues_erhebliches_risiko"
+   ],
+   "hazards": [
+    "CY-O05"
+   ],
+   "hinweis": "Dokumentationsfrage 5.13 (K-C20); Stufe Hoch ist im Cyber-Teil erreichbar (K-C01)."
+  },
+  {
+   "nr": 4,
+   "frage": "Erfolgte die Festlegung der Maßnahmen durch fachkundige Personen (TRBS 1115-1 3.3.2)?",
+   "fragen": [
+    "qo_fachkunde"
+   ],
+   "hazards": [
+    "CY-O01"
+   ]
+  },
+  {
+   "nr": 5,
+   "frage": "Wurde der Stand der Technik herangezogen?",
+   "erfuellung": "dokumentiert",
+   "fragen": [
+    "qo_zues_stand_technik",
+    "qn_softwarestand",
+    "qa_hersteller_vorgaben"
+   ],
+   "hazards": [
+    "CY-O05",
+    "CY-N01",
+    "CY-O02"
+   ],
+   "hinweis": "Dokumentationsfrage 5.14 (K-C20)."
+  },
+  {
+   "nr": 6,
+   "frage": "Wurden Maßnahmen mit den Mindestinhalten nach TRBS 1115-1 4.5.2 im erforderlichen Umfang festgelegt?",
+   "erfuellung": "abgeleitet",
+   "hinweis": "Erfüllt, wenn alle Komponenten-Gefährdungen Kein Risiko/Niedrig ergeben (Maßnahmenstand „umgesetzt\").",
+   "hazards": [
+    "CY-C01",
+    "CY-C02",
+    "CY-C03",
+    "CY-C04",
+    "CY-C05",
+    "CY-C06",
+    "CY-C07",
+    "CY-C08",
+    "CY-C09",
+    "CY-C10",
+    "CY-C11",
+    "CY-C12",
+    "CY-C13",
+    "CY-C14"
+   ]
+  },
+  {
+   "nr": 7,
+   "frage": "Gibt es Vorgaben von Herstellern und wurden diese berücksichtigt?",
+   "fragen": [
+    "qa_hersteller_vorgaben"
+   ],
+   "hazards": [
+    "CY-O02"
+   ]
+  },
+  {
+   "nr": 8,
+   "frage": "Sind Art, Umfang und Fristen der Überprüfungen und Kontrollen der Maßnahmen schriftlich festgelegt?",
+   "fragen": [
+    "qo_pruefung_fristen"
+   ],
+   "hazards": [
+    "CY-O05"
+   ]
+  },
+  {
+   "nr": 9,
+   "frage": "Wird sichergestellt, dass CS-Maßnahmen die Sicherheitsmaßnahmen nicht negativ beeinflussen (Rückwirkungsfreiheit)?",
+   "fragen": [
+    "qo_rueckwirkung",
+    "qc_geb_rueckwirkungsfrei"
+   ],
+   "hazards": [
+    "CY-O07",
+    "CY-C14"
+   ]
+  },
+  {
+   "nr": 10,
+   "frage": "Werden neue Erkenntnisse zur Cybersicherheit in die Gefährdungsbeurteilung eingebunden?",
+   "fragen": [
+    "qo_erkenntnisse",
+    "qn_softwarestand"
+   ],
+   "hazards": [
+    "CY-O08",
+    "CY-N01"
+   ]
+  },
+  {
+   "nr": 11,
+   "frage": "Sind Unterweisungen von Beschäftigten zur Cybersicherheit durchgeführt?",
+   "fragen": [
+    "qo_unterweisung"
+   ],
+   "hazards": [
+    "CY-O04"
+   ]
+  },
+  {
+   "nr": 12,
+   "frage": "Liegt für die CS-Maßnahmen ein Nachweis der Wirksamkeit (TRBS 1115-1 Abschn. 5) vor?",
+   "fragen": [
+    "qo_wirksamkeit"
+   ],
+   "hazards": [
+    "CY-O05"
+   ]
+  },
+  {
+   "nr": 13,
+   "frage": "Liegt für die CS-Maßnahmen eine Bestätigung der Funktionsfähigkeit (TRBS 1115-1 Abschn. 8.2) vor?",
+   "fragen": [
+    "qo_funktion"
+   ],
+   "hazards": [
+    "CY-O05"
+   ]
+  },
+  {
+   "nr": 14,
+   "frage": "Wurden nach Aussage des Betreibers prüfpflichtige Änderungen mit Einfluss auf die Cybersicherheit durchgeführt?",
+   "fragen": [
+    "qo_aenderungen",
+    "qo_aenderungen_geprueft"
+   ],
+   "hazards": [
+    "CY-O06"
+   ]
+  }
+ ]
+}

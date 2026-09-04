@@ -10,6 +10,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 SRC = [
     ('norm_81_20_mf.json', 'GBU mehrfragig · EN 81-20 (MF, Entwurf)'),
+    ('norm_cyber_mf.json', 'Cyber-GBU komponentenbasiert (CY, Entwurf)'),
     ('norm_en8141.json', 'Plattformaufzug · EN 81-41'),
     ('norm_81_80.json', 'GBU vereinfacht · EN 81-80'),
     ('norm_81_20.json', 'GBU erweitert · EN 81-20'),
@@ -84,6 +85,49 @@ DEMO_MF = {
 }
 
 
+# Beispielanlage für den Cyber-Typ: vernetzter Seilaufzug mit Maschinenraum,
+# Fernwartung und Gateway; typische Befunde (Hoch/Mittel/Niedrig/Kein Risiko/
+# Nicht zutreffend/Unvollständig nebeneinander).
+DEMO_CY = {
+    'qa_aufzugsart': 'seil', 'qa_ueberwachungsbeduerftig': True, 'qa_steuerungsart': 'vernetzt',
+    'qa_maschinenraum': True, 'qa_vernetzt': True, 'qa_gebaeude_anbindung': True,
+    'qa_hersteller_vorgaben': 'unbekannt',
+    # Zugang
+    'qz_steuerung_frei': False, 'qz_triebwerksraum_frei': False, 'qz_schacht_frei': False,
+    'qz_service_gesichert': True, 'qz_default_zugangsdaten': True, 'qz_rollen': True,
+    'qz_servicegeraete': False,
+    # Komponenten
+    'qc_steuerung_schnittstelle': 'kabelgebunden', 'qc_steuerung_massnahmen': 'teilweise',
+    'qc_steuerung_unabhaengig': True,
+    'qc_pessral_vorhanden': True, 'qc_pessral_schnittstelle': 'keine',
+    'qc_fu_vorhanden': True, 'qc_fu_schnittstelle': 'kabelgebunden', 'qc_fu_massnahmen': 'keine',
+    'qc_fu_unabhaengig': True,
+    'qc_notruf_vorhanden': True, 'qc_notruf_schnittstelle': 'kabellos', 'qc_notruf_massnahmen': 'teilweise',
+    'qc_notruf_unabhaengig': True,
+    'qc_kopierung_vorhanden': True, 'qc_kopierung_schnittstelle': 'kabelgebunden',
+    'qc_kopierung_massnahmen': 'umgesetzt', 'qc_kopierung_unabhaengig': True,
+    'qc_tuer_vorhanden': True, 'qc_tuer_schnittstelle': 'kabelgebunden',   # Maßnahmen offen -> Unvollständig
+    'qc_ucm_vorhanden': True, 'qc_ucm_schnittstelle': 'kabelgebunden', 'qc_ucm_massnahmen': 'umgesetzt',
+    'qc_ucm_unabhaengig': True,
+    'qc_safue_vorhanden': False, 'qc_tragmittel_vorhanden': True, 'qc_tragmittel_schnittstelle': 'kabelgebunden',
+    'qc_tragmittel_massnahmen': 'umgesetzt', 'qc_tragmittel_unabhaengig': True,
+    'qc_fernueb_vorhanden': True, 'qc_fernueb_lesend': True,
+    'qc_remote_vorhanden': True,
+    'qc_gateway_vorhanden': True, 'qc_gateway_firewall': True, 'qc_gateway_default': False,
+    'qc_gateway_updates': True,
+    'qc_geb_rueckwirkungsfrei': True, 'qc_geb_sicherer_zustand': False,
+    # Netz
+    'qn_segmentierung': True, 'qn_fern_freigabe': False, 'qn_fern_auth': True, 'qn_protokoll': True,
+    'qn_softwarestand': 'unbekannt', 'qn_funktionsreduzierung': True,
+    # Organisation (Unterweisung bewusst offen -> Unvollständig)
+    'qo_verantwortlich': True, 'qo_fachkunde': True, 'qo_notfall': False,
+    'qo_pruefung_fristen': True, 'qo_wirksamkeit': False, 'qo_funktion': True, 'qo_rueckwirkung': True,
+    'qo_erkenntnisse': True, 'qo_aenderungen': False,
+    'qo_zues_beruecksichtigt': True, 'qo_zues_erfasst': True, 'qo_zues_erhebliches_risiko': True,
+    'qo_zues_stand_technik': True,
+}
+
+
 def trim(d):
     q = []
     for x in d.get('questions', []):
@@ -122,8 +166,13 @@ def main():
         cat[label] = trim(json.load(open(os.path.join(ROOT, f), encoding='utf-8')))
         if f == 'norm_81_20_mf.json':
             cat[label]['demo_answers'] = DEMO_MF
-    kl_path = os.path.join(ROOT, 'mf_klaerung.json')
-    kl = json.load(open(kl_path, encoding='utf-8')) if os.path.exists(kl_path) else []
+        if f == 'norm_cyber_mf.json':
+            cat[label]['demo_answers'] = DEMO_CY
+    kl = []
+    for name in ('mf_klaerung.json', 'cy_klaerung.json'):
+        kl_path = os.path.join(ROOT, name)
+        if os.path.exists(kl_path):
+            kl += json.load(open(kl_path, encoding='utf-8'))
     html = open(os.path.join(HERE, 'assessment_ui.html'), encoding='utf-8').read()
     html = html.replace('__CATALOGS__', json.dumps(cat, ensure_ascii=False, separators=(',', ':')))
     html = html.replace('__KLAERUNG__', json.dumps(kl, ensure_ascii=False, separators=(',', ':')))

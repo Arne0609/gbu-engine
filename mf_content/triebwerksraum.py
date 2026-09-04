@@ -10,6 +10,7 @@ GRP_MR = 'Triebwerksraum – Ausstattung'
 GRP_ANT = 'Antrieb, Bremse und Hydraulik'
 GRP_NOT = 'Notruf und Personenbefreiung'
 GRP_DOC = 'Beschilderung und Unterlagen'
+GRP_SK = 'Sicherheitskomponenten'
 
 MR = yes('qa_maschinenraum')
 SEIL = in_('qa_aufzugsart', ['seil', 'trommel', 'seil_hydraulik'])
@@ -101,6 +102,27 @@ yn('qm_kav', 'Einrichtung gegen Absinken (Kolbenabsinkverhinderung / '
    'Nachholsteuerung) vorhanden?', ui='6.12', visible_when=HYDR)
 yn('qm_absinkt', 'Sinkt der Fahrkorb im Stillstand merklich ab?', ui='6.13',
    visible_when=HYDR)
+
+# Ergaenzung 04.09.2026 (Lueckenschluss EN 81-80 Nr. 57): Notendschalter,
+# EN 81-20 5.12.2. Bei Hydraulikaufzuegen nur am oberen Ende des Fahrwegs.
+sel('qm_notendschalter', 'Notendschalter (Endbegrenzung hinter den Endhaltestellen)',
+    ui='6.14',
+    options=[('geprueft', 'Vorhanden, Wirksamkeit vor Pufferberührung nachgewiesen'),
+             ('ungeprueft', 'Vorhanden, Wirksamkeit nicht nachgewiesen'),
+             ('fehlt', 'Nicht vorhanden oder unwirksam (überbrückt, verstellt)')],
+    help='EN 81-20 5.12.2.1: bei Treibscheiben-, Trommel- und Kettenaufzügen am oberen und '
+         'unteren Ende des Fahrwegs, bei Hydraulikaufzügen nur am oberen Ende. Sie müssen '
+         'wirksam werden, bevor Fahrkorb oder Gegengewicht die Puffer berühren.')
+yn('qm_notendschalter_getrennt', 'Getrennte Betätigungseinrichtungen für das '
+   'betriebsmäßige Anhalten und für die Notendschalter?', ui='6.14a',
+   help='EN 81-20 5.12.2.2.1.',
+   visible_when=nin('qm_notendschalter', ['fehlt']))
+yn('qm_notendschalter_verbindung_ueberwacht', 'Bei mittelbarer Betätigung (Seil, Riemen, '
+   'Kette): Bruch oder Schlaffwerden hält das Triebwerk über eine elektrische '
+   'Sicherheitseinrichtung an?', ui='6.14b',
+   help='EN 81-20 5.12.2.2.3 b) und 5.12.2.2.4 b). Bei direkter Betätigung durch den '
+        'Fahrkorb mit „Ja" beantworten.',
+   visible_when=nin('qm_notendschalter', ['fehlt']))
 
 yn('qm_anschlagpunkte', 'Anschlagpunkte / Hebezeuge zum Anheben schwerer Teile '
    'vorhanden?', ui='5.52', visible_when=MR)
@@ -448,3 +470,37 @@ hz('MF-M20', 'Fehlender Not-Halt im zusätzlichen Rollenraum', GRP_EL,
    [r(no('qm_rollenraum_nothalt'), 'HIGH', mfrom=('N20-F7', 'Kein Notbremsschalter'),
       evidence='INFERRED', notes='Blaupause Schindler M049 (f132 Rollenraum).')],
    sources=[en8120('5.2.6.4.5'), en8120('5.12.1.11')], factor=F_BEFEHL, persons=[WARTUNG], bereich='M')
+
+
+hz('MF-M21', 'Fehlende oder unwirksame Notendschalter', GRP_SK,
+   [('qm_notendschalter', 'TRIGGER', 'ALWAYS'),
+    ('qm_notendschalter_getrennt', 'MODIFIER', 'CONDITIONAL',
+     {'required_when': nin('qm_notendschalter', ['fehlt'])}),
+    ('qm_notendschalter_verbindung_ueberwacht', 'MODIFIER', 'CONDITIONAL',
+     {'required_when': nin('qm_notendschalter', ['fehlt'])})],
+   [r(eq('qm_notendschalter', 'fehlt'), 'HIGH', prio=300,
+      sofort='Anlage bis zur Instandsetzung stillsetzen; Überbrückungen entfernen',
+      mittel='Notendschalter nach EN 81-20 5.12.2 einbauen und Wirksamkeit vor '
+             'Pufferberührung nachweisen',
+      evidence='HIGH_CONFIDENCE'),
+    r(no('qm_notendschalter_verbindung_ueberwacht'), 'HIGH', prio=250,
+      sofort='Zustand von Seil, Riemen oder Kette der Notendschalter-Betätigung prüfen',
+      mittel='Bruch und Schlaffwerden der Verbindung über eine elektrische '
+             'Sicherheitseinrichtung überwachen (EN 81-20 5.12.2.2.3 b)',
+      evidence='HIGH_CONFIDENCE'),
+    r(no('qm_notendschalter_getrennt'), 'MEDIUM', prio=200,
+      sofort='Betriebsmäßiges Anhalten und Notendschalter bei der Prüfung getrennt '
+             'nachweisen',
+      mittel='Getrennte Betätigungseinrichtungen herstellen (EN 81-20 5.12.2.2.1)',
+      evidence='HIGH_CONFIDENCE'),
+    r(eq('qm_notendschalter', 'ungeprueft'), 'MEDIUM', prio=100,
+      sofort='Wirksamkeit der Notendschalter bei der nächsten Prüfung feststellen',
+      mittel='Funktionsprüfung der Notendschalter in den Wartungsplan aufnehmen und '
+             'dokumentieren',
+      evidence='HIGH_CONFIDENCE')],
+   sources=[en8120('5.12.2.1'), en8120('5.12.2.2.1'), en8120('5.12.2.2.3'),
+            en8120('5.12.2.2.4')],
+   factor=F_STOSS, persons=[NUTZER, WARTUNG], agg='MAXIMUM', bereich='M',
+   description='Notendschalter begrenzen den Fahrweg hinter den Endhaltestellen und müssen '
+   'ansprechen, bevor Fahrkorb oder Gegengewicht die Puffer berühren (EN 81-20 5.12.2). '
+   'Ergänzt EN 81-80 Nr. 57.')
