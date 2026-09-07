@@ -34,7 +34,7 @@ sys.path.insert(0, HERE)
 from en8180_content import ZUORDNUNG  # noqa: E402
 import catalog_check  # noqa: E402
 
-RULE_VERSION = '81-80-mf-2026.1'
+RULE_VERSION = '81-80-mf-2026.3'  # .3: 26 neue Regeln freigegeben 04.09.2026
 
 # Gefährdungen ausserhalb der 74 Gefährdungssituationen, die der Typ trotzdem
 # führt: ohne sie waere die Beurteilung nach BetrSichV unvollstaendig.
@@ -43,6 +43,10 @@ ZUSATZ = [
     'MF-D03',   # Wartungsunterlagen / Instandhaltung
     'MF-D04',   # Prüfplakette / Prüffrist ZÜS
     'MF-D05',   # Betreiberorganisation (beauftragte Person, Unterweisung)
+    'MF-D06',   # Baujahr gegen Ausstattung (Konformitaetsmangel) – gerade beim
+                # Bestandstyp wichtig: deckt auf, wenn eine junge Anlage
+                # versehentlich als Bestand geführt wird, und ordnet die
+                # Modernisierung ein (Baujahr alt, Regelwerk EN 81-20).
     'MF-SF01',  # Feuerwehraufzug / gebäudeseitige Sonderfunktionen
     'MF-U02', 'MF-U03', 'MF-U04', 'MF-U05', 'MF-U06', 'MF-U07', 'MF-U08',
     'MF-U10', 'MF-U11', 'MF-U12', 'MF-U13', 'MF-U14', 'MF-U15',

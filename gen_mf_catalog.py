@@ -25,7 +25,8 @@ for mod in ['anlage', 'zugang', 'triebwerksraum', 'tueren_fahrkorb', 'fahrkorbda
             'schacht_grube', 'umfeld', 'sonderfunktion_doku']:
     importlib.import_module('mf_content.' + mod)
 
-RULE_VERSION = '81-20-mf-2026.3'  # .3: Lueckenschluss EN 81-80 04.09.2026 (MF-T07/T08/T09, MF-K15, MF-M21)
+RULE_VERSION = '81-20-mf-2026.5'  # .5: 26 neue Regeln freigegeben 04.09.2026
+# .4: Baujahr als Steuerfeld + MF-D06 Konformitaetspruefung 04.09.2026
 # .2: Review 02.09.2026 (Kein-Risiko-Regeln, Pflichtfragen, TRBS-Fundstellen, K-K12)
 
 
@@ -76,6 +77,31 @@ def apply_decisions(rules):
                 'Entschieden %s: %s.' % (DATUM, ', '.join(kids))
 
 
+def apply_freigabe(rules):
+    """Regelfreigabe aus der Gegenlesung (Excel GBU_MF_Regelpruefung):
+    'Freigeben' -> VERIFIED; 'Ändern'/'Streichen' bleiben REVIEW_REQUIRED,
+    die Korrektur steht als Hinweis in den notes, bis der Inhalt in
+    mf_content/*.py nachgezogen ist. Gleiches Muster wie beim Cyber-Typ."""
+    try:
+        from mf_content.regelfreigabe import FREIGABE, DATUM as FREIGABE_DATUM
+    except ImportError:
+        return
+    for r in rules:
+        fg = FREIGABE.get(r['code'])
+        if not fg or r.get('quality_status') == 'VERIFIED':
+            continue
+        entscheidung, korrektur = fg
+        sep = ' ' if r.get('notes', '').strip() else ''
+        if entscheidung == 'Freigeben':
+            r['quality_status'] = 'VERIFIED'
+            r['notes'] = r.get('notes', '').rstrip() + sep + \
+                'Freigegeben %s.' % FREIGABE_DATUM
+        else:
+            r['notes'] = r.get('notes', '').rstrip() + sep + \
+                'OFFEN (%s %s): %s' % (entscheidung, FREIGABE_DATUM,
+                                       korrektur or '-')
+
+
 def build():
     # Fragen in Fragebogen-Reihenfolge (Erhebungsbereich, dann Definitionsreihenfolge)
     order = {c: i for i, c in enumerate(C.CATS.values())}
@@ -85,6 +111,7 @@ def build():
     measures = list(C.MEASURES.values())
     fix_trbs_sources(hazards)
     apply_decisions(rules)
+    apply_freigabe(rules)
     return {'rule_version': RULE_VERSION, 'questions': questions, 'measures': measures,
             'hazards': hazards, 'rules': rules}
 

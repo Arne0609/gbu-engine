@@ -163,3 +163,86 @@ hz('MF-D05', 'Betreiberorganisation: beauftragte Person, Unterweisung, Betriebsa
       klaerung='K-D04')],
    sources=[law('BetrSichV', '§ 12'), law('BetrSichV', 'Anh. 1 Nr. 4'), trbs3121('4.2'), trbs('TRBS 1116')],
    factor=F_ORGA, persons=[BETREIBER, BEAUFTRAGTE], agg='MAXIMUM', bereich='D')
+
+
+# ---------------------------------------------------------------------------
+# MF-D06 – Baujahr gegen Ausstattung (Konformitätsprüfung)
+# ---------------------------------------------------------------------------
+# Herkunft: Analyse der Schindler-Anwendung GBU 3.0 (Durchgang 6, 04.09.2026).
+# Dort steuert das Baujahr, welche Fragen überhaupt im Katalog erscheinen.
+# Wir übernehmen das Steuerfeld, nicht das Ausblenden (siehe common.py) – und
+# nutzen es für den Sachverhalt, den GBU 3.0 gerade NICHT erfasst: ob die
+# vorgefundene Ausstattung zu dem Regelwerk passt, unter dem die Anlage in
+# Verkehr gebracht wurde.
+#
+# Abgrenzung zu den übrigen Gefährdungen: Ein fehlender UCM-Schutz ist bereits
+# über MF-K12 bewertet, eine fehlende Fahrkorbtür über die Türgefährdungen –
+# dort geht es um das Risiko für die Nutzer. Hier geht es um etwas anderes:
+# Fehlt die Einrichtung an einer Anlage, die sie schon bei Inverkehrbringen
+# hätte haben müssen, ist das kein Fall für eine Nachrüstempfehlung nach dem
+# Stand der Technik, sondern ein Konformitätsmangel. Dann sind Errichter,
+# Konformitätserklärung und gegebenenfalls die Marktaufsicht einzubeziehen –
+# eine andere Maßnahme, ein anderer Adressat.
+#
+# Die Schwellen sind deutsche Rechtsstände (BJ_* in common.py), keine aus
+# GBU 3.0 übernommenen Werte.
+
+yn('qd_konformitaet_geprueft', 'Konformitätserklärung und Abnahmeunterlagen der '
+   'Anlage liegen vor?', ui='1.29',
+   help='Nur für Anlagen, die nach der Aufzugsrichtlinie in Verkehr gebracht '
+        'wurden (ab 1999). Bei Altanlagen nach TRA: Nein wählen.')
+
+hz('MF-D06', 'Ausstattung passt nicht zum Regelwerk des Inverkehrbringens '
+   '(Konformitätsmangel)', GRP_DOC,
+   [('qa_baujahr', 'TRIGGER', 'ALWAYS'),
+    ('qa_norm_inverkehrbringen', 'TRIGGER', 'ALWAYS'),
+    ('qa_ucm_a3', 'TRIGGER', 'ALWAYS'),
+    ('qa_fahrkorbtuer', 'TRIGGER', 'ALWAYS'),
+    ('qd_konformitaet_geprueft', 'OPTIONAL', 'NEVER')],
+   [# Ab EN 81-20 (2017) sind UCM-Schutz und Fahrkorbtür Stand der Norm. Fehlen
+    # sie an einer so jungen Anlage, ist die Anlage nicht normkonform gebaut.
+    r(all_(bj_ab(BJ_EN8120), no('qa_fahrkorbtuer')), 'HIGH', prio=300,
+      sofort='Errichter und Konformitätserklärung prüfen; Anlage bis zur Klärung '
+             'nur mit eingewiesenen Personen betreiben',
+      mittel='Fahrkorbabschlusstür nachrüsten und die Konformität der Anlage '
+             'durch den Errichter nachweisen lassen (DIN EN 81-20 5.4.6)',
+      evidence='HIGH_CONFIDENCE',
+      notes='Fahrkorbtür ist seit EN 81-1/2 (1999) gefordert und in EN 81-20 '
+            'unverändert – an einer Anlage ab 2017 ist ihr Fehlen ein '
+            'Konformitätsmangel, keine Nachrüstfrage.'),
+    r(all_(bj_ab(BJ_UCM), no('qa_ucm_a3')), 'HIGH', prio=250,
+      sofort='Errichter einbeziehen; Konformitätserklärung und Baumusterprüfung '
+             'der Anlage anfordern',
+      mittel='UCM-Schutz nachrüsten und die Konformität nachweisen lassen '
+             '(EN 81-1/2 + A3 bzw. DIN EN 81-20 5.6.7)',
+      evidence='HIGH_CONFIDENCE',
+      notes='EN 81-1/2 + A3 (UCM) ist seit 2012 verbindlich.'),
+    r(all_(bj_ab(BJ_AUFZUGSRICHTLINIE), no('qa_fahrkorbtuer')), 'MEDIUM', prio=200,
+      sofort='Unterlagen zum Inverkehrbringen prüfen (Baujahr und Ausstattung '
+             'passen nicht zusammen)',
+      mittel='Fahrkorbabschlusstür nachrüsten (DIN EN 81-1/2 5.4, EN 81-80 5.5.2)',
+      evidence='HIGH_CONFIDENCE',
+      notes='Ab Geltung der Aufzugsrichtlinie (01.07.1999) ist die Fahrkorbtür '
+            'gefordert. Vor 1999 gebaute Anlagen ohne Fahrkorbtür sind dagegen '
+            'ein Nachrüstfall nach EN 81-80, kein Konformitätsmangel.'),
+    # Widerspruch zwischen Baujahr und angegebenem Regelwerk: kein technischer
+    # Mangel, aber die Unterlagen taugen dann nicht als Beurteilungsgrundlage.
+    r(all_(bj_ab(BJ_EN8120), eq('qa_norm_inverkehrbringen', 'tra')), 'MEDIUM', prio=150,
+      sofort='Angaben klären: Baujahr ab 2017, aber Regelwerk TRA angegeben',
+      mittel='Baujahr und Regelwerk anhand der Anlagendokumentation berichtigen',
+      evidence='INFERRED'),
+    r(all_(bj_bis(BJ_AUFZUGSRICHTLINIE - 1),
+           eq('qa_norm_inverkehrbringen', 'en81_20')), 'LOW', prio=140,
+      sofort='Prüfen, ob die Anlage durchgreifend modernisiert wurde',
+      mittel='Umfang der Modernisierung dokumentieren; sonst Baujahr oder '
+             'Regelwerk berichtigen',
+      evidence='INFERRED',
+      notes='Kein Fehler: Eine alte Anlage kann nach einer wesentlichen '
+            'Veränderung neu in Verkehr gebracht worden sein. Dann gehört der '
+            'Umfang in die Unterlagen.'),
+    r(answered('qa_baujahr'), 'NO_RISK', prio=1,
+      sofort='Zustand erhalten; bei der wiederkehrenden Prüfung und der '
+             'Betreiberkontrolle erneut prüfen')],
+   sources=[law('Aufzugsrichtlinie 2014/33/EU'), law('95/16/EG'),
+            en8120('5.4.6'), en8120('5.6.7'), law('ProdSG'), law('BetrSichV', '§ 3')],
+   factor=F_ORGA, persons=[NUTZER, BETREIBER], agg='MAXIMUM', bereich='D')

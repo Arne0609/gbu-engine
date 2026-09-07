@@ -109,6 +109,36 @@ def gte(q, v):   return {'question': q, 'operator': 'GTE', 'value': v}
 def lt(q, v):    return {'question': q, 'operator': 'LT', 'value': v}
 def lte(q, v):   return {'question': q, 'operator': 'LTE', 'value': v}
 def answered(q): return {'question': q, 'operator': 'ANSWERED'}
+
+# ---- Baujahr-Schwellen -----------------------------------------------------
+# Erkenntnis aus der Analyse der Schindler-Anwendung GBU 3.0 (04.09.2026):
+# Dort ist das Baujahr ein Steuerfeld erster Ordnung – es entscheidet über die
+# Zugehörigkeit einer Frage zum Katalog, mit harten Jahresvergleichen je Frage
+# (belegt: zwei verschiedene Schwellen auf einer einzigen Seite).
+#
+# Wir übernehmen das Steuerfeld, NICHT das Ausblenden. Begründung: GBU 3.0 ist
+# ein Konformitätswerkzeug, unsere GBU eine Gefährdungsbeurteilung nach
+# BetrSichV. Ein Aufzug ohne Fahrkorbtür ist gefährlich, ob Baujahr 1975 oder
+# 2020 – verschwindet die Frage, verschwindet die Gefährdung aus der
+# Beurteilung. Das Baujahr ändert nicht die Gefährdung, sondern die
+# Verhältnismäßigkeit der Maßnahme und den rechtlichen Bezug (Nachrüstung nach
+# EN 81-80 gegenüber Konformitätsmangel). Den Katalogumfang steuert bei uns
+# stattdessen der GBU-Typ „Bestand nach DIN EN 81-80".
+#
+# Die Schwellen sind deutsche Rechtsstände, keine übernommenen Fremdwerte:
+BJ_AUFZUGSRICHTLINIE = 1999   # 95/16/EG verbindlich ab 01.07.1999; davor TRA
+BJ_EN8120 = 2017              # DIN EN 81-20/50 verbindlich ab 01.09.2017
+BJ_UCM = 2012                 # EN 81-1/2 + A3 (UCM-Schutz) verbindlich ab 2012
+
+
+def bj_bis(jahr):
+    """Baujahr bis einschliesslich <jahr> (Anlagen davor bzw. aus dem Jahr)."""
+    return lte('qa_baujahr', jahr)
+
+
+def bj_ab(jahr):
+    """Baujahr ab einschliesslich <jahr>."""
+    return gte('qa_baujahr', jahr)
 def all_(*xs):   return {'all': list(xs)}
 def any_(*xs):   return {'any': list(xs)}
 def not_(x):     return {'not': x}

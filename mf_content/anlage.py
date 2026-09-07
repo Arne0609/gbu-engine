@@ -63,14 +63,24 @@ yn('qa_nutzung_flurfoerderzeug', 'Beladung mit Flurförderzeugen oder Transportw
    ui='4.10')
 yn('qa_oeffentlich', 'Öffentlich zugängliche Anlage (Publikumsverkehr)?', ui='2.2')
 
+num('qa_baujahr', 'Baujahr der Anlage', min=1900, max=2100, ui='1.24',
+    help='Wird aus den Stammdaten übernommen. Steuerfeld: Es entscheidet mit '
+         'über den passenden GBU-Typ (bis 1998 in aller Regel Bestand nach '
+         'DIN EN 81-80) und darüber, ob eine fehlende Einrichtung eine '
+         'Nachrüstung nach dem Stand der Technik oder ein Konformitätsmangel '
+         'ist. Es blendet bewusst KEINE Frage aus – die Gefährdung besteht '
+         'unabhängig vom Alter der Anlage.')
+
 sel('qa_norm_inverkehrbringen', 'Regelwerk bei Inverkehrbringen / letzter Modernisierung',
     ui='1.28',
     options=[('tra', 'TRA 200 / TRA 102 (vor 1999)'),
              ('en81_1_2', 'DIN EN 81-1 / 81-2 (1999–2017)'),
              ('en81_20', 'DIN EN 81-20 (ab 2017)'),
              ('unbekannt', 'Unbekannt / keine Unterlagen')],
-    help='Nur Dokumentation und Hinweis für die Beurteilung – keine automatische '
-         'Stufenänderung.')
+    help='Ergänzt das Baujahr (1.24): Eine 1985 gebaute, 2020 durchgreifend '
+         'modernisierte Anlage ist nach EN 81-20 in Verkehr gebracht. Weicht '
+         'die Angabe vom Baujahr ab, gilt für die Beurteilung des Soll-Zustands '
+         'das Regelwerk, nicht das Baujahr.')
 
 yn('qa_feuerwehraufzug', 'Feuerwehraufzug oder Aufzug mit Brandfall-Sonderbetrieb '
    '(EN 81-72 / EN 81-73 Evakuierung)?', ui='15.6')

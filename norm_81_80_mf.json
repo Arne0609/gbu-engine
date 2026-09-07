@@ -1,5 +1,5 @@
 {
- "rule_version": "81-80-mf-2026.1",
+ "rule_version": "81-80-mf-2026.3",
  "questions": [
   {
    "code": "qa_aufzugsart",
@@ -214,13 +214,24 @@
    "ui_number": "2.2"
   },
   {
+   "code": "qa_baujahr",
+   "type": "NUMBER",
+   "domain": "GBU",
+   "text": "Baujahr der Anlage",
+   "category": "A – Anlagenmerkmale",
+   "ui_number": "1.24",
+   "help_text": "Wird aus den Stammdaten übernommen. Steuerfeld: Es entscheidet mit über den passenden GBU-Typ (bis 1998 in aller Regel Bestand nach DIN EN 81-80) und darüber, ob eine fehlende Einrichtung eine Nachrüstung nach dem Stand der Technik oder ein Konformitätsmangel ist. Es blendet bewusst KEINE Frage aus – die Gefährdung besteht unabhängig vom Alter der Anlage.",
+   "min": 1900,
+   "max": 2100
+  },
+  {
    "code": "qa_norm_inverkehrbringen",
    "type": "SELECT",
    "domain": "GBU",
    "text": "Regelwerk bei Inverkehrbringen / letzter Modernisierung",
    "category": "A – Anlagenmerkmale",
    "ui_number": "1.28",
-   "help_text": "Nur Dokumentation und Hinweis für die Beurteilung – keine automatische Stufenänderung.",
+   "help_text": "Ergänzt das Baujahr (1.24): Eine 1985 gebaute, 2020 durchgreifend modernisierte Anlage ist nach EN 81-20 in Verkehr gebracht. Weicht die Angabe vom Baujahr ab, gilt für die Beurteilung des Soll-Zustands das Regelwerk, nicht das Baujahr.",
    "options": [
     {
      "value": "tra",
@@ -280,6 +291,14 @@
    "text": "Löschanlage / Sprinkler im Schacht oder Triebwerksraum vorhanden?",
    "category": "A – Anlagenmerkmale",
    "ui_number": "15.10"
+  },
+  {
+   "code": "qa_ucm_a3",
+   "type": "YES_NO",
+   "domain": "GBU",
+   "text": "UCM-Schutz (unbeabsichtigte Fahrkorbbewegung, A3 / EN 81-20 5.6.7) vorhanden?",
+   "category": "A – Anlagenmerkmale",
+   "ui_number": "4.5"
   },
   {
    "code": "qa_grubentiefe",
@@ -3367,6 +3386,15 @@
    "text": "Liegt für die Anlage bereits eine dokumentierte Gefährdungsbeurteilung des Betreibers vor?",
    "category": "D – Unterlagen und Betreiberorganisation",
    "ui_number": "E5"
+  },
+  {
+   "code": "qd_konformitaet_geprueft",
+   "type": "YES_NO",
+   "domain": "GBU",
+   "text": "Konformitätserklärung und Abnahmeunterlagen der Anlage liegen vor?",
+   "category": "D – Unterlagen und Betreiberorganisation",
+   "ui_number": "1.29",
+   "help_text": "Nur für Anlagen, die nach der Aufzugsrichtlinie in Verkehr gebracht wurden (ab 1999). Bei Altanlagen nach TRA: Nein wählen."
   }
  ],
  "measures": [
@@ -5335,6 +5363,66 @@
   {
    "code": "m_1fe62b87a0",
    "title": "Zutrittsregelung in der Betriebsanweisung festlegen",
+   "type": "TECHNICAL",
+   "priority_class": "MITTELFRISTIG"
+  },
+  {
+   "code": "m_d86ad2653a",
+   "title": "Errichter und Konformitätserklärung prüfen; Anlage bis zur Klärung nur mit eingewiesenen Personen betreiben",
+   "type": "ORGANISATIONAL",
+   "priority_class": "SOFORT"
+  },
+  {
+   "code": "m_eba2de844c",
+   "title": "Fahrkorbabschlusstür nachrüsten und die Konformität der Anlage durch den Errichter nachweisen lassen (DIN EN 81-20 5.4.6)",
+   "type": "TECHNICAL",
+   "priority_class": "MITTELFRISTIG"
+  },
+  {
+   "code": "m_ef0185399f",
+   "title": "Errichter einbeziehen; Konformitätserklärung und Baumusterprüfung der Anlage anfordern",
+   "type": "ORGANISATIONAL",
+   "priority_class": "SOFORT"
+  },
+  {
+   "code": "m_9a07871b14",
+   "title": "UCM-Schutz nachrüsten und die Konformität nachweisen lassen (EN 81-1/2 + A3 bzw. DIN EN 81-20 5.6.7)",
+   "type": "TECHNICAL",
+   "priority_class": "MITTELFRISTIG"
+  },
+  {
+   "code": "m_30890e1295",
+   "title": "Unterlagen zum Inverkehrbringen prüfen (Baujahr und Ausstattung passen nicht zusammen)",
+   "type": "ORGANISATIONAL",
+   "priority_class": "SOFORT"
+  },
+  {
+   "code": "m_4c9858ff1b",
+   "title": "Fahrkorbabschlusstür nachrüsten (DIN EN 81-1/2 5.4, EN 81-80 5.5.2)",
+   "type": "TECHNICAL",
+   "priority_class": "MITTELFRISTIG"
+  },
+  {
+   "code": "m_7568b494f5",
+   "title": "Angaben klären: Baujahr ab 2017, aber Regelwerk TRA angegeben",
+   "type": "ORGANISATIONAL",
+   "priority_class": "SOFORT"
+  },
+  {
+   "code": "m_74dedd0021",
+   "title": "Baujahr und Regelwerk anhand der Anlagendokumentation berichtigen",
+   "type": "TECHNICAL",
+   "priority_class": "MITTELFRISTIG"
+  },
+  {
+   "code": "m_197127309a",
+   "title": "Prüfen, ob die Anlage durchgreifend modernisiert wurde",
+   "type": "ORGANISATIONAL",
+   "priority_class": "SOFORT"
+  },
+  {
+   "code": "m_c042b3b8f8",
+   "title": "Umfang der Modernisierung dokumentieren; sonst Baujahr oder Regelwerk berichtigen",
    "type": "TECHNICAL",
    "priority_class": "MITTELFRISTIG"
   }
@@ -9727,6 +9815,76 @@
    "review_ids": [
     "K-D04"
    ]
+  },
+  {
+   "code": "MF-D06",
+   "domain": "GBU",
+   "title": "Ausstattung passt nicht zum Regelwerk des Inverkehrbringens (Konformitätsmangel)",
+   "category": "Beschilderung und Unterlagen",
+   "aggregation_type": "MAXIMUM",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "qa_baujahr",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    },
+    {
+     "question": "qa_norm_inverkehrbringen",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    },
+    {
+     "question": "qa_ucm_a3",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    },
+    {
+     "question": "qa_fahrkorbtuer",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    },
+    {
+     "question": "qd_konformitaet_geprueft",
+     "role": "OPTIONAL",
+     "required_mode": "NEVER"
+    }
+   ],
+   "sources": [
+    {
+     "type": "LAW",
+     "document": "Aufzugsrichtlinie 2014/33/EU"
+    },
+    {
+     "type": "LAW",
+     "document": "95/16/EG"
+    },
+    {
+     "type": "EN",
+     "document": "DIN EN 81-20",
+     "section": "5.4.6"
+    },
+    {
+     "type": "EN",
+     "document": "DIN EN 81-20",
+     "section": "5.6.7"
+    },
+    {
+     "type": "LAW",
+     "document": "ProdSG"
+    },
+    {
+     "type": "LAW",
+     "document": "BetrSichV",
+     "section": "§ 3"
+    }
+   ],
+   "hazard_factor": "Gefährdung durch organisatorische Mängel (Unterlagen, Unterweisung, Zuständigkeit)",
+   "person_groups": [
+    "Nutzer",
+    "Betreiber"
+   ],
+   "ui_group": "D – Unterlagen und Betreiberorganisation"
   }
  ],
  "rules": [
@@ -11954,7 +12112,7 @@
    "result": "HIGH",
    "origin": "OWN_RULE",
    "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "REVIEW_REQUIRED",
+   "quality_status": "VERIFIED",
    "measures": [
     {
      "measure": "m_43beb25357",
@@ -11968,7 +12126,8 @@
      "relation": "SINGLE",
      "mandatory": true
     }
-   ]
+   ],
+   "notes": "Freigegeben 2026-09-04."
   },
   {
    "hazard": "MF-M21",
@@ -11982,7 +12141,7 @@
    "result": "HIGH",
    "origin": "OWN_RULE",
    "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "REVIEW_REQUIRED",
+   "quality_status": "VERIFIED",
    "measures": [
     {
      "measure": "m_f77dcea8f9",
@@ -11996,7 +12155,8 @@
      "relation": "SINGLE",
      "mandatory": true
     }
-   ]
+   ],
+   "notes": "Freigegeben 2026-09-04."
   },
   {
    "hazard": "MF-M21",
@@ -12010,7 +12170,7 @@
    "result": "MEDIUM",
    "origin": "OWN_RULE",
    "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "REVIEW_REQUIRED",
+   "quality_status": "VERIFIED",
    "measures": [
     {
      "measure": "m_ccd56d64e7",
@@ -12024,7 +12184,8 @@
      "relation": "SINGLE",
      "mandatory": true
     }
-   ]
+   ],
+   "notes": "Freigegeben 2026-09-04."
   },
   {
    "hazard": "MF-M21",
@@ -12038,7 +12199,7 @@
    "result": "MEDIUM",
    "origin": "OWN_RULE",
    "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "REVIEW_REQUIRED",
+   "quality_status": "VERIFIED",
    "measures": [
     {
      "measure": "m_1a06b9c393",
@@ -12052,7 +12213,8 @@
      "relation": "SINGLE",
      "mandatory": true
     }
-   ]
+   ],
+   "notes": "Freigegeben 2026-09-04."
   },
   {
    "hazard": "MF-M21",
@@ -12065,7 +12227,7 @@
    "result": "NO_RISK",
    "origin": "OWN_RULE",
    "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "REVIEW_REQUIRED",
+   "quality_status": "VERIFIED",
    "measures": [
     {
      "measure": "m_148f9590b0",
@@ -12074,7 +12236,7 @@
      "mandatory": true
     }
    ],
-   "notes": "Kein Risiko: keine Mangelregel trifft zu, alle Pflichtfragen beantwortet."
+   "notes": "Kein Risiko: keine Mangelregel trifft zu, alle Pflichtfragen beantwortet. Freigegeben 2026-09-04."
   },
   {
    "hazard": "MF-T01",
@@ -12822,7 +12984,7 @@
    "result": "HIGH",
    "origin": "OWN_RULE",
    "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "REVIEW_REQUIRED",
+   "quality_status": "VERIFIED",
    "measures": [
     {
      "measure": "m_b5135ed842",
@@ -12836,7 +12998,8 @@
      "relation": "SINGLE",
      "mandatory": true
     }
-   ]
+   ],
+   "notes": "Freigegeben 2026-09-04."
   },
   {
    "hazard": "MF-T07",
@@ -12850,7 +13013,7 @@
    "result": "MEDIUM",
    "origin": "OWN_RULE",
    "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "REVIEW_REQUIRED",
+   "quality_status": "VERIFIED",
    "measures": [
     {
      "measure": "m_d9a6cdb941",
@@ -12864,7 +13027,8 @@
      "relation": "SINGLE",
      "mandatory": true
     }
-   ]
+   ],
+   "notes": "Freigegeben 2026-09-04."
   },
   {
    "hazard": "MF-T07",
@@ -12877,7 +13041,7 @@
    "result": "NO_RISK",
    "origin": "OWN_RULE",
    "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "REVIEW_REQUIRED",
+   "quality_status": "VERIFIED",
    "measures": [
     {
      "measure": "m_148f9590b0",
@@ -12886,7 +13050,7 @@
      "mandatory": true
     }
    ],
-   "notes": "Kein Risiko: keine Mangelregel trifft zu, alle Pflichtfragen beantwortet."
+   "notes": "Kein Risiko: keine Mangelregel trifft zu, alle Pflichtfragen beantwortet. Freigegeben 2026-09-04."
   },
   {
    "hazard": "MF-T08",
@@ -12909,7 +13073,7 @@
    "result": "HIGH",
    "origin": "OWN_RULE",
    "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "REVIEW_REQUIRED",
+   "quality_status": "VERIFIED",
    "measures": [
     {
      "measure": "m_835860de2d",
@@ -12923,7 +13087,8 @@
      "relation": "SINGLE",
      "mandatory": true
     }
-   ]
+   ],
+   "notes": "Freigegeben 2026-09-04."
   },
   {
    "hazard": "MF-T08",
@@ -12937,7 +13102,7 @@
    "result": "MEDIUM",
    "origin": "OWN_RULE",
    "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "REVIEW_REQUIRED",
+   "quality_status": "VERIFIED",
    "measures": [
     {
      "measure": "m_cf3340dc30",
@@ -12951,7 +13116,8 @@
      "relation": "SINGLE",
      "mandatory": true
     }
-   ]
+   ],
+   "notes": "Freigegeben 2026-09-04."
   },
   {
    "hazard": "MF-T08",
@@ -12965,7 +13131,7 @@
    "result": "MEDIUM",
    "origin": "OWN_RULE",
    "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "REVIEW_REQUIRED",
+   "quality_status": "VERIFIED",
    "measures": [
     {
      "measure": "m_2d509df4ca",
@@ -12979,7 +13145,8 @@
      "relation": "SINGLE",
      "mandatory": true
     }
-   ]
+   ],
+   "notes": "Freigegeben 2026-09-04."
   },
   {
    "hazard": "MF-T08",
@@ -12992,7 +13159,7 @@
    "result": "NO_RISK",
    "origin": "OWN_RULE",
    "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "REVIEW_REQUIRED",
+   "quality_status": "VERIFIED",
    "measures": [
     {
      "measure": "m_148f9590b0",
@@ -13001,7 +13168,7 @@
      "mandatory": true
     }
    ],
-   "notes": "Kein Risiko: keine Mangelregel trifft zu, alle Pflichtfragen beantwortet."
+   "notes": "Kein Risiko: keine Mangelregel trifft zu, alle Pflichtfragen beantwortet. Freigegeben 2026-09-04."
   },
   {
    "hazard": "MF-T09",
@@ -13015,7 +13182,7 @@
    "result": "HIGH",
    "origin": "OWN_RULE",
    "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "REVIEW_REQUIRED",
+   "quality_status": "VERIFIED",
    "measures": [
     {
      "measure": "m_b0823de03a",
@@ -13029,7 +13196,8 @@
      "relation": "SINGLE",
      "mandatory": true
     }
-   ]
+   ],
+   "notes": "Freigegeben 2026-09-04."
   },
   {
    "hazard": "MF-T09",
@@ -13043,7 +13211,7 @@
    "result": "HIGH",
    "origin": "OWN_RULE",
    "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "REVIEW_REQUIRED",
+   "quality_status": "VERIFIED",
    "measures": [
     {
      "measure": "m_5b91b9a947",
@@ -13057,7 +13225,8 @@
      "relation": "SINGLE",
      "mandatory": true
     }
-   ]
+   ],
+   "notes": "Freigegeben 2026-09-04."
   },
   {
    "hazard": "MF-T09",
@@ -13070,7 +13239,7 @@
    "result": "NO_RISK",
    "origin": "OWN_RULE",
    "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "REVIEW_REQUIRED",
+   "quality_status": "VERIFIED",
    "measures": [
     {
      "measure": "m_148f9590b0",
@@ -13079,7 +13248,7 @@
      "mandatory": true
     }
    ],
-   "notes": "Kein Risiko: keine Mangelregel trifft zu, alle Pflichtfragen beantwortet."
+   "notes": "Kein Risiko: keine Mangelregel trifft zu, alle Pflichtfragen beantwortet. Freigegeben 2026-09-04."
   },
   {
    "hazard": "MF-K01",
@@ -14308,7 +14477,7 @@
    "result": "MEDIUM",
    "origin": "OWN_RULE",
    "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "REVIEW_REQUIRED",
+   "quality_status": "VERIFIED",
    "measures": [
     {
      "measure": "m_ed9e2a4b1d",
@@ -14322,7 +14491,8 @@
      "relation": "SINGLE",
      "mandatory": true
     }
-   ]
+   ],
+   "notes": "Freigegeben 2026-09-04."
   },
   {
    "hazard": "MF-K15",
@@ -14336,7 +14506,7 @@
    "result": "LOW",
    "origin": "OWN_RULE",
    "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "REVIEW_REQUIRED",
+   "quality_status": "VERIFIED",
    "measures": [
     {
      "measure": "m_7fa828f7cd",
@@ -14350,7 +14520,8 @@
      "relation": "SINGLE",
      "mandatory": true
     }
-   ]
+   ],
+   "notes": "Freigegeben 2026-09-04."
   },
   {
    "hazard": "MF-K15",
@@ -14364,7 +14535,7 @@
    "result": "LOW",
    "origin": "OWN_RULE",
    "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "REVIEW_REQUIRED",
+   "quality_status": "VERIFIED",
    "measures": [
     {
      "measure": "m_696bca9172",
@@ -14378,7 +14549,8 @@
      "relation": "SINGLE",
      "mandatory": true
     }
-   ]
+   ],
+   "notes": "Freigegeben 2026-09-04."
   },
   {
    "hazard": "MF-K15",
@@ -14392,7 +14564,7 @@
    "result": "LOW",
    "origin": "OWN_RULE",
    "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "REVIEW_REQUIRED",
+   "quality_status": "VERIFIED",
    "measures": [
     {
      "measure": "m_656da6003c",
@@ -14406,7 +14578,8 @@
      "relation": "SINGLE",
      "mandatory": true
     }
-   ]
+   ],
+   "notes": "Freigegeben 2026-09-04."
   },
   {
    "hazard": "MF-K15",
@@ -14419,7 +14592,7 @@
    "result": "NO_RISK",
    "origin": "OWN_RULE",
    "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "REVIEW_REQUIRED",
+   "quality_status": "VERIFIED",
    "measures": [
     {
      "measure": "m_148f9590b0",
@@ -14428,7 +14601,7 @@
      "mandatory": true
     }
    ],
-   "notes": "Kein Risiko: keine Mangelregel trifft zu, alle Pflichtfragen beantwortet."
+   "notes": "Kein Risiko: keine Mangelregel trifft zu, alle Pflichtfragen beantwortet. Freigegeben 2026-09-04."
   },
   {
    "hazard": "MF-F01",
@@ -19043,6 +19216,218 @@
     }
    ],
    "notes": "Kein Risiko: keine Mangelregel trifft zu, alle Pflichtfragen beantwortet."
+  },
+  {
+   "hazard": "MF-D06",
+   "code": "MF-D06-R1",
+   "priority": 300,
+   "condition": {
+    "all": [
+     {
+      "question": "qa_baujahr",
+      "operator": "GTE",
+      "value": 2017
+     },
+     {
+      "question": "qa_fahrkorbtuer",
+      "operator": "EQ",
+      "value": false
+     }
+    ]
+   },
+   "result": "HIGH",
+   "origin": "OWN_RULE",
+   "evidence": "HIGH_CONFIDENCE",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_d86ad2653a",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_eba2de844c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ],
+   "notes": "Fahrkorbtür ist seit EN 81-1/2 (1999) gefordert und in EN 81-20 unverändert – an einer Anlage ab 2017 ist ihr Fehlen ein Konformitätsmangel, keine Nachrüstfrage. Freigegeben 2026-09-04."
+  },
+  {
+   "hazard": "MF-D06",
+   "code": "MF-D06-R2",
+   "priority": 250,
+   "condition": {
+    "all": [
+     {
+      "question": "qa_baujahr",
+      "operator": "GTE",
+      "value": 2012
+     },
+     {
+      "question": "qa_ucm_a3",
+      "operator": "EQ",
+      "value": false
+     }
+    ]
+   },
+   "result": "HIGH",
+   "origin": "OWN_RULE",
+   "evidence": "HIGH_CONFIDENCE",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_ef0185399f",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_9a07871b14",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ],
+   "notes": "EN 81-1/2 + A3 (UCM) ist seit 2012 verbindlich. Freigegeben 2026-09-04."
+  },
+  {
+   "hazard": "MF-D06",
+   "code": "MF-D06-R3",
+   "priority": 200,
+   "condition": {
+    "all": [
+     {
+      "question": "qa_baujahr",
+      "operator": "GTE",
+      "value": 1999
+     },
+     {
+      "question": "qa_fahrkorbtuer",
+      "operator": "EQ",
+      "value": false
+     }
+    ]
+   },
+   "result": "MEDIUM",
+   "origin": "OWN_RULE",
+   "evidence": "HIGH_CONFIDENCE",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_30890e1295",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_4c9858ff1b",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ],
+   "notes": "Ab Geltung der Aufzugsrichtlinie (01.07.1999) ist die Fahrkorbtür gefordert. Vor 1999 gebaute Anlagen ohne Fahrkorbtür sind dagegen ein Nachrüstfall nach EN 81-80, kein Konformitätsmangel. Freigegeben 2026-09-04."
+  },
+  {
+   "hazard": "MF-D06",
+   "code": "MF-D06-R4",
+   "priority": 150,
+   "condition": {
+    "all": [
+     {
+      "question": "qa_baujahr",
+      "operator": "GTE",
+      "value": 2017
+     },
+     {
+      "question": "qa_norm_inverkehrbringen",
+      "operator": "EQ",
+      "value": "tra"
+     }
+    ]
+   },
+   "result": "MEDIUM",
+   "origin": "OWN_RULE",
+   "evidence": "INFERRED",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_7568b494f5",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_74dedd0021",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ],
+   "notes": "Freigegeben 2026-09-04."
+  },
+  {
+   "hazard": "MF-D06",
+   "code": "MF-D06-R5",
+   "priority": 140,
+   "condition": {
+    "all": [
+     {
+      "question": "qa_baujahr",
+      "operator": "LTE",
+      "value": 1998
+     },
+     {
+      "question": "qa_norm_inverkehrbringen",
+      "operator": "EQ",
+      "value": "en81_20"
+     }
+    ]
+   },
+   "result": "LOW",
+   "origin": "OWN_RULE",
+   "evidence": "INFERRED",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_197127309a",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_c042b3b8f8",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ],
+   "notes": "Kein Fehler: Eine alte Anlage kann nach einer wesentlichen Veränderung neu in Verkehr gebracht worden sein. Dann gehört der Umfang in die Unterlagen. Freigegeben 2026-09-04."
+  },
+  {
+   "hazard": "MF-D06",
+   "code": "MF-D06-R6",
+   "priority": 1,
+   "condition": {
+    "question": "qa_baujahr",
+    "operator": "ANSWERED"
+   },
+   "result": "NO_RISK",
+   "origin": "OWN_RULE",
+   "evidence": "INFERRED",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_148f9590b0",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ],
+   "notes": "Freigegeben 2026-09-04."
   }
  ]
 }

@@ -81,6 +81,43 @@ pruefe('Wirksamkeit nicht nachgewiesen', 'MF-M21',
   { ...nes, qm_notendschalter: 'ungeprueft' }, 'MEDIUM');
 pruefe('Notendschalter unbeantwortet', 'MF-M21', {}, 'INCOMPLETE');
 
+// ---- MF-D06 – Baujahr gegen Ausstattung (Konformitätsmangel) ---------------
+// Erkenntnis aus GBU 3.0: Baujahr ist ein Steuerfeld. Bei uns blendet es nichts
+// aus, sondern ordnet ein – deshalb wird hier geprüft, dass dieselbe fehlende
+// Einrichtung je nach Baujahr unterschiedlich streng bewertet wird.
+const konform = {
+  qa_baujahr: 2020,
+  qa_norm_inverkehrbringen: 'en81_20',
+  qa_ucm_a3: true,
+  qa_fahrkorbtuer: true,
+};
+pruefe('Neuanlage vollständig', 'MF-D06', konform, 'NO_RISK');
+pruefe('Neuanlage ohne Fahrkorbtür', 'MF-D06',
+  { ...konform, qa_fahrkorbtuer: false }, 'HIGH');
+pruefe('Neuanlage ohne UCM', 'MF-D06', { ...konform, qa_ucm_a3: false }, 'HIGH');
+// Dieselbe fehlende Fahrkorbtür an einer Altanlage: kein Konformitätsmangel,
+// sondern ein Nachrüstfall – hier also KEIN Befund (bewertet wird sie über die
+// Türgefährdungen).
+pruefe('Altanlage ohne Fahrkorbtür ist kein Konformitätsmangel', 'MF-D06',
+  { qa_baujahr: 1975, qa_norm_inverkehrbringen: 'tra', qa_ucm_a3: false,
+    qa_fahrkorbtuer: false }, 'NO_RISK');
+// Zwischen 1999 und 2012: Fahrkorbtür gefordert, UCM noch nicht.
+pruefe('Anlage von 2005 ohne Fahrkorbtür', 'MF-D06',
+  { qa_baujahr: 2005, qa_norm_inverkehrbringen: 'en81_1_2', qa_ucm_a3: false,
+    qa_fahrkorbtuer: false }, 'MEDIUM');
+pruefe('Anlage von 2005 ohne UCM ist in Ordnung', 'MF-D06',
+  { qa_baujahr: 2005, qa_norm_inverkehrbringen: 'en81_1_2', qa_ucm_a3: false,
+    qa_fahrkorbtuer: true }, 'NO_RISK');
+// Widersprüchliche Angaben.
+pruefe('Baujahr 2020, Regelwerk TRA', 'MF-D06',
+  { ...konform, qa_norm_inverkehrbringen: 'tra' }, 'MEDIUM');
+pruefe('Baujahr 1985, Regelwerk EN 81-20 (Modernisierung)', 'MF-D06',
+  { qa_baujahr: 1985, qa_norm_inverkehrbringen: 'en81_20', qa_ucm_a3: true,
+    qa_fahrkorbtuer: true }, 'LOW');
+pruefe('Baujahr unbeantwortet', 'MF-D06',
+  { qa_norm_inverkehrbringen: 'en81_20', qa_ucm_a3: true, qa_fahrkorbtuer: true },
+  'INCOMPLETE');
+
 // ---- Regellücken über alle Gefährdungen ------------------------------------
 const leer = evaluate(seed as any, {} as any);
 const gaps = leer.filter((r: any) => r.ruleGap);
