@@ -25,7 +25,14 @@ for mod in ['anlage', 'zugang', 'triebwerksraum', 'tueren_fahrkorb', 'fahrkorbda
             'schacht_grube', 'umfeld', 'sonderfunktion_doku']:
     importlib.import_module('mf_content.' + mod)
 
-RULE_VERSION = '81-20-mf-2026.5'  # .5: 26 neue Regeln freigegeben 04.09.2026
+# Annahmen erst nach allen Fragen eintragen – so kann die Pruefung unten jede
+# angenommene Frage gegen den fertigen Katalog halten.
+from mf_content import annahmen as ANN  # noqa: E402
+ANN.registriere()
+
+RULE_VERSION = '81-20-mf-2026.7'  # .7: best_case je Frage (Sammelantwort) 07.09.2026
+# .6: begruendete Annahmen (Baujahr) 07.09.2026
+# .5: 26 neue Regeln freigegeben 04.09.2026
 # .4: Baujahr als Steuerfeld + MF-D06 Konformitaetspruefung 04.09.2026
 # .2: Review 02.09.2026 (Kein-Risiko-Regeln, Pflichtfragen, TRBS-Fundstellen, K-K12)
 
@@ -112,8 +119,99 @@ def build():
     fix_trbs_sources(hazards)
     apply_decisions(rules)
     apply_freigabe(rules)
-    return {'rule_version': RULE_VERSION, 'questions': questions, 'measures': measures,
+    seed = {'rule_version': RULE_VERSION, 'questions': questions, 'measures': measures,
             'hazards': hazards, 'rules': rules}
+    if C.ANNAHMEN:
+        seed['assumptions'] = list(C.ANNAHMEN)
+        seed['assumptions_void_when'] = C.ANNAHMEN_HINFAELLIG
+    set_best_case(seed)
+    return seed
+
+
+ORTSBEREICHE = [
+    'Z – Zugang zum Triebwerks-/Steuerungsraum',
+    'M – Triebwerks-/Maschinenraum und Steuerung',
+    'T – Schachttüren und Fahrkorbtür',
+    'K – Fahrkorb',
+    'F – Fahrkorbdach und Schachtkopf',
+    'S – Schacht',
+    'G – Schachtgrube',
+]
+
+
+def set_best_case(seed):
+    """Leitet je Ja/Nein-Frage ab, welcher Wert unauffaellig ist.
+
+    Grundlage der Sammelantwort ("Sichtpruefung ohne Befund"): Der Pruefer
+    geht einen Ort ab und haelt nur fest, was auffaellt. Damit die App den
+    Rest setzen kann, muss sie wissen, welcher Wert je Frage der unauffaellige
+    ist - und das steht bereits im Regelwerk: Loest ausschliesslich `nein`
+    einen Befund aus, ist `ja` der unauffaellige Wert und umgekehrt.
+
+    Bewusst konservativ. Kein best_case bekommt eine Frage,
+      * bei der BEIDE Werte irgendwo einen Befund ausloesen (z. B. die
+        Fahrkorbtuer - ihr Fehlen ist ein Mangel, ihr Vorhandensein macht
+        andere Regeln scharf),
+      * die als APPLICABILITY den Katalogumfang steuert,
+      * die in keiner Befundregel vorkommt,
+      * die ausserhalb der sieben Ortsbereiche liegt. Anlagenmerkmale,
+        Unterlagen, Umfeld und Sonderfunktionen sind keine Sichtpruefung an
+        einem Ort; sie bleiben Einzelfragen.
+    Blaetter unter einem `not` zaehlen nicht mit - dort ist die Polaritaet
+    umgekehrt und die Ableitung nicht mehr eindeutig.
+    """
+    qmap = {q['code']: q for q in seed['questions']}
+    applicability = set()
+    for h in seed['hazards']:
+        for hq in h.get('questions', []):
+            if hq['role'] == 'APPLICABILITY':
+                applicability.add(hq['question'])
+
+    def blaetter(expr, negiert, out):
+        if not expr:
+            return
+        if 'all' in expr:
+            for e in expr['all']: blaetter(e, negiert, out)
+        elif 'any' in expr:
+            for e in expr['any']: blaetter(e, negiert, out)
+        elif 'not' in expr:
+            blaetter(expr['not'], not negiert, out)
+        else:
+            out.append((expr, negiert))
+
+    verlangt = {}
+    for r in seed['rules']:
+        if r['result'] not in ('LOW', 'MEDIUM', 'HIGH'):
+            continue
+        out = []
+        blaetter(r['condition'], False, out)
+        for lf, negiert in out:
+            if negiert:
+                continue
+            code = lf['question']
+            if qmap.get(code, {}).get('type') != 'YES_NO':
+                continue
+            wert = lf.get('value')
+            if not isinstance(wert, bool):
+                continue
+            if lf['operator'] == 'EQ':
+                verlangt.setdefault(code, set()).add(wert)
+            elif lf['operator'] == 'NEQ':
+                verlangt.setdefault(code, set()).add(not wert)
+
+    gesetzt = 0
+    for q in seed['questions']:
+        q.pop('best_case', None)
+        if q['type'] != 'YES_NO' or q['code'] in applicability:
+            continue
+        if q.get('category') not in ORTSBEREICHE:
+            continue
+        werte = verlangt.get(q['code'], set())
+        if len(werte) != 1:
+            continue
+        q['best_case'] = not werte.pop()
+        gesetzt += 1
+    return gesetzt
 
 
 def check(seed):
@@ -185,6 +283,37 @@ def check(seed):
     for r in seed['rules']:
         if r['hazard'] not in hmap:
             errors.append('%s: Gefährdung %s unbekannt' % (r['code'], r['hazard']))
+
+    # Annahmen: die drei Grenzen aus mf_content/common.py hart prüfen, damit
+    # beim Erweitern der Liste keine Zustands- oder Steuerfrage hineinrutscht.
+    applicability_q = set()
+    for h in seed['hazards']:
+        for hq_ in h.get('questions', []):
+            if hq_['role'] == 'APPLICABILITY':
+                applicability_q.add(hq_['question'])
+    gesehen = set()
+    for a in seed.get('assumptions', []):
+        code = a['question']
+        wo = 'Annahme ' + code
+        if code in gesehen:
+            errors.append('%s: doppelt eingetragen' % wo)
+        gesehen.add(code)
+        if code not in qmap:
+            errors.append('%s: unbekannte Frage' % wo)
+            continue
+        if qmap[code]['type'] != 'YES_NO':
+            errors.append('%s: nur Ja/Nein-Fragen dürfen angenommen werden' % wo)
+        if not isinstance(a['value'], bool):
+            errors.append('%s: angenommener Wert muss Ja/Nein sein' % wo)
+        if code in applicability_q:
+            errors.append('%s: steuert als APPLICABILITY-Frage den Katalogumfang '
+                          'und darf nicht angenommen werden' % wo)
+        if not a.get('reason'):
+            errors.append('%s: ohne Begründung' % wo)
+        for lf in (lambda t: (collect(a['when'], t), t)[1])([]):
+            check_leaf(lf, wo + '/when')
+    for lf in (lambda t: (collect(seed.get('assumptions_void_when'), t), t)[1])([]):
+        check_leaf(lf, 'assumptions_void_when')
     return errors, warnings
 
 

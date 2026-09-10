@@ -27,6 +27,7 @@ HAZARDS = []
 RULES = []
 KLAERUNG = []
 MEASURES = OrderedDict()
+ANNAHMEN = []
 
 # ---- Erhebungsbereiche (Fragebogen) ----------------------------------------
 CATS = OrderedDict([
@@ -139,6 +140,45 @@ def bj_bis(jahr):
 def bj_ab(jahr):
     """Baujahr ab einschliesslich <jahr>."""
     return gte('qa_baujahr', jahr)
+
+
+# ---- Begruendete Annahmen ("Best Case") ------------------------------------
+#
+# Merkmale, die zum Baujahr der Anlage vorgeschrieben waren, mussten vor der
+# Inbetriebnahme nachgewiesen und durch eine ZUES abgenommen werden. Sie
+# muessen nicht erneut erhoben werden: Die Frage wird optional und gilt als
+# "vorhanden", solange die Fachkraft nicht widerspricht.
+#
+# Damit sinkt der Erhebungsaufwand deutlich, ohne dass eine Gefaehrdung aus der
+# Beurteilung verschwindet - anders als beim Ausblenden bleibt die Frage im
+# Fragebogen stehen, traegt ihre Begruendung und laesst sich mit einem Klick
+# ueberschreiben. Jeder Befund, der auf einer Annahme beruht, wird in der
+# Bewertung und im PDF als solcher ausgewiesen.
+#
+# DREI GRENZEN, die beim Erweitern der Liste einzuhalten sind:
+#
+#   1. Nur Ausstattungsmerkmale. Zustandsfragen (Verschleiss, Verschmutzung,
+#      Beschaedigung, defekte Leuchten) nie annehmen - eine Abnahme von 2019
+#      sagt nichts ueber den Zustand heute. Genau dafuer faehrt jemand hin.
+#   2. Nichts Organisatorisches. Notfallplan, Unterweisung, beauftragte Person,
+#      Pruefnachweise und Aufschaltung des Notrufs haengen nicht am Baujahr.
+#   3. Nichts, was man sofort sieht. Die Fahrkorbtuer etwa bleibt Pflichtfrage:
+#      Die Annahme spart dort keine Zeit, wuerde aber einen Zweig des Katalogs
+#      stillegen. Dasselbe gilt fuer Fragen mit Rolle APPLICABILITY - sie
+#      steuern, was ueberhaupt bewertet wird.
+#
+# Die Vermutung ist widerlegbar: Gibt die Fachkraft an, dass Konformitaets-
+# erklaerung und Abnahmeunterlagen NICHT vorliegen, ist die Abnahme nicht
+# belegt - dann greift keine einzige Annahme und alles wird wieder erhoben.
+ANNAHMEN_HINFAELLIG = no('qd_konformitaet_geprueft')
+
+
+def annahme(code, ab_jahr, grund, wert=True):
+    """Frage <code> gilt ab Baujahr <ab_jahr> als <wert>, solange sie
+    unbeantwortet bleibt. <grund> erscheint in Fragebogen, Bewertung und PDF -
+    er muss die Rechtsgrundlage nennen, nicht nur das Jahr."""
+    ANNAHMEN.append({'question': code, 'when': bj_ab(ab_jahr),
+                     'value': wert, 'reason': grund})
 def all_(*xs):   return {'all': list(xs)}
 def any_(*xs):   return {'any': list(xs)}
 def not_(x):     return {'not': x}

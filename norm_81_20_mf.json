@@ -1,5 +1,5 @@
 {
- "rule_version": "81-20-mf-2026.5",
+ "rule_version": "81-20-mf-2026.7",
  "questions": [
   {
    "code": "qa_aufzugsart",
@@ -333,7 +333,8 @@
    "domain": "GBU",
    "text": "Beleuchtung an den Zuwegen zum Triebwerks-/Steuerungsraum vorhanden?",
    "category": "Z – Zugang zum Triebwerks-/Steuerungsraum",
-   "ui_number": "5.1"
+   "ui_number": "5.1",
+   "best_case": true
   },
   {
    "code": "qz_bel_ausreichend",
@@ -346,7 +347,8 @@
     "question": "qz_bel_vorhanden",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qz_bel_defekt",
@@ -359,7 +361,8 @@
     "question": "qz_bel_vorhanden",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "best_case": false
   },
   {
    "code": "qz_weg_sicher",
@@ -367,7 +370,8 @@
    "domain": "GBU",
    "text": "Sicherer, freier Verkehrsweg zum Triebwerks-/Steuerungsraum (trocken, sauber, ohne Stolperstellen, ohne Absturzkante)?",
    "category": "Z – Zugang zum Triebwerks-/Steuerungsraum",
-   "ui_number": "5.3"
+   "ui_number": "5.3",
+   "best_case": true
   },
   {
    "code": "qz_weg_rutschig",
@@ -456,7 +460,8 @@
     "question": "qz_aufstieg",
     "operator": "NEQ",
     "value": "ebenerdig"
-   }
+   },
+   "best_case": false
   },
   {
    "code": "qz_absturzkante",
@@ -464,7 +469,8 @@
    "domain": "GBU",
    "text": "Führt der Zugang über eine Dachfläche, Dachkante, Empore oder eine andere Absturzkante?",
    "category": "Z – Zugang zum Triebwerks-/Steuerungsraum",
-   "ui_number": "5.7"
+   "ui_number": "5.7",
+   "best_case": false
   },
   {
    "code": "qz_absturz_gesichert",
@@ -477,7 +483,8 @@
     "question": "qz_absturzkante",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qz_absturz_gekennzeichnet",
@@ -507,7 +514,8 @@
    "domain": "GBU",
    "text": "Muss ein Treppenauge, eine Brüstung oder ein Fenster überstiegen werden?",
    "category": "Z – Zugang zum Triebwerks-/Steuerungsraum",
-   "ui_number": "5.8"
+   "ui_number": "5.8",
+   "best_case": false
   },
   {
    "code": "qz_von_innen",
@@ -559,7 +567,8 @@
    "domain": "GBU",
    "text": "Erschwert die Art des Zugangs den Transport von Material und Werkzeug (z. B. nur über Leiter, Dachluke, enge Wendeltreppe)?",
    "category": "Z – Zugang zum Triebwerks-/Steuerungsraum",
-   "ui_number": "5.11"
+   "ui_number": "5.11",
+   "best_case": false
   },
   {
    "code": "qz_tuer_vorhanden",
@@ -572,7 +581,8 @@
     "question": "qa_maschinenraum",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qz_tuer_abschliessbar",
@@ -585,7 +595,8 @@
     "question": "qz_tuer_vorhanden",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qz_tuer_zustand",
@@ -598,7 +609,8 @@
     "question": "qz_tuer_vorhanden",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qz_tuer_mass",
@@ -611,7 +623,8 @@
     "question": "qz_tuer_vorhanden",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qz_flucht_frei",
@@ -619,7 +632,8 @@
    "domain": "GBU",
    "text": "Flucht- und Rettungsweg vom Triebwerks-/Steuerungsraum frei und benutzbar?",
    "category": "Z – Zugang zum Triebwerks-/Steuerungsraum",
-   "ui_number": "5.13"
+   "ui_number": "5.13",
+   "best_case": true
   },
   {
    "code": "qz_flucht_gekennz",
@@ -632,7 +646,8 @@
     "question": "qz_flucht_frei",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qz_flucht_eingeengt",
@@ -645,7 +660,8 @@
     "question": "qz_flucht_frei",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "best_case": false
   },
   {
    "code": "qz_zugang_befreiung",
@@ -675,7 +691,8 @@
    "domain": "GBU",
    "text": "Asbesthaltige oder andere schädliche Baustoffe im Zugangsbereich zum Triebwerksraum (Bremsbeläge, Dichtungen, Brandschutzplatten, Isolierungen)?",
    "category": "Z – Zugang zum Triebwerks-/Steuerungsraum",
-   "ui_number": "5.60"
+   "ui_number": "5.60",
+   "best_case": false
   },
   {
    "code": "qz_verschmutzung",
@@ -683,7 +700,8 @@
    "domain": "GBU",
    "text": "Erhebliche Verschmutzungen (Taubenkot, Unrat, Schimmel, Ablagerungen) im Zugangsbereich zum Triebwerksraum?",
    "category": "Z – Zugang zum Triebwerks-/Steuerungsraum",
-   "ui_number": "5.62"
+   "ui_number": "5.62",
+   "best_case": false
   },
   {
    "code": "qz_brennbar_lager",
@@ -691,7 +709,8 @@
    "domain": "GBU",
    "text": "Lagerung brennbarer oder leicht entzündlicher Stoffe im Zugangsbereich zum Triebwerksraum?",
    "category": "Z – Zugang zum Triebwerks-/Steuerungsraum",
-   "ui_number": "5.64"
+   "ui_number": "5.64",
+   "best_case": false
   },
   {
    "code": "qm_bel_vorhanden",
@@ -704,7 +723,8 @@
     "question": "qa_maschinenraum",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qm_bel_200lux",
@@ -717,7 +737,8 @@
     "question": "qm_bel_vorhanden",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qm_bel_geeignet",
@@ -730,7 +751,8 @@
     "question": "qm_bel_vorhanden",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qm_bel_splitterschutz",
@@ -743,7 +765,8 @@
     "question": "qm_bel_vorhanden",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qm_beruehrungssicher",
@@ -751,7 +774,8 @@
    "domain": "GBU",
    "text": "Alle spannungsführenden Teile berührungssicher (Abdeckungen vorhanden, Schaltschrank geschlossen)?",
    "category": "M – Triebwerks-/Maschinenraum und Steuerung",
-   "ui_number": "5.30"
+   "ui_number": "5.30",
+   "best_case": true
   },
   {
    "code": "qm_offene_schalttafel",
@@ -764,7 +788,8 @@
     "question": "qm_beruehrungssicher",
     "operator": "EQ",
     "value": false
-   }
+   },
+   "best_case": false
   },
   {
    "code": "qm_offene_schalter",
@@ -777,7 +802,8 @@
     "question": "qm_beruehrungssicher",
     "operator": "EQ",
     "value": false
-   }
+   },
+   "best_case": false
   },
   {
    "code": "qm_schaltschrank_unsicher",
@@ -790,7 +816,8 @@
     "question": "qm_beruehrungssicher",
     "operator": "EQ",
     "value": false
-   }
+   },
+   "best_case": false
   },
   {
    "code": "qm_kennz_kontakte",
@@ -811,7 +838,8 @@
    "domain": "GBU",
    "text": "Nachweis der elektrischen Prüfung nach DGUV Vorschrift 3 vorhanden (Prüfplakette / Protokoll aktuell)?",
    "category": "M – Triebwerks-/Maschinenraum und Steuerung",
-   "ui_number": "5.35"
+   "ui_number": "5.35",
+   "best_case": true
   },
   {
    "code": "qm_bauseitig_ok",
@@ -819,7 +847,8 @@
    "domain": "GBU",
    "text": "Bauseitige Elektroinstallation im Raum (Steckdosen, Schalter, Leitungen) unbeschädigt?",
    "category": "M – Triebwerks-/Maschinenraum und Steuerung",
-   "ui_number": "5.36"
+   "ui_number": "5.36",
+   "best_case": true
   },
   {
    "code": "qm_ortsfest_geprueft",
@@ -827,7 +856,8 @@
    "domain": "GBU",
    "text": "Prüfung der ortsfesten elektrischen Anlage nachgewiesen?",
    "category": "M – Triebwerks-/Maschinenraum und Steuerung",
-   "ui_number": "5.37"
+   "ui_number": "5.37",
+   "best_case": true
   },
   {
    "code": "qm_potenzialausgleich",
@@ -835,7 +865,8 @@
    "domain": "GBU",
    "text": "Hauptpotenzialausgleich an der Aufzugskonstruktion vorhanden?",
    "category": "M – Triebwerks-/Maschinenraum und Steuerung",
-   "ui_number": "5.38"
+   "ui_number": "5.38",
+   "best_case": true
   },
   {
    "code": "qm_einzug_treibscheibe",
@@ -869,7 +900,8 @@
      "trommel",
      "seil_hydraulik"
     ]
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qm_einzug_grad",
@@ -913,7 +945,8 @@
     "question": "qa_maschinenraum",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qm_freiflaeche",
@@ -926,7 +959,8 @@
     "question": "qa_maschinenraum",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qm_lagerung",
@@ -939,7 +973,8 @@
     "question": "qa_maschinenraum",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "best_case": false
   },
   {
    "code": "qm_niveau",
@@ -952,7 +987,8 @@
     "question": "qa_maschinenraum",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "best_case": false
   },
   {
    "code": "qm_niveau_gesichert",
@@ -965,7 +1001,8 @@
     "question": "qm_niveau",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qm_podest_absturz",
@@ -978,7 +1015,8 @@
     "question": "qm_niveau",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "best_case": false
   },
   {
    "code": "qm_bodenoeffnung",
@@ -991,7 +1029,8 @@
     "question": "qa_maschinenraum",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "best_case": false
   },
   {
    "code": "qm_boden_rutschhemmend",
@@ -1004,7 +1043,8 @@
     "question": "qa_maschinenraum",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qm_boden_oelfest",
@@ -1017,7 +1057,8 @@
     "question": "qa_maschinenraum",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qm_oel_ausgetreten",
@@ -1025,7 +1066,8 @@
    "domain": "GBU",
    "text": "Ausgetretenes Öl / Hydrauliköl ohne Auffangmöglichkeit?",
    "category": "M – Triebwerks-/Maschinenraum und Steuerung",
-   "ui_number": "5.50"
+   "ui_number": "5.50",
+   "best_case": false
   },
   {
    "code": "qm_hauptschalter",
@@ -1033,7 +1075,8 @@
    "domain": "GBU",
    "text": "Hauptschalter vorhanden und Wirkung nachvollziehbar?",
    "category": "M – Triebwerks-/Maschinenraum und Steuerung",
-   "ui_number": "5.51"
+   "ui_number": "5.51",
+   "best_case": true
   },
   {
    "code": "qm_hauptschalter_abschliessbar",
@@ -1046,7 +1089,8 @@
     "question": "qm_hauptschalter",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qm_hauptschalter_gekennz",
@@ -1059,7 +1103,8 @@
     "question": "qm_hauptschalter",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qm_zweikreisbremse",
@@ -1097,7 +1142,8 @@
    "domain": "GBU",
    "text": "Schutz gegen Überhitzen des Antriebsmotors vorhanden?",
    "category": "M – Triebwerks-/Maschinenraum und Steuerung",
-   "ui_number": "6.3"
+   "ui_number": "6.3",
+   "best_case": true
   },
   {
    "code": "qm_schuetze_unabhaengig",
@@ -1110,7 +1156,8 @@
     "question": "qa_antrieb",
     "operator": "NEQ",
     "value": "hydraulisch"
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qm_steuerung_selbstueberw",
@@ -1131,7 +1178,8 @@
    "domain": "GBU",
    "text": "Motor-Laufzeitüberwachung vorhanden?",
    "category": "M – Triebwerks-/Maschinenraum und Steuerung",
-   "ui_number": "6.5"
+   "ui_number": "6.5",
+   "best_case": true
   },
   {
    "code": "qm_phasenumkehr",
@@ -1147,7 +1195,8 @@
      "geregelt",
      "hydraulisch"
     ]
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qm_absperrventil",
@@ -1163,7 +1212,8 @@
      "hydraulik",
      "seil_hydraulik"
     ]
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qm_absperrventil_gekennz",
@@ -1176,7 +1226,8 @@
     "question": "qm_absperrventil",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qm_rohrbruch",
@@ -1192,7 +1243,8 @@
      "hydraulik",
      "seil_hydraulik"
     ]
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qm_kav",
@@ -1208,7 +1260,8 @@
      "hydraulik",
      "seil_hydraulik"
     ]
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qm_absinkt",
@@ -1224,7 +1277,8 @@
      "hydraulik",
      "seil_hydraulik"
     ]
-   }
+   },
+   "best_case": false
   },
   {
    "code": "qm_notendschalter",
@@ -1263,7 +1317,8 @@
     "value": [
      "fehlt"
     ]
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qm_notendschalter_verbindung_ueberwacht",
@@ -1279,7 +1334,8 @@
     "value": [
      "fehlt"
     ]
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qm_anschlagpunkte",
@@ -1292,7 +1348,8 @@
     "question": "qa_maschinenraum",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qm_tragfaehigkeit",
@@ -1305,7 +1362,8 @@
     "question": "qm_anschlagpunkte",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qm_anschlag_geprueft",
@@ -1318,7 +1376,8 @@
     "question": "qm_anschlagpunkte",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qm_notbetrieb",
@@ -1326,7 +1385,8 @@
    "domain": "GBU",
    "text": "Einrichtung für Notbetrieb / Personenbefreiung vorhanden (Handrad, Bremslüfthebel, Evakuierungseinheit, Notablass)?",
    "category": "M – Triebwerks-/Maschinenraum und Steuerung",
-   "ui_number": "5.53"
+   "ui_number": "5.53",
+   "best_case": true
   },
   {
    "code": "qm_notbetrieb_gekennz",
@@ -1339,7 +1399,8 @@
     "question": "qm_notbetrieb",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qm_personal_eingewiesen",
@@ -1347,7 +1408,8 @@
    "domain": "GBU",
    "text": "Beauftragte Personen in die Personenbefreiung eingewiesen?",
    "category": "M – Triebwerks-/Maschinenraum und Steuerung",
-   "ui_number": "5.53b"
+   "ui_number": "5.53b",
+   "best_case": true
   },
   {
    "code": "qm_kennz_elektrisch",
@@ -1355,7 +1417,8 @@
    "domain": "GBU",
    "text": "Elektrische Einrichtungen gekennzeichnet (Zuordnung im Notfall möglich)?",
    "category": "M – Triebwerks-/Maschinenraum und Steuerung",
-   "ui_number": "5.54"
+   "ui_number": "5.54",
+   "best_case": true
   },
   {
    "code": "qm_stromlaufplan",
@@ -1385,7 +1448,8 @@
    "domain": "GBU",
    "text": "Beschilderung vollständig (Schutzraum, Notablass, Entriegelungsschlüssel, Verhalten bei Personenbefreiung)?",
    "category": "M – Triebwerks-/Maschinenraum und Steuerung",
-   "ui_number": "5.56"
+   "ui_number": "5.56",
+   "best_case": true
   },
   {
    "code": "qm_betriebsanleitung",
@@ -1451,7 +1515,8 @@
     "question": "qa_rollenraum",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qm_fremd_frei",
@@ -1464,7 +1529,8 @@
     "question": "qa_maschinenraum",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qm_asbest",
@@ -1477,7 +1543,8 @@
     "question": "qa_maschinenraum",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "best_case": false
   },
   {
    "code": "qm_verschmutzung",
@@ -1490,7 +1557,8 @@
     "question": "qa_maschinenraum",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "best_case": false
   },
   {
    "code": "qm_brennbar_lager",
@@ -1503,7 +1571,8 @@
     "question": "qa_maschinenraum",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "best_case": false
   },
   {
    "code": "qt_verriegelung_elektrisch",
@@ -1511,7 +1580,8 @@
    "domain": "GBU",
    "text": "Schachttürverriegelung vom Sicherheitskreis elektrisch überwacht?",
    "category": "T – Schachttüren und Fahrkorbtür",
-   "ui_number": "7.1"
+   "ui_number": "7.1",
+   "best_case": true
   },
   {
    "code": "qt_fehlschliess",
@@ -1519,7 +1589,8 @@
    "domain": "GBU",
    "text": "Fehlschließsicherung / Nachschließeinrichtung an den Schachttüren vorhanden?",
    "category": "T – Schachttüren und Fahrkorbtür",
-   "ui_number": "7.2"
+   "ui_number": "7.2",
+   "best_case": true
   },
   {
    "code": "qt_selbstschliessend",
@@ -1527,7 +1598,8 @@
    "domain": "GBU",
    "text": "Schachttüren selbstschließend (Feder oder Gewicht)?",
    "category": "T – Schachttüren und Fahrkorbtür",
-   "ui_number": "7.3"
+   "ui_number": "7.3",
+   "best_case": true
   },
   {
    "code": "qt_schliesst_nach_notentriegelung",
@@ -1535,7 +1607,8 @@
    "domain": "GBU",
    "text": "Schließt die Schachttür nach einer Notentriegelung selbsttätig?",
    "category": "T – Schachttüren und Fahrkorbtür",
-   "ui_number": "7.4"
+   "ui_number": "7.4",
+   "best_case": true
   },
   {
    "code": "qt_notentriegelung_alle",
@@ -1543,7 +1616,8 @@
    "domain": "GBU",
    "text": "Notentriegelung an allen Schachttüren vorhanden?",
    "category": "T – Schachttüren und Fahrkorbtür",
-   "ui_number": "7.5"
+   "ui_number": "7.5",
+   "best_case": true
   },
   {
    "code": "qt_dreikant_hinterlegt",
@@ -1551,7 +1625,8 @@
    "domain": "GBU",
    "text": "Passender Entriegelungsschlüssel (Dreikant) für die Personenbefreiung vor Ort hinterlegt?",
    "category": "T – Schachttüren und Fahrkorbtür",
-   "ui_number": "7.6"
+   "ui_number": "7.6",
+   "best_case": true
   },
   {
    "code": "qt_notentriegelung_hoehe",
@@ -1564,7 +1639,8 @@
     "question": "qt_notentriegelung_alle",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qt_glas_normgerecht",
@@ -1586,7 +1662,8 @@
       "value": true
      }
     ]
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qt_glas_drahtglas",
@@ -1608,7 +1685,8 @@
       "value": true
      }
     ]
-   }
+   },
+   "best_case": false
   },
   {
    "code": "qt_glas_einzugsschutz",
@@ -1630,7 +1708,8 @@
       "value": true
      }
     ]
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qt_feuerwiderstand",
@@ -1762,7 +1841,8 @@
    "text": "Rückhalteeinrichtungen an den horizontal bewegten Schacht-Schiebetüren vorhanden (Türblatt bleibt in seiner Lage, wenn ein Führungselement versagt)?",
    "category": "T – Schachttüren und Fahrkorbtür",
    "ui_number": "7.13",
-   "help_text": "EN 81-20 5.3.5.3.2. Auch die Aufhängung/Befestigung selbst prüfen: Ein Türblatt, das aus der Führung fällt, gibt den Schacht frei."
+   "help_text": "EN 81-20 5.3.5.3.2. Auch die Aufhängung/Befestigung selbst prüfen: Ein Türblatt, das aus der Führung fällt, gibt den Schacht frei.",
+   "best_case": true
   },
   {
    "code": "qt_fuehrung_tuerblatt_ok",
@@ -1770,7 +1850,8 @@
    "domain": "GBU",
    "text": "Führungselemente, Hänger und Befestigungen der Türblätter unbeschädigt und ohne auffälliges Spiel?",
    "category": "T – Schachttüren und Fahrkorbtür",
-   "ui_number": "7.13a"
+   "ui_number": "7.13a",
+   "best_case": true
   },
   {
    "code": "qt_tuer_mehrteilig",
@@ -1818,7 +1899,8 @@
    "domain": "GBU",
    "text": "Notrufeinrichtung im Fahrkorb vorhanden?",
    "category": "K – Fahrkorb",
-   "ui_number": "8.1"
+   "ui_number": "8.1",
+   "best_case": true
   },
   {
    "code": "qk_notruf_art",
@@ -1862,7 +1944,8 @@
     "question": "qk_notruf_vorhanden",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qk_notruf_en8128",
@@ -1938,7 +2021,8 @@
     "question": "qk_schuerze_mm",
     "operator": "LT",
     "value": 300
-   }
+   },
+   "best_case": false
   },
   {
    "code": "qk_abstand_schwelle_mm",
@@ -1982,7 +2066,8 @@
    "domain": "GBU",
    "text": "Nennlast und zulässige Personenzahl im Fahrkorb gekennzeichnet?",
    "category": "K – Fahrkorb",
-   "ui_number": "8.16"
+   "ui_number": "8.16",
+   "best_case": true
   },
   {
    "code": "qk_nutzflaeche_ok",
@@ -1990,7 +2075,8 @@
    "domain": "GBU",
    "text": "Nutzfläche des Fahrkorbs passt zur Nennlast (Tabelle EN 81-20 5.4.2)?",
    "category": "K – Fahrkorb",
-   "ui_number": "8.17"
+   "ui_number": "8.17",
+   "best_case": true
   },
   {
    "code": "qk_ueberlast",
@@ -1998,7 +2084,8 @@
    "domain": "GBU",
    "text": "Überlastkontrolle / Lastmessung vorhanden?",
    "category": "K – Fahrkorb",
-   "ui_number": "8.18"
+   "ui_number": "8.18",
+   "best_case": true
   },
   {
    "code": "qk_ueberlast_geprueft",
@@ -2011,7 +2098,8 @@
     "question": "qk_ueberlast",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qk_lueftung",
@@ -2045,7 +2133,8 @@
    "domain": "GBU",
    "text": "Hinweisschild „Aufzug im Brandfall nicht benutzen\" an allen Haltestellen vorhanden und lesbar?",
    "category": "K – Fahrkorb",
-   "ui_number": "8.20"
+   "ui_number": "8.20",
+   "best_case": true
   },
   {
    "code": "qk_bfs_vorhanden",
@@ -2058,7 +2147,8 @@
     "question": "qa_bfs_gefordert",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qk_bfs_geprueft",
@@ -2071,7 +2161,8 @@
     "question": "qk_bfs_vorhanden",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qk_en8170",
@@ -2084,7 +2175,8 @@
     "question": "qa_nutzung_pmem",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qk_bedienelemente",
@@ -2097,7 +2189,8 @@
     "question": "qa_nutzung_pmem",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qk_rollstuhl_mass",
@@ -2110,7 +2203,8 @@
     "question": "qa_nutzung_pmem",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qk_ausstattung",
@@ -2140,7 +2234,8 @@
    "domain": "GBU",
    "text": "Wiederholte Vandalismusschäden?",
    "category": "K – Fahrkorb",
-   "ui_number": "8.26"
+   "ui_number": "8.26",
+   "best_case": false
   },
   {
    "code": "qk_en8171",
@@ -2153,7 +2248,8 @@
     "question": "qk_vandalismus_wiederholt",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qk_ucm_sr_modul",
@@ -2244,7 +2340,8 @@
    "text": "Mindestens zwei parallel geschaltete Lampen im Fahrkorb?",
    "category": "K – Fahrkorb",
    "ui_number": "8.29a",
-   "help_text": "EN 81-20 5.4.10.2: Ausfall einer Lampe darf den Fahrkorb nicht dunkel werden lassen."
+   "help_text": "EN 81-20 5.4.10.2: Ausfall einer Lampe darf den Fahrkorb nicht dunkel werden lassen.",
+   "best_case": true
   },
   {
    "code": "qk_bel_staendig",
@@ -2253,7 +2350,8 @@
    "text": "Fahrkorb ständig beleuchtet (Ausnahme: Parken mit geschlossenen Türen)?",
    "category": "K – Fahrkorb",
    "ui_number": "8.29b",
-   "help_text": "EN 81-20 5.4.10.3."
+   "help_text": "EN 81-20 5.4.10.3.",
+   "best_case": true
   },
   {
    "code": "qf_spalt_mm",
@@ -2299,7 +2397,8 @@
    "domain": "GBU",
    "text": "Fußleiste (mind. 100 mm) am Rand des Fahrkorbdachs vorhanden?",
    "category": "F – Fahrkorbdach und Schachtkopf",
-   "ui_number": "9.4"
+   "ui_number": "9.4",
+   "best_case": true
   },
   {
    "code": "qf_einzugstellen",
@@ -2412,7 +2511,8 @@
     "question": "qf_schutzraum",
     "operator": "EQ",
     "value": "reduziert"
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qf_inspektion",
@@ -2420,7 +2520,8 @@
    "domain": "GBU",
    "text": "Inspektionssteuerung auf dem Fahrkorbdach vorhanden?",
    "category": "F – Fahrkorbdach und Schachtkopf",
-   "ui_number": "9.8"
+   "ui_number": "9.8",
+   "best_case": true
   },
   {
    "code": "qf_inspektion_schutz",
@@ -2433,7 +2534,8 @@
     "question": "qf_inspektion",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qf_inspektion_erreichbar",
@@ -2446,7 +2548,8 @@
     "question": "qf_inspektion",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qf_inspektion_geschw",
@@ -2459,7 +2562,8 @@
     "question": "qf_inspektion",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qf_nothalt",
@@ -2467,7 +2571,8 @@
    "domain": "GBU",
    "text": "Notbremsschalter (Not-Halt) auf dem Fahrkorbdach vorhanden?",
    "category": "F – Fahrkorbdach und Schachtkopf",
-   "ui_number": "9.9"
+   "ui_number": "9.9",
+   "best_case": true
   },
   {
    "code": "qf_nothalt_erreichbar",
@@ -2480,7 +2585,8 @@
     "question": "qf_nothalt",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qf_nothalt_wirksam",
@@ -2493,7 +2599,8 @@
     "question": "qf_nothalt",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qf_dach_tragfaehig",
@@ -2501,7 +2608,8 @@
    "domain": "GBU",
    "text": "Fahrkorbdach tragfähig (200 kg auf 0,30 m × 0,30 m)?",
    "category": "F – Fahrkorbdach und Schachtkopf",
-   "ui_number": "9.10"
+   "ui_number": "9.10",
+   "best_case": true
   },
   {
    "code": "qf_klappe",
@@ -2522,7 +2630,8 @@
     "question": "qf_klappe",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qf_notbeleuchtung",
@@ -2530,7 +2639,8 @@
    "domain": "GBU",
    "text": "Notbeleuchtung auf dem Fahrkorbdach (mind. 5 Lux, 1 h) vorhanden?",
    "category": "F – Fahrkorbdach und Schachtkopf",
-   "ui_number": "9.12"
+   "ui_number": "9.12",
+   "best_case": true
   },
   {
    "code": "qf_notruf_dach",
@@ -2538,7 +2648,8 @@
    "domain": "GBU",
    "text": "Eindeutig erkennbarer Auslöser für den (Fern-)Notruf auf dem Fahrkorbdach vorhanden?",
    "category": "F – Fahrkorbdach und Schachtkopf",
-   "ui_number": "9.13"
+   "ui_number": "9.13",
+   "best_case": true
   },
   {
    "code": "qs_bel_vorhanden",
@@ -2546,7 +2657,8 @@
    "domain": "GBU",
    "text": "Schachtbeleuchtung vorhanden?",
    "category": "S – Schacht",
-   "ui_number": "10.1"
+   "ui_number": "10.1",
+   "best_case": true
   },
   {
    "code": "qs_bel_ausreichend",
@@ -2559,7 +2671,8 @@
     "question": "qs_bel_vorhanden",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qs_bel_splitterschutz",
@@ -2572,7 +2685,8 @@
     "question": "qs_bel_vorhanden",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qs_zugang_bel",
@@ -2580,7 +2694,8 @@
    "domain": "GBU",
    "text": "Beleuchtung an den Schachtzugängen (Haltestellen) mind. 75 Lux?",
    "category": "S – Schacht",
-   "ui_number": "10.2"
+   "ui_number": "10.2",
+   "best_case": true
   },
   {
    "code": "qs_vollumwehrt",
@@ -2588,7 +2703,8 @@
    "domain": "GBU",
    "text": "Schacht vollständig umwehrt (Wände, Decke, Boden)?",
    "category": "S – Schacht",
-   "ui_number": "10.3"
+   "ui_number": "10.3",
+   "best_case": true
   },
   {
    "code": "qs_teilumwehrt_zulaessig",
@@ -2601,7 +2717,8 @@
     "question": "qs_vollumwehrt",
     "operator": "EQ",
     "value": false
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qs_wand_fest",
@@ -2609,7 +2726,8 @@
    "domain": "GBU",
    "text": "Schachtwände ausreichend fest (100 kg auf 0,30 m × 0,30 m, keine Durchbrüche)?",
    "category": "S – Schacht",
-   "ui_number": "10.4"
+   "ui_number": "10.4",
+   "best_case": true
   },
   {
    "code": "qs_glas_vsg",
@@ -2622,7 +2740,8 @@
     "question": "qa_glas_schacht",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qs_schienen_stahl",
@@ -2630,7 +2749,8 @@
    "domain": "GBU",
    "text": "Führungsschienen für Fahrkorb und Gegengewicht aus Stahl?",
    "category": "S – Schacht",
-   "ui_number": "10.6"
+   "ui_number": "10.6",
+   "best_case": true
   },
   {
    "code": "qs_fang",
@@ -2647,7 +2767,8 @@
      "trommel",
      "seil_hydraulik"
     ]
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qs_begrenzer",
@@ -2664,7 +2785,8 @@
      "trommel",
      "seil_hydraulik"
     ]
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qs_fang_geprueft",
@@ -2686,7 +2808,8 @@
       "value": true
      }
     ]
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qs_spanngewicht_schalter",
@@ -2699,7 +2822,8 @@
     "question": "qs_begrenzer",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qs_schlaffseil",
@@ -2712,7 +2836,8 @@
     "question": "qa_aufzugsart",
     "operator": "EQ",
     "value": "trommel"
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qs_fremd_frei",
@@ -2720,7 +2845,8 @@
    "domain": "GBU",
    "text": "Schacht frei von aufzugsfremden Einrichtungen?",
    "category": "S – Schacht",
-   "ui_number": "10.12"
+   "ui_number": "10.12",
+   "best_case": true
   },
   {
    "code": "qs_fremd_fachgerecht",
@@ -2733,7 +2859,8 @@
     "question": "qs_fremd_frei",
     "operator": "EQ",
     "value": false
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qs_fremd_behindert",
@@ -2746,7 +2873,8 @@
     "question": "qs_fremd_frei",
     "operator": "EQ",
     "value": false
-   }
+   },
+   "best_case": false
   },
   {
    "code": "qs_zugang_schacht_sicher",
@@ -2754,7 +2882,8 @@
    "domain": "GBU",
    "text": "Zugänge zum Schacht (Schachttüren, Inspektionstüren) und die zugehörigen Schalteinrichtungen frei und sicher begehbar?",
    "category": "S – Schacht",
-   "ui_number": "10.13"
+   "ui_number": "10.13",
+   "best_case": true
   },
   {
    "code": "qs_asbest",
@@ -2762,7 +2891,8 @@
    "domain": "GBU",
    "text": "Asbesthaltige oder andere schädliche Baustoffe im Schacht / am Fahrkorb (Bremsbeläge, Dichtungen, Brandschutzplatten, Isolierungen)?",
    "category": "S – Schacht",
-   "ui_number": "10.20"
+   "ui_number": "10.20",
+   "best_case": false
   },
   {
    "code": "qs_verschmutzung",
@@ -2770,7 +2900,8 @@
    "domain": "GBU",
    "text": "Erhebliche Verschmutzungen (Taubenkot, Unrat, Schimmel, Ablagerungen) im Schacht / am Fahrkorb?",
    "category": "S – Schacht",
-   "ui_number": "10.21"
+   "ui_number": "10.21",
+   "best_case": false
   },
   {
    "code": "qs_brennbar_lager",
@@ -2778,7 +2909,8 @@
    "domain": "GBU",
    "text": "Lagerung brennbarer oder leicht entzündlicher Stoffe im Schacht / am Fahrkorb?",
    "category": "S – Schacht",
-   "ui_number": "10.22"
+   "ui_number": "10.22",
+   "best_case": false
   },
   {
    "code": "qg_bel_vorhanden",
@@ -2786,7 +2918,8 @@
    "domain": "GBU",
    "text": "Beleuchtung in der Schachtgrube vorhanden?",
    "category": "G – Schachtgrube",
-   "ui_number": "11.2"
+   "ui_number": "11.2",
+   "best_case": true
   },
   {
    "code": "qg_bel_50lux",
@@ -2799,7 +2932,8 @@
     "question": "qg_bel_vorhanden",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qg_schutzraum",
@@ -2833,7 +2967,8 @@
    "domain": "GBU",
    "text": "Notbremsschalter in der Schachtgrube vorhanden?",
    "category": "G – Schachtgrube",
-   "ui_number": "11.4"
+   "ui_number": "11.4",
+   "best_case": true
   },
   {
    "code": "qg_nothalt_aussen",
@@ -2846,7 +2981,8 @@
     "question": "qg_nothalt",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qg_nothalt_zwei",
@@ -2868,7 +3004,8 @@
       "value": 1.6
      }
     ]
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qg_inspektion",
@@ -2876,7 +3013,8 @@
    "domain": "GBU",
    "text": "Inspektionssteuerung in der Schachtgrube vorhanden?",
    "category": "G – Schachtgrube",
-   "ui_number": "11.5"
+   "ui_number": "11.5",
+   "best_case": true
   },
   {
    "code": "qg_leiter",
@@ -2931,7 +3069,8 @@
     "question": "qg_zugangstuer",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qg_selbstbefreiung",
@@ -2939,7 +3078,8 @@
    "domain": "GBU",
    "text": "Selbstbefreiung aus der Grube über die Schachttür möglich (Verschluss innerhalb 1,80 m Höhe / 0,80 m horizontal)?",
    "category": "G – Schachtgrube",
-   "ui_number": "11.8"
+   "ui_number": "11.8",
+   "best_case": true
   },
   {
    "code": "qg_notruf",
@@ -2947,7 +3087,8 @@
    "domain": "GBU",
    "text": "Notrufeinrichtung in der Schachtgrube vorhanden?",
    "category": "G – Schachtgrube",
-   "ui_number": "11.9"
+   "ui_number": "11.9",
+   "best_case": true
   },
   {
    "code": "qg_puffer",
@@ -2955,7 +3096,8 @@
    "domain": "GBU",
    "text": "Puffer für Fahrkorb und Gegengewicht vorhanden?",
    "category": "G – Schachtgrube",
-   "ui_number": "11.10"
+   "ui_number": "11.10",
+   "best_case": true
   },
   {
    "code": "qg_puffer_zustand",
@@ -2968,7 +3110,8 @@
     "question": "qg_puffer",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qg_puffer_art",
@@ -3004,7 +3147,8 @@
     "question": "qg_puffer_art",
     "operator": "EQ",
     "value": "verzehrend"
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qg_gg_abtrennung",
@@ -3085,7 +3229,8 @@
       "value": true
      }
     ]
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qg_gg_fang",
@@ -3120,7 +3265,8 @@
       "value": true
      }
     ]
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qg_nachbar_abtrennung",
@@ -3133,7 +3279,8 @@
     "question": "qa_mehrere_aufzuege",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "best_case": true
   },
   {
    "code": "qg_wasser",
@@ -3141,7 +3288,8 @@
    "domain": "GBU",
    "text": "Wasser oder Feuchtigkeit in der Schachtgrube?",
    "category": "G – Schachtgrube",
-   "ui_number": "11.15"
+   "ui_number": "11.15",
+   "best_case": false
   },
   {
    "code": "qg_oel",
@@ -3149,7 +3297,8 @@
    "domain": "GBU",
    "text": "Öl oder wassergefährdende Stoffe in der Grube ohne Auffangmöglichkeit?",
    "category": "G – Schachtgrube",
-   "ui_number": "11.16"
+   "ui_number": "11.16",
+   "best_case": false
   },
   {
    "code": "qg_asbest",
@@ -3157,7 +3306,8 @@
    "domain": "GBU",
    "text": "Asbesthaltige oder andere schädliche Baustoffe in der Schachtgrube (Bremsbeläge, Dichtungen, Brandschutzplatten, Isolierungen)?",
    "category": "G – Schachtgrube",
-   "ui_number": "11.20"
+   "ui_number": "11.20",
+   "best_case": false
   },
   {
    "code": "qg_verschmutzung",
@@ -3165,7 +3315,8 @@
    "domain": "GBU",
    "text": "Erhebliche Verschmutzungen (Taubenkot, Unrat, Schimmel, Ablagerungen) in der Schachtgrube?",
    "category": "G – Schachtgrube",
-   "ui_number": "11.21"
+   "ui_number": "11.21",
+   "best_case": false
   },
   {
    "code": "qg_brennbar_lager",
@@ -3173,7 +3324,8 @@
    "domain": "GBU",
    "text": "Lagerung brennbarer oder leicht entzündlicher Stoffe in der Schachtgrube?",
    "category": "G – Schachtgrube",
-   "ui_number": "11.22"
+   "ui_number": "11.22",
+   "best_case": false
   },
   {
    "code": "qu_asbest_unbekannt",
@@ -21988,5 +22140,672 @@
    ],
    "notes": "Freigegeben 2026-09-04."
   }
- ]
+ ],
+ "assumptions": [
+  {
+   "question": "qa_ucm_a3",
+   "when": {
+    "question": "qa_baujahr",
+    "operator": "GTE",
+    "value": 2012
+   },
+   "value": true,
+   "reason": "Seit 01.01.2012 verbindlich (DIN EN 81-1/2 + A3); ohne Nachweis und Funktionspruefung des UCM-Schutzes durfte die Anlage nicht in Betrieb genommen werden"
+  },
+  {
+   "question": "qm_bremse_ueberwacht",
+   "when": {
+    "question": "qa_baujahr",
+    "operator": "GTE",
+    "value": 2012
+   },
+   "value": true,
+   "reason": "Seit 01.01.2012 verbindlich (DIN EN 81-1/2 + A3); ohne Nachweis und Funktionspruefung des UCM-Schutzes durfte die Anlage nicht in Betrieb genommen werden; die Bremsueberwachung ist Teil dieses Schutzes"
+  },
+  {
+   "question": "qt_verriegelung_elektrisch",
+   "when": {
+    "question": "qa_baujahr",
+    "operator": "GTE",
+    "value": 1999
+   },
+   "value": true,
+   "reason": "Bei Inverkehrbringen ab 01.07.1999 nach Aufzugsrichtlinie 95/16/EG und DIN EN 81-1/2 gefordert und bei der Abnahme nachgewiesen"
+  },
+  {
+   "question": "qt_fehlschliess",
+   "when": {
+    "question": "qa_baujahr",
+    "operator": "GTE",
+    "value": 1999
+   },
+   "value": true,
+   "reason": "Bei Inverkehrbringen ab 01.07.1999 nach Aufzugsrichtlinie 95/16/EG und DIN EN 81-1/2 gefordert und bei der Abnahme nachgewiesen"
+  },
+  {
+   "question": "qt_notentriegelung_alle",
+   "when": {
+    "question": "qa_baujahr",
+    "operator": "GTE",
+    "value": 1999
+   },
+   "value": true,
+   "reason": "Bei Inverkehrbringen ab 01.07.1999 nach Aufzugsrichtlinie 95/16/EG und DIN EN 81-1/2 gefordert und bei der Abnahme nachgewiesen"
+  },
+  {
+   "question": "qt_rueckhaltung_tuerblatt",
+   "when": {
+    "question": "qa_baujahr",
+    "operator": "GTE",
+    "value": 1999
+   },
+   "value": true,
+   "reason": "Bei Inverkehrbringen ab 01.07.1999 nach Aufzugsrichtlinie 95/16/EG und DIN EN 81-1/2 gefordert und bei der Abnahme nachgewiesen"
+  },
+  {
+   "question": "qt_glas_normgerecht",
+   "when": {
+    "question": "qa_baujahr",
+    "operator": "GTE",
+    "value": 1999
+   },
+   "value": true,
+   "reason": "Bei Inverkehrbringen ab 01.07.1999 nach Aufzugsrichtlinie 95/16/EG und DIN EN 81-1/2 gefordert und bei der Abnahme nachgewiesen"
+  },
+  {
+   "question": "qs_fang",
+   "when": {
+    "question": "qa_baujahr",
+    "operator": "GTE",
+    "value": 1999
+   },
+   "value": true,
+   "reason": "Bei Inverkehrbringen ab 01.07.1999 nach Aufzugsrichtlinie 95/16/EG und DIN EN 81-1/2 gefordert und bei der Abnahme nachgewiesen"
+  },
+  {
+   "question": "qs_begrenzer",
+   "when": {
+    "question": "qa_baujahr",
+    "operator": "GTE",
+    "value": 1999
+   },
+   "value": true,
+   "reason": "Bei Inverkehrbringen ab 01.07.1999 nach Aufzugsrichtlinie 95/16/EG und DIN EN 81-1/2 gefordert und bei der Abnahme nachgewiesen"
+  },
+  {
+   "question": "qs_spanngewicht_schalter",
+   "when": {
+    "question": "qa_baujahr",
+    "operator": "GTE",
+    "value": 1999
+   },
+   "value": true,
+   "reason": "Bei Inverkehrbringen ab 01.07.1999 nach Aufzugsrichtlinie 95/16/EG und DIN EN 81-1/2 gefordert und bei der Abnahme nachgewiesen"
+  },
+  {
+   "question": "qs_schlaffseil",
+   "when": {
+    "question": "qa_baujahr",
+    "operator": "GTE",
+    "value": 1999
+   },
+   "value": true,
+   "reason": "Bei Inverkehrbringen ab 01.07.1999 nach Aufzugsrichtlinie 95/16/EG und DIN EN 81-1/2 gefordert und bei der Abnahme nachgewiesen"
+  },
+  {
+   "question": "qs_vollumwehrt",
+   "when": {
+    "question": "qa_baujahr",
+    "operator": "GTE",
+    "value": 1999
+   },
+   "value": true,
+   "reason": "Bei Inverkehrbringen ab 01.07.1999 nach Aufzugsrichtlinie 95/16/EG und DIN EN 81-1/2 gefordert und bei der Abnahme nachgewiesen"
+  },
+  {
+   "question": "qs_wand_fest",
+   "when": {
+    "question": "qa_baujahr",
+    "operator": "GTE",
+    "value": 1999
+   },
+   "value": true,
+   "reason": "Bei Inverkehrbringen ab 01.07.1999 nach Aufzugsrichtlinie 95/16/EG und DIN EN 81-1/2 gefordert und bei der Abnahme nachgewiesen"
+  },
+  {
+   "question": "qs_schienen_stahl",
+   "when": {
+    "question": "qa_baujahr",
+    "operator": "GTE",
+    "value": 1999
+   },
+   "value": true,
+   "reason": "Bei Inverkehrbringen ab 01.07.1999 nach Aufzugsrichtlinie 95/16/EG und DIN EN 81-1/2 gefordert und bei der Abnahme nachgewiesen"
+  },
+  {
+   "question": "qs_glas_vsg",
+   "when": {
+    "question": "qa_baujahr",
+    "operator": "GTE",
+    "value": 1999
+   },
+   "value": true,
+   "reason": "Bei Inverkehrbringen ab 01.07.1999 nach Aufzugsrichtlinie 95/16/EG und DIN EN 81-1/2 gefordert und bei der Abnahme nachgewiesen"
+  },
+  {
+   "question": "qg_puffer",
+   "when": {
+    "question": "qa_baujahr",
+    "operator": "GTE",
+    "value": 1999
+   },
+   "value": true,
+   "reason": "Bei Inverkehrbringen ab 01.07.1999 nach Aufzugsrichtlinie 95/16/EG und DIN EN 81-1/2 gefordert und bei der Abnahme nachgewiesen"
+  },
+  {
+   "question": "qg_nothalt",
+   "when": {
+    "question": "qa_baujahr",
+    "operator": "GTE",
+    "value": 1999
+   },
+   "value": true,
+   "reason": "Bei Inverkehrbringen ab 01.07.1999 nach Aufzugsrichtlinie 95/16/EG und DIN EN 81-1/2 gefordert und bei der Abnahme nachgewiesen"
+  },
+  {
+   "question": "qg_gg_fuellung",
+   "when": {
+    "question": "qa_baujahr",
+    "operator": "GTE",
+    "value": 1999
+   },
+   "value": true,
+   "reason": "Bei Inverkehrbringen ab 01.07.1999 nach Aufzugsrichtlinie 95/16/EG und DIN EN 81-1/2 gefordert und bei der Abnahme nachgewiesen"
+  },
+  {
+   "question": "qg_gg_fang",
+   "when": {
+    "question": "qa_baujahr",
+    "operator": "GTE",
+    "value": 1999
+   },
+   "value": true,
+   "reason": "Bei Inverkehrbringen ab 01.07.1999 nach Aufzugsrichtlinie 95/16/EG und DIN EN 81-1/2 gefordert und bei der Abnahme nachgewiesen"
+  },
+  {
+   "question": "qg_nachbar_abtrennung",
+   "when": {
+    "question": "qa_baujahr",
+    "operator": "GTE",
+    "value": 1999
+   },
+   "value": true,
+   "reason": "Bei Inverkehrbringen ab 01.07.1999 nach Aufzugsrichtlinie 95/16/EG und DIN EN 81-1/2 gefordert und bei der Abnahme nachgewiesen"
+  },
+  {
+   "question": "qm_zweikreisbremse",
+   "when": {
+    "question": "qa_baujahr",
+    "operator": "GTE",
+    "value": 1999
+   },
+   "value": true,
+   "reason": "Bei Inverkehrbringen ab 01.07.1999 nach Aufzugsrichtlinie 95/16/EG und DIN EN 81-1/2 gefordert und bei der Abnahme nachgewiesen"
+  },
+  {
+   "question": "qm_motorschutz",
+   "when": {
+    "question": "qa_baujahr",
+    "operator": "GTE",
+    "value": 1999
+   },
+   "value": true,
+   "reason": "Bei Inverkehrbringen ab 01.07.1999 nach Aufzugsrichtlinie 95/16/EG und DIN EN 81-1/2 gefordert und bei der Abnahme nachgewiesen"
+  },
+  {
+   "question": "qm_schuetze_unabhaengig",
+   "when": {
+    "question": "qa_baujahr",
+    "operator": "GTE",
+    "value": 1999
+   },
+   "value": true,
+   "reason": "Bei Inverkehrbringen ab 01.07.1999 nach Aufzugsrichtlinie 95/16/EG und DIN EN 81-1/2 gefordert und bei der Abnahme nachgewiesen"
+  },
+  {
+   "question": "qm_laufzeit",
+   "when": {
+    "question": "qa_baujahr",
+    "operator": "GTE",
+    "value": 1999
+   },
+   "value": true,
+   "reason": "Bei Inverkehrbringen ab 01.07.1999 nach Aufzugsrichtlinie 95/16/EG und DIN EN 81-1/2 gefordert und bei der Abnahme nachgewiesen"
+  },
+  {
+   "question": "qm_phasenumkehr",
+   "when": {
+    "question": "qa_baujahr",
+    "operator": "GTE",
+    "value": 1999
+   },
+   "value": true,
+   "reason": "Bei Inverkehrbringen ab 01.07.1999 nach Aufzugsrichtlinie 95/16/EG und DIN EN 81-1/2 gefordert und bei der Abnahme nachgewiesen"
+  },
+  {
+   "question": "qm_absperrventil",
+   "when": {
+    "question": "qa_baujahr",
+    "operator": "GTE",
+    "value": 1999
+   },
+   "value": true,
+   "reason": "Bei Inverkehrbringen ab 01.07.1999 nach Aufzugsrichtlinie 95/16/EG und DIN EN 81-1/2 gefordert und bei der Abnahme nachgewiesen"
+  },
+  {
+   "question": "qm_rohrbruch",
+   "when": {
+    "question": "qa_baujahr",
+    "operator": "GTE",
+    "value": 1999
+   },
+   "value": true,
+   "reason": "Bei Inverkehrbringen ab 01.07.1999 nach Aufzugsrichtlinie 95/16/EG und DIN EN 81-1/2 gefordert und bei der Abnahme nachgewiesen"
+  },
+  {
+   "question": "qm_hauptschalter",
+   "when": {
+    "question": "qa_baujahr",
+    "operator": "GTE",
+    "value": 1999
+   },
+   "value": true,
+   "reason": "Bei Inverkehrbringen ab 01.07.1999 nach Aufzugsrichtlinie 95/16/EG und DIN EN 81-1/2 gefordert und bei der Abnahme nachgewiesen"
+  },
+  {
+   "question": "qm_hauptschalter_abschliessbar",
+   "when": {
+    "question": "qa_baujahr",
+    "operator": "GTE",
+    "value": 1999
+   },
+   "value": true,
+   "reason": "Bei Inverkehrbringen ab 01.07.1999 nach Aufzugsrichtlinie 95/16/EG und DIN EN 81-1/2 gefordert und bei der Abnahme nachgewiesen"
+  },
+  {
+   "question": "qm_hauptschalter_gekennz",
+   "when": {
+    "question": "qa_baujahr",
+    "operator": "GTE",
+    "value": 1999
+   },
+   "value": true,
+   "reason": "Bei Inverkehrbringen ab 01.07.1999 nach Aufzugsrichtlinie 95/16/EG und DIN EN 81-1/2 gefordert und bei der Abnahme nachgewiesen"
+  },
+  {
+   "question": "qm_beruehrungssicher",
+   "when": {
+    "question": "qa_baujahr",
+    "operator": "GTE",
+    "value": 1999
+   },
+   "value": true,
+   "reason": "Bei Inverkehrbringen ab 01.07.1999 nach Aufzugsrichtlinie 95/16/EG und DIN EN 81-1/2 gefordert und bei der Abnahme nachgewiesen"
+  },
+  {
+   "question": "qm_einzug_treibscheibe",
+   "when": {
+    "question": "qa_baujahr",
+    "operator": "GTE",
+    "value": 1999
+   },
+   "value": true,
+   "reason": "Bei Inverkehrbringen ab 01.07.1999 nach Aufzugsrichtlinie 95/16/EG und DIN EN 81-1/2 gefordert und bei der Abnahme nachgewiesen"
+  },
+  {
+   "question": "qm_einzug_begrenzer",
+   "when": {
+    "question": "qa_baujahr",
+    "operator": "GTE",
+    "value": 1999
+   },
+   "value": true,
+   "reason": "Bei Inverkehrbringen ab 01.07.1999 nach Aufzugsrichtlinie 95/16/EG und DIN EN 81-1/2 gefordert und bei der Abnahme nachgewiesen"
+  },
+  {
+   "question": "qm_potenzialausgleich",
+   "when": {
+    "question": "qa_baujahr",
+    "operator": "GTE",
+    "value": 1999
+   },
+   "value": true,
+   "reason": "Bei Inverkehrbringen ab 01.07.1999 nach Aufzugsrichtlinie 95/16/EG und DIN EN 81-1/2 gefordert und bei der Abnahme nachgewiesen"
+  },
+  {
+   "question": "qm_hoehe_180",
+   "when": {
+    "question": "qa_baujahr",
+    "operator": "GTE",
+    "value": 1999
+   },
+   "value": true,
+   "reason": "Bei Inverkehrbringen ab 01.07.1999 nach Aufzugsrichtlinie 95/16/EG und DIN EN 81-1/2 gefordert und bei der Abnahme nachgewiesen"
+  },
+  {
+   "question": "qm_freiflaeche",
+   "when": {
+    "question": "qa_baujahr",
+    "operator": "GTE",
+    "value": 1999
+   },
+   "value": true,
+   "reason": "Bei Inverkehrbringen ab 01.07.1999 nach Aufzugsrichtlinie 95/16/EG und DIN EN 81-1/2 gefordert und bei der Abnahme nachgewiesen"
+  },
+  {
+   "question": "qm_notbetrieb",
+   "when": {
+    "question": "qa_baujahr",
+    "operator": "GTE",
+    "value": 1999
+   },
+   "value": true,
+   "reason": "Bei Inverkehrbringen ab 01.07.1999 nach Aufzugsrichtlinie 95/16/EG und DIN EN 81-1/2 gefordert und bei der Abnahme nachgewiesen"
+  },
+  {
+   "question": "qm_notbetrieb_gekennz",
+   "when": {
+    "question": "qa_baujahr",
+    "operator": "GTE",
+    "value": 1999
+   },
+   "value": true,
+   "reason": "Bei Inverkehrbringen ab 01.07.1999 nach Aufzugsrichtlinie 95/16/EG und DIN EN 81-1/2 gefordert und bei der Abnahme nachgewiesen"
+  },
+  {
+   "question": "qm_rollenraum_nothalt",
+   "when": {
+    "question": "qa_baujahr",
+    "operator": "GTE",
+    "value": 1999
+   },
+   "value": true,
+   "reason": "Bei Inverkehrbringen ab 01.07.1999 nach Aufzugsrichtlinie 95/16/EG und DIN EN 81-1/2 gefordert und bei der Abnahme nachgewiesen"
+  },
+  {
+   "question": "qz_tuer_abschliessbar",
+   "when": {
+    "question": "qa_baujahr",
+    "operator": "GTE",
+    "value": 1999
+   },
+   "value": true,
+   "reason": "Bei Inverkehrbringen ab 01.07.1999 nach Aufzugsrichtlinie 95/16/EG und DIN EN 81-1/2 gefordert und bei der Abnahme nachgewiesen"
+  },
+  {
+   "question": "qz_tuer_mass",
+   "when": {
+    "question": "qa_baujahr",
+    "operator": "GTE",
+    "value": 1999
+   },
+   "value": true,
+   "reason": "Bei Inverkehrbringen ab 01.07.1999 nach Aufzugsrichtlinie 95/16/EG und DIN EN 81-1/2 gefordert und bei der Abnahme nachgewiesen"
+  },
+  {
+   "question": "qk_notruf_vorhanden",
+   "when": {
+    "question": "qa_baujahr",
+    "operator": "GTE",
+    "value": 1999
+   },
+   "value": true,
+   "reason": "Bei Inverkehrbringen ab 01.07.1999 nach Aufzugsrichtlinie 95/16/EG und DIN EN 81-1/2 gefordert und bei der Abnahme nachgewiesen"
+  },
+  {
+   "question": "qk_nennlast_gekennz",
+   "when": {
+    "question": "qa_baujahr",
+    "operator": "GTE",
+    "value": 1999
+   },
+   "value": true,
+   "reason": "Bei Inverkehrbringen ab 01.07.1999 nach Aufzugsrichtlinie 95/16/EG und DIN EN 81-1/2 gefordert und bei der Abnahme nachgewiesen"
+  },
+  {
+   "question": "qk_nutzflaeche_ok",
+   "when": {
+    "question": "qa_baujahr",
+    "operator": "GTE",
+    "value": 1999
+   },
+   "value": true,
+   "reason": "Bei Inverkehrbringen ab 01.07.1999 nach Aufzugsrichtlinie 95/16/EG und DIN EN 81-1/2 gefordert und bei der Abnahme nachgewiesen"
+  },
+  {
+   "question": "qk_ueberlast",
+   "when": {
+    "question": "qa_baujahr",
+    "operator": "GTE",
+    "value": 1999
+   },
+   "value": true,
+   "reason": "Bei Inverkehrbringen ab 01.07.1999 nach Aufzugsrichtlinie 95/16/EG und DIN EN 81-1/2 gefordert und bei der Abnahme nachgewiesen"
+  },
+  {
+   "question": "qk_bel_zwei_lampen",
+   "when": {
+    "question": "qa_baujahr",
+    "operator": "GTE",
+    "value": 1999
+   },
+   "value": true,
+   "reason": "Bei Inverkehrbringen ab 01.07.1999 nach Aufzugsrichtlinie 95/16/EG und DIN EN 81-1/2 gefordert und bei der Abnahme nachgewiesen"
+  },
+  {
+   "question": "qf_gelaender",
+   "when": {
+    "question": "qa_baujahr",
+    "operator": "GTE",
+    "value": 1999
+   },
+   "value": true,
+   "reason": "Bei Inverkehrbringen ab 01.07.1999 nach Aufzugsrichtlinie 95/16/EG und DIN EN 81-1/2 gefordert und bei der Abnahme nachgewiesen"
+  },
+  {
+   "question": "qf_fussleiste",
+   "when": {
+    "question": "qa_baujahr",
+    "operator": "GTE",
+    "value": 1999
+   },
+   "value": true,
+   "reason": "Bei Inverkehrbringen ab 01.07.1999 nach Aufzugsrichtlinie 95/16/EG und DIN EN 81-1/2 gefordert und bei der Abnahme nachgewiesen"
+  },
+  {
+   "question": "qf_inspektion",
+   "when": {
+    "question": "qa_baujahr",
+    "operator": "GTE",
+    "value": 1999
+   },
+   "value": true,
+   "reason": "Bei Inverkehrbringen ab 01.07.1999 nach Aufzugsrichtlinie 95/16/EG und DIN EN 81-1/2 gefordert und bei der Abnahme nachgewiesen"
+  },
+  {
+   "question": "qf_inspektion_schutz",
+   "when": {
+    "question": "qa_baujahr",
+    "operator": "GTE",
+    "value": 1999
+   },
+   "value": true,
+   "reason": "Bei Inverkehrbringen ab 01.07.1999 nach Aufzugsrichtlinie 95/16/EG und DIN EN 81-1/2 gefordert und bei der Abnahme nachgewiesen"
+  },
+  {
+   "question": "qf_inspektion_erreichbar",
+   "when": {
+    "question": "qa_baujahr",
+    "operator": "GTE",
+    "value": 1999
+   },
+   "value": true,
+   "reason": "Bei Inverkehrbringen ab 01.07.1999 nach Aufzugsrichtlinie 95/16/EG und DIN EN 81-1/2 gefordert und bei der Abnahme nachgewiesen"
+  },
+  {
+   "question": "qf_inspektion_geschw",
+   "when": {
+    "question": "qa_baujahr",
+    "operator": "GTE",
+    "value": 1999
+   },
+   "value": true,
+   "reason": "Bei Inverkehrbringen ab 01.07.1999 nach Aufzugsrichtlinie 95/16/EG und DIN EN 81-1/2 gefordert und bei der Abnahme nachgewiesen"
+  },
+  {
+   "question": "qf_nothalt",
+   "when": {
+    "question": "qa_baujahr",
+    "operator": "GTE",
+    "value": 1999
+   },
+   "value": true,
+   "reason": "Bei Inverkehrbringen ab 01.07.1999 nach Aufzugsrichtlinie 95/16/EG und DIN EN 81-1/2 gefordert und bei der Abnahme nachgewiesen"
+  },
+  {
+   "question": "qf_dach_tragfaehig",
+   "when": {
+    "question": "qa_baujahr",
+    "operator": "GTE",
+    "value": 1999
+   },
+   "value": true,
+   "reason": "Bei Inverkehrbringen ab 01.07.1999 nach Aufzugsrichtlinie 95/16/EG und DIN EN 81-1/2 gefordert und bei der Abnahme nachgewiesen"
+  },
+  {
+   "question": "qf_klappe_ueberwacht",
+   "when": {
+    "question": "qa_baujahr",
+    "operator": "GTE",
+    "value": 1999
+   },
+   "value": true,
+   "reason": "Bei Inverkehrbringen ab 01.07.1999 nach Aufzugsrichtlinie 95/16/EG und DIN EN 81-1/2 gefordert und bei der Abnahme nachgewiesen"
+  },
+  {
+   "question": "qg_nothalt_aussen",
+   "when": {
+    "question": "qa_baujahr",
+    "operator": "GTE",
+    "value": 2017
+   },
+   "value": true,
+   "reason": "Bei Inverkehrbringen ab 01.09.2017 nach DIN EN 81-20/50 gefordert und bei der Abnahme nachgewiesen"
+  },
+  {
+   "question": "qg_nothalt_zwei",
+   "when": {
+    "question": "qa_baujahr",
+    "operator": "GTE",
+    "value": 2017
+   },
+   "value": true,
+   "reason": "Bei Inverkehrbringen ab 01.09.2017 nach DIN EN 81-20/50 gefordert und bei der Abnahme nachgewiesen"
+  },
+  {
+   "question": "qg_inspektion",
+   "when": {
+    "question": "qa_baujahr",
+    "operator": "GTE",
+    "value": 2017
+   },
+   "value": true,
+   "reason": "Bei Inverkehrbringen ab 01.09.2017 nach DIN EN 81-20/50 gefordert und bei der Abnahme nachgewiesen"
+  },
+  {
+   "question": "qg_selbstbefreiung",
+   "when": {
+    "question": "qa_baujahr",
+    "operator": "GTE",
+    "value": 2017
+   },
+   "value": true,
+   "reason": "Bei Inverkehrbringen ab 01.09.2017 nach DIN EN 81-20/50 gefordert und bei der Abnahme nachgewiesen"
+  },
+  {
+   "question": "qg_zugangstuer_schalter",
+   "when": {
+    "question": "qa_baujahr",
+    "operator": "GTE",
+    "value": 2017
+   },
+   "value": true,
+   "reason": "Bei Inverkehrbringen ab 01.09.2017 nach DIN EN 81-20/50 gefordert und bei der Abnahme nachgewiesen"
+  },
+  {
+   "question": "qg_notruf",
+   "when": {
+    "question": "qa_baujahr",
+    "operator": "GTE",
+    "value": 2017
+   },
+   "value": true,
+   "reason": "Bei Inverkehrbringen ab 01.09.2017 nach DIN EN 81-20/50 gefordert und bei der Abnahme nachgewiesen"
+  },
+  {
+   "question": "qk_fk_tuer_verriegelt",
+   "when": {
+    "question": "qa_baujahr",
+    "operator": "GTE",
+    "value": 2017
+   },
+   "value": true,
+   "reason": "Bei Inverkehrbringen ab 01.09.2017 nach DIN EN 81-20/50 gefordert und bei der Abnahme nachgewiesen"
+  },
+  {
+   "question": "qt_glas_einzugsschutz",
+   "when": {
+    "question": "qa_baujahr",
+    "operator": "GTE",
+    "value": 2017
+   },
+   "value": true,
+   "reason": "Bei Inverkehrbringen ab 01.09.2017 nach DIN EN 81-20/50 gefordert und bei der Abnahme nachgewiesen"
+  },
+  {
+   "question": "qf_notbeleuchtung",
+   "when": {
+    "question": "qa_baujahr",
+    "operator": "GTE",
+    "value": 2017
+   },
+   "value": true,
+   "reason": "Bei Inverkehrbringen ab 01.09.2017 nach DIN EN 81-20/50 gefordert und bei der Abnahme nachgewiesen"
+  },
+  {
+   "question": "qf_notruf_dach",
+   "when": {
+    "question": "qa_baujahr",
+    "operator": "GTE",
+    "value": 2017
+   },
+   "value": true,
+   "reason": "Bei Inverkehrbringen ab 01.09.2017 nach DIN EN 81-20/50 gefordert und bei der Abnahme nachgewiesen"
+  },
+  {
+   "question": "qk_notruf_en8128",
+   "when": {
+    "question": "qa_baujahr",
+    "operator": "GTE",
+    "value": 2017
+   },
+   "value": true,
+   "reason": "Zweiwege-Notrufsystem nach DIN EN 81-28, mit DIN EN 81-20 ab 01.09.2017 durchgaengig gefordert und bei der Abnahme geprueft"
+  }
+ ],
+ "assumptions_void_when": {
+  "question": "qd_konformitaet_geprueft",
+  "operator": "EQ",
+  "value": false
+ }
 }

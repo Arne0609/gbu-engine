@@ -34,7 +34,9 @@ sys.path.insert(0, HERE)
 from en8180_content import ZUORDNUNG  # noqa: E402
 import catalog_check  # noqa: E402
 
-RULE_VERSION = '81-80-mf-2026.3'  # .3: 26 neue Regeln freigegeben 04.09.2026
+RULE_VERSION = '81-80-mf-2026.5'  # .5: best_case je Frage (Sammelantwort) 07.09.2026
+# .4: begruendete Annahmen (Baujahr) 07.09.2026
+# .3: 26 neue Regeln freigegeben 04.09.2026
 
 # Gefährdungen ausserhalb der 74 Gefährdungssituationen, die der Typ trotzdem
 # führt: ohne sie waere die Beurteilung nach BetrSichV unvollstaendig.
@@ -119,8 +121,22 @@ def build():
                 massnahmen[code] = M[code]
     measures = list(massnahmen.values())
 
-    return {'rule_version': RULE_VERSION, 'questions': questions,
-            'measures': measures, 'hazards': hazards, 'rules': rules}, mf
+    seed = {'rule_version': RULE_VERSION, 'questions': questions,
+            'measures': measures, 'hazards': hazards, 'rules': rules}
+
+    # Begruendete Annahmen unveraendert uebernehmen, aber nur fuer Fragen, die
+    # es in diesem Katalog auch gibt (er ist eine strikte Teilmenge). Fuer den
+    # Bestandstyp greifen sie praktisch nie – alle Schwellen liegen ab 1999,
+    # der Typ ist fuer Anlagen bis 1998 gedacht. Sie stehen trotzdem drin,
+    # damit eine modernisierte Anlage, die bewusst nach EN 81-80 beurteilt
+    # wird, dieselbe Logik bekommt.
+    annahmen = [a for a in mf.get('assumptions', []) if a['question'] in fragen]
+    if annahmen:
+        seed['assumptions'] = annahmen
+        void = mf.get('assumptions_void_when')
+        if void and void.get('question') in fragen:
+            seed['assumptions_void_when'] = void
+    return seed, mf
 
 
 def main():

@@ -118,6 +118,70 @@ pruefe('Baujahr unbeantwortet', 'MF-D06',
   { qa_norm_inverkehrbringen: 'en81_20', qa_ucm_a3: true, qa_fahrkorbtuer: true },
   'INCOMPLETE');
 
+// ---- Begründete Annahmen aus dem Baujahr (07.09.2026) ----------------------
+// Merkmale, die zum Baujahr vorgeschrieben waren, wurden vor der Inbetrieb-
+// nahme durch eine ZÜS abgenommen. Sie werden nicht erneut erhoben, sondern
+// angenommen – widerlegbar, und ohne dass eine Gefährdung verschwindet.
+const bj2020 = { qa_baujahr: 2020, qa_norm_inverkehrbringen: 'en81_20',
+                 qa_fahrkorbtuer: true };
+
+// 1. Die Annahme greift: UCM unbeantwortet, Baujahr 2020 -> gilt als vorhanden.
+pruefe('UCM wird ab 2012 angenommen', 'MF-D06', bj2020, 'NO_RISK');
+
+// 2. Die Erhebung schlägt die Annahme: ausdrückliches Nein bleibt ein Befund.
+pruefe('erhobenes Nein schlägt die Annahme', 'MF-D06',
+  { ...bj2020, qa_ucm_a3: false }, 'HIGH');
+
+// 3. Widerlegbar: ohne Abnahmeunterlagen greift keine Annahme.
+pruefe('ohne Abnahmeunterlagen keine Annahme', 'MF-D06',
+  { ...bj2020, qd_konformitaet_geprueft: false }, 'INCOMPLETE');
+
+// 4. Ohne Baujahr keine Annahme (fail-closed wie bisher).
+pruefe('ohne Baujahr keine Annahme', 'MF-D06',
+  { qa_norm_inverkehrbringen: 'en81_20', qa_fahrkorbtuer: true }, 'INCOMPLETE');
+
+// 5. Altanlage: die Schwellen liegen ab 1999, hier greift nichts.
+pruefe('Altanlage bekommt keine Annahme', 'MF-D06',
+  { qa_baujahr: 1990, qa_norm_inverkehrbringen: 'tra', qa_fahrkorbtuer: true },
+  'INCOMPLETE');
+
+function pruefeWahr(name: string, bedingung: boolean, zusatz = '') {
+  if (bedingung) {
+    console.log(`ok      ${name}`);
+  } else {
+    console.error(`FEHLER  ${name}${zusatz ? ': ' + zusatz : ''}`);
+    fehler++;
+  }
+}
+
+// 6. Das Ergebnis weist aus, worauf es beruht.
+const d06 = evaluate(seed as any, bj2020 as any)
+  .find((x: any) => x.hazard === 'MF-D06') as any;
+pruefeWahr('Befund nennt die angenommene Frage',
+  Array.isArray(d06.assumed) && d06.assumed.includes('qa_ucm_a3'),
+  JSON.stringify(d06.assumed));
+
+// 7. Annahmen ersetzen keine Erhebung: Mit Baujahr allein bleibt der weit
+//    überwiegende Teil des Katalogs unbewertet – Zustands- und
+//    Organisationsfragen sind bewusst nicht angenommen.
+const nurBaujahr = evaluate(seed as any, { qa_baujahr: 2020 } as any);
+const offenTrotzAnnahme = nurBaujahr.filter((r: any) => r.status === 'INCOMPLETE').length;
+pruefeWahr('Baujahr allein bewertet den Katalog nicht',
+  offenTrotzAnnahme > nurBaujahr.length / 2,
+  `${offenTrotzAnnahme} von ${nurBaujahr.length} offen`);
+
+// 8. Keine Annahme darf eine Frage betreffen, die den Katalogumfang steuert.
+const appQ = new Set<string>();
+for (const h of (seed.hazards ?? [])) {
+  for (const q of (h.questions ?? [])) {
+    if (q.role === 'APPLICABILITY') appQ.add(q.question);
+  }
+}
+const verboten = (seed.assumptions ?? [])
+  .map((a: any) => a.question).filter((q: string) => appQ.has(q));
+pruefeWahr('keine Annahme auf einer APPLICABILITY-Frage',
+  verboten.length === 0, verboten.join(', '));
+
 // ---- Regellücken über alle Gefährdungen ------------------------------------
 const leer = evaluate(seed as any, {} as any);
 const gaps = leer.filter((r: any) => r.ruleGap);

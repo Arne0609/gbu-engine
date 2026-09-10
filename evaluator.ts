@@ -6,6 +6,10 @@
 // Setzt die im Datenmodell festgelegte Auswertungsreihenfolge um (siehe
 // GBU_Engine_Datenmodell.md / gbu_engine_schema.sql):
 //
+//   0. Annahmen (ruleset.assumptions): unbeantwortete Fragen, deren Merkmal
+//        zum Baujahr abnahmepflichtig war, bekommen ihren Best-Case-Wert.
+//        Erhobene Antworten bleiben unangetastet; das Ergebnis weist die
+//        angenommenen Fragen in `assumed` aus.
 //   1. Applicability (hazard_questions.role = APPLICABILITY)
 //        unbekannt        -> INCOMPLETE
 //        ausdruecklich Nein -> NOT_APPLICABLE
@@ -79,10 +83,47 @@ export interface Rule {
   aggregation?: AggregationType;
   origin?: Origin;
 }
+/** Begruendete Annahme fuer eine unbeantwortete Frage („Best Case").
+ *
+ *  Hintergrund: Merkmale, die zum Baujahr der Anlage vorgeschrieben waren,
+ *  mussten vor der Inbetriebnahme nachgewiesen und durch eine ZUES abgenommen
+ *  werden (z. B. UCM-Schutz nach EN 81-1/2 + A3, verbindlich seit 01.01.2012).
+ *  Solche Merkmale muessen nicht erneut erhoben werden – die Frage wird
+ *  optional und gilt als „vorhanden", solange niemand widerspricht.
+ *
+ *  Bewusste Abgrenzung: Annahmen sind NUR fuer Ausstattungsmerkmale zulaessig,
+ *  nie fuer Zustandsfragen (Verschleiss, Verschmutzung, Beschaedigung) und nie
+ *  fuer Organisationsfragen (Unterweisung, Notfallplan, Pruefnachweise) – eine
+ *  Abnahme sagt nichts ueber den heutigen Zustand und nichts ueber die
+ *  Betreiberorganisation. */
+export interface Assumption {
+  /** Frage, die angenommen wird. */
+  question: string;
+  /** Annahme greift nur, wenn dieser Ausdruck wahr ist (i. d. R. das Baujahr). */
+  when: Expression;
+  /** Angenommener Wert (Best Case). */
+  value: AnswerValue;
+  /** Begruendung – erscheint im Fragebogen, in der Bewertung und im PDF. */
+  reason: string;
+}
+
 export interface Ruleset {
   rule_version?: string;
   hazards?: Hazard[];
   rules: Rule[];
+  /** Begruendete Annahmen fuer unbeantwortete Fragen (siehe [Assumption]). */
+  assumptions?: Assumption[];
+  /** Ist dieser Ausdruck wahr, greift KEINE Annahme (widerlegbare Vermutung).
+   *  Im MF-Katalog: die Abnahmeunterlagen liegen ausdruecklich nicht vor –
+   *  dann ist die Abnahme nicht belegt und alles wird wieder erhoben. */
+  assumptions_void_when?: Expression;
+}
+
+/** Tatsaechlich angewandte Annahme (Ergebnis von [applyAssumptions]). */
+export interface AppliedAssumption {
+  question: string;
+  value: AnswerValue;
+  reason: string;
 }
 
 export interface EvaluationResult {
@@ -104,6 +145,11 @@ export interface EvaluationResult {
   /** true: NO_RISK nur, weil keine Regel passt und die Gefaehrdung keine
    *  ausdrueckliche NO_RISK-Regel kennt (Altstil / Rekonstruktion). */
   implicit_no_risk?: boolean;
+  /** Fragen dieser Gefaehrdung, deren Wert nicht erhoben, sondern nach
+   *  [Assumption] angenommen wurde. Leer/fehlend = alles erhoben. Ein Befund
+   *  mit Eintraegen hier beruht auf einer Vermutung und wird in Bewertung und
+   *  PDF entsprechend gekennzeichnet. */
+  assumed?: string[];
   input_snapshot: Record<string, AnswerValue>;
 }
 
@@ -112,6 +158,9 @@ export interface EvaluateOptions {
    *  {includeOrigins:['RECONSTRUCTED_ORIGINAL']} reproduziert die Engine das
    *  beobachtete Original (ohne eigene OWN_RULE-Verbesserungen). */
   includeOrigins?: Origin[];
+  /** Von [applyAssumptions] gesetzte Fragen – nur zur Kennzeichnung des
+   *  Ergebnisses; die Werte stehen bereits in den Antworten. */
+  assumedQuestions?: ReadonlySet<string>;
 }
 
 // ---- Hilfen ----------------------------------------------------------------
@@ -187,6 +236,12 @@ export function evaluateHazard(
       matched_rule: matched, matched_rules: all, overridden_rules: overridden, input_snapshot };
     if (gap) r.rule_gap = true;
     if (implicit) r.implicit_no_risk = true;
+    // Angenommene Fragen dieser Gefaehrdung ausweisen – nur die, die hier
+    // ueberhaupt eine Rolle spielen.
+    if (opts.assumedQuestions && opts.assumedQuestions.size > 0) {
+      const a = [...snapshotKeys].filter((k) => opts.assumedQuestions!.has(k));
+      if (a.length > 0) r.assumed = a.sort();
+    }
     return r;
   };
 
@@ -281,12 +336,57 @@ function collectWinnerKeys(rule: Rule): Set<string> {
   return s;
 }
 
-/** Wertet alle Gefaehrdungen des Regelwerks aus. */
+/**
+ * Wendet die begruendeten Annahmen des Regelwerks an: Jede unbeantwortete
+ * Frage, deren Bedingung zutrifft, bekommt ihren Best-Case-Wert.
+ *
+ * Drei Festlegungen, die den Unterschied zum Ausblenden ausmachen:
+ *
+ *  1. Eine bereits erhobene Antwort wird NIE ueberschrieben – der Befund vor
+ *     Ort schlaegt die Vermutung immer.
+ *  2. Die Bedingungen werden gegen die ERHOBENEN Antworten geprueft, nicht
+ *     gegen zwischenzeitlich angenommene. So kann keine Annahme eine zweite
+ *     ausloesen; das Ergebnis haengt nicht von der Reihenfolge ab.
+ *  3. Ist [Ruleset.assumptions_void_when] wahr, greift keine einzige Annahme.
+ *
+ * Liefert eine KOPIE der Antworten; die uebergebene Map bleibt unveraendert.
+ */
+export function applyAssumptions(
+  ruleset: Ruleset,
+  answers: AnswerMap,
+): { answers: AnswerMap; applied: AppliedAssumption[] } {
+  const liste = ruleset.assumptions ?? [];
+  if (liste.length === 0) return { answers, applied: [] };
+  if (ruleset.assumptions_void_when &&
+      evalExpression(ruleset.assumptions_void_when, answers)) {
+    return { answers, applied: [] };
+  }
+  const ergaenzt: AnswerMap = { ...answers };
+  const applied: AppliedAssumption[] = [];
+  for (const a of liste) {
+    if (isAnswered(answers, a.question)) continue;
+    if (!evalExpression(a.when, answers)) continue;
+    ergaenzt[a.question] = a.value;
+    applied.push({ question: a.question, value: a.value, reason: a.reason });
+  }
+  return { answers: ergaenzt, applied };
+}
+
+/** Wertet alle Gefaehrdungen des Regelwerks aus. Annahmen werden vorher
+ *  angewandt, sofern der Aufrufer sie nicht schon selbst gesetzt hat
+ *  (erkennbar an opts.assumedQuestions). */
 export function evaluate(
   ruleset: Ruleset,
   answers: AnswerMap,
   opts: EvaluateOptions = {},
 ): EvaluationResult[] {
+  let wirkendeAntworten = answers;
+  let optionen = opts;
+  if (!opts.assumedQuestions) {
+    const { answers: erg, applied } = applyAssumptions(ruleset, answers);
+    wirkendeAntworten = erg;
+    optionen = { ...opts, assumedQuestions: new Set(applied.map((a) => a.question)) };
+  }
   const byHazard = new Map<string, Rule[]>();
   for (const r of ruleset.rules) {
     const list = byHazard.get(r.hazard) ?? [];
@@ -294,7 +394,8 @@ export function evaluate(
     byHazard.set(r.hazard, list);
   }
   const hazards = ruleset.hazards ?? [];
-  return hazards.map((h) => evaluateHazard(h, byHazard.get(h.code) ?? [], answers, opts));
+  return hazards.map((h) =>
+    evaluateHazard(h, byHazard.get(h.code) ?? [], wirkendeAntworten, optionen));
 }
 
 /** Zaehlung der Ergebnisse je Status (fuer die Bewertungsuebersicht). */

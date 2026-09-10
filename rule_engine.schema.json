@@ -3,7 +3,6 @@
   "$id": "https://gbu-app.local/schemas/rule_engine.schema.json",
   "title": "GBU 4.0 – Regelengine (Bedingungssprache und Bewertungsregeln)",
   "description": "Kontrollierte, NICHT frei ausführbare Ausdruckssprache plus das Schema einer Bewertungsregel. Spiegelt die Spalten aus evaluation_rules / rule_required_questions / rule_measures (siehe gbu_engine_schema.sql). Eine Regel referenziert Fragen über deren stabilen 'code' (questions.code), nicht über UUID oder legacy_id.",
-
   "$defs": {
     "questionRef": {
       "type": "string",
@@ -11,271 +10,755 @@
       "minLength": 1,
       "maxLength": 80
     },
-
     "operator": {
       "type": "string",
-      "enum": ["EQ", "NEQ", "GT", "GTE", "LT", "LTE", "IN", "NOT_IN",
-               "ANSWERED", "NOT_ANSWERED"],
+      "enum": [
+        "EQ",
+        "NEQ",
+        "GT",
+        "GTE",
+        "LT",
+        "LTE",
+        "IN",
+        "NOT_IN",
+        "ANSWERED",
+        "NOT_ANSWERED"
+      ],
       "description": "Vergleichsoperator eines Blatt-Ausdrucks. ANSWERED/NOT_ANSWERED prüfen nur, OB die Frage beantwortet ist (ohne 'value')."
     },
-
     "leaf": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["question", "operator"],
+      "required": [
+        "question",
+        "operator"
+      ],
       "properties": {
-        "question": { "$ref": "#/$defs/questionRef" },
-        "operator": { "$ref": "#/$defs/operator" },
+        "question": {
+          "$ref": "#/$defs/questionRef"
+        },
+        "operator": {
+          "$ref": "#/$defs/operator"
+        },
         "value": {
           "description": "Vergleichswert. Bei IN/NOT_IN ein Array; bei ANSWERED/NOT_ANSWERED entfällt der Wert.",
-          "type": ["boolean", "number", "string", "array", "null"],
-          "items": { "type": ["boolean", "number", "string"] }
+          "type": [
+            "boolean",
+            "number",
+            "string",
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": [
+              "boolean",
+              "number",
+              "string"
+            ]
+          }
         }
       },
       "allOf": [
         {
-          "if": { "properties": { "operator": { "const": "IN" } } },
-          "then": { "properties": { "value": { "type": "array" } }, "required": ["value"] }
+          "if": {
+            "properties": {
+              "operator": {
+                "const": "IN"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "type": "array"
+              }
+            },
+            "required": [
+              "value"
+            ]
+          }
         },
         {
-          "if": { "properties": { "operator": { "const": "NOT_IN" } } },
-          "then": { "properties": { "value": { "type": "array" } }, "required": ["value"] }
+          "if": {
+            "properties": {
+              "operator": {
+                "const": "NOT_IN"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "type": "array"
+              }
+            },
+            "required": [
+              "value"
+            ]
+          }
         },
         {
-          "if": { "properties": { "operator": { "enum": ["ANSWERED", "NOT_ANSWERED"] } } },
-          "then": { "not": { "required": ["value"] } }
+          "if": {
+            "properties": {
+              "operator": {
+                "enum": [
+                  "ANSWERED",
+                  "NOT_ANSWERED"
+                ]
+              }
+            }
+          },
+          "then": {
+            "not": {
+              "required": [
+                "value"
+              ]
+            }
+          }
         },
         {
-          "if": { "properties": { "operator": { "enum": ["EQ","NEQ","GT","GTE","LT","LTE"] } } },
-          "then": { "required": ["value"] }
+          "if": {
+            "properties": {
+              "operator": {
+                "enum": [
+                  "EQ",
+                  "NEQ",
+                  "GT",
+                  "GTE",
+                  "LT",
+                  "LTE"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "value"
+            ]
+          }
         }
       ]
     },
-
     "expression": {
       "description": "Rekursiver Bedingungsbaum. Genau EIN Schlüssel je Knoten: 'all' (UND), 'any' (ODER), 'not' (Negation) oder ein Blatt.",
       "oneOf": [
         {
           "type": "object",
           "additionalProperties": false,
-          "required": ["all"],
+          "required": [
+            "all"
+          ],
           "properties": {
-            "all": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/expression" } }
+            "all": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "#/$defs/expression"
+              }
+            }
           }
         },
         {
           "type": "object",
           "additionalProperties": false,
-          "required": ["any"],
+          "required": [
+            "any"
+          ],
           "properties": {
-            "any": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/expression" } }
+            "any": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "#/$defs/expression"
+              }
+            }
           }
         },
         {
           "type": "object",
           "additionalProperties": false,
-          "required": ["not"],
-          "properties": { "not": { "$ref": "#/$defs/expression" } }
+          "required": [
+            "not"
+          ],
+          "properties": {
+            "not": {
+              "$ref": "#/$defs/expression"
+            }
+          }
         },
-        { "$ref": "#/$defs/leaf" }
-      ]
-    },
-
-    "riskStatus": {
-      "type": "string",
-      "enum": ["INCOMPLETE", "NOT_APPLICABLE", "NO_RISK", "LOW", "MEDIUM", "HIGH"]
-    },
-
-    "hazardQuestion": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": ["question", "role"],
-      "properties": {
-        "question":      { "$ref": "#/$defs/questionRef" },
-        "role":          { "type": "string",
-                           "enum": ["APPLICABILITY","TRIGGER","COMPENSATION","MODIFIER",
-                                    "ACCESS_FACTOR","OPTIONAL","DOCUMENTATION"] },
-        "required_mode": { "type": "string", "enum": ["NEVER","ALWAYS","CONDITIONAL"],
-                           "default": "NEVER",
-                           "description": "Gefährdungsspezifisch: muss diese Frage FÜR DIESE Gefährdung beantwortet sein, damit sie bewertet wird? ALWAYS+leer -> INCOMPLETE." },
-        "required_when": { "$ref": "#/$defs/expression",
-                           "description": "Nur bei required_mode = CONDITIONAL." },
-        "applicable_when": { "$ref": "#/$defs/expression",
-                           "description": "Nur bei role = APPLICABILITY: Gefährdung ist anwendbar, wenn der Ausdruck wahr ist (z. B. Aufzugsart IN [seil, trommel]). Fehlt er, gilt die boolesche Regel: ausdrückliches Nein -> NOT_APPLICABLE. Ist der Ausdruck falsch und eine referenzierte Frage unbeantwortet -> INCOMPLETE, sonst NOT_APPLICABLE." },
-        "notes":         { "type": "string" }
-      },
-      "allOf": [
         {
-          "if": { "properties": { "required_mode": { "const": "CONDITIONAL" } }, "required": ["required_mode"] },
-          "then": { "required": ["required_when"] }
+          "$ref": "#/$defs/leaf"
         }
       ]
     },
-
+    "riskStatus": {
+      "type": "string",
+      "enum": [
+        "INCOMPLETE",
+        "NOT_APPLICABLE",
+        "NO_RISK",
+        "LOW",
+        "MEDIUM",
+        "HIGH"
+      ]
+    },
+    "hazardQuestion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "question",
+        "role"
+      ],
+      "properties": {
+        "question": {
+          "$ref": "#/$defs/questionRef"
+        },
+        "role": {
+          "type": "string",
+          "enum": [
+            "APPLICABILITY",
+            "TRIGGER",
+            "COMPENSATION",
+            "MODIFIER",
+            "ACCESS_FACTOR",
+            "OPTIONAL",
+            "DOCUMENTATION"
+          ]
+        },
+        "required_mode": {
+          "type": "string",
+          "enum": [
+            "NEVER",
+            "ALWAYS",
+            "CONDITIONAL"
+          ],
+          "default": "NEVER",
+          "description": "Gefährdungsspezifisch: muss diese Frage FÜR DIESE Gefährdung beantwortet sein, damit sie bewertet wird? ALWAYS+leer -> INCOMPLETE."
+        },
+        "required_when": {
+          "$ref": "#/$defs/expression",
+          "description": "Nur bei required_mode = CONDITIONAL."
+        },
+        "applicable_when": {
+          "$ref": "#/$defs/expression",
+          "description": "Nur bei role = APPLICABILITY: Gefährdung ist anwendbar, wenn der Ausdruck wahr ist (z. B. Aufzugsart IN [seil, trommel]). Fehlt er, gilt die boolesche Regel: ausdrückliches Nein -> NOT_APPLICABLE. Ist der Ausdruck falsch und eine referenzierte Frage unbeantwortet -> INCOMPLETE, sonst NOT_APPLICABLE."
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "required_mode": {
+                "const": "CONDITIONAL"
+              }
+            },
+            "required": [
+              "required_mode"
+            ]
+          },
+          "then": {
+            "required": [
+              "required_when"
+            ]
+          }
+        }
+      ]
+    },
     "hazard": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["code", "domain", "title"],
+      "required": [
+        "code",
+        "domain",
+        "title"
+      ],
       "properties": {
-        "code":            { "type": "string", "description": "hazards.code, z. B. 'M087'." },
-        "domain":          { "type": "string", "enum": ["GBU","CYBER","BOTH"] },
-        "title":           { "type": "string" },
-        "description":     { "type": "string" },
-        "category":        { "type": "string" },
-        "aggregation_type":{ "type": "string",
-                             "enum": ["NONE","ANY","ALL","MAXIMUM","MINIMUM","DECISION_TABLE"],
-                             "default": "NONE",
-                             "description": "Eigenschaft der Gefährdung (Delta 4): M087 = ANY über vier Ortsfragen." },
-        "evaluation_mode": { "type": "string",
-                             "enum": ["STANDARD","PARTIAL_ALLOWED","STRICT_REQUIRED"],
-                             "default": "STANDARD" },
-        "not_implemented": { "type": "boolean", "default": false },
-        "questions":       { "type": "array", "items": { "$ref": "#/$defs/hazardQuestion" },
-                             "description": "hazard_questions: Rollen + gefährdungsspezifisches required_mode." },
-        "sources":         { "type": "array", "items": { "$ref": "#/$defs/sourceRef" },
-                             "description": "Norm-/Quellenbezug der Gefährdung (hazard_sources)." },
-        "hazard_factor":   { "type": "string",
-                             "description": "Gefährdungsfaktor nach DIN EN ISO 12100 / GDA-Schema (Anzeige, Bericht)." },
-        "person_groups":   { "type": "array", "items": { "type": "string" },
-                             "description": "Betroffene Personengruppen (Nutzer, Beauftragte Person, Wartungspersonal, …)." },
-        "ui_group":        { "type": "string",
-                             "description": "Erhebungsbereich, unter dem die Gefährdung in der Erfassung primär geführt wird (informativ)." },
-        "review_ids":      { "type": "array", "items": { "type": "string" },
-                             "description": "Kennungen offener Klärungspunkte (Klärungsliste), z. B. K-M02." }
+        "code": {
+          "type": "string",
+          "description": "hazards.code, z. B. 'M087'."
+        },
+        "domain": {
+          "type": "string",
+          "enum": [
+            "GBU",
+            "CYBER",
+            "BOTH"
+          ]
+        },
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "category": {
+          "type": "string"
+        },
+        "aggregation_type": {
+          "type": "string",
+          "enum": [
+            "NONE",
+            "ANY",
+            "ALL",
+            "MAXIMUM",
+            "MINIMUM",
+            "DECISION_TABLE"
+          ],
+          "default": "NONE",
+          "description": "Eigenschaft der Gefährdung (Delta 4): M087 = ANY über vier Ortsfragen."
+        },
+        "evaluation_mode": {
+          "type": "string",
+          "enum": [
+            "STANDARD",
+            "PARTIAL_ALLOWED",
+            "STRICT_REQUIRED"
+          ],
+          "default": "STANDARD"
+        },
+        "not_implemented": {
+          "type": "boolean",
+          "default": false
+        },
+        "questions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/hazardQuestion"
+          },
+          "description": "hazard_questions: Rollen + gefährdungsspezifisches required_mode."
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/sourceRef"
+          },
+          "description": "Norm-/Quellenbezug der Gefährdung (hazard_sources)."
+        },
+        "hazard_factor": {
+          "type": "string",
+          "description": "Gefährdungsfaktor nach DIN EN ISO 12100 / GDA-Schema (Anzeige, Bericht)."
+        },
+        "person_groups": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Betroffene Personengruppen (Nutzer, Beauftragte Person, Wartungspersonal, …)."
+        },
+        "ui_group": {
+          "type": "string",
+          "description": "Erhebungsbereich, unter dem die Gefährdung in der Erfassung primär geführt wird (informativ)."
+        },
+        "review_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Kennungen offener Klärungspunkte (Klärungsliste), z. B. K-M02."
+        }
       }
     },
-
     "measureBinding": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["measure"],
+      "required": [
+        "measure"
+      ],
       "properties": {
-        "measure":   { "type": "string", "description": "measures.code" },
-        "group_id":  { "type": "string" },
-        "relation":  { "type": "string", "enum": ["AND", "OR", "SINGLE"], "default": "SINGLE" },
-        "mandatory": { "type": "boolean", "default": true },
-        "condition": { "$ref": "#/$defs/expression" }
+        "measure": {
+          "type": "string",
+          "description": "measures.code"
+        },
+        "group_id": {
+          "type": "string"
+        },
+        "relation": {
+          "type": "string",
+          "enum": [
+            "AND",
+            "OR",
+            "SINGLE"
+          ],
+          "default": "SINGLE"
+        },
+        "mandatory": {
+          "type": "boolean",
+          "default": true
+        },
+        "condition": {
+          "$ref": "#/$defs/expression"
+        }
       }
     },
-
     "sourceRef": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["type", "document"],
+      "required": [
+        "type",
+        "document"
+      ],
       "properties": {
-        "type":     { "type": "string", "enum": ["TRBS","DIN","EN","EU_DIRECTIVE","EU_REGULATION","LAW","DGUV","OTHER"] },
-        "document": { "type": "string" },
-        "section":  { "type": "string" }
+        "type": {
+          "type": "string",
+          "enum": [
+            "TRBS",
+            "DIN",
+            "EN",
+            "EU_DIRECTIVE",
+            "EU_REGULATION",
+            "LAW",
+            "DGUV",
+            "OTHER"
+          ]
+        },
+        "document": {
+          "type": "string"
+        },
+        "section": {
+          "type": "string"
+        }
       }
     },
-
     "measureDef": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["code", "title", "type"],
+      "required": [
+        "code",
+        "title",
+        "type"
+      ],
       "properties": {
-        "code":           { "type": "string" },
-        "title":          { "type": "string" },
-        "type":           { "type": "string",
-                            "enum": ["TECHNICAL","ORGANISATIONAL","INSPECTION","DOCUMENTATION",
-                                     "REPAIR","REPLACEMENT","WARNING","OTHER"] },
-        "priority_class": { "type": "string" },
-        "description":    { "type": "string" }
+        "code": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "TECHNICAL",
+            "ORGANISATIONAL",
+            "INSPECTION",
+            "DOCUMENTATION",
+            "REPAIR",
+            "REPLACEMENT",
+            "WARNING",
+            "OTHER"
+          ]
+        },
+        "priority_class": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
       }
     },
-
     "rule": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["hazard", "code", "priority", "condition", "result"],
+      "required": [
+        "hazard",
+        "code",
+        "priority",
+        "condition",
+        "result"
+      ],
       "properties": {
-        "hazard":        { "type": "string", "description": "hazards.code, z. B. 'M032'." },
-        "code":          { "type": "string", "description": "Regelcode, z. B. 'M032-R001'." },
-        "priority":      { "type": "integer", "description": "Höchste zutreffende Priorität gewinnt." },
-        "applicability": { "$ref": "#/$defs/expression", "description": "Fehlt sie, ist die Regel immer anwendbar." },
-        "condition":     { "$ref": "#/$defs/expression" },
-        "result":        { "$ref": "#/$defs/riskStatus" },
-        "aggregation":   { "type": "string",
-                           "enum": ["NONE","ANY","ALL","MAXIMUM","MINIMUM","DECISION_TABLE"],
-                           "description": "Fehlt sie, erbt die Regel die Aggregation der Gefährdung (hazards.aggregation_type)." },
-        "evidence":      { "type": "string",
-                           "enum": ["DIRECT","HIGH_CONFIDENCE","INFERRED","HYPOTHESIS"],
-                           "default": "DIRECT",
-                           "description": "Wie gut ist das ORIGINAL-Verhalten belegt." },
-        "origin":        { "type": "string",
-                           "enum": ["RECONSTRUCTED_ORIGINAL","NORM_DERIVED","OWN_RULE"],
-                           "default": "RECONSTRUCTED_ORIGINAL" },
-        "quality_status":{ "type": "string",
-                           "enum": ["VERIFIED","REVIEW_REQUIRED","KNOWN_BUG","NOT_IMPLEMENTED"],
-                           "default": "REVIEW_REQUIRED",
-                           "description": "Unsere fachliche Haltung – getrennt von der Belegtiefe." },
-        "measures":      { "type": "array", "items": { "$ref": "#/$defs/measureBinding" } },
-        "sources":       { "type": "array", "items": { "$ref": "#/$defs/sourceRef" } },
-        "notes":         { "type": "string" }
+        "hazard": {
+          "type": "string",
+          "description": "hazards.code, z. B. 'M032'."
+        },
+        "code": {
+          "type": "string",
+          "description": "Regelcode, z. B. 'M032-R001'."
+        },
+        "priority": {
+          "type": "integer",
+          "description": "Höchste zutreffende Priorität gewinnt."
+        },
+        "applicability": {
+          "$ref": "#/$defs/expression",
+          "description": "Fehlt sie, ist die Regel immer anwendbar."
+        },
+        "condition": {
+          "$ref": "#/$defs/expression"
+        },
+        "result": {
+          "$ref": "#/$defs/riskStatus"
+        },
+        "aggregation": {
+          "type": "string",
+          "enum": [
+            "NONE",
+            "ANY",
+            "ALL",
+            "MAXIMUM",
+            "MINIMUM",
+            "DECISION_TABLE"
+          ],
+          "description": "Fehlt sie, erbt die Regel die Aggregation der Gefährdung (hazards.aggregation_type)."
+        },
+        "evidence": {
+          "type": "string",
+          "enum": [
+            "DIRECT",
+            "HIGH_CONFIDENCE",
+            "INFERRED",
+            "HYPOTHESIS"
+          ],
+          "default": "DIRECT",
+          "description": "Wie gut ist das ORIGINAL-Verhalten belegt."
+        },
+        "origin": {
+          "type": "string",
+          "enum": [
+            "RECONSTRUCTED_ORIGINAL",
+            "NORM_DERIVED",
+            "OWN_RULE"
+          ],
+          "default": "RECONSTRUCTED_ORIGINAL"
+        },
+        "quality_status": {
+          "type": "string",
+          "enum": [
+            "VERIFIED",
+            "REVIEW_REQUIRED",
+            "KNOWN_BUG",
+            "NOT_IMPLEMENTED"
+          ],
+          "default": "REVIEW_REQUIRED",
+          "description": "Unsere fachliche Haltung – getrennt von der Belegtiefe."
+        },
+        "measures": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/measureBinding"
+          }
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/sourceRef"
+          }
+        },
+        "notes": {
+          "type": "string"
+        }
       }
     },
-
     "questionOption": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["value", "label"],
+      "required": [
+        "value",
+        "label"
+      ],
       "properties": {
-        "value":          { "type": "string" },
-        "label":          { "type": "string" },
-        "semantic_value": { "type": "string" }
+        "value": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        },
+        "semantic_value": {
+          "type": "string"
+        }
       }
     },
-
     "question": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["code", "type"],
+      "required": [
+        "code",
+        "type"
+      ],
       "properties": {
-        "code":    { "$ref": "#/$defs/questionRef" },
-        "type":    { "type": "string",
-                     "enum": ["YES_NO","YES_NO_NA","SELECT","MULTI_SELECT","NUMBER",
-                              "TEXT","DATE","PHOTO","TEXT_PHOTO","SELECT_PHOTO"] },
-        "domain":  { "type": "string", "enum": ["GBU","CYBER","BOTH"] },
-        "text":    { "type": "string" },
-        "category":{ "type": "string" },
-        "legacy_id": { "type": "string" },
-        "ui_number": { "type": "string", "description": "Anzeige-Nummer im Fragebogen (questions.ui_number)." },
-        "help_text": { "type": "string" },
-        "min": { "type": "number", "description": "Untere Eingabegrenze (NUMBER), fachlich plausibler Bereich." },
-        "max": { "type": "number", "description": "Obere Eingabegrenze (NUMBER)." },
-        "visible_when": { "$ref": "#/$defs/expression",
-                          "description": "Sichtbarkeitsregel (question_visibility_rules, effect SHOW). Reine UI-Logik, keine Risikologik." },
-        "options": { "type": "array", "items": { "$ref": "#/$defs/questionOption" } }
+        "code": {
+          "$ref": "#/$defs/questionRef"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "YES_NO",
+            "YES_NO_NA",
+            "SELECT",
+            "MULTI_SELECT",
+            "NUMBER",
+            "TEXT",
+            "DATE",
+            "PHOTO",
+            "TEXT_PHOTO",
+            "SELECT_PHOTO"
+          ]
+        },
+        "domain": {
+          "type": "string",
+          "enum": [
+            "GBU",
+            "CYBER",
+            "BOTH"
+          ]
+        },
+        "text": {
+          "type": "string"
+        },
+        "category": {
+          "type": "string"
+        },
+        "legacy_id": {
+          "type": "string"
+        },
+        "ui_number": {
+          "type": "string",
+          "description": "Anzeige-Nummer im Fragebogen (questions.ui_number)."
+        },
+        "help_text": {
+          "type": "string"
+        },
+        "min": {
+          "type": "number",
+          "description": "Untere Eingabegrenze (NUMBER), fachlich plausibler Bereich."
+        },
+        "max": {
+          "type": "number",
+          "description": "Obere Eingabegrenze (NUMBER)."
+        },
+        "visible_when": {
+          "$ref": "#/$defs/expression",
+          "description": "Sichtbarkeitsregel (question_visibility_rules, effect SHOW). Reine UI-Logik, keine Risikologik."
+        },
+        "options": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/questionOption"
+          }
+        },
+        "best_case": {
+          "type": "boolean",
+          "description": "Unauffaelliger Wert dieser Ja/Nein-Frage, aus den Befundregeln abgeleitet. Grundlage der Sammelantwort (\"Sichtpruefung ohne Befund\"). Fehlt bei mehrdeutigen Fragen, APPLICABILITY-Fragen und ausserhalb der Ortsbereiche."
+        }
       }
     },
-
     "ruleTemplate": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["template", "parameters", "result"],
+      "required": [
+        "template",
+        "parameters",
+        "result"
+      ],
       "properties": {
-        "template":   { "type": "string", "description": "rule_templates.code, z. B. 'DIGITAL_COMPONENT_ACCESS'." },
-        "parameters": { "type": "object", "description": "Slot-Name -> Fragen-Code.",
-                        "additionalProperties": { "$ref": "#/$defs/questionRef" } },
-        "required":   { "type": "array", "items": { "type": "string" },
-                        "description": "Slot-Namen, deren Antwort Pflicht ist." },
-        "result":     { "$ref": "#/$defs/riskStatus" }
+        "template": {
+          "type": "string",
+          "description": "rule_templates.code, z. B. 'DIGITAL_COMPONENT_ACCESS'."
+        },
+        "parameters": {
+          "type": "object",
+          "description": "Slot-Name -> Fragen-Code.",
+          "additionalProperties": {
+            "$ref": "#/$defs/questionRef"
+          }
+        },
+        "required": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Slot-Namen, deren Antwort Pflicht ist."
+        },
+        "result": {
+          "$ref": "#/$defs/riskStatus"
+        }
       }
+    },
+    "assumption": {
+      "type": "object",
+      "description": "Begruendete Annahme fuer eine unbeantwortete Frage. Merkmale, die zum Baujahr vorgeschrieben waren, wurden vor der Inbetriebnahme durch eine ZUES abgenommen; sie muessen nicht erneut erhoben werden. Nur fuer Ausstattungsmerkmale zulaessig - nie fuer Zustands- oder Organisationsfragen und nie fuer Fragen mit Rolle APPLICABILITY. Eine erhobene Antwort wird nie ueberschrieben.",
+      "additionalProperties": false,
+      "properties": {
+        "question": {
+          "$ref": "#/$defs/questionRef"
+        },
+        "when": {
+          "$ref": "#/$defs/expression",
+          "description": "Annahme greift nur, wenn dieser Ausdruck wahr ist (in der Regel ein Baujahrvergleich)."
+        },
+        "value": {
+          "type": "boolean",
+          "description": "Angenommener Wert (Best Case)."
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Begruendung mit Rechtsgrundlage - erscheint in Fragebogen, Bewertung und PDF."
+        }
+      },
+      "required": [
+        "question",
+        "when",
+        "value",
+        "reason"
+      ]
     }
   },
-
   "type": "object",
   "additionalProperties": false,
   "properties": {
-    "rule_version":   { "type": "string", "description": "z. B. 'GBU-Regelwerk 2026.1'." },
-    "questions":      { "type": "array", "items": { "$ref": "#/$defs/question" },
-                        "description": "Optionaler Fragenkatalog (Typ + Antwortoptionen). Referenzierte, hier nicht definierte Codes werden als YES_NO angelegt." },
-    "measures":       { "type": "array", "items": { "$ref": "#/$defs/measureDef" },
-                        "description": "Maßnahmenkatalog; von rule.measures[].measure per Code referenziert." },
-    "hazards":        { "type": "array", "items": { "$ref": "#/$defs/hazard" },
-                        "description": "Gefährdungen inkl. hazard_questions (Rollen + required_mode) und Aggregation." },
-    "rules":          { "type": "array", "items": { "$ref": "#/$defs/rule" } },
-    "rule_templates": { "type": "array", "items": { "$ref": "#/$defs/ruleTemplate" } }
+    "rule_version": {
+      "type": "string",
+      "description": "z. B. 'GBU-Regelwerk 2026.1'."
+    },
+    "questions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/question"
+      },
+      "description": "Optionaler Fragenkatalog (Typ + Antwortoptionen). Referenzierte, hier nicht definierte Codes werden als YES_NO angelegt."
+    },
+    "measures": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/measureDef"
+      },
+      "description": "Maßnahmenkatalog; von rule.measures[].measure per Code referenziert."
+    },
+    "hazards": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/hazard"
+      },
+      "description": "Gefährdungen inkl. hazard_questions (Rollen + required_mode) und Aggregation."
+    },
+    "rules": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/rule"
+      }
+    },
+    "rule_templates": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/ruleTemplate"
+      }
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/assumption"
+      },
+      "description": "Begruendete Annahmen fuer unbeantwortete Fragen."
+    },
+    "assumptions_void_when": {
+      "$ref": "#/$defs/expression",
+      "description": "Ist dieser Ausdruck wahr, greift KEINE Annahme (widerlegbare Vermutung; im MF-Katalog: Abnahmeunterlagen liegen nicht vor)."
+    }
   },
-  "required": ["rules"]
+  "required": [
+    "rules"
+  ]
 }
