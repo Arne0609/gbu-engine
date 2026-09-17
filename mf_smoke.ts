@@ -182,6 +182,134 @@ const verboten = (seed.assumptions ?? [])
 pruefeWahr('keine Annahme auf einer APPLICABILITY-Frage',
   verboten.length === 0, verboten.join(', '));
 
+// ---- Korrekturen aus dem externen Prüfbericht (15.09.2026) ----------------
+const GLAS = { qa_glas_schachttueren: true, qa_glas_fahrkorbtueren: false,
+  qt_glas_beschaedigt: false, qt_glas_schiebetuer: true, qt_glas_einzugsschutz: true };
+pruefe('B06 intaktes Drahtglas = Niedrig', 'MF-T04',
+  { ...GLAS, qt_glas_normgerecht: false, qt_glas_drahtglas: true }, 'LOW');
+pruefe('B06 anderes Nicht-VSG = Hoch', 'MF-T04',
+  { ...GLAS, qt_glas_normgerecht: false, qt_glas_drahtglas: false }, 'HIGH');
+pruefe('B06 beschädigtes Glas = Hoch', 'MF-T04',
+  { ...GLAS, qt_glas_normgerecht: true, qt_glas_drahtglas: false, qt_glas_beschaedigt: true }, 'HIGH');
+const OHNE_TUER = { qa_fahrkorbtuer: false, qt_lichtgitter_ohne_tuer: true, qt_scherengitter: false,
+  qa_nutzung_pmem: false, qa_nutzung_kinder: false };
+pruefe('B07 Lichtgitter im Personenaufzug = Hoch', 'MF-T06',
+  { ...OHNE_TUER, qa_nutzungsart: 'personen', qt_nur_eingewiesene: false }, 'HIGH');
+pruefe('B07 Lichtgitter, Personenaufzug, "eingewiesen"', 'MF-T06',
+  { ...OHNE_TUER, qa_nutzungsart: 'personen', qt_nur_eingewiesene: true }, 'HIGH');
+pruefe('B07 Lichtgitter, Lastenaufzug, eingewiesen = Mittel', 'MF-T06',
+  { ...OHNE_TUER, qa_nutzungsart: 'lasten', qt_nur_eingewiesene: true }, 'MEDIUM');
+pruefe('B07 Nutzungsart fehlt = unvollständig', 'MF-T06',
+  { ...OHNE_TUER, qt_nur_eingewiesene: true }, 'INCOMPLETE');
+const SBEL = { qs_bel_vorhanden: true, qs_bel_splitterschutz: true };
+pruefe('B05 unter 50 lx, Altnorm erfüllt = Niedrig', 'MF-S01',
+  { ...SBEL, qs_bel_ausreichend: false, qs_bel_altnorm: true }, 'LOW');
+pruefe('B05 unter 50 lx, Altnorm nicht erfüllt = Mittel', 'MF-S01',
+  { ...SBEL, qs_bel_ausreichend: false, qs_bel_altnorm: false }, 'MEDIUM');
+pruefe('B05 Altnorm-Frage fehlt = unvollständig', 'MF-S01',
+  { ...SBEL, qs_bel_ausreichend: false }, 'INCOMPLETE');
+pruefe('H03 Grube: automatische Abschaltung = Kein Risiko', 'MF-G08',
+  { qa_mehrere_aufzuege: true, qg_nachbar_abtrennung: false, qg_nachbar_abschaltung: true,
+    qg_nachbar_abschaltung_geprueft: true }, 'NO_RISK');
+pruefe('H03 Grube: weder Abtrennung noch Abschaltung = Hoch', 'MF-G08',
+  { qa_mehrere_aufzuege: true, qg_nachbar_abtrennung: false, qg_nachbar_abschaltung: false }, 'HIGH');
+pruefe('H03 Fahrkorbdach: automatische Abschaltung = Kein Risiko', 'MF-F03',
+  { qa_mehrere_aufzuege: true, qf_nachbar_trennung: 'fehlt', qf_nachbar_abschaltung: true,
+    qf_nachbar_abschaltung_geprueft: true }, 'NO_RISK');
+pruefe('H03 Fahrkorbdach: ohne Abschaltung = Hoch', 'MF-F03',
+  { qa_mehrere_aufzuege: true, qf_nachbar_trennung: 'fehlt', qf_nachbar_abschaltung: false }, 'HIGH');
+pruefe('H15 reduzierter Schachtkopf ohne Kennzeichnung = Mittel', 'MF-F04',
+  { qf_schutzraum: 'reduziert', qf_kopffreiheit_gekennz: false }, 'MEDIUM');
+pruefe('H06 Asbestsituation unbekannt = Mittel', 'MF-U01',
+  { qa_maschinenraum: true, qz_asbest: false, qm_asbest: false, qs_asbest: false,
+    qg_asbest: false, qu_asbest_unbekannt: true }, 'MEDIUM');
+pruefe('H06 Asbest gefunden = Hoch', 'MF-U01',
+  { qa_maschinenraum: true, qz_asbest: false, qm_asbest: true, qs_asbest: false,
+    qg_asbest: false, qu_asbest_unbekannt: true }, 'HIGH');
+
+// ---- Zweite Prüfung (16.09.2026) --------------------------------------------
+pruefe('Abschaltung ohne Funktionsnachweis = Mittel (Grube)', 'MF-G08',
+  { qa_mehrere_aufzuege: true, qg_nachbar_abtrennung: false, qg_nachbar_abschaltung: true,
+    qg_nachbar_abschaltung_geprueft: false }, 'MEDIUM');
+pruefe('Abschaltung ohne Funktionsnachweis = Mittel (Dach)', 'MF-F03',
+  { qa_mehrere_aufzuege: true, qf_nachbar_trennung: 'fehlt', qf_nachbar_abschaltung: true,
+    qf_nachbar_abschaltung_geprueft: false }, 'MEDIUM');
+pruefe('Scherengitter + Lichtgitter, Personenaufzug = Hoch', 'MF-T06',
+  { qa_fahrkorbtuer: false, qt_lichtgitter_ohne_tuer: true, qt_scherengitter: true,
+    qa_nutzung_pmem: false, qa_nutzung_kinder: false, qa_nutzungsart: 'personen',
+    qt_nur_eingewiesene: false }, 'HIGH');
+pruefe('Scherengitter, Lastenaufzug, eingewiesen = Mittel', 'MF-T06',
+  { qa_fahrkorbtuer: false, qt_lichtgitter_ohne_tuer: false, qt_scherengitter: true,
+    qa_nutzung_pmem: false, qa_nutzung_kinder: false, qa_nutzungsart: 'lasten',
+    qt_nur_eingewiesene: true }, 'MEDIUM');
+pruefe('Keine Schließkantensicherung + PmeM = Hoch', 'MF-T06',
+  { qa_fahrkorbtuer: true, qt_schliesskante: 'keine', qa_nutzung_pmem: true, qa_nutzung_kinder: false }, 'HIGH');
+pruefe('Einzel-Lichtschranke + PmeM = Hoch', 'MF-T06',
+  { qa_fahrkorbtuer: true, qt_schliesskante: 'lichtschranke', qa_nutzung_pmem: true, qa_nutzung_kinder: false }, 'HIGH');
+pruefe('Drehtür mit Drahtglas ohne Einzugsschutz = Niedrig', 'MF-T04',
+  { qa_glas_schachttueren: true, qa_glas_fahrkorbtueren: false, qt_glas_normgerecht: false,
+    qt_glas_drahtglas: true, qt_glas_beschaedigt: false, qt_glas_schiebetuer: false }, 'LOW');
+pruefe('Separate Grubenzugangstür mit Kontakt, keine Leiter = Kein Risiko', 'MF-G04',
+  { qg_zugangstuer: true, qg_zugangstuer_schalter: true }, 'NO_RISK');
+pruefe('Zugang über Leiter, keine Leiter = Hoch', 'MF-G04',
+  { qg_zugangstuer: false, qg_leiter: 'keine' }, 'HIGH');
+pruefe('Beleuchteter Notruftaster allein = Niedrig', 'MF-K02', { qk_notbeleuchtung: 'nur_taster' }, 'LOW');
+pruefe('Ex bewertet, nicht umgesetzt = Hoch', 'MF-U06',
+  { qu_ex_moeglich: true, qu_ex_bewertet: true, qu_ex_umgesetzt: false }, 'HIGH');
+pruefe('Ex bewertet und umgesetzt = Mittel', 'MF-U06',
+  { qu_ex_moeglich: true, qu_ex_bewertet: true, qu_ex_umgesetzt: true }, 'MEDIUM');
+pruefe('Schwelle > 150 mm, eine Verriegelung = Niedrig (TRBS)', 'MF-K05',
+  { qk_abstand_schwelle_mm: true, qk_fk_tuer_verriegelt: true, qk_schachttuer_zusatzverriegelung: false,
+    qa_nutzung_kinder: false }, 'LOW');
+pruefe('Schwelle > 150 mm, keine Maßnahme = Mittel', 'MF-K05',
+  { qk_abstand_schwelle_mm: true, qk_fk_tuer_verriegelt: false, qk_schachttuer_zusatzverriegelung: false,
+    qa_nutzung_kinder: false }, 'MEDIUM');
+pruefe('Schwelle > 150 mm, keine Maßnahme, Kinder = Hoch (eigener Standard)', 'MF-K05',
+  { qk_abstand_schwelle_mm: true, qk_fk_tuer_verriegelt: false, qk_schachttuer_zusatzverriegelung: false,
+    qa_nutzung_kinder: true }, 'HIGH');
+pruefe('Barrierefreiheit gefordert, keine PmeM-Nutzung = bewertet', 'MF-K10',
+  { qa_nutzung_pmem: false, qa_barrierefrei_gefordert: true, qk_en8170: true, qk_bedienelemente: true,
+    qk_rollstuhl_mass: false }, 'HIGH');
+pruefe('Barrierefreiheit weder gefordert noch genutzt = nicht anwendbar', 'MF-K10',
+  { qa_nutzung_pmem: false, qa_barrierefrei_gefordert: false }, 'NOT_APPLICABLE');
+pruefe('Indirekte Hydraulik: Betriebsbremse nicht anwendbar', 'MF-M08',
+  { qa_aufzugsart: 'seil_hydraulik' }, 'NOT_APPLICABLE');
+pruefe('Indirekte Hydraulik: Wellenlagerung nicht anwendbar', 'MF-K14',
+  { qa_aufzugsart: 'seil_hydraulik' }, 'NOT_APPLICABLE');
+
+// Monotonie MF-T06: Bei sonst gleicher Anlage darf eine schwächere
+// Schließkantensicherung nie günstiger bewertet werden als eine stärkere.
+const RANG: Record<string, number> = { NO_RISK: 0, LOW: 1, MEDIUM: 2, HIGH: 3 };
+const staerke = ['lichtgitter', 'lichtschranke', 'keine'];
+let monotonFehler = '';
+for (const pmem of [true, false]) {
+  for (const kinder of [true, false]) {
+    let vorher = -1;
+    for (const sk of staerke) {
+      const st = status({ qa_fahrkorbtuer: true, qt_schliesskante: sk, qa_nutzung_pmem: pmem,
+        qa_nutzung_kinder: kinder }, 'MF-T06');
+      if (RANG[st] < vorher) monotonFehler += `${sk}/pmem=${pmem}/kinder=${kinder} `;
+      vorher = RANG[st];
+    }
+  }
+}
+// ... und ohne Fahrkorbtür darf kein Ersatz die Stufe senken, solange die
+// Voraussetzung (Lastenaufzug, nur Eingewiesene) fehlt.
+for (const lg of [true, false]) for (const sg of [true, false]) {
+  const st = status({ qa_fahrkorbtuer: false, qt_lichtgitter_ohne_tuer: lg, qt_scherengitter: sg,
+    qa_nutzung_pmem: false, qa_nutzung_kinder: false, qa_nutzungsart: 'personen',
+    qt_nur_eingewiesene: true }, 'MF-T06');
+  if (st !== 'HIGH') monotonFehler += `ohne Tür lg=${lg} sg=${sg} -> ${st} `;
+}
+pruefeWahr('Monotonie MF-T06 (Schutz weg = nie günstiger)', monotonFehler === '', monotonFehler);
+
+// Jede risikotragende Regel hat eine Sofort- und eine mittelfristige Maßnahme (H11).
+const luecken = (seed.rules ?? []).filter((r: any) =>
+  ['LOW', 'MEDIUM', 'HIGH'].includes(r.result) &&
+  !(['sofort', 'mittel'].every((g) => (r.measures ?? []).some((m: any) => m.group_id === g))));
+pruefeWahr('H11 jede Befundregel mit Sofort- und Folgemaßnahme',
+  luecken.length === 0, luecken.map((r: any) => r.code).join(', '));
+
 // ---- Regellücken über alle Gefährdungen ------------------------------------
 const leer = evaluate(seed as any, {} as any);
 const gaps = leer.filter((r: any) => r.ruleGap);

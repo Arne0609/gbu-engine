@@ -215,6 +215,34 @@ class QuestionDef {
   /// NUMBER: fachlich plausibler Wertebereich (Eingabegrenzen).
   final num? min;
   final num? max;
+
+  /// Unauffälliger Wert dieser Ja/Nein-Frage, im Generator aus den
+  /// Befundregeln abgeleitet. Grundlage der Sammelantwort („Sichtprüfung ohne
+  /// Befund"): Nur Fragen mit eindeutigem [bestCase] dürfen so gesetzt
+  /// werden. null bei mehrdeutigen Fragen (beide Werte lösen irgendwo einen
+  /// Befund aus), bei Fragen, die den Katalogumfang steuern, und außerhalb
+  /// der Ortsbereiche – dort ist eine Sichtprüfung als Sammelaussage nicht
+  /// tragfähig.
+  final bool? bestCase;
+
+  /// true, wenn diese Frage per Sammelantwort gesetzt werden darf.
+  bool get sammelbar => bestCase != null;
+
+  /// Fragengruppe (Karte), in der die Frage erscheint – siehe
+  /// [QuestionGroup]. null = eigene Karte. (Erhebung kürzen, 17.09.2026.)
+  final String? group;
+
+  /// 'anlagenstamm', wenn die Antwort aus dem Anlagenstamm der App kommt
+  /// (Herkunft „stamm"); [stammKey] nennt das Feld.
+  final String? source;
+  final String? stammKey;
+
+  /// Rein informative Frage (z. B. optionaler Messwert zu einer
+  /// Schwellenfrage): zählt nicht im Fortschritt, gilt nie als „offen".
+  final bool optional;
+
+  bool get ausAnlagenstamm => source == 'anlagenstamm';
+
   const QuestionDef({
     required this.code,
     required this.type,
@@ -226,6 +254,11 @@ class QuestionDef {
     this.visibleWhen,
     this.min,
     this.max,
+    this.bestCase,
+    this.group,
+    this.source,
+    this.stammKey,
+    this.optional = false,
   });
   factory QuestionDef.fromJson(Map<String, dynamic> j) => QuestionDef(
         code: j['code'] as String,
@@ -240,6 +273,11 @@ class QuestionDef {
         visibleWhen: (j['visible_when'] as Map?)?.cast<String, dynamic>(),
         min: j['min'] as num?,
         max: j['max'] as num?,
+        bestCase: j['best_case'] as bool?,
+        group: j['group'] as String?,
+        source: j['source'] as String?,
+        stammKey: j['stamm_key'] as String?,
+        optional: j['optional'] == true,
       );
 
   /// true, wenn die Frage bei den gegebenen Antworten sichtbar ist.
@@ -300,6 +338,183 @@ class SourceRef {
       );
 }
 
+/// Begründete Annahme für eine unbeantwortete Frage („Best Case").
+///
+/// Merkmale, die zum Baujahr der Anlage vorgeschrieben waren, mussten vor der
+/// Inbetriebnahme nachgewiesen und durch eine ZÜS abgenommen werden (etwa der
+/// UCM-Schutz nach DIN EN 81-1/2 + A3, verbindlich seit 01.01.2012). Solche
+/// Merkmale müssen nicht erneut erhoben werden: Die Frage wird optional und
+/// gilt als „vorhanden", solange die Fachkraft nicht widerspricht.
+///
+/// Bewusst kein Ausblenden: Die Frage bleibt im Fragebogen stehen, trägt ihre
+/// Begründung und lässt sich mit einem Klick überschreiben – und jeder Befund,
+/// der auf einer Annahme beruht, wird als solcher ausgewiesen. Ausgeblendete
+/// Fragen würden dagegen ganze Gefährdungen aus der Beurteilung nehmen.
+class Assumption {
+  /// Frage, die angenommen wird.
+  final String question;
+
+  /// Annahme greift nur, wenn dieser Ausdruck wahr ist (i. d. R. das Baujahr).
+  final Map<String, dynamic> when;
+
+  /// Angenommener Wert (Best Case).
+  final dynamic value;
+
+  /// Begründung mit Rechtsgrundlage – erscheint im Fragebogen, in der
+  /// Bewertung und im PDF.
+  final String reason;
+
+  const Assumption({
+    required this.question,
+    required this.when,
+    required this.value,
+    this.reason = '',
+  });
+
+  factory Assumption.fromJson(Map<String, dynamic> j) => Assumption(
+        question: j['question'] as String,
+        when: ((j['when'] as Map?) ?? const {}).cast<String, dynamic>(),
+        value: j['value'],
+        reason: (j['reason'] ?? '') as String,
+      );
+}
+
+/// Eine tatsächlich angewandte Annahme – Ergebnis von [applyAssumptions].
+class AppliedAssumption {
+  final String question;
+  final dynamic value;
+  final String reason;
+  const AppliedAssumption(this.question, this.value, this.reason);
+}
+
+/// Position einer Fragengruppe (Karte) im Fragebogen.
+///
+/// Erhebung kürzen (17.09.2026): Mehrere Einzelfragen erscheinen als EINE
+/// Karte. Eine Ankreuzposition (`mode == 'check'`) zeigt die AUFFÄLLIGKEIT;
+/// angekreuzt wird [value] gesetzt (samt [implies], damit die Position
+/// sichtbar und die Regel scharf ist). Beim Bestätigen der Karte erhalten
+/// nicht angekreuzte, sichtbare Positionen [clear] – Herkunft „sammel". Eine
+/// native Position (`mode == 'native'`) ist die Frage in ihrer eigenen Form.
+/// Für die Engine ändert sich nichts: Antworten bleiben Antworten auf die
+/// Einzelfragen.
+class GroupItem {
+  final String question;
+  final String mode;
+  final String? label;
+  final String? row;
+  final bool? value;
+  final bool? clear;
+  final Map<String, dynamic> implies;
+
+  const GroupItem({
+    required this.question,
+    required this.mode,
+    this.label,
+    this.row,
+    this.value,
+    this.clear,
+    this.implies = const {},
+  });
+
+  bool get istAnkreuzfeld => mode == 'check' && value != null;
+
+  factory GroupItem.fromJson(Map<String, dynamic> j) => GroupItem(
+        question: j['question'] as String,
+        mode: (j['mode'] as String?) ?? 'native',
+        label: j['label'] as String?,
+        row: j['row'] as String?,
+        value: j['value'] as bool?,
+        clear: j['clear'] as bool?,
+        implies: {
+          for (final e in ((j['implies'] as List?) ?? const []))
+            (e as Map)['question'] as String: e['value'],
+        },
+      );
+}
+
+/// Fragengruppe – eine Karte im Fragebogen (siehe [GroupItem]).
+class QuestionGroup {
+  final String id;
+  final String title;
+  final String category;
+
+  /// 'checklist' (nur Ankreuzpositionen) oder 'card' (gemischt).
+  final String kind;
+  final String? uiNumber;
+  final String? help;
+  final List<GroupItem> items;
+
+  const QuestionGroup({
+    required this.id,
+    required this.title,
+    required this.category,
+    this.kind = 'card',
+    this.uiNumber,
+    this.help,
+    this.items = const [],
+  });
+
+  factory QuestionGroup.fromJson(Map<String, dynamic> j) => QuestionGroup(
+        id: j['id'] as String,
+        title: (j['title'] ?? '') as String,
+        category: (j['category'] ?? '') as String,
+        kind: (j['kind'] as String?) ?? 'card',
+        uiNumber: j['ui_number'] as String?,
+        help: j['help'] as String?,
+        items: ((j['items'] as List?) ?? const [])
+            .map((e) => GroupItem.fromJson((e as Map).cast<String, dynamic>()))
+            .toList(),
+      );
+}
+
+/// Nachweis-Vorbelegung aus dem ZÜS-Prüfbericht.
+///
+/// Was die ZÜS in der letzten Hauptprüfung nach TRBS 1201 Teil 4, 3.3 (2)
+/// geprüft hat, wird vorbelegt, sobald [when] wahr ist (Frage D05: Prüfbericht
+/// ohne offene sicherheitsrelevante Mängel). Die ZÜS prüft gegen die
+/// Errichtungsgrundlage; [minBaujahr] begrenzt deshalb Einträge, deren
+/// Einrichtung vor 1999 nicht gefordert war. Rangfolge in der App: erhobene
+/// Antwort > Baujahr-Annahme > Nachweis. Anders als die Annahme wird die
+/// Antwort GESPEICHERT (Herkunft „nachweis" mit Datum des Prüfberichts), weil
+/// sie an ein konkretes Dokument gebunden ist.
+class Nachweis {
+  final String question;
+  final dynamic value;
+  final Map<String, dynamic> when;
+  final int? minBaujahr;
+  final String reason;
+  final String source;
+
+  const Nachweis({
+    required this.question,
+    required this.value,
+    required this.when,
+    this.minBaujahr,
+    this.reason = '',
+    this.source = '',
+  });
+
+  factory Nachweis.fromJson(Map<String, dynamic> j) => Nachweis(
+        question: j['question'] as String,
+        value: j['value'],
+        when: ((j['when'] as Map?) ?? const {}).cast<String, dynamic>(),
+        minBaujahr: (j['min_baujahr'] as num?)?.toInt(),
+        reason: (j['reason'] ?? '') as String,
+        source: (j['source'] ?? '') as String,
+      );
+
+  /// true, wenn die Vorbelegung bei diesen Antworten greift (Freischaltung
+  /// erfüllt, Baujahr passt). Ob die Frage schon beantwortet oder angenommen
+  /// ist, prüft der Aufrufer.
+  bool greift(AnswerMap answers) {
+    if (!evalExpression(when, answers)) return false;
+    final mb = minBaujahr;
+    if (mb == null) return true;
+    final bj = answers['qa_baujahr'];
+    return bj is num && bj >= mb;
+  }
+}
+
 class Ruleset {
   final String? ruleVersion;
   final List<CategoryDef> categories;
@@ -308,6 +523,30 @@ class Ruleset {
   final List<Hazard> hazards;
   final List<Rule> rules;
 
+  /// Begründete Annahmen für unbeantwortete Fragen (siehe [Assumption]).
+  final List<Assumption> assumptions;
+
+  /// Ist dieser Ausdruck wahr, greift KEINE Annahme (widerlegbare Vermutung).
+  /// Im MF-Katalog: Konformitätserklärung und Abnahmeunterlagen liegen
+  /// ausdrücklich nicht vor – dann ist die Abnahme nicht belegt und alles
+  /// wird wieder erhoben.
+  final Map<String, dynamic>? assumptionsVoidWhen;
+
+  /// Fragengruppen (Karten) – siehe [QuestionGroup]. Leer bei Katalogen vor
+  /// 2026.9: dann erscheint jede Frage als eigene Karte.
+  final List<QuestionGroup> questionGroups;
+
+  /// Nachweis-Vorbelegungen aus dem ZÜS-Prüfbericht – siehe [Nachweis].
+  final List<Nachweis> nachweise;
+
+  /// Phase je Erhebungsbereich: 'stamm' (Anlagenstamm), 'vorab' (vor dem
+  /// Ortstermin beantwortbar), 'vor_ort' (Begehung). Fehlt: vor_ort.
+  final Map<String, String> categoryPhases;
+
+  /// Reihenfolge der Erhebungsbereiche im Fragebogen (Begehungsweg); die
+  /// Fragen des Katalogs sind bereits so sortiert.
+  final List<String> categorySequence;
+
   const Ruleset({
     this.ruleVersion,
     this.categories = const [],
@@ -315,6 +554,12 @@ class Ruleset {
     this.measures = const [],
     this.hazards = const [],
     this.rules = const [],
+    this.assumptions = const [],
+    this.assumptionsVoidWhen,
+    this.questionGroups = const [],
+    this.nachweise = const [],
+    this.categoryPhases = const {},
+    this.categorySequence = const [],
   });
 
   factory Ruleset.fromJson(Map<String, dynamic> j) => Ruleset(
@@ -334,7 +579,35 @@ class Ruleset {
         rules: ((j['rules'] as List?) ?? const [])
             .map((e) => Rule.fromJson((e as Map).cast<String, dynamic>()))
             .toList(),
+        assumptions: ((j['assumptions'] as List?) ?? const [])
+            .map((e) => Assumption.fromJson((e as Map).cast<String, dynamic>()))
+            .toList(),
+        assumptionsVoidWhen: (j['assumptions_void_when'] as Map?)
+            ?.cast<String, dynamic>(),
+        questionGroups: ((j['question_groups'] as List?) ?? const [])
+            .map((e) =>
+                QuestionGroup.fromJson((e as Map).cast<String, dynamic>()))
+            .toList(),
+        nachweise: ((j['nachweise'] as List?) ?? const [])
+            .map((e) => Nachweis.fromJson((e as Map).cast<String, dynamic>()))
+            .toList(),
+        categoryPhases: ((j['category_phases'] as Map?) ?? const {})
+            .map((k, v) => MapEntry(k as String, '$v')),
+        categorySequence: ((j['category_order'] as List?) ?? const [])
+            .map((e) => '$e')
+            .toList(),
       );
+
+  /// Phase eines Erhebungsbereichs (siehe [categoryPhases]).
+  String phaseOf(String category) => categoryPhases[category] ?? 'vor_ort';
+
+  /// Fragengruppe nach ID (oder null).
+  QuestionGroup? groupById(String id) {
+    for (final g in questionGroups) {
+      if (g.id == id) return g;
+    }
+    return null;
+  }
 
   /// Reihenfolge-Index je Kategorietitel (für die Gruppierung in der UI).
   Map<String, int> categoryOrder() {
@@ -381,6 +654,16 @@ class EvaluationResult {
   /// true: NO_RISK nur, weil keine Regel passt und die Gefährdung keine
   /// ausdrückliche NO_RISK-Regel kennt (Altstil / Rekonstruktion).
   final bool implicitNoRisk;
+
+  /// Fragen dieser Gefährdung, deren Wert nicht erhoben, sondern nach
+  /// [Assumption] angenommen wurde. Leer = alles erhoben. Ist die Liste nicht
+  /// leer, beruht der Befund auf einer Vermutung – Bewertung und PDF weisen
+  /// das aus.
+  final List<String> assumed;
+
+  /// true, wenn dieses Ergebnis auf mindestens einer Annahme beruht.
+  bool get beruhtAufAnnahme => assumed.isNotEmpty;
+
   final Map<String, dynamic> inputSnapshot;
 
   const EvaluationResult({
@@ -392,6 +675,7 @@ class EvaluationResult {
     this.overriddenRules = const [],
     this.ruleGap = false,
     this.implicitNoRisk = false,
+    this.assumed = const [],
     required this.inputSnapshot,
   });
 }
@@ -400,7 +684,12 @@ class EvaluateOptions {
   /// Nur Regeln dieser Herkünfte auswerten (null = alle). Mit
   /// {'RECONSTRUCTED_ORIGINAL'} reproduziert die Engine das Original.
   final Set<String>? includeOrigins;
-  const EvaluateOptions({this.includeOrigins});
+
+  /// Von [applyAssumptions] gesetzte Fragen – nur zur Kennzeichnung des
+  /// Ergebnisses; die Werte stehen bereits in den Antworten.
+  final Set<String>? assumedQuestions;
+
+  const EvaluateOptions({this.includeOrigins, this.assumedQuestions});
 }
 
 // ---- Ausdruckssprache ------------------------------------------------------
@@ -497,6 +786,12 @@ EvaluationResult evaluateHazard(
   EvaluateOptions options = const EvaluateOptions(),
 }) {
   final snapshotKeys = <String>{for (final q in hazard.questions) q.question};
+  // Angenommene Fragen dieser Gefährdung – nur die, die hier eine Rolle
+  // spielen. Sortiert, damit die Ausgabe stabil bleibt.
+  final angenommen = options.assumedQuestions == null
+      ? const <String>[]
+      : (snapshotKeys.where(options.assumedQuestions!.contains).toList()
+        ..sort());
 
   EvaluationResult build(RiskStatus status, String? matched,
       [List<String> all = const [],
@@ -516,6 +811,7 @@ EvaluationResult evaluateHazard(
       overriddenRules: overridden,
       ruleGap: gap,
       implicitNoRisk: implicit,
+      assumed: angenommen,
       inputSnapshot: snap,
     );
   }
@@ -617,19 +913,78 @@ EvaluationResult evaluateHazard(
       [winner.code, ...effective.map((r) => r.code)], overridden);
 }
 
-/// Wertet alle Gefährdungen des Regelwerks aus.
+/// Wendet die begründeten Annahmen des Regelwerks an: Jede unbeantwortete
+/// Frage, deren Bedingung zutrifft, bekommt ihren Best-Case-Wert.
+///
+/// Drei Festlegungen, die den Unterschied zum Ausblenden ausmachen:
+///
+///  1. Eine bereits erhobene Antwort wird NIE überschrieben – der Befund vor
+///     Ort schlägt die Vermutung immer.
+///  2. Die Bedingungen werden gegen die ERHOBENEN Antworten geprüft, nicht
+///     gegen zwischenzeitlich angenommene. So kann keine Annahme eine zweite
+///     auslösen; das Ergebnis hängt nicht von der Reihenfolge ab.
+///  3. Ist [Ruleset.assumptionsVoidWhen] wahr, greift keine einzige Annahme.
+///
+/// Liefert eine Kopie der Antworten; die übergebene Map bleibt unverändert.
+({AnswerMap answers, List<AppliedAssumption> applied}) applyAssumptions(
+  Ruleset ruleset,
+  AnswerMap answers,
+) {
+  if (ruleset.assumptions.isEmpty) {
+    return (answers: answers, applied: const []);
+  }
+  final void_ = ruleset.assumptionsVoidWhen;
+  if (void_ != null && evalExpression(void_, answers)) {
+    return (answers: answers, applied: const []);
+  }
+  final ergaenzt = Map<String, dynamic>.from(answers);
+  final applied = <AppliedAssumption>[];
+  for (final a in ruleset.assumptions) {
+    if (_isAnswered(answers, a.question)) continue;
+    if (!evalExpression(a.when, answers)) continue;
+    ergaenzt[a.question] = a.value;
+    applied.add(AppliedAssumption(a.question, a.value, a.reason));
+  }
+  return (answers: ergaenzt, applied: applied);
+}
+
+/// Annahmen als Nachschlagewerk für die Oberfläche: Fragencode -> Annahme,
+/// mit denselben Regeln wie [applyAssumptions]. Der Fragebogen zeigt damit an
+/// jeder betroffenen Frage, welcher Wert gälte und warum.
+Map<String, AppliedAssumption> annahmenFuerAnzeige(
+  Ruleset ruleset,
+  AnswerMap answers,
+) {
+  final erg = applyAssumptions(ruleset, answers);
+  return {for (final a in erg.applied) a.question: a};
+}
+
+/// Wertet alle Gefährdungen des Regelwerks aus. Die Annahmen werden vorher
+/// angewandt, sofern der Aufrufer sie nicht schon selbst gesetzt hat
+/// (erkennbar an [EvaluateOptions.assumedQuestions]).
 List<EvaluationResult> evaluate(
   Ruleset ruleset,
   AnswerMap answers, {
   EvaluateOptions options = const EvaluateOptions(),
 }) {
+  var wirkendeAntworten = answers;
+  var optionen = options;
+  if (options.assumedQuestions == null) {
+    final erg = applyAssumptions(ruleset, answers);
+    wirkendeAntworten = erg.answers;
+    optionen = EvaluateOptions(
+      includeOrigins: options.includeOrigins,
+      assumedQuestions: {for (final a in erg.applied) a.question},
+    );
+  }
   final byHazard = <String, List<Rule>>{};
   for (final r in ruleset.rules) {
     byHazard.putIfAbsent(r.hazard, () => []).add(r);
   }
   return ruleset.hazards
-      .map((h) => evaluateHazard(h, byHazard[h.code] ?? const [], answers,
-          options: options))
+      .map((h) => evaluateHazard(
+          h, byHazard[h.code] ?? const [], wirkendeAntworten,
+          options: optionen))
       .toList();
 }
 
@@ -645,13 +1000,20 @@ Map<RiskStatus, int> summarize(List<EvaluationResult> results) {
 /// Antworten, die in der Oberfläche als „beantwortet" zählen: nur sichtbare
 /// Fragen. Liefert (beantwortet, sichtbar) für die Fortschrittsanzeige.
 (int, int) answeredProgress(Ruleset rs, AnswerMap answers,
-    {String? category}) {
+    {String? category, bool mitAnnahmen = true}) {
+  // Angenommene Fragen zaehlen als erledigt: Sie sind nach der Abnahme der
+  // Anlage belegt, ihre Beantwortung ist freiwillig. Sonst stuende der
+  // Fortschritt dauerhaft bei „unfertig", obwohl nichts mehr zu tun ist.
+  final angenommen = mitAnnahmen
+      ? annahmenFuerAnzeige(rs, answers).keys.toSet()
+      : const <String>{};
   var done = 0, total = 0;
   for (final q in rs.questions) {
     if (category != null && q.category != category) continue;
+    if (q.optional) continue; // rein informativ (z. B. optionaler Messwert)
     if (!q.isVisible(answers)) continue;
     total++;
-    if (_isAnswered(answers, q.code)) done++;
+    if (_isAnswered(answers, q.code) || angenommen.contains(q.code)) done++;
   }
   return (done, total);
 }

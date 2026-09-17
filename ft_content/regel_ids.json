@@ -1,0 +1,1858 @@
+{
+ "regeln": {
+  "FT-B01": {
+   "FT-B01-R1": {
+    "sachverhalt": "1c01ccf51b92",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B01-R2": {
+    "sachverhalt": "cea2c48bcc52",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B01-R3": {
+    "sachverhalt": "f8051a16c3fb",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-B02": {
+   "FT-B02-R1": {
+    "sachverhalt": "329a376f47e4",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B02-R2": {
+    "sachverhalt": "6246f1672aed",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-B03": {
+   "FT-B03-R1": {
+    "sachverhalt": "e1d65eb05485",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B03-R2": {
+    "sachverhalt": "134d3a7018b3",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B03-R3": {
+    "sachverhalt": "4a96277a0fec",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-B04": {
+   "FT-B04-R1": {
+    "sachverhalt": "abbf551477a5",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B04-R2": {
+    "sachverhalt": "608d536655f0",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B04-R3": {
+    "sachverhalt": "8ab98ccc2696",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B04-R4": {
+    "sachverhalt": "8e6cf157540b",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-B05": {
+   "FT-B05-R1": {
+    "sachverhalt": "ebc0ae81adf0",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B05-R2": {
+    "sachverhalt": "f60f88999e61",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B05-R3": {
+    "sachverhalt": "9a91fa54eaf2",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B05-R4": {
+    "sachverhalt": "9319f397ee79",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-B06": {
+   "FT-B06-R1": {
+    "sachverhalt": "9abbd4ef4780",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B06-R2": {
+    "sachverhalt": "8926ff0d51ba",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B06-R3": {
+    "sachverhalt": "4e29168f8666",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-B07": {
+   "FT-B07-R1": {
+    "sachverhalt": "3d026049899c",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B07-R2": {
+    "sachverhalt": "2a67b66de979",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-B08": {
+   "FT-B08-R1": {
+    "sachverhalt": "c64e5e80df7c",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B08-R2": {
+    "sachverhalt": "725d2308edaf",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B08-R3": {
+    "sachverhalt": "f68974e254f1",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B08-R4": {
+    "sachverhalt": "a872f769f702",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-B10": {
+   "FT-B10-R1": {
+    "sachverhalt": "7d9b1827771e",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B10-R2": {
+    "sachverhalt": "b6c4063042ba",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B10-R3": {
+    "sachverhalt": "08d67c5711e0",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B10-R4": {
+    "sachverhalt": "66f32b0b992d",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-B11": {
+   "FT-B11-R1": {
+    "sachverhalt": "53634fad7577",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B11-R2": {
+    "sachverhalt": "7f8d250e5ab2",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B11-R3": {
+    "sachverhalt": "dc4e717154a0",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-B12": {
+   "FT-B12-R1": {
+    "sachverhalt": "57ac3c692baf",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B12-R2": {
+    "sachverhalt": "cf5a8e22f47a",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B12-R3": {
+    "sachverhalt": "59f93acdbb8f",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-B13": {
+   "FT-B13-R1": {
+    "sachverhalt": "7741f0feaa83",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B13-R2": {
+    "sachverhalt": "1f4517e2f135",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B13-R3": {
+    "sachverhalt": "31692f48e415",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-B14": {
+   "FT-B14-R1": {
+    "sachverhalt": "b4aac6e410cc",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B14-R2": {
+    "sachverhalt": "01e24393acd4",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B14-R3": {
+    "sachverhalt": "01d26194820f",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-B15": {
+   "FT-B15-R1": {
+    "sachverhalt": "cdfb04df2069",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B15-R2": {
+    "sachverhalt": "219942a01762",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B15-R3": {
+    "sachverhalt": "b191c8708044",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-B16": {
+   "FT-B16-R1": {
+    "sachverhalt": "5283c6317a87",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B16-R2": {
+    "sachverhalt": "650ecfc9d531",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B16-R3": {
+    "sachverhalt": "c0db5ed1f65c",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-B17": {
+   "FT-B17-R1": {
+    "sachverhalt": "e6ee800638fb",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B17-R2": {
+    "sachverhalt": "c93bf343f74a",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B17-R3": {
+    "sachverhalt": "b12b4f47b817",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B17-R4": {
+    "sachverhalt": "e698486a0bae",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B17-R5": {
+    "sachverhalt": "57acebe7897d",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B17-R6": {
+    "sachverhalt": "84efcc4eaaab",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-B18": {
+   "FT-B18-R1": {
+    "sachverhalt": "80ee4d859875",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B18-R2": {
+    "sachverhalt": "e90bda97b8cc",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-B20": {
+   "FT-B20-R1": {
+    "sachverhalt": "c5d5fcca690a",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B20-R2": {
+    "sachverhalt": "648bb7b9b4ae",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B20-R3": {
+    "sachverhalt": "1bb74920fdb7",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B20-R4": {
+    "sachverhalt": "455d2d274350",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-B21": {
+   "FT-B21-R1": {
+    "sachverhalt": "8447c3958ca2",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B21-R2": {
+    "sachverhalt": "47b3e02ae82a",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B21-R3": {
+    "sachverhalt": "e257b3f8aec5",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B21-R4": {
+    "sachverhalt": "b74a2f738780",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-B22": {
+   "FT-B22-R1": {
+    "sachverhalt": "3944c14d83a9",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B22-R2": {
+    "sachverhalt": "2d21fbcf18a9",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B22-R3": {
+    "sachverhalt": "7886777216cd",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-B23": {
+   "FT-B23-R1": {
+    "sachverhalt": "8da80c86a4e1",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B23-R2": {
+    "sachverhalt": "1b3570aae175",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B23-R3": {
+    "sachverhalt": "8d31bbe50ff7",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-B30": {
+   "FT-B30-R1": {
+    "sachverhalt": "1e3ada99de31",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B30-R2": {
+    "sachverhalt": "a1fe447c5c63",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B30-R3": {
+    "sachverhalt": "c2d9e72b2f51",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B30-R4": {
+    "sachverhalt": "605b08674595",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B30-R5": {
+    "sachverhalt": "d6c45c9c5160",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B30-R6": {
+    "sachverhalt": "04f5e896bed4",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-B31": {
+   "FT-B31-R1": {
+    "sachverhalt": "4d2d0fdd7d01",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B31-R2": {
+    "sachverhalt": "e0c5ae2bda52",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B31-R3": {
+    "sachverhalt": "fdb90ed1d865",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B31-R4": {
+    "sachverhalt": "1203bfe7624d",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B31-R5": {
+    "sachverhalt": "1c4547c67e5b",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B31-R6": {
+    "sachverhalt": "2a0f5036ce1f",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-B32": {
+   "FT-B32-R1": {
+    "sachverhalt": "6bd784ddab29",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B32-R2": {
+    "sachverhalt": "970ccb171610",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B32-R3": {
+    "sachverhalt": "a21e4358ac07",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-B33": {
+   "FT-B33-R1": {
+    "sachverhalt": "7b22ae0996a7",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B33-R2": {
+    "sachverhalt": "f852e9eb822f",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B33-R3": {
+    "sachverhalt": "ffd67266432c",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-B34": {
+   "FT-B34-R1": {
+    "sachverhalt": "46a499a19ad9",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B34-R2": {
+    "sachverhalt": "566d0c4cfd1c",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B34-R3": {
+    "sachverhalt": "c8e7ff797d7c",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B34-R4": {
+    "sachverhalt": "60a69f66fbbb",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-B35": {
+   "FT-B35-R1": {
+    "sachverhalt": "98fa4a07c22c",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B35-R2": {
+    "sachverhalt": "12dad048ce1b",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B35-R3": {
+    "sachverhalt": "32964b79d733",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-B35-R4": {
+    "sachverhalt": "570706d53bf6",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-I01": {
+   "FT-I01-R1": {
+    "sachverhalt": "33d5aa1f04ed",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-I01-R2": {
+    "sachverhalt": "1096e1eb57d7",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-I01-R3": {
+    "sachverhalt": "1195f68e223f",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-I01-R4": {
+    "sachverhalt": "b8c97405baaf",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-I02": {
+   "FT-I02-R1": {
+    "sachverhalt": "49b06c30a4b1",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-I02-R2": {
+    "sachverhalt": "c023539125ab",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-I03": {
+   "FT-I03-R1": {
+    "sachverhalt": "cb590210c431",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-I03-R2": {
+    "sachverhalt": "46b9634664a9",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-I04": {
+   "FT-I04-R1": {
+    "sachverhalt": "6fa52647d34a",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-I04-R2": {
+    "sachverhalt": "840a0db55dd4",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-I04-R3": {
+    "sachverhalt": "ae00513018d6",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-I05": {
+   "FT-I05-R1": {
+    "sachverhalt": "11ad329acdbf",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-I05-R2": {
+    "sachverhalt": "1e87130c2932",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-I10": {
+   "FT-I10-R1": {
+    "sachverhalt": "b551314782f0",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-I10-R2": {
+    "sachverhalt": "68d8218b0685",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-I10-R3": {
+    "sachverhalt": "565d167d15c8",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-I10-R4": {
+    "sachverhalt": "3f5b94c41086",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-I11": {
+   "FT-I11-R1": {
+    "sachverhalt": "bfb50c40f6c2",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-I11-R2": {
+    "sachverhalt": "2a61c7c69393",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-I11-R3": {
+    "sachverhalt": "f18b2db8d7ee",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-I12": {
+   "FT-I12-R1": {
+    "sachverhalt": "2d5dec40382e",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-I12-R2": {
+    "sachverhalt": "bee09d0ea150",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-I20": {
+   "FT-I20-R1": {
+    "sachverhalt": "20e320c7536c",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-I20-R2": {
+    "sachverhalt": "53ca14312cd8",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-I21": {
+   "FT-I21-R1": {
+    "sachverhalt": "f46e27f0522d",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-I21-R2": {
+    "sachverhalt": "015333778f57",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-I22": {
+   "FT-I22-R1": {
+    "sachverhalt": "bba29cc2a976",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-I22-R2": {
+    "sachverhalt": "0d4a72468838",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-I23": {
+   "FT-I23-R1": {
+    "sachverhalt": "6aef0836d723",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-I23-R2": {
+    "sachverhalt": "1b7eb111852c",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-I23-R3": {
+    "sachverhalt": "d3713a4bc85e",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-I24": {
+   "FT-I24-R1": {
+    "sachverhalt": "7e98ea1d9feb",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-I24-R2": {
+    "sachverhalt": "0fff77aaa473",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-I25": {
+   "FT-I25-R1": {
+    "sachverhalt": "be1080830a46",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-I25-R2": {
+    "sachverhalt": "088f6e4ff9e9",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-I25-R3": {
+    "sachverhalt": "240b8c575ce6",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-I30": {
+   "FT-I30-R1": {
+    "sachverhalt": "34a69b11a6e4",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-I30-R2": {
+    "sachverhalt": "c731cf704950",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-I30-R3": {
+    "sachverhalt": "98c3f1af3010",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-I30-R4": {
+    "sachverhalt": "bf7089b79617",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-I31": {
+   "FT-I31-R1": {
+    "sachverhalt": "17f55c40b8e6",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-I31-R2": {
+    "sachverhalt": "b7985ccd9854",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-I32": {
+   "FT-I32-R1": {
+    "sachverhalt": "15a93fb38778",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-I32-R2": {
+    "sachverhalt": "7a60bd3b7bf4",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-I33": {
+   "FT-I33-R1": {
+    "sachverhalt": "aaa59cf74640",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-I33-R2": {
+    "sachverhalt": "bc69ed0a98cb",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-I33-R3": {
+    "sachverhalt": "c95752c8761d",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-I40": {
+   "FT-I40-R1": {
+    "sachverhalt": "2fd79b90c9b0",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-I40-R2": {
+    "sachverhalt": "ca9c16cae7b6",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-I40-R3": {
+    "sachverhalt": "afeb66498067",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-I41": {
+   "FT-I41-R1": {
+    "sachverhalt": "6267dd2d550d",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-I41-R2": {
+    "sachverhalt": "4b90581aceeb",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-I41-R3": {
+    "sachverhalt": "bcab5e7682b8",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-I42": {
+   "FT-I42-R1": {
+    "sachverhalt": "e9edcddcd364",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-I42-R2": {
+    "sachverhalt": "5dfc1fd81b74",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-I42-R3": {
+    "sachverhalt": "ca0306850d7f",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N1": {
+   "FT-N1-R1": {
+    "sachverhalt": "2518d987c805",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N1-R2": {
+    "sachverhalt": "3f2e40393041",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N2": {
+   "FT-N2-R1": {
+    "sachverhalt": "260e1125f289",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N2-R2": {
+    "sachverhalt": "8a5f515ba010",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N3": {
+   "FT-N3-R1": {
+    "sachverhalt": "569064af2430",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N3-R2": {
+    "sachverhalt": "ab5bbe34af3d",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N3-R3": {
+    "sachverhalt": "8b8a6ab372c3",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N4": {
+   "FT-N4-R1": {
+    "sachverhalt": "a22ad9b93955",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N4-R2": {
+    "sachverhalt": "93cabe616322",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N5": {
+   "FT-N5-R1": {
+    "sachverhalt": "5cf979aeef42",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N5-R2": {
+    "sachverhalt": "0afe59626ffd",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N6-1": {
+   "FT-N6-1-R1": {
+    "sachverhalt": "b3cb581e1c03",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N6-1-R2": {
+    "sachverhalt": "b9ab727ba5e8",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N6-2": {
+   "FT-N6-2-R1": {
+    "sachverhalt": "d537c43d66c3",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N6-2-R2": {
+    "sachverhalt": "e066c61fae9e",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N7": {
+   "FT-N7-R1": {
+    "sachverhalt": "219942a01762",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N7-R2": {
+    "sachverhalt": "b191c8708044",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N8": {
+   "FT-N8-R1": {
+    "sachverhalt": "a3aaa34405d5",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N8-R2": {
+    "sachverhalt": "94a3a7786e5f",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N8-R3": {
+    "sachverhalt": "0b7d7376bdde",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N9": {
+   "FT-N9-R1": {
+    "sachverhalt": "650ecfc9d531",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N9-R2": {
+    "sachverhalt": "c0db5ed1f65c",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N10": {
+   "FT-N10-R1": {
+    "sachverhalt": "db0467599441",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N10-R2": {
+    "sachverhalt": "d7c9a807dddf",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N10-R3": {
+    "sachverhalt": "2a899cb055d7",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N11": {
+   "FT-N11-R1": {
+    "sachverhalt": "0d5e3e3346e6",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N11-R2": {
+    "sachverhalt": "8e2d728d12c9",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N11-R3": {
+    "sachverhalt": "f5972abe90af",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N12": {
+   "FT-N12-R1": {
+    "sachverhalt": "6ad2106a7313",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N12-R2": {
+    "sachverhalt": "c5f4ac4f2812",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N13-1": {
+   "FT-N13-1-R1": {
+    "sachverhalt": "f2090dd16207",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N13-1-R2": {
+    "sachverhalt": "a732d1fb9ff4",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N13-2": {
+   "FT-N13-2-R1": {
+    "sachverhalt": "a4cc9878d84a",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N13-2-R2": {
+    "sachverhalt": "fb379507bfa9",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N13-3": {
+   "FT-N13-3-R1": {
+    "sachverhalt": "11a6b55a1b8c",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N13-3-R2": {
+    "sachverhalt": "47671e0f709e",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N13-3-R3": {
+    "sachverhalt": "e15e15774266",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N14": {
+   "FT-N14-R1": {
+    "sachverhalt": "f21800ce19a8",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N14-R2": {
+    "sachverhalt": "3dfadb29ef11",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N14-R3": {
+    "sachverhalt": "99010c6f183e",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N15": {
+   "FT-N15-R1": {
+    "sachverhalt": "2ffb1cdbc72e",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N15-R2": {
+    "sachverhalt": "41d1fa875c1f",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N16": {
+   "FT-N16-R1": {
+    "sachverhalt": "14498a40da9f",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N16-R2": {
+    "sachverhalt": "ee5c93a13cd4",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N17-1": {
+   "FT-N17-1-R1": {
+    "sachverhalt": "5ad8c366d6fd",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N17-1-R2": {
+    "sachverhalt": "735103f88148",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N17-2": {
+   "FT-N17-2-R1": {
+    "sachverhalt": "8e3997b44ad8",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N17-2-R2": {
+    "sachverhalt": "36ff47615863",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N18": {
+   "FT-N18-R1": {
+    "sachverhalt": "4bf76b258a45",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N18-R2": {
+    "sachverhalt": "9bea002744f2",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N18-R3": {
+    "sachverhalt": "4a688ff1e009",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N19": {
+   "FT-N19-R1": {
+    "sachverhalt": "df1d5109d49f",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N19-R2": {
+    "sachverhalt": "9725e91ffaec",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N20": {
+   "FT-N20-R1": {
+    "sachverhalt": "5162bd575afe",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N20-R2": {
+    "sachverhalt": "a065e2d25c13",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N21": {
+   "FT-N21-R1": {
+    "sachverhalt": "fd37659056ea",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N21-R2": {
+    "sachverhalt": "3ce0678cbc6c",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N21-R3": {
+    "sachverhalt": "6a70183fced8",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N22": {
+   "FT-N22-R1": {
+    "sachverhalt": "8facfe6e5766",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N22-R2": {
+    "sachverhalt": "6c23699e1d10",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N22-R3": {
+    "sachverhalt": "48857ffc177f",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N23": {
+   "FT-N23-R1": {
+    "sachverhalt": "95f75bc4144f",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N23-R2": {
+    "sachverhalt": "a7200eac9413",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N23-R3": {
+    "sachverhalt": "fe3a3ae120b8",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N24": {
+   "FT-N24-R1": {
+    "sachverhalt": "e30ff39aea7f",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N24-R2": {
+    "sachverhalt": "b544357e9c00",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N24-R3": {
+    "sachverhalt": "ebab44e90db6",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N25": {
+   "FT-N25-R1": {
+    "sachverhalt": "3ad7df42a7e9",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N25-R2": {
+    "sachverhalt": "a2709c9d117a",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N26": {
+   "FT-N26-R1": {
+    "sachverhalt": "47f0592321f1",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N26-R2": {
+    "sachverhalt": "3c9f7df53551",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N27": {
+   "FT-N27-R1": {
+    "sachverhalt": "08d67c5711e0",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N27-R2": {
+    "sachverhalt": "66f32b0b992d",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N28": {
+   "FT-N28-R1": {
+    "sachverhalt": "b6c4063042ba",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N28-R2": {
+    "sachverhalt": "9ba8e1672a7a",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N29": {
+   "FT-N29-R1": {
+    "sachverhalt": "29511c94cfd7",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N29-R2": {
+    "sachverhalt": "daa4718b0a52",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N29-R3": {
+    "sachverhalt": "9aaaeff7432d",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N30": {
+   "FT-N30-R1": {
+    "sachverhalt": "59a212b542b1",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N30-R2": {
+    "sachverhalt": "755c9cde277f",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N31": {
+   "FT-N31-R1": {
+    "sachverhalt": "57acebe7897d",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N31-R2": {
+    "sachverhalt": "e8a71b85dd71",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N32": {
+   "FT-N32-R1": {
+    "sachverhalt": "c93bf343f74a",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N32-R2": {
+    "sachverhalt": "2a9412242c8b",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N33": {
+   "FT-N33-R1": {
+    "sachverhalt": "1fec96081620",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N33-R2": {
+    "sachverhalt": "3ec0162111a1",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N34": {
+   "FT-N34-R1": {
+    "sachverhalt": "1b7eb111852c",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N34-R2": {
+    "sachverhalt": "d3713a4bc85e",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N35": {
+   "FT-N35-R1": {
+    "sachverhalt": "7e98ea1d9feb",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N35-R2": {
+    "sachverhalt": "0fff77aaa473",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N36": {
+   "FT-N36-R1": {
+    "sachverhalt": "1e4d13deee2d",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N36-R2": {
+    "sachverhalt": "2f4ef0116578",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N36-R3": {
+    "sachverhalt": "235e6f347da1",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N37": {
+   "FT-N37-R1": {
+    "sachverhalt": "3939f47f7923",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N37-R2": {
+    "sachverhalt": "9ae7f354b63e",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N38": {
+   "FT-N38-R1": {
+    "sachverhalt": "3c2edcd7ed86",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N38-R2": {
+    "sachverhalt": "1d88a4f01a46",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N39-1": {
+   "FT-N39-1-R1": {
+    "sachverhalt": "2d5dec40382e",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N39-1-R2": {
+    "sachverhalt": "bee09d0ea150",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N39-2": {
+   "FT-N39-2-R1": {
+    "sachverhalt": "fc8301e22172",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N39-2-R2": {
+    "sachverhalt": "b56cd32c7c82",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N40": {
+   "FT-N40-R1": {
+    "sachverhalt": "bfb50c40f6c2",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N40-R2": {
+    "sachverhalt": "f18b2db8d7ee",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N41": {
+   "FT-N41-R1": {
+    "sachverhalt": "b998aae7abf6",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N41-R2": {
+    "sachverhalt": "47a1ba705ca2",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N42-1": {
+   "FT-N42-1-R1": {
+    "sachverhalt": "b551314782f0",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N42-1-R2": {
+    "sachverhalt": "3f5b94c41086",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N42-2": {
+   "FT-N42-2-R1": {
+    "sachverhalt": "68d8218b0685",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N42-2-R2": {
+    "sachverhalt": "db0a53505cb5",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N43": {
+   "FT-N43-R1": {
+    "sachverhalt": "ca6604c7d265",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N43-R2": {
+    "sachverhalt": "9a5e002bc307",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N44": {
+   "FT-N44-R1": {
+    "sachverhalt": "02f0e12d84bf",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N44-R2": {
+    "sachverhalt": "04781dd092b2",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N45": {
+   "FT-N45-R1": {
+    "sachverhalt": "68655f25a8a6",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N45-R2": {
+    "sachverhalt": "e9a288a9e34f",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N46-1": {
+   "FT-N46-1-R1": {
+    "sachverhalt": "c5d5fcca690a",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N46-1-R2": {
+    "sachverhalt": "455d2d274350",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N46-2": {
+   "FT-N46-2-R1": {
+    "sachverhalt": "648bb7b9b4ae",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N46-2-R2": {
+    "sachverhalt": "6bcd4dc79f91",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N47": {
+   "FT-N47-R1": {
+    "sachverhalt": "bf1fb05cf30c",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N47-R2": {
+    "sachverhalt": "55b740574b85",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N47-R3": {
+    "sachverhalt": "4d4547dbedde",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N48-1": {
+   "FT-N48-1-R1": {
+    "sachverhalt": "34a69b11a6e4",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N48-1-R2": {
+    "sachverhalt": "bf7089b79617",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N48-2": {
+   "FT-N48-2-R1": {
+    "sachverhalt": "98c3f1af3010",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N48-2-R2": {
+    "sachverhalt": "bf7089b79617",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N49": {
+   "FT-N49-R1": {
+    "sachverhalt": "b9d8eb8df296",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N49-R2": {
+    "sachverhalt": "9319f397ee79",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N50": {
+   "FT-N50-R1": {
+    "sachverhalt": "2866140f8340",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N50-R2": {
+    "sachverhalt": "080d66d1b9f6",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N51": {
+   "FT-N51-R1": {
+    "sachverhalt": "e4ead52dd699",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N51-R2": {
+    "sachverhalt": "ca341bdff9e1",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N52": {
+   "FT-N52-R1": {
+    "sachverhalt": "cea2c48bcc52",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N52-R2": {
+    "sachverhalt": "f8051a16c3fb",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N53": {
+   "FT-N53-R1": {
+    "sachverhalt": "ee713ecbe509",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N53-R2": {
+    "sachverhalt": "c187515698b5",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N53-R3": {
+    "sachverhalt": "d855d58798f9",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N54": {
+   "FT-N54-R1": {
+    "sachverhalt": "3d026049899c",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N54-R2": {
+    "sachverhalt": "2a67b66de979",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N55": {
+   "FT-N55-R1": {
+    "sachverhalt": "66adaa93ba98",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N55-R2": {
+    "sachverhalt": "9052cfe04b90",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N56": {
+   "FT-N56-R1": {
+    "sachverhalt": "c32ff75772b8",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N56-R2": {
+    "sachverhalt": "ec918d26b202",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N56-R3": {
+    "sachverhalt": "f8ab2531aaee",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N57": {
+   "FT-N57-R1": {
+    "sachverhalt": "ba44f3b5acd4",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N57-R2": {
+    "sachverhalt": "47c43b6dce11",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N57-R3": {
+    "sachverhalt": "34cba966b5fb",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N58": {
+   "FT-N58-R1": {
+    "sachverhalt": "832a5d1b1113",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N58-R2": {
+    "sachverhalt": "973cf59dc70f",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N58-R3": {
+    "sachverhalt": "1e446c3deca4",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N59": {
+   "FT-N59-R1": {
+    "sachverhalt": "f7ec244c7d5f",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N59-R2": {
+    "sachverhalt": "e20e34c091ee",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N59-R3": {
+    "sachverhalt": "fc3ba7750278",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N60": {
+   "FT-N60-R1": {
+    "sachverhalt": "6348d569d899",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N60-R2": {
+    "sachverhalt": "fe563bd676f2",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N60-R3": {
+    "sachverhalt": "d87baf6a4840",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N61": {
+   "FT-N61-R1": {
+    "sachverhalt": "3530935e5b5f",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N61-R2": {
+    "sachverhalt": "2624ba6fd9ef",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N61-R3": {
+    "sachverhalt": "5f9ed38590f8",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N62": {
+   "FT-N62-R1": {
+    "sachverhalt": "19058d5e7e87",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N62-R2": {
+    "sachverhalt": "90b0b099fb38",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N63": {
+   "FT-N63-R1": {
+    "sachverhalt": "725d2308edaf",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N63-R2": {
+    "sachverhalt": "a872f769f702",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N64-1": {
+   "FT-N64-1-R1": {
+    "sachverhalt": "bccb927223b1",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N64-1-R2": {
+    "sachverhalt": "e5de919a6398",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N64-1-R3": {
+    "sachverhalt": "0d9d19fc33e6",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N64-2": {
+   "FT-N64-2-R1": {
+    "sachverhalt": "b5ede26ee5e1",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N64-2-R2": {
+    "sachverhalt": "a8986fd0700b",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N64-2-R3": {
+    "sachverhalt": "80dc196438fd",
+    "rev": 1,
+    "fp": ""
+   }
+  },
+  "FT-N65": {
+   "FT-N65-R1": {
+    "sachverhalt": "3944c14d83a9",
+    "rev": 1,
+    "fp": ""
+   },
+   "FT-N65-R2": {
+    "sachverhalt": "7886777216cd",
+    "rev": 1,
+    "fp": ""
+   }
+  }
+ }
+}

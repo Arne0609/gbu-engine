@@ -232,8 +232,10 @@ hz('MF-Z09', 'Zugang zur Anlage für die Personenbefreiung nicht jederzeit gewä
    [r(eq('qz_zugang_befreiung', 'nein'), 'HIGH', mfrom=('N20-Z5', 'Zugang nicht jederzeit'),
       evidence='HIGH_CONFIDENCE'),
     r(eq('qz_zugang_befreiung', 'leitwarte'), 'MEDIUM', mfrom=('N20-Z5', 'Zugang nur möglich'),
-      evidence='HIGH_CONFIDENCE'),
+      sofort='Erreichbarkeit der Leitwarte und Schlüsselübergabe mit dem Notdienst abstimmen und im '
+             'Notfallplan festhalten',
+      evidence='HIGH_CONFIDENCE', pb='H11 – Sofortmaßnahme ergänzt'),
     r(eq('qz_zugang_befreiung', 'jederzeit'), 'NO_RISK', evidence='HIGH_CONFIDENCE',
       klaerung='K-Z01')],
-   sources=[law('BetrSichV', 'Anh. 1 Nr. 4.1'), trbs3121('4.4')],
+   sources=[law('BetrSichV', 'Anh. 1 Nr. 4.1'), trbs3121('3.1.3'), trbs3121('3.7.3')],
    factor=F_NOTFALL, persons=[NUTZER, BEAUFTRAGTE], bereich='Z')

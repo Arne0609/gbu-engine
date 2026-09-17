@@ -16,8 +16,13 @@ GG = all_(SEIL, yes('qa_gegengewicht'))
 
 # ---- Fragen S --------------------------------------------------------------
 yn('qs_bel_vorhanden', 'Schachtbeleuchtung vorhanden?', ui='10.1')
-yn('qs_bel_ausreichend', 'Schachtbeleuchtung ausreichend (mind. 20 Lux, auch auf dem '
-   'Fahrkorbdach)?', ui='10.1a', visible_when=yes('qs_bel_vorhanden'))
+yn('qs_bel_ausreichend', 'Schachtbeleuchtung ausreichend (mind. 50 Lux 1 m über dem Fahrkorbdach, '
+   'mind. 20 Lux im übrigen Schacht)?', ui='10.1a', visible_when=yes('qs_bel_vorhanden'),
+   help='TRBS 3121 Anh. 1 Nr. 8 / DIN EN 81-20 5.2.1.4.1: Arbeitsbereiche auf dem Fahrkorbdach '
+        'und in der Grube mindestens 50 lx. Die Grube wird unter 11.2a erfasst.')
+yn('qs_bel_altnorm', 'Falls nicht ausreichend: erfüllt die Schachtbeleuchtung die Anforderungen '
+   'des Errichtungs-Regelwerks (TRA 200 bzw. DIN EN 81-1/-2)?', ui='10.1c',
+   visible_when=no('qs_bel_ausreichend'))
 yn('qs_bel_splitterschutz', 'Leuchten im Schacht mit Splitterschutz und an geeigneter Stelle?',
    ui='10.1b', visible_when=yes('qs_bel_vorhanden'))
 yn('qs_zugang_bel', 'Beleuchtung an den Schachtzugängen (Haltestellen) mind. 75 Lux?',
@@ -61,14 +66,17 @@ yn('qg_nothalt_aussen', 'Notbremsschalter von der Schachttür aus erreichbar?', 
 yn('qg_nothalt_zwei', 'Bei Grubentiefe über 1,60 m: zweiter Notbremsschalter am Grubenboden '
    'vorhanden?', ui='11.4b', visible_when=all_(yes('qg_nothalt'), gt('qa_grubentiefe', 1.6)))
 yn('qg_inspektion', 'Inspektionssteuerung in der Schachtgrube vorhanden?', ui='11.5')
-sel('qg_leiter', 'Grubenleiter', ui='11.6',
+yn('qg_zugangstuer', 'Zugang zur Grube über eine separate Grubenzugangstür '
+   '(ebenerdig, ohne Abstieg über eine Leiter)?', ui='11.7',
+   help='Zuerst die Zugangsart klären: Nur wenn der Zugang über eine Leiter erfolgt, '
+        'werden die Leiterfragen gestellt (TRBS 3121 Anh. 1 Nr. 6 a/b).')
+sel('qg_leiter', 'Grubenleiter', ui='11.6', visible_when=no('qg_zugangstuer'),
     options=[('fest', 'Fest installierte Grubenleiter'),
              ('mobil_schacht', 'Mobile Leiter im Schacht deponiert'),
              ('schwer', 'Grubenleiter vorhanden, aber schwer erreichbar'),
              ('kunde', 'Leiter beim Kunden deponiert'),
              ('fahrzeug', 'Leiter wird im Kundendienstfahrzeug mitgeführt'),
              ('keine', 'Keine Grubenleiter')])
-yn('qg_zugangstuer', 'Separate Grubenzugangstür vorhanden?', ui='11.7')
 yn('qg_zugangstuer_schalter', 'Elektrische Sicherheitseinrichtung an der Grubenzugangstür?',
    ui='11.7a', visible_when=yes('qg_zugangstuer'))
 yn('qg_selbstbefreiung', 'Selbstbefreiung aus der Grube über die Schachttür möglich '
@@ -97,6 +105,12 @@ yn('qg_gg_fang', 'Fangvorrichtung am Gegengewicht (oder durchgehendes Fundament)
    visible_when=all_(GG, yes('qa_raum_unter_schacht')))
 yn('qg_nachbar_abtrennung', 'Abtrennung zum Nachbaraufzug in der Schachtgrube vorhanden?',
    ui='11.14', visible_when=yes('qa_mehrere_aufzuege'))
+yn('qg_nachbar_abschaltung', 'Einrichtung zum automatischen Abschalten des Nachbaraufzugs bei '
+   'Arbeiten in der Schachtgrube vorhanden?', ui='11.14a',
+   visible_when=all_(yes('qa_mehrere_aufzuege'), no('qg_nachbar_abtrennung')))
+yn('qg_nachbar_abschaltung_geprueft', 'Automatische Abschaltung in der Funktion geprüft, alle '
+   'Nachbaranlagen erfasst und Wirkung bei Inspektions- und Rückholbetrieb bestätigt?', ui='11.14b',
+   visible_when=yes('qg_nachbar_abschaltung'))
 yn('qg_wasser', 'Wasser oder Feuchtigkeit in der Schachtgrube?', ui='11.15')
 yn('qg_oel', 'Öl oder wassergefährdende Stoffe in der Grube ohne Auffangmöglichkeit?',
    ui='11.16')
@@ -123,10 +137,18 @@ k('K-S05', 'Schacht', 'Teilumwehrter Schacht',
 hz('MF-S01', 'Unzureichende Schachtbeleuchtung', GRP_BEL,
    [('qs_bel_vorhanden', 'TRIGGER', 'ALWAYS'),
     ('qs_bel_ausreichend', 'TRIGGER', 'CONDITIONAL', {'required_when': yes('qs_bel_vorhanden')}),
+    ('qs_bel_altnorm', 'COMPENSATION', 'CONDITIONAL', {'required_when': no('qs_bel_ausreichend')}),
     ('qs_bel_splitterschutz', 'TRIGGER', 'CONDITIONAL', {'required_when': yes('qs_bel_vorhanden')})],
    [r(no('qs_bel_vorhanden'), 'HIGH', mfrom=('N20-S1', 'Keine Beleuchtung'), evidence='HIGH_CONFIDENCE'),
-    r(no('qs_bel_ausreichend'), 'MEDIUM', mfrom=('N20-S1', 'Dunkle'), evidence='HIGH_CONFIDENCE'),
-    r(no('qs_bel_splitterschutz'), 'MEDIUM', mfrom=('N20-S1', 'Leuchten ohne'), evidence='HIGH_CONFIDENCE')],
+    r(all_(no('qs_bel_ausreichend'), no('qs_bel_altnorm')), 'MEDIUM', mfrom=('N20-S1', 'Dunkle'),
+      evidence='HIGH_CONFIDENCE', pb='B05 – Maßstab 50 lx auf dem Fahrkorbdach; Altnorm-Fall getrennt'),
+    r(all_(no('qs_bel_ausreichend'), yes('qs_bel_altnorm')), 'LOW', mfrom=('N20-S1', 'Dunkle'),
+      evidence='HIGH_CONFIDENCE',
+      notes='TRBS 3121 Anh. 1 Nr. 8: Risiko niedrig, wenn die Schachtbeleuchtung TRA 200 bzw. EN 81-1/-2 entspricht.',
+      pb='B05 – neu'),
+    r(no('qs_bel_splitterschutz'), 'MEDIUM', mfrom=('N20-S1', 'Leuchten ohne'),
+      sofort='Beschädigte Leuchten sofort ersetzen',
+      evidence='HIGH_CONFIDENCE', pb='H11 – Sofortmaßnahme ergänzt')],
    sources=[en8120('5.2.1.4.1'), trbs3121('Anh. 1 Nr. 8')], factor=F_BELEUCHTUNG,
    persons=[WARTUNG], agg='MAXIMUM', bereich='S')
 
@@ -172,7 +194,9 @@ hz('MF-S05', 'Fehlende oder ungeprüfte Fangvorrichtung, Geschwindigkeitsbegrenz
     ('qs_spanngewicht_schalter', 'TRIGGER', 'CONDITIONAL', {'required_when': yes('qs_begrenzer')}),
     ('qs_schlaffseil', 'TRIGGER', 'CONDITIONAL', {'required_when': eq('qa_aufzugsart', 'trommel')})],
    [r(no('qs_fang'), 'HIGH', mfrom=('N20-S10', 'Keine Fangvorrichtung'), evidence='HIGH_CONFIDENCE'),
-    r(no('qs_begrenzer'), 'HIGH', mfrom=('N20-S10', 'Keine Fangvorrichtung'), evidence='HIGH_CONFIDENCE'),
+    r(no('qs_begrenzer'), 'HIGH', mfrom=('N20-S10', 'Keine Fangvorrichtung'),
+      mittel='Geschwindigkeitsbegrenzer nachrüsten, der die Fangvorrichtung auslöst (DIN EN 81-20 5.6.2.2.1)',
+      evidence='HIGH_CONFIDENCE', pb='B11 – Maßnahme zielte auf die Fangvorrichtung statt den Begrenzer'),
     r(no('qs_schlaffseil'), 'HIGH', mfrom=('N20-S10', 'Keine Schlaffseil'), evidence='HIGH_CONFIDENCE'),
     r(no('qs_fang_geprueft'), 'MEDIUM', mfrom=('N20-S10', 'Prüfung von'), evidence='HIGH_CONFIDENCE'),
     r(no('qs_spanngewicht_schalter'), 'MEDIUM', mfrom=('N20-S10', 'Spanngewicht'), evidence='HIGH_CONFIDENCE')],
@@ -243,20 +267,22 @@ hz('MF-G03', 'Fehlender Not-Halt oder fehlende Inspektionssteuerung in der Schac
    agg='MAXIMUM', bereich='G')
 
 hz('MF-G04', 'Unsicherer Zugang zur Schachtgrube (Leiter, Grubenzugangstür)', GRP_Z,
-   [('qg_leiter', 'TRIGGER', 'ALWAYS'),
-    ('qg_zugangstuer', 'TRIGGER', 'ALWAYS'),
+   [('qg_zugangstuer', 'TRIGGER', 'ALWAYS'),
+    ('qg_leiter', 'TRIGGER', 'CONDITIONAL', {'required_when': no('qg_zugangstuer')}),
     ('qg_zugangstuer_schalter', 'TRIGGER', 'CONDITIONAL', {'required_when': yes('qg_zugangstuer')})],
-   [r(eq('qg_leiter', 'keine'), 'HIGH', mfrom=('N20-S3', 'Keine Grubenleiter'), evidence='HIGH_CONFIDENCE'),
+   [r(all_(no('qg_zugangstuer'), eq('qg_leiter', 'keine')), 'HIGH', mfrom=('N20-S3', 'Keine Grubenleiter'),
+      evidence='HIGH_CONFIDENCE', pb='%s – Leiter nur bewertet, wenn der Zugang über eine Leiter erfolgt'),
     r(no('qg_zugangstuer_schalter'), 'HIGH',
       sofort='Grubenzugangstür verschlossen halten, Zutritt nur mit Freischaltung der Anlage',
       mittel='Elektrische Sicherheitseinrichtung (Türkontakt im Sicherheitskreis) an der '
              'Grubenzugangstür nachrüsten', evidence='INFERRED',
       notes='Blaupause Schindler M008 (f069 = Ja, f070 = Nein -> Hoch, DIRECT).'),
-    r(eq('qg_leiter', 'schwer'), 'MEDIUM', mfrom=('N20-S3', 'Grubenleiter schwer'), evidence='HIGH_CONFIDENCE'),
-    r(eq('qg_leiter', 'kunde'), 'MEDIUM', mfrom=('N20-S3', 'Grubenleiter ist beim Kunden'),
-      evidence='HIGH_CONFIDENCE'),
-    r(eq('qg_leiter', 'fahrzeug'), 'HIGH', mfrom=('N20-S3', 'Grubenleiter wird'),
-      evidence='HIGH_CONFIDENCE', klaerung='K-S02')],
+    r(all_(no('qg_zugangstuer'), eq('qg_leiter', 'schwer')), 'MEDIUM', mfrom=('N20-S3', 'Grubenleiter schwer'),
+      evidence='HIGH_CONFIDENCE', pb='Prüfbericht 16.09.2026 – nur bei Zugang über Leiter'),
+    r(all_(no('qg_zugangstuer'), eq('qg_leiter', 'kunde')), 'MEDIUM', mfrom=('N20-S3', 'Grubenleiter ist beim Kunden'),
+      evidence='HIGH_CONFIDENCE', pb='Prüfbericht 16.09.2026 – nur bei Zugang über Leiter'),
+    r(all_(no('qg_zugangstuer'), eq('qg_leiter', 'fahrzeug')), 'HIGH', mfrom=('N20-S3', 'Grubenleiter wird'),
+      evidence='HIGH_CONFIDENCE', klaerung='K-S02', pb='Prüfbericht 16.09.2026 – nur bei Zugang über Leiter')],
    sources=[en8120('5.2.2.4'), en8120('5.2.3.3'), trbs3121('Anh. 1 Nr. 6')], factor=F_ABSTURZ,
    persons=[WARTUNG, BEAUFTRAGTE], agg='MAXIMUM', bereich='G')
 
@@ -294,17 +320,39 @@ hz('MF-G07', 'Fehlende oder unzulängliche Abtrennung und Sicherung des Gegengew
     ('qg_gg_fuellung', 'TRIGGER', 'ALWAYS'),
     ('qg_gg_fang', 'TRIGGER', 'CONDITIONAL', {'required_when': yes('qa_raum_unter_schacht')}),
     ('qa_raum_unter_schacht', 'MODIFIER', 'NEVER')],
-   [r(eq('qg_gg_abtrennung', 'keine'), 'HIGH', mfrom=('N20-S11', 'Keine Abtrennung'), evidence='HIGH_CONFIDENCE'),
+   [r(eq('qg_gg_abtrennung', 'keine'), 'HIGH', mfrom=('N20-S11', 'Keine Abtrennung'),
+      mittel='Abtrennung der Gegengewichtsfahrbahn von höchstens 0,30 m bis mindestens 2,0 m über der '
+             'Schachtgrubensohle in der Breite des Gegengewichts herstellen',
+      evidence='HIGH_CONFIDENCE',
+      pb='B03 – Maß nach TRBS 3121 Anh. 1 Nr. 2 (2,0 m über Grubensohle); 2,50 m über unterster Haltestelle gilt für Nachbaraufzüge (Nr. 3)'),
     r(no('qg_gg_fuellung'), 'HIGH', mfrom=('N20-S11', 'Gegengewichtsfüllung'), evidence='HIGH_CONFIDENCE'),
     r(no('qg_gg_fang'), 'HIGH', mfrom=('N20-S11', 'Betretbarer Raum'), evidence='HIGH_CONFIDENCE'),
     r(eq('qg_gg_abtrennung', 'mangelhaft'), 'MEDIUM', mfrom=('N20-S11', 'Abtrennung vorhanden'),
-      evidence='HIGH_CONFIDENCE')],
+      sofort='Warnhinweis mit Kennzeichnung der Gefahrenstelle anbringen; sichere Position einnehmen',
+      evidence='HIGH_CONFIDENCE', pb='B03 – organisatorische Maßnahme nach TRBS 3121 Anh. 1 Nr. 2')],
    sources=[en8120('5.2.5.5.1'), en8120('5.2.5.5.2'), trbs3121('Anh. 1 Nr. 2')], factor=F_BEWEGT,
    persons=[WARTUNG], agg='MAXIMUM', bereich='G')
 
 hz('MF-G08', 'Fehlende Abtrennung zum Nachbaraufzug in der Schachtgrube', GRP_S,
    [('qa_mehrere_aufzuege', 'APPLICABILITY', 'NEVER'),
-    ('qg_nachbar_abtrennung', 'TRIGGER', 'ALWAYS')],
-   [r(no('qg_nachbar_abtrennung'), 'HIGH', mfrom=('N20-S2.2', 'Keine Absperrung'), evidence='HIGH_CONFIDENCE')],
+    ('qg_nachbar_abtrennung', 'TRIGGER', 'ALWAYS'),
+    ('qg_nachbar_abschaltung', 'COMPENSATION', 'CONDITIONAL', {'required_when': no('qg_nachbar_abtrennung')}),
+    ('qg_nachbar_abschaltung_geprueft', 'COMPENSATION', 'CONDITIONAL',
+     {'required_when': yes('qg_nachbar_abschaltung')})],
+   [r(all_(no('qg_nachbar_abtrennung'), yes('qg_nachbar_abschaltung'), no('qg_nachbar_abschaltung_geprueft')),
+      'MEDIUM', prio=210,
+      sofort='Nachbaraufzug zusätzlich von Hand abschalten und gegen Wiedereinschalten sichern',
+      mittel='Funktion der automatischen Abschaltung für alle Nachbaranlagen prüfen und dokumentieren',
+      evidence='INFERRED', pb='Prüfbericht 16.09.2026 – Abschaltung ohne Funktionsnachweis'),
+    r(all_(no('qg_nachbar_abtrennung'), yes('qg_nachbar_abschaltung'), yes('qg_nachbar_abschaltung_geprueft')),
+      'NO_RISK', prio=200,
+      evidence='HIGH_CONFIDENCE',
+      notes='TRBS 3121 Anh. 1 Nr. 3 b): automatische Abschaltung des Nachbaraufzugs ist gleichwertige Alternative.',
+      pb='H03 – neu: Alternative automatische Abschaltung'),
+    r(no('qg_nachbar_abtrennung'), 'HIGH', mfrom=('N20-S2.2', 'Keine Absperrung'),
+      sofort='Vor Betreten der Schachtgrube den Nachbaraufzug abschalten und gegen Wiedereinschalten sichern',
+      mittel='Abtrennung von höchstens 0,30 m über dem Grubenboden bis 2,50 m über dem Niveau der untersten '
+             'Haltestelle nachrüsten oder automatische Abschaltung des Nachbaraufzugs vorsehen',
+      evidence='HIGH_CONFIDENCE', pb='H03 – Maßnahme benennt den Nachbaraufzug und die Alternativen')],
    sources=[en8120('5.2.5.5.2.1'), trbs3121('Anh. 1 Nr. 3')], factor=F_BEWEGT, persons=[WARTUNG],
    bereich='G')

@@ -97,7 +97,7 @@ hz('MF-D01', 'Notfallplan unvollständig oder nicht vorhanden', GRP_NOT,
       sofort='Ansprechpartner und Befreiungsdienst mit Rufnummern am Aufzug aushängen',
       mittel='Notfallplan nach BetrSichV Anh. 1 Nr. 4.1 erstellen und an der Anlage hinterlegen',
       evidence='INFERRED', klaerung='K-D01')],
-   sources=[law('BetrSichV', 'Anh. 1 Nr. 4.1'), trbs3121('4.4')], factor=F_NOTFALL,
+   sources=[law('BetrSichV', 'Anh. 1 Nr. 4.1'), trbs3121('3.6'), trbs3121('3.2 Nr. 6')], factor=F_NOTFALL,
    persons=[NUTZER, BETREIBER], bereich='D')
 
 hz('MF-D02', 'Keine oder unpassende Notbefreiungsanleitung', GRP_NOT,
@@ -122,7 +122,7 @@ hz('MF-D03', 'Wartungsunterlagen fehlen oder keine regelmäßige Instandhaltung'
       sofort='Vorhandene Unterlagen beim Instandhalter anfordern',
       mittel='Prüfbuch und Wartungsnachweise an der Anlage oder beim Betreiber führen',
       evidence='INFERRED')],
-   sources=[law('BetrSichV', '§ 10'), law('BetrSichV', '§ 17'), trbs3121('4.6')], factor=F_ORGA,
+   sources=[law('BetrSichV', '§ 10'), law('BetrSichV', '§ 17'), trbs3121('3.4.1')], factor=F_ORGA,
    persons=[BETREIBER, NUTZER], agg='MAXIMUM', bereich='D')
 
 hz('MF-D04', 'Prüfplakette fehlt oder Prüffrist der ZÜS überschritten', GRP_DOC,
@@ -161,7 +161,7 @@ hz('MF-D05', 'Betreiberorganisation: beauftragte Person, Unterweisung, Betriebsa
       sofort='Triebwerksraum abschließen, Schlüsselausgabe nur an befugte Personen',
       mittel='Zutrittsregelung in der Betriebsanweisung festlegen', evidence='INFERRED',
       klaerung='K-D04')],
-   sources=[law('BetrSichV', '§ 12'), law('BetrSichV', 'Anh. 1 Nr. 4'), trbs3121('4.2'), trbs('TRBS 1116')],
+   sources=[law('BetrSichV', '§ 12'), law('BetrSichV', 'Anh. 1 Nr. 4'), trbs3121('3.3'), trbs('TRBS 1116')],
    factor=F_ORGA, persons=[BETREIBER, BEAUFTRAGTE], agg='MAXIMUM', bereich='D')
 
 

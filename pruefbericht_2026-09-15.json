@@ -1,0 +1,437 @@
+{
+ "runden": [
+  {
+   "titel": "Runde 1 – externer Prüfbericht vom 15.09.2026 (Stand der Umsetzung 16.09.2026)",
+   "befunde": [
+    [
+     "B01",
+     "Kritisch",
+     "Anwendbarkeit / Gates",
+     "teilweise",
+     "Der Katalog hat Anwendbarkeitsfilter (Aufzugsart, Antrieb, Maschinen- und Rollenraum, gemeinsamer Schacht, Gegengewicht, BMA/RWA/Sprinkler/Brandfallsteuerung, Feuerwehraufzug, Nutzung durch mobilitätseingeschränkte Personen) und Sichtbarkeitsregeln. Die alte Prüfliste hat sie nicht angezeigt.",
+     "Übernommen (Empfehlung 16.09.): Antwort „nicht anwendbar“ mit Begründung, getrennt von „unbekannt“ – kommt mit der App-Runde (Antwortmodell).",
+     ""
+    ],
+    [
+     "B02",
+     "Kritisch",
+     "Referenzintegrität",
+     "bestätigt",
+     "Blatt „Fragen“ enthielt nur die Fragen der offenen Regeln.",
+     "Behoben: Das Blatt enthält alle Fragen der gezeigten Gefährdungen mit Sichtbarkeit und Pflicht.",
+     ""
+    ],
+    [
+     "B03",
+     "Kritisch",
+     "MF-G07",
+     "bestätigt",
+     "TRBS 3121 Anh. 1 Nr. 2: 2 m über Schachtgrubensohle; die 2,50 m über der untersten Haltestelle gehören zu Nr. 3 (Nachbaraufzug).",
+     "Korrigiert: MF-G07-R1 (Maß), MF-G07-R4 (Warnhinweis als organisatorische Maßnahme).",
+     ""
+    ],
+    [
+     "B04",
+     "Kritisch",
+     "MF-G04",
+     "bestätigt",
+     "TRBS 3121 Anh. 1 Nr. 6: Risiko hoch bei TRA-200-Anlagen bis Baujahr 1992 (Abstiegseinrichtung erst ab 1,5 m Grubentiefe gefordert), niedrig bei TRA 200 ab 1992 und EN 81-1/2.",
+     "Umgesetzt 16.09. nach Empfehlung: zuerst die Zugangsart (11.7 separate Grubenzugangstür), Leiterfragen nur bei Zugang über Leiter. Keine pauschale Baujahr-Korrektur.",
+     ""
+    ],
+    [
+     "B05",
+     "Kritisch",
+     "MF-S01",
+     "bestätigt",
+     "TRBS 3121 Anh. 1 Nr. 8: mind. 50 lx im Arbeitsbereich auf dem Fahrkorbdach und in der Grube; Risiko niedrig, wenn TRA 200 / EN 81-1/2 erfüllt.",
+     "Korrigiert: Frage 10.1a auf 50 lx über dem Fahrkorbdach; neue Frage 10.1c (Altnorm erfüllt → Niedrig). Die Grube hatte 50 lx bereits (11.2a).",
+     ""
+    ],
+    [
+     "B06",
+     "Kritisch",
+     "MF-T04",
+     "bestätigt",
+     "Bei „Höchste Stufe“ hat die Nicht-VSG-Regel die Drahtglas-Regel immer übersteuert.",
+     "Korrigiert: MF-T04-R1 nimmt Drahtglas aus; neue Frage 7.8a und Regel für beschädigtes/loses Glas; 7.8 fragt nur noch die Glasart.",
+     ""
+    ],
+    [
+     "B07",
+     "Kritisch",
+     "MF-T06",
+     "bestätigt",
+     "TRBS 3121 Anh. 1 Nr. 14 c): Lichtgitter statt Fahrkorbtür nur bei Lastenaufzügen mit ausschließlich eingewiesenem Nutzerkreis.",
+     "Korrigiert: Mittel nur bei Nutzungsart Lastenaufzug und Frage 8.9b = Ja; sonst neue Regel Hoch.",
+     ""
+    ],
+    [
+     "B08",
+     "Kritisch",
+     "MF-K05",
+     "teilweise",
+     "TRBS 3121 Anh. 1 Nr. 19 nennt die Maßnahmen als Alternativen und für Altanlagen niedrig bis mittel je nach Nutzerkreis. Die Verschärfung (beide Verriegelungen) ist deine Entscheidung K-K04 vom 02.09.2026.",
+     "Umgesetzt 16.09.: TRBS-Alternative (eine Verriegelung) = Niedrig; ohne Maßnahme Mittel; Hoch nur bei Kindern und als EIGENER STANDARD gekennzeichnet; Kein Risiko weiter nur mit beiden (K-K04).",
+     ""
+    ],
+    [
+     "B09",
+     "Kritisch",
+     "Gebäudeschnittstellen",
+     "nicht zutreffend",
+     "MF-K08 (4.11 Brandfallsteuerung gefordert), MF-U09 (BMA vorhanden), MF-U10 (Entrauchung vorhanden), MF-U11 (Sprinkler vorhanden) und MF-SF01 (Feuerwehraufzug) haben Anwendbarkeitsfilter. Die alte Prüfliste hat sie nur nicht angezeigt.",
+     "Filter sind jetzt in der Kopfzeile sichtbar.",
+     ""
+    ],
+    [
+     "B10",
+     "Kritisch",
+     "MF-K10",
+     "teilweise",
+     "Der Filter 4.9 (Nutzung durch mobilitätseingeschränkte Personen) existiert. Eine Anforderung aus Genehmigung/Nutzung wird nicht abgefragt; das Maß 1,00 × 1,25 m ist fest vorgegeben.",
+     "Umgesetzt 16.09.: neue Frage 4.9a „barrierefreie Ausführung gefordert“ löst die Prüfung ebenfalls aus; Maß mit Fahrkorbtyp und Normausgabe.",
+     ""
+    ],
+    [
+     "B11",
+     "Kritisch",
+     "F02/F05/F07/M10/S05",
+     "bestätigt",
+     "Unwirksame oder widersprüchliche Maßnahmen.",
+     "Korrigiert: MF-F02-R1/R2, MF-F05-R2, MF-F07-R1, MF-M10-R2 (inkl. Schreibfehler), MF-S05-R2.",
+     ""
+    ],
+    [
+     "B12",
+     "Kritisch",
+     "MF-M13",
+     "bestätigt",
+     "Bei fehlendem Absperrventil wurde nur Zugänglichkeit/Kennzeichnung verlangt.",
+     "Korrigiert: MF-M13-R4 verlangt den Einbau; bis dahin gesicherter Fahrkorb.",
+     ""
+    ],
+    [
+     "B13",
+     "Kritisch",
+     "MF-M20",
+     "bestätigt",
+     "Die Sofortmaßnahme bezog sich auf das Fahrkorbdach. Der Filter „Rollenraum vorhanden“ bestand bereits.",
+     "Korrigiert: Maßnahmen auf den Rollenraum bezogen.",
+     ""
+    ],
+    [
+     "B14",
+     "Kritisch",
+     "Bewertungsmethode",
+     "teilweise",
+     "Die regelbasierten Stufen mit Quelle und Freigabe sind die bewusste Methode von GBU 4.0; sonstige Gefährdungen laufen über die Nohl-Matrix. Es fehlen aber die dokumentierte Begründung einer manuellen Abweichung und das Restrisiko nach der Maßnahme.",
+     "Übernommen (Empfehlung 16.09.): Abweichungsbegründung und Restrisiko je Befund – App-Runde. Regelbasierte Methode bleibt.",
+     ""
+    ],
+    [
+     "H01",
+     "Hoch",
+     "Auffangregeln",
+     "nicht zutreffend (Laufzeit)",
+     "Die Engine prüft alle Pflichtfragen vor den Regeln und meldet sonst „unvollständig“. Regelrelevante Fragen werden automatisch Pflicht. Die Smoke-Tests decken das ab.",
+     "Pflichtfragen stehen jetzt in der Kopfzeile; neue Tests prüfen fehlende Pflichtantworten (z. B. Nutzungsart bei MF-T06).",
+     ""
+    ],
+    [
+     "H02",
+     "Hoch",
+     "MF-G03",
+     "nicht zutreffend",
+     "11.4b ist nur bei Grubentiefe > 1,60 m sichtbar und Pflicht.",
+     "In der Prüfliste sichtbar (Blatt „Fragen“, Spalte „Sichtbar, wenn“).",
+     ""
+    ],
+    [
+     "H03",
+     "Hoch",
+     "MF-F03 / MF-G08",
+     "teilweise",
+     "4.8 fragt bereits „gemeinsamer Schacht“, 9.6 kennt „ausreichende Abstände“. Richtig ist: Die Alternative automatische Abschaltung fehlte und die Sofortmaßnahme war unspezifisch.",
+     "Korrigiert: neue Fragen 9.6a und 11.14a (automatische Abschaltung → Kein Risiko), Maßnahmen benennen den Nachbaraufzug.",
+     ""
+    ],
+    [
+     "H04",
+     "Hoch",
+     "F07/G04/G06",
+     "nicht zutreffend",
+     "9.11a erscheint nur bei vorhandener Klappe, 11.7a nur bei Grubenzugangstür, 11.10c nur bei energieverzehrenden Puffern.",
+     "In der Prüfliste sichtbar.",
+     ""
+    ],
+    [
+     "H05",
+     "Hoch",
+     "MF-K12–K14",
+     "bestätigt",
+     "Sachfremde bzw. nicht gleichwertige Abhilfen.",
+     "Korrigiert: MF-K12-R4, MF-K13-R1, MF-K14-R2 (inkl. Schreibfehler).",
+     ""
+    ],
+    [
+     "H06",
+     "Hoch",
+     "MF-U01",
+     "bestätigt",
+     "„Unbekannt“ ist kein bestätigter Befund.",
+     "Korrigiert: MF-U01-R5 Mittel mit Schadstofferkundung statt Hoch mit Stillsetzung.",
+     ""
+    ],
+    [
+     "H07",
+     "Hoch",
+     "MF-U01–U15",
+     "bestätigt",
+     "Generische Schnittstellen-Texte aus der Ergänzung 2026.",
+     "Korrigiert: gefährdungsspezifische Maßnahmen für U01–U03 und U06–U13.",
+     ""
+    ],
+    [
+     "H08",
+     "Hoch",
+     "Fortschritt",
+     "bestätigt",
+     "Die Formel zählte nur Sammelfreigaben.",
+     "Behoben: Der Fortschritt zählt jede Regel mit wirksamer Entscheidung (eigene oder Sammelentscheidung).",
+     ""
+    ],
+    [
+     "H09",
+     "Hoch",
+     "Datenvalidierung",
+     "bestätigt",
+     "Ungültige Eingaben wurden nicht blockiert.",
+     "Behoben: Die Auswahllisten weisen andere Werte ab.",
+     ""
+    ],
+    [
+     "H10",
+     "Hoch",
+     "Änderungsworkflow",
+     "bestätigt",
+     "Die Korrektur war bei „Ändern“/„Streichen“ nicht verpflichtend.",
+     "Behoben: rote Markierung und Zähler „Korrektur fehlt“ in der Übersicht; das Übernahmeskript warnt.",
+     ""
+    ],
+    [
+     "H11",
+     "Hoch",
+     "Maßnahmenlücken",
+     "bestätigt",
+     "10 Regeln ohne Sofort- oder Folgemaßnahme; die eigene Vorprüfung hatte nur eine gefunden.",
+     "Korrigiert; der Smoke-Test prüft das künftig für den ganzen Katalog.",
+     ""
+    ],
+    [
+     "H12",
+     "Hoch",
+     "T/O-Kennzeichnung",
+     "bestätigt",
+     "Systematische Ursache: Die Art hing an der Zeitlage (sofort = O, mittelfristig = T).",
+     "Umgesetzt: Art aus dem Inhalt, gemischte eigene Texte bereinigt. „P“ (personenbezogen) kommt mit der App-Runde (Schema, Datenbank, App). Bitte Blatt „Maßnahmenarten“ gegenlesen.",
+     "ja"
+    ],
+    [
+     "H13",
+     "Hoch",
+     "Quellenstand",
+     "bestätigt",
+     "Die geltende TRBS 3121 (GMBl 2025 S. 691) gliedert den Haupttext nur bis Abschnitt 3.",
+     "Korrigiert: Z09 → 3.1.3/3.7.3, M15 → 3.7.3, D01 → 3.6/3.2 Nr. 6, D03 → 3.4.1, D05 → 3.3, U12 → 3.4.2.",
+     ""
+    ],
+    [
+     "H14",
+     "Hoch",
+     "Formelwerte",
+     "bestätigt",
+     "Formeln ohne gespeicherte Ergebnisse.",
+     "Behoben: Die Datei wird vor der Ausgabe neu berechnet.",
+     ""
+    ],
+    [
+     "H15",
+     "Hoch",
+     "MF-F04",
+     "bestätigt",
+     "Die Schutzeinrichtung wirkt, es fehlt nur die Kennzeichnung.",
+     "Korrigiert: MF-F04-R2 Mittel statt Hoch.",
+     ""
+    ],
+    [
+     "H16",
+     "Hoch",
+     "MF-K11",
+     "bestätigt",
+     "Videoüberwachung als pauschale Abhilfe.",
+     "Korrigiert: MF-K11-R3 nach DIN EN 81-71; weitere Maßnahmen nach Ursachenanalyse.",
+     ""
+    ],
+    [
+     "M01",
+     "Mittel",
+     "Hilfetexte",
+     "bestätigt",
+     "Nur 20 von 289 Fragen haben einen Hilfetext.",
+     "Teilweise umgesetzt 16.09.: 37 sicherheitskritische Fragen haben jetzt einen Prüfhinweis (65 von 294 insgesamt). Rest folgt.",
+     ""
+    ],
+    [
+     "M02",
+     "Mittel",
+     "Ergebnisdokumentation",
+     "teilweise",
+     "Die App führt Maßnahmen je Befund mit Verfolgung; das Restrisiko fehlt (siehe B14).",
+     "Siehe B14.",
+     ""
+    ],
+    [
+     "M03",
+     "Mittel",
+     "Normrückverfolgung",
+     "teilweise",
+     "Die EN-81-80-Zuordnung liegt je Punkt vor (en8180_map, GBU_EN8180_Zuordnung.xlsx); die Prüfliste zeigte nur ja/nein.",
+     "Behoben: Die Kopfzeile nennt die EN-81-80-Punkte mit Abschnitt.",
+     ""
+    ],
+    [
+     "M04",
+     "Mittel",
+     "Schreibfehler",
+     "bestätigt",
+     "„Motrorregelung“, „Machinenrahmen“, „nachrüste“, „Eignung ,“.",
+     "Korrigiert (zentrale Textkorrektur beim Einlesen der App-Maßnahmen).",
+     ""
+    ],
+    [
+     "M05",
+     "Mittel",
+     "Blattschutz",
+     "bestätigt",
+     "Blätter ungeschützt.",
+     "Behoben: Blattschutz ohne Kennwort; nur Entscheidungs- und Korrekturzellen sind offen, Filter bleiben nutzbar.",
+     ""
+    ],
+    [
+     "N01",
+     "Niedrig",
+     "Darstellung",
+     "teilweise",
+     "Sehr textdicht.",
+     "Teilweise: Geänderte Regeln sind farbig markiert und filterbar (Status „offen – geändert“).",
+     ""
+    ]
+   ]
+  },
+  {
+   "titel": "Runde 2 – zweite Prüfung vom 16.09.2026",
+   "befunde": [
+    [
+     "P2-1",
+     "Hoch",
+     "MF-T06",
+     "bestätigt",
+     "Scherengitter-Regel (Prio 200) verdrängte die Hoch-Regel für Ersatzlösungen ohne Voraussetzung; „keine Schließkantensicherung“ war bei mobilitätseingeschränkten Nutzern günstiger als die Einzel-Lichtschranke.",
+     "Umgesetzt: Licht- und Scherengitter laufen über dieselbe Voraussetzung (Lastenaufzug, nur Eingewiesene), sonst Hoch; neue Regel „keine Schließkantensicherung + PmeM = Hoch“; Maßnahme in R1 begrenzt. Ein Monotonie-Test prüft, dass weniger Schutz nie günstiger bewertet wird.",
+     ""
+    ],
+    [
+     "P2-2",
+     "Hoch",
+     "Baujahr-Annahmen",
+     "teilweise",
+     "Ein Baujahr begründet eine Erwartung, keinen Nachweis.",
+     "Entscheidung Arne 16.09.2026: Annahmen bleiben wie am 07.09. festgelegt (widerlegbar, im Bericht als „angenommen“ ausgewiesen). Behoben: 1.24 Baujahr und 1.29 Konformitätsnachweis stehen jetzt im Blatt „Fragen“, dazu je Frage die Annahme.",
+     ""
+    ],
+    [
+     "P2-3",
+     "Hoch",
+     "K02 / U06 / F03 / G08 / 8.4",
+     "bestätigt",
+     "Risikominderung ohne nachgewiesene Schutzwirkung.",
+     "Umgesetzt: K02 beleuchteter Taster = Niedrig statt Kein Risiko; U06 neue Frage 15.25b (Ex-Schutz umgesetzt und geprüft), sonst Hoch; F03/G08 neue Fragen 9.6b/11.14b (Abschaltung geprüft), sonst Mittel. 8.4 ist bewusst nur Dokumentation (für den Cyber-Fragebogen) und jetzt so beschriftet.",
+     ""
+    ],
+    [
+     "P2-4",
+     "Hoch",
+     "MF-G04 / MF-T04",
+     "bestätigt",
+     "Leiter wurde auch bei ebenerdigem Grubenzugang bewertet; Einzugsschutz für Schiebetüren auch bei Drehtüren abgefragt.",
+     "Umgesetzt: Zugangsart zuerst (11.7), Leiter nur bei Leiterzugang; neue Frage 7.9a (kraftbetätigte Schiebetür), Einzugsschutz nur dann.",
+     ""
+    ],
+    [
+     "P2-5",
+     "Hoch",
+     "MF-M08 / MF-K13 / MF-K14 / MF-K12",
+     "bestätigt",
+     "Indirekte Hydraulikaufzüge wurden wie Treibscheibenaufzüge behandelt; „SR-Modul ausbauen“ ist keine Standardalternative.",
+     "Umgesetzt: Betriebsbremse, Wellenlagerung und Sturz nach oben nur bei Treibscheiben-/Trommelantrieb; K12-R1-Maßnahme mit anlagenspezifischer Prüfung.",
+     ""
+    ],
+    [
+     "P2-6",
+     "Hoch",
+     "Regelkennungen",
+     "bestätigt",
+     "Zwischen v1 und v2 wurden Codes neu belegt (z. B. MF-T04-R3).",
+     "Umgesetzt: Regel-IDs hängen jetzt am Sachverhalt (Bedingung + Anwendbarkeit) und werden nie neu vergeben (mf_content/regel_ids.json, Basis v1). Revision je Regel; die Freigabe ist zusätzlich an Gefährdungslogik, abhängige Fragen und Maßnahmentexte gebunden. Die Prüfliste v2 ist damit überholt.",
+     ""
+    ],
+    [
+     "P2-7",
+     "Mittel",
+     "Bestandskatalog",
+     "bestätigt",
+     "13 Gefährdungen fehlten im Bestandskatalog.",
+     "Entscheidung Arne 16.09.2026: K12, K14 (TRBS 3121 Nr. 16) und die Betreiberpflichten Z01, Z04, Z05, Z06, Z08, Z09, M16, M19, S06, F08 aufgenommen; F02 bleibt als reiner EN-81-20-Konstruktionspunkt draußen. Die Freigabe gilt weiter für beide Kataloge, weil der Generator identische Regeln, Gefährdungen und Anwendbarkeit erzwingt.",
+     ""
+    ],
+    [
+     "P2-8",
+     "Mittel",
+     "Maßnahmen präzisieren",
+     "teilweise",
+     "„Vorsicht“ ist keine Schutzmaßnahme; Verantwortlichkeit, Termin und Wirksamkeitsnachweis fehlen.",
+     "Umgesetzt: 12 unkonkrete Sofortmaßnahmen ersetzt. Verantwortlich, Frist und Wirksamkeit gehören an den Befund in der App (Maßnahmenverfolgung) – App-Runde.",
+     ""
+    ],
+    [
+     "P2-9",
+     "Mittel",
+     "T/O/P",
+     "teilweise",
+     "Gemischte Maßnahmen, P fehlt.",
+     "Eigene gemischte Texte (Leuchten + Schutzhelm) bereinigt; P kommt mit der App-Runde.",
+     ""
+    ],
+    [
+     "P2-10",
+     "Mittel",
+     "Hilfetexte",
+     "bestätigt",
+     "Nur wenige Fragen mit echtem Prüfhinweis.",
+     "37 sicherheitskritische Fragen ergänzt (Prüfmethode, Abgrenzung, Nachweis) – bitte im Blatt „Fragen“ gegenlesen.",
+     "ja"
+    ],
+    [
+     "P2-11",
+     "Niedrig",
+     "Freigabereife",
+     "bestätigt",
+     "100 % entschieden ist nicht gleich freigabereif.",
+     "Übersicht hat die Spalte „freigabereif“ (alles entschieden, alles Freigeben, keine fehlende Korrektur).",
+     ""
+    ]
+   ]
+  }
+ ]
+}

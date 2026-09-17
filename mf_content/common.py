@@ -231,13 +231,91 @@ def num(code, text, **kw):
     return q(code, text, 'NUMBER', **kw)
 
 # ---- Maßnahmen -------------------------------------------------------------
+# Schreibfehler aus den übernommenen App-Katalogen (Prüfbericht 15.09.2026, M04)
+TEXTKORREKTUR = [
+    ('Motrorregelung', 'Motorregelung'),
+    ('Machinenrahmen', 'Maschinenrahmen'),
+    ('Steuerung nachrüste /', 'Steuerung nachrüsten /'),
+    ('Auf Eignung , ', 'Auf Eignung, '),
+]
+
+# Maßnahmenart nach dem TOP-Prinzip (Prüfbericht 15.09.2026, H12). Bis dahin
+# galt pauschal: Sofortmaßnahme = organisatorisch, mittelfristig = technisch.
+# Jetzt entscheidet der Inhalt; explizite Zuordnung über MASSNAHMENART.
+# Personenbezogene Maßnahmen (P) kennt das Engine-Schema noch nicht – sie
+# laufen vorerst als organisatorisch mit.
+# Heuristik: maßgeblich ist der erste Satzteil (vor „;“, ohne Klammern) und darin das
+# zuletzt stehende Schlüsselwort – im deutschen Imperativ steht das Verb am
+# Ende („Prüfmöglichkeit herstellen“ = T, „Bodenbelag prüfen und reinigen“ = O).
+_ART_T = ('nachrüst', 'einbau', 'ersetz', 'ersatz', 'austausch', 'tausch', 'herstell',
+          'umbau', 'umrüst', 'versetz', 'instand setz', 'instandsetz', 'reparier',
+          'erneuer', 'ertüchtig', 'montier', 'abdeck', 'verschließen', 'modernis',
+          'anordnen', 'verlegen', 'beseitig', 'schaffen', 'installier', 'anpassen',
+          'baulich', 'herrichten', 'ergänzen', 'verbinden', 'verriegeln', 'anheben',
+          'so schalten', 'zurückbau', 'verkleinern', 'verbessern', 'aufschalten',
+          'geländer', 'absturzsicherung anbringen', 'gangbar', ' ändern', 'elektrischen sicherheitseinrichtung',
+          'elektrische sicherheitseinrichtung überwachen', 'entfernen', 'sichern oder')
+_ART_O = ('prüf', 'wartungsplan', 'kennzeichn', 'beschilder', 'schild', 'dokument',
+          'betriebsanweisung', 'unterweis', 'einweis', 'festleg', 'regeln', 'aushäng',
+          'anforder', 'bewerten lassen', 'veranlassen', 'abstimm', 'vertrag', 'plakette',
+          'bestell', 'informier', 'stillsetz', 'stilllegen', 'außer betrieb', 'sperren',
+          'abschalten', 'ausschalten', 'nicht betreten', 'begrenz', 'messen', 'kontroll',
+          'hinweis', 'führen', 'klären', 'aufnehmen', ' erstellen', 'fortschreib',
+          'reinig', 'freihalt', 'unterbinden', 'gewährleist', 'vorsicht', 'benutzen',
+          'verwenden', 'tragen', 'freigeben', 'hinterleg', 'lagerverbot', 'sicherstellen',
+          'einnehmen', 'beachten', 'achten', 'überwachen', 'nur durch', 'nur mit', 'nur nach',
+          'nur bei', 'keine ', 'kein ', 'bewerten')
+# Einzelfälle, in denen die Heuristik danebenliegt (Stand 15.09.2026)
+MASSNAHMENART = {
+    'Absperrventil zwischen Zylinder und Rückschlagventil nachrüsten, gut zugänglich und gekennzeichnet': 'TECHNICAL',
+    'Wassereintritt beseitigen (Abdichtung, Pumpensumpf) und betroffene Bauteile prüfen lassen': 'TECHNICAL',
+    'Entrauchung instand setzen und Prüfnachweis vorlegen lassen': 'TECHNICAL',
+    'Sicherheitskreis instand setzen und Wirkung prüfen': 'TECHNICAL',
+    'Ansteuerung aus der BMA gemäß Brandschutzkonzept herstellen und dokumentieren': 'TECHNICAL',
+    'Absturzsicherung und Anschlagpunkte herstellen, Verkehrswege festlegen': 'TECHNICAL',
+    'Flucht- und Rettungswege nach ASR A2.3 herstellen und dauerhaft freihalten': 'TECHNICAL',
+    'Eigenständigen Zugang schaffen oder Wegeführung verbindlich festlegen': 'TECHNICAL',
+    'Türblätter mechanisch verbinden oder alle Türblätter verriegeln und überwachen (EN 81-20 5.3.11)': 'TECHNICAL',
+    'Verkleidung zurückbauen oder Zustand durch die ZÜS bewerten lassen': 'TECHNICAL',
+    'Nutzfläche verkleinern oder Nennlast anpassen und die Anlage neu bewerten lassen': 'TECHNICAL',
+    'Notentriegelung in erreichbarer Höhe (max. 2,00 m) nachrüsten oder langen Entriegelungsschlüssel hinterlegen': 'TECHNICAL',
+    'Schutzeinrichtung gegen Übergeschwindigkeit aufwärts nachrüsten (z. B. Fangvorrichtung am Gegengewicht, Seil- oder Treibscheibenbremse), baumustergeprüft und zur Anlage passend': 'TECHNICAL',
+    'Tür außer Betrieb nehmen oder alle Türblätter verriegeln, bis die Verbindung hergestellt ist': 'ORGANISATIONAL',
+    'Fahrkorbdach nicht betreten, Einbauten entfernen': 'ORGANISATIONAL',
+    'Prüfen, ob die Anlage durchgreifend modernisiert wurde': 'ORGANISATIONAL',
+    'Brennbare Stoffe aus dem Aufzugsbereich entfernen lassen; keine Zündquellen': 'ORGANISATIONAL',
+    'Betreiber auffordern, Umfang und Bewertung der baulichen Änderung vorzulegen; bei Zweifel an der Standsicherheit Anlage außer Betrieb nehmen': 'ORGANISATIONAL',
+}
+try:   # von Hand bestätigte Einstufungen aus der Regelprüfung
+    from .massnahmenart import MASSNAHMENART as _MA
+    MASSNAHMENART.update(_MA)
+except ImportError:
+    pass
+
+
+def massnahmenart(text):
+    if text in MASSNAHMENART:
+        return MASSNAHMENART[text]
+    import re as _re
+    t = _re.sub(r'\([^)]*\)', '', text.split(';')[0]).lower()
+    def letzte(woerter):
+        return max((t.rfind(w) + len(w) for w in woerter if w in t), default=-1)
+    pt, po = letzte(_ART_T), letzte(_ART_O)
+    return 'TECHNICAL' if pt >= 0 and pt >= po else 'ORGANISATIONAL'
+
+
 def _measure(text, kind):
     text = text.strip()
-    typ = 'ORGANISATIONAL' if kind == 'sofort' else 'TECHNICAL'
+    for alt, neu in TEXTKORREKTUR:
+        text = text.replace(alt, neu)
+    # Der Code bleibt an der Zeitlage (sofort/mittel) hängen, damit er stabil
+    # bleibt; die Art (T/O/P) ergibt sich aus dem Inhalt.
+    codetyp = 'ORGANISATIONAL' if kind == 'sofort' else 'TECHNICAL'
     pc = 'SOFORT' if kind == 'sofort' else 'MITTELFRISTIG'
-    code = 'm_' + hashlib.md5((typ + '|' + text).encode('utf-8')).hexdigest()[:10]
+    code = 'm_' + hashlib.md5((codetyp + '|' + text).encode('utf-8')).hexdigest()[:10]
     if code not in MEASURES:
-        MEASURES[code] = {'code': code, 'title': text, 'type': typ, 'priority_class': pc}
+        MEASURES[code] = {'code': code, 'title': text, 'type': massnahmenart(text),
+                          'priority_class': pc}
     return code
 
 def _bindings(sofort, mittel):
@@ -295,11 +373,46 @@ def _attach_k(kids, hazard_code):
                 x['hazards'].append(hazard_code)
 
 # ---- Regeln / Gefährdungen -------------------------------------------------
+PB_MARKER = '[Prüfbericht'
+
+# Unkonkrete Sofortmaßnahmen („Vorsicht“) je Gefährdung ersetzen
+# (zweite Prüfung 16.09.2026). Schlüssel: (Gefährdung, alter Text).
+MASSNAHME_ERSATZ = {
+    ('MF-Z02', 'Besondere Vorsicht beim Begehen (Sicherheitsschuhe)'):
+        'Verkehrsweg vor dem Begehen prüfen, Stolper- und Rutschstellen kennzeichnen; rutschhemmendes Schuhwerk tragen',
+    ('MF-Z03', 'Besondere Vorsicht beim Begehen'):
+        'Aufstieg nur mit freien Händen (Dreipunktkontakt); Werkzeug und Material getrennt hochreichen; Betreiber zur Instandsetzung auffordern',
+    ('MF-Z04', 'Festgelegten Verkehrsweg nutzen, besondere Vorsicht'):
+        'Nur den festgelegten, gekennzeichneten Verkehrsweg nutzen; mindestens 2 m Abstand zur Absturzkante halten',
+    ('MF-Z06', 'Zutritt mit dem Betreiber abstimmen, besondere Vorsicht'):
+        'Zutritt vorab mit dem Betreiber abstimmen (Schlüssel, Begleitung); Material in tragbaren Teilmengen transportieren',
+    ('MF-M13', 'Besondere Vorsicht bei Wartung / Reparatur. Auf Schlaffseilbildung achten.'):
+        'Vor Arbeiten am Hydrauliksystem Fahrkorb auf dem Puffer absetzen oder gegen Absinken sichern; auf Schlaffseilbildung achten',
+    ('MF-T03', 'Erhöhte Vorsicht, besonders bei Personenbefreiung'):
+        'Schachttüren nach jeder Personenbefreiung auf Schließ- und Verriegelungsstellung prüfen; Beauftragte Person entsprechend unterweisen',
+    ('MF-K02', 'Erhöhte Vorsicht'):
+        'Betreiber informieren; Verhalten bei Stromausfall im Notfallplan festlegen und Notbeleuchtung kurzfristig nachrüsten lassen',
+    ('MF-K04', 'Erhöhte Vorsicht'):
+        'Personenbefreiung nur durch fachkundige Personen und nur mit dem Fahrkorb in der Entriegelungszone; Schachtöffnung unter dem Fahrkorb sichern',
+    ('MF-F05', 'Besondere Vorsicht beim Arbeiten'):
+        'Vor Arbeiten Not-Halt betätigen und Befehlsgeber auf unbeabsichtigte Betätigung prüfen',
+    ('MF-F05', 'Sichere Position einnehmen, besondere Vorsicht'):
+        'Inspektionssteuerung erst nach sicherem Betreten und Betätigen des Not-Halts einschalten; nicht allein arbeiten',
+    ('MF-G04', 'Besondere Vorsicht beim Begehen'):
+        'Not-Halt vor dem Abstieg betätigen; Grube nur mit Dreipunktkontakt über die Leiter betreten',
+}
+
+
 def r(cond, result, prio=100, sofort=None, mittel=None, mfrom=None,
       evidence='INFERRED', notes=None, klaerung=(), applicability=None,
-      sources=()):
+      sources=(), pb=None):
     """Regel-Rohling; hz() vergibt Code und Gefährdung.
-    mfrom=('N20-K6', 'Zu kurze') übernimmt Maßnahmen der bestehenden Option."""
+    mfrom=('N20-K6', 'Zu kurze') übernimmt Maßnahmen der bestehenden Option.
+    pb='B06: …' kennzeichnet eine Änderung aus dem externen Prüfbericht vom
+    15.09.2026 – die Regel steht dann wieder zur Freigabe an, auch wenn sie
+    vorher über eine Klärung als entschieden galt."""
+    if pb:
+        notes = ((notes + ' ') if notes else '') + '%s: %s]' % (PB_MARKER, pb)
     if mfrom:
         s, m = mx(*mfrom)
         sofort = sofort or s
@@ -396,8 +509,17 @@ def hz(code, title, group, questions, rules, sources=(), factor=None, persons=()
         h['review_ids'] = sorted(set(kl))
         _attach_k(set(kl), code)
     HAZARDS.append(h)
+    for rule in rules:
+        for b in rule['measures']:
+            alt = MEASURES[b['measure']]['title']
+            neu = MASSNAHME_ERSATZ.get((code, alt))
+            if neu:
+                b['measure'] = _measure(neu, b['group_id'])
+                if PB_MARKER not in (rule['notes'] or ''):
+                    rule['notes'] = ((rule['notes'] + ' ') if rule['notes'] else '') + \
+                        '[Prüfbericht 16.09.2026: konkrete Sofortmaßnahme statt „Vorsicht“]'
     for i, rule in enumerate(rules, 1):
-        rd = {'hazard': code, 'code': '%s-R%d' % (code, i), 'priority': rule['prio'],
+        rd = {'hazard': code, 'code': regel_id(code, rule), 'priority': rule['prio'],
               'condition': rule['condition'], 'result': rule['result'],
               'origin': 'OWN_RULE', 'evidence': rule['evidence'],
               'quality_status': 'REVIEW_REQUIRED'}
@@ -410,6 +532,38 @@ def hz(code, title, group, questions, rules, sources=(), factor=None, persons=()
         if notes: rd['notes'] = notes
         RULES.append(rd)
     return code
+
+# ---- Stabile Regel-IDs ------------------------------------------------------
+# Bis 15.09.2026 wurden Regelcodes nach der Reihenfolge vergeben – eine
+# eingefügte Regel verschob alle folgenden Codes (Prüfbericht Punkt 6). Jetzt
+# hängt die ID am Sachverhalt (Bedingung + Anwendbarkeit, siehe
+# fingerabdruck.sachverhalt). Neue Sachverhalte bekommen die nächste freie
+# Nummer; eine einmal vergebene ID wird nie wieder verwendet.
+import json as _json, os as _os
+from .fingerabdruck import sachverhalt as _sachverhalt
+
+REGEL_IDS_PFAD = _os.path.join(_os.path.dirname(__file__), 'regel_ids.json')
+REGEL_IDS = _json.load(open(REGEL_IDS_PFAD, encoding='utf-8')) if _os.path.exists(REGEL_IDS_PFAD) \
+    else {'regeln': {}}
+NEUE_IDS = []
+_vergeben = set()
+
+
+def regel_id(hazard, rule):
+    probe = {'condition': rule['condition'], 'applicability': rule['applicability'] or None}
+    sv = _sachverhalt(probe)
+    bekannt = REGEL_IDS['regeln'].setdefault(hazard, {})
+    for code, eintrag in bekannt.items():
+        if eintrag['sachverhalt'] == sv and code not in _vergeben:
+            _vergeben.add(code)
+            return code
+    nr = 1 + max([int(c.rsplit('-R', 1)[1]) for c in bekannt] or [0])
+    code = '%s-R%d' % (hazard, nr)
+    bekannt[code] = {'sachverhalt': sv, 'rev': 1, 'fp': ''}
+    _vergeben.add(code)
+    NEUE_IDS.append(code)
+    return code
+
 
 # ---- Quellen ---------------------------------------------------------------
 def src(typ, doc, sec=None):

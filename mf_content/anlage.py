@@ -57,6 +57,10 @@ yn('qa_nutzung_pmem', 'Nutzung durch Personen mit eingeschränkter Mobilität '
    '(Rollstuhl, Rollator, Sehbehinderung) zu erwarten?', ui='4.9',
    help='Wirkt als Verschärfung (Modifier) bei Haltegenauigkeit, Türen und Zugang '
         'und schaltet die Barrierefreiheits-Gefährdung.')
+yn('qa_barrierefrei_gefordert', 'Barrierefreie Ausführung gefordert (Baugenehmigung, '
+   'Nutzungskonzept, öffentlich zugängliches Gebäude)?', ui='4.9a',
+   help='Löst zusammen mit 4.9 die Prüfung der Barrierefreiheit aus: Es genügt, '
+        'wenn entweder die Nutzung zu erwarten oder die Ausführung gefordert ist.')
 yn('qa_nutzung_kinder', 'Nutzung durch unbeaufsichtigte Kinder zu erwarten '
    '(Schule, Kita, Wohnanlage)?', ui='4.12')
 yn('qa_nutzung_flurfoerderzeug', 'Beladung mit Flurförderzeugen oder Transportwagen?',
@@ -97,6 +101,10 @@ yn('qa_ucm_a3', 'UCM-Schutz (unbeabsichtigte Fahrkorbbewegung, A3 / EN 81-20 5.6
    'vorhanden?', ui='4.5')
 yn('qa_lagerung_statisch_bestimmt', 'Antriebswelle statisch bestimmt gelagert '
    '(keine 3-Punkt-Lagerung)?', ui='4.6',
-   visible_when=in_('qa_aufzugsart', ['seil', 'trommel', 'seil_hydraulik']))
+   visible_when=in_('qa_aufzugsart', ['seil', 'trommel']),
+   help='Nur bei Treibscheiben- und Trommelantrieb. Indirekte Hydraulikaufzüge haben '
+        'keine Antriebswelle im Sinne von TRBS 3121 Anh. 1 Nr. 16.')
 
+# Schwellenfrage: wird in mf_content/erhebung.py (SCHWELLEN) auf Ja/Nein „über 1,60 m“
+# umgestellt; Regeln hier weiter als Zahlvergleich schreiben (stabile Regel-IDs).
 num('qa_grubentiefe', 'Schachtgrubentiefe [m]', min=0, max=6, ui='11.1')

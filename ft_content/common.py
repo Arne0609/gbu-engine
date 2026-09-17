@@ -36,9 +36,10 @@ _C.CATS.update([
     ('A', 'A – Anlagenmerkmale'),
     ('B', 'B – Betrieb und Nutzung (Betreiber)'),
     ('I', 'I – Instandhaltung, Montage und Reinigung'),
+    ('N', 'N – Bestandsanlage nach DIN EN 115-2'),
 ])
 _C._PREFIX2CAT.clear()
-_C._PREFIX2CAT.update({'qa_': 'A', 'qb_': 'B', 'qi_': 'I'})
+_C._PREFIX2CAT.update({'qa_': 'A', 'qb_': 'B', 'qi_': 'I', 'qn_': 'N'})
 
 # ---- Baugruppen (Bewertung/Bericht) ----------------------------------------
 _C.GROUPS[:] = [
@@ -57,7 +58,19 @@ _C.GROUPS[:] = [
     'Arbeiten im Stufen- und Palettenband',
     'Gefahrstoffe, Hygiene und Umgebung',
     'Koordination und Notfallorganisation',
+    'Tragkonstruktion und Verkleidung',
+    'Antrieb und Bremssystem',
+    'Elektrische Steuerung und Sicherheitseinrichtungen',
+    'Schnittstellen mit dem Gebäude',
 ]
+
+# Stabile Regel-IDs: eigener Registrierungspfad, damit der FT-Typ nicht in die
+# Registry des MF-Typs schreibt (mf_content/regel_ids.json).
+import json as _json, os as _os
+_FT_IDS = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), 'regel_ids.json')
+_C.REGEL_IDS_PFAD = _FT_IDS
+_C.REGEL_IDS['regeln'] = (_json.load(open(_FT_IDS, encoding='utf-8'))['regeln']
+                          if _os.path.exists(_FT_IDS) else {})
 
 from mf_content.common import *  # noqa: F401,F403,E402
 from mf_content.common import (QUESTIONS, HAZARDS, RULES, KLAERUNG, MEASURES,  # noqa: F401,E402
@@ -66,7 +79,8 @@ from mf_content.common import (QUESTIONS, HAZARDS, RULES, KLAERUNG, MEASURES,  #
 # ---- Baugruppen-Kurznamen ---------------------------------------------------
 (GRP_ZUGANG, GRP_UMFELD, GRP_BALUSTRADE, GRP_STUFEN, GRP_NOTHALT, GRP_LICHT,
  GRP_ORGA, GRP_PRUEF, GRP_ABSPERR, GRP_STATION, GRP_ELEKTRO, GRP_INSP,
- GRP_BAND, GRP_STOFFE, GRP_KOORD) = GROUPS
+ GRP_BAND, GRP_STOFFE, GRP_KOORD, GRP_TRAG, GRP_ANTRIEB, GRP_STEUERUNG,
+ GRP_GEBAEUDE) = GROUPS
 
 # ---- Personengruppen --------------------------------------------------------
 NUTZER = 'Nutzer und Fahrgäste'

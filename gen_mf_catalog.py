@@ -30,7 +30,9 @@ for mod in ['anlage', 'zugang', 'triebwerksraum', 'tueren_fahrkorb', 'fahrkorbda
 from mf_content import annahmen as ANN  # noqa: E402
 ANN.registriere()
 
-RULE_VERSION = '81-20-mf-2026.7'  # .7: best_case je Frage (Sammelantwort) 07.09.2026
+RULE_VERSION = '81-20-mf-2026.9'  # .9: Erhebung gekürzt – Fragengruppen, Nachweis-Vorbelegung, Stammdaten, Phasen, Schwellenfragen 17.09.2026
+# .8: Korrekturen aus zwei Prüfrunden 15./16.09.2026, stabile Regel-IDs
+# .7: best_case je Frage (Sammelantwort) 07.09.2026
 # .6: begruendete Annahmen (Baujahr) 07.09.2026
 # .5: 26 neue Regeln freigegeben 04.09.2026
 # .4: Baujahr als Steuerfeld + MF-D06 Konformitaetspruefung 04.09.2026
@@ -73,6 +75,12 @@ def apply_decisions(rules):
     for r in rules:
         notes = r.get('notes', '')
         kids = notes.split('KLÄREN: ')[1].split(', ') if 'KLÄREN: ' in notes else []
+        # Nach dem externen Prüfbericht geänderte Regeln stehen erneut zur
+        # Freigabe an – die frühere Klärung deckt den neuen Inhalt nicht mehr.
+        if C.PB_MARKER in notes:
+            if 'KLÄREN: ' in notes:
+                r['notes'] = notes.replace('KLÄREN: ', 'Frühere Klärung (vor der Änderung entschieden): ')
+            continue
         if kids and all(k in decided for k in kids):
             if r.get('evidence') == 'HYPOTHESIS':
                 r['evidence'] = 'INFERRED'
@@ -84,29 +92,52 @@ def apply_decisions(rules):
                 'Entschieden %s: %s.' % (DATUM, ', '.join(kids))
 
 
-def apply_freigabe(rules):
-    """Regelfreigabe aus der Gegenlesung (Excel GBU_MF_Regelpruefung):
+FP_FREIGABE = {}   # Regel -> Fingerabdruck, auf den sich eine aktuelle Freigabe bezieht
+
+
+def apply_freigabe(rules, seed=None):
+    """Regelfreigabe aus der Gegenlesung (Excel GBU_MF_Regelpruefung,
+    Rückweg apply_mf_regelpruefung.py):
     'Freigeben' -> VERIFIED; 'Ändern'/'Streichen' bleiben REVIEW_REQUIRED,
     die Korrektur steht als Hinweis in den notes, bis der Inhalt in
-    mf_content/*.py nachgezogen ist. Gleiches Muster wie beim Cyber-Typ."""
+    mf_content/*.py nachgezogen ist. Gleiches Muster wie beim Cyber-Typ.
+
+    Einträge tragen seit 15.09.2026 Datum und Fingerabdruck des
+    Regelinhalts. Passt der Fingerabdruck nicht mehr (Regel geändert oder
+    Code verschoben), bleibt die Regel offen. Altformat (Entscheidung,
+    Korrektur) gilt mit DATUM und ohne Fingerabdruck-Prüfung."""
     try:
         from mf_content.regelfreigabe import FREIGABE, DATUM as FREIGABE_DATUM
     except ImportError:
         return
+    from mf_content.fingerabdruck import fingerabdruck
     for r in rules:
         fg = FREIGABE.get(r['code'])
-        if not fg or r.get('quality_status') == 'VERIFIED':
+        if not fg:
             continue
-        entscheidung, korrektur = fg
+        entscheidung, korrektur = fg[0], fg[1]
+        datum = fg[2] if len(fg) > 2 and fg[2] else FREIGABE_DATUM
+        fp = fg[3] if len(fg) > 3 else ''
+        if r.get('quality_status') == 'VERIFIED':
+            # schon über eine Klärung freigegeben – eine passende neue Freigabe
+            # bestätigt den aktuellen Stand
+            if entscheidung == 'Freigeben' and fp and fp == fingerabdruck(r, seed):
+                FP_FREIGABE[r['code']] = fp
+            continue
         sep = ' ' if r.get('notes', '').strip() else ''
+        if fp and fp != fingerabdruck(r, seed):
+            r['notes'] = r.get('notes', '').rstrip() + sep + \
+                'OFFEN: Regel seit der Entscheidung vom %s geändert – neu prüfen.' % datum
+            continue
         if entscheidung == 'Freigeben':
             r['quality_status'] = 'VERIFIED'
+            if fp:
+                FP_FREIGABE[r['code']] = fp
             r['notes'] = r.get('notes', '').rstrip() + sep + \
-                'Freigegeben %s.' % FREIGABE_DATUM
+                'Freigegeben %s.' % datum
         else:
             r['notes'] = r.get('notes', '').rstrip() + sep + \
-                'OFFEN (%s %s): %s' % (entscheidung, FREIGABE_DATUM,
-                                       korrektur or '-')
+                'OFFEN (%s %s): %s' % (entscheidung, datum, korrektur or '-')
 
 
 def build():
@@ -115,17 +146,67 @@ def build():
     questions = sorted(C.QUESTIONS, key=lambda q: (order[q['category']], C.QUESTIONS.index(q)))
     hazards = list(C.HAZARDS)
     rules = list(C.RULES)
-    measures = list(C.MEASURES.values())
+    # Nur tatsächlich verwendete Maßnahmen ausgeben (ersetzte Texte bleiben
+    # sonst als Leichen im Katalog stehen).
+    benutzt = {b['measure'] for r in rules for b in r.get('measures', [])}
+    measures = [m for m in C.MEASURES.values() if m['code'] in benutzt]
     fix_trbs_sources(hazards)
+    from mf_content.hilfetexte import HILFE
+    for q in questions:
+        if not q.get('help_text') and q['code'] in HILFE:
+            q['help_text'] = HILFE[q['code']]
     apply_decisions(rules)
-    apply_freigabe(rules)
     seed = {'rule_version': RULE_VERSION, 'questions': questions, 'measures': measures,
             'hazards': hazards, 'rules': rules}
     if C.ANNAHMEN:
         seed['assumptions'] = list(C.ANNAHMEN)
         seed['assumptions_void_when'] = C.ANNAHMEN_HINFAELLIG
+    # Erhebung kürzen (17.09.2026, mf_content/erhebung.py): erst Struktur
+    # (streichen, verschieben, D05, Schwellenfragen), dann best_case, dann
+    # Freigabe/Fingerabdrücke auf dem endgültigen Stand, zuletzt Gruppen,
+    # Nachweise, Stammdaten und Phasen (rein beschreibend, nicht im Fingerabdruck).
+    from mf_content import erhebung
+    erhebung.vorbereiten(seed)
     set_best_case(seed)
+    apply_freigabe(rules, seed)
+    pflege_regel_ids(seed)
+    erhebung.anreichern(seed)
     return seed
+
+
+def pflege_regel_ids(seed):
+    """Revision je Regel fortschreiben: ändert sich der Fingerabdruck
+    (Inhalt, abhängige Fragen, Gefährdungslogik), steigt die Revision."""
+    from mf_content.fingerabdruck import fingerabdruck
+    reg = C.REGEL_IDS['regeln']
+    for r in seed['rules']:
+        e = reg[r['hazard']][r['code']]
+        fp = fingerabdruck(r, seed)
+        if e.get('fp') and e['fp'] != fp:
+            e['rev'] = e.get('rev', 1) + 1
+        e['fp'] = fp
+        e['stand'] = RULE_VERSION
+        # Eine Freigabe gilt nur für den Stand, auf den sie sich bezog – auch
+        # wenn sie über eine Klärung oder das Altformat ohne Fingerabdruck kam
+        # (zweite Prüfung 16.09.2026, Punkt 6).
+        if r.get('quality_status') == 'VERIFIED':
+            if FP_FREIGABE.get(r['code']) == fp:
+                e['fp_verifiziert'] = fp
+            elif 'fp_verifiziert' not in e:
+                e['fp_verifiziert'] = fp
+            elif e['fp_verifiziert'] != fp:
+                r['quality_status'] = 'REVIEW_REQUIRED'
+                sep = ' ' if r.get('notes', '').strip() else ''
+                r['notes'] = r.get('notes', '').rstrip() + sep + \
+                    '[Freigabe bezog sich auf einen früheren Stand (Regel, abhängige Fragen oder ' \
+                    'Gefährdungslogik geändert) – neu prüfen]'
+    aktiv = {r['code'] for r in seed['rules']}
+    for hz_, eintraege in reg.items():
+        for code, e in eintraege.items():
+            if code not in aktiv:
+                e['stillgelegt'] = True
+            else:
+                e.pop('stillgelegt', None)
 
 
 ORTSBEREICHE = [
@@ -314,6 +395,13 @@ def check(seed):
             check_leaf(lf, wo + '/when')
     for lf in (lambda t: (collect(seed.get('assumptions_void_when'), t), t)[1])([]):
         check_leaf(lf, 'assumptions_void_when')
+    for n in seed.get('nachweise', []):
+        for lf in (lambda t: (collect(n['when'], t), t)[1])([]):
+            check_leaf(lf, 'Nachweis %s/when' % n['question'])
+    from mf_content import erhebung
+    e2, w2 = erhebung.pruefen(seed)
+    errors += e2
+    warnings += w2
     return errors, warnings
 
 
@@ -336,6 +424,11 @@ def main():
     out = os.path.join(HERE, 'norm_81_20_mf.json')
     with open(out, 'w', encoding='utf-8') as f:
         json.dump(seed, f, ensure_ascii=False, indent=1)
+    C.REGEL_IDS['stand'] = RULE_VERSION
+    with open(C.REGEL_IDS_PFAD, 'w', encoding='utf-8') as f:
+        json.dump(C.REGEL_IDS, f, ensure_ascii=False, indent=1)
+    if C.NEUE_IDS:
+        print('Neue Regel-IDs:', ', '.join(C.NEUE_IDS))
     from mf_content.entscheidungen import ENTSCHEIDUNGEN, DATUM
     for kl in C.KLAERUNG:
         e = ENTSCHEIDUNGEN.get(kl['id'])
@@ -353,6 +446,11 @@ def main():
           % (os.path.basename(out), len(seed['questions']), dict(types), len(seed['hazards']),
              len(seed['rules']), len(seed['measures']), len(C.KLAERUNG)))
     print('Stufen:', dict(res), '| Evidenz:', dict(ev))
+    from mf_content import erhebung
+    je, n_karten = erhebung.kennzahlen(seed)
+    print('Erhebung: %d Karten (%d Gruppen, %d Nachweise, %d Stammdaten): %s'
+          % (n_karten, len(seed.get('question_groups', [])), len(seed.get('nachweise', [])),
+             sum(1 for q in seed['questions'] if q.get('source') == 'anlagenstamm'), je))
     print('Schema: gültig')
 
 

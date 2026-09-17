@@ -20,13 +20,14 @@ import json, os, sys, importlib
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 
+import catalog_check  # noqa: E402  (gemeinsame Prüfungen, ohne Nebenwirkungen)
 from ft_content import common as C  # noqa: E402  (stellt die Register um)
 
 for mod in ['anlage', 'betrieb_zugang', 'betrieb_anlage', 'betrieb_orga',
-            'instandhaltung']:
+            'instandhaltung', 'bestand_en115_2']:
     importlib.import_module('ft_content.' + mod)
 
-RULE_VERSION = 'fahrtreppe-2026.1'
+RULE_VERSION = 'fahrtreppe-2026.2'  # .2: Bereich N (EN 115-2 Anhang B)
 
 
 def collect(expr, into):
@@ -71,98 +72,22 @@ def build():
             'measures': measures, 'hazards': hazards, 'rules': rules}
 
 
-def check(seed):
-    errors, warnings = [], []
-    qmap = {q['code']: q for q in seed['questions']}
-    hmap = {h['code']: h for h in seed['hazards']}
-    rules_by_h = {}
-    for r in seed['rules']:
-        rules_by_h.setdefault(r['hazard'], []).append(r)
-
-    def check_leaf(leaf, where):
-        qc = leaf['question']
-        if qc not in qmap:
-            errors.append('%s: unbekannte Frage %s' % (where, qc)); return
-        q = qmap[qc]
-        op, val = leaf['operator'], leaf.get('value')
-        if op in ('ANSWERED', 'NOT_ANSWERED'):
-            return
-        if q['type'] == 'YES_NO':
-            if op not in ('EQ', 'NEQ') or not isinstance(val, bool):
-                errors.append('%s: %s ist YES_NO, Vergleich %s %r ungültig'
-                              % (where, qc, op, val))
-        elif q['type'] == 'SELECT':
-            opts = {o['value'] for o in q.get('options', [])}
-            vals = val if isinstance(val, list) else [val]
-            for v in vals:
-                if v not in opts:
-                    errors.append('%s: Wert %r nicht in Optionen von %s'
-                                  % (where, v, qc))
-        elif q['type'] == 'NUMBER':
-            if op not in ('GT', 'GTE', 'LT', 'LTE', 'EQ', 'NEQ') or \
-                    not isinstance(val, (int, float)):
-                errors.append('%s: %s ist NUMBER, Vergleich %s %r ungültig'
-                              % (where, qc, op, val))
-
-    used_q = set()
-    for h in seed['hazards']:
-        hq = {x['question'] for x in h.get('questions', [])}
-        used_q |= hq
-        for x in h.get('questions', []):
-            if x['question'] not in qmap:
-                errors.append('%s: hazard_question %s unbekannt'
-                              % (h['code'], x['question']))
-            for key in ('required_when', 'applicable_when'):
-                leaves = []
-                collect(x.get(key), leaves)
-                for lf in leaves:
-                    check_leaf(lf, '%s/%s' % (h['code'], key))
-        if h['code'] not in rules_by_h:
-            errors.append('%s: keine Regel' % h['code'])
-        elif not any(x['result'] == 'NO_RISK' for x in rules_by_h[h['code']]):
-            errors.append('%s: keine ausdrückliche Kein-Risiko-Regel' % h['code'])
-        for x in rules_by_h.get(h['code'], []):
-            if x['result'] in ('LOW', 'MEDIUM', 'HIGH') and not x.get('measures'):
-                errors.append('%s: risikotragende Regel ohne Maßnahme' % x['code'])
-        for r in rules_by_h.get(h['code'], []):
-            leaves = []
-            collect(r['condition'], leaves)
-            collect(r.get('applicability'), leaves)
-            for lf in leaves:
-                check_leaf(lf, r['code'])
-                if lf['question'] not in hq:
-                    warnings.append('%s: Frage %s in Regel, aber nicht in '
-                                    'hazard_questions' % (r['code'], lf['question']))
-    for q in seed['questions']:
-        leaves = []
-        collect(q.get('visible_when'), leaves)
-        for lf in leaves:
-            check_leaf(lf, q['code'] + '/visible_when')
-        if q['code'] not in used_q:
-            warnings.append('Frage %s wird von keiner Gefährdung benutzt' % q['code'])
-    for r in seed['rules']:
-        if r['hazard'] not in hmap:
-            errors.append('%s: Gefährdung %s unbekannt' % (r['code'], r['hazard']))
-    return errors, warnings
-
-
-def validate_schema(seed):
-    import jsonschema
-    schema = json.load(open(os.path.join(HERE, 'rule_engine.schema.json'),
-                            encoding='utf-8'))
-    jsonschema.Draft202012Validator(schema).validate(seed)
-
-
 def main():
     seed = build()
-    errors, warnings = check(seed)
+    errors, warnings = catalog_check.check(seed)
     for w in warnings:
         print('WARNUNG', w)
     if errors:
         for e in errors:
             print('FEHLER', e)
         sys.exit(1)
-    validate_schema(seed)
+    catalog_check.validate_schema(seed)
+    # Stabile Regel-IDs des FT-Typs sichern (eigene Registry, siehe
+    # ft_content/common.py).
+    if C.NEUE_IDS:
+        print('neue Regel-IDs:', len(C.NEUE_IDS))
+    with open(C.REGEL_IDS_PFAD, 'w', encoding='utf-8') as f:
+        json.dump({'regeln': C.REGEL_IDS['regeln']}, f, ensure_ascii=False, indent=1)
     out = os.path.join(HERE, 'norm_fahrtreppe.json')
     with open(out, 'w', encoding='utf-8') as f:
         json.dump(seed, f, ensure_ascii=False, indent=1)

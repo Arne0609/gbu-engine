@@ -100,7 +100,7 @@ test('Seilaufzug: Schuerze 200 mm mit/ohne Kompensation, Stufenbildung mit PmeM-
   const asmt = await newAssessment();
   await answer(asmt, 'qa_aufzugsart', 'seil');
   await answer(asmt, 'qa_nutzung_pmem', true);
-  await answer(asmt, 'qk_schuerze_mm', 200);
+  await answer(asmt, 'qk_schuerze_mm', 'unter_300'); // Schwellenfrage (Kuerzung 17.09.2026): 200 mm -> unter 300 mm
   await evaluateAssessment(pool, asmt);
   assert.equal((await statusOf(asmt, 'MF-K04'))?.status, 'INCOMPLETE', 'Kompensationsfrage wird unter 300 mm Pflicht');
   await answer(asmt, 'qk_befreiung_nur_fachkundig', true);
@@ -112,7 +112,7 @@ test('Seilaufzug: Schuerze 200 mm mit/ohne Kompensation, Stufenbildung mit PmeM-
   await evaluateAssessment(pool, asmt);
   assert.equal((await statusOf(asmt, 'MF-K04'))?.status, 'HIGH');
 
-  await answer(asmt, 'qk_stufe_mm', 15);
+  await answer(asmt, 'qk_stufe_mm', '11_20'); // 15 mm -> Bereich 11-20 mm
   await evaluateAssessment(pool, asmt);
   const k03 = await statusOf(asmt, 'MF-K03');
   assert.equal(k03?.status, 'HIGH', '10-20 mm + PmeM-Nutzung -> HIGH (Modifier)');
@@ -155,7 +155,7 @@ test('Review 02.09.2026: jede Gefaehrdung hat eine ausdrueckliche Kein-Risiko-Re
   const noMeasure = seed.rules.filter((r: any) => ['LOW', 'MEDIUM', 'HIGH'].includes(r.result) && !(r.measures?.length));
   assert.deepEqual(noMeasure.map((r: any) => r.code), [], 'Risikoregeln ohne Massnahme');
   // Stufenbildung 15 mm mit PmeM: R2 (HIGH) gewinnt, R3 (MEDIUM) trifft ebenfalls zu -> beide in matched_rules
-  const res = evaluate(seed, { qk_stufe_mm: 15, qk_nachregulierung: true, qa_nutzung_pmem: true });
+  const res = evaluate(seed, { qk_stufe_mm: '11_20', qa_nutzung_pmem: true });
   const k03 = res.find((r) => r.hazard === 'MF-K03')!;
   assert.equal(k03.status, 'HIGH');
   assert.deepEqual(k03.matched_rules, ['MF-K03-R2'], 'NONE: nur der Gewinner traegt Massnahmen');
@@ -176,7 +176,7 @@ test('Review 02.09.2026: jede Gefaehrdung hat eine ausdrueckliche Kein-Risiko-Re
   // Im MF-Seed kann es keinen impliziten Kein-Risiko-Zustand geben
   for (const h of seed.hazards) assert.ok(seed.rules.some((r: any) => r.hazard === h.code && r.result === 'NO_RISK'), h.code);
   // Alles in Ordnung -> ausdrueckliche NO_RISK-Regel statt stillem Fallback
-  const ok = evaluate(seed, { qk_stufe_mm: 3, qk_nachregulierung: true, qa_nutzung_pmem: false }).find((r) => r.hazard === 'MF-K03')!;
+  const ok = evaluate(seed, { qk_stufe_mm: 'bis_10', qa_nutzung_pmem: false }).find((r) => r.hazard === 'MF-K03')!;
   assert.equal(ok.status, 'NO_RISK');
   assert.ok(ok.matched_rule, 'NO_RISK durch Regel, nicht durch Fallback');
 });

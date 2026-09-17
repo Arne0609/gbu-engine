@@ -15,6 +15,10 @@ GRP_SK = 'Sicherheitskomponenten'
 MR = yes('qa_maschinenraum')
 SEIL = in_('qa_aufzugsart', ['seil', 'trommel', 'seil_hydraulik'])
 HYDR = in_('qa_aufzugsart', ['hydraulik', 'seil_hydraulik'])
+# Treibscheiben- und Trommelantrieb: elektromechanische Betriebsbremse und
+# Antriebswelle. Ein indirekter Hydraulikaufzug hängt zwar am Seil, hat aber
+# keinen Treibscheibenantrieb (zweite Prüfung 16.09.2026, Punkt 5).
+TREIB = in_('qa_aufzugsart', ['seil', 'trommel'])
 
 # ---- Fragen ----------------------------------------------------------------
 yn('qm_bel_vorhanden', 'Beleuchtung im Triebwerks-/Maschinenraum vorhanden?', ui='5.20',
@@ -81,7 +85,7 @@ yn('qm_hauptschalter_gekennz', 'Hauptschalter eindeutig gekennzeichnet?', ui='5.
    visible_when=yes('qm_hauptschalter'))
 
 yn('qm_zweikreisbremse', 'Zweikreisbremse (redundante Betriebsbremse) vorhanden?',
-   ui='6.2', visible_when=SEIL)
+   ui='6.2', visible_when=TREIB)
 yn('qm_bremse_ueberwacht', 'Bremse elektrisch überwacht (Bremskontrollschalter)?',
    ui='6.2a', visible_when=yes('qm_zweikreisbremse'))
 yn('qm_motorschutz', 'Schutz gegen Überhitzen des Antriebsmotors vorhanden?', ui='6.3')
@@ -216,7 +220,8 @@ hz('MF-M01', 'Unzureichende Beleuchtung im Triebwerks-/Maschinenraum', GRP_BEL,
     r(no('qm_bel_geeignet'), 'MEDIUM', mfrom=('N20-M3', 'Leuchten an ungeeigneter'),
       evidence='HIGH_CONFIDENCE'),
     r(no('qm_bel_splitterschutz'), 'MEDIUM', mfrom=('N20-M3', 'Leuchten ohne Splitterschutz'),
-      evidence='HIGH_CONFIDENCE')],
+      sofort='Beschädigte Leuchten sofort ersetzen',
+      evidence='HIGH_CONFIDENCE', pb='H11 – Sofortmaßnahme ergänzt')],
    sources=[en8120('5.2.1.4.2'), trbs3121('Anh. 1 Nr. 8')],
    factor=F_BELEUCHTUNG, persons=[BEAUFTRAGTE, WARTUNG], agg='MAXIMUM', bereich='M')
 
@@ -317,13 +322,15 @@ hz('MF-M07', 'Fehlender, nicht abschließbarer oder nicht gekennzeichneter Haupt
 
 hz('MF-M08', 'Unzureichende elektromechanische Bremse (Einkreisbremse, keine Überwachung)',
    GRP_ANT,
-   [('qa_aufzugsart', 'APPLICABILITY', 'NEVER', {'applicable_when': SEIL}),
+   [('qa_aufzugsart', 'APPLICABILITY', 'NEVER', {'applicable_when': TREIB}),
     ('qm_zweikreisbremse', 'TRIGGER', 'ALWAYS'),
     ('qm_bremse_ueberwacht', 'TRIGGER', 'CONDITIONAL', {'required_when': yes('qm_zweikreisbremse')}),
     ('qk_ucm_sr_modul', 'MODIFIER', 'CONDITIONAL', {'required_when': no('qm_bremse_ueberwacht')})],
    [r(no('qm_zweikreisbremse'), 'HIGH', mfrom=('N20-M10', 'Einkreisbremse'), evidence='HIGH_CONFIDENCE'),
     r(all_(no('qm_bremse_ueberwacht'), yes('qk_ucm_sr_modul')), 'MEDIUM',
       mfrom=('N20-K4.2', 'Zweikreisbremse vorhanden'), evidence='HIGH_CONFIDENCE', klaerung='K-M09',
+      sofort='Bremse bei jeder Wartung auf Wirksamkeit beider Bremskreise prüfen',
+      pb='H11 – Sofortmaßnahme ergänzt',
       notes='Entscheidung 02.09.2026: ohne Türüberbrückung (SR-Modul) kein Risiko.')],
    sources=[en8120('5.9.2.2.2'), trbs3121('Anh. 1 Nr. 16')], factor=F_UEBERLAST,
    persons=[NUTZER, WARTUNG], agg='MAXIMUM', bereich='M')
@@ -343,7 +350,10 @@ hz('MF-M10', 'Fehlende unabhängige Fahrschütze / Abschaltwege', GRP_EL,
       evidence='HIGH_CONFIDENCE', klaerung='K-M04',
       notes='App M5: „Nur ein Fahrschütz, jedoch selbst überwachende Steuerung" = grün'),
     r(no('qm_schuetze_unabhaengig'), 'HIGH', prio=100, mfrom=('N20-M5', 'Fehlende unabhängige'),
-      evidence='HIGH_CONFIDENCE')],
+      sofort='Abschaltfunktion des Fahrschützes bei jeder Wartung prüfen; bei Auffälligkeit (Schütz '
+             'fällt nicht ab) Anlage sofort außer Betrieb nehmen',
+      mittel='Zweites, unabhängiges Fahrschütz bzw. redundante Abschaltung nachrüsten oder Steuerung erneuern',
+      evidence='HIGH_CONFIDENCE', pb='B11 – „bei Arbeiten ausschalten" schützt die Nutzer nicht')],
    sources=[en8120('5.9.2.5'), trbs3121('Anh. 1 Nr. 16')], factor=F_UEBERLAST,
    persons=[NUTZER], bereich='M')
 
@@ -375,8 +385,10 @@ hz('MF-M13', 'Unzureichende Hydraulikeinrichtungen (Absperrventil, Rohrbruchsich
       evidence='HIGH_CONFIDENCE'),
     r(no('qm_kav'), 'MEDIUM', mfrom=('N20-K5', 'Keine Kolbenabsinkverhinderung'),
       evidence='HIGH_CONFIDENCE'),
-    r(no('qm_absperrventil'), 'MEDIUM', mfrom=('N20-M11', 'Absperrventil vorhanden'),
-      evidence='INFERRED'),
+    r(no('qm_absperrventil'), 'MEDIUM',
+      sofort='Arbeiten am Hydrauliksystem nur mit abgesetztem, gegen Bewegung gesichertem Fahrkorb',
+      mittel='Absperrventil zwischen Zylinder und Rückschlagventil nachrüsten, gut zugänglich und gekennzeichnet',
+      evidence='INFERRED', pb='B12 – fehlendes Ventil wird nachgerüstet, nicht nur gekennzeichnet'),
     r(no('qm_absperrventil_gekennz'), 'MEDIUM', mfrom=('N20-M11', 'Absperrventil vorhanden'),
       evidence='HIGH_CONFIDENCE')],
    sources=[en8120('5.6.1.3'), en8120('5.6.7'), trbs3121('Anh. 1 Nr. 17')],
@@ -405,7 +417,7 @@ hz('MF-M15', 'Fehlende oder unzureichende Einrichtung für Notbetrieb und Person
       sofort='Personenbefreiung bis zur Einweisung nur durch das Wartungsunternehmen',
       mittel='Beauftragte Personen anlagenbezogen in die Personenbefreiung einweisen und '
              'dokumentieren (BetrSichV Anh. 1 Nr. 4.1)', evidence='INFERRED')],
-   sources=[en8120('5.9.2.3'), law('BetrSichV', 'Anh. 1 Nr. 4.1'), trbs3121('4.4')],
+   sources=[en8120('5.9.2.3'), law('BetrSichV', 'Anh. 1 Nr. 4.1'), trbs3121('3.7.3')],
    factor=F_NOTFALL, persons=[NUTZER, BEAUFTRAGTE], agg='MAXIMUM', bereich='M')
 
 hz('MF-M16', 'Fehlender Potenzialausgleich / mangelhafte bauseitige Elektroinstallation',
@@ -467,8 +479,11 @@ hz('MF-M19', 'Aufzugsfremde Einrichtungen im Triebwerksraum', GRP_MR,
 hz('MF-M20', 'Fehlender Not-Halt im zusätzlichen Rollenraum', GRP_EL,
    [('qa_rollenraum', 'APPLICABILITY', 'NEVER'),
     ('qm_rollenraum_nothalt', 'TRIGGER', 'ALWAYS')],
-   [r(no('qm_rollenraum_nothalt'), 'HIGH', mfrom=('N20-F7', 'Kein Notbremsschalter'),
-      evidence='INFERRED', notes='Blaupause Schindler M049 (f132 Rollenraum).')],
+   [r(no('qm_rollenraum_nothalt'), 'HIGH',
+      sofort='Arbeiten im Rollenraum nur bei freigeschalteter und gegen Wiedereinschalten gesicherter Anlage',
+      mittel='Notbremsschalter (Stoppeinrichtung) im Rollenraum nachrüsten (DIN EN 81-20 5.12.1.11)',
+      evidence='INFERRED', notes='Blaupause Schindler M049 (f132 Rollenraum).',
+      pb='B13 – Maßnahme auf den Rollenraum bezogen')],
    sources=[en8120('5.2.6.4.5'), en8120('5.12.1.11')], factor=F_BEFEHL, persons=[WARTUNG], bereich='M')
 
 

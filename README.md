@@ -15,7 +15,7 @@ Dieses Verzeichnis enthält die Engine, die REST-API und die Referenz-UI. Der Se
 - `gbu_engine_schema.sql` – Datenmodell (21 Enums, 31 Tabellen).
 - `norm_*.json` – neun Regelversionen (81-20, 81-80, 2026, EN 81-41, Cyber voll/minimal, **81-20 mehrfragig**, **Cyber komponentenbasiert**, **81-80 Bestand als Fragebogen**); dazu `norm_fahrtreppe.json` (noch nicht in `seed_catalogs.ts`).
 - `gen_mf_catalog.py` + `mf_content/` – Generator und Inhalt des mehrfragigen Typs (Frage → Gefährdung mit Rollen, Anlagenmerkmale als Filter, Zahlenschwellen, Kompensation über Priorität). `gen_mf_review_xlsx.py` erzeugt daraus die Klärungsliste `GBU_MF_Klaerungsliste.xlsx` für die fachliche Gegenlesung.
-- `gen_ft_catalog.py` + `ft_content/` – Generator und Inhalt des Typs **Fahrtreppen und Fahrsteige** (ein Typ, zwei Erhebungsbereiche: B Betrieb/Betreiber, I Instandhaltung; Umschalter `qa_teil_instandhaltung`). `gen_ft_review_xlsx.py` erzeugt `GBU_Fahrtreppe_Klaerungsliste.xlsx`, `ft_smoke.ts` prüft den Katalog gegen den Referenz-Evaluator.
+- `gen_ft_catalog.py` + `ft_content/` – Generator und Inhalt des Typs **Fahrtreppen und Fahrsteige** (ein Typ, drei Erhebungsbereiche: B Betrieb/Betreiber, I Instandhaltung, N Bestandsanlage nach DIN EN 115-2 Anhang B; Umschalter `qa_teil_instandhaltung` und `qa_teil_en115_2`). `gen_ft_review_xlsx.py` erzeugt `GBU_Fahrtreppe_Klaerungsliste.xlsx`, `ft_smoke.ts` prüft den Katalog gegen den Referenz-Evaluator.
 - `gen_cy_catalog.py` + `cy_content/` – Generator und Inhalt des Typs **Cyber-GBU komponentenbasiert** (fünf Erhebungsbereiche A/Z/C/N/O; je Komponente „vorhanden → Schnittstellenkategorie → Zugang frei → Maßnahmen", unabhängige Sicherheitseinrichtung als Kompensation; 14 ZÜS-Prüfpunkte in `cy_zues_map.json`; Regelversion `cyber-mf-2026.2`, 25 Klärungen entschieden und alle 188 Regeln fachlich freigegeben 03.09.2026). `gen_cy_review_xlsx.py` erzeugt `GBU_Cyber_Klaerungsliste.xlsx`, `gen_cy_regelpruefung_xlsx.py`/`apply_cy_regelpruefung.py` bilden die Regelprüfung (Freigabe der Eigenregeln ohne Klärungspunkt), `cy_smoke.ts` prüft den Katalog gegen den Referenz-Evaluator (inkl. Lückensuche über alle Schnittstellen-/Maßnahmen-Kombinationen), `cy_catalog.test.ts` ist der E2E-Test gegen PostgreSQL. `catalog_check.py` bündelt die Konsistenz-/Schemaprüfung ohne Import-Nebenwirkungen.
 - `ui/` – eigenständige Bewertungsoberfläche (`python3 ui/build_ui.py` → `ui/gbu_bewertung.html`), unterstützt Ein- und Mehrfragen-Kataloge.
 - `flutter_ui/`, `dart_engine/` – Referenz-App und Dart-Port der Engine (nicht Teil des Server-Images).
@@ -48,6 +48,18 @@ python3 ui/build_ui.py                       # -> ui/gbu_bewertung.html
 npm test                                     # Tests inkl. mf_catalog.test.ts (braucht PostgreSQL, PG*-Variablen)
 ```
 
+Regelversion **`81-20-mf-2026.9`** (17.09.2026): Erhebung gekürzt –
+`mf_content/erhebung.py` (Fragengruppen als Karten, Nachweis-Vorbelegung aus
+dem ZÜS-Prüfbericht über D05, Stammdaten aus dem Anlagenstamm, Phasen
+stamm/vorab/vor_ort, vier Fragen gestrichen, sechs Zahlenfragen als
+Schwellenfragen). Die Regeln, Regel-IDs und Freigaben bleiben; die Umstellung
+der Schwellenfragen (8.10, 8.12, 8.14, 9.1, 9.3, 11.1) geschieht auf Seed-Ebene
+und schreibt die betroffenen Bedingungen mechanisch um – in `mf_content/*.py`
+stehen sie weiter als Zahlvergleiche. Seed-Felder `question_groups`,
+`nachweise`, `category_phases`, `category_order`, je Frage `group`, `source`,
+`stamm_key`; die Engine wertet unverändert Einzelfragen. Karten je Profil:
+`python3 sim_karten.py`.
+
 Regelversion **`81-20-mf-2026.3`** (04.09.2026): Lückenschluss gegenüber
 DIN EN 81-80 – fünf Gefährdungssituationen, die der Katalog bis dahin nicht
 erhoben hat, mit ihrem Bezug in DIN EN 81-20 ergänzt:
@@ -73,10 +85,25 @@ python3 gen_ft_review_xlsx.py                # -> GBU_Fahrtreppe_Klaerungsliste.
 node --experimental-strip-types ft_smoke.ts  # Smoke-Test gegen evaluator.ts
 ```
 
+Ein Typ, drei Erhebungsbereiche, jeder über ein Anlagenmerkmal zuschaltbar:
+
+| Bereich | Inhalt | Schalter |
+|---|---|---|
+| **B** | Betrieb und Nutzung (Betreiber-GBU) | immer |
+| **I** | Instandhaltung, Montage, Reinigung | `qa_teil_instandhaltung` |
+| **N** | Bestandsanlage nach DIN EN 115-2, Anhang B (74 Prüfpunkte) | `qa_teil_en115_2` |
+
+Im Bereich N ergibt sich die Stufe aus der Prioritätsstufe der Norm
+(H → Hoch, M → Mittel, N → Niedrig); der Zeitplan aus Tabelle A.2 steht in der
+mittelfristigen Maßnahme. Wo Bereich B oder I dieselbe Sache schon fragt, wird
+die vorhandene Frage wiederverwendet (`ref` in `ft_content/bestand_en115_2.py`) –
+der Prüfpunkt wird daraus abgeleitet, niemand antwortet zweimal.
+
 `ft_content/common.py` stellt die Register von `mf_content/common.py` (Erhebungs-
-bereiche, Baugruppen, Fragen-Präfixe) in place auf den Fahrtreppen-Typ um.
-Deshalb in einem Prozess **entweder** den MF- **oder** den FT-Katalog erzeugen –
-die Generatoren laufen getrennt.
+bereiche, Baugruppen, Fragen-Präfixe, Regel-ID-Registry) in place auf den
+Fahrtreppen-Typ um. Deshalb in einem Prozess **entweder** den MF- **oder** den
+FT-Katalog erzeugen – die Generatoren laufen getrennt. Die stabilen Regel-IDs
+des Typs liegen in `ft_content/regel_ids.json`.
 
 Fachlich abweichend von den Aufzugstypen: Fahrtreppen und Fahrsteige sind nach
 BetrSichV Anhang 2 Nr. 2 ausdrücklich **keine** überwachungsbedürftigen Anlagen –

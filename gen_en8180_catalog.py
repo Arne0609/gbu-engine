@@ -34,7 +34,9 @@ sys.path.insert(0, HERE)
 from en8180_content import ZUORDNUNG  # noqa: E402
 import catalog_check  # noqa: E402
 
-RULE_VERSION = '81-80-mf-2026.5'  # .5: best_case je Frage (Sammelantwort) 07.09.2026
+RULE_VERSION = '81-80-mf-2026.7'  # .7: Erhebung gekürzt (Gruppen, Nachweise, Stammdaten, Phasen, Schwellenfragen) 17.09.2026
+# .6: Korrekturen aus dem externen Prüfbericht 15.09.2026
+# .5: best_case je Frage (Sammelantwort) 07.09.2026
 # .4: begruendete Annahmen (Baujahr) 07.09.2026
 # .3: 26 neue Regeln freigegeben 04.09.2026
 
@@ -52,6 +54,16 @@ ZUSATZ = [
     'MF-SF01',  # Feuerwehraufzug / gebäudeseitige Sonderfunktionen
     'MF-U02', 'MF-U03', 'MF-U04', 'MF-U05', 'MF-U06', 'MF-U07', 'MF-U08',
     'MF-U10', 'MF-U11', 'MF-U12', 'MF-U13', 'MF-U14', 'MF-U15',
+    # Ergänzung 16.09.2026 (Entscheidung Arne nach der zweiten Prüfung):
+    # TRBS 3121 Anh. 1 Nr. 16 gilt ausdrücklich für Bestandsanlagen ...
+    'MF-K12',   # UCM
+    'MF-K14',   # statisch unbestimmte Lagerung
+    # ... und diese Punkte sind Betreiberpflichten nach BetrSichV/ArbStättV,
+    # unabhängig vom Regelwerk der Errichtung.
+    'MF-Z01', 'MF-Z04', 'MF-Z05', 'MF-Z06', 'MF-Z08', 'MF-Z09',
+    'MF-M16', 'MF-M19', 'MF-S06', 'MF-F08',
+    # Bewusst nicht: MF-F02 (Abdeckung der Einzugstellen nach EN 81-20 5.5.7 –
+    # reiner Konstruktionspunkt; für Bestandsanlagen über EN 81-80 abgedeckt).
 ]
 
 
@@ -136,6 +148,28 @@ def build():
         void = mf.get('assumptions_void_when')
         if void and void.get('question') in fragen:
             seed['assumptions_void_when'] = void
+    # Erhebung (17.09.2026): Gruppen, Nachweise, Phasen und Reihenfolge des
+    # MF-Katalogs gelten auch fuer den Bestandstyp – beschnitten auf die hier
+    # vorhandenen Fragen. Der Bestandstyp ist fuer Anlagen bis 1998 gedacht:
+    # Nachweise mit min_baujahr greifen dort ohnehin nicht, die ohne schon.
+    if mf.get('category_phases'):
+        seed['category_phases'] = dict(mf['category_phases'])
+    if mf.get('category_order'):
+        seed['category_order'] = list(mf['category_order'])
+    gruppen = []
+    for g in mf.get('question_groups', []):
+        items = [it for it in g['items'] if it['question'] in fragen]
+        if items:
+            g2 = dict(g); g2['items'] = items
+            if all(it['mode'] == 'check' for it in items):
+                g2['kind'] = 'checklist'
+            gruppen.append(g2)
+    if gruppen:
+        seed['question_groups'] = gruppen
+    nachweise = [n for n in mf.get('nachweise', []) if n['question'] in fragen
+                 and n['when']['question'] in fragen]
+    if nachweise:
+        seed['nachweise'] = nachweise
     return seed, mf
 
 

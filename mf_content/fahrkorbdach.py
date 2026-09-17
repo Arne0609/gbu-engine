@@ -9,6 +9,8 @@ GRP_BEL = 'Beleuchtung'
 GRP_SK = 'Sicherheitskomponenten'
 
 # ---- Fragen ----------------------------------------------------------------
+# Schwellenfragen 9.1/9.3: erhebung.py (SCHWELLEN) stellt sie im Seed auf Bereichsauswahl um;
+# Regeln hier weiter als Zahlvergleich schreiben (stabile Regel-IDs).
 num('qf_spalt_mm', 'Größter horizontaler Abstand zwischen Fahrkorbdachkante und '
     'Schachtwand [mm]', min=0, max=3000, ui='9.1')
 yn('qf_gelaender', 'Geländer auf dem Fahrkorbdach vorhanden?', ui='9.2',
@@ -31,6 +33,12 @@ sel('qf_nachbar_trennung', 'Abtrennung zum Nachbaraufzug / Nachbar-Gegengewicht 
              ('grobmaschig', 'Grobmaschiges Trenngitter oder Spanndrähte'),
              ('fehlt', 'Keine Abdeckung / kein Trenngitter')],
     visible_when=yes('qa_mehrere_aufzuege'))
+yn('qf_nachbar_abschaltung', 'Einrichtung zum automatischen Abschalten des Nachbaraufzugs bei '
+   'Arbeiten im Fahrschacht vorhanden?', ui='9.6a',
+   visible_when=in_('qf_nachbar_trennung', ['fehlt', 'teilweise', 'grobmaschig']))
+yn('qf_nachbar_abschaltung_geprueft', 'Automatische Abschaltung in der Funktion geprüft, alle '
+   'Nachbaranlagen erfasst und Wirkung bei Inspektionsbetrieb bestätigt?', ui='9.6b',
+   visible_when=yes('qf_nachbar_abschaltung'))
 sel('qf_schutzraum', 'Schutzraum im Schachtkopf', ui='9.7',
     options=[('normgerecht', 'Schutzraum nach EN 81-20 vorhanden (Abmessungen eingehalten)'),
              ('altnorm', 'Schutzraum nach TRA 200 / EN 81-1/-2 (kleiner als EN 81-20)'),
@@ -104,21 +112,44 @@ hz('MF-F02', 'Einzugsgefahr an Rollen im Schachtkopf / auf dem Fahrkorbdach', GR
    [('qf_einzugstellen', 'TRIGGER', 'ALWAYS'),
     ('qf_einzug_abdeckung', 'TRIGGER', 'CONDITIONAL', {'required_when': yes('qf_einzugstellen')})],
    [r(eq('qf_einzug_abdeckung', 'offen'), 'HIGH', mfrom=('N20-F2', 'Einzugsstellen offen'),
-      evidence='HIGH_CONFIDENCE'),
+      sofort='Arbeiten im Bereich der Einzugstellen nur bei stillgesetzter und gegen Wiederanlauf '
+             'gesicherter Anlage; keine Fahrt mit Personen auf dem Fahrkorbdach',
+      evidence='HIGH_CONFIDENCE', pb='B11 – Sofortmaßnahme wirksam gemacht'),
     r(eq('qf_einzug_abdeckung', 'teilweise'), 'MEDIUM', mfrom=('N20-F2', 'Teilweise'),
-      evidence='HIGH_CONFIDENCE')],
+      sofort='Offene Einzugstellen vor Arbeiten ermitteln; dort nur bei stillgesetzter Anlage arbeiten',
+      evidence='HIGH_CONFIDENCE', pb='B11 – Sofortmaßnahme wirksam gemacht')],
    sources=[en8120('5.5.7'), trbs3121('Anh. 1 Nr. 20')], factor=F_ROTIEREND, persons=[WARTUNG],
    agg='MAXIMUM', bereich='F')
 
 hz('MF-F03', 'Gefährdung durch Nachbaraufzug oder dessen Gegengewicht (Fahrkorbdach)', GRP_F,
    [('qa_mehrere_aufzuege', 'APPLICABILITY', 'NEVER'),
-    ('qf_nachbar_trennung', 'TRIGGER', 'ALWAYS')],
-   [r(eq('qf_nachbar_trennung', 'fehlt'), 'HIGH', mfrom=('N20-F3', 'Fehlendes Trenngitter'),
-      evidence='HIGH_CONFIDENCE'),
+    ('qf_nachbar_trennung', 'TRIGGER', 'ALWAYS'),
+    ('qf_nachbar_abschaltung', 'COMPENSATION', 'CONDITIONAL',
+     {'required_when': in_('qf_nachbar_trennung', ['fehlt', 'teilweise', 'grobmaschig'])}),
+    ('qf_nachbar_abschaltung_geprueft', 'COMPENSATION', 'CONDITIONAL',
+     {'required_when': yes('qf_nachbar_abschaltung')})],
+   [r(all_(in_('qf_nachbar_trennung', ['fehlt', 'teilweise', 'grobmaschig']),
+           yes('qf_nachbar_abschaltung'), no('qf_nachbar_abschaltung_geprueft')), 'MEDIUM', prio=210,
+      sofort='Nachbaraufzug zusätzlich von Hand abschalten und gegen Wiedereinschalten sichern',
+      mittel='Funktion der automatischen Abschaltung für alle Nachbaranlagen prüfen und dokumentieren',
+      evidence='INFERRED', pb='Prüfbericht 16.09.2026 – Abschaltung ohne Funktionsnachweis'),
+    r(all_(in_('qf_nachbar_trennung', ['fehlt', 'teilweise', 'grobmaschig']),
+           yes('qf_nachbar_abschaltung'), yes('qf_nachbar_abschaltung_geprueft')), 'NO_RISK', prio=200,
+      evidence='HIGH_CONFIDENCE',
+      notes='TRBS 3121 Anh. 1 Nr. 4 c): automatische Abschaltung des Nachbaraufzugs ist gleichwertige Alternative.',
+      pb='H03 – neu: Alternative automatische Abschaltung'),
+    r(eq('qf_nachbar_trennung', 'fehlt'), 'HIGH', mfrom=('N20-F3', 'Fehlendes Trenngitter'),
+      sofort='Vor Arbeiten auf dem Fahrkorbdach den Nachbaraufzug abschalten und gegen '
+             'Wiedereinschalten sichern',
+      mittel='Trenngitter über die volle Schachthöhe nachrüsten, Umwehrung mit mehr als 0,5 m Abstand '
+             'zu beweglichen Teilen herstellen oder automatische Abschaltung des Nachbaraufzugs vorsehen',
+      evidence='HIGH_CONFIDENCE', pb='H03 – Maßnahme benennt den Nachbaraufzug und die Alternativen'),
     r(eq('qf_nachbar_trennung', 'teilweise'), 'MEDIUM', mfrom=('N20-F3', 'Teilweise'),
-      evidence='HIGH_CONFIDENCE'),
+      sofort='Vor Arbeiten im Bereich der offenen Stellen den Nachbaraufzug abschalten und sichern',
+      evidence='HIGH_CONFIDENCE', pb='H03 – Sofortmaßnahme benennt den Nachbaraufzug'),
     r(eq('qf_nachbar_trennung', 'grobmaschig'), 'MEDIUM', mfrom=('N20-F3', 'Grobmaschiges'),
-      evidence='HIGH_CONFIDENCE')],
+      sofort='Vor Arbeiten im Bereich des Trenngitters den Nachbaraufzug abschalten und sichern',
+      evidence='HIGH_CONFIDENCE', pb='H03 – Sofortmaßnahme benennt den Nachbaraufzug')],
    sources=[en8120('5.2.5.5.2.2'), trbs3121('Anh. 1 Nr. 4')], factor=F_BEWEGT, persons=[WARTUNG],
    bereich='F')
 
@@ -127,8 +158,9 @@ hz('MF-F04', 'Unzureichender Schutzraum / Kopffreiheit im Schachtkopf', GRP_F,
     ('qf_kopffreiheit_gekennz', 'TRIGGER', 'CONDITIONAL', {'required_when': eq('qf_schutzraum', 'reduziert')})],
    [r(eq('qf_schutzraum', 'nicht'), 'HIGH', mfrom=('N20-F8', 'Schutzraum nicht mehr'),
       evidence='HIGH_CONFIDENCE'),
-    r(all_(eq('qf_schutzraum', 'reduziert'), no('qf_kopffreiheit_gekennz')), 'HIGH',
-      mfrom=('N20-F8', 'Kopffreiheit'), evidence='HIGH_CONFIDENCE'),
+    r(all_(eq('qf_schutzraum', 'reduziert'), no('qf_kopffreiheit_gekennz')), 'MEDIUM',
+      mfrom=('N20-F8', 'Kopffreiheit'), evidence='HIGH_CONFIDENCE',
+      pb='H15 – Hoch auf Mittel: Schutzeinrichtung wirkt, es fehlt die Kennzeichnung'),
     r(eq('qf_schutzraum', 'altnorm'), 'LOW',
       sofort='Zustand dokumentieren, Beschäftigte über den reduzierten Schutzraum unterweisen',
       mittel='Bei Modernisierung Schutzräume nach EN 81-20 herstellen oder Schutzeinrichtung für temporären Schutzraum vorsehen',
@@ -147,7 +179,9 @@ hz('MF-F05', 'Fehlende oder unzulängliche Inspektionssteuerung auf dem Fahrkorb
    [r(no('qf_inspektion'), 'HIGH', mfrom=('N20-F6', 'Keine Inspektionssteuerung'),
       evidence='HIGH_CONFIDENCE'),
     r(no('qf_inspektion_geschw'), 'HIGH', mfrom=('N20-F5', 'Inspektionsgeschwindigkeit'),
-      evidence='HIGH_CONFIDENCE'),
+      sofort='Keine Inspektionsfahrten mit Personen auf dem Fahrkorbdach bis zur Begrenzung der '
+             'Geschwindigkeit; Arbeiten nur bei stillgesetzter Anlage',
+      evidence='HIGH_CONFIDENCE', pb='B11 – „nur abwärts" ist keine wirksame Maßnahme'),
     r(no('qf_inspektion_schutz'), 'MEDIUM', mfrom=('N20-F6', 'Kein Schutz'),
       evidence='HIGH_CONFIDENCE'),
     r(no('qf_inspektion_erreichbar'), 'MEDIUM', mfrom=('N20-F6', 'Inspektionssteuerung vorhanden, aber'),
@@ -172,7 +206,11 @@ hz('MF-F07', 'Nicht tragfähiges Fahrkorbdach oder unüberwachte Dachklappe', GR
     ('qf_klappe_ueberwacht', 'TRIGGER', 'CONDITIONAL', {'required_when': yes('qf_klappe')}),
     ('qa_norm_inverkehrbringen', 'DOCUMENTATION', 'NEVER')],
    [r(no('qf_dach_tragfaehig'), 'HIGH', mfrom=('N20-F9', 'Fahrkorbdach nicht tragfähig'),
-      evidence='HIGH_CONFIDENCE'),
+      sofort='Fahrkorbdach nicht betreten, bis die Tragfähigkeit hergestellt oder nachgewiesen ist; '
+             'Warnhinweis am Zugang anbringen',
+      mittel='Tragfähiges Fahrkorbdach herstellen (200 kg auf 0,30 m × 0,30 m, DIN EN 81-20 5.4.7.1) '
+             'und nachweisen',
+      evidence='HIGH_CONFIDENCE', pb='B11 – widersprüchliche Sofortmaßnahme bereinigt'),
     r(no('qf_klappe_ueberwacht'), 'MEDIUM', mfrom=('N20-F9', 'Klappe im Fahrkorbdach'),
       evidence='HIGH_CONFIDENCE')],
    sources=[en8120('5.4.7.1'), en8120('5.4.6.2')], factor=F_ABSTURZ_SCHACHT, persons=[WARTUNG],
