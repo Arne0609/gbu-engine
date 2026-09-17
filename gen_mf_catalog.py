@@ -219,6 +219,22 @@ ORTSBEREICHE = [
     'G – Schachtgrube',
 ]
 
+# Bereiche mit Sammelantwort: die Ortsbereiche und – seit 17.09.2026 auf
+# Arnes Wunsch – das Umfeld (U): Der Pruefer soll Umfeld, Gebaeude und Nutzung
+# mit einem Klick komplett als unauffaellig setzen koennen. Anlagenmerkmale (A)
+# kommen aus dem Anlagenstamm, Unterlagen (D) sind keine Sichtpruefung.
+UMFELD = 'U – Umfeld, Gebäude und Nutzung'
+SAMMELBEREICHE = ORTSBEREICHE + [UMFELD]
+
+# Auswahlfragen bekommen ueberall dort einen best_case, wo eine Sammelantwort
+# traegt (17.09.2026, Arne): Die Auswahl beschreibt einen Zustand
+# (Schutzraum normgerecht, Lueftung ausreichend, Zustand der Ausstattung ok),
+# und die Gegenprobe in mf_content/sammelantwort.py laesst nur Werte stehen,
+# die in keiner Belegung schlechter abschneiden. AUSGENOMMEN bleiben die
+# Schwellenfragen (Messwerte) – siehe erhebung.SCHWELLEN: ein Messergebnis ist
+# keine Sichtpruefung, das beantwortet der Pruefer bewusst.
+AUSWAHL_SAMMELBEREICHE = SAMMELBEREICHE
+
 
 def set_best_case(seed):
     """Leitet je Ja/Nein-Frage ab, welcher Wert unauffaellig ist.
@@ -234,10 +250,15 @@ def set_best_case(seed):
         Fahrkorbtuer - ihr Fehlen ist ein Mangel, ihr Vorhandensein macht
         andere Regeln scharf),
       * die als APPLICABILITY den Katalogumfang steuert,
-      * die in keiner Befundregel vorkommt,
-      * die ausserhalb der sieben Ortsbereiche liegt. Anlagenmerkmale,
-        Unterlagen, Umfeld und Sonderfunktionen sind keine Sichtpruefung an
-        einem Ort; sie bleiben Einzelfragen.
+      * die in keiner Befundregel vorkommt (reine Dokumentation; im Umfeld
+        setzt mf_content/erhebung.py fuer solche Fragen den Wert ausdruecklich),
+      * die ausserhalb der SAMMELBEREICHE liegt. Anlagenmerkmale, Unterlagen
+        und Sonderfunktionen sind keine Sichtpruefung an einem Ort; sie
+        bleiben Einzelfragen.
+    Auswahlfragen (SELECT) in AUSWAHL_SAMMELBEREICHE: best_case ist die eine
+    Option, die in keiner Befundregel vorkommt – gibt es mehrere oder keine,
+    bleibt die Frage offen. Die Schwellenfragen nimmt erhebung.anreichern()
+    danach wieder heraus.
     Blaetter unter einem `not` zaehlen nicht mit - dort ist die Polaritaet
     umgekehrt und die Ableitung nicht mehr eindeutig.
     """
@@ -260,7 +281,9 @@ def set_best_case(seed):
         else:
             out.append((expr, negiert))
 
-    verlangt = {}
+    verlangt = {}       # YES_NO: Werte, die einen Befund ausloesen
+    ausloeser = {}      # SELECT: Optionen, die einen Befund ausloesen
+    unklar = set()      # SELECT: Vergleich, der sich nicht auf Optionen abbilden laesst
     for r in seed['rules']:
         if r['result'] not in ('LOW', 'MEDIUM', 'HIGH'):
             continue
@@ -270,29 +293,62 @@ def set_best_case(seed):
             if negiert:
                 continue
             code = lf['question']
-            if qmap.get(code, {}).get('type') != 'YES_NO':
-                continue
+            typ = qmap.get(code, {}).get('type')
             wert = lf.get('value')
-            if not isinstance(wert, bool):
-                continue
-            if lf['operator'] == 'EQ':
-                verlangt.setdefault(code, set()).add(wert)
-            elif lf['operator'] == 'NEQ':
-                verlangt.setdefault(code, set()).add(not wert)
+            if typ == 'YES_NO':
+                if not isinstance(wert, bool):
+                    continue
+                if lf['operator'] == 'EQ':
+                    verlangt.setdefault(code, set()).add(wert)
+                elif lf['operator'] == 'NEQ':
+                    verlangt.setdefault(code, set()).add(not wert)
+            elif typ == 'SELECT':
+                if lf['operator'] == 'EQ' and isinstance(wert, str):
+                    ausloeser.setdefault(code, set()).add(wert)
+                elif lf['operator'] == 'IN' and isinstance(wert, list):
+                    ausloeser.setdefault(code, set()).update(wert)
+                elif lf['operator'] != 'ANSWERED':
+                    unklar.add(code)   # NEQ/NOT_IN: Polaritaet nicht eindeutig
 
     gesetzt = 0
     for q in seed['questions']:
         q.pop('best_case', None)
-        if q['type'] != 'YES_NO' or q['code'] in applicability:
+        if q['code'] in applicability or q.get('source') == 'anlagenstamm':
             continue
-        if q.get('category') not in ORTSBEREICHE:
+        if q.get('category') not in SAMMELBEREICHE:
             continue
-        werte = verlangt.get(q['code'], set())
-        if len(werte) != 1:
-            continue
-        q['best_case'] = not werte.pop()
-        gesetzt += 1
-    return gesetzt
+        if q['type'] == 'YES_NO':
+            werte = verlangt.get(q['code'], set())
+            if len(werte) != 1:
+                continue
+            q['best_case'] = not werte.pop()
+            gesetzt += 1
+        elif q['type'] == 'SELECT' and q.get('category') in AUSWAHL_SAMMELBEREICHE:
+            if q['code'] in unklar or q['code'] not in ausloeser:
+                continue
+            frei = [o['value'] for o in q.get('options', []) if o['value'] not in ausloeser[q['code']]]
+            if len(frei) != 1:
+                continue
+            q['best_case'] = frei[0]
+            gesetzt += 1
+
+    # Gegenprobe durch Simulation (mf_content/sammelantwort.py, 17.09.2026):
+    # Kompensationsfragen, die in den Regeln nur mit ihrem guten Wert stehen,
+    # bekaemen oben den falschen best_case. Was die Probe nicht bestaetigt,
+    # wird gestrichen und bleibt Einzelfrage.
+    from mf_content import sammelantwort
+    gestrichen, moeglich, skipped = sammelantwort.gegenprobe(seed)
+    for code, wert in gestrichen:
+        print('best_case gestrichen (Gegenprobe): %s = %r' % (code, wert))
+    if skipped:
+        print('best_case-Gegenprobe uebersprungen (zu viele Belegungen): %s' % skipped)
+    zusatz = {c: v for c, v in moeglich.items()
+              if qmap[c].get('category') in SAMMELBEREICHE and c not in applicability
+              and (qmap[c]['type'] == 'YES_NO' or qmap[c].get('category') in AUSWAHL_SAMMELBEREICHE)}
+    if zusatz:
+        print('Hinweis: laut Simulation ebenfalls eindeutig unauffaellig, aber nicht gesetzt (%d): %s'
+              % (len(zusatz), ', '.join('%s=%r' % kv for kv in sorted(zusatz.items()))))
+    return gesetzt - len(gestrichen)
 
 
 def check(seed):
@@ -447,7 +503,17 @@ def main():
              len(seed['rules']), len(seed['measures']), len(C.KLAERUNG)))
     print('Stufen:', dict(res), '| Evidenz:', dict(ev))
     from mf_content import erhebung
+    genutzt = sorted({n['source'].split('Nr.')[-1].strip() for n in seed.get('nachweise', [])
+                      if 'Nr.' in n.get('source', '') and n['source'].split('Nr.')[-1].strip().isdigit()},
+                     key=int)
+    print('ZÜS-Hauptprüfung: %d von %d Prüfpunkten genutzt (%s) | ohne Katalogfrage (Wartung/ZÜS bzw. Cyber): %s'
+          % (len(genutzt), erhebung.ZUES_PRUEFPUNKTE, ', '.join(genutzt),
+             ', '.join(erhebung.OHNE_KATALOGFRAGE)))
     je, n_karten = erhebung.kennzahlen(seed)
+    print('Sammelantwort Umfeld (U): %d von %d Fragen sammelbar; ohne best_case (gewollt: Folgefragen nach Auffälligkeit): %s'
+          % (sum(1 for q in seed['questions'] if q.get('category') == UMFELD and q.get('best_case') is not None),
+             sum(1 for q in seed['questions'] if q.get('category') == UMFELD),
+             ', '.join(erhebung.umfeld_offen(seed)) or '–'))
     print('Erhebung: %d Karten (%d Gruppen, %d Nachweise, %d Stammdaten): %s'
           % (n_karten, len(seed.get('question_groups', [])), len(seed.get('nachweise', [])),
              sum(1 for q in seed['questions'] if q.get('source') == 'anlagenstamm'), je))

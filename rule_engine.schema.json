@@ -639,8 +639,11 @@
      }
     },
     "best_case": {
-     "type": "boolean",
-     "description": "Unauffaelliger Wert dieser Ja/Nein-Frage, aus den Befundregeln abgeleitet. Grundlage der Sammelantwort (\"Sichtpruefung ohne Befund\"). Fehlt bei mehrdeutigen Fragen, APPLICABILITY-Fragen und ausserhalb der Ortsbereiche."
+     "type": [
+      "boolean",
+      "string"
+     ],
+     "description": "Unauffaelliger Wert dieser Frage (Ja/Nein: boolean; Auswahl: Optionswert), aus den Befundregeln abgeleitet. Grundlage der Sammelantwort (\"Sichtpruefung ohne Befund\"). Fehlt bei mehrdeutigen Fragen, APPLICABILITY-Fragen, Stammfragen und ausserhalb der Sammelbereiche (Ortsbereiche und Umfeld)."
     },
     "source": {
      "type": "string",

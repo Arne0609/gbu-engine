@@ -60,6 +60,50 @@ stehen sie weiter als Zahlvergleiche. Seed-Felder `question_groups`,
 `stamm_key`; die Engine wertet unverändert Einzelfragen. Karten je Profil:
 `python3 sim_karten.py`.
 
+Erhebungsaufwand weiter gesenkt (17.09.2026, zweiter Durchgang): Karten statt
+Einzelfragen auch dort, wo bisher Einzelkarten standen – 30 Fragen mit
+eindeutigem unauffälligem Wert sind in die Ortskarten gewandert, vier Karten
+sind neu (M17 Notendschalter, F07 Schutzraum Schachtkopf, T10 Türblätter,
+K15 Beleuchtung im Fahrkorb). Auswahlfragen bekommen jetzt auch in den
+Ortsbereichen einen `best_case` (AUSWAHL_SAMMELBEREICHE = SAMMELBEREICHE), und
+`erhebung.KEIN_SAMMEL` nimmt davon aus, was Bauart-, Ausstattungs- oder
+Prüfaussage ist (Pufferbauart, Art der Notrufeinrichtung/Notbeleuchtung,
+Schutzraum Schachtkopf, Notendschalter, Erreichbarkeit für die Befreiung);
+`erhebung.SCHWELLEN` bleibt ohnehin außen vor. `erhebung.DOKU_OPTIONAL` macht
+zwei reine Dokumentationsfragen optional. Wirkung je Profil (`sim_karten.py`):
+Karten vor Ort 70 → 58 (P2 48 → 44, P3 66 → 54), Einzelantworten vor Ort
+39 → 22. Die App setzt mit „Keine weiteren Auffälligkeiten" seither auch
+Auswahlpositionen mit `best_case`.
+
+Prüfpunkte der ZÜS-Hauptprüfung (17.09.2026): Von den 31 Punkten in TRBS 1201
+Teil 4, 3.3 (2) werden 25 für Vorbelegungen genutzt (47 Einträge in
+`erhebung.NACHWEISE`). Neu ausgewertet wurden Nr. 1 (sicherer und ungehinderter
+Zugang → 5.4 Durchgangsmaße) und Nr. 7 (Schutz gegen Quetschen, Scheren,
+Einziehen von Händen → 7.10). Ohne Entsprechung im Katalog bleiben Nr. 15
+(Seilführung, Seilendbefestigungen), 16 (Seilrollen, Umlenkrollen), 17
+(Treibscheibe, Treibfähigkeit), 24 (Gegengewichtsausgleich) und 25
+(Aufsetzvorrichtung); Nr. 28 (MSR, funktionale Sicherheit, Software-Stand)
+liegt im Cyber-Fragebogen. Das ist entschieden, nicht übersehen (Arne,
+17.09.2026): Diese Punkte betreffen den technischen Zustand von Tragmitteln
+und Antrieb und bleiben der Wartung und der ZÜS-Hauptprüfung überlassen – die
+Gefährdungsbeurteilung fragt die Schutzeinrichtungen ab, die bei deren
+Versagen wirken (Fangvorrichtung Nr. 21, Begrenzer Nr. 12, Schlaffseil­
+sicherung Nr. 11, Führungen Nr. 13). Festgehalten in
+`erhebung.OHNE_KATALOGFRAGE`; der Generator meldet die Abdeckung bei jedem
+Lauf und warnt, sobald ein Prüfpunkt weder genutzt noch dort begründet ist.
+
+Sammelantwort im Umfeld (17.09.2026): Bereich U ist Sammelbereich – ein Klick
+setzt Umfeld, Gebäude und Nutzung komplett auf den unauffälligen Wert; offen
+bleiben nur Folgefragen nach einer Auffälligkeit (Ex-Schutz, Zugangskonzept).
+Auswahlfragen bekommen dort einen `best_case` (Optionswert, Schema
+`boolean|string`), reine Dokumentationsfragen den Wert aus
+`erhebung.SAMMEL_DOKU`. Neu ist die Gegenprobe `mf_content/sammelantwort.py`:
+Sie rechnet je Gefährdung alle Belegungen mit den Engine-Regeln durch und
+streicht jeden `best_case`, der irgendwo ein schlechteres Ergebnis liefert –
+das traf vier Kompensationsfragen (8.13, 9.6a, 11.14a, 15.25a), die vorher den
+falschen Wert trugen. Der Generator meldet Gestrichenes und was laut Simulation
+zusätzlich eindeutig wäre, setzt Letzteres aber nicht.
+
 Regelversion **`81-20-mf-2026.3`** (04.09.2026): Lückenschluss gegenüber
 DIN EN 81-80 – fünf Gefährdungssituationen, die der Katalog bis dahin nicht
 erhoben hat, mit ihrem Bezug in DIN EN 81-20 ergänzt:

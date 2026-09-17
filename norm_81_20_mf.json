@@ -499,7 +499,8 @@
      "value": "personenschaden",
      "label": "Unfälle mit Personenschaden"
     }
-   ]
+   ],
+   "optional": true
   },
   {
    "code": "qd_notfallplan",
@@ -615,7 +616,8 @@
    "domain": "GBU",
    "text": "Liegt für die Anlage bereits eine dokumentierte Gefährdungsbeurteilung des Betreibers vor?",
    "category": "D – Unterlagen und Betreiberorganisation",
-   "ui_number": "E5"
+   "ui_number": "E5",
+   "optional": true
   },
   {
    "code": "qd_konformitaet_geprueft",
@@ -668,7 +670,9 @@
    "text": "Ist die Asbest-/Schadstoffsituation der Anlage unbekannt (Baujahr vor 1995, keine Unterlagen, keine Beprobung)?",
    "category": "U – Umfeld, Gebäude und Nutzung",
    "ui_number": "15.11",
-   "help_text": "Ja, wenn keine Schadstofferkundung vorliegt und asbesthaltige Bauteile nach Baujahr oder Bauart nicht auszuschließen sind. Das ist kein Befund, sondern ein Erkundungsbedarf."
+   "help_text": "Ja, wenn keine Schadstofferkundung vorliegt und asbesthaltige Bauteile nach Baujahr oder Bauart nicht auszuschließen sind. Das ist kein Befund, sondern ein Erkundungsbedarf.",
+   "best_case": false,
+   "group": "U01"
   },
   {
    "code": "qu_gefahrstoff_chem_lager",
@@ -677,6 +681,7 @@
    "text": "Chemische Gefahrstoffe in unmittelbarer Nähe der Anlage gelagert?",
    "category": "U – Umfeld, Gebäude und Nutzung",
    "ui_number": "15.28",
+   "best_case": false,
    "group": "U01"
   },
   {
@@ -686,6 +691,7 @@
    "text": "Biologische Arbeitsstoffe (Labor, Klinik, Entsorgung) in unmittelbarer Nähe der Anlage?",
    "category": "U – Umfeld, Gebäude und Nutzung",
    "ui_number": "15.29",
+   "best_case": false,
    "group": "U01"
   },
   {
@@ -695,6 +701,7 @@
    "text": "Transport chemischer Gefahrstoffe mit dem Aufzug?",
    "category": "U – Umfeld, Gebäude und Nutzung",
    "ui_number": "15.32",
+   "best_case": false,
    "group": "U02"
   },
   {
@@ -704,6 +711,7 @@
    "text": "Transport biologischer Arbeitsstoffe / infektiöser Stoffe mit dem Aufzug?",
    "category": "U – Umfeld, Gebäude und Nutzung",
    "ui_number": "15.33",
+   "best_case": false,
    "group": "U02"
   },
   {
@@ -713,6 +721,7 @@
    "text": "Transport brennbarer oder leicht entzündlicher Stoffe mit dem Aufzug?",
    "category": "U – Umfeld, Gebäude und Nutzung",
    "ui_number": "15.34",
+   "best_case": false,
    "group": "U02"
   },
   {
@@ -722,6 +731,7 @@
    "text": "Transport radioaktiver Stoffe mit dem Aufzug?",
    "category": "U – Umfeld, Gebäude und Nutzung",
    "ui_number": "15.35",
+   "best_case": false,
    "group": "U02"
   },
   {
@@ -731,6 +741,7 @@
    "text": "Kann sich im Bereich der Anlage ein explosionsfähiges Gemisch bilden (Gase, Dämpfe, Stäube)?",
    "category": "U – Umfeld, Gebäude und Nutzung",
    "ui_number": "15.25",
+   "best_case": false,
    "group": "U03"
   },
   {
@@ -768,6 +779,7 @@
    "text": "Unzulässige Temperaturen im Triebwerksraum oder Schacht möglich (Überhitzung über 40 °C, Frost)?",
    "category": "U – Umfeld, Gebäude und Nutzung",
    "ui_number": "15.23",
+   "best_case": false,
    "group": "U04"
   },
   {
@@ -777,6 +789,7 @@
    "text": "Feuchtigkeit oder Kondensat an sicherheitsrelevanten Bauteilen (Steuerung, Bremse, Türverriegelung)?",
    "category": "U – Umfeld, Gebäude und Nutzung",
    "ui_number": "15.23a",
+   "best_case": false,
    "group": "U04"
   },
   {
@@ -786,6 +799,7 @@
    "text": "Massive Korrosion, Betonabplatzungen oder andere bauliche Schäden am Schacht oder Triebwerksraum?",
    "category": "U – Umfeld, Gebäude und Nutzung",
    "ui_number": "15.23b",
+   "best_case": false,
    "group": "U04"
   },
   {
@@ -795,6 +809,7 @@
    "text": "Bauliche Änderungen am Schacht / Triebwerksraum ohne statische und sicherheitstechnische Bewertung?",
    "category": "U – Umfeld, Gebäude und Nutzung",
    "ui_number": "15.26",
+   "best_case": false,
    "group": "U05"
   },
   {
@@ -804,6 +819,7 @@
    "text": "Nachträgliche Verkleidungen oder Änderungen, die den Sicherheitszustand verschlechtern (Schutzräume, Lüftung, Zugänge)?",
    "category": "U – Umfeld, Gebäude und Nutzung",
    "ui_number": "15.26a",
+   "best_case": false,
    "group": "U05"
   },
   {
@@ -818,6 +834,7 @@
     "operator": "EQ",
     "value": true
    },
+   "best_case": true,
    "group": "U06"
   },
   {
@@ -832,6 +849,7 @@
     "operator": "EQ",
     "value": true
    },
+   "best_case": true,
    "group": "U06"
   },
   {
@@ -846,6 +864,7 @@
     "operator": "EQ",
     "value": true
    },
+   "best_case": true,
    "group": "U06"
   },
   {
@@ -854,7 +873,9 @@
    "domain": "GBU",
    "text": "Behindert eine Brandschutzeinrichtung (Brandschutztür, Abschottung) den Aufzugsbetrieb oder die Personenrettung?",
    "category": "U – Umfeld, Gebäude und Nutzung",
-   "ui_number": "15.8d"
+   "ui_number": "15.8d",
+   "best_case": false,
+   "group": "U06"
   },
   {
    "code": "qu_entrauchung",
@@ -885,7 +906,9 @@
      "value": "kein_nachweis",
      "label": "Kein Nachweis über Prüfung"
     }
-   ]
+   ],
+   "best_case": "ok",
+   "group": "U06"
   },
   {
    "code": "qu_sprinkler_bewertet",
@@ -898,7 +921,9 @@
     "question": "qa_sprinkler_vorhanden",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "best_case": true,
+   "group": "U06"
   },
   {
    "code": "qu_wartung_gefaehrlicher_zugang",
@@ -907,6 +932,7 @@
    "text": "Müssen Fremdgewerke (Lüftung, Elektro, Reinigung) für ihre Arbeiten in den Aufzugsbereich (Schacht, Triebwerksraum) eindringen?",
    "category": "U – Umfeld, Gebäude und Nutzung",
    "ui_number": "15.36",
+   "best_case": false,
    "group": "U10"
   },
   {
@@ -930,6 +956,7 @@
    "text": "Prüfnachweise der angrenzenden Gewerke (BMA, RWA, Ersatzstrom, Löschanlage) verfügbar?",
    "category": "U – Umfeld, Gebäude und Nutzung",
    "ui_number": "15.37",
+   "best_case": true,
    "group": "U11"
   },
   {
@@ -939,6 +966,7 @@
    "text": "Zuständigkeiten zwischen den Gewerken für Maßnahmen an den Schnittstellen geregelt?",
    "category": "U – Umfeld, Gebäude und Nutzung",
    "ui_number": "15.38",
+   "best_case": true,
    "group": "U11"
   },
   {
@@ -948,6 +976,7 @@
    "text": "Grenzt der Aufzugszugang unmittelbar an Fahrwege oder Verkehrsflächen (Tiefgarage, Anlieferung, Flurförderzeuge)?",
    "category": "U – Umfeld, Gebäude und Nutzung",
    "ui_number": "15.27",
+   "best_case": false,
    "group": "U12"
   },
   {
@@ -957,6 +986,7 @@
    "text": "Abgase oder Emissionen im Aufstellbereich (Tiefgarage, Werkstatt, Notstromaggregat)?",
    "category": "U – Umfeld, Gebäude und Nutzung",
    "ui_number": "15.24",
+   "best_case": false,
    "group": "U13"
   },
   {
@@ -966,6 +996,7 @@
    "text": "Erhöhte Lärmbelastung im Triebwerksraum oder am Aufzug (über 85 dB(A))?",
    "category": "U – Umfeld, Gebäude und Nutzung",
    "ui_number": "15.22",
+   "best_case": false,
    "group": "U13"
   },
   {
@@ -974,7 +1005,9 @@
    "domain": "GBU",
    "text": "Kritisches soziales Umfeld (Vandalismus, Missbrauch der Anlage)?",
    "category": "U – Umfeld, Gebäude und Nutzung",
-   "ui_number": "15.4"
+   "ui_number": "15.4",
+   "best_case": false,
+   "group": "U13"
   },
   {
    "code": "qz_bel_vorhanden",
@@ -1199,7 +1232,9 @@
      "value": "nein",
      "label": "Nein – Einschließen möglich"
     }
-   ]
+   ],
+   "best_case": "ja",
+   "group": "Z06"
   },
   {
    "code": "qz_durch_fremde",
@@ -1222,6 +1257,7 @@
      "label": "Durch eine Wohnung oder einen nur zeitweise zugänglichen Bereich"
     }
    ],
+   "best_case": "nein",
    "group": "Z05"
   },
   {
@@ -1355,7 +1391,8 @@
      "label": "Nein, nicht jederzeit möglich"
     }
    ],
-   "help_text": "Prüfen, ob der Befreiungsdienst rund um die Uhr ins Gebäude und zur Anlage kommt (Schlüsseltresor, Pförtner, Schließanlage)."
+   "help_text": "Prüfen, ob der Befreiungsdienst rund um die Uhr ins Gebäude und zur Anlage kommt (Schlüsseltresor, Pförtner, Schließanlage).",
+   "group": "Z05"
   },
   {
    "code": "qz_asbest",
@@ -1533,7 +1570,8 @@
    "text": "Bauseitige Elektroinstallation im Raum (Steckdosen, Schalter, Leitungen) unbeschädigt?",
    "category": "M – Triebwerks-/Maschinenraum und Steuerung",
    "ui_number": "5.36",
-   "best_case": true
+   "best_case": true,
+   "group": "M01"
   },
   {
    "code": "qm_ortsfest_geprueft",
@@ -1552,7 +1590,8 @@
    "text": "Hauptpotenzialausgleich an der Aufzugskonstruktion vorhanden?",
    "category": "M – Triebwerks-/Maschinenraum und Steuerung",
    "ui_number": "5.38",
-   "best_case": true
+   "best_case": true,
+   "group": "M01"
   },
   {
    "code": "qm_einzug_treibscheibe",
@@ -1621,6 +1660,7 @@
      "label": "Einzugstellen offen"
     }
    ],
+   "best_case": "komplett",
    "group": "BM6"
   },
   {
@@ -1961,7 +2001,8 @@
     ]
    },
    "help_text": "Nachweis aus den Herstellerunterlagen; Rohrbruchventil am Zylinder bzw. in der Leitung unmittelbar am Zylinder.",
-   "best_case": true
+   "best_case": true,
+   "group": "M12"
   },
   {
    "code": "qm_kav",
@@ -2020,7 +2061,8 @@
      "value": "fehlt",
      "label": "Nicht vorhanden oder unwirksam (überbrückt, verstellt)"
     }
-   ]
+   ],
+   "group": "M17"
   },
   {
    "code": "qm_notendschalter_getrennt",
@@ -2037,7 +2079,8 @@
      "fehlt"
     ]
    },
-   "best_case": true
+   "best_case": true,
+   "group": "M17"
   },
   {
    "code": "qm_notendschalter_verbindung_ueberwacht",
@@ -2054,7 +2097,8 @@
      "fehlt"
     ]
    },
-   "best_case": true
+   "best_case": true,
+   "group": "M17"
   },
   {
    "code": "qm_anschlagpunkte",
@@ -2348,7 +2392,8 @@
    "text": "Fußleiste (mind. 100 mm) am Rand des Fahrkorbdachs vorhanden?",
    "category": "F – Fahrkorbdach und Schachtkopf",
    "ui_number": "9.4",
-   "best_case": true
+   "best_case": true,
+   "group": "F01a"
   },
   {
    "code": "qf_einzugstellen",
@@ -2385,6 +2430,7 @@
      "label": "Einzugstellen offen"
     }
    ],
+   "best_case": "komplett",
    "group": "BF6"
   },
   {
@@ -2443,7 +2489,6 @@
      "grobmaschig"
     ]
    },
-   "best_case": false,
    "group": "BF9"
   },
   {
@@ -2486,7 +2531,8 @@
      "label": "Schutzraum nicht gegeben (z. B. nachträgliche Einbauten)"
     }
    ],
-   "help_text": "Mit dem Fahrkorb auf dem voll zusammengedrückten Puffer (bzw. Berechnung aus den Unterlagen) den freien Raum über dem Fahrkorbdach bestimmen. Nachträgliche Einbauten im Schachtkopf mitprüfen."
+   "help_text": "Mit dem Fahrkorb auf dem voll zusammengedrückten Puffer (bzw. Berechnung aus den Unterlagen) den freien Raum über dem Fahrkorbdach bestimmen. Nachträgliche Einbauten im Schachtkopf mitprüfen.",
+   "group": "F07"
   },
   {
    "code": "qf_kopffreiheit_gekennz",
@@ -2500,7 +2546,8 @@
     "operator": "EQ",
     "value": "reduziert"
    },
-   "best_case": true
+   "best_case": true,
+   "group": "F07"
   },
   {
    "code": "qf_inspektion",
@@ -2607,7 +2654,8 @@
    "category": "F – Fahrkorbdach und Schachtkopf",
    "ui_number": "9.10",
    "help_text": "Nachweis aus den Herstellerunterlagen; bei Zweifeln (dünne Bleche, sichtbare Verformung) Nein wählen, bis der Nachweis vorliegt.",
-   "best_case": true
+   "best_case": true,
+   "group": "F01a"
   },
   {
    "code": "qf_klappe",
@@ -2775,7 +2823,8 @@
    "text": "Führungsschienen für Fahrkorb und Gegengewicht aus Stahl?",
    "category": "S – Schacht",
    "ui_number": "10.6",
-   "best_case": true
+   "best_case": true,
+   "group": "S02"
   },
   {
    "code": "qs_fang",
@@ -2918,7 +2967,8 @@
    "text": "Zugänge zum Schacht (Schachttüren, Inspektionstüren) und die zugehörigen Schalteinrichtungen frei und sicher begehbar?",
    "category": "S – Schacht",
    "ui_number": "10.13",
-   "best_case": true
+   "best_case": true,
+   "group": "S01"
   },
   {
    "code": "qs_asbest",
@@ -3253,6 +3303,7 @@
     }
    ],
    "help_text": "Messen: Abtrennung von höchstens 0,30 m bis mindestens 2,0 m über der Schachtgrubensohle, in der Breite des Gegengewichts (TRBS 3121 Anh. 1 Nr. 2).",
+   "best_case": "normgerecht",
    "group": "G04"
   },
   {
@@ -3356,7 +3407,6 @@
      }
     ]
    },
-   "best_case": false,
    "group": "BG9"
   },
   {
@@ -3748,7 +3798,9 @@
      "value": "keine",
      "label": "Keine geschlossene Fläche (offene Konstruktion, Gitter, Mauerwerk mit Absätzen)"
     }
-   ]
+   ],
+   "best_case": "normgerecht",
+   "group": "T01"
   },
   {
    "code": "qt_rueckhaltung_tuerblatt",
@@ -3758,7 +3810,8 @@
    "category": "T – Schachttüren und Fahrkorbtür",
    "ui_number": "7.13",
    "help_text": "EN 81-20 5.3.5.3.2. Auch die Aufhängung/Befestigung selbst prüfen: Ein Türblatt, das aus der Führung fällt, gibt den Schacht frei.",
-   "best_case": true
+   "best_case": true,
+   "group": "T10"
   },
   {
    "code": "qt_fuehrung_tuerblatt_ok",
@@ -3767,7 +3820,8 @@
    "text": "Führungselemente, Hänger und Befestigungen der Türblätter unbeschädigt und ohne auffälliges Spiel?",
    "category": "T – Schachttüren und Fahrkorbtür",
    "ui_number": "7.13a",
-   "best_case": true
+   "best_case": true,
+   "group": "T10"
   },
   {
    "code": "qt_tuer_mehrteilig",
@@ -3866,7 +3920,8 @@
     "value": true
    },
    "help_text": "Nachweis: Vertrag oder Aufschaltbestätigung des Notrufdienstes; bei der Prüfung einen Testnotruf absetzen.",
-   "best_case": true
+   "best_case": true,
+   "group": "K01"
   },
   {
    "code": "qk_notbeleuchtung",
@@ -3889,7 +3944,8 @@
      "label": "Keine Notbeleuchtung"
     }
    ],
-   "help_text": "Prüfen: Netz abschalten (Hauptschalter der Fahrkorbbeleuchtung) – die Notbeleuchtung muss selbsttätig einschalten. Ein nur beleuchteter Notruftaster ist keine Notbeleuchtung."
+   "help_text": "Prüfen: Netz abschalten (Hauptschalter der Fahrkorbbeleuchtung) – die Notbeleuchtung muss selbsttätig einschalten. Ein nur beleuchteter Notruftaster ist keine Notbeleuchtung.",
+   "group": "K15"
   },
   {
    "code": "qk_stufe_mm",
@@ -3979,7 +4035,6 @@
      "unter_300"
     ]
    },
-   "best_case": false,
    "group": "K05"
   },
   {
@@ -3990,7 +4045,6 @@
    "category": "K – Fahrkorb",
    "ui_number": "8.14",
    "help_text": "Regelgrenze 150 mm (DIN EN 81-20 5.2.5.3.1: höchstens 0,15 m über die gesamte Schachthöhe). Nur bei Ja oder Unsicherheit messen; Messwert optional im Feld daneben.",
-   "best_case": false,
    "group": "K06"
   },
   {
@@ -4104,7 +4158,9 @@
      "value": "unzureichend",
      "label": "Lüftungsöffnungen fehlen oder unzureichend"
     }
-   ]
+   ],
+   "best_case": "ausreichend",
+   "group": "K07"
   },
   {
    "code": "qk_hinweis_brandfall",
@@ -4113,7 +4169,8 @@
    "text": "Hinweisschild „Aufzug im Brandfall nicht benutzen\" an allen Haltestellen vorhanden und lesbar?",
    "category": "K – Fahrkorb",
    "ui_number": "8.20",
-   "best_case": true
+   "best_case": true,
+   "group": "K11"
   },
   {
    "code": "qk_bfs_vorhanden",
@@ -4238,7 +4295,9 @@
      "value": "mit_gef",
      "label": "Beschädigt mit unmittelbarer Gefährdung (freiliegende Elektrik, gebrochenes Glas, defekter Notruf)"
     }
-   ]
+   ],
+   "best_case": "ok",
+   "group": "K14"
   },
   {
    "code": "qk_vandalismus_wiederholt",
@@ -4345,7 +4404,9 @@
      "value": "keine",
      "label": "Keine funktionsfähige Beleuchtung im Fahrkorb"
     }
-   ]
+   ],
+   "best_case": "normgerecht",
+   "group": "K15"
   },
   {
    "code": "qk_bel_zwei_lampen",
@@ -4355,7 +4416,8 @@
    "category": "K – Fahrkorb",
    "ui_number": "8.29a",
    "help_text": "EN 81-20 5.4.10.2: Ausfall einer Lampe darf den Fahrkorb nicht dunkel werden lassen.",
-   "best_case": true
+   "best_case": true,
+   "group": "K15"
   },
   {
    "code": "qk_bel_staendig",
@@ -4365,7 +4427,8 @@
    "category": "K – Fahrkorb",
    "ui_number": "8.29b",
    "help_text": "EN 81-20 5.4.10.3.",
-   "best_case": true
+   "best_case": true,
+   "group": "K15"
   },
   {
    "code": "qsf_unterlagen",
@@ -25658,7 +25721,7 @@
   },
   {
    "id": "Z05",
-   "title": "Zugang durch fremde Räume, Material- und Werkzeugtransport",
+   "title": "Zugang zur Anlage: fremde Räume, Transport und Erreichbarkeit für die Personenbefreiung",
    "category": "Z – Zugang zum Triebwerks-/Steuerungsraum",
    "kind": "card",
    "items": [
@@ -25672,6 +25735,10 @@
      "label": "Transport von Material und Werkzeug erschwert (Leiter, Dachluke, enge Wendeltreppe)",
      "value": true,
      "clear": false
+    },
+    {
+     "question": "qz_zugang_befreiung",
+     "mode": "native"
     }
    ],
    "ui_number": "5.10"
@@ -25680,7 +25747,7 @@
    "id": "Z06",
    "title": "Zugangstür zum Triebwerks-/Maschinenraum",
    "category": "Z – Zugang zum Triebwerks-/Steuerungsraum",
-   "kind": "checklist",
+   "kind": "card",
    "items": [
     {
      "question": "qz_tuer_vorhanden",
@@ -25727,6 +25794,10 @@
        "value": true
       }
      ]
+    },
+    {
+     "question": "qz_von_innen",
+     "mode": "native"
     }
    ],
    "ui_number": "5.12"
@@ -25775,7 +25846,7 @@
   },
   {
    "id": "M01",
-   "title": "Berührungsschutz spannungsführender Teile",
+   "title": "Elektrische Sicherheit im Triebwerks-/Maschinenraum",
    "category": "M – Triebwerks-/Maschinenraum und Steuerung",
    "kind": "checklist",
    "items": [
@@ -25837,6 +25908,20 @@
        "value": false
       }
      ]
+    },
+    {
+     "question": "qm_bauseitig_ok",
+     "mode": "check",
+     "label": "Bauseitige Elektroinstallation im Raum beschädigt oder unvollständig (Steckdosen, Schalter, Leitungen)",
+     "value": false,
+     "clear": true
+    },
+    {
+     "question": "qm_potenzialausgleich",
+     "mode": "check",
+     "label": "Kein Hauptpotenzialausgleich an der Aufzugskonstruktion",
+     "value": false,
+     "clear": true
     }
    ],
    "ui_number": "5.30"
@@ -26087,7 +26172,7 @@
   },
   {
    "id": "M12",
-   "title": "Hydraulik: Absinken des Fahrkorbs",
+   "title": "Hydraulik: Absinken des Fahrkorbs und Rohrbruchsicherung",
    "category": "M – Triebwerks-/Maschinenraum und Steuerung",
    "kind": "checklist",
    "items": [
@@ -26104,6 +26189,13 @@
      "label": "Fahrkorb sinkt im Stillstand merklich ab",
      "value": true,
      "clear": false
+    },
+    {
+     "question": "qm_rohrbruch",
+     "mode": "check",
+     "label": "Kein Rohrbruchsicherungsventil vorhanden",
+     "value": false,
+     "clear": true
     }
    ],
    "ui_number": "6.12"
@@ -26209,6 +26301,33 @@
    "ui_number": "5.53"
   },
   {
+   "id": "M17",
+   "title": "Notendschalter (Endbegrenzung hinter den Endhaltestellen)",
+   "category": "M – Triebwerks-/Maschinenraum und Steuerung",
+   "kind": "card",
+   "items": [
+    {
+     "question": "qm_notendschalter",
+     "mode": "native"
+    },
+    {
+     "question": "qm_notendschalter_getrennt",
+     "mode": "check",
+     "label": "Keine getrennten Betätigungseinrichtungen für betriebsmäßiges Anhalten und Notendschalter",
+     "value": false,
+     "clear": true
+    },
+    {
+     "question": "qm_notendschalter_verbindung_ueberwacht",
+     "mode": "check",
+     "label": "Bei mittelbarer Betätigung (Seil, Riemen, Kette): Bruch oder Schlaffwerden führt nicht zum Stillsetzen",
+     "value": false,
+     "clear": true
+    }
+   ],
+   "ui_number": "6.14"
+  },
+  {
    "id": "M16",
    "title": "Kennzeichnung und Beschilderung",
    "category": "M – Triebwerks-/Maschinenraum und Steuerung",
@@ -26233,9 +26352,9 @@
   },
   {
    "id": "T01",
-   "title": "Schachttürverriegelung",
+   "title": "Schachttürverriegelung und Fläche unterhalb der Schwelle",
    "category": "T – Schachttüren und Fahrkorbtür",
-   "kind": "checklist",
+   "kind": "card",
    "items": [
     {
      "question": "qt_verriegelung_elektrisch",
@@ -26250,9 +26369,36 @@
      "label": "Keine Fehlschließsicherung / Nachschließeinrichtung",
      "value": false,
      "clear": true
+    },
+    {
+     "question": "qt_flaeche_unter_schwelle",
+     "mode": "native"
     }
    ],
    "ui_number": "7.1"
+  },
+  {
+   "id": "T10",
+   "title": "Türblätter der Schiebetüren: Rückhaltung und Führung",
+   "category": "T – Schachttüren und Fahrkorbtür",
+   "kind": "checklist",
+   "items": [
+    {
+     "question": "qt_rueckhaltung_tuerblatt",
+     "mode": "check",
+     "label": "Keine Rückhalteeinrichtungen an den horizontal bewegten Schacht-Schiebetüren",
+     "value": false,
+     "clear": true
+    },
+    {
+     "question": "qt_fuehrung_tuerblatt_ok",
+     "mode": "check",
+     "label": "Führungselemente, Hänger oder Befestigungen der Türblätter beschädigt / ausgeschlagen",
+     "value": false,
+     "clear": true
+    }
+   ],
+   "ui_number": "7.13"
   },
   {
    "id": "T02",
@@ -26399,15 +26545,59 @@
     {
      "question": "qk_notruf_art",
      "mode": "native"
+    },
+    {
+     "question": "qk_notruf_24h",
+     "mode": "check",
+     "label": "Notruf nicht auf eine rund um die Uhr besetzte Stelle aufgeschaltet",
+     "value": false,
+     "clear": true,
+     "implies": [
+      {
+       "question": "qk_notruf_vorhanden",
+       "value": true
+      }
+     ]
     }
    ],
    "ui_number": "8.1"
   },
   {
-   "id": "K07",
-   "title": "Nennlast, Personenzahl und Nutzfläche",
+   "id": "K15",
+   "title": "Beleuchtung und Notbeleuchtung im Fahrkorb",
    "category": "K – Fahrkorb",
-   "kind": "checklist",
+   "kind": "card",
+   "items": [
+    {
+     "question": "qk_beleuchtung",
+     "mode": "native"
+    },
+    {
+     "question": "qk_bel_zwei_lampen",
+     "mode": "check",
+     "label": "Weniger als zwei parallel geschaltete Lampen im Fahrkorb",
+     "value": false,
+     "clear": true
+    },
+    {
+     "question": "qk_bel_staendig",
+     "mode": "check",
+     "label": "Fahrkorb nicht ständig beleuchtet (außer Parken mit geschlossenen Türen)",
+     "value": false,
+     "clear": true
+    },
+    {
+     "question": "qk_notbeleuchtung",
+     "mode": "native"
+    }
+   ],
+   "ui_number": "8.29"
+  },
+  {
+   "id": "K07",
+   "title": "Fahrkorb: Nennlast, Nutzfläche und Lüftung",
+   "category": "K – Fahrkorb",
+   "kind": "card",
    "items": [
     {
      "question": "qk_nennlast_gekennz",
@@ -26422,6 +26612,10 @@
      "label": "Nutzfläche passt nicht zur Nennlast (Tabelle EN 81-20 5.4.2)",
      "value": false,
      "clear": true
+    },
+    {
+     "question": "qk_lueftung",
+     "mode": "native"
     }
    ],
    "ui_number": "8.16"
@@ -26457,7 +26651,7 @@
   },
   {
    "id": "K11",
-   "title": "Brandfallsteuerung",
+   "title": "Brandfall: Steuerung und Hinweisschilder",
    "category": "K – Fahrkorb",
    "kind": "checklist",
    "items": [
@@ -26480,6 +26674,13 @@
        "value": true
       }
      ]
+    },
+    {
+     "question": "qk_hinweis_brandfall",
+     "mode": "check",
+     "label": "Hinweisschild „Aufzug im Brandfall nicht benutzen\" fehlt an mindestens einer Haltestelle",
+     "value": false,
+     "clear": true
     }
    ],
    "ui_number": "8.21"
@@ -26516,10 +26717,14 @@
   },
   {
    "id": "K14",
-   "title": "Vandalismus und soziales Umfeld",
+   "title": "Zustand der Fahrkorbausstattung, Vandalismus und soziales Umfeld",
    "category": "K – Fahrkorb",
-   "kind": "checklist",
+   "kind": "card",
    "items": [
+    {
+     "question": "qk_ausstattung",
+     "mode": "native"
+    },
     {
      "question": "qk_vandalismus_wiederholt",
      "mode": "check",
@@ -26625,7 +26830,7 @@
   },
   {
    "id": "F01a",
-   "title": "Geländer auf dem Fahrkorbdach (bei Abstand über 300 mm)",
+   "title": "Fahrkorbdach als Standfläche: Geländer, Fußleiste, Tragfähigkeit",
    "category": "F – Fahrkorbdach und Schachtkopf",
    "kind": "card",
    "items": [
@@ -26639,9 +26844,49 @@
     {
      "question": "qf_gelaender_hoehe_mm",
      "mode": "native"
+    },
+    {
+     "question": "qf_fussleiste",
+     "mode": "check",
+     "label": "Keine Fußleiste (mind. 100 mm) am Rand des Fahrkorbdachs",
+     "value": false,
+     "clear": true
+    },
+    {
+     "question": "qf_dach_tragfaehig",
+     "mode": "check",
+     "label": "Fahrkorbdach nicht tragfähig (200 kg auf 0,30 m × 0,30 m)",
+     "value": false,
+     "clear": true
     }
    ],
    "ui_number": "9.2"
+  },
+  {
+   "id": "F07",
+   "title": "Schutzraum im Schachtkopf",
+   "category": "F – Fahrkorbdach und Schachtkopf",
+   "kind": "card",
+   "items": [
+    {
+     "question": "qf_schutzraum",
+     "mode": "native"
+    },
+    {
+     "question": "qf_kopffreiheit_gekennz",
+     "mode": "check",
+     "label": "Keine Warnkennzeichnung zur reduzierten Kopffreiheit",
+     "value": false,
+     "clear": true,
+     "implies": [
+      {
+       "question": "qf_schutzraum",
+       "value": "reduziert"
+      }
+     ]
+    }
+   ],
+   "ui_number": "9.7"
   },
   {
    "id": "F05",
@@ -26671,7 +26916,7 @@
   },
   {
    "id": "S01",
-   "title": "Schachtumwehrung",
+   "title": "Schachtumwehrung und Zugänge zum Schacht",
    "category": "S – Schacht",
    "kind": "checklist",
    "items": [
@@ -26694,13 +26939,20 @@
        "value": false
       }
      ]
+    },
+    {
+     "question": "qs_zugang_schacht_sicher",
+     "mode": "check",
+     "label": "Zugänge zum Schacht oder die zugehörigen Schalter nicht gesichert / unwirksam (Schacht-, Inspektionstüren)",
+     "value": false,
+     "clear": true
     }
    ],
    "ui_number": "10.3"
   },
   {
    "id": "S02",
-   "title": "Schachtwände und Verglasung",
+   "title": "Schachtwände, Verglasung und Führungsschienen",
    "category": "S – Schacht",
    "kind": "checklist",
    "items": [
@@ -26715,6 +26967,13 @@
      "question": "qs_glas_vsg",
      "mode": "check",
      "label": "Kein VSG-Nachweis für die Schachtverglasung",
+     "value": false,
+     "clear": true
+    },
+    {
+     "question": "qs_schienen_stahl",
+     "mode": "check",
+     "label": "Führungsschienen für Fahrkorb und Gegengewicht nicht aus Stahl",
      "value": false,
      "clear": true
     }
@@ -26909,21 +27168,28 @@
   },
   {
    "id": "U01",
-   "title": "Gefahrstoffe in unmittelbarer Nähe der Anlage gelagert",
+   "title": "Gefahrstoffe und Schadstoffsituation der Anlage",
    "category": "U – Umfeld, Gebäude und Nutzung",
    "kind": "checklist",
    "items": [
     {
      "question": "qu_gefahrstoff_chem_lager",
      "mode": "check",
-     "label": "Chemische Gefahrstoffe",
+     "label": "Chemische Gefahrstoffe in unmittelbarer Nähe gelagert",
      "value": true,
      "clear": false
     },
     {
      "question": "qu_gefahrstoff_bio_lager",
      "mode": "check",
-     "label": "Biologische Arbeitsstoffe (Labor, Klinik, Entsorgung)",
+     "label": "Biologische Arbeitsstoffe in unmittelbarer Nähe gelagert (Labor, Klinik, Entsorgung)",
+     "value": true,
+     "clear": false
+    },
+    {
+     "question": "qu_asbest_unbekannt",
+     "mode": "check",
+     "label": "Asbest-/Schadstoffsituation der Anlage unbekannt (Baujahr vor 1995, keine Unterlagen, keine Beprobung)",
      "value": true,
      "clear": false
     }
@@ -27046,13 +27312,14 @@
   },
   {
    "id": "U06",
-   "title": "Schnittstelle Brandmeldeanlage – Aufzug",
+   "title": "Brandschutzeinrichtungen des Gebäudes und ihre Schnittstellen zum Aufzug",
    "category": "U – Umfeld, Gebäude und Nutzung",
-   "kind": "checklist",
+   "kind": "card",
    "items": [
     {
      "question": "qu_bma_abgestimmt",
      "mode": "check",
+     "row": "Brandmeldeanlage",
      "label": "Schnittstelle BMA – Aufzug nicht bekannt / nicht abgestimmt",
      "value": false,
      "clear": true
@@ -27060,6 +27327,7 @@
     {
      "question": "qu_bma_geprueft",
      "mode": "check",
+     "row": "Brandmeldeanlage",
      "label": "Funktion der Schnittstelle nicht geprüft (kein Nachweis)",
      "value": false,
      "clear": true,
@@ -27073,7 +27341,29 @@
     {
      "question": "qu_evak_in_gbu",
      "mode": "check",
+     "row": "Brandmeldeanlage",
      "label": "Evakuierungs-/Sonderfunktion in dieser Gefährdungsbeurteilung nicht berücksichtigt",
+     "value": false,
+     "clear": true
+    },
+    {
+     "question": "qu_brandschutz_behindert",
+     "mode": "check",
+     "row": "Bauliche Brandschutzeinrichtungen",
+     "label": "Brandschutzeinrichtung behindert den Aufzugsbetrieb oder die Personenrettung (Brandschutztür, Abschottung)",
+     "value": true,
+     "clear": false
+    },
+    {
+     "question": "qu_entrauchung",
+     "mode": "native",
+     "row": "Entrauchung / RWA"
+    },
+    {
+     "question": "qu_sprinkler_bewertet",
+     "mode": "check",
+     "row": "Löschanlage",
+     "label": "Wechselwirkung der Löschanlage mit der Aufzugsanlage nicht bewertet (Wasserbeaufschlagung, Abschaltung)",
      "value": false,
      "clear": true
     }
@@ -27157,7 +27447,7 @@
   },
   {
    "id": "U13",
-   "title": "Emissionen und Lärm im Aufstellbereich",
+   "title": "Emissionen, Lärm und soziales Umfeld",
    "category": "U – Umfeld, Gebäude und Nutzung",
    "kind": "checklist",
    "items": [
@@ -27172,6 +27462,13 @@
      "question": "qu_laerm",
      "mode": "check",
      "label": "Erhöhte Lärmbelastung (über 85 dB(A))",
+     "value": true,
+     "clear": false
+    },
+    {
+     "question": "qu_umfeld_kritisch",
+     "mode": "check",
+     "label": "Kritisches soziales Umfeld (Vandalismus, Missbrauch der Anlage)",
      "value": true,
      "clear": false
     }
@@ -27392,6 +27689,30 @@
   }
  ],
  "nachweise": [
+  {
+   "question": "qz_weg_eng",
+   "value": false,
+   "when": {
+    "question": "qd_zues_bericht",
+    "operator": "EQ",
+    "value": "ohne_maengel"
+   },
+   "min_baujahr": null,
+   "reason": "Sicherer und ungehinderter Zugang zur Aufzugsanlage in der Hauptprüfung geprüft; Durchgangsmaße sind baulich und ändern sich zwischen zwei Prüfungen nicht",
+   "source": "TRBS 1201 Teil 4, 3.3 (2) Nr. 1"
+  },
+  {
+   "question": "qt_glas_einzugsschutz",
+   "value": true,
+   "when": {
+    "question": "qd_zues_bericht",
+    "operator": "EQ",
+    "value": "ohne_maengel"
+   },
+   "min_baujahr": null,
+   "reason": "Funktionsfähigkeit der Schutzeinrichtungen gegen Quetschen, Scheren und Einziehen von Händen in der Hauptprüfung geprüft",
+   "source": "TRBS 1201 Teil 4, 3.3 (2) Nr. 7"
+  },
   {
    "question": "qz_bel_vorhanden",
    "value": true,

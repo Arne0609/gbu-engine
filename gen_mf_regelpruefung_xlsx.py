@@ -594,7 +594,8 @@ ordnung = {q['code']: i for i, q in enumerate(seed['questions'])}
 for ri, qc in enumerate(sorted(fragen, key=lambda c: ordnung.get(c, 9999)), 2):
     q = Q.get(qc, {})
     if q.get('type') == 'SELECT':
-        opts = '\n'.join('• %s' % o['label'] for o in q.get('options', []))
+        opts = '\n'.join('• %s%s' % (o['label'], ' (unauffällig)' if o['value'] == q.get('best_case') else '')
+                         for o in q.get('options', []))
     elif q.get('type') == 'YES_NO':
         opts = 'Ja / Nein' + (' (unauffällig: %s)' % ('Ja' if q['best_case'] else 'Nein')
                               if 'best_case' in q else '')

@@ -216,14 +216,15 @@ class QuestionDef {
   final num? min;
   final num? max;
 
-  /// Unauffälliger Wert dieser Ja/Nein-Frage, im Generator aus den
-  /// Befundregeln abgeleitet. Grundlage der Sammelantwort („Sichtprüfung ohne
-  /// Befund"): Nur Fragen mit eindeutigem [bestCase] dürfen so gesetzt
-  /// werden. null bei mehrdeutigen Fragen (beide Werte lösen irgendwo einen
-  /// Befund aus), bei Fragen, die den Katalogumfang steuern, und außerhalb
-  /// der Ortsbereiche – dort ist eine Sichtprüfung als Sammelaussage nicht
-  /// tragfähig.
-  final bool? bestCase;
+  /// Unauffälliger Wert dieser Frage, im Generator aus den Befundregeln
+  /// abgeleitet und per Simulation gegengeprüft: Ja/Nein-Fragen tragen einen
+  /// bool, Auswahlfragen (seit 17.09.2026, Bereich U) den Optionswert.
+  /// Grundlage der Sammelantwort („Sichtprüfung ohne Befund"): Nur Fragen mit
+  /// eindeutigem [bestCase] dürfen so gesetzt werden. null bei mehrdeutigen
+  /// Fragen (beide Werte lösen irgendwo einen Befund aus), bei Fragen, die den
+  /// Katalogumfang steuern, bei Stammfragen und außerhalb der Sammelbereiche
+  /// (Ortsbereiche und Umfeld).
+  final dynamic bestCase;
 
   /// true, wenn diese Frage per Sammelantwort gesetzt werden darf.
   bool get sammelbar => bestCase != null;
@@ -273,7 +274,7 @@ class QuestionDef {
         visibleWhen: (j['visible_when'] as Map?)?.cast<String, dynamic>(),
         min: j['min'] as num?,
         max: j['max'] as num?,
-        bestCase: j['best_case'] as bool?,
+        bestCase: j['best_case'],
         group: j['group'] as String?,
         source: j['source'] as String?,
         stammKey: j['stamm_key'] as String?,
@@ -392,9 +393,12 @@ class AppliedAssumption {
 /// Erhebung kürzen (17.09.2026): Mehrere Einzelfragen erscheinen als EINE
 /// Karte. Eine Ankreuzposition (`mode == 'check'`) zeigt die AUFFÄLLIGKEIT;
 /// angekreuzt wird [value] gesetzt (samt [implies], damit die Position
-/// sichtbar und die Regel scharf ist). Beim Bestätigen der Karte erhalten
-/// nicht angekreuzte, sichtbare Positionen [clear] – Herkunft „sammel". Eine
-/// native Position (`mode == 'native'`) ist die Frage in ihrer eigenen Form.
+/// sichtbar und die Regel scharf ist); das Häkchen wegzunehmen nimmt die
+/// Antwort zurück, es setzt NICHT [clear] (siehe Erhebung.ankreuzAntworten).
+/// Beim Bestätigen der Karte erhalten nicht angekreuzte, sichtbare Positionen
+/// [clear] – Herkunft „sammel"; das ist die einzige Stelle, an der „kein
+/// Befund" als Aussage entsteht. Eine native Position (`mode == 'native'`) ist
+/// die Frage in ihrer eigenen Form.
 /// Für die Engine ändert sich nichts: Antworten bleiben Antworten auf die
 /// Einzelfragen.
 class GroupItem {

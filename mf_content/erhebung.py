@@ -161,6 +161,49 @@ PHASEN = OrderedDict([
 REIHENFOLGE = ['A', 'D', 'U', 'Z', 'M', 'F', 'S', 'G', 'T', 'K', 'SF']
 
 # ---------------------------------------------------------------------------
+# Nie per Sammelantwort (17.09.2026): Fragen, deren Antwort keine Sichtprüfung
+# ist, sondern eine Bauart-, Ausstattungs- oder Prüfaussage. Die Simulation
+# fände hier zwar einen „nie schlechteren" Wert, aber ein Sammelhaken würde
+# eine Tatsache behaupten, die niemand festgestellt hat. Sie bleiben
+# Einzelfragen (und sind zugleich die Kandidaten für den Anlagenstamm).
+KEIN_SAMMEL = OrderedDict([
+    ('qg_puffer_art', 'Bauart der Puffer – Eigenschaft der Anlage, keine Feststellung.'),
+    ('qk_notruf_art', 'Art der Notrufeinrichtung – Ausstattung der Anlage.'),
+    ('qk_notbeleuchtung', 'Art der Notbeleuchtung – Ausstattung der Anlage.'),
+    ('qf_schutzraum', 'Schutzraum im Schachtkopf – Abmessung nach Errichtungsgrundlage.'),
+    ('qm_notendschalter', 'Wirksamkeit vor Pufferberührung ist eine Prüfaussage, kein Augenschein.'),
+    ('qz_zugang_befreiung', 'Erreichbarkeit für die Personenbefreiung ist eine organisatorische Zusage.'),
+])
+
+# ---------------------------------------------------------------------------
+# Reine Dokumentationsfragen (17.09.2026, Arne): Sie kommen in keiner Regel vor,
+# steuern weder Sichtbarkeit noch Annahmen oder Nachweise und sind in keiner
+# Gefaehrdung Pflichtfrage. Sie bleiben im Fragebogen stehen, zaehlen aber wie
+# die optionalen Messfelder nicht im Fortschritt und halten keine Karte offen.
+DOKU_OPTIONAL = OrderedDict([
+    ('qu_unfaelle', 'Unfallhistorie – Dokumentation nach Klärung vom 02.09.2026, ohne Regel.'),
+    ('qd_gbu_vorhanden', 'Hinweis auf eine vorhandene Beurteilung des Betreibers, ohne Regel.'),
+])
+
+# ---------------------------------------------------------------------------
+# Sammelantwort im Umfeld (U) – 17.09.2026, Arne: „U – Umfeld, Gebäude und
+# Nutzung soll mit einem Klick komplett auf Sammelantwort gesetzt werden
+# können.“ gen_mf_catalog.set_best_case() leitet den unauffälligen Wert aus
+# den Befundregeln ab (Bereich U ist dort seitdem SAMMELBEREICH, Auswahlfragen
+# eingeschlossen). Reine Dokumentationsfragen kommen in keiner Befundregel
+# vor – für sie steht der unauffällige Wert hier, mit Begründung.
+# ---------------------------------------------------------------------------
+SAMMEL_DOKU = OrderedDict([
+    ('qu_laerm', (False, 'Lärm ist laut Klärung vom 02.09.2026 nur Dokumentation; '
+                         'unauffällig = keine erhöhte Lärmbelastung.')),
+    ('qu_umfeld_kritisch', (False, 'Kritisches soziales Umfeld ist nur Dokumentation; '
+                                   'unauffällig = nein.')),
+])
+# Was danach im Umfeld ohne best_case bleibt, ist gewollt: Stammfragen (aus
+# dem Anlagenstamm) und Folgefragen, die erst nach einer angekreuzten
+# Auffälligkeit sichtbar werden (Ex-Schutz umgesetzt?, Zugangskonzept?).
+
+# ---------------------------------------------------------------------------
 # Stammdaten: Frage -> Schlüssel im Anlagenstamm der App
 # ---------------------------------------------------------------------------
 STAMM = OrderedDict([
@@ -200,8 +243,37 @@ STAMM = OrderedDict([
 #   (frage, wert, min_baujahr, TRBS-1201-4-Prüfpunkt, Begründung)
 # ---------------------------------------------------------------------------
 _HP = 'TRBS 1201 Teil 4, 3.3 (2) Nr. %s'
+
+# ---------------------------------------------------------------------------
+# Prüfpunkte der Hauptprüfung ohne Frage im Katalog (Entscheidung Arne,
+# 17.09.2026: „überlassen wird der Wartung/ZÜS")
+#
+# TRBS 1201 Teil 4, 3.3 (2) zählt 31 Prüfpunkte auf. Die folgenden haben
+# bewusst keine Entsprechung im MF-Katalog: Sie betreffen den technischen
+# Zustand von Tragmitteln und Antrieb, der über die Wartung und die
+# wiederkehrende Prüfung der ZÜS abgedeckt wird. Die Gefährdungsbeurteilung
+# fragt stattdessen die Schutzeinrichtungen ab, die bei deren Versagen wirken:
+# Fangvorrichtung (Nr. 21), Geschwindigkeitsbegrenzer (Nr. 12),
+# Schlaffseilsicherung (Nr. 11), Führungen (Nr. 13).
+#
+# Wer den Katalog erweitert, prüfe zuerst hier: Diese Punkte sind entschieden,
+# nicht übersehen.
+ZUES_PRUEFPUNKTE = 31
+OHNE_KATALOGFRAGE = OrderedDict([
+    ('15', 'Seilführung und Seilendbefestigungen – Wartung und ZÜS-Hauptprüfung'),
+    ('16', 'Seilrollen und Umlenkrollen – Wartung und ZÜS-Hauptprüfung'),
+    ('17', 'Treibscheibe und Treibfähigkeit – Wartung und ZÜS-Hauptprüfung'),
+    ('24', 'Gegengewichtsausgleich (Massenausgleich) – Wartung und ZÜS-Hauptprüfung'),
+    ('25', 'Aufsetzvorrichtung – Wartung und ZÜS-Hauptprüfung'),
+    ('28', 'Sicherheitsrelevante MSR-Einrichtungen, funktionale Sicherheit, '
+           'Software-Stand und Parameter – im Cyber-Fragebogen (CY)'),
+])
 NACHWEISE = [
     # --- auch bei Anlagen vor 1999 tragfähig (Einrichtung nach TRA 200 gefordert oder geprüfter Zustand)
+    # Prüfpunkt 1 und 7 nachgetragen am 17.09.2026 (Auswertung der bis dahin
+    # ungenutzten Prüfpunkte 1, 7, 15, 16, 17, 24, 25, 28):
+    ('qz_weg_eng', False, None, '1', 'Sicherer und ungehinderter Zugang zur Aufzugsanlage in der Hauptprüfung geprüft; Durchgangsmaße sind baulich und ändern sich zwischen zwei Prüfungen nicht'),
+    ('qt_glas_einzugsschutz', True, None, '7', 'Funktionsfähigkeit der Schutzeinrichtungen gegen Quetschen, Scheren und Einziehen von Händen in der Hauptprüfung geprüft'),
     ('qz_bel_vorhanden', True, None, '6', 'Funktionsfähigkeit der Beleuchtung der Zugänge in der Hauptprüfung geprüft'),
     ('qm_bel_vorhanden', True, None, '6', 'Funktionsfähigkeit der Beleuchtung im Triebwerksraum in der Hauptprüfung geprüft'),
     ('qs_bel_vorhanden', True, None, '6', 'Funktionsfähigkeit der Schachtbeleuchtung in der Hauptprüfung geprüft'),
@@ -403,26 +475,30 @@ g('Z03', 'Z', 'Absturzkanten und Überstiege auf dem Zugangsweg', [
     ('qz_absturz_gesichert', 'Absturzkante nicht durch Geländer / Umwehrung gesichert', False),
     ('qz_absturz_gekennzeichnet',),
     ('qz_uebersteigen', 'Treppenauge, Brüstung oder Fenster muss überstiegen werden', True)], ui='5.7')
-g('Z05', 'Z', 'Zugang durch fremde Räume, Material- und Werkzeugtransport', [
+g('Z05', 'Z', 'Zugang zur Anlage: fremde Räume, Transport und Erreichbarkeit für die Personenbefreiung', [
     ('qz_durch_fremde',),
-    ('qz_material_erschwert', 'Transport von Material und Werkzeug erschwert (Leiter, Dachluke, enge Wendeltreppe)', True)], ui='5.10')
+    ('qz_material_erschwert', 'Transport von Material und Werkzeug erschwert (Leiter, Dachluke, enge Wendeltreppe)', True),
+    ('qz_zugang_befreiung',)], ui='5.10')
 g('Z06', 'Z', 'Zugangstür zum Triebwerks-/Maschinenraum', [
     ('qz_tuer_vorhanden', 'Keine Zugangstür', False),
     ('qz_tuer_abschliessbar', 'Nicht abschließbar', False),
     ('qz_tuer_zustand', 'Beschädigt oder schwergängig', False),
-    ('qz_tuer_mass', 'Durchgangsmaß zu klein (unter 2,00 m hoch / 0,60 m breit)', False)], ui='5.12')
+    ('qz_tuer_mass', 'Durchgangsmaß zu klein (unter 2,00 m hoch / 0,60 m breit)', False),
+    ('qz_von_innen',)], ui='5.12')
 g('Z07', 'Z', 'Flucht- und Rettungsweg vom Triebwerks-/Steuerungsraum', [
     ('qz_flucht_frei', 'Nicht frei oder nicht benutzbar', False),
     ('qz_flucht_gekennz', 'Nicht gekennzeichnet oder nicht beleuchtet', False),
     ('qz_flucht_eingeengt', 'Durch Lagerung eingeengt', True)], ui='5.13')
 
 # ---- M Triebwerksraum und Steuerung ----------------------------------------------
-g('M01', 'M', 'Berührungsschutz spannungsführender Teile', [
+g('M01', 'M', 'Elektrische Sicherheit im Triebwerks-/Maschinenraum', [
     ('qm_beruehrungssicher', 'Spannungsführende Teile nicht berührungssicher', False),
     ('qm_offene_schalttafel', 'Offene Schalttafel ohne Schaltschrank', True),
     ('qm_offene_schalter', 'Offene Kontakte oder Schalter an Maschine, Kopierwerk oder Begrenzer', True),
     ('qm_schaltschrank_unsicher', 'Nicht berührungssichere Bauteile im Schaltschrank (bei geöffneter Tür erreichbar)', True),
-    ('qm_kennz_kontakte', 'Keine Warnkennzeichnung für offene elektrische Kontakte', False)], ui='5.30')
+    ('qm_kennz_kontakte', 'Keine Warnkennzeichnung für offene elektrische Kontakte', False),
+    ('qm_bauseitig_ok', 'Bauseitige Elektroinstallation im Raum beschädigt oder unvollständig (Steckdosen, Schalter, Leitungen)', False),
+    ('qm_potenzialausgleich', 'Kein Hauptpotenzialausgleich an der Aufzugskonstruktion', False)], ui='5.30')
 g('M02', 'M', 'Prüfnachweise der elektrischen Anlage', [
     ('qm_dguv_v3', 'Kein Nachweis der Prüfung nach DGUV Vorschrift 3', False),
     ('qm_ortsfest_geprueft', 'Prüfung der ortsfesten elektrischen Anlage nicht nachgewiesen', False)], ui='5.35')
@@ -452,9 +528,10 @@ g('M10', 'M', 'Schutzeinrichtungen der Steuerung (nach Unterlagen / Prüfbericht
     ('qm_motorschutz', 'Kein Schutz gegen Überhitzen des Antriebsmotors', False),
     ('qm_laufzeit', 'Keine Motor-Laufzeitüberwachung', False),
     ('qm_phasenumkehr', 'Kein Schutz gegen Phasenumkehr / Phasenausfall', False)], ui='6.3')
-g('M12', 'M', 'Hydraulik: Absinken des Fahrkorbs', [
+g('M12', 'M', 'Hydraulik: Absinken des Fahrkorbs und Rohrbruchsicherung', [
     ('qm_kav', 'Keine Einrichtung gegen Absinken (Kolbenabsinkverhinderung / Nachholsteuerung)', False),
-    ('qm_absinkt', 'Fahrkorb sinkt im Stillstand merklich ab', True)], ui='6.12')
+    ('qm_absinkt', 'Fahrkorb sinkt im Stillstand merklich ab', True),
+    ('qm_rohrbruch', 'Kein Rohrbruchsicherungsventil vorhanden', False)], ui='6.12')
 g('M13', 'M', 'Hydraulik: Absperrventil am Aggregat', [
     ('qm_absperrventil', 'Absperrventil fehlt', False),
     ('qm_absperrventil_gekennz', 'Nicht gekennzeichnet oder schlecht zugänglich', False)], ui='6.10')
@@ -465,14 +542,22 @@ g('M14', 'M', 'Anschlagpunkte / Hebezeuge zum Anheben schwerer Teile', [
 g('M15', 'M', 'Einrichtung für Notbetrieb / Personenbefreiung', [
     ('qm_notbetrieb', 'Keine Einrichtung für Notbetrieb / Personenbefreiung (Handrad, Bremslüfthebel, Evakuierungseinheit, Notablass)', False),
     ('qm_notbetrieb_gekennz', 'Nicht gekennzeichnet (Fahrtrichtung, Bündigmarken)', False)], ui='5.53')
+g('M17', 'M', 'Notendschalter (Endbegrenzung hinter den Endhaltestellen)', [
+    ('qm_notendschalter',),
+    ('qm_notendschalter_getrennt', 'Keine getrennten Betätigungseinrichtungen für betriebsmäßiges Anhalten und Notendschalter', False),
+    ('qm_notendschalter_verbindung_ueberwacht', 'Bei mittelbarer Betätigung (Seil, Riemen, Kette): Bruch oder Schlaffwerden führt nicht zum Stillsetzen', False)], ui='6.14')
 g('M16', 'M', 'Kennzeichnung und Beschilderung', [
     ('qm_kennz_elektrisch', 'Elektrische Einrichtungen nicht gekennzeichnet (Zuordnung im Notfall nicht möglich)', False),
     ('qm_beschilderung', 'Beschilderung unvollständig (Schutzraum, Notablass, Entriegelungsschlüssel, Verhalten)', False)], ui='5.54')
 
 # ---- T Türen -----------------------------------------------------------------------
-g('T01', 'T', 'Schachttürverriegelung', [
+g('T01', 'T', 'Schachttürverriegelung und Fläche unterhalb der Schwelle', [
     ('qt_verriegelung_elektrisch', 'Verriegelung nicht vom Sicherheitskreis elektrisch überwacht', False),
-    ('qt_fehlschliess', 'Keine Fehlschließsicherung / Nachschließeinrichtung', False)], ui='7.1')
+    ('qt_fehlschliess', 'Keine Fehlschließsicherung / Nachschließeinrichtung', False),
+    ('qt_flaeche_unter_schwelle',)], ui='7.1')
+g('T10', 'T', 'Türblätter der Schiebetüren: Rückhaltung und Führung', [
+    ('qt_rueckhaltung_tuerblatt', 'Keine Rückhalteeinrichtungen an den horizontal bewegten Schacht-Schiebetüren', False),
+    ('qt_fuehrung_tuerblatt_ok', 'Führungselemente, Hänger oder Befestigungen der Türblätter beschädigt / ausgeschlagen', False)], ui='7.13')
 g('T02', 'T', 'Selbstschließende Schachttüren', [
     ('qt_selbstschliessend', 'Schachttüren nicht selbstschließend (Feder oder Gewicht)', False),
     ('qt_schliesst_nach_notentriegelung', 'Schließt nach einer Notentriegelung nicht selbsttätig', False)], ui='7.3')
@@ -494,21 +579,30 @@ g('T08', 'T', 'Schließkantensicherung der Fahrkorbtür / Schutz ohne Fahrkorbt�
 # ---- K Fahrkorb --------------------------------------------------------------------
 g('K01', 'K', 'Notrufeinrichtung im Fahrkorb', [
     ('qk_notruf_vorhanden', 'Keine Notrufeinrichtung', False),
-    ('qk_notruf_art',)], ui='8.1')
-g('K07', 'K', 'Nennlast, Personenzahl und Nutzfläche', [
+    ('qk_notruf_art',),
+    ('qk_notruf_24h', 'Notruf nicht auf eine rund um die Uhr besetzte Stelle aufgeschaltet', False)], ui='8.1')
+g('K15', 'K', 'Beleuchtung und Notbeleuchtung im Fahrkorb', [
+    ('qk_beleuchtung',),
+    ('qk_bel_zwei_lampen', 'Weniger als zwei parallel geschaltete Lampen im Fahrkorb', False),
+    ('qk_bel_staendig', 'Fahrkorb nicht ständig beleuchtet (außer Parken mit geschlossenen Türen)', False),
+    ('qk_notbeleuchtung',)], ui='8.29')
+g('K07', 'K', 'Fahrkorb: Nennlast, Nutzfläche und Lüftung', [
     ('qk_nennlast_gekennz', 'Nennlast und zulässige Personenzahl nicht gekennzeichnet', False),
-    ('qk_nutzflaeche_ok', 'Nutzfläche passt nicht zur Nennlast (Tabelle EN 81-20 5.4.2)', False)], ui='8.16')
+    ('qk_nutzflaeche_ok', 'Nutzfläche passt nicht zur Nennlast (Tabelle EN 81-20 5.4.2)', False),
+    ('qk_lueftung',)], ui='8.16')
 g('K08', 'K', 'Überlastkontrolle', [
     ('qk_ueberlast', 'Keine Überlastkontrolle / Lastmessung', False),
     ('qk_ueberlast_geprueft', 'Funktion nicht nachweislich geprüft', False)], ui='8.18')
-g('K11', 'K', 'Brandfallsteuerung', [
+g('K11', 'K', 'Brandfall: Steuerung und Hinweisschilder', [
     ('qk_bfs_vorhanden', 'Keine Brandfallsteuerung / nicht in die Brandmeldeanlage eingebunden', False),
-    ('qk_bfs_geprueft', 'Funktion nicht regelmäßig geprüft (kein Nachweis)', False)], ui='8.21')
+    ('qk_bfs_geprueft', 'Funktion nicht regelmäßig geprüft (kein Nachweis)', False),
+    ('qk_hinweis_brandfall', 'Hinweisschild „Aufzug im Brandfall nicht benutzen" fehlt an mindestens einer Haltestelle', False)], ui='8.21')
 g('K12', 'K', 'Barrierefreie Ausführung', [
     ('qk_en8170', 'Nicht nach DIN EN 81-70 barrierefrei ausgeführt', False),
     ('qk_bedienelemente', 'Bedienelemente nicht in erreichbarer Höhe / nicht ertastbar', False),
     ('qk_rollstuhl_mass', 'Fahrkorb für Rollstuhlnutzung zu klein (unter 1,00 m × 1,25 m)', False)], ui='8.22')
-g('K14', 'K', 'Vandalismus und soziales Umfeld', [
+g('K14', 'K', 'Zustand der Fahrkorbausstattung, Vandalismus und soziales Umfeld', [
+    ('qk_ausstattung',),
     ('qk_vandalismus_wiederholt', 'Wiederholte Vandalismusschäden', True),
     ('qk_en8171', 'Nicht vandalismussicher nach DIN EN 81-71 ausgeführt', False)], ui='8.26')
 
@@ -529,20 +623,27 @@ g('K06', 'K', 'Abstand Fahrkorbschwelle – Schachtwand', [
 g('F01', 'F', 'Abstand Fahrkorbdachkante – Schachtwand', [
     ('qf_spalt_mm',),
     ('qf_spalt_mm_wert',)], ui='9.1')
-g('F01a', 'F', 'Geländer auf dem Fahrkorbdach (bei Abstand über 300 mm)', [
+g('F01a', 'F', 'Fahrkorbdach als Standfläche: Geländer, Fußleiste, Tragfähigkeit', [
     ('qf_gelaender', 'Kein Geländer auf dem Fahrkorbdach', False),
-    ('qf_gelaender_hoehe_mm',)], ui='9.2')
+    ('qf_gelaender_hoehe_mm',),
+    ('qf_fussleiste', 'Keine Fußleiste (mind. 100 mm) am Rand des Fahrkorbdachs', False),
+    ('qf_dach_tragfaehig', 'Fahrkorbdach nicht tragfähig (200 kg auf 0,30 m × 0,30 m)', False)], ui='9.2')
+g('F07', 'F', 'Schutzraum im Schachtkopf', [
+    ('qf_schutzraum',),
+    ('qf_kopffreiheit_gekennz', 'Keine Warnkennzeichnung zur reduzierten Kopffreiheit', False)], ui='9.7')
 g('F05', 'F', 'Klappe / Notausstieg im Fahrkorbdach', [
     ('qf_klappe',),
     ('qf_klappe_ueberwacht', 'Klappe nicht elektrisch überwacht (Sicherheitskreis)', False)], ui='9.11')
 
 # ---- S Schacht -----------------------------------------------------------------------
-g('S01', 'S', 'Schachtumwehrung', [
+g('S01', 'S', 'Schachtumwehrung und Zugänge zum Schacht', [
     ('qs_vollumwehrt', 'Schacht nicht vollständig umwehrt (Wände, Decke, Boden)', False),
-    ('qs_teilumwehrt_zulaessig', 'Teilumwehrung nicht nach EN 81-20 5.2.5.2.3 ausgeführt (Höhen, Abstände)', False)], ui='10.3')
-g('S02', 'S', 'Schachtwände und Verglasung', [
+    ('qs_teilumwehrt_zulaessig', 'Teilumwehrung nicht nach EN 81-20 5.2.5.2.3 ausgeführt (Höhen, Abstände)', False),
+    ('qs_zugang_schacht_sicher', 'Zugänge zum Schacht oder die zugehörigen Schalter nicht gesichert / unwirksam (Schacht-, Inspektionstüren)', False)], ui='10.3')
+g('S02', 'S', 'Schachtwände, Verglasung und Führungsschienen', [
     ('qs_wand_fest', 'Schachtwände nicht ausreichend fest / Durchbrüche', False),
-    ('qs_glas_vsg', 'Kein VSG-Nachweis für die Schachtverglasung', False)], ui='10.4')
+    ('qs_glas_vsg', 'Kein VSG-Nachweis für die Schachtverglasung', False),
+    ('qs_schienen_stahl', 'Führungsschienen für Fahrkorb und Gegengewicht nicht aus Stahl', False)], ui='10.4')
 g('S04', 'S', 'Fangvorrichtung, Geschwindigkeitsbegrenzer und Schlaffseilsicherung', [
     ('qs_fang', 'Fangvorrichtung am Fahrkorb fehlt', False),
     ('qs_begrenzer', 'Geschwindigkeitsbegrenzer fehlt', False),
@@ -569,9 +670,10 @@ g('G07', 'G', 'Wasser, Feuchtigkeit und wassergefährdende Stoffe in der Grube',
     ('qg_oel', 'Öl oder wassergefährdende Stoffe ohne Auffangmöglichkeit', True)], ui='11.15')
 
 # ---- U Umfeld -----------------------------------------------------------------------
-g('U01', 'U', 'Gefahrstoffe in unmittelbarer Nähe der Anlage gelagert', [
-    ('qu_gefahrstoff_chem_lager', 'Chemische Gefahrstoffe', True),
-    ('qu_gefahrstoff_bio_lager', 'Biologische Arbeitsstoffe (Labor, Klinik, Entsorgung)', True)], ui='15.28')
+g('U01', 'U', 'Gefahrstoffe und Schadstoffsituation der Anlage', [
+    ('qu_gefahrstoff_chem_lager', 'Chemische Gefahrstoffe in unmittelbarer Nähe gelagert', True),
+    ('qu_gefahrstoff_bio_lager', 'Biologische Arbeitsstoffe in unmittelbarer Nähe gelagert (Labor, Klinik, Entsorgung)', True),
+    ('qu_asbest_unbekannt', 'Asbest-/Schadstoffsituation der Anlage unbekannt (Baujahr vor 1995, keine Unterlagen, keine Beprobung)', True)], ui='15.28')
 g('U02', 'U', 'Transport gefährlicher Stoffe mit dem Aufzug', [
     ('qu_transport_chem', 'Chemische Gefahrstoffe', True),
     ('qu_transport_bio', 'Biologische Arbeitsstoffe / infektiöse Stoffe', True),
@@ -588,10 +690,13 @@ g('U04', 'U', 'Umgebungsbedingungen', [
 g('U05', 'U', 'Bauliche Änderungen', [
     ('qu_bauliche_aenderung', 'Bauliche Änderungen am Schacht / Triebwerksraum ohne statische und sicherheitstechnische Bewertung', True),
     ('qu_verkleidung', 'Nachträgliche Verkleidungen oder Änderungen, die den Sicherheitszustand verschleiern', True)], ui='15.26')
-g('U06', 'U', 'Schnittstelle Brandmeldeanlage – Aufzug', [
-    ('qu_bma_abgestimmt', 'Schnittstelle BMA – Aufzug nicht bekannt / nicht abgestimmt', False),
-    ('qu_bma_geprueft', 'Funktion der Schnittstelle nicht geprüft (kein Nachweis)', False),
-    ('qu_evak_in_gbu', 'Evakuierungs-/Sonderfunktion in dieser Gefährdungsbeurteilung nicht berücksichtigt', False)], ui='15.8a')
+g('U06', 'U', 'Brandschutzeinrichtungen des Gebäudes und ihre Schnittstellen zum Aufzug', [
+    ('qu_bma_abgestimmt', 'Schnittstelle BMA – Aufzug nicht bekannt / nicht abgestimmt', False, 'Brandmeldeanlage'),
+    ('qu_bma_geprueft', 'Funktion der Schnittstelle nicht geprüft (kein Nachweis)', False, 'Brandmeldeanlage'),
+    ('qu_evak_in_gbu', 'Evakuierungs-/Sonderfunktion in dieser Gefährdungsbeurteilung nicht berücksichtigt', False, 'Brandmeldeanlage'),
+    ('qu_brandschutz_behindert', 'Brandschutzeinrichtung behindert den Aufzugsbetrieb oder die Personenrettung (Brandschutztür, Abschottung)', True, 'Bauliche Brandschutzeinrichtungen'),
+    ('qu_entrauchung', None, None, 'Entrauchung / RWA'),
+    ('qu_sprinkler_bewertet', 'Wechselwirkung der Löschanlage mit der Aufzugsanlage nicht bewertet (Wasserbeaufschlagung, Abschaltung)', False, 'Löschanlage')], ui='15.8a')
 g('U10', 'U', 'Fremdgewerke und Reinigungspersonal im Aufzugsbereich', [
     ('qu_wartung_gefaehrlicher_zugang', 'Fremdgewerke (Lüftung, Elektro, Reinigung) müssen für ihre Arbeiten in Aufzugsbereiche', True),
     ('qu_fremd_zugangskonzept', 'Kein Zugangs- und Schutzkonzept für Fremdgewerke / Reinigungspersonal', False)], ui='15.36')
@@ -601,9 +706,10 @@ g('U11', 'U', 'Prüfnachweise und Zuständigkeiten der angrenzenden Gewerke', [
 g('U12', 'U', 'Verkehrsflächen und Flurförderzeuge', [
     ('qu_verkehrswege', 'Aufzugszugang grenzt unmittelbar an Fahrwege oder Verkehrsflächen (Tiefgarage, Anlieferung)', True),
     ('qa_nutzung_flurfoerderzeug', 'Beladung mit Flurförderzeugen oder Transportwagen', True)], ui='15.27')
-g('U13', 'U', 'Emissionen und Lärm im Aufstellbereich', [
+g('U13', 'U', 'Emissionen, Lärm und soziales Umfeld', [
     ('qu_abgase', 'Abgase oder Emissionen (Tiefgarage, Werkstatt, Notstromaggregat)', True),
-    ('qu_laerm', 'Erhöhte Lärmbelastung (über 85 dB(A))', True)], ui='15.24')
+    ('qu_laerm', 'Erhöhte Lärmbelastung (über 85 dB(A))', True),
+    ('qu_umfeld_kritisch', 'Kritisches soziales Umfeld (Vandalismus, Missbrauch der Anlage)', True)], ui='15.24')
 
 # ---- SF Sonderfunktionen ----------------------------------------------------------
 g('SF01', 'SF', 'Feuerwehr- / Evakuierungsaufzug: fehlende Nachweise und Abstimmungen', [
@@ -773,11 +879,31 @@ def anreichern(seed):
     """Nach set_best_case: Gruppen, Nachweise, Stammdaten, Phasen."""
     cats = _cats()
     qmap = {q['code']: q for q in seed['questions']}
-    # Stammdaten
+    # Stammdaten – nie per Sammelantwort (der Stamm ist die Anlage selbst)
     for code, key in STAMM.items():
         if code in qmap:
             qmap[code]['source'] = 'anlagenstamm'
             qmap[code]['stamm_key'] = key
+            qmap[code].pop('best_case', None)
+    # Sammelantwort im Umfeld: Dokumentationsfragen ohne Befundregel
+    for code, (wert, _grund) in SAMMEL_DOKU.items():
+        q = qmap.get(code)
+        if q is not None and q['type'] == 'YES_NO' and q.get('best_case') is None:
+            q['best_case'] = wert
+    # Reine Dokumentationsfragen halten nichts auf
+    for code in DOKU_OPTIONAL:
+        if code in qmap:
+            qmap[code]['optional'] = True
+    # Messwerte nie per Sammelantwort (Entscheidung Arne, 17.09.2026): Die
+    # Schwellenfragen und ihre optionalen Messfelder beantwortet der Prüfer
+    # bewusst – „≤ 10 mm" ist ein Messergebnis, keine Sichtprüfung.
+    for code, spec in SCHWELLEN.items():
+        for c in (code, (spec.get('wert') or (None,))[0]):
+            if c and c in qmap:
+                qmap[c].pop('best_case', None)
+    for code in KEIN_SAMMEL:
+        if code in qmap:
+            qmap[code].pop('best_case', None)
     # Phasen
     seed['category_phases'] = {cats[c]: p for c, p in PHASEN.items()}
     seed['category_order'] = [cats[c] for c in REIHENFOLGE]
@@ -838,6 +964,55 @@ def pruefen(seed):
     for code in VERSCHIEBEN:
         if code not in qmap:
             warnings.append('erhebung: zu verschiebende Frage %s nicht im Katalog' % code)
+    regelfragen = set()
+    for r in seed['rules']:
+        for lf in _leaves(r['condition'], []) + _leaves(r.get('applicability'), []):
+            regelfragen.add(lf['question'])
+    steuert = set()
+    for q in seed['questions']:
+        for lf in _leaves(q.get('visible_when'), []):
+            steuert.add(lf['question'])
+    for a in seed.get('assumptions', []):
+        for lf in _leaves(a.get('when'), []):
+            steuert.add(lf['question'])
+    for lf in _leaves(seed.get('assumptions_void_when'), []):
+        steuert.add(lf['question'])
+    for n in seed.get('nachweise', []):
+        for lf in _leaves(n.get('when'), []):
+            steuert.add(lf['question'])
+    for h in seed['hazards']:
+        for x in h.get('questions', []):
+            if x.get('required_mode') in ('ALWAYS', 'CONDITIONAL'):
+                steuert.add(x['question'])
+            for k in ('applicable_when', 'required_when'):
+                for lf in _leaves(x.get(k), []):
+                    steuert.add(lf['question'])
+    genutzt = {nr for _c, _w, _b, nr, _g in NACHWEISE if nr.isdigit()}
+    fehlt = {str(i) for i in range(1, ZUES_PRUEFPUNKTE + 1)} - genutzt - set(OHNE_KATALOGFRAGE)
+    if fehlt:
+        warnings.append('erhebung: Prüfpunkte der Hauptprüfung weder genutzt noch in '
+                        'OHNE_KATALOGFRAGE begründet: %s' % ', '.join(sorted(fehlt, key=int)))
+    doppelt = genutzt & set(OHNE_KATALOGFRAGE)
+    if doppelt:
+        errors.append('erhebung: Prüfpunkt %s steht in OHNE_KATALOGFRAGE, wird aber für eine '
+                      'Vorbelegung genutzt' % ', '.join(sorted(doppelt, key=int)))
+    for code in KEIN_SAMMEL:
+        if code not in qmap:
+            warnings.append('erhebung: KEIN_SAMMEL %s nicht im Katalog' % code)
+        elif qmap[code].get('best_case') is not None:
+            errors.append('erhebung: %s darf keinen unauffälligen Wert tragen' % code)
+    for code in DOKU_OPTIONAL:
+        if code not in qmap:
+            warnings.append('erhebung: DOKU_OPTIONAL %s nicht im Katalog' % code)
+        elif code in regelfragen or code in steuert:
+            errors.append('erhebung: %s ist nicht nur Dokumentation (Regel, Sichtbarkeit, '
+                          'Annahme, Nachweis oder Pflichtfrage) und darf nicht optional sein' % code)
+    for code, (wert, _grund) in SAMMEL_DOKU.items():
+        q = qmap.get(code)
+        if q is None:
+            warnings.append('erhebung: SAMMEL_DOKU %s nicht im Katalog' % code)
+        elif q['type'] != 'YES_NO' or not isinstance(wert, bool):
+            errors.append('erhebung: SAMMEL_DOKU %s muss Ja/Nein sein' % code)
     for code in STAMM:
         if code not in qmap:
             warnings.append('erhebung: Stammdaten-Frage %s nicht im Katalog' % code)
@@ -896,6 +1071,15 @@ def pruefen(seed):
     if not any(q['code'] == D05['code'] for q in seed['questions']):
         errors.append('D05 (%s) fehlt' % D05['code'])
     return errors, warnings
+
+
+def umfeld_offen(seed):
+    """Fragen im Umfeld, die eine Sammelantwort NICHT setzt (kein best_case,
+    nicht aus dem Stamm) – zur Kontrolle im Generatorlauf."""
+    cat = _cats()['U']
+    return [q['code'] for q in seed['questions']
+            if q.get('category') == cat and q.get('best_case') is None
+            and q.get('source') != 'anlagenstamm']
 
 
 def kennzahlen(seed):
