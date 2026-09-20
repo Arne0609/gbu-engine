@@ -57,8 +57,30 @@ EN_PUNKTE = {}
 for p in (lade('en8180_map.json') or {}).get('punkte', []):
     for hc in p.get('hazards', []):
         EN_PUNKTE.setdefault(hc, []).append('Nr. %s (%s)' % (p['nr'], p['abschnitt']))
-berichte = sorted(glob.glob(os.path.join(HERE, 'pruefbericht_*.json')))
-BERICHT = json.load(open(berichte[-1], encoding='utf-8')) if berichte else None
+def _ist_regelbericht(d):
+    """Blatt „Prüfbericht" erwartet Befunde als Tupel (id, prio, bereich, …).
+
+    Seit 20.09.2026 liegt neben pruefbericht_<Datum>.json auch
+    pruefbericht_riedl_<Datum>.json im Ordner – der Prüfbericht zum
+    FRAGENKATALOG, mit benannten Feldern und einem eigenen Generator
+    (gen_riedl_pruefbericht_klaerung_xlsx.py). Der alphabetisch letzte Treffer
+    war damit der falsche und der Generator brach ab. Jetzt entscheidet die
+    Form, nicht der Dateiname.
+    """
+    if not isinstance(d, dict):
+        return False
+    runden = d.get('runden') or ([{'befunde': d['befunde']}] if 'befunde' in d else [])
+    for rd in runden:
+        for b in rd.get('befunde', []):
+            return isinstance(b, (list, tuple))
+    return False
+
+
+BERICHT = None
+for _pfad in sorted(glob.glob(os.path.join(HERE, 'pruefbericht_*.json'))):
+    _d = json.load(open(_pfad, encoding='utf-8'))
+    if _ist_regelbericht(_d):
+        BERICHT = _d
 
 Q = {q['code']: q for q in seed['questions']}
 H = {h['code']: h for h in seed['hazards']}

@@ -1,5 +1,5 @@
 {
- "rule_version": "cyber-mf-2026.2",
+ "rule_version": "cyber-mf-2026.3",
  "questions": [
   {
    "code": "qa_aufzugsart",
@@ -30,7 +30,8 @@
      "value": "plattform",
      "label": "Plattformaufzug / Kleingüteraufzug"
     }
-   ]
+   ],
+   "group": "CY-A"
   },
   {
    "code": "qa_ueberwachungsbeduerftig",
@@ -39,7 +40,8 @@
    "text": "Überwachungsbedürftige Anlage nach ÜAnlG (Personen- oder Lastenaufzug mit ZÜS-Prüfpflicht)?",
    "category": "A – Anlagenmerkmale und Systemabgrenzung",
    "ui_number": "1.2",
-   "help_text": "Bei überwachungsbedürftigen Anlagen ist nach ÜAnlG stets von einem erheblichen Risiko für Sicherheit und Gesundheit auszugehen (EK-ZÜS B-002 Anhang 2 Nr. 3). Nein = z. B. Plattformaufzug nach MRL ohne ZÜS-Pflicht."
+   "help_text": "Bei überwachungsbedürftigen Anlagen ist nach ÜAnlG stets von einem erheblichen Risiko für Sicherheit und Gesundheit auszugehen (EK-ZÜS B-002 Anhang 2 Nr. 3). Nein = z. B. Plattformaufzug nach MRL ohne ZÜS-Pflicht.",
+   "group": "CY-A"
   },
   {
    "code": "qa_steuerungsart",
@@ -62,7 +64,8 @@
      "value": "vernetzt",
      "label": "Programmierbare Steuerung mit Netz-/Fernanbindung"
     }
-   ]
+   ],
+   "group": "CY-A"
   },
   {
    "code": "qa_maschinenraum",
@@ -71,7 +74,8 @@
    "text": "Triebwerks-/Maschinenraum vorhanden?",
    "category": "A – Anlagenmerkmale und Systemabgrenzung",
    "ui_number": "1.4",
-   "help_text": "Nein = maschinenraumlos; die Steuerung sitzt dann im Steuerschrank an der Haltestelle oder im Schacht."
+   "help_text": "Nein = maschinenraumlos; die Steuerung sitzt dann im Steuerschrank an der Haltestelle oder im Schacht. Dieselbe Angabe wie 4.7 im GBU-Teil (gleicher Fragen-Code) – aus dem Anlagenstamm vorbelegen, nicht zweimal erheben (Prüfbericht 20.09.2026).",
+   "group": "CY-A"
   },
   {
    "code": "qa_vernetzt",
@@ -80,7 +84,8 @@
    "text": "Anlage mit Netzwerk- oder Internetanbindung (Fernüberwachung, Fernwartung, Gateway/Router/Modem, Gebäudeleittechnik)?",
    "category": "A – Anlagenmerkmale und Systemabgrenzung",
    "ui_number": "1.5",
-   "help_text": "Steuert den Erhebungsbereich N sowie die Komponenten Fernüberwachung, Remote-Service und Gateway."
+   "help_text": "Steuert den Erhebungsbereich N sowie die Komponenten Fernüberwachung, Remote-Service und Gateway. Muss „Ja\" sein, wenn unter 1.3 „Programmierbare Steuerung mit Netz-/Fernanbindung\" gewählt wurde – die Gebäudeleittechnik wird unter 1.6 erfasst, nicht hier (Prüfbericht 20.09.2026).",
+   "group": "CY-A"
   },
   {
    "code": "qa_gebaeude_anbindung",
@@ -88,7 +93,8 @@
    "domain": "CYBER",
    "text": "Anbindung an bauseitige Systeme vorhanden (Brandmeldeanlage/Brandfallsteuerung, Entrauchung, Gebäudeleittechnik, Zutrittssystem)?",
    "category": "A – Anlagenmerkmale und Systemabgrenzung",
-   "ui_number": "1.6"
+   "ui_number": "1.6",
+   "group": "CY-A"
   },
   {
    "code": "qa_hersteller_vorgaben",
@@ -115,7 +121,8 @@
      "value": "unbekannt",
      "label": "Nicht bekannt / nicht angefragt"
     }
-   ]
+   ],
+   "group": "CY-A"
   },
   {
    "code": "qz_steuerung_frei",
@@ -124,7 +131,8 @@
    "text": "Ist die Aufzugssteuerung (Steuerschrank, Bedien-/Serviceeinheit) für Unbefugte frei zugänglich?",
    "category": "Z – Zugang und Zugriff",
    "ui_number": "2.1",
-   "help_text": "Ja = ohne Schlüssel oder Werkzeug erreichbar (z. B. Steuerschrank im öffentlichen Flur unverschlossen, Schranktür ohne Schloss)."
+   "help_text": "Ja = ohne Schlüssel oder Werkzeug erreichbar (z. B. Steuerschrank im öffentlichen Flur unverschlossen, Schranktür ohne Schloss).",
+   "group": "CY-Z"
   },
   {
    "code": "qz_triebwerksraum_frei",
@@ -137,7 +145,8 @@
     "question": "qa_maschinenraum",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "group": "CY-Z"
   },
   {
    "code": "qz_schacht_frei",
@@ -145,7 +154,8 @@
    "domain": "CYBER",
    "text": "Ist der Aufzugsschacht für Unbefugte frei zugänglich (Grubenzugang, Schachttür ohne Notentriegelungsschutz, offene Wartungsklappe)?",
    "category": "Z – Zugang und Zugriff",
-   "ui_number": "2.3"
+   "ui_number": "2.3",
+   "group": "CY-Z"
   },
   {
    "code": "qz_service_gesichert",
@@ -153,16 +163,28 @@
    "domain": "CYBER",
    "text": "Sind die Service- und Programmierschnittstellen (Serviceanschluss, USB, Speicherkarte, Diagnosestecker) gegen unbefugte Nutzung gesichert (verschlossene Abdeckung, Freigabe nur mit Schlüssel/Code)?",
    "category": "Z – Zugang und Zugriff",
-   "ui_number": "2.4"
+   "ui_number": "2.4",
+   "group": "CY-Z"
   },
   {
    "code": "qz_default_zugangsdaten",
    "type": "YES_NO",
    "domain": "CYBER",
-   "text": "Werden Standard-/Werkszugangsdaten (Passwörter, PINs, Servicecodes) verwendet oder sind die Zugangsdaten nicht bekannt?",
+   "text": "Werden Standard-/Werkszugangsdaten (Passwörter, PINs, Servicecodes) verwendet?",
    "category": "Z – Zugang und Zugriff",
    "ui_number": "2.5",
-   "help_text": "Ja = Mangel. Gemeint sind alle Zugänge: Steuerung, Notruf, Umrichter, Gateway, Fernwartung."
+   "help_text": "Ja = Mangel. Gemeint sind alle Zugänge: Steuerung, Notruf, Umrichter, Gateway, Fernwartung. Ob die Zugangsdaten überhaupt bekannt sind, steht unter 2.5a – beides stand bisher in einer Frage, obwohl nur der erste Fall mit „Werkszugangsdaten ändern\" zu beheben ist (Prüfbericht 20.09.2026).",
+   "group": "CY-Z"
+  },
+  {
+   "code": "qz_zugangsdaten_bekannt",
+   "type": "YES_NO",
+   "domain": "CYBER",
+   "text": "Sind dem Betreiber die Zugangsdaten der Anlage bekannt und liegen sie gesichert vor (Übergabe durch Hersteller/Wartungsfirma dokumentiert)?",
+   "category": "Z – Zugang und Zugriff",
+   "ui_number": "2.5a",
+   "help_text": "Nein = Mangel: Der Betreiber kann Zugänge weder prüfen noch bei einem Firmenwechsel entziehen (TRBS 1115-1, Zugangskontrolle Software).",
+   "group": "CY-Z"
   },
   {
    "code": "qz_rollen",
@@ -170,7 +192,8 @@
    "domain": "CYBER",
    "text": "Sind Zugriffsrechte rollenbasiert vergeben (Betreiber, Wartungsfirma, Hersteller) und werden sie bei Personal- oder Firmenwechsel entzogen?",
    "category": "Z – Zugang und Zugriff",
-   "ui_number": "2.6"
+   "ui_number": "2.6",
+   "group": "CY-Z"
   },
   {
    "code": "qz_servicegeraete",
@@ -178,7 +201,8 @@
    "domain": "CYBER",
    "text": "Ist geregelt, welche Servicegeräte, Laptops und Wechseldatenträger an die Anlage angeschlossen werden dürfen (nur freigegebene, geprüfte Geräte; kein privater Datenträger)?",
    "category": "Z – Zugang und Zugriff",
-   "ui_number": "2.7"
+   "ui_number": "2.7",
+   "group": "CY-Z"
   },
   {
    "code": "qc_steuerung_schnittstelle",
@@ -214,7 +238,8 @@
      "value": "fernzugriff",
      "label": "Fernzugriff (Internet/Cloud, Hersteller-Fernzugriff, Service-App)"
     }
-   ]
+   ],
+   "group": "CY-C1"
   },
   {
    "code": "qc_steuerung_massnahmen",
@@ -251,7 +276,8 @@
      "value": "umgesetzt",
      "label": "Festgelegt, umgesetzt und Wirksamkeit nachgewiesen (TRBS 1115-1 Abschn. 5)"
     }
-   ]
+   ],
+   "group": "CY-C1"
   },
   {
    "code": "qc_steuerung_unabhaengig",
@@ -273,7 +299,8 @@
       "value": "keine"
      }
     ]
-   }
+   },
+   "group": "CY-C1"
   },
   {
    "code": "qc_pessral_vorhanden",
@@ -282,7 +309,8 @@
    "text": "PESSRAL / programmierbare Sicherheitsschaltung vorhanden?",
    "category": "C – Komponenten und Schnittstellen",
    "ui_number": "3.2.1",
-   "help_text": "Schutzfunktion: Elektronische Sicherheitsfunktionen im Sicherheitsstromkreis. Mögliche Cyberfolge: Manipulation oder Deaktivierung von Sicherheitsfunktionen."
+   "help_text": "Schutzfunktion: Elektronische Sicherheitsfunktionen im Sicherheitsstromkreis. Mögliche Cyberfolge: Manipulation oder Deaktivierung von Sicherheitsfunktionen.",
+   "group": "CY-C2"
   },
   {
    "code": "qc_pessral_schnittstelle",
@@ -318,7 +346,8 @@
      "value": "fernzugriff",
      "label": "Fernzugriff (Internet/Cloud, Hersteller-Fernzugriff, Service-App)"
     }
-   ]
+   ],
+   "group": "CY-C2"
   },
   {
    "code": "qc_pessral_massnahmen",
@@ -355,7 +384,8 @@
      "value": "umgesetzt",
      "label": "Festgelegt, umgesetzt und Wirksamkeit nachgewiesen (TRBS 1115-1 Abschn. 5)"
     }
-   ]
+   ],
+   "group": "CY-C2"
   },
   {
    "code": "qc_fu_vorhanden",
@@ -364,7 +394,8 @@
    "text": "Frequenzumrichter (geregelter Antrieb) vorhanden?",
    "category": "C – Komponenten und Schnittstellen",
    "ui_number": "3.3.1",
-   "help_text": "Schutzfunktion: Regelung von Fahrgeschwindigkeit und Antrieb. Mögliche Cyberfolge: Unzulässige Geschwindigkeit oder Beschleunigung, wenn keine unabhängige Rückfallebene wirkt."
+   "help_text": "Schutzfunktion: Regelung von Fahrgeschwindigkeit und Antrieb. Mögliche Cyberfolge: Unzulässige Geschwindigkeit oder Beschleunigung, wenn keine unabhängige Rückfallebene wirkt.",
+   "group": "CY-C3"
   },
   {
    "code": "qc_fu_schnittstelle",
@@ -400,7 +431,8 @@
      "value": "fernzugriff",
      "label": "Fernzugriff (Internet/Cloud, Hersteller-Fernzugriff, Service-App)"
     }
-   ]
+   ],
+   "group": "CY-C3"
   },
   {
    "code": "qc_fu_massnahmen",
@@ -437,7 +469,8 @@
      "value": "umgesetzt",
      "label": "Festgelegt, umgesetzt und Wirksamkeit nachgewiesen (TRBS 1115-1 Abschn. 5)"
     }
-   ]
+   ],
+   "group": "CY-C3"
   },
   {
    "code": "qc_fu_unabhaengig",
@@ -459,7 +492,8 @@
       "value": "keine"
      }
     ]
-   }
+   },
+   "group": "CY-C3"
   },
   {
    "code": "qc_notruf_vorhanden",
@@ -468,7 +502,8 @@
    "text": "Notrufsystem mit digitaler Komponente (Mobilfunk/IP, programmierbares Notrufgerät) vorhanden?",
    "category": "C – Komponenten und Schnittstellen",
    "ui_number": "3.4.1",
-   "help_text": "Schutzfunktion: Hilfe und Kommunikation bei Personeneinschluss. Mögliche Cyberfolge: Notruf wird nicht oder an die falsche Stelle weitergeleitet; Personeneinschluss bleibt unbemerkt."
+   "help_text": "Schutzfunktion: Hilfe und Kommunikation bei Personeneinschluss. Mögliche Cyberfolge: Notruf wird nicht oder an die falsche Stelle weitergeleitet; Personeneinschluss bleibt unbemerkt.",
+   "group": "CY-C4"
   },
   {
    "code": "qc_notruf_schnittstelle",
@@ -504,7 +539,8 @@
      "value": "fernzugriff",
      "label": "Fernzugriff (Internet/Cloud, Hersteller-Fernzugriff, Service-App)"
     }
-   ]
+   ],
+   "group": "CY-C4"
   },
   {
    "code": "qc_notruf_massnahmen",
@@ -541,7 +577,8 @@
      "value": "umgesetzt",
      "label": "Festgelegt, umgesetzt und Wirksamkeit nachgewiesen (TRBS 1115-1 Abschn. 5)"
     }
-   ]
+   ],
+   "group": "CY-C4"
   },
   {
    "code": "qc_notruf_unabhaengig",
@@ -563,7 +600,8 @@
       "value": "keine"
      }
     ]
-   }
+   },
+   "group": "CY-C4"
   },
   {
    "code": "qc_kopierung_vorhanden",
@@ -572,7 +610,8 @@
    "text": "Digitale Schachtkopierung / Absolutwertgeber vorhanden?",
    "category": "C – Komponenten und Schnittstellen",
    "ui_number": "3.5.1",
-   "help_text": "Schutzfunktion: Positionserfassung und Haltegenauigkeit (Bündigkeit). Mögliche Cyberfolge: Fehlpositionierung oder Fehlbündigkeit; Stolper-/Absturzgefahr."
+   "help_text": "Schutzfunktion: Positionserfassung und Haltegenauigkeit (Bündigkeit). Mögliche Cyberfolge: Fehlpositionierung oder Fehlbündigkeit; Stolper-/Absturzgefahr.",
+   "group": "CY-C5"
   },
   {
    "code": "qc_kopierung_schnittstelle",
@@ -608,7 +647,8 @@
      "value": "fernzugriff",
      "label": "Fernzugriff (Internet/Cloud, Hersteller-Fernzugriff, Service-App)"
     }
-   ]
+   ],
+   "group": "CY-C5"
   },
   {
    "code": "qc_kopierung_massnahmen",
@@ -645,7 +685,8 @@
      "value": "umgesetzt",
      "label": "Festgelegt, umgesetzt und Wirksamkeit nachgewiesen (TRBS 1115-1 Abschn. 5)"
     }
-   ]
+   ],
+   "group": "CY-C5"
   },
   {
    "code": "qc_kopierung_unabhaengig",
@@ -667,7 +708,8 @@
       "value": "keine"
      }
     ]
-   }
+   },
+   "group": "CY-C5"
   },
   {
    "code": "qc_tuer_vorhanden",
@@ -676,7 +718,8 @@
    "text": "Programmierbare Türsteuerung / Türantrieb mit Parametrierzugang vorhanden?",
    "category": "C – Komponenten und Schnittstellen",
    "ui_number": "3.6.1",
-   "help_text": "Schutzfunktion: Türbewegung und Begrenzung der Schließkräfte. Mögliche Cyberfolge: Unzulässige Türkräfte oder Türbewegung; Quetsch-/Schergefahr."
+   "help_text": "Schutzfunktion: Türbewegung und Begrenzung der Schließkräfte. Mögliche Cyberfolge: Unzulässige Türkräfte oder Türbewegung; Quetsch-/Schergefahr.",
+   "group": "CY-C6"
   },
   {
    "code": "qc_tuer_schnittstelle",
@@ -712,7 +755,8 @@
      "value": "fernzugriff",
      "label": "Fernzugriff (Internet/Cloud, Hersteller-Fernzugriff, Service-App)"
     }
-   ]
+   ],
+   "group": "CY-C6"
   },
   {
    "code": "qc_tuer_massnahmen",
@@ -749,7 +793,8 @@
      "value": "umgesetzt",
      "label": "Festgelegt, umgesetzt und Wirksamkeit nachgewiesen (TRBS 1115-1 Abschn. 5)"
     }
-   ]
+   ],
+   "group": "CY-C6"
   },
   {
    "code": "qc_tuer_unabhaengig",
@@ -771,7 +816,8 @@
       "value": "keine"
      }
     ]
-   }
+   },
+   "group": "CY-C6"
   },
   {
    "code": "qc_ucm_vorhanden",
@@ -780,7 +826,8 @@
    "text": "UCM-Erkennung (Schutz gegen unbeabsichtigte Bewegung) mit programmierbarer Komponente vorhanden?",
    "category": "C – Komponenten und Schnittstellen",
    "ui_number": "3.7.1",
-   "help_text": "Schutzfunktion: Verhinderung unkontrollierter Fahrkorbbewegung bei offenen Türen. Mögliche Cyberfolge: Quetsch-/Schergefahr durch Deaktivierung oder Parameteränderung."
+   "help_text": "Schutzfunktion: Verhinderung unkontrollierter Fahrkorbbewegung bei offenen Türen. Mögliche Cyberfolge: Quetsch-/Schergefahr durch Deaktivierung oder Parameteränderung.",
+   "group": "CY-C7"
   },
   {
    "code": "qc_ucm_schnittstelle",
@@ -816,7 +863,8 @@
      "value": "fernzugriff",
      "label": "Fernzugriff (Internet/Cloud, Hersteller-Fernzugriff, Service-App)"
     }
-   ]
+   ],
+   "group": "CY-C7"
   },
   {
    "code": "qc_ucm_massnahmen",
@@ -853,7 +901,8 @@
      "value": "umgesetzt",
      "label": "Festgelegt, umgesetzt und Wirksamkeit nachgewiesen (TRBS 1115-1 Abschn. 5)"
     }
-   ]
+   ],
+   "group": "CY-C7"
   },
   {
    "code": "qc_ucm_unabhaengig",
@@ -875,7 +924,8 @@
       "value": "keine"
      }
     ]
-   }
+   },
+   "group": "CY-C7"
   },
   {
    "code": "qc_safue_vorhanden",
@@ -884,7 +934,8 @@
    "text": "Elektronischer Geschwindigkeitsbegrenzer / SAFÜ mit programmierbarer Komponente vorhanden?",
    "category": "C – Komponenten und Schnittstellen",
    "ui_number": "3.8.1",
-   "help_text": "Schutzfunktion: Schutz gegen Übergeschwindigkeit. Mögliche Cyberfolge: Deaktivierung oder Manipulation des Übergeschwindigkeitsschutzes."
+   "help_text": "Schutzfunktion: Schutz gegen Übergeschwindigkeit. Mögliche Cyberfolge: Deaktivierung oder Manipulation des Übergeschwindigkeitsschutzes.",
+   "group": "CY-C8"
   },
   {
    "code": "qc_safue_schnittstelle",
@@ -920,7 +971,8 @@
      "value": "fernzugriff",
      "label": "Fernzugriff (Internet/Cloud, Hersteller-Fernzugriff, Service-App)"
     }
-   ]
+   ],
+   "group": "CY-C8"
   },
   {
    "code": "qc_safue_massnahmen",
@@ -957,7 +1009,8 @@
      "value": "umgesetzt",
      "label": "Festgelegt, umgesetzt und Wirksamkeit nachgewiesen (TRBS 1115-1 Abschn. 5)"
     }
-   ]
+   ],
+   "group": "CY-C8"
   },
   {
    "code": "qc_safue_unabhaengig",
@@ -979,7 +1032,8 @@
       "value": "keine"
      }
     ]
-   }
+   },
+   "group": "CY-C8"
   },
   {
    "code": "qc_tragmittel_vorhanden",
@@ -988,7 +1042,8 @@
    "text": "Elektronische Tragmittelüberwachung (z. B. Riemenüberwachung) vorhanden?",
    "category": "C – Komponenten und Schnittstellen",
    "ui_number": "3.9.1",
-   "help_text": "Schutzfunktion: Überwachung des Zustands der Tragmittel (Riemen/Seile). Mögliche Cyberfolge: Ausfall oder Umgehung der Überwachung bleibt unbemerkt."
+   "help_text": "Schutzfunktion: Überwachung des Zustands der Tragmittel (Riemen/Seile). Mögliche Cyberfolge: Ausfall oder Umgehung der Überwachung bleibt unbemerkt.",
+   "group": "CY-C9"
   },
   {
    "code": "qc_tragmittel_schnittstelle",
@@ -1024,7 +1079,8 @@
      "value": "fernzugriff",
      "label": "Fernzugriff (Internet/Cloud, Hersteller-Fernzugriff, Service-App)"
     }
-   ]
+   ],
+   "group": "CY-C9"
   },
   {
    "code": "qc_tragmittel_massnahmen",
@@ -1061,7 +1117,8 @@
      "value": "umgesetzt",
      "label": "Festgelegt, umgesetzt und Wirksamkeit nachgewiesen (TRBS 1115-1 Abschn. 5)"
     }
-   ]
+   ],
+   "group": "CY-C9"
   },
   {
    "code": "qc_tragmittel_unabhaengig",
@@ -1083,7 +1140,8 @@
       "value": "keine"
      }
     ]
-   }
+   },
+   "group": "CY-C9"
   },
   {
    "code": "qc_hydraulik_vorhanden",
@@ -1100,7 +1158,8 @@
      "hydraulik",
      "seil_hydraulik"
     ]
-   }
+   },
+   "group": "CY-C10"
   },
   {
    "code": "qc_hydraulik_schnittstelle",
@@ -1148,7 +1207,8 @@
      "value": "fernzugriff",
      "label": "Fernzugriff (Internet/Cloud, Hersteller-Fernzugriff, Service-App)"
     }
-   ]
+   ],
+   "group": "CY-C10"
   },
   {
    "code": "qc_hydraulik_massnahmen",
@@ -1197,7 +1257,8 @@
      "value": "umgesetzt",
      "label": "Festgelegt, umgesetzt und Wirksamkeit nachgewiesen (TRBS 1115-1 Abschn. 5)"
     }
-   ]
+   ],
+   "group": "CY-C10"
   },
   {
    "code": "qc_hydraulik_unabhaengig",
@@ -1231,7 +1292,8 @@
       "value": "keine"
      }
     ]
-   }
+   },
+   "group": "CY-C10"
   },
   {
    "code": "qc_fernueb_vorhanden",
@@ -1244,7 +1306,8 @@
     "question": "qa_vernetzt",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "group": "CY-N"
   },
   {
    "code": "qc_fernueb_lesend",
@@ -1266,7 +1329,8 @@
       "value": true
      }
     ]
-   }
+   },
+   "group": "CY-N"
   },
   {
    "code": "qc_remote_vorhanden",
@@ -1279,7 +1343,8 @@
     "question": "qa_vernetzt",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "group": "CY-N"
   },
   {
    "code": "qc_gateway_vorhanden",
@@ -1292,7 +1357,8 @@
     "question": "qa_vernetzt",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "group": "CY-N"
   },
   {
    "code": "qc_gateway_firewall",
@@ -1314,7 +1380,8 @@
       "value": true
      }
     ]
-   }
+   },
+   "group": "CY-N"
   },
   {
    "code": "qc_gateway_default",
@@ -1336,7 +1403,8 @@
       "value": true
      }
     ]
-   }
+   },
+   "group": "CY-N"
   },
   {
    "code": "qc_gateway_updates",
@@ -1358,7 +1426,8 @@
       "value": true
      }
     ]
-   }
+   },
+   "group": "CY-N"
   },
   {
    "code": "qc_geb_rueckwirkungsfrei",
@@ -1371,7 +1440,8 @@
     "question": "qa_gebaeude_anbindung",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "group": "CY-G"
   },
   {
    "code": "qc_geb_sicherer_zustand",
@@ -1384,7 +1454,8 @@
     "question": "qa_gebaeude_anbindung",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "group": "CY-G"
   },
   {
    "code": "qn_segmentierung",
@@ -1393,11 +1464,13 @@
    "text": "Ist das Aufzugsnetz vom Gebäude-/Büronetz und vom Internet getrennt (eigenes Segment, Firewall, keine direkte Erreichbarkeit der Steuerung von außen)?",
    "category": "N – Netz, Fernzugriff und Härtung",
    "ui_number": "4.1",
+   "help_text": "Gilt kanalübergreifend für ALLE Zugangswege der Anlage (Fernüberwachung, Remote-Service/Fernwartung, Gateway, Servicegeräte vor Ort). Sind die Kanäle technisch getrennt – etwa Hersteller-Cloud und Wartungs-VPN –, gilt der schlechteste Fall: „Ja\" nur, wenn es für JEDEN vorhandenen Kanal zutrifft (Prüfbericht 20.09.2026).",
    "visible_when": {
     "question": "qa_vernetzt",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "group": "CY-N"
   },
   {
    "code": "qn_fern_freigabe",
@@ -1406,11 +1479,22 @@
    "text": "Wird ein Fernzugriff nur nach Freigabe durch den Betreiber und nur für die Dauer des Bedarfs aktiviert?",
    "category": "N – Netz, Fernzugriff und Härtung",
    "ui_number": "4.2",
+   "help_text": "Nur bei vorhandenem Remote-Service / vorhandener Fernwartung (3.12.1). Eine reine Fernüberwachung ohne Schreibzugriff braucht kein Freigabeverfahren (Prüfbericht 20.09.2026).",
    "visible_when": {
-    "question": "qa_vernetzt",
-    "operator": "EQ",
-    "value": true
-   }
+    "all": [
+     {
+      "question": "qa_vernetzt",
+      "operator": "EQ",
+      "value": true
+     },
+     {
+      "question": "qc_remote_vorhanden",
+      "operator": "EQ",
+      "value": true
+     }
+    ]
+   },
+   "group": "CY-N"
   },
   {
    "code": "qn_fern_auth",
@@ -1419,11 +1503,13 @@
    "text": "Ist der Fernzugriff individuell authentifiziert (personenbezogene Zugänge, Zwei-Faktor oder gleichwertig) und verschlüsselt?",
    "category": "N – Netz, Fernzugriff und Härtung",
    "ui_number": "4.3",
+   "help_text": "Gilt kanalübergreifend für ALLE Zugangswege der Anlage (Fernüberwachung, Remote-Service/Fernwartung, Gateway, Servicegeräte vor Ort). Sind die Kanäle technisch getrennt – etwa Hersteller-Cloud und Wartungs-VPN –, gilt der schlechteste Fall: „Ja\" nur, wenn es für JEDEN vorhandenen Kanal zutrifft (Prüfbericht 20.09.2026).",
    "visible_when": {
     "question": "qa_vernetzt",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "group": "CY-N"
   },
   {
    "code": "qn_protokoll",
@@ -1431,7 +1517,9 @@
    "domain": "CYBER",
    "text": "Werden Zugriffe auf die Anlage (vor Ort über Servicegeräte und per Fernzugriff) protokolliert und die Protokolle ausgewertet?",
    "category": "N – Netz, Fernzugriff und Härtung",
-   "ui_number": "4.4"
+   "ui_number": "4.4",
+   "help_text": "Gilt kanalübergreifend für ALLE Zugangswege der Anlage (Fernüberwachung, Remote-Service/Fernwartung, Gateway, Servicegeräte vor Ort). Sind die Kanäle technisch getrennt – etwa Hersteller-Cloud und Wartungs-VPN –, gilt der schlechteste Fall: „Ja\" nur, wenn es für JEDEN vorhandenen Kanal zutrifft (Prüfbericht 20.09.2026).",
+   "group": "CY-N"
   },
   {
    "code": "qn_softwarestand",
@@ -1454,7 +1542,8 @@
      "value": "unbekannt",
      "label": "Stand nicht bekannt / nicht dokumentiert"
     }
-   ]
+   ],
+   "group": "CY-N"
   },
   {
    "code": "qn_funktionsreduzierung",
@@ -1462,7 +1551,8 @@
    "domain": "CYBER",
    "text": "Sind nicht benötigte Funktionen, Ports, Dienste und Schnittstellen deaktiviert (Funktionsreduzierung)?",
    "category": "N – Netz, Fernzugriff und Härtung",
-   "ui_number": "4.6"
+   "ui_number": "4.6",
+   "group": "CY-N"
   },
   {
    "code": "qo_verantwortlich",
@@ -1470,7 +1560,8 @@
    "domain": "CYBER",
    "text": "Ist eine verantwortliche Person des Betreibers für die Cybersicherheit der Anlage benannt und die Zuständigkeit der Wartungsfirma vertraglich geregelt?",
    "category": "O – Organisation, Notfall und Nachweise",
-   "ui_number": "5.1"
+   "ui_number": "5.1",
+   "group": "CY-O"
   },
   {
    "code": "qo_fachkunde",
@@ -1478,7 +1569,8 @@
    "domain": "CYBER",
    "text": "Wurden die Cyber-Schutzmaßnahmen durch fachkundige Personen festgelegt (TRBS 1115-1 Abschnitt 3.3.2)?",
    "category": "O – Organisation, Notfall und Nachweise",
-   "ui_number": "5.2"
+   "ui_number": "5.2",
+   "group": "CY-O"
   },
   {
    "code": "qo_notfall",
@@ -1486,7 +1578,8 @@
    "domain": "CYBER",
    "text": "Ist ein Notfallmanagement für Cybervorfälle festgelegt (Erkennen, Anlage in sicheren Zustand bringen/außer Betrieb nehmen, Meldung, Wiederinbetriebnahme erst nach Prüfung)?",
    "category": "O – Organisation, Notfall und Nachweise",
-   "ui_number": "5.3"
+   "ui_number": "5.3",
+   "group": "CY-O"
   },
   {
    "code": "qo_unterweisung",
@@ -1494,7 +1587,8 @@
    "domain": "CYBER",
    "text": "Sind die Beschäftigten (beauftragte Person, Betreiberpersonal) zur Cybersicherheit der Anlage unterwiesen?",
    "category": "O – Organisation, Notfall und Nachweise",
-   "ui_number": "5.4"
+   "ui_number": "5.4",
+   "group": "CY-O"
   },
   {
    "code": "qo_pruefung_fristen",
@@ -1502,7 +1596,8 @@
    "domain": "CYBER",
    "text": "Sind Art, Umfang und Fristen der Überprüfung und Kontrolle der Cyber-Schutzmaßnahmen schriftlich festgelegt?",
    "category": "O – Organisation, Notfall und Nachweise",
-   "ui_number": "5.5"
+   "ui_number": "5.5",
+   "group": "CY-O"
   },
   {
    "code": "qo_wirksamkeit",
@@ -1510,7 +1605,8 @@
    "domain": "CYBER",
    "text": "Liegt ein Nachweis der Wirksamkeit der Cyber-Schutzmaßnahmen vor (TRBS 1115-1 Abschnitt 5)?",
    "category": "O – Organisation, Notfall und Nachweise",
-   "ui_number": "5.6"
+   "ui_number": "5.6",
+   "group": "CY-D"
   },
   {
    "code": "qo_funktion",
@@ -1518,7 +1614,8 @@
    "domain": "CYBER",
    "text": "Liegt eine Bestätigung der Funktionsfähigkeit der Cyber-Schutzmaßnahmen vor (TRBS 1115-1 Abschnitt 8.2)?",
    "category": "O – Organisation, Notfall und Nachweise",
-   "ui_number": "5.7"
+   "ui_number": "5.7",
+   "group": "CY-D"
   },
   {
    "code": "qo_rueckwirkung",
@@ -1526,7 +1623,8 @@
    "domain": "CYBER",
    "text": "Ist sichergestellt, dass die Cyber-Schutzmaßnahmen die Sicherheitsfunktionen der Anlage nicht negativ beeinflussen (Rückwirkungsfreiheit, z. B. keine Abschaltung des Notrufs durch die Firewall)?",
    "category": "O – Organisation, Notfall und Nachweise",
-   "ui_number": "5.8"
+   "ui_number": "5.8",
+   "group": "CY-O"
   },
   {
    "code": "qo_erkenntnisse",
@@ -1534,7 +1632,8 @@
    "domain": "CYBER",
    "text": "Werden neue Erkenntnisse zur Cybersicherheit (Herstellerhinweise, Schwachstellenmeldungen, CERT-Warnungen) in die Gefährdungsbeurteilung eingebunden?",
    "category": "O – Organisation, Notfall und Nachweise",
-   "ui_number": "5.9"
+   "ui_number": "5.9",
+   "group": "CY-O"
   },
   {
    "code": "qo_aenderungen",
@@ -1542,7 +1641,8 @@
    "domain": "CYBER",
    "text": "Wurden nach Aussage des Betreibers prüfpflichtige Änderungen mit Einfluss auf die Cybersicherheit durchgeführt (Steuerungstausch, neue Fernanbindung, Software-Update sicherheitsrelevanter Komponenten)?",
    "category": "O – Organisation, Notfall und Nachweise",
-   "ui_number": "5.10"
+   "ui_number": "5.10",
+   "group": "CY-O"
   },
   {
    "code": "qo_aenderungen_geprueft",
@@ -1555,7 +1655,8 @@
     "question": "qo_aenderungen",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "group": "CY-O"
   },
   {
    "code": "qo_zues_beruecksichtigt",
@@ -1564,7 +1665,8 @@
    "text": "Wurden Cyberbedrohungen gemäß TRBS 1115 Teil 1 bei der Gefährdungsbeurteilung der Anlage berücksichtigt (diese Cyber-GBU vollständig bearbeitet und in die Gesamt-GBU übernommen)?",
    "category": "O – Organisation, Notfall und Nachweise",
    "ui_number": "5.11",
-   "help_text": "EK-ZÜS B-002 Anhang 2 Nr. 1. Dokumentation, keine Stufe."
+   "help_text": "EK-ZÜS B-002 Anhang 2 Nr. 1. Dokumentation, keine Stufe.",
+   "group": "CY-D"
   },
   {
    "code": "qo_zues_erfasst",
@@ -1573,7 +1675,8 @@
    "text": "Sind alle sicherheitsrelevanten MSR-Einrichtungen und weiteren schutzbedürftigen Einrichtungen erfasst und dokumentiert (Komponentenliste vollständig, weitere Komponenten als Freitext ergänzt)?",
    "category": "O – Organisation, Notfall und Nachweise",
    "ui_number": "5.12",
-   "help_text": "EK-ZÜS B-002 Anhang 2 Nr. 2. Dokumentation, keine Stufe."
+   "help_text": "EK-ZÜS B-002 Anhang 2 Nr. 2. Dokumentation, keine Stufe.",
+   "group": "CY-D"
   },
   {
    "code": "qo_zues_erhebliches_risiko",
@@ -1587,7 +1690,8 @@
     "question": "qa_ueberwachungsbeduerftig",
     "operator": "EQ",
     "value": true
-   }
+   },
+   "group": "CY-D"
   },
   {
    "code": "qo_zues_stand_technik",
@@ -1596,14 +1700,15 @@
    "text": "Wurde der Stand der Technik herangezogen (TRBS 1115 Teil 1, EK-ZÜS B-002/BA-017, Herstellervorgaben, aktuelle Schwachstellenhinweise)?",
    "category": "O – Organisation, Notfall und Nachweise",
    "ui_number": "5.14",
-   "help_text": "EK-ZÜS B-002 Anhang 2 Nr. 5. Dokumentation, keine Stufe."
+   "help_text": "EK-ZÜS B-002 Anhang 2 Nr. 5. Dokumentation, keine Stufe.",
+   "group": "CY-D"
   }
  ],
  "measures": [
   {
    "code": "m_eda4078821",
    "title": "Steuerschrank verschließen bzw. Zugang beschränken; Service- und Programmierschnittstellen sofort gegen Nutzung sichern",
-   "type": "ORGANISATIONAL",
+   "type": "TECHNICAL",
    "priority_class": "SOFORT"
   },
   {
@@ -1621,7 +1726,7 @@
   {
    "code": "m_501e2aa43b",
    "title": "Geeignete Verschließeinrichtung nachrüsten und Schlüsselverwaltung festlegen",
-   "type": "TECHNICAL",
+   "type": "ORGANISATIONAL",
    "priority_class": "MITTELFRISTIG"
   },
   {
@@ -1633,7 +1738,7 @@
   {
    "code": "m_1df5436cdb",
    "title": "Zugangskontrolle (Hardware) für Service- und Programmierzugänge dauerhaft festlegen",
-   "type": "TECHNICAL",
+   "type": "ORGANISATIONAL",
    "priority_class": "MITTELFRISTIG"
   },
   {
@@ -1645,25 +1750,37 @@
   {
    "code": "m_aba80211b8",
    "title": "Werkszugangsdaten unverzüglich ändern; Fernzugänge bis dahin deaktivieren",
-   "type": "ORGANISATIONAL",
+   "type": "TECHNICAL",
    "priority_class": "SOFORT"
   },
   {
    "code": "m_c85fd1a8ff",
    "title": "Passwort-/Berechtigungskonzept (Zugangskontrolle Software) mit individuellen Zugängen einführen",
-   "type": "TECHNICAL",
+   "type": "ORGANISATIONAL",
    "priority_class": "MITTELFRISTIG"
   },
   {
    "code": "m_7b5e9e644c",
    "title": "Werkszugangsdaten ändern und sicher verwahren",
-   "type": "ORGANISATIONAL",
+   "type": "TECHNICAL",
    "priority_class": "SOFORT"
   },
   {
    "code": "m_e502960069",
    "title": "Passwort-/Berechtigungskonzept einführen und Wechsel bei Personal- oder Firmenwechsel festlegen",
-   "type": "TECHNICAL",
+   "type": "ORGANISATIONAL",
+   "priority_class": "MITTELFRISTIG"
+  },
+  {
+   "code": "m_ef66af30da",
+   "title": "Zugangsdaten bei Hersteller und Wartungsfirma anfordern und gesichert hinterlegen (Passwortverwaltung des Betreibers)",
+   "type": "ORGANISATIONAL",
+   "priority_class": "SOFORT"
+  },
+  {
+   "code": "m_a03d26c6ba",
+   "title": "Übergabe der Zugangsdaten vertraglich regeln; Zugänge des Betreibers bei jedem Firmenwechsel prüfen und erneuern",
+   "type": "ORGANISATIONAL",
    "priority_class": "MITTELFRISTIG"
   },
   {
@@ -1675,7 +1792,7 @@
   {
    "code": "m_2643db0c0a",
    "title": "Rollenkonzept (Betreiber, Wartung, Hersteller) mit Entzug bei Wechsel festlegen",
-   "type": "TECHNICAL",
+   "type": "ORGANISATIONAL",
    "priority_class": "MITTELFRISTIG"
   },
   {
@@ -1687,7 +1804,7 @@
   {
    "code": "m_dd03e432e1",
    "title": "Freigabeliste für Servicegeräte und Datenträger mit der Wartungsfirma vereinbaren (Härtung nach TRBS 1115-1)",
-   "type": "TECHNICAL",
+   "type": "ORGANISATIONAL",
    "priority_class": "MITTELFRISTIG"
   },
   {
@@ -1699,7 +1816,7 @@
   {
    "code": "m_24cc1ae0c8",
    "title": "Update- und Schwachstellenverfahren mit Hersteller und Wartungsfirma vertraglich festlegen",
-   "type": "TECHNICAL",
+   "type": "ORGANISATIONAL",
    "priority_class": "MITTELFRISTIG"
   },
   {
@@ -1711,7 +1828,19 @@
   {
    "code": "m_043f0d6029",
    "title": "Update- und Schwachstellenverfahren festlegen (Zuständigkeit, Fristen)",
-   "type": "TECHNICAL",
+   "type": "ORGANISATIONAL",
+   "priority_class": "MITTELFRISTIG"
+  },
+  {
+   "code": "m_45d3084fdd",
+   "title": "Software-/Firmwarestände aller programmierbaren Komponenten erfassen; Fernzugänge bis zur Klärung deaktivieren",
+   "type": "ORGANISATIONAL",
+   "priority_class": "SOFORT"
+  },
+  {
+   "code": "m_c1e7ea2bc0",
+   "title": "Versionsdokumentation einführen und mit Herstellerhinweisen abgleichen",
+   "type": "ORGANISATIONAL",
    "priority_class": "MITTELFRISTIG"
   },
   {
@@ -1719,12 +1848,6 @@
    "title": "Software-/Firmwarestände aller programmierbaren Komponenten erfassen",
    "type": "ORGANISATIONAL",
    "priority_class": "SOFORT"
-  },
-  {
-   "code": "m_c1e7ea2bc0",
-   "title": "Versionsdokumentation einführen und mit Herstellerhinweisen abgleichen",
-   "type": "TECHNICAL",
-   "priority_class": "MITTELFRISTIG"
   },
   {
    "code": "m_dc31931bbd",
@@ -1735,7 +1858,7 @@
   {
    "code": "m_665976c648",
    "title": "Funktionsumfang je Komponente festlegen und dokumentieren (Funktionsreduzierung nach TRBS 1115-1)",
-   "type": "TECHNICAL",
+   "type": "ORGANISATIONAL",
    "priority_class": "MITTELFRISTIG"
   },
   {
@@ -1747,7 +1870,7 @@
   {
    "code": "m_e662e51ee9",
    "title": "Funktionsumfang je Komponente festlegen und dokumentieren",
-   "type": "TECHNICAL",
+   "type": "ORGANISATIONAL",
    "priority_class": "MITTELFRISTIG"
   },
   {
@@ -1765,7 +1888,7 @@
   {
    "code": "m_2610af0dfe",
    "title": "Zugang zu Schnittstellen vor Unbefugten schützen; nicht benötigte Schnittstellen deaktivieren; Parameteränderungen dokumentieren. Wirksamkeit nachweisen (TRBS 1115-1 Abschn. 5).",
-   "type": "TECHNICAL",
+   "type": "ORGANISATIONAL",
    "priority_class": "MITTELFRISTIG"
   },
   {
@@ -1773,12 +1896,6 @@
    "title": "Zugang zur Komponente sofort beschränken; Serviceschnittstellen sichern; unabhängige Sicherheitseinrichtung bei jeder Prüfung mitprüfen",
    "type": "ORGANISATIONAL",
    "priority_class": "SOFORT"
-  },
-  {
-   "code": "m_e87e6f3848",
-   "title": "Zugang zu Schnittstellen vor Unbefugten schützen; nicht benötigte Schnittstellen deaktivieren; Parameteränderungen dokumentieren.",
-   "type": "TECHNICAL",
-   "priority_class": "MITTELFRISTIG"
   },
   {
    "code": "m_a5db797d7a",
@@ -1813,7 +1930,7 @@
   {
    "code": "m_1de985772b",
    "title": "Festgelegte Maßnahmen vollständig umsetzen und Wirksamkeit nachweisen",
-   "type": "TECHNICAL",
+   "type": "ORGANISATIONAL",
    "priority_class": "MITTELFRISTIG"
   },
   {
@@ -1855,7 +1972,7 @@
   {
    "code": "m_67bc571c3f",
    "title": "Serviceschnittstellen nur für Berechtigte; Parametrierung schützen; nach Eingriffen Sicherheitsfunktionen prüfen. Wirksamkeit nachweisen (TRBS 1115-1 Abschn. 5).",
-   "type": "TECHNICAL",
+   "type": "ORGANISATIONAL",
    "priority_class": "MITTELFRISTIG"
   },
   {
@@ -1863,12 +1980,6 @@
    "title": "Funkschnittstelle der Komponente „PESSRAL (programmierbare Sicherheitsschaltung)\" deaktivieren oder auf das Notwendige beschränken, bis die Schutzmaßnahmen umgesetzt sind",
    "type": "ORGANISATIONAL",
    "priority_class": "SOFORT"
-  },
-  {
-   "code": "m_9f47343c88",
-   "title": "Serviceschnittstellen nur für Berechtigte; Parametrierung schützen; nach Eingriffen Sicherheitsfunktionen prüfen.",
-   "type": "TECHNICAL",
-   "priority_class": "MITTELFRISTIG"
   },
   {
    "code": "m_02a6bfad32",
@@ -1879,7 +1990,7 @@
   {
    "code": "m_c93486816a",
    "title": "Parameterzugriff schützen; zulässigen Parametersatz sichern; nach Änderungen Antrieb und Fahrverhalten prüfen. Wirksamkeit nachweisen (TRBS 1115-1 Abschn. 5).",
-   "type": "TECHNICAL",
+   "type": "ORGANISATIONAL",
    "priority_class": "MITTELFRISTIG"
   },
   {
@@ -1901,21 +2012,9 @@
    "priority_class": "SOFORT"
   },
   {
-   "code": "m_191b4f0ae9",
-   "title": "Parameterzugriff schützen; zulässigen Parametersatz sichern; nach Änderungen Antrieb und Fahrverhalten prüfen.",
-   "type": "TECHNICAL",
-   "priority_class": "MITTELFRISTIG"
-  },
-  {
    "code": "m_113b67299f",
    "title": "Zugriff auf Schnittstellen verhindern/begrenzen; Werkszugangsdaten ändern; Notrufverbindung regelmäßig prüfen. Wirksamkeit nachweisen (TRBS 1115-1 Abschn. 5).",
-   "type": "TECHNICAL",
-   "priority_class": "MITTELFRISTIG"
-  },
-  {
-   "code": "m_1b9044ac23",
-   "title": "Zugriff auf Schnittstellen verhindern/begrenzen; Werkszugangsdaten ändern; Notrufverbindung regelmäßig prüfen.",
-   "type": "TECHNICAL",
+   "type": "ORGANISATIONAL",
    "priority_class": "MITTELFRISTIG"
   },
   {
@@ -1933,13 +2032,7 @@
   {
    "code": "m_5d769e7784",
    "title": "Schnittstellen auf das Notwendige beschränken; unbefugte Änderung der Positions-/Schachtinformation verhindern. Wirksamkeit nachweisen (TRBS 1115-1 Abschn. 5).",
-   "type": "TECHNICAL",
-   "priority_class": "MITTELFRISTIG"
-  },
-  {
-   "code": "m_e1592b6a81",
-   "title": "Schnittstellen auf das Notwendige beschränken; unbefugte Änderung der Positions-/Schachtinformation verhindern.",
-   "type": "TECHNICAL",
+   "type": "ORGANISATIONAL",
    "priority_class": "MITTELFRISTIG"
   },
   {
@@ -1957,13 +2050,7 @@
   {
    "code": "m_64db42df3b",
    "title": "Serviceschnittstellen nur für Berechtigte; Parameter sichern; nach Eingriffen Türfunktionen und Schutzeinrichtungen prüfen. Wirksamkeit nachweisen (TRBS 1115-1 Abschn. 5).",
-   "type": "TECHNICAL",
-   "priority_class": "MITTELFRISTIG"
-  },
-  {
-   "code": "m_ed35b64254",
-   "title": "Serviceschnittstellen nur für Berechtigte; Parameter sichern; nach Eingriffen Türfunktionen und Schutzeinrichtungen prüfen.",
-   "type": "TECHNICAL",
+   "type": "ORGANISATIONAL",
    "priority_class": "MITTELFRISTIG"
   },
   {
@@ -1981,13 +2068,7 @@
   {
    "code": "m_57f96eea9d",
    "title": "Zugang zu Schnittstellen vor Unbefugten schützen; Funktionsumfang auf das Erforderliche reduzieren. Wirksamkeit nachweisen (TRBS 1115-1 Abschn. 5).",
-   "type": "TECHNICAL",
-   "priority_class": "MITTELFRISTIG"
-  },
-  {
-   "code": "m_9f689d843f",
-   "title": "Zugang zu Schnittstellen vor Unbefugten schützen; Funktionsumfang auf das Erforderliche reduzieren.",
-   "type": "TECHNICAL",
+   "type": "ORGANISATIONAL",
    "priority_class": "MITTELFRISTIG"
   },
   {
@@ -2005,13 +2086,7 @@
   {
    "code": "m_1425a3943d",
    "title": "Zugang zu Schnittstellen vor Unbefugten schützen; Parametrierung gegen unbefugte Änderung sichern. Wirksamkeit nachweisen (TRBS 1115-1 Abschn. 5).",
-   "type": "TECHNICAL",
-   "priority_class": "MITTELFRISTIG"
-  },
-  {
-   "code": "m_fad87d3e87",
-   "title": "Zugang zu Schnittstellen vor Unbefugten schützen; Parametrierung gegen unbefugte Änderung sichern.",
-   "type": "TECHNICAL",
+   "type": "ORGANISATIONAL",
    "priority_class": "MITTELFRISTIG"
   },
   {
@@ -2029,13 +2104,7 @@
   {
    "code": "m_8c4fe47a9c",
    "title": "Schnittstellen schützen; Wirksamkeit der Überwachung regelmäßig prüfen. Wirksamkeit nachweisen (TRBS 1115-1 Abschn. 5).",
-   "type": "TECHNICAL",
-   "priority_class": "MITTELFRISTIG"
-  },
-  {
-   "code": "m_24d3913b78",
-   "title": "Schnittstellen schützen; Wirksamkeit der Überwachung regelmäßig prüfen.",
-   "type": "TECHNICAL",
+   "type": "ORGANISATIONAL",
    "priority_class": "MITTELFRISTIG"
   },
   {
@@ -2053,13 +2122,7 @@
   {
    "code": "m_eb1fbc15dd",
    "title": "Zugang zu Schnittstellen vor Unbefugten schützen; Parametrierung sichern und nach Änderungen prüfen. Wirksamkeit nachweisen (TRBS 1115-1 Abschn. 5).",
-   "type": "TECHNICAL",
-   "priority_class": "MITTELFRISTIG"
-  },
-  {
-   "code": "m_f6a51a24f2",
-   "title": "Zugang zu Schnittstellen vor Unbefugten schützen; Parametrierung sichern und nach Änderungen prüfen.",
-   "type": "TECHNICAL",
+   "type": "ORGANISATIONAL",
    "priority_class": "MITTELFRISTIG"
   },
   {
@@ -2083,7 +2146,7 @@
   {
    "code": "m_5ccbe41d83",
    "title": "Netz segmentieren (Firewall, eigenes Segment); Kanal auf lesenden Zugriff beschränken; Zugriffe authentifizieren und protokollieren",
-   "type": "TECHNICAL",
+   "type": "ORGANISATIONAL",
    "priority_class": "MITTELFRISTIG"
   },
   {
@@ -2095,7 +2158,7 @@
   {
    "code": "m_127e5146b9",
    "title": "Aufzugsnetz vom Gebäude-/Büronetz und Internet trennen (Segmentierung)",
-   "type": "TECHNICAL",
+   "type": "ORGANISATIONAL",
    "priority_class": "MITTELFRISTIG"
   },
   {
@@ -2107,7 +2170,7 @@
   {
    "code": "m_a67b8a3b88",
    "title": "Individuelle, verschlüsselte Authentifizierung für den Kanal einführen",
-   "type": "TECHNICAL",
+   "type": "ORGANISATIONAL",
    "priority_class": "MITTELFRISTIG"
   },
   {
@@ -2119,7 +2182,7 @@
   {
    "code": "m_9ac0145e7e",
    "title": "Protokolle regelmäßig auswerten (Überwachung nach TRBS 1115-1)",
-   "type": "TECHNICAL",
+   "type": "ORGANISATIONAL",
    "priority_class": "MITTELFRISTIG"
   },
   {
@@ -2131,7 +2194,7 @@
   {
    "code": "m_60d71de486",
    "title": "Fernzugriff nur nach Freigabe durch den Betreiber, individuell authentifiziert und verschlüsselt; Zugriffe protokollieren",
-   "type": "TECHNICAL",
+   "type": "ORGANISATIONAL",
    "priority_class": "MITTELFRISTIG"
   },
   {
@@ -2143,19 +2206,7 @@
   {
    "code": "m_08a112a00f",
    "title": "Aufzugsnetz segmentieren; individuelle Authentifizierung einführen",
-   "type": "TECHNICAL",
-   "priority_class": "MITTELFRISTIG"
-  },
-  {
-   "code": "m_7c67c830cc",
-   "title": "Fernwartungszugang nur bei Bedarf freischalten (Betreiberfreigabe)",
    "type": "ORGANISATIONAL",
-   "priority_class": "SOFORT"
-  },
-  {
-   "code": "m_e2e8e786da",
-   "title": "Freigabeverfahren mit der Wartungsfirma vertraglich festlegen",
-   "type": "TECHNICAL",
    "priority_class": "MITTELFRISTIG"
   },
   {
@@ -2167,7 +2218,7 @@
   {
    "code": "m_f41b99c498",
    "title": "Individuelle, verschlüsselte Authentifizierung (Zwei-Faktor oder gleichwertig) einführen",
-   "type": "TECHNICAL",
+   "type": "ORGANISATIONAL",
    "priority_class": "MITTELFRISTIG"
   },
   {
@@ -2175,6 +2226,18 @@
    "title": "Direkte Erreichbarkeit der Steuerung aus Fremdnetzen unterbinden",
    "type": "ORGANISATIONAL",
    "priority_class": "SOFORT"
+  },
+  {
+   "code": "m_7c67c830cc",
+   "title": "Fernwartungszugang nur bei Bedarf freischalten (Betreiberfreigabe)",
+   "type": "ORGANISATIONAL",
+   "priority_class": "SOFORT"
+  },
+  {
+   "code": "m_e2e8e786da",
+   "title": "Freigabeverfahren mit der Wartungsfirma vertraglich festlegen",
+   "type": "ORGANISATIONAL",
+   "priority_class": "MITTELFRISTIG"
   },
   {
    "code": "m_3f4a24dba4",
@@ -2191,7 +2254,7 @@
   {
    "code": "m_64d08886de",
    "title": "Gateway härten: Netztrennung, nur benötigte Dienste, individuelle Zugangsdaten, Update-Verfahren",
-   "type": "TECHNICAL",
+   "type": "ORGANISATIONAL",
    "priority_class": "MITTELFRISTIG"
   },
   {
@@ -2203,19 +2266,19 @@
   {
    "code": "m_302243e748",
    "title": "Firewall/Netztrennung zwischen Gateway und Aufzugssteuerung einrichten",
-   "type": "TECHNICAL",
+   "type": "ORGANISATIONAL",
    "priority_class": "MITTELFRISTIG"
   },
   {
    "code": "m_77d29ed664",
    "title": "Werkszugangsdaten des Gateways ändern; Administration nur aus dem Aufzugsnetz zulassen",
-   "type": "ORGANISATIONAL",
+   "type": "TECHNICAL",
    "priority_class": "SOFORT"
   },
   {
    "code": "m_25406e3e42",
    "title": "Zugangskontrolle (Software) für Netzkomponenten festlegen",
-   "type": "TECHNICAL",
+   "type": "ORGANISATIONAL",
    "priority_class": "MITTELFRISTIG"
   },
   {
@@ -2227,7 +2290,7 @@
   {
    "code": "m_a110566d57",
    "title": "Update-Verfahren für Netzkomponenten festlegen",
-   "type": "TECHNICAL",
+   "type": "ORGANISATIONAL",
    "priority_class": "MITTELFRISTIG"
   },
   {
@@ -2251,7 +2314,7 @@
   {
    "code": "m_d2abe4b2a4",
    "title": "Sicheren Zustand bei Signalausfall (Brandfallfahrt, Sperrung) konfigurieren und prüfen",
-   "type": "TECHNICAL",
+   "type": "ORGANISATIONAL",
    "priority_class": "MITTELFRISTIG"
   },
   {
@@ -2263,7 +2326,7 @@
   {
    "code": "m_3683b7f2f8",
    "title": "Zuständigkeiten Betreiber/Wartungsfirma/Hersteller vertraglich regeln",
-   "type": "TECHNICAL",
+   "type": "ORGANISATIONAL",
    "priority_class": "MITTELFRISTIG"
   },
   {
@@ -2275,7 +2338,7 @@
   {
    "code": "m_ba2f65f0a0",
    "title": "Fachkunde nach TRBS 1115-1 3.3.2 sicherstellen (Beauftragung, Schulung)",
-   "type": "TECHNICAL",
+   "type": "ORGANISATIONAL",
    "priority_class": "MITTELFRISTIG"
   },
   {
@@ -2287,7 +2350,7 @@
   {
    "code": "m_56e280f97e",
    "title": "Zuständigkeit der Wartungsfirma für Cybersicherheit vertraglich regeln",
-   "type": "TECHNICAL",
+   "type": "ORGANISATIONAL",
    "priority_class": "MITTELFRISTIG"
   },
   {
@@ -2299,13 +2362,13 @@
   {
    "code": "m_179fce7373",
    "title": "Herstellervorgaben in die Maßnahmen übernehmen und dokumentieren",
-   "type": "TECHNICAL",
+   "type": "ORGANISATIONAL",
    "priority_class": "MITTELFRISTIG"
   },
   {
    "code": "m_80eeb11ded",
    "title": "Cyber-Vorgaben beim Hersteller anfragen",
-   "type": "ORGANISATIONAL",
+   "type": "TECHNICAL",
    "priority_class": "SOFORT"
   },
   {
@@ -2323,7 +2386,7 @@
   {
    "code": "m_dd18ee0313",
    "title": "Notfallmanagement nach TRBS 1115-1 schriftlich festlegen (Erkennen, sicherer Zustand, Meldung, Wiederinbetriebnahme nach Prüfung)",
-   "type": "TECHNICAL",
+   "type": "ORGANISATIONAL",
    "priority_class": "MITTELFRISTIG"
   },
   {
@@ -2335,7 +2398,7 @@
   {
    "code": "m_025c68bc54",
    "title": "Notfallmanagement nach TRBS 1115-1 schriftlich festlegen",
-   "type": "TECHNICAL",
+   "type": "ORGANISATIONAL",
    "priority_class": "MITTELFRISTIG"
   },
   {
@@ -2347,7 +2410,7 @@
   {
    "code": "m_b2fe283be6",
    "title": "Cyber-Unterweisung in die jährliche Unterweisung aufnehmen und dokumentieren",
-   "type": "TECHNICAL",
+   "type": "ORGANISATIONAL",
    "priority_class": "MITTELFRISTIG"
   },
   {
@@ -2359,7 +2422,7 @@
   {
    "code": "m_5fbf7e00d2",
    "title": "Prüforganisation aufbauen: Art, Umfang, Fristen; Wirksamkeitsnachweis (Abschn. 5) und Funktionsbestätigung (Abschn. 8.2) dokumentieren",
-   "type": "TECHNICAL",
+   "type": "ORGANISATIONAL",
    "priority_class": "MITTELFRISTIG"
   },
   {
@@ -2371,7 +2434,7 @@
   {
    "code": "m_f56254edbc",
    "title": "Wirksamkeitsnachweis nach TRBS 1115-1 Abschnitt 5 dokumentieren",
-   "type": "TECHNICAL",
+   "type": "ORGANISATIONAL",
    "priority_class": "MITTELFRISTIG"
   },
   {
@@ -2383,7 +2446,7 @@
   {
    "code": "m_7ea05e79f0",
    "title": "Funktionsbestätigung nach TRBS 1115-1 Abschnitt 8.2 dokumentieren",
-   "type": "TECHNICAL",
+   "type": "ORGANISATIONAL",
    "priority_class": "MITTELFRISTIG"
   },
   {
@@ -2395,7 +2458,7 @@
   {
    "code": "m_b326cd51d9",
    "title": "Prüforganisation schriftlich festlegen und in den Wartungsvertrag aufnehmen",
-   "type": "TECHNICAL",
+   "type": "ORGANISATIONAL",
    "priority_class": "MITTELFRISTIG"
   },
   {
@@ -2407,7 +2470,7 @@
   {
    "code": "m_5075ad4fb8",
    "title": "Änderungen in der Gefährdungsbeurteilung nachziehen und Prüfung dokumentieren",
-   "type": "TECHNICAL",
+   "type": "ORGANISATIONAL",
    "priority_class": "MITTELFRISTIG"
   },
   {
@@ -2419,7 +2482,7 @@
   {
    "code": "m_b6fd8bec75",
    "title": "Rückwirkungsfreiheit je Maßnahme bewerten und dokumentieren (TRBS 1115-1; B-002 Anhang 2 Nr. 9)",
-   "type": "TECHNICAL",
+   "type": "ORGANISATIONAL",
    "priority_class": "MITTELFRISTIG"
   },
   {
@@ -2431,7 +2494,7 @@
   {
    "code": "m_028ebe25cf",
    "title": "Fortschreibung der Gefährdungsbeurteilung bei neuen Erkenntnissen als Verfahren festlegen",
-   "type": "TECHNICAL",
+   "type": "ORGANISATIONAL",
    "priority_class": "MITTELFRISTIG"
   }
  ],
@@ -2492,6 +2555,11 @@
    "questions": [
     {
      "question": "qz_default_zugangsdaten",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    },
+    {
+     "question": "qz_zugangsdaten_bekannt",
      "role": "TRIGGER",
      "required_mode": "ALWAYS"
     },
@@ -3943,9 +4011,18 @@
      "role": "TRIGGER",
      "required_mode": "CONDITIONAL",
      "required_when": {
-      "question": "qa_vernetzt",
-      "operator": "EQ",
-      "value": true
+      "all": [
+       {
+        "question": "qa_vernetzt",
+        "operator": "EQ",
+        "value": true
+       },
+       {
+        "question": "qc_remote_vorhanden",
+        "operator": "EQ",
+        "value": true
+       }
+      ]
      },
      "notes": "Pflicht, weil bewertungsrelevant (automatisch gesetzt)."
     },
@@ -4354,31 +4431,26 @@
     {
      "question": "qo_zues_beruecksichtigt",
      "role": "DOCUMENTATION",
-     "required_mode": "ALWAYS",
-     "notes": "ZÜS-Prüfpunkt 1 (K-C20)."
+     "required_mode": "NEVER",
+     "notes": "ZÜS-Prüfpunkt 1 (K-C20). Abschluss-Checkliste, keine Pflichtfrage."
     },
     {
      "question": "qo_zues_erfasst",
      "role": "DOCUMENTATION",
-     "required_mode": "ALWAYS",
-     "notes": "ZÜS-Prüfpunkt 2 (K-C20)."
+     "required_mode": "NEVER",
+     "notes": "ZÜS-Prüfpunkt 2 (K-C20). Abschluss-Checkliste, keine Pflichtfrage."
     },
     {
      "question": "qo_zues_erhebliches_risiko",
      "role": "DOCUMENTATION",
-     "required_mode": "CONDITIONAL",
-     "required_when": {
-      "question": "qa_ueberwachungsbeduerftig",
-      "operator": "EQ",
-      "value": true
-     },
-     "notes": "ZÜS-Prüfpunkt 3 (K-C20)."
+     "required_mode": "NEVER",
+     "notes": "ZÜS-Prüfpunkt 3 (K-C20). Abschluss-Checkliste, keine Pflichtfrage."
     },
     {
      "question": "qo_zues_stand_technik",
      "role": "DOCUMENTATION",
-     "required_mode": "ALWAYS",
-     "notes": "ZÜS-Prüfpunkt 5 (K-C20)."
+     "required_mode": "NEVER",
+     "notes": "ZÜS-Prüfpunkt 5 (K-C20). Abschluss-Checkliste, keine Pflichtfrage."
     }
    ],
    "sources": [
@@ -4707,6 +4779,35 @@
   {
    "hazard": "CY-Z04",
    "code": "CY-Z04-R3",
+   "priority": 220,
+   "condition": {
+    "question": "qz_zugangsdaten_bekannt",
+    "operator": "EQ",
+    "value": false
+   },
+   "result": "MEDIUM",
+   "origin": "OWN_RULE",
+   "evidence": "INFERRED",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_ef66af30da",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_a03d26c6ba",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ],
+   "notes": "Prüfbericht 20.09.2026: aus der bisherigen Doppelfrage 2.5 herausgelöst – „Zugangsdaten nicht bekannt\" ist nicht mit „Werkszugangsdaten ändern\" zu beheben und brauchte eine eigene Maßnahme. Freigegeben 2026-09-03."
+  },
+  {
+   "hazard": "CY-Z04",
+   "code": "CY-Z04-R4",
    "priority": 200,
    "condition": {
     "question": "qz_rollen",
@@ -4735,7 +4836,7 @@
   },
   {
    "hazard": "CY-Z04",
-   "code": "CY-Z04-R4",
+   "code": "CY-Z04-R5",
    "priority": 1,
    "condition": {
     "question": "qz_default_zugangsdaten",
@@ -4753,7 +4854,7 @@
      "mandatory": true
     }
    ],
-   "notes": "Kein Risiko: keine Mangelregel trifft zu, alle Pflichtfragen beantwortet. Freigegeben 2026-09-03."
+   "notes": "Kein Risiko: keine Mangelregel trifft zu, alle Pflichtfragen beantwortet. Freigegeben 2026-09-20."
   },
   {
    "hazard": "CY-Z05",
@@ -4876,13 +4977,51 @@
   {
    "hazard": "CY-N01",
    "code": "CY-N01-R3",
+   "priority": 245,
+   "condition": {
+    "all": [
+     {
+      "question": "qn_softwarestand",
+      "operator": "EQ",
+      "value": "unbekannt"
+     },
+     {
+      "question": "qa_vernetzt",
+      "operator": "EQ",
+      "value": true
+     }
+    ]
+   },
+   "result": "HIGH",
+   "origin": "OWN_RULE",
+   "evidence": "INFERRED",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_45d3084fdd",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_c1e7ea2bc0",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ],
+   "notes": "Prüfbericht 20.09.2026: Wer den Stand nicht kennt, kann auch kein Schwachstellenverfahren führen – der Fall darf nicht günstiger bewertet werden als „Stand bekannt, aber kein Verfahren\" (vorher Niedrig). Entschieden 2026-09-03: K-C14."
+  },
+  {
+   "hazard": "CY-N01",
+   "code": "CY-N01-R4",
    "priority": 240,
    "condition": {
     "question": "qn_softwarestand",
     "operator": "EQ",
     "value": "unbekannt"
    },
-   "result": "LOW",
+   "result": "MEDIUM",
    "origin": "OWN_RULE",
    "evidence": "INFERRED",
    "quality_status": "VERIFIED",
@@ -4900,11 +5039,11 @@
      "mandatory": true
     }
    ],
-   "notes": "Entschieden 2026-09-03: K-C14."
+   "notes": "Prüfbericht 20.09.2026: Niedrig auf Mittel – entspricht jetzt dem Vorschlag der Klärung K-C14 („Mittel\"), die Umsetzung stand auf Niedrig. Entschieden 2026-09-03: K-C14."
   },
   {
    "hazard": "CY-N01",
-   "code": "CY-N01-R4",
+   "code": "CY-N01-R5",
    "priority": 1,
    "condition": {
     "question": "qn_softwarestand",
@@ -4922,7 +5061,7 @@
      "mandatory": true
     }
    ],
-   "notes": "Kein Risiko: keine Mangelregel trifft zu, alle Pflichtfragen beantwortet. Freigegeben 2026-09-03."
+   "notes": "Kein Risiko: keine Mangelregel trifft zu, alle Pflichtfragen beantwortet. Freigegeben 2026-09-20."
   },
   {
    "hazard": "CY-N02",
@@ -5147,7 +5286,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_e87e6f3848",
+     "measure": "m_2610af0dfe",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -5287,7 +5426,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_e87e6f3848",
+     "measure": "m_2610af0dfe",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -5328,7 +5467,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_e87e6f3848",
+     "measure": "m_2610af0dfe",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -5752,7 +5891,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_9f47343c88",
+     "measure": "m_67bc571c3f",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -5793,7 +5932,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_9f47343c88",
+     "measure": "m_67bc571c3f",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -6297,7 +6436,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_191b4f0ae9",
+     "measure": "m_c93486816a",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -6338,7 +6477,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_191b4f0ae9",
+     "measure": "m_c93486816a",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -6741,7 +6880,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_1b9044ac23",
+     "measure": "m_113b67299f",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -6881,7 +7020,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_1b9044ac23",
+     "measure": "m_113b67299f",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -6922,7 +7061,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_1b9044ac23",
+     "measure": "m_113b67299f",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -7325,7 +7464,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_e1592b6a81",
+     "measure": "m_5d769e7784",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -7465,7 +7604,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_e1592b6a81",
+     "measure": "m_5d769e7784",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -7506,7 +7645,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_e1592b6a81",
+     "measure": "m_5d769e7784",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -7909,7 +8048,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_ed35b64254",
+     "measure": "m_64db42df3b",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -8049,7 +8188,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_ed35b64254",
+     "measure": "m_64db42df3b",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -8090,7 +8229,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_ed35b64254",
+     "measure": "m_64db42df3b",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -8493,7 +8632,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_9f689d843f",
+     "measure": "m_57f96eea9d",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -8633,7 +8772,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_9f689d843f",
+     "measure": "m_57f96eea9d",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -8674,7 +8813,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_9f689d843f",
+     "measure": "m_57f96eea9d",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -9077,7 +9216,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_fad87d3e87",
+     "measure": "m_1425a3943d",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -9217,7 +9356,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_fad87d3e87",
+     "measure": "m_1425a3943d",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -9258,7 +9397,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_fad87d3e87",
+     "measure": "m_1425a3943d",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -9661,7 +9800,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_24d3913b78",
+     "measure": "m_8c4fe47a9c",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -9801,7 +9940,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_24d3913b78",
+     "measure": "m_8c4fe47a9c",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -9842,7 +9981,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_24d3913b78",
+     "measure": "m_8c4fe47a9c",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -10245,7 +10384,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_f6a51a24f2",
+     "measure": "m_eb1fbc15dd",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -10385,7 +10524,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_f6a51a24f2",
+     "measure": "m_eb1fbc15dd",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -10426,7 +10565,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_f6a51a24f2",
+     "measure": "m_eb1fbc15dd",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -10965,35 +11104,6 @@
    "code": "CY-C12-R3",
    "priority": 300,
    "condition": {
-    "question": "qn_fern_freigabe",
-    "operator": "EQ",
-    "value": false
-   },
-   "result": "LOW",
-   "origin": "OWN_RULE",
-   "evidence": "INFERRED",
-   "quality_status": "VERIFIED",
-   "measures": [
-    {
-     "measure": "m_7c67c830cc",
-     "group_id": "sofort",
-     "relation": "SINGLE",
-     "mandatory": true
-    },
-    {
-     "measure": "m_e2e8e786da",
-     "group_id": "mittel",
-     "relation": "SINGLE",
-     "mandatory": true
-    }
-   ],
-   "notes": "Entschieden 2026-09-03: K-C23."
-  },
-  {
-   "hazard": "CY-C12",
-   "code": "CY-C12-R4",
-   "priority": 290,
-   "condition": {
     "question": "qn_fern_auth",
     "operator": "EQ",
     "value": false
@@ -11016,12 +11126,12 @@
      "mandatory": true
     }
    ],
-   "notes": "Freigegeben 2026-09-03."
+   "notes": "Freigegeben 2026-09-20."
   },
   {
    "hazard": "CY-C12",
-   "code": "CY-C12-R5",
-   "priority": 280,
+   "code": "CY-C12-R4",
+   "priority": 290,
    "condition": {
     "question": "qn_segmentierung",
     "operator": "EQ",
@@ -11046,6 +11156,35 @@
     }
    ],
    "notes": "Freigegeben 2026-09-03."
+  },
+  {
+   "hazard": "CY-C12",
+   "code": "CY-C12-R5",
+   "priority": 280,
+   "condition": {
+    "question": "qn_fern_freigabe",
+    "operator": "EQ",
+    "value": false
+   },
+   "result": "LOW",
+   "origin": "OWN_RULE",
+   "evidence": "INFERRED",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_7c67c830cc",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_e2e8e786da",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ],
+   "notes": "Entschieden 2026-09-03: K-C23."
   },
   {
    "hazard": "CY-C12",
@@ -11976,6 +12115,538 @@
     }
    ],
    "notes": "Kein Risiko: keine Mangelregel trifft zu, alle Pflichtfragen beantwortet. Freigegeben 2026-09-03."
+  }
+ ],
+ "question_groups": [
+  {
+   "id": "CY-A",
+   "title": "Systemabgrenzung der Anlage",
+   "category": "A – Anlagenmerkmale und Systemabgrenzung",
+   "kind": "card",
+   "items": [
+    {
+     "question": "qa_aufzugsart",
+     "mode": "native"
+    },
+    {
+     "question": "qa_steuerungsart",
+     "mode": "native"
+    },
+    {
+     "question": "qa_ueberwachungsbeduerftig",
+     "mode": "native"
+    },
+    {
+     "question": "qa_maschinenraum",
+     "mode": "native"
+    },
+    {
+     "question": "qa_vernetzt",
+     "mode": "native",
+     "row": "Schnittstellen nach außen"
+    },
+    {
+     "question": "qa_gebaeude_anbindung",
+     "mode": "native",
+     "row": "Schnittstellen nach außen"
+    },
+    {
+     "question": "qa_hersteller_vorgaben",
+     "mode": "native"
+    }
+   ],
+   "ui_number": "1",
+   "help": "Systemabgrenzung nach TRBS 1115 Teil 1 Abschn. 4.2: Welche Einrichtungen gehören zum betrachteten System und welche Schnittstellen führen aus ihm heraus? Die Antworten auf 1.5 (Netzanbindung) und 1.6 (bauseitige Systeme) schalten die Karten „Netz, Fernzugriff und Härtung\" und „Bauseitige Einrichtungen\"."
+  },
+  {
+   "id": "CY-Z",
+   "title": "Zugang und Servicezugriff",
+   "category": "Z – Zugang und Zugriff",
+   "kind": "card",
+   "items": [
+    {
+     "question": "qz_steuerung_frei",
+     "mode": "native",
+     "row": "Örtlicher Zugang"
+    },
+    {
+     "question": "qz_triebwerksraum_frei",
+     "mode": "native",
+     "row": "Örtlicher Zugang"
+    },
+    {
+     "question": "qz_schacht_frei",
+     "mode": "native",
+     "row": "Örtlicher Zugang"
+    },
+    {
+     "question": "qz_service_gesichert",
+     "mode": "native",
+     "row": "Schnittstellen und Zugangsdaten"
+    },
+    {
+     "question": "qz_default_zugangsdaten",
+     "mode": "native",
+     "row": "Schnittstellen und Zugangsdaten"
+    },
+    {
+     "question": "qz_zugangsdaten_bekannt",
+     "mode": "native",
+     "row": "Schnittstellen und Zugangsdaten"
+    },
+    {
+     "question": "qz_rollen",
+     "mode": "native",
+     "row": "Rollen und Geräte"
+    },
+    {
+     "question": "qz_servicegeraete",
+     "mode": "native",
+     "row": "Rollen und Geräte"
+    }
+   ],
+   "ui_number": "2",
+   "help": "Zugangskontrolle Hardware und Software nach TRBS 1115-1 Abschn. 4.5.2. Diese Antworten wirken als Modifier auf ALLE Komponenten: freier Zugang oder Werkszugangsdaten heben die Bewertung jeder Komponente mit Schnittstelle an."
+  },
+  {
+   "id": "CY-C1",
+   "title": "Komponente: Aufzugssteuerung",
+   "category": "C – Komponenten und Schnittstellen",
+   "kind": "card",
+   "items": [
+    {
+     "question": "qc_steuerung_schnittstelle",
+     "mode": "native"
+    },
+    {
+     "question": "qc_steuerung_massnahmen",
+     "mode": "native"
+    },
+    {
+     "question": "qc_steuerung_unabhaengig",
+     "mode": "native"
+    }
+   ],
+   "ui_number": "3.1",
+   "help": "Die Aufzugssteuerung ist immer vorhanden; erhoben werden Schnittstelle, Maßnahmen und die Frage, ob der Sicherheitskreis unabhängig von ihr wirkt. Komponentenbasierte Betrachtung nach EK-ZÜS B-002 rev. 5 / BA-017: Ohne kompromittierbare Schnittstelle endet die Betrachtung hier (Vorscreening). Sonst entscheiden die Schutzmaßnahmen nach TRBS 1115-1 Abschn. 4.5.2 und die unabhängige Rückfallebene über die Stufe."
+  },
+  {
+   "id": "CY-C2",
+   "title": "Komponente: PESSRAL (programmierbare Sicherheitsschaltung)",
+   "category": "C – Komponenten und Schnittstellen",
+   "kind": "card",
+   "items": [
+    {
+     "question": "qc_pessral_vorhanden",
+     "mode": "native"
+    },
+    {
+     "question": "qc_pessral_schnittstelle",
+     "mode": "native"
+    },
+    {
+     "question": "qc_pessral_massnahmen",
+     "mode": "native"
+    }
+   ],
+   "ui_number": "3.2",
+   "help": "Komponentenbasierte Betrachtung nach EK-ZÜS B-002 rev. 5 / BA-017: Ohne kompromittierbare Schnittstelle endet die Betrachtung hier (Vorscreening). Sonst entscheiden die Schutzmaßnahmen nach TRBS 1115-1 Abschn. 4.5.2 und die unabhängige Rückfallebene über die Stufe."
+  },
+  {
+   "id": "CY-C3",
+   "title": "Komponente: Frequenzumrichter",
+   "category": "C – Komponenten und Schnittstellen",
+   "kind": "card",
+   "items": [
+    {
+     "question": "qc_fu_vorhanden",
+     "mode": "native"
+    },
+    {
+     "question": "qc_fu_schnittstelle",
+     "mode": "native"
+    },
+    {
+     "question": "qc_fu_massnahmen",
+     "mode": "native"
+    },
+    {
+     "question": "qc_fu_unabhaengig",
+     "mode": "native"
+    }
+   ],
+   "ui_number": "3.3",
+   "help": "Komponentenbasierte Betrachtung nach EK-ZÜS B-002 rev. 5 / BA-017: Ohne kompromittierbare Schnittstelle endet die Betrachtung hier (Vorscreening). Sonst entscheiden die Schutzmaßnahmen nach TRBS 1115-1 Abschn. 4.5.2 und die unabhängige Rückfallebene über die Stufe."
+  },
+  {
+   "id": "CY-C4",
+   "title": "Komponente: Notrufsystem (Zwei-Wege-Kommunikation)",
+   "category": "C – Komponenten und Schnittstellen",
+   "kind": "card",
+   "items": [
+    {
+     "question": "qc_notruf_vorhanden",
+     "mode": "native"
+    },
+    {
+     "question": "qc_notruf_schnittstelle",
+     "mode": "native"
+    },
+    {
+     "question": "qc_notruf_massnahmen",
+     "mode": "native"
+    },
+    {
+     "question": "qc_notruf_unabhaengig",
+     "mode": "native"
+    }
+   ],
+   "ui_number": "3.4",
+   "help": "Komponentenbasierte Betrachtung nach EK-ZÜS B-002 rev. 5 / BA-017: Ohne kompromittierbare Schnittstelle endet die Betrachtung hier (Vorscreening). Sonst entscheiden die Schutzmaßnahmen nach TRBS 1115-1 Abschn. 4.5.2 und die unabhängige Rückfallebene über die Stufe."
+  },
+  {
+   "id": "CY-C5",
+   "title": "Komponente: Schachtkopierung / Positionierung",
+   "category": "C – Komponenten und Schnittstellen",
+   "kind": "card",
+   "items": [
+    {
+     "question": "qc_kopierung_vorhanden",
+     "mode": "native"
+    },
+    {
+     "question": "qc_kopierung_schnittstelle",
+     "mode": "native"
+    },
+    {
+     "question": "qc_kopierung_massnahmen",
+     "mode": "native"
+    },
+    {
+     "question": "qc_kopierung_unabhaengig",
+     "mode": "native"
+    }
+   ],
+   "ui_number": "3.5",
+   "help": "Komponentenbasierte Betrachtung nach EK-ZÜS B-002 rev. 5 / BA-017: Ohne kompromittierbare Schnittstelle endet die Betrachtung hier (Vorscreening). Sonst entscheiden die Schutzmaßnahmen nach TRBS 1115-1 Abschn. 4.5.2 und die unabhängige Rückfallebene über die Stufe."
+  },
+  {
+   "id": "CY-C6",
+   "title": "Komponente: Türsteuerung",
+   "category": "C – Komponenten und Schnittstellen",
+   "kind": "card",
+   "items": [
+    {
+     "question": "qc_tuer_vorhanden",
+     "mode": "native"
+    },
+    {
+     "question": "qc_tuer_schnittstelle",
+     "mode": "native"
+    },
+    {
+     "question": "qc_tuer_massnahmen",
+     "mode": "native"
+    },
+    {
+     "question": "qc_tuer_unabhaengig",
+     "mode": "native"
+    }
+   ],
+   "ui_number": "3.6",
+   "help": "Komponentenbasierte Betrachtung nach EK-ZÜS B-002 rev. 5 / BA-017: Ohne kompromittierbare Schnittstelle endet die Betrachtung hier (Vorscreening). Sonst entscheiden die Schutzmaßnahmen nach TRBS 1115-1 Abschn. 4.5.2 und die unabhängige Rückfallebene über die Stufe."
+  },
+  {
+   "id": "CY-C7",
+   "title": "Komponente: UCM-Erkennung",
+   "category": "C – Komponenten und Schnittstellen",
+   "kind": "card",
+   "items": [
+    {
+     "question": "qc_ucm_vorhanden",
+     "mode": "native"
+    },
+    {
+     "question": "qc_ucm_schnittstelle",
+     "mode": "native"
+    },
+    {
+     "question": "qc_ucm_massnahmen",
+     "mode": "native"
+    },
+    {
+     "question": "qc_ucm_unabhaengig",
+     "mode": "native"
+    }
+   ],
+   "ui_number": "3.7",
+   "help": "Komponentenbasierte Betrachtung nach EK-ZÜS B-002 rev. 5 / BA-017: Ohne kompromittierbare Schnittstelle endet die Betrachtung hier (Vorscreening). Sonst entscheiden die Schutzmaßnahmen nach TRBS 1115-1 Abschn. 4.5.2 und die unabhängige Rückfallebene über die Stufe."
+  },
+  {
+   "id": "CY-C8",
+   "title": "Komponente: SAFÜ (Schutz gegen Übergeschwindigkeit)",
+   "category": "C – Komponenten und Schnittstellen",
+   "kind": "card",
+   "items": [
+    {
+     "question": "qc_safue_vorhanden",
+     "mode": "native"
+    },
+    {
+     "question": "qc_safue_schnittstelle",
+     "mode": "native"
+    },
+    {
+     "question": "qc_safue_massnahmen",
+     "mode": "native"
+    },
+    {
+     "question": "qc_safue_unabhaengig",
+     "mode": "native"
+    }
+   ],
+   "ui_number": "3.8",
+   "help": "Komponentenbasierte Betrachtung nach EK-ZÜS B-002 rev. 5 / BA-017: Ohne kompromittierbare Schnittstelle endet die Betrachtung hier (Vorscreening). Sonst entscheiden die Schutzmaßnahmen nach TRBS 1115-1 Abschn. 4.5.2 und die unabhängige Rückfallebene über die Stufe."
+  },
+  {
+   "id": "CY-C9",
+   "title": "Komponente: Tragmittelüberwachung",
+   "category": "C – Komponenten und Schnittstellen",
+   "kind": "card",
+   "items": [
+    {
+     "question": "qc_tragmittel_vorhanden",
+     "mode": "native"
+    },
+    {
+     "question": "qc_tragmittel_schnittstelle",
+     "mode": "native"
+    },
+    {
+     "question": "qc_tragmittel_massnahmen",
+     "mode": "native"
+    },
+    {
+     "question": "qc_tragmittel_unabhaengig",
+     "mode": "native"
+    }
+   ],
+   "ui_number": "3.9",
+   "help": "Komponentenbasierte Betrachtung nach EK-ZÜS B-002 rev. 5 / BA-017: Ohne kompromittierbare Schnittstelle endet die Betrachtung hier (Vorscreening). Sonst entscheiden die Schutzmaßnahmen nach TRBS 1115-1 Abschn. 4.5.2 und die unabhängige Rückfallebene über die Stufe."
+  },
+  {
+   "id": "CY-C10",
+   "title": "Komponente: Hydraulischer Steuerblock",
+   "category": "C – Komponenten und Schnittstellen",
+   "kind": "card",
+   "items": [
+    {
+     "question": "qc_hydraulik_vorhanden",
+     "mode": "native"
+    },
+    {
+     "question": "qc_hydraulik_schnittstelle",
+     "mode": "native"
+    },
+    {
+     "question": "qc_hydraulik_massnahmen",
+     "mode": "native"
+    },
+    {
+     "question": "qc_hydraulik_unabhaengig",
+     "mode": "native"
+    }
+   ],
+   "ui_number": "3.10",
+   "help": "Komponentenbasierte Betrachtung nach EK-ZÜS B-002 rev. 5 / BA-017: Ohne kompromittierbare Schnittstelle endet die Betrachtung hier (Vorscreening). Sonst entscheiden die Schutzmaßnahmen nach TRBS 1115-1 Abschn. 4.5.2 und die unabhängige Rückfallebene über die Stufe."
+  },
+  {
+   "id": "CY-N",
+   "title": "Netz, Fernzugriff, Gateway und Härtung",
+   "category": "N – Netz, Fernzugriff und Härtung",
+   "kind": "card",
+   "items": [
+    {
+     "question": "qc_fernueb_vorhanden",
+     "mode": "native",
+     "row": "Fernüberwachung"
+    },
+    {
+     "question": "qc_fernueb_lesend",
+     "mode": "native",
+     "row": "Fernüberwachung"
+    },
+    {
+     "question": "qc_remote_vorhanden",
+     "mode": "native",
+     "row": "Fernwartung / Remote-Service"
+    },
+    {
+     "question": "qn_fern_freigabe",
+     "mode": "native",
+     "row": "Fernwartung / Remote-Service"
+    },
+    {
+     "question": "qn_fern_auth",
+     "mode": "native",
+     "row": "Fernwartung / Remote-Service"
+    },
+    {
+     "question": "qc_gateway_vorhanden",
+     "mode": "native",
+     "row": "Gateway / Router / Dongle"
+    },
+    {
+     "question": "qc_gateway_firewall",
+     "mode": "native",
+     "row": "Gateway / Router / Dongle"
+    },
+    {
+     "question": "qc_gateway_default",
+     "mode": "native",
+     "row": "Gateway / Router / Dongle"
+    },
+    {
+     "question": "qc_gateway_updates",
+     "mode": "native",
+     "row": "Gateway / Router / Dongle"
+    },
+    {
+     "question": "qn_segmentierung",
+     "mode": "native",
+     "row": "Netztrennung und Protokollierung"
+    },
+    {
+     "question": "qn_protokoll",
+     "mode": "native",
+     "row": "Netztrennung und Protokollierung"
+    },
+    {
+     "question": "qn_softwarestand",
+     "mode": "native",
+     "row": "Härtung und Softwarestand"
+    },
+    {
+     "question": "qn_funktionsreduzierung",
+     "mode": "native",
+     "row": "Härtung und Softwarestand"
+    }
+   ],
+   "ui_number": "4",
+   "help": "Segmentierung, Funktionsreduzierung und Überwachung nach TRBS 1115-1 Abschn. 4.5.2. Die Zeilen Fernüberwachung, Fernwartung und Gateway erscheinen nur bei vernetzter Anlage (1.5); Protokollierung und Härtung gelten auch ohne Netzanbindung, weil Servicegeräte vor Ort dieselben Schnittstellen benutzen."
+  },
+  {
+   "id": "CY-G",
+   "title": "Bauseitige Einrichtungen (Brandfallsteuerung, Entrauchung, Zutritt)",
+   "category": "C – Komponenten und Schnittstellen",
+   "kind": "card",
+   "items": [
+    {
+     "question": "qc_geb_rueckwirkungsfrei",
+     "mode": "native"
+    },
+    {
+     "question": "qc_geb_sicherer_zustand",
+     "mode": "native"
+    }
+   ],
+   "ui_number": "3.14",
+   "help": "Schnittstelle zu Anlagen, die nicht zum Aufzug gehören und nicht vom Aufzugsbetreiber gepflegt werden. Maßgeblich ist die Rückwirkungsfreiheit (ZÜS-Prüfpunkt 9) und das Verhalten bei Ausfall oder Manipulation des bauseitigen Signals."
+  },
+  {
+   "id": "CY-O",
+   "title": "Organisation, Fachkunde und Notfallmanagement",
+   "category": "O – Organisation, Notfall und Nachweise",
+   "kind": "card",
+   "items": [
+    {
+     "question": "qo_verantwortlich",
+     "mode": "native",
+     "row": "Verantwortung und Fachkunde"
+    },
+    {
+     "question": "qo_fachkunde",
+     "mode": "native",
+     "row": "Verantwortung und Fachkunde"
+    },
+    {
+     "question": "qo_unterweisung",
+     "mode": "native",
+     "row": "Verantwortung und Fachkunde"
+    },
+    {
+     "question": "qo_notfall",
+     "mode": "native",
+     "row": "Notfall und laufende Kontrolle"
+    },
+    {
+     "question": "qo_pruefung_fristen",
+     "mode": "native",
+     "row": "Notfall und laufende Kontrolle"
+    },
+    {
+     "question": "qo_erkenntnisse",
+     "mode": "native",
+     "row": "Notfall und laufende Kontrolle"
+    },
+    {
+     "question": "qo_rueckwirkung",
+     "mode": "native",
+     "row": "Änderungen und Rückwirkungsfreiheit"
+    },
+    {
+     "question": "qo_aenderungen",
+     "mode": "native",
+     "row": "Änderungen und Rückwirkungsfreiheit"
+    },
+    {
+     "question": "qo_aenderungen_geprueft",
+     "mode": "native",
+     "row": "Änderungen und Rückwirkungsfreiheit"
+    }
+   ],
+   "ui_number": "5a",
+   "help": "Organisatorische Pflichten des Betreibers: BetrSichV § 3 Abs. 1 und § 12, TRBS 1115-1 Abschn. 3.3.2 (Fachkunde) und 4.5.2 (Notfallmanagement)."
+  },
+  {
+   "id": "CY-D",
+   "title": "Nachweise für den ZÜS-Abschlusscheck",
+   "category": "O – Organisation, Notfall und Nachweise",
+   "kind": "card",
+   "items": [
+    {
+     "question": "qo_wirksamkeit",
+     "mode": "native",
+     "row": "Wirksamkeit und Funktion"
+    },
+    {
+     "question": "qo_funktion",
+     "mode": "native",
+     "row": "Wirksamkeit und Funktion"
+    },
+    {
+     "question": "qo_zues_beruecksichtigt",
+     "mode": "native",
+     "row": "Dokumentation der Gefährdungsbeurteilung"
+    },
+    {
+     "question": "qo_zues_erfasst",
+     "mode": "native",
+     "row": "Dokumentation der Gefährdungsbeurteilung"
+    },
+    {
+     "question": "qo_zues_erhebliches_risiko",
+     "mode": "native",
+     "row": "Dokumentation der Gefährdungsbeurteilung"
+    },
+    {
+     "question": "qo_zues_stand_technik",
+     "mode": "native",
+     "row": "Dokumentation der Gefährdungsbeurteilung"
+    }
+   ],
+   "ui_number": "5b",
+   "help": "Die vier Dokumentationsfragen 5.11–5.14 belegen die ZÜS-Prüfpunkte 1, 2, 3 und 5 (EK-ZÜS B-002 rev. 5, Anhang 2); 5.6 und 5.7 belegen die Prüfpunkte 12 und 13 (TRBS 1115-1 Abschn. 5 und 8.2). Sie halten die Erhebung nicht auf (Pflichtmodus NIE), fehlen aber im Bericht sichtbar."
   }
  ]
 }

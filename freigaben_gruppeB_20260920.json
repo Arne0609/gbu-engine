@@ -1,0 +1,352 @@
+[
+ {
+  "code": "MF-M13-R10",
+  "entscheidung": "Freigeben",
+  "korrektur": "Umgesetzt, Paket B3/B4 (Absperrventil getrennt; Absturzsicherung nach EN 81-20 Tabelle 12). Regelprüfung 20.09.2026: Ausdrückliche Kein-Risiko-Regel für die nach DIN EN 81-20 Tabelle 12 zulässigen Alternativen zum Leitungsbruchventil. Sie steht hier, damit der Bericht den normgerechten Zustand benennt und nicht nur die Auffangregel greift; ohne sie fielen beide Antwortwerte durch die Abdeckungsprüfung (mf_optionen.ts)."
+ },
+ {
+  "code": "MF-M13-R9",
+  "entscheidung": "Freigeben",
+  "korrektur": "Umgesetzt, Paket B3/B4 (Absperrventil getrennt; Absturzsicherung nach EN 81-20 Tabelle 12). Regelprüfung 20.09.2026: Bedingung um die zulässigen Alternativen erweitert (neue Frage 6.11a). Die Regel vergab Hoch auch für Anlagen, die nach DIN EN 81-20 Tabelle 12 normgerecht statt eines Leitungsbruchventils eine Drossel bzw. ein Drosselrückschlagventil oder eine über den Geschwindigkeitsbegrenzer eingerückte Fangvorrichtung haben. Die Stufe Hoch ist beim tatsächlich fehlenden Absturzschutz richtig und altersunabhängig. Die Sofortmaßnahme trug außerdem nicht: Ein Leitungsbruchventil schützt gegen den plötzlichen Leitungsbruch, den man durch „Absinkverhalten überwachen\" nicht beherrscht, und „nur eingeschränkt betreiben\" ist unbestimmt."
+ },
+ {
+  "code": "MF-M13-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": "Regel selbst unverändert und weiterhin freigegeben. Die Freigabe ist nur deshalb erneut nötig, weil der Fingerabdruck die Fragen der Gefährdung mitzählt und in dieser Gefährdung eine Frage geändert oder ergänzt wurde – Paket B3/B4 (Absperrventil getrennt; Absturzsicherung nach EN 81-20 Tabelle 12). Wirkung auf diese Regel geprüft (mf_smoke.ts, mf_luecken.ts, mf_tote_regeln.ts, mf_inversionen.ts, mf_optionen.ts): keine Änderung am Ergebnis."
+ },
+ {
+  "code": "MF-M13-R7",
+  "entscheidung": "Freigeben",
+  "korrektur": "Regel selbst unverändert und weiterhin freigegeben. Die Freigabe ist nur deshalb erneut nötig, weil der Fingerabdruck die Fragen der Gefährdung mitzählt und in dieser Gefährdung eine Frage geändert oder ergänzt wurde – Paket B3/B4 (Absperrventil getrennt; Absturzsicherung nach EN 81-20 Tabelle 12). Wirkung auf diese Regel geprüft (mf_smoke.ts, mf_luecken.ts, mf_tote_regeln.ts, mf_inversionen.ts, mf_optionen.ts): keine Änderung am Ergebnis."
+ },
+ {
+  "code": "MF-M13-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": "Regel selbst unverändert und weiterhin freigegeben. Die Freigabe ist nur deshalb erneut nötig, weil der Fingerabdruck die Fragen der Gefährdung mitzählt und in dieser Gefährdung eine Frage geändert oder ergänzt wurde – Paket B3/B4 (Absperrventil getrennt; Absturzsicherung nach EN 81-20 Tabelle 12). Wirkung auf diese Regel geprüft (mf_smoke.ts, mf_luecken.ts, mf_tote_regeln.ts, mf_inversionen.ts, mf_optionen.ts): keine Änderung am Ergebnis."
+ },
+ {
+  "code": "MF-M13-R4",
+  "entscheidung": "Freigeben",
+  "korrektur": "Regel selbst unverändert und weiterhin freigegeben. Die Freigabe ist nur deshalb erneut nötig, weil der Fingerabdruck die Fragen der Gefährdung mitzählt und in dieser Gefährdung eine Frage geändert oder ergänzt wurde – Paket B3/B4 (Absperrventil getrennt; Absturzsicherung nach EN 81-20 Tabelle 12). Wirkung auf diese Regel geprüft (mf_smoke.ts, mf_luecken.ts, mf_tote_regeln.ts, mf_inversionen.ts, mf_optionen.ts): keine Änderung am Ergebnis."
+ },
+ {
+  "code": "MF-M13-R8",
+  "entscheidung": "Freigeben",
+  "korrektur": "Umgesetzt, Paket B3/B4 (Absperrventil getrennt; Absturzsicherung nach EN 81-20 Tabelle 12). Regelprüfung 20.09.2026: Bedingung auf die Zugänglichkeit eingegrenzt (6.10a und 6.10b sind getrennt). Die Frage bündelte zwei verschiedene Mängel und bewertete beide mit Mittel, was den Kennzeichnungsmangel überzeichnete. Außerdem ist „Ventil zugänglich anordnen\" eine technische Maßnahme – die Kennzeichnung als einzige Mittelfristmaßnahme verstieß beim Zugänglichkeitsmangel gegen das TOP-Prinzip."
+ },
+ {
+  "code": "MF-M13-R5",
+  "entscheidung": "Freigeben",
+  "korrektur": "Umgesetzt, Paket B3/B4 (Absperrventil getrennt; Absturzsicherung nach EN 81-20 Tabelle 12), vorherige Entscheidung: Ändern. Regelprüfung 20.09.2026: Neue Regel. Die fehlende Kennzeichnung war mit der Zugänglichkeit in einer Frage gebündelt und wurde mit Mittel überbewertet: Sie ist ein Mangel ohne unmittelbaren Gefährdungsbeitrag. OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
+ },
+ {
+  "code": "MF-M13-R6",
+  "entscheidung": "Freigeben",
+  "korrektur": "Regel selbst unverändert und weiterhin freigegeben. Die Freigabe ist nur deshalb erneut nötig, weil der Fingerabdruck die Fragen der Gefährdung mitzählt und in dieser Gefährdung eine Frage geändert oder ergänzt wurde – Paket B3/B4 (Absperrventil getrennt; Absturzsicherung nach EN 81-20 Tabelle 12). Wirkung auf diese Regel geprüft (mf_smoke.ts, mf_luecken.ts, mf_tote_regeln.ts, mf_inversionen.ts, mf_optionen.ts): keine Änderung am Ergebnis."
+ },
+ {
+  "code": "MF-T04-R5",
+  "entscheidung": "Freigeben",
+  "korrektur": "Umgesetzt, Paket B4 (Einzugsschutz nur bei Glasflächen über Sichtfenstergröße), vorherige Entscheidung: Ändern. Regelprüfung 20.09.2026: Stufe, Priorität, Bedingung und Maßnahmen bleiben; berichtigt ist der Text von 7.9. Die Bedingung war fail-open: 7.8 und 7.9 sind zwei unabhängige Fragen zur Anlage insgesamt. Waren Drahtglas UND eine weitere nicht normgerechte Glasart verbaut, ergab sich 7.8 = Nein und 7.9 = Ja, diese Regel griff nicht mehr, und es blieb bei Niedrig – der Hoch-Befund für das tatsächlich gefährliche Glas verschwand. 7.9 lautet jetzt „ausschließlich Drahtglas?\"; die Mischkonstellation ergibt damit 7.8 = Nein und 7.9 = Nein und fällt fail-closed auf diese Regel. Eine Umstellung auf eine Einfachauswahl „Glasart\" wurde verworfen – sie hätte R3 und die Kein-Risiko-Regel R4 mitgerissen und zwei Fragen-IDs destabilisiert. [Prüfbericht: B06 – Drahtglas ausgenommen, damit die Niedrig-Regel (TRBS 3121 Anh. 1 Nr. 9) greift] OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
+ },
+ {
+  "code": "MF-T04-R6",
+  "entscheidung": "Freigeben",
+  "korrektur": "Regel selbst unverändert und weiterhin freigegeben. Die Freigabe ist nur deshalb erneut nötig, weil der Fingerabdruck die Fragen der Gefährdung mitzählt und in dieser Gefährdung eine Frage geändert oder ergänzt wurde – Paket B4 (Einzugsschutz nur bei Glasflächen über Sichtfenstergröße). Wirkung auf diese Regel geprüft (mf_smoke.ts, mf_luecken.ts, mf_tote_regeln.ts, mf_inversionen.ts, mf_optionen.ts): keine Änderung am Ergebnis."
+ },
+ {
+  "code": "MF-T04-R8",
+  "entscheidung": "Freigeben",
+  "korrektur": "Umgesetzt, Paket B4 (Einzugsschutz nur bei Glasflächen über Sichtfenstergröße). Regelprüfung 20.09.2026: Bedingung um die neue Frage 7.9b ergänzt. 7.9a fragte nur, ob verglaste Türen kraftbetätigte Schiebetüren sind; eine solche Tür mit bloßem Sichtfenster löste damit Hoch und eine Betriebseinschränkung aus, obwohl DIN EN 81-20 5.3.6.2.2.1 i) den Einzugsschutz nur für Glasscheiben verlangt, die größer sind als die Sichtfenster nach 5.3.7.2 (Breite über 150 mm nach 5.3.7.2.1 a) 4)). 7.9a wurde bewusst NICHT um ein zweites Merkmal erweitert – eine Ja/Nein-Frage mit zwei Merkmalen wird uneindeutig beantwortet, und 7.9a steuert zugleich die Sichtbarkeit von 7.10. Stufe Hoch, Priorität und beide Maßnahmen bleiben: Das Einziehen einer Kinderhand führt unmittelbar zu schweren Verletzungen, und EN 81-80 führt den Einzugsschutz als sicherheitsrelevante Nachrüstung. [Prüfbericht: Prüfbericht 16.09.2026 – Einzugsschutz nur bei kraftbetätigten Schiebetüren; Glasfestigkeit getrennt]"
+ },
+ {
+  "code": "MF-T04-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": "Regel selbst unverändert und weiterhin freigegeben. Die Freigabe ist nur deshalb erneut nötig, weil der Fingerabdruck die Fragen der Gefährdung mitzählt und in dieser Gefährdung eine Frage geändert oder ergänzt wurde – Paket B4 (Einzugsschutz nur bei Glasflächen über Sichtfenstergröße). Wirkung auf diese Regel geprüft (mf_smoke.ts, mf_luecken.ts, mf_tote_regeln.ts, mf_inversionen.ts, mf_optionen.ts): keine Änderung am Ergebnis."
+ },
+ {
+  "code": "MF-T04-R4",
+  "entscheidung": "Freigeben",
+  "korrektur": "Regel selbst unverändert und weiterhin freigegeben. Die Freigabe ist nur deshalb erneut nötig, weil der Fingerabdruck die Fragen der Gefährdung mitzählt und in dieser Gefährdung eine Frage geändert oder ergänzt wurde – Paket B4 (Einzugsschutz nur bei Glasflächen über Sichtfenstergröße). Wirkung auf diese Regel geprüft (mf_smoke.ts, mf_luecken.ts, mf_tote_regeln.ts, mf_inversionen.ts, mf_optionen.ts): keine Änderung am Ergebnis."
+ },
+ {
+  "code": "MF-S05-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": "Regel selbst unverändert und weiterhin freigegeben. Die Freigabe ist nur deshalb erneut nötig, weil der Fingerabdruck die Fragen der Gefährdung mitzählt und in dieser Gefährdung eine Frage geändert oder ergänzt wurde – Paket Normkorrektur (EN 81-20 Tabelle 11/12: Begrenzer bei Trommel zwingend, Ersatzkombination nur beim indirekten Hydraulikaufzug). Wirkung auf diese Regel geprüft (mf_smoke.ts, mf_luecken.ts, mf_tote_regeln.ts, mf_inversionen.ts, mf_optionen.ts): keine Änderung am Ergebnis."
+ },
+ {
+  "code": "MF-S05-R9",
+  "entscheidung": "Freigeben",
+  "korrektur": "Umgesetzt, Paket Normkorrektur (EN 81-20 Tabelle 11/12: Begrenzer bei Trommel zwingend, Ersatzkombination nur beim indirekten Hydraulikaufzug). Regelprüfung 20.09.2026: (vormals MF-S05-R2; die eingeschränkte Anwendbarkeit ist ein neuer Sachverhalt und bekommt nach der ID-Regel eine neue Regel-ID.) Frage 10.8 ist für alle drei Seil-Bauarten sichtbar, die Regel vergab aber ausnahmslos Hoch mit Stilllegung – beim indirekt angetriebenen Hydraulikaufzug auch dann, wenn die Anlage nach DIN EN 81-20 Tabelle 12 normgerecht mit Leitungsbruchventil oder Drossel plus Ersatzauslösung ausgeführt ist. Die Anwendbarkeit folgt jetzt Tabelle 11 (Treibscheibe und Trommel/Kette – dort ist der Begrenzer für den Fahrkorb zwingend); der Hydraulikfall steht in der folgenden Regel. Stufe, Bedingung und Maßnahmen bleiben. [Prüfbericht: B11 – Maßnahme zielte auf die Fangvorrichtung statt den Begrenzer]"
+ },
+ {
+  "code": "MF-S05-R10",
+  "entscheidung": "Freigeben",
+  "korrektur": "Umgesetzt, Paket Normkorrektur (EN 81-20 Tabelle 11/12: Begrenzer bei Trommel zwingend, Ersatzkombination nur beim indirekten Hydraulikaufzug). Regelprüfung 20.09.2026: Neue Regel für den indirekt angetriebenen Hydraulikaufzug. Der fehlende Geschwindigkeitsbegrenzer ist dort erst dann ein Mangel, wenn auch die nach DIN EN 81-20 Tabelle 12 zulässige Ersatzkombination fehlt (10.8a = Nein). Ist sie vorhanden, entsteht kein Befund – die Anlage ist normgerecht. Fail-closed: bleibt 10.8a unbeantwortet, ist die Gefährdung unvollständig."
+ },
+ {
+  "code": "MF-S05-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": "Umgesetzt, Paket Normkorrektur (EN 81-20 Tabelle 11/12: Begrenzer bei Trommel zwingend, Ersatzkombination nur beim indirekten Hydraulikaufzug), vorherige Entscheidung: Freigeben. Regelprüfung 20.09.2026: Gilt jetzt auch für den Seil-Hydraulikaufzug (indirekt) – die Sichtbarkeit von 10.11 ist auf diese Bauart erweitert. DIN EN 81-20 5.5.5.3 b) verlangt die Schlaffseil-/Schlaffkettenüberwachung bei Ketten- und Trommelaufzügen sowie bei Hydraulikaufzügen, sobald eine Gefährdung durch Schlaffseil oder Schlaffkette besteht. Sie ist eine eigenständige elektrische Sicherheitseinrichtung und ausdrücklich KEIN Auslösemittel der Fangvorrichtung – ein früherer Entwurf dieser Regelprüfung hatte das verwechselt. OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
+ },
+ {
+  "code": "MF-S05-R4",
+  "entscheidung": "Freigeben",
+  "korrektur": "Regel selbst unverändert und weiterhin freigegeben. Die Freigabe ist nur deshalb erneut nötig, weil der Fingerabdruck die Fragen der Gefährdung mitzählt und in dieser Gefährdung eine Frage geändert oder ergänzt wurde – Paket Normkorrektur (EN 81-20 Tabelle 11/12: Begrenzer bei Trommel zwingend, Ersatzkombination nur beim indirekten Hydraulikaufzug). Wirkung auf diese Regel geprüft (mf_smoke.ts, mf_luecken.ts, mf_tote_regeln.ts, mf_inversionen.ts, mf_optionen.ts): keine Änderung am Ergebnis."
+ },
+ {
+  "code": "MF-S05-R5",
+  "entscheidung": "Freigeben",
+  "korrektur": "Umgesetzt, Paket Normkorrektur (EN 81-20 Tabelle 11/12: Begrenzer bei Trommel zwingend, Ersatzkombination nur beim indirekten Hydraulikaufzug), vorherige Entscheidung: Ändern. Regelprüfung 20.09.2026: „Spanngewicht bei Wartung sichtprüfen\" ist eine Dauerauflage, keine Sofortmaßnahme. OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
+ },
+ {
+  "code": "MF-S05-R6",
+  "entscheidung": "Freigeben",
+  "korrektur": "Regel selbst unverändert und weiterhin freigegeben. Die Freigabe ist nur deshalb erneut nötig, weil der Fingerabdruck die Fragen der Gefährdung mitzählt und in dieser Gefährdung eine Frage geändert oder ergänzt wurde – Paket Normkorrektur (EN 81-20 Tabelle 11/12: Begrenzer bei Trommel zwingend, Ersatzkombination nur beim indirekten Hydraulikaufzug). Wirkung auf diese Regel geprüft (mf_smoke.ts, mf_luecken.ts, mf_tote_regeln.ts, mf_inversionen.ts, mf_optionen.ts): keine Änderung am Ergebnis."
+ },
+ {
+  "code": "MF-G06-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": "Regel selbst unverändert und weiterhin freigegeben. Die Freigabe ist nur deshalb erneut nötig, weil der Fingerabdruck die Fragen der Gefährdung mitzählt und in dieser Gefährdung eine Frage geändert oder ergänzt wurde – Paket B3 (Puffer: Verschleiß / Funktionsverlust, Kennzeichnung / Ölstand). Wirkung auf diese Regel geprüft (mf_smoke.ts, mf_luecken.ts, mf_tote_regeln.ts, mf_inversionen.ts, mf_optionen.ts): keine Änderung am Ergebnis."
+ },
+ {
+  "code": "MF-G06-R6",
+  "entscheidung": "Freigeben",
+  "korrektur": "Umgesetzt, Paket B3 (Puffer: Verschleiß / Funktionsverlust, Kennzeichnung / Ölstand). Regelprüfung 20.09.2026: Bedingung auf den Funktionsverlust eingegrenzt (11.10a ist jetzt eine Auswahlfrage). Hoch samt Stilllegung bleibt dem gerissenen oder losen Puffer und dem hydraulischen Puffer ohne Öl oder ohne Rückstellung vorbehalten; bloßer Alterungsverschleiß bei erhaltener Funktion führte vorher ebenfalls zur Stilllegung der gesamten Anlage – ein unverhältnismäßiges und damit falsches Bewertungsergebnis."
+ },
+ {
+  "code": "MF-G06-R7",
+  "entscheidung": "Freigeben",
+  "korrektur": "Umgesetzt, Paket B3 (Puffer: Verschleiß / Funktionsverlust, Kennzeichnung / Ölstand). Regelprüfung 20.09.2026: Neue Regel für den Verschleißfall. Verschleiß bei erhaltener Funktion ist eine wirksame, aber unvollständige Schutzmaßnahme und damit Mittel – nicht Hoch."
+ },
+ {
+  "code": "MF-G06-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": "Regel selbst unverändert und weiterhin freigegeben. Die Freigabe ist nur deshalb erneut nötig, weil der Fingerabdruck die Fragen der Gefährdung mitzählt und in dieser Gefährdung eine Frage geändert oder ergänzt wurde – Paket B3 (Puffer: Verschleiß / Funktionsverlust, Kennzeichnung / Ölstand). Wirkung auf diese Regel geprüft (mf_smoke.ts, mf_luecken.ts, mf_tote_regeln.ts, mf_inversionen.ts, mf_optionen.ts): keine Änderung am Ergebnis."
+ },
+ {
+  "code": "MF-G06-R4",
+  "entscheidung": "Freigeben",
+  "korrektur": "Umgesetzt, Paket B3 (Puffer: Verschleiß / Funktionsverlust, Kennzeichnung / Ölstand), vorherige Entscheidung: Ändern. Regelprüfung 20.09.2026: Bedingung auf den nicht prüfbaren Ölstand eingegrenzt; die fehlende Kennzeichnung steht jetzt in einer eigenen Regel mit Stufe Niedrig. Die Sofortmaßnahme „Zustand sichtprüfen\" war keine Maßnahme, sondern der Prüfschritt selbst – sie wirkte nichts und nannte keine Konsequenz. Stufe Mittel und Mittelfristmaßnahme bleiben. OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
+ },
+ {
+  "code": "MF-G06-R8",
+  "entscheidung": "Freigeben",
+  "korrektur": "Umgesetzt, Paket B3 (Puffer: Verschleiß / Funktionsverlust, Kennzeichnung / Ölstand). Regelprüfung 20.09.2026: Neue Regel. Die fehlende Kennzeichnung war mit dem nicht prüfbaren Ölstand in einer Frage gebündelt und wurde mit Mittel überbewertet: Sie ist ein Mangel ohne unmittelbaren Gefährdungsbeitrag."
+ },
+ {
+  "code": "MF-G06-R5",
+  "entscheidung": "Freigeben",
+  "korrektur": "Regel selbst unverändert und weiterhin freigegeben. Die Freigabe ist nur deshalb erneut nötig, weil der Fingerabdruck die Fragen der Gefährdung mitzählt und in dieser Gefährdung eine Frage geändert oder ergänzt wurde – Paket B3 (Puffer: Verschleiß / Funktionsverlust, Kennzeichnung / Ölstand). Wirkung auf diese Regel geprüft (mf_smoke.ts, mf_luecken.ts, mf_tote_regeln.ts, mf_inversionen.ts, mf_optionen.ts): keine Änderung am Ergebnis."
+ },
+ {
+  "code": "MF-U01-R7",
+  "entscheidung": "Freigeben",
+  "korrektur": "Umgesetzt, Paket B1 (Asbest-Zustandsfrage). Regelprüfung 20.09.2026: Hoch bleibt für beschädigtes, schwach gebundenes oder abriebbelastetes Material – und ausdrücklich auch für den nicht beurteilbaren Zustand (fail-closed: die Abstufung darf nicht dazu führen, dass ein ungeprüfter Fund günstiger bewertet wird als vorher). Der Maßnahmentext nennt nicht mehr nur die TRGS 519, sondern die für den festgestellten Stoff einschlägige TRGS; auf die Asbest-Richtlinie wird bewusst nicht verwiesen, sie ist in mehreren Ländern zurückgezogen. [Prüfbericht: Regelprüfung 20.09.2026 – Zustandsabstufung neu, Klärung K-U01 deckt den geänderten Inhalt nicht mehr] Frühere Klärung (vor der Änderung entschieden): K-U01"
+ },
+ {
+  "code": "MF-U01-R8",
+  "entscheidung": "Freigeben",
+  "korrektur": "Umgesetzt, Paket B1 (Asbest-Zustandsfrage). Regelprüfung 20.09.2026: Hoch auf Mittel für den fest gebundenen, unbeschädigten Fund: Er setzt ohne Bearbeitung keine Fasern frei, die Gefahr entsteht erst bei einem zusätzlichen Ereignis. Die Maßnahmen bleiben auf Mittel-Niveau (Bearbeitungsverbot, Kennzeichnung, Kataster, wiederkehrende Zustandskontrolle) – eine Stilllegung ordnete auch die alte Hoch-Regel nicht an. [Prüfbericht: Regelprüfung 20.09.2026 – Zustandsabstufung neu, Klärung K-U01 deckt den geänderten Inhalt nicht mehr] Frühere Klärung (vor der Änderung entschieden): K-U01"
+ },
+ {
+  "code": "MF-U01-R9",
+  "entscheidung": "Freigeben",
+  "korrektur": "Umgesetzt, Paket B1 (Asbest-Zustandsfrage). Regelprüfung 20.09.2026: Asbesthaltige Bremsbeläge und Bremsstaub werden im bestimmungsgemäßen Betrieb bei jedem Halt abgerieben – die Freisetzung erfolgt ohne weiteres Zutun. Dieser Fall bleibt Hoch, unabhängig vom Zustand des übrigen Materials, und bekommt eine eigene Sofortmaßnahme (Staubklasse H). [Prüfbericht: Regelprüfung 20.09.2026 – Zustandsabstufung neu, Klärung K-U01 deckt den geänderten Inhalt nicht mehr] Frühere Klärung (vor der Änderung entschieden): K-U01"
+ },
+ {
+  "code": "MF-U01-R10",
+  "entscheidung": "Freigeben",
+  "korrektur": "Umgesetzt, Paket B1 (Asbest-Zustandsfrage). Regelprüfung 20.09.2026: Hoch bleibt für beschädigtes, schwach gebundenes oder abriebbelastetes Material – und ausdrücklich auch für den nicht beurteilbaren Zustand (fail-closed: die Abstufung darf nicht dazu führen, dass ein ungeprüfter Fund günstiger bewertet wird als vorher). Der Maßnahmentext nennt nicht mehr nur die TRGS 519, sondern die für den festgestellten Stoff einschlägige TRGS; auf die Asbest-Richtlinie wird bewusst nicht verwiesen, sie ist in mehreren Ländern zurückgezogen. [Prüfbericht: Regelprüfung 20.09.2026 – Zustandsabstufung neu, Klärung K-U01 deckt den geänderten Inhalt nicht mehr] Frühere Klärung (vor der Änderung entschieden): K-U01"
+ },
+ {
+  "code": "MF-U01-R11",
+  "entscheidung": "Freigeben",
+  "korrektur": "Umgesetzt, Paket B1 (Asbest-Zustandsfrage). Regelprüfung 20.09.2026: Hoch auf Mittel für den fest gebundenen, unbeschädigten Fund: Er setzt ohne Bearbeitung keine Fasern frei, die Gefahr entsteht erst bei einem zusätzlichen Ereignis. Die Maßnahmen bleiben auf Mittel-Niveau (Bearbeitungsverbot, Kennzeichnung, Kataster, wiederkehrende Zustandskontrolle) – eine Stilllegung ordnete auch die alte Hoch-Regel nicht an. [Prüfbericht: Regelprüfung 20.09.2026 – Zustandsabstufung neu, Klärung K-U01 deckt den geänderten Inhalt nicht mehr] Frühere Klärung (vor der Änderung entschieden): K-U01"
+ },
+ {
+  "code": "MF-U01-R12",
+  "entscheidung": "Freigeben",
+  "korrektur": "Umgesetzt, Paket B1 (Asbest-Zustandsfrage). Regelprüfung 20.09.2026: Hoch bleibt für beschädigtes, schwach gebundenes oder abriebbelastetes Material – und ausdrücklich auch für den nicht beurteilbaren Zustand (fail-closed: die Abstufung darf nicht dazu führen, dass ein ungeprüfter Fund günstiger bewertet wird als vorher). Der Maßnahmentext nennt nicht mehr nur die TRGS 519, sondern die für den festgestellten Stoff einschlägige TRGS; auf die Asbest-Richtlinie wird bewusst nicht verwiesen, sie ist in mehreren Ländern zurückgezogen. [Prüfbericht: Regelprüfung 20.09.2026 – Zustandsabstufung neu, Klärung K-U01 deckt den geänderten Inhalt nicht mehr] Frühere Klärung (vor der Änderung entschieden): K-U01"
+ },
+ {
+  "code": "MF-U01-R13",
+  "entscheidung": "Freigeben",
+  "korrektur": "Umgesetzt, Paket B1 (Asbest-Zustandsfrage). Regelprüfung 20.09.2026: Hoch auf Mittel für den fest gebundenen, unbeschädigten Fund: Er setzt ohne Bearbeitung keine Fasern frei, die Gefahr entsteht erst bei einem zusätzlichen Ereignis. Die Maßnahmen bleiben auf Mittel-Niveau (Bearbeitungsverbot, Kennzeichnung, Kataster, wiederkehrende Zustandskontrolle) – eine Stilllegung ordnete auch die alte Hoch-Regel nicht an. [Prüfbericht: Regelprüfung 20.09.2026 – Zustandsabstufung neu, Klärung K-U01 deckt den geänderten Inhalt nicht mehr] Frühere Klärung (vor der Änderung entschieden): K-U01"
+ },
+ {
+  "code": "MF-U01-R14",
+  "entscheidung": "Freigeben",
+  "korrektur": "Umgesetzt, Paket B1 (Asbest-Zustandsfrage). Regelprüfung 20.09.2026: Hoch bleibt für beschädigtes, schwach gebundenes oder abriebbelastetes Material – und ausdrücklich auch für den nicht beurteilbaren Zustand (fail-closed: die Abstufung darf nicht dazu führen, dass ein ungeprüfter Fund günstiger bewertet wird als vorher). Der Maßnahmentext nennt nicht mehr nur die TRGS 519, sondern die für den festgestellten Stoff einschlägige TRGS; auf die Asbest-Richtlinie wird bewusst nicht verwiesen, sie ist in mehreren Ländern zurückgezogen. [Prüfbericht: Regelprüfung 20.09.2026 – Zustandsabstufung neu, Klärung K-U01 deckt den geänderten Inhalt nicht mehr] Frühere Klärung (vor der Änderung entschieden): K-U01"
+ },
+ {
+  "code": "MF-U01-R15",
+  "entscheidung": "Freigeben",
+  "korrektur": "Umgesetzt, Paket B1 (Asbest-Zustandsfrage). Regelprüfung 20.09.2026: Hoch auf Mittel für den fest gebundenen, unbeschädigten Fund: Er setzt ohne Bearbeitung keine Fasern frei, die Gefahr entsteht erst bei einem zusätzlichen Ereignis. Die Maßnahmen bleiben auf Mittel-Niveau (Bearbeitungsverbot, Kennzeichnung, Kataster, wiederkehrende Zustandskontrolle) – eine Stilllegung ordnete auch die alte Hoch-Regel nicht an. [Prüfbericht: Regelprüfung 20.09.2026 – Zustandsabstufung neu, Klärung K-U01 deckt den geänderten Inhalt nicht mehr] Frühere Klärung (vor der Änderung entschieden): K-U01"
+ },
+ {
+  "code": "MF-U01-R5",
+  "entscheidung": "Freigeben",
+  "korrektur": "Regel selbst unverändert und weiterhin freigegeben. Die Freigabe ist nur deshalb erneut nötig, weil der Fingerabdruck die Fragen der Gefährdung mitzählt und in dieser Gefährdung eine Frage geändert oder ergänzt wurde – Paket B1 (Asbest-Zustandsfrage). Wirkung auf diese Regel geprüft (mf_smoke.ts, mf_luecken.ts, mf_tote_regeln.ts, mf_inversionen.ts, mf_optionen.ts): keine Änderung am Ergebnis."
+ },
+ {
+  "code": "MF-U01-R6",
+  "entscheidung": "Freigeben",
+  "korrektur": "Regel selbst unverändert und weiterhin freigegeben. Die Freigabe ist nur deshalb erneut nötig, weil der Fingerabdruck die Fragen der Gefährdung mitzählt und in dieser Gefährdung eine Frage geändert oder ergänzt wurde – Paket B1 (Asbest-Zustandsfrage). Wirkung auf diese Regel geprüft (mf_smoke.ts, mf_luecken.ts, mf_tote_regeln.ts, mf_inversionen.ts, mf_optionen.ts): keine Änderung am Ergebnis."
+ },
+ {
+  "code": "MF-U05-R6",
+  "entscheidung": "Freigeben",
+  "korrektur": "Umgesetzt, Paket B2 (Kompensationsfragen Gefahrstofftransporte). Regelprüfung 20.09.2026: Bedingung um die Kompensation ergänzt. Vorher bewertete die Regel die Nutzungsart und nicht den Mangel: Sobald transportiert wurde, entstand ein Mittel-Befund, der auch bei vorbildlicher Regelung nie wieder verschwand. Stufe und Maßnahmen bleiben für den ungeregelten Fall unverändert."
+ },
+ {
+  "code": "MF-U05-R7",
+  "entscheidung": "Freigeben",
+  "korrektur": "Umgesetzt, Paket B2 (Kompensationsfragen Gefahrstofftransporte). Regelprüfung 20.09.2026: Neue Kompensationsregel. Zielstufe ist ausdrücklich Niedrig und nicht Kein Risiko: Der Transport bleibt auch geregelt ein Restrisiko mit Fortschreibungs- und Unterweisungspflicht; bei Kein Risiko verschwänden diese Maßnahmen aus dem Bericht."
+ },
+ {
+  "code": "MF-U05-R8",
+  "entscheidung": "Freigeben",
+  "korrektur": "Umgesetzt, Paket B2 (Kompensationsfragen Gefahrstofftransporte). Regelprüfung 20.09.2026: Bedingung um die Kompensation ergänzt. Vorher bewertete die Regel die Nutzungsart und nicht den Mangel: Sobald transportiert wurde, entstand ein Mittel-Befund, der auch bei vorbildlicher Regelung nie wieder verschwand. Stufe und Maßnahmen bleiben für den ungeregelten Fall unverändert."
+ },
+ {
+  "code": "MF-U05-R9",
+  "entscheidung": "Freigeben",
+  "korrektur": "Umgesetzt, Paket B2 (Kompensationsfragen Gefahrstofftransporte). Regelprüfung 20.09.2026: Neue Kompensationsregel. Zielstufe ist ausdrücklich Niedrig und nicht Kein Risiko: Der Transport bleibt auch geregelt ein Restrisiko mit Fortschreibungs- und Unterweisungspflicht; bei Kein Risiko verschwänden diese Maßnahmen aus dem Bericht."
+ },
+ {
+  "code": "MF-U05-R10",
+  "entscheidung": "Freigeben",
+  "korrektur": "Umgesetzt, Paket B2 (Kompensationsfragen Gefahrstofftransporte). Regelprüfung 20.09.2026: Bedingung um die Kompensation ergänzt. Vorher bewertete die Regel die Nutzungsart und nicht den Mangel: Sobald transportiert wurde, entstand ein Mittel-Befund, der auch bei vorbildlicher Regelung nie wieder verschwand. Stufe und Maßnahmen bleiben für den ungeregelten Fall unverändert."
+ },
+ {
+  "code": "MF-U05-R11",
+  "entscheidung": "Freigeben",
+  "korrektur": "Umgesetzt, Paket B2 (Kompensationsfragen Gefahrstofftransporte). Regelprüfung 20.09.2026: Neue Kompensationsregel. Zielstufe ist ausdrücklich Niedrig und nicht Kein Risiko: Der Transport bleibt auch geregelt ein Restrisiko mit Fortschreibungs- und Unterweisungspflicht; bei Kein Risiko verschwänden diese Maßnahmen aus dem Bericht."
+ },
+ {
+  "code": "MF-U05-R12",
+  "entscheidung": "Freigeben",
+  "korrektur": "Umgesetzt, Paket B2 (Kompensationsfragen Gefahrstofftransporte). Regelprüfung 20.09.2026: Bedingung um die Kompensation ergänzt. Vorher bewertete die Regel die Nutzungsart und nicht den Mangel: Sobald transportiert wurde, entstand ein Mittel-Befund, der auch bei vorbildlicher Regelung nie wieder verschwand. Stufe und Maßnahmen bleiben für den ungeregelten Fall unverändert."
+ },
+ {
+  "code": "MF-U05-R13",
+  "entscheidung": "Freigeben",
+  "korrektur": "Umgesetzt, Paket B2 (Kompensationsfragen Gefahrstofftransporte). Regelprüfung 20.09.2026: Neue Kompensationsregel. Zielstufe ist ausdrücklich Niedrig und nicht Kein Risiko: Der Transport bleibt auch geregelt ein Restrisiko mit Fortschreibungs- und Unterweisungspflicht; bei Kein Risiko verschwänden diese Maßnahmen aus dem Bericht."
+ },
+ {
+  "code": "MF-U05-R5",
+  "entscheidung": "Freigeben",
+  "korrektur": "Regel selbst unverändert und weiterhin freigegeben. Die Freigabe ist nur deshalb erneut nötig, weil der Fingerabdruck die Fragen der Gefährdung mitzählt und in dieser Gefährdung eine Frage geändert oder ergänzt wurde – Paket B2 (Kompensationsfragen Gefahrstofftransporte). Wirkung auf diese Regel geprüft (mf_smoke.ts, mf_luecken.ts, mf_tote_regeln.ts, mf_inversionen.ts, mf_optionen.ts): keine Änderung am Ergebnis."
+ },
+ {
+  "code": "MF-U07-R7",
+  "entscheidung": "Freigeben",
+  "korrektur": "Umgesetzt, Paket B4 (Wasser in der Grube: Auswahlfrage statt Wasser-ODER-Feuchtigkeit). Regelprüfung 20.09.2026: Bedingung auf stehendes Wasser bzw. Wasser an elektrischen oder sicherheitsrelevanten Bauteilen eingegrenzt – und ausdrücklich auch auf den nicht beurteilbaren Umfang (fail-closed). Frage 11.15 lautete „Wasser ODER Feuchtigkeit\" und führte ausnahmslos zu Hoch mit Außerbetriebnahme; feuchte Grubenwände und Kondensat sind in Altschächten der Regelfall und rechtfertigen keine Stilllegung. Bei 15.23a war die Bedingung bereits auf sicherheitsrelevante Bauteile geschärft – die Asymmetrie ist damit behoben. Stufe und Maßnahmen bleiben für den echten Wasserfall unverändert. [Prüfbericht: H07 – gefährdungsspezifische Maßnahmen statt generischer Schnittstellen-Texte]"
+ },
+ {
+  "code": "MF-U07-R8",
+  "entscheidung": "Freigeben",
+  "korrektur": "Umgesetzt, Paket B4 (Wasser in der Grube: Auswahlfrage statt Wasser-ODER-Feuchtigkeit). Regelprüfung 20.09.2026: Neue Regel für die bloße Feuchte bzw. Kondensat ohne Bauteilkontakt. Sie ist nicht folgenlos – Korrosion an tragenden und sicherheitsrelevanten Teilen entsteht daraus –, rechtfertigt aber keine Stilllegung."
+ },
+ {
+  "code": "MF-U07-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": "Umgesetzt, Paket B4 (Wasser in der Grube: Auswahlfrage statt Wasser-ODER-Feuchtigkeit), vorherige Entscheidung: Ändern. Regelprüfung 20.09.2026: Beide Maßnahmen von MU['wasser'] gelöst. Sie stammten unverändert aus dem Wasser-Textblock der Schachtgrube und passten nicht zu der 2026 geschärften Bedingung, die ausdrücklich den Bereich AUSSERHALB der Grube und den Fall Kondensat erfasst: Die Sofortmaßnahme nannte einen Bereich, den 15.23a gerade ausschließt, und für Kondensat an der Steuerung liegt die Ursache in Lüftung, Beheizung und Schutzart, nicht im Wassereintritt. Bedingung und Stufe Hoch bleiben – Feuchte an Bremse oder Türverriegelung kann eine Einrichtung im Sicherheitskreis zum Versagen bringen. [Prüfbericht: H07 – gefährdungsspezifische Maßnahmen statt generischer Schnittstellen-Texte] OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
+ },
+ {
+  "code": "MF-U07-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": "Regel selbst unverändert und weiterhin freigegeben. Die Freigabe ist nur deshalb erneut nötig, weil der Fingerabdruck die Fragen der Gefährdung mitzählt und in dieser Gefährdung eine Frage geändert oder ergänzt wurde – Paket B4 (Wasser in der Grube: Auswahlfrage statt Wasser-ODER-Feuchtigkeit). Wirkung auf diese Regel geprüft (mf_smoke.ts, mf_luecken.ts, mf_tote_regeln.ts, mf_inversionen.ts, mf_optionen.ts): keine Änderung am Ergebnis."
+ },
+ {
+  "code": "MF-U07-R4",
+  "entscheidung": "Freigeben",
+  "korrektur": "Regel selbst unverändert und weiterhin freigegeben. Die Freigabe ist nur deshalb erneut nötig, weil der Fingerabdruck die Fragen der Gefährdung mitzählt und in dieser Gefährdung eine Frage geändert oder ergänzt wurde – Paket B4 (Wasser in der Grube: Auswahlfrage statt Wasser-ODER-Feuchtigkeit). Wirkung auf diese Regel geprüft (mf_smoke.ts, mf_luecken.ts, mf_tote_regeln.ts, mf_inversionen.ts, mf_optionen.ts): keine Änderung am Ergebnis."
+ },
+ {
+  "code": "MF-U07-R5",
+  "entscheidung": "Freigeben",
+  "korrektur": "Regel selbst unverändert und weiterhin freigegeben. Die Freigabe ist nur deshalb erneut nötig, weil der Fingerabdruck die Fragen der Gefährdung mitzählt und in dieser Gefährdung eine Frage geändert oder ergänzt wurde – Paket B4 (Wasser in der Grube: Auswahlfrage statt Wasser-ODER-Feuchtigkeit). Wirkung auf diese Regel geprüft (mf_smoke.ts, mf_luecken.ts, mf_tote_regeln.ts, mf_inversionen.ts, mf_optionen.ts): keine Änderung am Ergebnis."
+ },
+ {
+  "code": "MF-U07-R6",
+  "entscheidung": "Freigeben",
+  "korrektur": "Regel selbst unverändert und weiterhin freigegeben. Die Freigabe ist nur deshalb erneut nötig, weil der Fingerabdruck die Fragen der Gefährdung mitzählt und in dieser Gefährdung eine Frage geändert oder ergänzt wurde – Paket B4 (Wasser in der Grube: Auswahlfrage statt Wasser-ODER-Feuchtigkeit). Wirkung auf diese Regel geprüft (mf_smoke.ts, mf_luecken.ts, mf_tote_regeln.ts, mf_inversionen.ts, mf_optionen.ts): keine Änderung am Ergebnis."
+ },
+ {
+  "code": "MF-U09-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": "Regel selbst unverändert und weiterhin freigegeben. Die Freigabe ist nur deshalb erneut nötig, weil der Fingerabdruck die Fragen der Gefährdung mitzählt und in dieser Gefährdung eine Frage geändert oder ergänzt wurde – Paket B4 (Brandschutzeinrichtung: Rettung behindert / nur Betrieb behindert). Wirkung auf diese Regel geprüft (mf_smoke.ts, mf_luecken.ts, mf_tote_regeln.ts, mf_inversionen.ts, mf_optionen.ts): keine Änderung am Ergebnis."
+ },
+ {
+  "code": "MF-U09-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": "Regel selbst unverändert und weiterhin freigegeben. Die Freigabe ist nur deshalb erneut nötig, weil der Fingerabdruck die Fragen der Gefährdung mitzählt und in dieser Gefährdung eine Frage geändert oder ergänzt wurde – Paket B4 (Brandschutzeinrichtung: Rettung behindert / nur Betrieb behindert). Wirkung auf diese Regel geprüft (mf_smoke.ts, mf_luecken.ts, mf_tote_regeln.ts, mf_inversionen.ts, mf_optionen.ts): keine Änderung am Ergebnis."
+ },
+ {
+  "code": "MF-U09-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": "Umgesetzt, Paket B4 (Brandschutzeinrichtung: Rettung behindert / nur Betrieb behindert), vorherige Entscheidung: Ändern. Regelprüfung 20.09.2026: Stufe Mittel bleibt, beide Maßnahmen neu gefasst (siehe MU['evak']): Der sicherheitsrelevante Kern ist die fehlende Festlegung und Kennzeichnung des Benutzungsverbots im Brandfall, nicht eine Evakuierungsfunktion, die die meisten Anlagen gar nicht haben. [Prüfbericht: H07 – gefährdungsspezifische Maßnahmen statt generischer Schnittstellen-Texte] OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
+ },
+ {
+  "code": "MF-U09-R7",
+  "entscheidung": "Freigeben",
+  "korrektur": "Umgesetzt, Paket B4 (Brandschutzeinrichtung: Rettung behindert / nur Betrieb behindert). Regelprüfung 20.09.2026: Bedingung auf die behinderte Personenrettung eingegrenzt – der nicht sicher beurteilbare Fall gehört ausdrücklich dazu (fail-closed). Die Regel bündelte vorher zwei Sachverhalte sehr unterschiedlicher Schwere. Außerdem kehrte die Maßnahmenlogik das TOP-Prinzip um: sofort wurde technisch beseitigt, mittelfristig blieb es bei einer vagen organisatorischen „Abstimmung\", obwohl die Ursachenbeseitigung baulich-technisch ist. [Prüfbericht: H07 – gefährdungsspezifische Maßnahmen statt generischer Schnittstellen-Texte]"
+ },
+ {
+  "code": "MF-U09-R8",
+  "entscheidung": "Freigeben",
+  "korrektur": "Umgesetzt, Paket B4 (Brandschutzeinrichtung: Rettung behindert / nur Betrieb behindert). Regelprüfung 20.09.2026: Neue Regel für die reine Betriebsbehinderung bei nachweislich freiem Rettungszugang. Das ist kein unmittelbares Lebensrisiko und wurde mit Hoch überbewertet. [Prüfbericht: H07 – gefährdungsspezifische Maßnahmen statt generischer Schnittstellen-Texte]"
+ },
+ {
+  "code": "MF-U09-R6",
+  "entscheidung": "Freigeben",
+  "korrektur": "Regel selbst unverändert und weiterhin freigegeben. Die Freigabe ist nur deshalb erneut nötig, weil der Fingerabdruck die Fragen der Gefährdung mitzählt und in dieser Gefährdung eine Frage geändert oder ergänzt wurde – Paket B4 (Brandschutzeinrichtung: Rettung behindert / nur Betrieb behindert). Wirkung auf diese Regel geprüft (mf_smoke.ts, mf_luecken.ts, mf_tote_regeln.ts, mf_inversionen.ts, mf_optionen.ts): keine Änderung am Ergebnis."
+ },
+ {
+  "code": "MF-U10-R5",
+  "entscheidung": "Freigeben",
+  "korrektur": "Umgesetzt, Paket B4 (RWA: „unklar\" von „blockiert/defekt\" getrennt). Regelprüfung 20.09.2026: Die frühere Hoch-Regel für „blockiert oder defekt\" und die Mittel-Regel für „verschlossen oder verändert\" sind zusammengefasst: Physikalisch ist das derselbe Zustand, die Abstufung Hoch/Mittel trennte nur die Ursache (Defekt gegenüber baulicher Veränderung), nicht das Risiko. Die Gefahr setzt in beiden Fällen das Brandereignis voraus – nach dem Stufenmaßstab Mittel, konsistent zu MF-U09-R1/R2. Eine Anhebung auf Hoch käme nur über die zusätzliche Feststellung in Betracht, dass die Entrauchung nach Brandschutzkonzept zwingend gefordert und vollständig unwirksam ist. Normbezug ist die Landesbauordnung bzw. das Brandschutzkonzept, nicht DIN EN 81-20 5.2.1.4.1 (Beleuchtung). [Prüfbericht: H07 – gefährdungsspezifische Maßnahmen statt generischer Schnittstellen-Texte]"
+ },
+ {
+  "code": "MF-U10-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": "Umgesetzt, Paket B4 (RWA: „unklar\" von „blockiert/defekt\" getrennt), vorherige Entscheidung: Freigeben. Regelprüfung 20.09.2026: Bedingung um den Fall „Funktion unklar\" erweitert (Option geteilt). Stufe Mittel unverändert. [Prüfbericht: H07 – gefährdungsspezifische Maßnahmen statt generischer Schnittstellen-Texte] OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
+ },
+ {
+  "code": "MF-U10-R4",
+  "entscheidung": "Freigeben",
+  "korrektur": "Regel selbst unverändert und weiterhin freigegeben. Die Freigabe ist nur deshalb erneut nötig, weil der Fingerabdruck die Fragen der Gefährdung mitzählt und in dieser Gefährdung eine Frage geändert oder ergänzt wurde – Paket B4 (RWA: „unklar\" von „blockiert/defekt\" getrennt). Wirkung auf diese Regel geprüft (mf_smoke.ts, mf_luecken.ts, mf_tote_regeln.ts, mf_inversionen.ts, mf_optionen.ts): keine Änderung am Ergebnis."
+ },
+ {
+  "code": "MF-U11-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": "Umgesetzt, Paket B4 (Löschanlage: prüfbarer Sachverhalt statt Dokumentationszustand). Regelprüfung 20.09.2026: Bedingung auf den prüfbaren Sachverhalt umgestellt: Bewertet wurde vorher ein Dokumentationszustand („Wechselwirkung bewertet?\"), vergeben wurde dafür Hoch. Das ist derselbe Fehlertyp, der bei 15.8c bereits korrigiert wurde – die fehlende Bewertung ist kein unmittelbares Lebensrisiko, das Risiko entsteht erst bei Auslösung der Löschanlage. Hoch ist jetzt der Feststellung vorbehalten, dass die Abschaltung vor Wasserbeaufschlagung tatsächlich fehlt. Die Mittelfristmaßnahme ist technisch gefasst (vorher „bewerten und umsetzen lassen\" [ORGA], obwohl die Ursachenbeseitigung technisch ist). [Prüfbericht: H07 – gefährdungsspezifische Maßnahmen statt generischer Schnittstellen-Texte]"
+ },
+ {
+  "code": "MF-U11-R4",
+  "entscheidung": "Freigeben",
+  "korrektur": "Umgesetzt, Paket B4 (Löschanlage: prüfbarer Sachverhalt statt Dokumentationszustand). Regelprüfung 20.09.2026: Neue Regel für den fehlenden Nachweis (neue Frage 15.10b). Beide Fragen sind Pflicht, damit die Nichtbeantwortung INCOMPLETE ergibt und nicht Kein Risiko. [Prüfbericht: H07 – gefährdungsspezifische Maßnahmen statt generischer Schnittstellen-Texte]"
+ },
+ {
+  "code": "MF-U11-R5",
+  "entscheidung": "Freigeben",
+  "korrektur": "Regel selbst unverändert und weiterhin freigegeben. Die Freigabe ist nur deshalb erneut nötig, weil der Fingerabdruck die Fragen der Gefährdung mitzählt und in dieser Gefährdung eine Frage geändert oder ergänzt wurde – Paket B4 (Löschanlage: prüfbarer Sachverhalt statt Dokumentationszustand). Wirkung auf diese Regel geprüft (mf_smoke.ts, mf_luecken.ts, mf_tote_regeln.ts, mf_inversionen.ts, mf_optionen.ts): keine Änderung am Ergebnis."
+ },
+ {
+  "code": "MF-U15-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": "Umgesetzt, Paket B4 (Abgase: Kompensationsfrage wirksame Lüftung). Regelprüfung 20.09.2026: Neue Kompensationsregel. Bei NONE-Aggregation ist die katalogtypische Form die Kompensationsregel, nicht die Einengung der Bedingung – R1 bleibt deshalb unverändert und greift, solange die Kompensation nicht erfüllt ist."
+ },
+ {
+  "code": "MF-U15-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": "Umgesetzt, Paket B4 (Abgase: Kompensationsfrage wirksame Lüftung), vorherige Entscheidung: Ändern. Regelprüfung 20.09.2026: Bedingung und Stufe bleiben – für den echten Mangelfall (Emissionen ohne wirksame Lüftung) ist Mittel richtig, weil die Gesundheitsgefahr expositions- und dauerabhängig ist. Ohne Kompensationsfrage entstand aber bei einem großen Teil der Anlagen ein Dauerbefund Mittel ohne Mangel. Die Mittelfristmaßnahme ist außerdem als [TECH] gefasst – Lüftung und Absaugung sind technische Maßnahmen, die Kennzeichnung als [ORGA] war falsch. OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
+ },
+ {
+  "code": "MF-U15-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": "Regel selbst unverändert und weiterhin freigegeben. Die Freigabe ist nur deshalb erneut nötig, weil der Fingerabdruck die Fragen der Gefährdung mitzählt und in dieser Gefährdung eine Frage geändert oder ergänzt wurde – Paket B4 (Abgase: Kompensationsfrage wirksame Lüftung). Wirkung auf diese Regel geprüft (mf_smoke.ts, mf_luecken.ts, mf_tote_regeln.ts, mf_inversionen.ts, mf_optionen.ts): keine Änderung am Ergebnis."
+ }
+]

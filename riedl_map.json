@@ -9,10 +9,10 @@
   "cyber": "Vorlage GBU Cybersicherheit ab 04-26 (TRBS 1115-1, IEC 62443)"
  },
  "kataloge": {
-  "gbu": "riedl-mf-2026.1",
-  "cyber": "riedl-cyber-2026.1",
-  "gbu_quelle": "81-20-mf-2026.9",
-  "cyber_quelle": "cyber-mf-2026.2"
+  "gbu": "riedl-mf-2026.2",
+  "cyber": "riedl-cyber-2026.2",
+  "gbu_quelle": "81-20-mf-2026.10",
+  "cyber_quelle": "cyber-mf-2026.3"
  },
  "ampel": {
   "NO_RISK": "gruen",
@@ -146,7 +146,7 @@
    "kuerzel": "K",
    "titel": "Kabine und Aufzugsbenutzung",
    "anlagenbereich": "In der Kabine / Aufzugsbenutzung",
-   "katalog": "81-20-mf-2026.9",
+   "katalog": "81-20-mf-2026.10",
    "zeilen": [
     {
      "nr": 1,
@@ -307,7 +307,7 @@
    "kuerzel": "Z",
    "titel": "Zugang zum Maschinenraum",
    "anlagenbereich": "Zugang zum Aufzug, Maschinen- oder Steuerungsraum",
-   "katalog": "81-20-mf-2026.9",
+   "katalog": "81-20-mf-2026.10",
    "zeilen": [
     {
      "nr": 1,
@@ -373,7 +373,7 @@
    "kuerzel": "M",
    "titel": "Maschinenraum",
    "anlagenbereich": "Maschinen- oder Steuerungsraum (wenn nicht im Fahrschacht)",
-   "katalog": "81-20-mf-2026.9",
+   "katalog": "81-20-mf-2026.10",
    "zeilen": [
     {
      "nr": 1,
@@ -460,7 +460,7 @@
    "kuerzel": "F",
    "titel": "Kabinendach",
    "anlagenbereich": "Auf dem Fahrkorbdach",
-   "katalog": "81-20-mf-2026.9",
+   "katalog": "81-20-mf-2026.10",
    "zeilen": [
     {
      "nr": 1,
@@ -533,7 +533,7 @@
    "kuerzel": "S",
    "titel": "Fahrschacht und Schachtgrube",
    "anlagenbereich": "In der Schachtgrube und im Fahrschacht",
-   "katalog": "81-20-mf-2026.9",
+   "katalog": "81-20-mf-2026.10",
    "zeilen": [
     {
      "nr": 1,
@@ -626,7 +626,7 @@
   "kuerzel": "C",
   "titel": "Cybersicherheit",
   "anlagenbereich": "Cybersicherheit – anlagenbezogene Beurteilung nach TRBS 1115-1",
-  "katalog": "cyber-mf-2026.2",
+  "katalog": "cyber-mf-2026.3",
   "zeilen": [
    {
     "nr": 1,

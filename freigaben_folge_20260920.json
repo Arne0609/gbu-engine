@@ -1,0 +1,97 @@
+[
+ {
+  "code": "MF-Z04-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": "Regelprüfung 20.09.2026: Regel selbst unverändert und weiterhin freigegeben. Die Freigabe ist nur deshalb erneut nötig, weil der Fingerabdruck die Fragen der Gefährdung mitzählt: Frage 5.7b nennt jetzt zusätzlich den Sicherheitsabstand zur Absturzkante (ASR A2.1) – siehe MF-Z04-R2. Wirkung auf diese Regel geprüft (mf_smoke.ts, mf_luecken.ts, mf_tote_regeln.ts, mf_inversionen.ts, mf_optionen.ts) – keine Änderung am Ergebnis."
+ },
+ {
+  "code": "MF-Z04-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": "Regelprüfung 20.09.2026: Regel selbst unverändert und weiterhin freigegeben. Die Freigabe ist nur deshalb erneut nötig, weil der Fingerabdruck die Fragen der Gefährdung mitzählt: Frage 5.7b nennt jetzt zusätzlich den Sicherheitsabstand zur Absturzkante (ASR A2.1) – siehe MF-Z04-R2. Wirkung auf diese Regel geprüft (mf_smoke.ts, mf_luecken.ts, mf_tote_regeln.ts, mf_inversionen.ts, mf_optionen.ts) – keine Änderung am Ergebnis."
+ },
+ {
+  "code": "MF-Z04-R4",
+  "entscheidung": "Freigeben",
+  "korrektur": "Regelprüfung 20.09.2026: Regel selbst unverändert und weiterhin freigegeben. Die Freigabe ist nur deshalb erneut nötig, weil der Fingerabdruck die Fragen der Gefährdung mitzählt: Frage 5.7b nennt jetzt zusätzlich den Sicherheitsabstand zur Absturzkante (ASR A2.1) – siehe MF-Z04-R2. Wirkung auf diese Regel geprüft (mf_smoke.ts, mf_luecken.ts, mf_tote_regeln.ts, mf_inversionen.ts, mf_optionen.ts) – keine Änderung am Ergebnis."
+ },
+ {
+  "code": "MF-Z07-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": "Regelprüfung 20.09.2026: Regel selbst unverändert und weiterhin freigegeben. Die Freigabe ist nur deshalb erneut nötig, weil der Fingerabdruck die Fragen der Gefährdung mitzählt: Das Höhenmaß in Frage 5.12c ist von 2,00 m auf 1,80 m berichtigt (DIN EN 81-20 5.2.3.3) – siehe MF-Z07-R4. Wirkung auf diese Regel geprüft (mf_smoke.ts, mf_luecken.ts, mf_tote_regeln.ts, mf_inversionen.ts, mf_optionen.ts) – keine Änderung am Ergebnis."
+ },
+ {
+  "code": "MF-Z07-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": "Regelprüfung 20.09.2026: Regel selbst unverändert und weiterhin freigegeben. Die Freigabe ist nur deshalb erneut nötig, weil der Fingerabdruck die Fragen der Gefährdung mitzählt: Das Höhenmaß in Frage 5.12c ist von 2,00 m auf 1,80 m berichtigt (DIN EN 81-20 5.2.3.3) – siehe MF-Z07-R4. Wirkung auf diese Regel geprüft (mf_smoke.ts, mf_luecken.ts, mf_tote_regeln.ts, mf_inversionen.ts, mf_optionen.ts) – keine Änderung am Ergebnis."
+ },
+ {
+  "code": "MF-Z07-R6",
+  "entscheidung": "Freigeben",
+  "korrektur": "Regelprüfung 20.09.2026: Regel selbst unverändert und weiterhin freigegeben. Die Freigabe ist nur deshalb erneut nötig, weil der Fingerabdruck die Fragen der Gefährdung mitzählt: Das Höhenmaß in Frage 5.12c ist von 2,00 m auf 1,80 m berichtigt (DIN EN 81-20 5.2.3.3) – siehe MF-Z07-R4. Wirkung auf diese Regel geprüft (mf_smoke.ts, mf_luecken.ts, mf_tote_regeln.ts, mf_inversionen.ts, mf_optionen.ts) – keine Änderung am Ergebnis."
+ },
+ {
+  "code": "MF-Z07-R7",
+  "entscheidung": "Freigeben",
+  "korrektur": "Regelprüfung 20.09.2026: Regel selbst unverändert und weiterhin freigegeben. Die Freigabe ist nur deshalb erneut nötig, weil der Fingerabdruck die Fragen der Gefährdung mitzählt: Das Höhenmaß in Frage 5.12c ist von 2,00 m auf 1,80 m berichtigt (DIN EN 81-20 5.2.3.3) – siehe MF-Z07-R4. Wirkung auf diese Regel geprüft (mf_smoke.ts, mf_luecken.ts, mf_tote_regeln.ts, mf_inversionen.ts, mf_optionen.ts) – keine Änderung am Ergebnis."
+ },
+ {
+  "code": "MF-T04-R6",
+  "entscheidung": "Freigeben",
+  "korrektur": "Regelprüfung 20.09.2026: Regel selbst unverändert und weiterhin freigegeben. Die Freigabe ist nur deshalb erneut nötig, weil der Fingerabdruck die Fragen der Gefährdung mitzählt: Frage 7.9 lautet jetzt „ausschließlich Drahtglas?\" und schließt die Fail-open-Lücke bei gemischter Verglasung – siehe MF-T04-R5. Wirkung auf diese Regel geprüft (mf_smoke.ts, mf_luecken.ts, mf_tote_regeln.ts, mf_inversionen.ts, mf_optionen.ts) – keine Änderung am Ergebnis."
+ },
+ {
+  "code": "MF-T04-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": "Regelprüfung 20.09.2026: Regel selbst unverändert und weiterhin freigegeben. Die Freigabe ist nur deshalb erneut nötig, weil der Fingerabdruck die Fragen der Gefährdung mitzählt: Frage 7.9 lautet jetzt „ausschließlich Drahtglas?\" und schließt die Fail-open-Lücke bei gemischter Verglasung – siehe MF-T04-R5. Wirkung auf diese Regel geprüft (mf_smoke.ts, mf_luecken.ts, mf_tote_regeln.ts, mf_inversionen.ts, mf_optionen.ts) – keine Änderung am Ergebnis."
+ },
+ {
+  "code": "MF-T04-R4",
+  "entscheidung": "Freigeben",
+  "korrektur": "Regelprüfung 20.09.2026: Regel selbst unverändert und weiterhin freigegeben. Die Freigabe ist nur deshalb erneut nötig, weil der Fingerabdruck die Fragen der Gefährdung mitzählt: Frage 7.9 lautet jetzt „ausschließlich Drahtglas?\" und schließt die Fail-open-Lücke bei gemischter Verglasung – siehe MF-T04-R5. Wirkung auf diese Regel geprüft (mf_smoke.ts, mf_luecken.ts, mf_tote_regeln.ts, mf_inversionen.ts, mf_optionen.ts) – keine Änderung am Ergebnis."
+ },
+ {
+  "code": "MF-K08-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": "Regelprüfung 20.09.2026: Regel selbst unverändert und weiterhin freigegeben. Die Freigabe ist nur deshalb erneut nötig, weil der Fingerabdruck die Fragen der Gefährdung mitzählt: Die Antwortoptionen und die Maßnahme von MF-K08-R4 sind neu gefasst. Wirkung auf diese Regel geprüft (mf_smoke.ts, mf_luecken.ts, mf_tote_regeln.ts, mf_inversionen.ts, mf_optionen.ts) – keine Änderung am Ergebnis."
+ },
+ {
+  "code": "MF-K08-R5",
+  "entscheidung": "Freigeben",
+  "korrektur": "Regelprüfung 20.09.2026: Regel selbst unverändert und weiterhin freigegeben. Die Freigabe ist nur deshalb erneut nötig, weil der Fingerabdruck die Fragen der Gefährdung mitzählt: Die Antwortoptionen und die Maßnahme von MF-K08-R4 sind neu gefasst. Wirkung auf diese Regel geprüft (mf_smoke.ts, mf_luecken.ts, mf_tote_regeln.ts, mf_inversionen.ts, mf_optionen.ts) – keine Änderung am Ergebnis."
+ },
+ {
+  "code": "MF-K08-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": "Regelprüfung 20.09.2026: Regel selbst unverändert und weiterhin freigegeben. Die Freigabe ist nur deshalb erneut nötig, weil der Fingerabdruck die Fragen der Gefährdung mitzählt: Die Antwortoptionen und die Maßnahme von MF-K08-R4 sind neu gefasst. Wirkung auf diese Regel geprüft (mf_smoke.ts, mf_luecken.ts, mf_tote_regeln.ts, mf_inversionen.ts, mf_optionen.ts) – keine Änderung am Ergebnis."
+ },
+ {
+  "code": "MF-K08-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": "Regelprüfung 20.09.2026: Regel selbst unverändert und weiterhin freigegeben. Die Freigabe ist nur deshalb erneut nötig, weil der Fingerabdruck die Fragen der Gefährdung mitzählt: Die Antwortoptionen und die Maßnahme von MF-K08-R4 sind neu gefasst. Wirkung auf diese Regel geprüft (mf_smoke.ts, mf_luecken.ts, mf_tote_regeln.ts, mf_inversionen.ts, mf_optionen.ts) – keine Änderung am Ergebnis."
+ },
+ {
+  "code": "MF-K10-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": "Regelprüfung 20.09.2026: Regel selbst unverändert und weiterhin freigegeben. Die Freigabe ist nur deshalb erneut nötig, weil der Fingerabdruck die Fragen der Gefährdung mitzählt: Frage 4.9a ist Pflicht, sobald die Gefährdung greift, und MF-K10-R2 ist in R5 (Mittel, barrierefrei gefordert) und R6 (Niedrig) aufgeteilt. Wirkung auf diese Regel geprüft (mf_smoke.ts, mf_luecken.ts, mf_tote_regeln.ts, mf_inversionen.ts, mf_optionen.ts) – keine Änderung am Ergebnis."
+ },
+ {
+  "code": "MF-K10-R4",
+  "entscheidung": "Freigeben",
+  "korrektur": "Regelprüfung 20.09.2026: Regel selbst unverändert und weiterhin freigegeben. Die Freigabe ist nur deshalb erneut nötig, weil der Fingerabdruck die Fragen der Gefährdung mitzählt: Frage 4.9a ist Pflicht, sobald die Gefährdung greift, und MF-K10-R2 ist in R5 (Mittel, barrierefrei gefordert) und R6 (Niedrig) aufgeteilt. Wirkung auf diese Regel geprüft (mf_smoke.ts, mf_luecken.ts, mf_tote_regeln.ts, mf_inversionen.ts, mf_optionen.ts) – keine Änderung am Ergebnis."
+ },
+ {
+  "code": "MF-S05-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": "Regelprüfung 20.09.2026: Regel selbst unverändert und weiterhin freigegeben. Die Freigabe ist nur deshalb erneut nötig, weil der Fingerabdruck die Fragen der Gefährdung mitzählt: Die Sichtbarkeit von Frage 10.11 ist auf den Seil-Hydraulikaufzug erweitert und die Anwendbarkeit des Begrenzer-Befunds auf die Treibscheibe beschränkt – siehe MF-S05-R7 und R3. Wirkung auf diese Regel geprüft (mf_smoke.ts, mf_luecken.ts, mf_tote_regeln.ts, mf_inversionen.ts, mf_optionen.ts) – keine Änderung am Ergebnis."
+ },
+ {
+  "code": "MF-S05-R4",
+  "entscheidung": "Freigeben",
+  "korrektur": "Regelprüfung 20.09.2026: Regel selbst unverändert und weiterhin freigegeben. Die Freigabe ist nur deshalb erneut nötig, weil der Fingerabdruck die Fragen der Gefährdung mitzählt: Die Sichtbarkeit von Frage 10.11 ist auf den Seil-Hydraulikaufzug erweitert und die Anwendbarkeit des Begrenzer-Befunds auf die Treibscheibe beschränkt – siehe MF-S05-R7 und R3. Wirkung auf diese Regel geprüft (mf_smoke.ts, mf_luecken.ts, mf_tote_regeln.ts, mf_inversionen.ts, mf_optionen.ts) – keine Änderung am Ergebnis."
+ },
+ {
+  "code": "MF-S05-R6",
+  "entscheidung": "Freigeben",
+  "korrektur": "Regelprüfung 20.09.2026: Regel selbst unverändert und weiterhin freigegeben. Die Freigabe ist nur deshalb erneut nötig, weil der Fingerabdruck die Fragen der Gefährdung mitzählt: Die Sichtbarkeit von Frage 10.11 ist auf den Seil-Hydraulikaufzug erweitert und die Anwendbarkeit des Begrenzer-Befunds auf die Treibscheibe beschränkt – siehe MF-S05-R7 und R3. Wirkung auf diese Regel geprüft (mf_smoke.ts, mf_luecken.ts, mf_tote_regeln.ts, mf_inversionen.ts, mf_optionen.ts) – keine Änderung am Ergebnis."
+ }
+]

@@ -30,7 +30,8 @@ for mod in ['anlage', 'zugang', 'triebwerksraum', 'tueren_fahrkorb', 'fahrkorbda
 from mf_content import annahmen as ANN  # noqa: E402
 ANN.registriere()
 
-RULE_VERSION = '81-20-mf-2026.9'  # .9: Erhebung gekürzt – Fragengruppen, Nachweis-Vorbelegung, Stammdaten, Phasen, Schwellenfragen 17.09.2026
+RULE_VERSION = '81-20-mf-2026.10'  # .10: Prüfbericht Fragenkatalog 20.09.2026 (Lücken, Dopplungen, Bedingungen)
+# .9: Erhebung gekürzt – Fragengruppen, Nachweis-Vorbelegung, Stammdaten, Phasen, Schwellenfragen 17.09.2026
 # .8: Korrekturen aus zwei Prüfrunden 15./16.09.2026, stabile Regel-IDs
 # .7: best_case je Frage (Sammelantwort) 07.09.2026
 # .6: begruendete Annahmen (Baujahr) 07.09.2026

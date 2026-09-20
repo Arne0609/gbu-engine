@@ -98,7 +98,13 @@ yn('qa_sprinkler_vorhanden', 'Löschanlage / Sprinkler im Schacht oder Triebwerk
    'vorhanden?', ui='15.10')
 
 yn('qa_ucm_a3', 'UCM-Schutz (unbeabsichtigte Fahrkorbbewegung, A3 / EN 81-20 5.6.7) '
-   'vorhanden?', ui='4.5')
+   'vorhanden?', ui='4.5',
+   help='„Ja" nur mit Nachweis in den Anlagenunterlagen. Vorbelegt wird die Frage nicht aus '
+        'dem Baujahr, sondern aus dem Errichtungsregelwerk (1.28: EN 81-1/2 + A3 seit 2012, '
+        'EN 81-20 durchgehend) und nur, wenn die Konformitätserklärung vorliegt (1.29) – '
+        'beides zusammen ist der Nachweis. Liegt sie nicht vor oder ist das Regelwerk '
+        'unbekannt und das Baujahr vor 2012, bleibt die Frage zu erheben '
+        '(Entscheidung Arne 20.09.2026 zum Prüfbericht, Befund B07).')
 yn('qa_lagerung_statisch_bestimmt', 'Antriebswelle statisch bestimmt gelagert '
    '(keine 3-Punkt-Lagerung)?', ui='4.6',
    visible_when=in_('qa_aufzugsart', ['seil', 'trommel']),

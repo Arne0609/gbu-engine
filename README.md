@@ -16,7 +16,7 @@ Dieses Verzeichnis enthält die Engine, die REST-API und die Referenz-UI. Der Se
 - `norm_*.json` – elf Regelversionen (81-20, 81-80, 2026, EN 81-41, Cyber voll/minimal, **81-20 mehrfragig**, **Cyber komponentenbasiert**, **81-80 Bestand als Fragebogen**, **Variante Riedl** GBU + Cyber); dazu `norm_fahrtreppe.json` (noch nicht in `seed_catalogs.ts`).
 - `gen_mf_catalog.py` + `mf_content/` – Generator und Inhalt des mehrfragigen Typs (Frage → Gefährdung mit Rollen, Anlagenmerkmale als Filter, Zahlenschwellen, Kompensation über Priorität). `gen_mf_review_xlsx.py` erzeugt daraus die Klärungsliste `GBU_MF_Klaerungsliste.xlsx` für die fachliche Gegenlesung.
 - `gen_ft_catalog.py` + `ft_content/` – Generator und Inhalt des Typs **Fahrtreppen und Fahrsteige** (ein Typ, drei Erhebungsbereiche: B Betrieb/Betreiber, I Instandhaltung, N Bestandsanlage nach DIN EN 115-2 Anhang B; Umschalter `qa_teil_instandhaltung` und `qa_teil_en115_2`). `gen_ft_review_xlsx.py` erzeugt `GBU_Fahrtreppe_Klaerungsliste.xlsx`, `ft_smoke.ts` prüft den Katalog gegen den Referenz-Evaluator.
-- `gen_cy_catalog.py` + `cy_content/` – Generator und Inhalt des Typs **Cyber-GBU komponentenbasiert** (fünf Erhebungsbereiche A/Z/C/N/O; je Komponente „vorhanden → Schnittstellenkategorie → Zugang frei → Maßnahmen", unabhängige Sicherheitseinrichtung als Kompensation; 14 ZÜS-Prüfpunkte in `cy_zues_map.json`; Regelversion `cyber-mf-2026.2`, 25 Klärungen entschieden und alle 188 Regeln fachlich freigegeben 03.09.2026). `gen_cy_review_xlsx.py` erzeugt `GBU_Cyber_Klaerungsliste.xlsx`, `gen_cy_regelpruefung_xlsx.py`/`apply_cy_regelpruefung.py` bilden die Regelprüfung (Freigabe der Eigenregeln ohne Klärungspunkt), `cy_smoke.ts` prüft den Katalog gegen den Referenz-Evaluator (inkl. Lückensuche über alle Schnittstellen-/Maßnahmen-Kombinationen), `cy_catalog.test.ts` ist der E2E-Test gegen PostgreSQL. `catalog_check.py` bündelt die Konsistenz-/Schemaprüfung ohne Import-Nebenwirkungen.
+- `gen_cy_catalog.py` + `cy_content/` – Generator und Inhalt des Typs **Cyber-GBU komponentenbasiert** (fünf Erhebungsbereiche A/Z/C/N/O; je Komponente „vorhanden → Schnittstellenkategorie → Zugang frei → Maßnahmen", unabhängige Sicherheitseinrichtung als Kompensation; 14 ZÜS-Prüfpunkte in `cy_zues_map.json`; Erhebungskarten in `cy_content/karten.py`; Regelversion `cyber-mf-2026.3`, 25 Klärungen entschieden, 187 von 190 Regeln freigegeben – offen sind seit dem Prüfbericht 20.09.2026 zwei neue Auffangregeln (CY-Z04, CY-N01) und die in der Priorität geänderte CY-C12-R3). `gen_cy_review_xlsx.py` erzeugt `GBU_Cyber_Klaerungsliste.xlsx`, `gen_cy_regelpruefung_xlsx.py`/`apply_cy_regelpruefung.py` bilden die Regelprüfung (Freigabe der Eigenregeln ohne Klärungspunkt), `cy_smoke.ts` prüft den Katalog gegen den Referenz-Evaluator (inkl. Lückensuche über alle Schnittstellen-/Maßnahmen-Kombinationen), `cy_catalog.test.ts` ist der E2E-Test gegen PostgreSQL. `catalog_check.py` bündelt die Konsistenz-/Schemaprüfung ohne Import-Nebenwirkungen.
 - `ui/` – eigenständige Bewertungsoberfläche (`python3 ui/build_ui.py` → `ui/gbu_bewertung.html`), unterstützt Ein- und Mehrfragen-Kataloge.
 - `flutter_ui/`, `dart_engine/` – Referenz-App und Dart-Port der Engine (nicht Teil des Server-Images).
 
@@ -47,6 +47,180 @@ python3 gen_app_asset.py norm_81_20_mf.json  # -> gbu_aufzug_app/assets/engine/ 
 python3 ui/build_ui.py                       # -> ui/gbu_bewertung.html
 npm test                                     # Tests inkl. mf_catalog.test.ts (braucht PostgreSQL, PG*-Variablen)
 ```
+
+Regelprüfung vom 20.09.2026: Die 354 Regeln, die durch die Inhaltsänderungen
+auf `REVIEW_REQUIRED` zurückgefallen waren, sind Regel für Regel gegen den
+Normbezug geprüft (14 Prüfagenten je Erhebungsbereich, dazu je Paket eine
+adversarische Gegenprüfung, die die Beanstandungen zu widerlegen versucht).
+Ergebnis: **270 freigegeben, 82 zu ändern, 2 zu streichen**. Die 84 Punkte
+betrafen fast ausschließlich Stufen, die der eigene Stufenmaßstab nicht trägt,
+Sofortmaßnahmen, die nicht sofort wirken, und Verstöße gegen das TOP-Prinzip;
+jede Korrektur steht als Hinweis an der Regel und im Blatt „Zu ändern" von
+`GBU_MF_Regelpruefung_Ergebnis_2026-09-20.xlsx`.
+
+**66 davon sind umgesetzt** (alles, was ohne neue Frage oder neue Antwortoption
+auskommt): 9 Regeln entfallen ersatzlos (MF-D06-R1/-R2/-R3, MF-F01-R5,
+MF-K01-R7, MF-K10-R2, MF-M17-R1, MF-T06-R9, MF-U12-R2), die übrigen sind in
+Stufe, Maßnahmentext oder Maßnahmenart berichtigt; dazu kommen fünf
+Fragenberichtigungen (5.7b Sicherheitsabstand nach ASR A2.1, 5.12c 2,00 m →
+1,80 m nach DIN EN 81-20 5.2.3.3, 7.9 „ausschließlich Drahtglas?", 10.2 mind.
+50 lx, 10.11 auch beim Seil-Hydraulikaufzug) und die Hilfetexte zu 5.10 und
+5.44. Jede geänderte Regel trägt eine Notiz „Regelprüfung 20.09.2026: …", die
+den Befund und die Entscheidung nennt. Damit stehen im MF-Katalog **397 von 415
+Regeln auf `VERIFIED`** (Riedl: 274 von 282), im Cyber-Katalog alle 190.
+
+Die **18 Punkte, die die Erhebung ändern**, sind nach Rücksprache in vier
+Paketen ebenfalls umgesetzt (jede neue oder geänderte Frage ist fail-closed
+ausgelegt: der unklare Fall bekommt die strengere Stufe, eine unbeantwortete
+Pflichtfrage ergibt `INCOMPLETE`, nicht `NO_RISK`):
+
+- **B1 – Asbest-Zustandsfrage** (MF-U01): Je Fundort (5.60a, 5.61a, 10.20a,
+  11.20a) eine Zustandsfrage „fest gebunden und unbeschädigt | schwach gebunden,
+  beschädigt oder abriebbelastet | Zustand nicht beurteilbar". Hoch bei den
+  beiden letzten, Mittel beim fest gebundenen Fund; im Triebwerksraum eine
+  vierte Option für asbesthaltige Bremsbeläge und Bremsstaub (immer Hoch, Abrieb
+  im bestimmungsgemäßen Betrieb). Vorher gab jeder Fund Hoch.
+- **B2 – Kompensationsfragen für Gefahrstofftransporte** (MF-U05): 15.32a bis
+  15.35a nach dem Muster von MF-U06 und MF-U12. Geregelt und unterwiesen ergibt
+  **Niedrig, nicht Kein Risiko** – Fortschreibung und Unterweisung bleiben nach
+  GefStoffV § 14 geschuldet. Vorher erzeugte allein die Nutzungsart einen
+  Dauerbefund Mittel.
+- **B3 – gebündelte Fragen getrennt**: 11.10a Puffer als Auswahlfrage
+  (Funktionsverlust = Hoch, Verschleiß bei erhaltener Funktion = Mittel),
+  11.10c/11.10d Ölstand und Kennzeichnung getrennt (Mittel / Niedrig),
+  6.10a/6.10b Absperrventil Zugänglichkeit und Kennzeichnung getrennt
+  (Mittel [TECH] / Niedrig [ORGA]).
+- **B4 – zu weite Bedingungen** (7 Regeln): 6.11a Absturzsicherung nach
+  DIN EN 81-20 Tabelle 12 (Drossel und Fangvorrichtung mit Begrenzer sind
+  zulässige Alternativen zum Leitungsbruchventil), 7.9b Glasfläche über
+  Sichtfenstergröße (150 mm nach 5.3.7.2.1 a) 4)), 11.15 als Auswahlfrage
+  (stehendes Wasser an Bauteilen und „nicht beurteilbar" = Hoch, bloße Feuchte =
+  Mittel), 15.8d als Optionsfrage (Rettung behindert = Hoch, nur Betrieb
+  behindert = Mittel), 15.9a mit getrennter Option „Funktion unklar oder kein
+  Nachweis" (Mittel statt Hoch), 15.10a/15.10b Löschanlage auf den prüfbaren
+  Sachverhalt umgestellt, 15.24a wirksame Lüftung als Kompensation.
+
+Damit stehen **alle 432 Regeln des MF-Katalogs auf `VERIFIED`** (EN 81-80: 429,
+Riedl GBU: 287, Cyber: 190, Riedl Cyber: 116).
+
+Maßnahmenarten, bei denen die Heuristik in `common.massnahmenart()` an der
+Wortstellung scheitert (Maßnahmen, die eine technische und eine organisatorische
+Komponente nennen), stehen seit der Regelprüfung von Hand in
+`mf_content/massnahmenart.py`; `common.py` zieht die Tabelle vor die Heuristik.
+
+**Am Normtext nachgeschlagen** (DIN EN 81-20:2014 und EN 81-1:1998 aus dem
+Normenbestand, nicht aus Sekundärquellen) – zwei Punkte, bei denen die
+Regelprüfung eine Zahl oder Fundstelle offengelassen hatte, und einer, an dem
+sie selbst danebenlag:
+
+- **Tabelle 11** (Treibscheiben-, **Trommel-** und Kettenaufzüge) nennt für den
+  freien Fall des **Fahrkorbs** ausschließlich den Geschwindigkeitsbegrenzer
+  (5.6.2.2.1) als Betätigungsmittel. Die Alternative „für Nenngeschwindigkeiten
+  bis 1 m/s ausgelöst durch Bruch der Tragmittel (5.6.2.2.2) oder das
+  Sicherheitsseil (5.6.2.2.3)" gilt dort **nur für Gegengewicht und
+  Ausgleichsgewicht** – wortgleich in EN 81-1:1998 9.8.3.1. Ein erster Entwurf
+  dieser Regelprüfung hatte daraus eine allgemeine Alternative für Trommel- und
+  Hydraulikaufzüge gemacht und MF-S05-R2 auf die Treibscheibe eingeengt; das
+  hätte beim Trommelaufzug eine Lücke gerissen und ist zurückgenommen.
+- **Tabelle 12** lässt beim **indirekt angetriebenen** Hydraulikaufzug drei
+  Kombinationen zu; zwei kommen ohne Begrenzer aus, verlangen dann aber
+  Leitungsbruchventil (5.6.3) oder Drossel (5.6.4) zusammen mit einer durch
+  Tragmittelbruch oder Sicherheitsseil ausgelösten Fangvorrichtung. Dafür stehen
+  jetzt die Fragen 10.8a und 6.11a. Die Schlaffseil-/Schlaffkettenüberwachung
+  (10.11) ist nach **5.5.5.3 b)** eine eigenständige elektrische
+  Sicherheitseinrichtung und ausdrücklich **kein** Auslösemittel der
+  Fangvorrichtung.
+- **Anschlagpunkte**: DIN EN 81-20 **5.2.1.7 „Hebezeuge"**; Vorgänger ist
+  EN 81-1:1998 **6.3.7 „Hebezeuge für Aufzugsteile"**, die Angabe der
+  Tragfähigkeit verlangt dort **15.4.5**.
+- **Einzugsschutz an Glas-Schiebetüren**: DIN EN 81-20 5.3.6.2.2.1 i) fordert
+  ihn nur für Glasscheiben, die größer sind als die Sichtfenster nach 5.3.7.2;
+  deren Breite ist nach **5.3.7.2.1 a) 4)** auf 60 bis 150 mm begrenzt. Damit
+  ist die 150-mm-Grenze in Frage 7.9b belegt.
+
+Vier mechanische Gegenproben laufen seither bei jeder Änderung mit und melden,
+was eine fachliche Durchsicht nicht sieht:
+
+```bash
+node --experimental-strip-types mf_luecken.ts      # Regellücken (alle Antwortkombinationen je Gefährdung)
+node --experimental-strip-types mf_inversionen.ts  # bei NONE: niedrigere Stufe verdrängt höhere
+node --experimental-strip-types mf_tote_regeln.ts  # Regeln ohne erfüllbare Bedingung / nie maßgeblich
+node --experimental-strip-types mf_optionen.ts     # Antwortwerte, die keine Mangelregel auswertet
+```
+
+Stand 20.09.2026 (nach Umsetzung aller Korrekturen): 0 Regellücken (101 520
+Kombinationen), 17 Prioritätsinversionen – alle mit dokumentierter Kompensation
+–, keine Regel ohne erfüllbare Bedingung und 43 Antwortwerte ohne Mangelregel.
+Gefährdungen mit sehr vielen Antwortkombinationen (MF-T06, MF-U01, MF-SF01)
+werden ausgedünnt geprüft; `mf_tote_regeln.ts` kennzeichnet Treffer aus diesen
+Gefährdungen ausdrücklich als nachzuprüfen, weil sie Stichprobenartefakte sein
+können.
+`mf_optionen.ts` schließt eine Lücke der beiden erstgenannten Tests: Die 95
+maschinell erzeugten Auffangregeln („Ankerfrage ist beantwortet → Kein Risiko")
+setzen die `rule_gap`-Erkennung der Engine außer Kraft, weil immer eine Regel
+trifft. Eine neue Antwortoption erscheint deshalb nicht als Fehler, sondern als
+grünes Ergebnis – `mf_optionen.ts` prüft deshalb nicht das Ergebnis, sondern die
+Abdeckung der Antwortwerte.
+
+Regelversion **`81-20-mf-2026.10`** (20.09.2026): Prüfung des Fragenkatalogs
+der Variante „Riedl" (53 Befunde zu Dopplungen, unnötigen Schritten, unklaren
+Bedingungen und Bewertungslücken). Geändert wurde der INHALT, nicht die
+Mechanik; die Regel-IDs bleiben, inhaltlich geänderte Regeln fallen über den
+Fingerabdruck auf `quality_status = REVIEW_REQUIRED` zurück (zunächst 354 von
+415, davon 94 Auffangregeln; nach der Regelprüfung und der Umsetzung ihrer
+Korrekturen sind es noch 18 – Gegenlesung über `GBU_MF_Regelpruefung.xlsx`).
+Das Wichtigste:
+
+- **Bewertungslücken geschlossen** – MF-M13 bewertet jetzt auch ein merkliches
+  Absinken bei vorhandener Kolbenabsinkverhinderung (6.12 = Ja **und** 6.13 =
+  Ja); MF-D04 bewertet den ZÜS-Prüfbericht selbst (offene sicherheitsrelevante
+  Mängel → Hoch, kein Bericht → Mittel); MF-Z07 hat für maschinenraumlose
+  Anlagen ein Gegenstück zu 5.12a (abschließbarer Steuerschrank) und
+  `qa_maschinenraum` als Modifier, damit keine Regellücke bleibt.
+- **Annahmen hängen am Regelwerk, nicht am Baujahr** (Entscheidung Arne,
+  20.09.2026). Der Nachweis ist die Norm, nach der die Anlage in Verkehr
+  gebracht wurde (1.28); das Baujahr ist davon nur eine Ableitung – so steht es
+  seit jeher im Hilfetext von 1.28, die Annahmen sind ihm nur nicht gefolgt.
+  `common.norm_ab()` ersetzt `bj_ab()` in `annahme()` und schließt damit zwei
+  Lücken: Eine 1985 gebaute, 2020 nach EN 81-20 modernisierte Anlage bekommt die
+  Annahme jetzt, eine als TRA-Anlage dokumentierte mit Baujahr 2014 nicht mehr.
+  Wo ein Regelwerk die Schwelle umspannt (EN 81-1/2 1999–2016, UCM-Anforderung
+  ab 2012), entscheidet weiterhin das Baujahr; bei „Unbekannt" ebenfalls; eine
+  unbeantwortete 1.28 trägt nichts.
+- **fail-closed durchgezogen** – eine nicht nachgewiesene automatische
+  Abschaltung senkt Hoch nicht mehr auf Mittel (MF-F03, MF-G08); acht Annahmen
+  zu Zustands- und Kennzeichnungsfragen sind entfallen, weil das Baujahr über
+  den Zustand nichts aussagt; 1.29 (Konformitätserklärung) ist ab Baujahr 1999
+  Pflicht und ihre Abschaltbedingung positiv formuliert (eine unbeantwortete
+  1.29 ließ vorher alle Annahmen greifen).
+- **Nachweis-Vorbelegung begrenzt** – neue Liste `erhebung.NICHT_VORBELEGBAR`
+  (Prüfpunkte 1, 22, 29): Die ZÜS prüft Bestandsanlagen gegen ihre
+  Errichtungsgrundlage, deshalb belegt ihr Bericht keine Nachrüstthemen des
+  Stands der Technik. Der Schutzraum (9.7, 11.3) wird jetzt zweifach vorbelegt –
+  „normgerecht" ab Baujahr 2017, „altnorm" für 1999–2016 –, passend zu den
+  eigenen Regeln MF-F04-R3 / MF-G02-R2. Dafür trägt ein Nachweis-Eintrag
+  optional eine Zusatzbedingung (sechstes Element in `erhebung.NACHWEISE`);
+  mehrere Vorbelegungen je Frage sind zulässig, solange die Bedingungen sich
+  unterscheiden.
+- **Türen und Fahrkorb** – 8.8 (Schließkantensicherung) wird nur noch bei
+  kraftbetätigter Fahrkorbtür bewertet; die Option „Andere" bekommt eine eigene
+  Regel statt still durchzulaufen; der Nutzerkreis „Kinder" wirkt jetzt
+  einheitlich (auch bei fehlender Schließkantensicherung); 8.21 ist in
+  „Brandfallsteuerung vorhanden" und „Auslösung/Einbindung" getrennt, damit die
+  Maßnahme zum Befund passt; 8.23/8.24 sind Teilaspekte von 8.22 und entfallen
+  bei normgerechter Ausführung nach EN 81-70; 8.28 ist auf denselben Umfang
+  gebracht wie MF-K13/K14.
+- **Dopplungen aufgelöst** – MF-K01 fasst drei wortgleiche Notruf-Regeln zu
+  einer zusammen; 5.2/5.2a und 5.3a/5.3b sind Folgefragen mit eigener Maßnahme
+  statt optionaler Fragen ohne Wirkung; 5.34 hat eine eigene Regel (Niedrig);
+  10.13 ist in Türkontakt und Verriegelung getrennt; die Abgrenzungen 5.35/5.37
+  und 15.23a/11.15 sind im Fragetext geschärft. 10.2 (Beleuchtung an den
+  Schachtzugängen) fordert jetzt 50 lx statt 75 Lux – der alte Wert stammte aus
+  dem übernommenen App-Katalog und widersprach der eigenen Quellenangabe
+  DIN EN 81-20 5.3.7.1 (Entscheidung Arne, 20.09.2026).
+- **Maßnahmen ortsbezogen** – die vier Ortsmatrix-Gefährdungen (MF-U02/U03)
+  nennen in Sofort- und Folgemaßnahme jetzt den Ort („Schachtgrube: …"), statt
+  vier Orte mit demselben Satz zu bedienen.
 
 Regelversion **`81-20-mf-2026.9`** (17.09.2026): Erhebung gekürzt –
 `mf_content/erhebung.py` (Fragengruppen als Karten, Nachweis-Vorbelegung aus
@@ -215,10 +389,12 @@ Karten und Nachweise mit denselben Codes, nur weniger Umfang, plus die
 Blattstruktur der Vorlage für den Bericht:
 
 ```bash
-python3 gen_riedl_catalog.py                    # -> norm_riedl_mf.json (riedl-mf-2026.1),
-                                                #    norm_riedl_cyber.json (riedl-cyber-2026.1),
+python3 gen_riedl_catalog.py                    # -> norm_riedl_mf.json (riedl-mf-2026.2),
+                                                #    norm_riedl_cyber.json (riedl-cyber-2026.2),
                                                 #    riedl_map.json (Blätter, Zeilen, Ampel, Texte)
 python3 gen_riedl_review_xlsx.py                # -> GBU_Riedl_Zuordnung.xlsx (Gegenlesung)
+python3 gen_riedl_fragenkatalog_xlsx.py         # -> GBU_Riedl_Fragenkatalog.xlsx (Fragen, Regeln,
+                                                #    Karten, Annahmen, Nachweise mit Logik im Klartext)
 node --experimental-strip-types riedl_smoke.ts  # Struktur, Deckungsgleichheit, Ampel, leerer Bogen
 python3 gen_app_asset.py norm_riedl_mf.json     # -> gbu_aufzug_app/assets/engine/
 python3 gen_app_asset.py norm_riedl_cyber.json  #    (riedl_map.json unverändert als Asset kopieren)
@@ -230,11 +406,20 @@ Vorlage; je Zeile die MF- bzw. CY-Gefährdungen, die sie bilden. Umfangsregel:
 VFA-Zeile **oder** TRBS-3121-Anhang-1-Punkt (alle 22 vertreten) **oder**
 Betreiberpflicht des Deckblatts; alles andere steht mit Begründung in
 `NICHT_ENTHALTEN` – der Generator bricht ab, wenn eine Gefährdung weder
-zugeordnet noch begründet ist. Ergebnis: **202 Fragen, 63 Gefährdungen,
-270 Regeln, 65 Karten** (MF: 295/100/404/83) und **57 Fragen, 19 Gefährdungen,
-114 Regeln** (CY: 82/27/188). Bewertung: Engine-Stufe als Ampel (Kein
-Risiko/Niedrig = Grün, Mittel = Gelb, Hoch = Rot; unvollständig = offen),
-Blatt- und Gesamtampel nach der Deckblatt-Formel der Vorlage.
+zugeordnet noch begründet ist. Ergebnis (Stand 20.09.2026): **209 Fragen,
+63 Gefährdungen, 287 Regeln, 65 Karten** (MF: 313/100/432/83) und **58 Fragen,
+19 Gefährdungen, 116 Regeln, 11 Karten** (CY: 83/27/190/16). Bewertung:
+Engine-Stufe als Ampel (Kein Risiko/Niedrig = Grün, Mittel = Gelb, Hoch = Rot;
+unvollständig = offen), Blatt- und Gesamtampel nach der Deckblatt-Formel der
+Vorlage.
+
+Brücke zur Riedl-Matrix W×S→R (festgelegt 20.09.2026, `riedl_content.py`): Die
+Engine-Stufe ist führend, die Risikozahl R wird daraus abgeleitet
+(`r_aus_stufe`: Kein Risiko → 0, Niedrig → 1, Mittel → 5, Hoch → 7) und ist im
+Bericht überschreibbar; die Umkehrung `stufe_aus_r` (R ≥ 7 Hoch, ≥ 3 Mittel,
+≥ 1 Niedrig, 0 Kein Risiko) entspricht der App. R = 10 entsteht nur durch
+manuelle Verschärfung. Damit stehen nicht mehr zwei Bewertungssysteme
+nebeneinander.
 
 `katalog_teilmenge.py` ist das gemeinsame Ableitungsverfahren (wie
 `gen_en8180_catalog.py`, aber importierbar); es nimmt auch die Steuerfragen
@@ -253,6 +438,23 @@ node --experimental-strip-types cy_smoke.ts  # Smoke-Test + Lückensuche gegen e
 python3 gen_app_asset.py norm_cyber_mf.json  # -> gbu_aufzug_app/assets/engine/ (ohne QA-Felder)
 python3 ui/build_ui.py                       # Prototyp (Katalog „Cyber-GBU komponentenbasiert")
 ```
+
+Regelversion **`cyber-mf-2026.3`** (20.09.2026), aus derselben Prüfung:
+Prioritätsinversion in CY-C12 behoben (bei der Aggregation `NONE` gewann die
+Niedrig-Regel „Fernzugriff ohne Freigabe" über die Mittel-Regeln zu fehlender
+Segmentierung und Authentifizierung – jetzt P300/P290/P280 nach Schwere);
+CY-N01 stuft „Softwarestand nicht bekannt" höher ein (wer den Stand nicht
+kennt, kann auch nicht beurteilen, ob er trägt); 4.2 wird nur noch bei
+vorhandener Fernwartung gefragt; die Doppelfrage 2.5 ist in
+„Werkszugangsdaten in Gebrauch" und „Zugangsdaten dem Betreiber bekannt"
+getrennt; die vier ZÜS-Dokumentationsfragen 5.11–5.14 halten die Erhebung
+nicht mehr auf (`required_mode = NEVER`), fehlen aber sichtbar im Bericht;
+4.1/4.3/4.4 sagen im Hinweistext, dass sie kanalübergreifend nach dem
+schlechtesten Fall zu beantworten sind. Neu ist `cy_content/karten.py`:
+16 Erhebungskarten (Riedl: 11) über die 83 Cyber-Fragen. Anders als im
+81-20-Typ sind alle Positionen `native` und keine Karte ist eine `checklist` –
+Cyber-Befunde sind keine Sichtprüfung, ein Sammel-„unauffällig" würde
+unbelegte Tatsachen behaupten. Die Bewertung ändert sich dadurch nicht.
 
 Fachliche Freigabe der Regeln – zwei Wege, beide enden in `quality_status = VERIFIED`:
 

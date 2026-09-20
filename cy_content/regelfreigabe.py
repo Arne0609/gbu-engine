@@ -4,7 +4,8 @@ Klärungspunkt hing (Excel GBU_Cyber_Regelpruefung, Blätter „Muster" und
 „Regeln"). Wird von apply_cy_regelpruefung.py aus der zurückgegebenen Excel
 geschrieben; gen_cy_catalog.py setzt freigegebene Regeln auf VERIFIED.
 
-Format: Regel-Code -> (Entscheidung, Korrektur)
+Format: Regel-Code -> (Entscheidung, Korrektur[, Datum])
+Das Datum ist optional; ohne Angabe gilt DATUM dieser Datei.
 Entscheidung: 'Freigeben' | 'Ändern' | 'Streichen'.
 Muster-Entscheidungen (M1…M6) werden beim Übernehmen auf die zugehörigen
 Regeln aller Komponenten ausgerollt; eine Zeile im Blatt „Regeln" mit
@@ -116,4 +117,9 @@ FREIGABE = {
     'CY-Z04-R4': ('Freigeben', ''),
     'CY-Z05-R1': ('Freigeben', ''),
     'CY-Z05-R2': ('Freigeben', ''),
+    # Nachfreigabe 20.09.2026 (Regelprüfung zum Prüfbericht Fragenkatalog):
+    # zwei neue Auffangregeln und die in der Priorität korrigierte CY-C12-R3.
+    'CY-C12-R3': ('Freigeben', '', '2026-09-20'),
+    'CY-N01-R5': ('Freigeben', '', '2026-09-20'),
+    'CY-Z04-R5': ('Freigeben', '', '2026-09-20'),
 }

@@ -101,8 +101,19 @@ def teilmenge(quelle, behalten, rule_version):
     annahmen = [a for a in quelle.get('assumptions', []) if a['question'] in fragen]
     if annahmen:
         seed['assumptions'] = annahmen
+        # Die Ruecknahmebedingung muss mitkommen, sonst greifen die Annahmen im
+        # abgeleiteten Typ IMMER (fail-open). Der frueheren Pruefung
+        # `void.get('question') in fragen` entging jede zusammengesetzte Bedingung
+        # (z. B. {'not': …}), weil ein solcher Ausdruck kein 'question' traegt
+        # (Pruefbericht 20.09.2026, gefunden durch riedl_smoke).
         void = quelle.get('assumptions_void_when')
-        if void and void.get('question') in fragen:
+        if void:
+            noetig = set()
+            collect(void, noetig)
+            fehlend = noetig - fragen
+            if fehlend:
+                raise SystemExit('assumptions_void_when braucht Fragen, die nicht in der '
+                                 'Teilmenge sind: %s' % ', '.join(sorted(fehlend)))
             seed['assumptions_void_when'] = void
     if quelle.get('category_phases'):
         seed['category_phases'] = dict(quelle['category_phases'])
@@ -119,8 +130,18 @@ def teilmenge(quelle, behalten, rule_version):
             gruppen.append(g2)
     if gruppen:
         seed['question_groups'] = gruppen
+    # Die Freischaltbedingung eines Nachweises kann zusammengesetzt sein
+    # (Prüfbericht 20.09.2026 B05: Schutzraum „normgerecht" ab 2017, „altnorm"
+    # davor – die zweite Bedingung nennt das Baujahr). Der Nachweis kommt nur
+    # mit, wenn die Teilmenge ALLE darin genannten Steuerfragen trägt; sonst
+    # bewertet sie anders als das Original.
+    def _wenn_fragen(expr):
+        noetig = set()
+        collect(expr, noetig)
+        return noetig
+
     nachweise = [n for n in quelle.get('nachweise', []) if n['question'] in fragen
-                 and n['when']['question'] in fragen]
+                 and _wenn_fragen(n.get('when')) <= fragen]
     if nachweise:
         seed['nachweise'] = nachweise
     return seed

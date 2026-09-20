@@ -102,9 +102,22 @@ hz('MF-F01', 'Fehlende oder unzureichende Absturzsicherung auf dem Fahrkorbdach'
       mfrom=('N20-F1', 'Kein oder Geländer'), evidence='HIGH_CONFIDENCE'),
     r(all_(gt('qf_spalt_mm', 850), yes('qf_gelaender'), lt('qf_gelaender_hoehe_mm', 1100)), 'HIGH',
       mfrom=('N20-F1', 'Kein oder Geländer'), evidence='HYPOTHESIS', klaerung='K-F01'),
-    r(all_(gt('qf_spalt_mm', 500), yes('qf_gelaender'), lt('qf_gelaender_hoehe_mm', 1100)), 'MEDIUM',
-      mfrom=('N20-F1', 'Geländerhöhe 70 cm bei'), evidence='HIGH_CONFIDENCE'),
-    r(no('qf_fussleiste'), 'MEDIUM', mfrom=('N20-F1', 'Fußleiste'), evidence='HIGH_CONFIDENCE')],
+    r(all_(gt('qf_spalt_mm', 500), lte('qf_spalt_mm', 850), yes('qf_gelaender'),
+           lt('qf_gelaender_hoehe_mm', 1100)), 'MEDIUM',
+      mfrom=('N20-F1', 'Geländerhöhe 70 cm bei'), evidence='HIGH_CONFIDENCE',
+      notes='Prüfbericht 20.09.2026: auf 501–850 mm begrenzt; darüber gilt MF-F01-R3 (Hoch), '
+            'beide Regeln trafen bisher gemeinsam zu.'),
+    r(all_(no('qf_fussleiste'), gt('qf_spalt_mm', 300)), 'MEDIUM',
+      mfrom=('N20-F1', 'Fußleiste'),
+      sofort='Dachrand kennzeichnen, keine losen Teile und Werkzeuge im Randbereich '
+             'ablegen; auf dem Dach nur innerhalb der Umwehrung arbeiten; Betreiber '
+             'unterrichten',
+      evidence='HIGH_CONFIDENCE',
+      notes='Regelprüfung 20.09.2026: Die Frage 9.4 wird immer gestellt, die Regel griff dadurch auch bei einem '
+            'Spalt bis 300 mm, wo weder EN 81-20 noch EN 81-1 eine Umwehrung und damit auch '
+            'keine Fußleiste fordern. Bedingung an denselben Spalt gebunden wie die '
+            'Umwehrung selbst. Sofortmaßnahme: „Mit dem Fuß nicht über den Rand treten" war '
+            'eine Ermahnung, keine Maßnahme.')],
    sources=[en8120('5.4.7.3'), en8120('5.4.7.4'), trbs3121('Anh. 1 Nr. 15')],
    factor=F_ABSTURZ_SCHACHT, persons=[WARTUNG], agg='MAXIMUM', bereich='F')
 
@@ -128,11 +141,31 @@ hz('MF-F03', 'Gefährdung durch Nachbaraufzug oder dessen Gegengewicht (Fahrkorb
      {'required_when': in_('qf_nachbar_trennung', ['fehlt', 'teilweise', 'grobmaschig'])}),
     ('qf_nachbar_abschaltung_geprueft', 'COMPENSATION', 'CONDITIONAL',
      {'required_when': yes('qf_nachbar_abschaltung')})],
-   [r(all_(in_('qf_nachbar_trennung', ['fehlt', 'teilweise', 'grobmaschig']),
+   [r(all_(eq('qf_nachbar_trennung', 'fehlt'),
+           yes('qf_nachbar_abschaltung'), no('qf_nachbar_abschaltung_geprueft')), 'HIGH', prio=212,
+      sofort='Nachbaraufzug zusätzlich von Hand abschalten und gegen Wiedereinschalten sichern',
+      mittel='Trenngitter über die volle Schachthöhe nachrüsten oder Abstand über 0,5 m zu '
+             'beweglichen Teilen des Nachbaraufzugs herstellen; alternativ Funktion der '
+             'automatischen Abschaltung für alle Nachbaranlagen nachweisen und dokumentieren',
+      evidence='INFERRED',
+      notes='Prüfbericht 20.09.2026: fail-closed – ohne Funktionsnachweis senkt die automatische '
+            'Abschaltung die Stufe nicht (vorher Mittel trotz fehlender Abtrennung). '
+            'Regelprüfung 20.09.2026: Die Regel verdrängt mit P212 die Grundregel R4 und damit deren technische '
+            'Maßnahme; die Ursache – gar keine Abtrennung – muss in der Maßnahme stehen '
+            'bleiben (TOP-Prinzip).',
+      pb='Prüfbericht 16.09.2026 – Abschaltung ohne Funktionsnachweis'),
+    r(all_(in_('qf_nachbar_trennung', ['teilweise', 'grobmaschig']),
            yes('qf_nachbar_abschaltung'), no('qf_nachbar_abschaltung_geprueft')), 'MEDIUM', prio=210,
       sofort='Nachbaraufzug zusätzlich von Hand abschalten und gegen Wiedereinschalten sichern',
-      mittel='Funktion der automatischen Abschaltung für alle Nachbaranlagen prüfen und dokumentieren',
-      evidence='INFERRED', pb='Prüfbericht 16.09.2026 – Abschaltung ohne Funktionsnachweis'),
+      mittel='Abdeckung vervollständigen bzw. engmaschiges Trenngitter nachrüsten; alternativ '
+             'Funktion der automatischen Abschaltung für alle Nachbaranlagen nachweisen und '
+             'dokumentieren',
+      evidence='INFERRED',
+      notes='Teilabdeckung bzw. grobmaschiges Gitter: die Grundstufe bleibt Mittel, der fehlende '
+            'Funktionsnachweis senkt sie aber nicht. Regelprüfung 20.09.2026: Die Regel verdrängt mit P210 die '
+            'Grundregeln R5/R6 und damit deren technische Maßnahme – die unzureichende '
+            'Abtrennung muss benannt bleiben (TOP-Prinzip).',
+      pb='Prüfbericht 16.09.2026 – Abschaltung ohne Funktionsnachweis'),
     r(all_(in_('qf_nachbar_trennung', ['fehlt', 'teilweise', 'grobmaschig']),
            yes('qf_nachbar_abschaltung'), yes('qf_nachbar_abschaltung_geprueft')), 'NO_RISK', prio=200,
       evidence='HIGH_CONFIDENCE',
@@ -177,7 +210,14 @@ hz('MF-F05', 'Fehlende oder unzulängliche Inspektionssteuerung auf dem Fahrkorb
     ('qf_inspektion_erreichbar', 'TRIGGER', 'CONDITIONAL', {'required_when': yes('qf_inspektion')}),
     ('qf_inspektion_geschw', 'TRIGGER', 'CONDITIONAL', {'required_when': yes('qf_inspektion')})],
    [r(no('qf_inspektion'), 'HIGH', mfrom=('N20-F6', 'Keine Inspektionssteuerung'),
-      evidence='HIGH_CONFIDENCE'),
+      sofort='Fahrkorbdach nur nach Freischalten der Anlage und Sichern gegen '
+             'Wiedereinschalten betreten; keine Fahrt mit Personen auf dem Fahrkorbdach; '
+             'Betreiber unterrichten; keine Alleinarbeit (DGUV Information 209-053)',
+      evidence='HIGH_CONFIDENCE',
+      notes='Regelprüfung 20.09.2026: Ohne Inspektionssteuerung fährt der Aufzug im Normalbetrieb mit '
+            'Nenngeschwindigkeit, während Personen auf dem Dach stehen. Das Verbot der '
+            'Alleinarbeit und ein Literaturhinweis verhindern diese Fahrt nicht – die '
+            'Sofortmaßnahme setzt jetzt am Freischalten an.'),
     r(no('qf_inspektion_geschw'), 'HIGH', mfrom=('N20-F5', 'Inspektionsgeschwindigkeit'),
       sofort='Keine Inspektionsfahrten mit Personen auf dem Fahrkorbdach bis zur Begrenzung der '
              'Geschwindigkeit; Arbeiten nur bei stillgesetzter Anlage',
@@ -196,7 +236,12 @@ hz('MF-F06', 'Fehlender oder unwirksamer Not-Halt auf dem Fahrkorbdach', GRP_SK,
    [r(no('qf_nothalt'), 'HIGH', mfrom=('N20-F7', 'Kein Notbremsschalter'), evidence='HIGH_CONFIDENCE'),
     r(no('qf_nothalt_wirksam'), 'HIGH', mfrom=('N20-F7', 'Notbremsschalter ohne'), evidence='HIGH_CONFIDENCE'),
     r(no('qf_nothalt_erreichbar'), 'MEDIUM', mfrom=('N20-F7', 'Notbremsschalter vorhanden, aber'),
-      evidence='HIGH_CONFIDENCE')],
+      sofort='Fahrkorbdach erst betreten, nachdem die Anlage stillgesetzt und gegen '
+             'Wiedereinschalten gesichert ist; Lage des Not-Halt vor dem Betreten '
+             'feststellen und den Beschäftigten bekannt machen; Betreiber unterrichten',
+      evidence='HIGH_CONFIDENCE',
+      notes='Regelprüfung 20.09.2026: „Position vor dem Betreten prüfen" benennt keine Handlung, die die '
+            'Gefährdung begrenzt.')],
    sources=[en8120('5.4.8'), en8120('5.12.1.11')], factor=F_BEFEHL, persons=[WARTUNG],
    agg='MAXIMUM', bereich='F')
 

@@ -29,12 +29,16 @@ sel('qa_steuerungsart', 'Art der Aufzugssteuerung', ui='1.3',
 
 yn('qa_maschinenraum', 'Triebwerks-/Maschinenraum vorhanden?', ui='1.4',
    help='Nein = maschinenraumlos; die Steuerung sitzt dann im Steuerschrank an '
-        'der Haltestelle oder im Schacht.')
+        'der Haltestelle oder im Schacht. Dieselbe Angabe wie 4.7 im GBU-Teil '
+        '(gleicher Fragen-Code) – aus dem Anlagenstamm vorbelegen, nicht zweimal '
+        'erheben (Prüfbericht 20.09.2026).')
 
 yn('qa_vernetzt', 'Anlage mit Netzwerk- oder Internetanbindung (Fernüberwachung, '
    'Fernwartung, Gateway/Router/Modem, Gebäudeleittechnik)?', ui='1.5',
    help='Steuert den Erhebungsbereich N sowie die Komponenten Fernüberwachung, '
-        'Remote-Service und Gateway.')
+        'Remote-Service und Gateway. Muss „Ja" sein, wenn unter 1.3 „Programmierbare '
+        'Steuerung mit Netz-/Fernanbindung" gewählt wurde – die Gebäudeleittechnik wird '
+        'unter 1.6 erfasst, nicht hier (Prüfbericht 20.09.2026).')
 
 yn('qa_gebaeude_anbindung', 'Anbindung an bauseitige Systeme vorhanden '
    '(Brandmeldeanlage/Brandfallsteuerung, Entrauchung, Gebäudeleittechnik, '

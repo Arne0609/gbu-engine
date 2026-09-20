@@ -37,12 +37,29 @@ yn('qt_glas_normgerecht', 'Glaseinsätze in Schacht-/Fahrkorbtüren aus normgere
    help='Nur die Glasart. Drahtglas wird unter 7.9 erfasst, Beschädigungen unter 7.8a.')
 yn('qt_glas_beschaedigt', 'Glaseinsatz beschädigt, lose oder nicht sicher befestigt?',
    ui='7.8a', visible_when=GLAS_TUER)
-yn('qt_glas_drahtglas', 'Drahtglas (Gitterglas) verbaut?', ui='7.9', visible_when=GLAS_TUER)
+yn('qt_glas_drahtglas', 'Ist das nicht normgerechte Glas ausschließlich Drahtglas '
+   '(Gitterglas)?', ui='7.9', visible_when=GLAS_TUER,
+   help='Ja nur, wenn außer Drahtglas kein weiteres nicht normgerechtes Glas (Float, ESG, '
+        'unbekannt) verbaut ist. Bei gemischter oder unbekannter Verglasung: Nein. '
+        'Regelprüfung 20.09.2026: 7.8 und 7.9 sind zwei unabhängige Fragen zur Anlage '
+        'insgesamt; bei gemischter Verglasung (Drahtglas an einem Teil der Türen, Float oder '
+        'ESG am anderen) ergab sich vorher 7.8 = Nein und 7.9 = Ja, der Hoch-Befund für das '
+        'tatsächlich gefährliche Glas fiel weg und es blieb bei Niedrig – fail-open.')
 yn('qt_glas_schiebetuer', 'Verglaste Türen als kraftbetätigte Schiebetüren ausgeführt?',
    ui='7.9a', visible_when=GLAS_TUER)
+yn('qt_glas_flaeche_gross', 'Glasflächen in den kraftbetätigten Schiebetüren größer als ein '
+   'Sichtfenster nach DIN EN 81-20 5.3.7.2.1 a) (Breite über 150 mm)?', ui='7.9b',
+   visible_when=all_(GLAS_TUER, yes('qt_glas_schiebetuer')),
+   help='Regelprüfung 20.09.2026: Am Normtext nachgeschlagen: DIN EN 81-20 5.3.7.2.1 a) 4) lässt für '
+        'Sichtfenster eine Breite von mindestens 60 mm und höchstens 150 mm zu; 5.3.6.2.2.1 i) '
+        'verlangt Maßnahmen gegen das Einziehen von Kinderhänden nur für selbsttätig '
+        'kraftbetätigte Schiebetüren mit Glasscheiben, die GRÖSSER sind als dort angegeben. '
+        'Eine kraftbetätigte Schiebetür mit bloßem Sichtfenster braucht den Einzugsschutz '
+        'also nicht. Bei größeren Glasflächen oder wenn die Breite nicht sicher feststellbar '
+        'ist: Ja – die Im-Zweifel-Ja-Regel hält die Auslegung fail-closed.')
 yn('qt_glas_einzugsschutz', 'Schutz gegen Einziehen von Kinderhänden an Glas-Schiebetüren '
    'vorhanden (Sensorleiste, Abstand, Beschichtung)?', ui='7.10',
-   visible_when=all_(GLAS_TUER, yes('qt_glas_schiebetuer')))
+   visible_when=all_(GLAS_TUER, yes('qt_glas_schiebetuer'), yes('qt_glas_flaeche_gross')))
 sel('qt_feuerwiderstand', 'Feuerwiderstandsfähigkeit der Schachttüren (EN 81-58 / '
     'bauaufsichtliche Anforderung)', ui='7.11',
     options=[('nachgewiesen', 'Nachgewiesen (Zertifikat vorhanden)'),
@@ -50,14 +67,17 @@ sel('qt_feuerwiderstand', 'Feuerwiderstandsfähigkeit der Schachttüren (EN 81-5
              ('unbekannt', 'Unbekannt / kein Nachweis'),
              ('nicht_gegeben', 'Gefordert, aber nicht gegeben')])
 yn('qt_fk_tuer_automatisch', 'Fahrkorbtür kraftbetätigt (automatisch)?', ui='8.7',
-   visible_when=yes('qa_fahrkorbtuer'))
+   visible_when=yes('qa_fahrkorbtuer'),
+   help='Steuerfrage für 8.8: Eine Schließkantensicherung ist nur bei kraftbetätigten Türen '
+        'gefordert (EN 81-20 5.3.6.2). Handbetätigte Dreh- oder Schiebetüren brauchen keine '
+        '(Prüfbericht 20.09.2026).')
 sel('qt_schliesskante', 'Schließkantensicherung der Fahrkorbtür', ui='8.8',
     options=[('lichtgitter', 'Lichtgitter / Lichtvorhang (vollflächige Personenerkennung)'),
              ('lichtschranke', 'Einzel-Lichtschranke mit Kraftbegrenzung 150 N / 10 J (ältere Ausführung)'),
              ('umsteuer', 'Umsteuereinrichtung (Schachtdrehtür)'),
-             ('andere', 'Andere Schließkantensicherung'),
+             ('andere', 'Andere Schließkantensicherung (Bauart dokumentieren)'),
              ('keine', 'Keine Schließkantensicherung')],
-    visible_when=yes('qa_fahrkorbtuer'))
+    visible_when=all_(yes('qa_fahrkorbtuer'), yes('qt_fk_tuer_automatisch')))
 yn('qt_lichtgitter_ohne_tuer', 'Ohne Fahrkorbtür: Sicherheitslichtgitter vorhanden?',
    ui='8.9', visible_when=no('qa_fahrkorbtuer'))
 yn('qt_scherengitter', 'Ohne Fahrkorbtür: Scherengitter vorhanden?', ui='8.9a',
@@ -116,8 +136,12 @@ sel('qk_notruf_art', 'Art der Notrufeinrichtung', ui='8.2',
              ('nicht_staendig', 'Sprechverbindung oder Klingel zu nicht ständig besetzter Stelle'),
              ('klingel_schacht', 'Klingel im Schacht ohne Weiterleitung')],
     visible_when=yes('qk_notruf_vorhanden'))
-yn('qk_notruf_24h', 'Notruf auf eine rund um die Uhr besetzte Stelle aufgeschaltet?',
-   ui='8.3', visible_when=yes('qk_notruf_vorhanden'))
+yn('qk_notruf_24h', 'Nachweis: Notruf auf eine rund um die Uhr besetzte Stelle aufgeschaltet '
+   '(Aufschaltbestätigung, Testruf)?', ui='8.3',
+   visible_when=in_('qk_notruf_art', ['sprech_staendig', 'klingel_staendig']),
+   help='Nur, wenn unter 8.2 eine ständig besetzte Stelle angegeben ist – 8.3 ist deren '
+        'Nachweis. Bei „nicht ständig besetzt" oder „Klingel im Schacht" ist der Mangel '
+        'bereits unter 8.2 erfasst (Prüfbericht 20.09.2026).')
 yn('qk_notruf_en8128', 'Zweiwege-Notrufsystem nach EN 81-28 (Identifikation, '
    'Rückmeldung, Testruf)?', ui='8.4', visible_when=yes('qk_notruf_vorhanden'),
    help='Nur zur Dokumentation – die Bewertung des Notrufs läuft über 8.1 bis 8.3. '
@@ -154,19 +178,45 @@ sel('qk_lueftung', 'Lüftung des Fahrkorbs', ui='8.19',
              ('unzureichend', 'Lüftungsöffnungen fehlen oder unzureichend')])
 yn('qk_hinweis_brandfall', 'Hinweisschild „Aufzug im Brandfall nicht benutzen" an allen '
    'Haltestellen vorhanden und lesbar?', ui='8.20')
-yn('qk_bfs_vorhanden', 'Brandfallsteuerung vorhanden und in die Brandmeldeanlage '
-   'eingebunden?', ui='8.21', visible_when=yes('qa_bfs_gefordert'))
-yn('qk_bfs_geprueft', 'Funktion der Brandfallsteuerung regelmäßig geprüft (Nachweis)?',
-   ui='8.21a', visible_when=yes('qk_bfs_vorhanden'))
+yn('qk_bfs_vorhanden', 'Brandfallsteuerung vorhanden?', ui='8.21',
+   visible_when=yes('qa_bfs_gefordert'),
+   help='Nur das Vorhandensein. Wie sie ausgelöst wird, steht unter 8.21b – bisher war beides '
+        'in einer Frage, sodass die Maßnahme „Brandfallsteuerung nachrüsten" auch dann erschien, '
+        'wenn nur die Einbindung fehlte (Prüfbericht 20.09.2026).')
+sel('qk_bfs_ausloesung', 'Auslösung der Brandfallsteuerung', ui='8.21b',
+    options=[('bma', 'Automatisch über Branddetektion (Brandmelder im Aufzugsvorraum oder '
+                     'Brandmeldeanlage des Gebäudes)'),
+             ('manuell', 'Nur manuell (Schlüsselschalter, Taster, Feuerwehr) – keine '
+                         'automatische Auslösung durch Branddetektion'),
+             ('unklar', 'Einbindung in das Brandschutzkonzept unbekannt')],
+    visible_when=yes('qk_bfs_vorhanden'),
+    help='DIN EN 81-73: Die Brandfallsteuerung wird durch die Branddetektion ausgelöst. Eine '
+         'nur manuelle Auslösung wirkt erst, wenn jemand vor Ort ist. '
+         'Regelprüfung 20.09.2026: Die erste Option umfasst ausdrücklich auch Brandmelder im '
+         'Aufzugsvorraum ohne gebäudeweite Brandmeldeanlage – dieser häufige Fall musste '
+         'vorher als „nur manuell" erfasst werden und erzeugte einen Fehlbefund. Schreibt das '
+         'Brandschutzkonzept ausdrücklich nur die manuelle Auslösung vor, ist das im '
+         'Prüfbericht zu vermerken; die Abstimmung der Schnittstelle wird über 15.8a/15.8c '
+         'bewertet.')
+yn('qk_bfs_geprueft', 'Funktion der Brandfallsteuerung regelmäßig geprüft (Nachweis der '
+   'Wartung/Prüfung der Aufzugsanlage)?', ui='8.21a', visible_when=yes('qk_bfs_vorhanden'),
+   help='Funktionsprüfung der Aufzugs-Brandfallsteuerung. Die Wirk-Prinzip-Prüfung des '
+        'Zusammenwirkens von Brandmeldeanlage und Aufzug (Gebäudeseite, Prüfverordnung der '
+        'Länder) wird unter 15.8b erfasst.')
 yn('qk_en8170', 'Anlage nach DIN EN 81-70 barrierefrei ausgeführt?', ui='8.22',
    visible_when=any_(yes('qa_nutzung_pmem'), yes('qa_barrierefrei_gefordert')))
 yn('qk_bedienelemente', 'Bedienelemente in erreichbarer Höhe und ertastbar?', ui='8.23',
-   visible_when=any_(yes('qa_nutzung_pmem'), yes('qa_barrierefrei_gefordert')))
+   visible_when=all_(any_(yes('qa_nutzung_pmem'), yes('qa_barrierefrei_gefordert')),
+                     no('qk_en8170')),
+   help='Teilaspekt von 8.22: nur zu prüfen, wenn die Anlage NICHT nach EN 81-70 ausgeführt ist '
+        '(Prüfbericht 20.09.2026).')
 yn('qk_rollstuhl_mass', 'Fahrkorbabmessungen für Rollstuhlnutzung ausreichend '
    '(mind. 1,00 m × 1,25 m, Fahrkorbtyp 1 nach DIN EN 81-70:2022-12)?', ui='8.24',
-   visible_when=any_(yes('qa_nutzung_pmem'), yes('qa_barrierefrei_gefordert')),
-   help='Typ 1 nach DIN EN 81-70 ist das Mindestmaß für einen Rollstuhl ohne Begleitperson. '
-        'Fordert die Genehmigung einen größeren Typ (2 oder 3), gilt dieser.')
+   visible_when=all_(any_(yes('qa_nutzung_pmem'), yes('qa_barrierefrei_gefordert')),
+                     no('qk_en8170')),
+   help='Teilaspekt von 8.22, nur bei nicht normgerechter Ausführung zu prüfen. Typ 1 nach '
+        'DIN EN 81-70 ist das Mindestmaß für einen Rollstuhl ohne Begleitperson; fordert die '
+        'Genehmigung einen größeren Typ (2 oder 3), gilt dieser.')
 sel('qk_ausstattung', 'Zustand der Fahrkorbausstattung', ui='8.25',
     options=[('ok', 'Unbeschädigt, keine Hinweise auf Vandalismus'),
              ('ohne_gef', 'Beschädigt ohne unmittelbare Gefährdung (Tableau, Spiegel, Verkleidung)'),
@@ -185,7 +235,10 @@ sel('qk_schutz_aufwaerts', 'Schutz gegen Übergeschwindigkeit aufwärts / Sturz 
     options=[('aktiv', 'Aktive Maßnahme (Notbremssystem / SAFÜ auf Seil oder Treibscheibe)'),
              ('passiv', 'Passive Maßnahme (geringer Beschleunigungsweg, Gegengewichtsverhältnis)'),
              ('nicht', 'Nicht verhindert')],
-    visible_when=all_(SEIL, yes('qa_gegengewicht')))
+    visible_when=all_(TREIB, yes('qa_gegengewicht')),
+    help='Nur bei Treibscheiben- und Trommelantrieb mit Gegengewicht (MF-K13/MF-K14). Ein '
+         'indirekter Hydraulikaufzug kann nicht durch Treibfähigkeitsverlust nach oben '
+         'durchgehen (Prüfbericht 20.09.2026).')
 
 # Ergaenzung 04.09.2026 (Lueckenschluss EN 81-80 Nr. 45): Fahrkorbbeleuchtung im
 # Normalbetrieb, EN 81-20 5.4.10.1 bis 5.4.10.3. Die Notbeleuchtung (8.5) bleibt
@@ -279,10 +332,18 @@ hz('MF-T02', 'Fehlende oder schlecht erreichbare Notentriegelung der Schachttür
    [('qt_notentriegelung_alle', 'TRIGGER', 'ALWAYS'),
     ('qt_dreikant_hinterlegt', 'TRIGGER', 'ALWAYS'),
     ('qt_notentriegelung_hoehe', 'TRIGGER', 'CONDITIONAL', {'required_when': yes('qt_notentriegelung_alle')})],
-   [r(no('qt_dreikant_hinterlegt'), 'HIGH',
-      sofort='Entriegelungsschlüssel beschaffen und an der Anlage (Schlüsseltresor) hinterlegen',
-      mittel='Schlüsselverwaltung für die Personenbefreiung in der Betriebsanweisung regeln',
-      evidence='INFERRED'),
+   [r(no('qt_dreikant_hinterlegt'), 'MEDIUM',
+      sofort='Betreiber unterrichten; Personenbefreiung bis zur Hinterlegung des Schlüssels '
+             'ausschließlich über Notruf und Aufzugsunternehmen sicherstellen und im '
+             'Notfallplan festhalten',
+      mittel='Entriegelungsschlüssel beschaffen, an der Anlage hinterlegen (Schlüsseltresor) '
+             'und die Schlüsselverwaltung für die Personenbefreiung in der Betriebsanweisung '
+             'regeln',
+      evidence='INFERRED',
+      notes='Regelprüfung 20.09.2026: Hoch auf Mittel: Die Notentriegelung ist vorhanden, die Befreiung möglich – '
+            'sie verzögert sich, weil der Schlüssel nicht vor Ort liegt; Aufzugsunternehmen '
+            'und Feuerwehr führen Dreikantschlüssel mit. Gleichzustufen mit dem völligen '
+            'Fehlen der Notentriegelung war unverhältnismäßig.'),
     r(no('qt_notentriegelung_alle'), 'HIGH', mfrom=('N20-F5', 'Notentriegelung nicht'),
       sofort='Personenbefreiung bis zur Nachrüstung nur durch das Aufzugsfachunternehmen; '
              'betroffene Haltestellen im Notfallplan kennzeichnen',
@@ -313,22 +374,50 @@ hz('MF-T04', 'Ungeeignetes Glas oder fehlender Einzugsschutz an Türen mit Glas'
     ('qt_glas_drahtglas', 'TRIGGER', 'ALWAYS'),
     ('qt_glas_beschaedigt', 'TRIGGER', 'ALWAYS'),
     ('qt_glas_schiebetuer', 'TRIGGER', 'ALWAYS'),
-    ('qt_glas_einzugsschutz', 'TRIGGER', 'CONDITIONAL', {'required_when': yes('qt_glas_schiebetuer')}),
-    ('qa_nutzung_kinder', 'MODIFIER', 'NEVER')],
+    ('qt_glas_flaeche_gross', 'TRIGGER', 'CONDITIONAL',
+     {'required_when': yes('qt_glas_schiebetuer')}),
+    ('qt_glas_einzugsschutz', 'TRIGGER', 'CONDITIONAL',
+     {'required_when': all_(yes('qt_glas_schiebetuer'), yes('qt_glas_flaeche_gross'))})],
    [r(all_(no('qt_glas_normgerecht'), no('qt_glas_drahtglas')), 'HIGH',
       mfrom=('N20-K9', 'Ungeeignetes Glas'), evidence='HIGH_CONFIDENCE',
-      pb='B06 – Drahtglas ausgenommen, damit die Niedrig-Regel (TRBS 3121 Anh. 1 Nr. 9) greift'),
+      pb='B06 – Drahtglas ausgenommen, damit die Niedrig-Regel (TRBS 3121 Anh. 1 Nr. 9) greift',
+      notes='Regelprüfung 20.09.2026: Stufe, Priorität, Bedingung und Maßnahmen bleiben; berichtigt ist der Text '
+            'von 7.9. Die Bedingung war fail-open: 7.8 und 7.9 sind zwei unabhängige Fragen '
+            'zur Anlage insgesamt. Waren Drahtglas UND eine weitere nicht normgerechte '
+            'Glasart verbaut, ergab sich 7.8 = Nein und 7.9 = Ja, diese Regel griff nicht '
+            'mehr, und es blieb bei Niedrig – der Hoch-Befund für das tatsächlich gefährliche '
+            'Glas verschwand. 7.9 lautet jetzt „ausschließlich Drahtglas?"; die '
+            'Mischkonstellation ergibt damit 7.8 = Nein und 7.9 = Nein und fällt fail-closed '
+            'auf diese Regel. Eine Umstellung auf eine Einfachauswahl „Glasart" wurde '
+            'verworfen – sie hätte R3 und die Kein-Risiko-Regel R4 mitgerissen und zwei '
+            'Fragen-IDs destabilisiert.'),
     r(yes('qt_glas_beschaedigt'), 'HIGH', mfrom=('N20-K9', 'Ungeeignetes Glas'),
       evidence='HIGH_CONFIDENCE',
       pb='B06 – neu: beschädigtes oder loses Glas unabhängig von der Glasart Hoch'),
-    r(all_(yes('qt_glas_schiebetuer'), no('qt_glas_einzugsschutz')), 'HIGH',
+    r(all_(yes('qt_glas_schiebetuer'), yes('qt_glas_flaeche_gross'),
+           no('qt_glas_einzugsschutz')), 'HIGH',
       mfrom=('N20-K2.2', 'Glas-Kabinentür mit Lichtgitter, aber'), evidence='HIGH_CONFIDENCE',
-      pb='Prüfbericht 16.09.2026 – Einzugsschutz nur bei kraftbetätigten Schiebetüren; Glasfestigkeit getrennt'),
+      pb='Prüfbericht 16.09.2026 – Einzugsschutz nur bei kraftbetätigten Schiebetüren; Glasfestigkeit getrennt',
+      sources=[en8120('5.3.6.2.2.1'), en8120('5.3.7.2.1')],
+      notes='Regelprüfung 20.09.2026: Bedingung um die neue Frage 7.9b ergänzt. 7.9a fragte nur, ob verglaste Türen '
+            'kraftbetätigte Schiebetüren sind; eine solche Tür mit bloßem Sichtfenster löste '
+            'damit Hoch und eine Betriebseinschränkung aus, obwohl DIN EN 81-20 5.3.6.2.2.1 i) '
+            'den Einzugsschutz nur für Glasscheiben verlangt, die größer sind als die '
+            'Sichtfenster nach 5.3.7.2 (Breite über 150 mm nach 5.3.7.2.1 a) 4)). 7.9a wurde '
+            'bewusst NICHT um ein zweites Merkmal erweitert – eine Ja/Nein-Frage mit zwei '
+            'Merkmalen wird uneindeutig beantwortet, und 7.9a steuert zugleich die '
+            'Sichtbarkeit von 7.10. Stufe Hoch, Priorität und beide Maßnahmen bleiben: Das '
+            'Einziehen einer Kinderhand führt unmittelbar zu schweren Verletzungen, und '
+            'EN 81-80 führt den Einzugsschutz als sicherheitsrelevante Nachrüstung.'),
     r(yes('qt_glas_drahtglas'), 'LOW', mfrom=('N20-K9', 'Verwendetes Glas'),
       evidence='HIGH_CONFIDENCE', klaerung='K-T01',
       notes='TRBS 3121 Anh. 1 Nr. 9: Risiko bei intaktem, sicher befestigtem Drahtglas ausdrücklich niedrig (App K9: gelb).')],
    sources=[en8120('5.3.5.3.5'), en8120('5.3.5.3.6'), en8120('5.3.5.3.7'), trbs3121('Anh. 1 Nr. 9')],
-   factor=F_GLAS, persons=[NUTZER], agg='MAXIMUM', bereich='T')
+   factor=F_GLAS, persons=[NUTZER], agg='MAXIMUM', bereich='T',
+   description='Prüfbericht 20.09.2026: Der Nutzerkreis „Kinder" (4.12) war hier als Modifikator '
+   'geführt, ohne in einer Regel vorzukommen. Er ist entfernt – der Schutz gegen das Einziehen '
+   'von Kinderhänden (EN 81-20 5.3.5.3.7) gilt an kraftbetätigten Glas-Schiebetüren unabhängig '
+   'davon, ob Kinder erwartet werden, und wird deshalb ohne Abschlag mit Hoch bewertet.')
 
 hz('MF-T05', 'Unzureichende Feuerwiderstandsfähigkeit der Schachttüren', GRP_BRAND,
    [('qt_feuerwiderstand', 'APPLICABILITY', 'NEVER',
@@ -359,8 +448,12 @@ hz('MF-T06', 'Fahrkorb ohne Abschlusstür oder ohne Schließkantensicherung', GR
     ('qt_scherengitter', 'COMPENSATION', 'CONDITIONAL', {'required_when': no('qa_fahrkorbtuer')}),
     ('qt_nur_eingewiesene', 'COMPENSATION', 'CONDITIONAL', {'required_when': T06_ERSATZ}),
     ('qa_nutzungsart', 'MODIFIER', 'CONDITIONAL', {'required_when': T06_ERSATZ}),
-    ('qt_schliesskante', 'TRIGGER', 'CONDITIONAL', {'required_when': yes('qa_fahrkorbtuer')}),
-    ('qt_fk_tuer_automatisch', 'OPTIONAL', 'NEVER'),
+    ('qt_schliesskante', 'TRIGGER', 'CONDITIONAL',
+     {'required_when': all_(yes('qa_fahrkorbtuer'), yes('qt_fk_tuer_automatisch'))}),
+    ('qt_fk_tuer_automatisch', 'TRIGGER', 'CONDITIONAL',
+     {'required_when': yes('qa_fahrkorbtuer'),
+      'notes': 'Steuerfrage: ohne Kraftbetätigung ist keine Schließkantensicherung gefordert '
+               '(Prüfbericht 20.09.2026).'}),
     ('qa_nutzung_pmem', 'MODIFIER', 'NEVER'),
     ('qa_nutzung_kinder', 'MODIFIER', 'NEVER')],
    [r(all_(no('qa_fahrkorbtuer'), no('qt_lichtgitter_ohne_tuer'), no('qt_scherengitter')), 'HIGH',
@@ -369,33 +462,56 @@ hz('MF-T06', 'Fahrkorb ohne Abschlusstür oder ohne Schließkantensicherung', GR
              'ausschließlich eingewiesenem Nutzerkreis, TRBS 3121 Anh. 1 Nr. 14 c)',
       evidence='HIGH_CONFIDENCE', pb='Prüfbericht 16.09.2026 – Lichtgitter-Alternative auf den zulässigen Fall begrenzt'),
     r(all_(no('qa_fahrkorbtuer'), any_(yes('qa_nutzung_pmem'), yes('qa_nutzung_kinder'))), 'HIGH',
-      prio=250, mfrom=('N20-K2.1', 'Keine Kabinenabschlusstür'), evidence='HYPOTHESIS',
-      klaerung='K-K09'),
-    r(all_(no('qa_fahrkorbtuer'), yes('qt_scherengitter'), T06_EINGEWIESEN), 'MEDIUM', prio=200,
-      mfrom=('N20-K2.2', 'Keine Kabinenabschlusstür, jedoch Scherengitter'), evidence='INFERRED',
-      pb='Prüfbericht 16.09.2026 – Scherengitter nur mit derselben Voraussetzung wie das Lichtgitter'),
+      prio=250, mfrom=('N20-K2.1', 'Keine Kabinenabschlusstür'),
+      sofort='Aufzug für die Personenbeförderung sperren; bis zur Nachrüstung nur '
+             'Güterbeförderung durch eingewiesene Personen',
+      evidence='HYPOTHESIS', klaerung='K-K09',
+      notes='Regelprüfung 20.09.2026: Die bisherige Sofortmaßnahme („ohne weitere Schließkantensicherung für '
+            'Personentransport sperren") war bedingt formuliert und bezog sich auf die '
+            'Schließkantensicherung, um die es bei fehlender Fahrkorbtür gar nicht geht – sie '
+            'ließ sich als Freibrief lesen, sobald irgendeine Schließkantensicherung da ist.'),
+    # Regelprüfung 20.09.2026 gestrichen: „Scherengitter als Kompensation" (bisher Mittel,
+    # P200). Nach dem Hilfetext zu 8.6 gilt ein Gitter MIT Schließstellungsüberwachung
+    # bereits als Fahrkorbabschlusstür – 8.9a erfasst also gerade die nicht überwachten
+    # Gitter. Ein nicht überwachtes Gitter verhindert die Fahrt bei offener Fahrkorböffnung
+    # nicht und kann die Fahrkorbtür nicht ersetzen; TRBS 3121 Anh. 1 Nr. 14 c) nennt nur das
+    # Sicherheitslichtgitter. Es gilt jetzt die Hoch-Regel weiter unten (P150).
     r(all_(no('qa_fahrkorbtuer'), yes('qt_lichtgitter_ohne_tuer'), T06_EINGEWIESEN), 'MEDIUM', prio=200,
       mfrom=('N20-K2.2', 'Keine Kabinenabschlusstür, jedoch Sicherheitslichtgitter'),
       evidence='HIGH_CONFIDENCE',
       pb='B07 – Kompensation nur bei Lastenaufzug mit ausschließlich eingewiesenen Personen'),
     r(T06_ERSATZ, 'HIGH', prio=150,
       sofort='Aufzug für die Personenbeförderung durch nicht eingewiesene Personen sperren',
-      mittel='Fahrkorbtür nachrüsten (Lichtgitter oder Scherengitter genügen nur bei Lastenaufzügen '
-             'mit ausschließlich eingewiesenem Nutzerkreis)', evidence='HIGH_CONFIDENCE',
+      mittel='Fahrkorbtür nachrüsten (ein Sicherheitslichtgitter genügt nur bei Lastenaufzügen '
+             'mit ausschließlich eingewiesenem Nutzerkreis, TRBS 3121 Anh. 1 Nr. 14 c)',
+      evidence='HIGH_CONFIDENCE',
+      notes='Regelprüfung 20.09.2026: Das Scherengitter aus der Maßnahme gestrichen – TRBS 3121 Anh. 1 Nr. 14 c) '
+            'nennt nur das Sicherheitslichtgitter.',
       pb='B07/Prüfbericht 16.09.2026 – Ersatzlösung ohne diese Voraussetzung ist keine zulässige Kompensation'),
-    r(all_(yes('qa_fahrkorbtuer'), eq('qt_schliesskante', 'keine'), yes('qa_nutzung_pmem')), 'HIGH',
+    r(all_(yes('qa_fahrkorbtuer'), eq('qt_schliesskante', 'keine'),
+           any_(yes('qa_nutzung_pmem'), yes('qa_nutzung_kinder'))), 'HIGH',
       prio=220, mfrom=('N20-K2.2', 'Kabinenabschlusstür ohne Lichtgitter'), evidence='INFERRED',
-      notes='Folgerichtig zur Einzel-Lichtschranke: fehlt die Schließkantensicherung ganz, darf die Stufe nicht günstiger sein.',
+      notes='Folgerichtig zur Einzel-Lichtschranke: fehlt die Schließkantensicherung ganz, darf die Stufe nicht günstiger sein. '
+            'Prüfbericht 20.09.2026: Nutzerkreis Kinder wirkt hier wie bei fehlender Fahrkorbtür (MF-T06-R2).',
       pb='Prüfbericht 16.09.2026 – neu: keine Schließkantensicherung bei mobilitätseingeschränkten Nutzern Hoch'),
     r(all_(yes('qa_fahrkorbtuer'), eq('qt_schliesskante', 'keine')), 'MEDIUM', prio=200,
       mfrom=('N20-K2.2', 'Kabinenabschlusstür ohne Lichtgitter'), evidence='HIGH_CONFIDENCE'),
-    r(all_(yes('qa_fahrkorbtuer'), eq('qt_schliesskante', 'lichtschranke'), yes('qa_nutzung_pmem')), 'HIGH',
+    r(all_(yes('qa_fahrkorbtuer'), eq('qt_schliesskante', 'lichtschranke'),
+           any_(yes('qa_nutzung_pmem'), yes('qa_nutzung_kinder'))), 'HIGH',
       prio=210, mfrom=('N20-K2.2', 'Kabinenabschlusstür ohne Lichtgitter'), evidence='INFERRED',
       klaerung='K-T02',
       notes='TRBS 3121 Anh. 1 Nr. 10: 150 N + Lichtschranke + 10 J = Mittel, ausdrücklich NICHT bei behinderten, alten oder gebrechlichen Personen.'),
     r(all_(yes('qa_fahrkorbtuer'), eq('qt_schliesskante', 'lichtschranke')), 'MEDIUM', prio=200,
       mfrom=('N20-K2.2', 'Kabinenabschlusstür ohne Lichtgitter'), evidence='HIGH_CONFIDENCE',
-      klaerung='K-T02', notes='TRBS 3121 Anh. 1 Nr. 10: ausdrücklich mittleres Risiko.')],
+      klaerung='K-T02', notes='TRBS 3121 Anh. 1 Nr. 10: ausdrücklich mittleres Risiko.'),
+    r(all_(yes('qa_fahrkorbtuer'), eq('qt_schliesskante', 'andere')), 'LOW', prio=190,
+      sofort='Bauart der Schließkantensicherung im Bericht benennen und ihre Wirkung beim '
+             'Schließvorgang erproben',
+      mittel='Wirksamkeit der Schließkantensicherung nachweisen (Kraft- und Energiemessung nach '
+             'EN 81-20 5.3.6.2.2) oder Lichtgitter nachrüsten',
+      evidence='INFERRED',
+      notes='Prüfbericht 20.09.2026: „Andere" war eine Auffangoption ohne Prüfkriterium und '
+            'damit ohne Bewertung. Jetzt Niedrig mit Nachweispflicht.')],
    sources=[en8120('5.3'), en8120('5.3.6'), trbs3121('Anh. 1 Nr. 10'), trbs3121('Anh. 1 Nr. 14')],
    factor=F_BEWEGT, persons=[NUTZER], bereich='T')
 
@@ -468,16 +584,31 @@ hz('MF-T09', 'Unzureichende Verbindung der Türblätter mehrteiliger Schachttür
 hz('MF-K01', 'Fehlende oder unzulängliche Notrufeinrichtung im Fahrkorb', GRP_NOT,
    [('qk_notruf_vorhanden', 'TRIGGER', 'ALWAYS'),
     ('qk_notruf_art', 'TRIGGER', 'CONDITIONAL', {'required_when': yes('qk_notruf_vorhanden')}),
-    ('qk_notruf_24h', 'TRIGGER', 'CONDITIONAL', {'required_when': yes('qk_notruf_vorhanden')}),
+    ('qk_notruf_24h', 'TRIGGER', 'CONDITIONAL',
+     {'required_when': in_('qk_notruf_art', ['sprech_staendig', 'klingel_staendig'])}),
     ('qk_notruf_en8128', 'DOCUMENTATION', 'NEVER')],
    [r(no('qk_notruf_vorhanden'), 'HIGH', mfrom=('N20-K1', 'Keine Notruffunktion'),
       evidence='HIGH_CONFIDENCE'),
-    r(eq('qk_notruf_art', 'klingel_schacht'), 'MEDIUM', mfrom=('N20-K1', 'Klingel im Schacht'),
-      evidence='HIGH_CONFIDENCE'),
-    r(eq('qk_notruf_art', 'nicht_staendig'), 'MEDIUM', mfrom=('N20-K1', 'Sprechverbindung oder Klingel'),
-      evidence='HIGH_CONFIDENCE'),
-    r(eq('qk_notruf_art', 'klingel_staendig'), 'MEDIUM', mfrom=('N20-K1', 'Klingel zu einer'),
-      evidence='HIGH_CONFIDENCE'),
+    r(eq('qk_notruf_art', 'klingel_schacht'), 'HIGH', prio=110,
+      mfrom=('N20-K1', 'Sprechverbindung oder Klingel'),
+      sofort='Aufzug für den Personentransport sperren, bis eine Notrufverbindung zu einer '
+             'Stelle besteht, die die Befreiung auslöst',
+      evidence='HIGH_CONFIDENCE',
+      notes='Regelprüfung 20.09.2026: Eine nur im Schacht läutende Klingel ist in der Wirkung dasselbe wie gar kein '
+            'Notruf: niemand nimmt das Signal entgegen, die Rettungskette startet nicht. '
+            'Vorher lag der Fall mit den beiden milderen Ausführungen auf Mittel.'),
+    r(eq('qk_notruf_art', 'nicht_staendig'), 'MEDIUM',
+      mfrom=('N20-K1', 'Sprechverbindung oder Klingel'), evidence='HIGH_CONFIDENCE',
+      notes='Regelprüfung 20.09.2026: Aus der bisherigen Sammelregel herausgelöst: die Rettungskette läuft, die '
+            'Gegenstelle ist aber nicht ständig besetzt.'),
+    r(eq('qk_notruf_art', 'klingel_staendig'), 'MEDIUM',
+      mfrom=('N20-K1', 'Sprechverbindung oder Klingel'),
+      sofort='Betreiber informieren; Erreichbarkeit und Befreiungsablauf der ständig besetzten '
+             'Stelle organisatorisch sicherstellen',
+      evidence='HIGH_CONFIDENCE',
+      notes='Regelprüfung 20.09.2026: Mildester Fall: die Rettungskette funktioniert, nur die Sprechverbindung '
+            'fehlt. Die einschneidende Sperrung aus der Sammelregel war hier '
+            'unverhältnismäßig.'),
     r(no('qk_notruf_24h'), 'MEDIUM',
       sofort='Betreiber informieren; Erreichbarkeit der Notrufstelle außerhalb der Betriebszeiten regeln',
       mittel='Notruf auf einen 24 h besetzten Notrufdienst (EN 81-28) aufschalten',
@@ -488,8 +619,17 @@ hz('MF-K01', 'Fehlende oder unzulängliche Notrufeinrichtung im Fahrkorb', GRP_N
 
 hz('MF-K02', 'Fehlende oder unzulängliche Notbeleuchtung im Fahrkorb', GRP_BEL,
    [('qk_notbeleuchtung', 'TRIGGER', 'ALWAYS')],
-   [r(eq('qk_notbeleuchtung', 'keine'), 'HIGH', mfrom=('N20-K10', 'Keine ausreichende'),
-      evidence='HIGH_CONFIDENCE', klaerung='K-K02'),
+   [r(eq('qk_notbeleuchtung', 'keine'), 'MEDIUM', mfrom=('N20-K10', 'Keine ausreichende'),
+      sofort='Betreiber informieren; Verhalten bei Stromausfall im Notfallplan festlegen und '
+             'Befreiung innerhalb einer festgelegten Zeit sicherstellen',
+      mittel='Notbeleuchtung nach DIN EN 81-20 5.4.10.4 nachrüsten (mind. 5 lx am '
+             'Notrufauslöser, 1 h)',
+      evidence='HIGH_CONFIDENCE', klaerung='K-K02',
+      notes='Regelprüfung 20.09.2026: Hoch auf Mittel: Ein dunkler Fahrkorb bedroht Leben und Gesundheit nicht '
+            'unmittelbar – die Gefährdung entsteht erst beim Zusammentreffen von Netzausfall '
+            'und Einschluss. Hoch bleibt dem Zusammentreffen mit fehlendem Notruf vorbehalten '
+            '(MF-K01). Der Nachrüstauftrag braucht eine Fachfirma und ist in die '
+            'mittelfristige Maßnahme gewandert.'),
     r(eq('qk_notbeleuchtung', 'nur_taster'), 'LOW', evidence='INFERRED',
       sofort='Beleuchtung des Notruftasters bei Netzausfall prüfen; Verhalten bei Stromausfall im Notfallplan festlegen',
       mittel='Notbeleuchtung nach DIN EN 81-20 5.4.10.4 nachrüsten (mind. 5 lx am Notrufauslöser, 1 h)',
@@ -506,11 +646,17 @@ hz('MF-K03', 'Unzureichende Haltegenauigkeit / Stufenbildung an den Haltestellen
       evidence='HIGH_CONFIDENCE'),
     r(all_(gt('qk_stufe_mm', 10), yes('qa_nutzung_pmem')), 'HIGH', prio=250,
       mfrom=('N20-K7', 'Stufenbildung größer 20'), evidence='HYPOTHESIS', klaerung='K-K03'),
-    r(gt('qk_stufe_mm', 10), 'MEDIUM', prio=200, mfrom=('N20-K7', 'Stufenbildung größer 10'),
+    r(gt('qk_stufe_mm', 10), 'MEDIUM', prio=200,
+      sofort='Betroffene Haltestellen kennzeichnen (Stufenmarkierung), Nutzer und '
+             'Reinigungspersonal auf die Stufe hinweisen, Betreiber informieren und '
+             'Nachregulierung beauftragen',
       mittel='Haltegenauigkeit auf ±10 mm und Nachregulierung auf ±20 mm herstellen (geregelter '
              'Antrieb, Nachstelleinrichtung bzw. geregeltes Ventil)',
       evidence='HIGH_CONFIDENCE', klaerung='K-K10', pb='H11 – mittelfristige Maßnahme ergänzt',
-      notes='Entscheidung 02.09.2026: kein Warnhinweis als Kompensation, bleibt Mittel.')],
+      notes='Entscheidung 02.09.2026: kein Warnhinweis als Kompensation, bleibt Mittel. '
+            'Regelprüfung 20.09.2026: Sofortmaßnahme war das Einstellen von Aufzug/Bremse/Motorregelung – das ist '
+            'keine Sofortmaßnahme, sondern genau die mittelfristige technische Nachregulierung. '
+            'Sofort wirkt nur die organisatorische Kennzeichnung der Stufe (TOP: O vor T).')],
    sources=[en8120('5.12.1.1.4'), trbs3121('Anh. 1 Nr. 1')], factor=F_STURZ,
    persons=[NUTZER], bereich='K')
 
@@ -550,10 +696,17 @@ hz('MF-K05', 'Zu großer Abstand zwischen Fahrkorbschwelle und Schachtwand', GRP
       pb='Prüfbericht 16.09.2026 – TRBS-Alternative und eigener Standard getrennt'),
     r(all_(gt('qk_abstand_schwelle_mm', 150), yes('qa_nutzung_kinder')), 'HIGH', prio=150,
       mfrom=('N20-K8', 'Abstand größer'),
-      sofort='Nutzer über die Absturzgefahr bei Selbstbefreiung unterweisen; Personenbefreiung nur durch fachkundige Personen',
+      sofort='Betreiber unterrichten; Aufsichtspflichtige (Schule, Kita, Hausverwaltung) '
+             'unterweisen und die Nutzung durch Kinder ohne Begleitung unterbinden; Aushang im '
+             'Fahrkorb „Fahrkorbtür nicht öffnen, auf Befreiung warten"; Personenbefreiung '
+             'ausschließlich durch fachkundige Personen mit vereinbarter Reaktionszeit; solange '
+             'das nicht sichergestellt ist, Aufzug für die Nutzung durch Kinder sperren',
       mittel='Fahrkorbtür-Verriegelung außerhalb der Entriegelungszone oder Zusatzverriegelung an den Schachttüren nachrüsten oder Abstand auf unter 150 mm reduzieren',
       evidence='INFERRED',
-      notes='EIGENER STANDARD (strenger als TRBS 3121 Anh. 1 Nr. 19, dort bis Mittel): Hoch bei Nutzung durch Kinder.',
+      notes='EIGENER STANDARD (strenger als TRBS 3121 Anh. 1 Nr. 19, dort bis Mittel): Hoch bei Nutzung durch Kinder. '
+            'Regelprüfung 20.09.2026: Auslöser der Regel sind unbeaufsichtigte Kinder – eine Unterweisung genau '
+            'dieses Personenkreises wirkt dort nicht. Die Sofortmaßnahme greift jetzt ohne '
+            'Mitwirkung der gefährdeten Person.',
       pb='Prüfbericht 16.09.2026 – neu: Nutzerkreis Kinder'),
     r(gt('qk_abstand_schwelle_mm', 150), 'MEDIUM', prio=100, mfrom=('N20-K8', 'Abstand größer'),
       sofort='Nutzer über die Absturzgefahr bei Selbstbefreiung unterweisen; Personenbefreiung nur durch fachkundige Personen',
@@ -577,8 +730,12 @@ hz('MF-K06', 'Fehlende Kennzeichnung der Nennlast, unpassende Nutzfläche oder f
       mfrom=('N20-K12', 'Keine Überlastsicherung bei Lastenaufzügen'), evidence='HIGH_CONFIDENCE'),
     r(no('qk_ueberlast'), 'MEDIUM', mfrom=('N20-K13', 'Keine Überlastkontrolle'),
       evidence='HIGH_CONFIDENCE'),
-    r(no('qk_nennlast_gekennz'), 'MEDIUM', mfrom=('N20-K13', 'Nennlast und zulässige'),
-      evidence='HIGH_CONFIDENCE'),
+    r(no('qk_nennlast_gekennz'), 'LOW', mfrom=('N20-K13', 'Nennlast und zulässige'),
+      evidence='HIGH_CONFIDENCE',
+      notes='Regelprüfung 20.09.2026: Mittel auf Niedrig: Bei wirksamer Überlastkontrolle hat die fehlende '
+            'Beschilderung keinen unmittelbaren Gefährdungsbeitrag – die Überlast wird '
+            'technisch abgefangen. Fehlt die Überlastkontrolle, ergibt sich Mittel ohnehin '
+            'über die Regel zu 8.16 (Aggregation MAXIMUM).'),
     r(no('qk_ueberlast_geprueft'), 'LOW', mfrom=('N20-K13', 'Überlastkontrolle vorhanden'),
       evidence='HIGH_CONFIDENCE', klaerung='K-K05')],
    sources=[en8120('5.4.2'), en8120('5.12.1.2')], factor=F_UEBERLAST, persons=[NUTZER],
@@ -586,20 +743,54 @@ hz('MF-K06', 'Fehlende Kennzeichnung der Nennlast, unpassende Nutzfläche oder f
 
 hz('MF-K07', 'Unzureichende Lüftung des Fahrkorbs', GRP_K,
    [('qk_lueftung', 'TRIGGER', 'ALWAYS')],
-   [r(eq('qk_lueftung', 'unzureichend'), 'HIGH', mfrom=('N20-K14', 'Lüftungsöffnungen fehlen'),
-      evidence='HIGH_CONFIDENCE'),
-    r(eq('qk_lueftung', 'verdeckt'), 'MEDIUM', mfrom=('N20-K14', 'Lüftungsöffnungen teilweise'),
-      evidence='HIGH_CONFIDENCE'),
-    r(eq('qk_lueftung', 'keine_zwang'), 'MEDIUM', mfrom=('N20-K14', 'Keine Zwangsbelüftung'),
-      evidence='HIGH_CONFIDENCE')],
+   [r(eq('qk_lueftung', 'unzureichend'), 'MEDIUM', mfrom=('N20-K14', 'Lüftungsöffnungen fehlen'),
+      sofort='Betreiber informieren; Befreiung innerhalb einer festgelegten kurzen '
+             'Reaktionszeit sicherstellen (Notfallplan, Befreiungsanweisung); Belegung begrenzen',
+      evidence='HIGH_CONFIDENCE',
+      notes='Regelprüfung 20.09.2026: Hoch auf Mittel: Der Fahrkorb ist nie gasdicht; Hitzestau und verbrauchte Luft '
+            'entstehen erst bei Einschluss mit längerer Befreiungsdauer. Nachrüstbedarf nach '
+            'EN 81-80, kein unmittelbarer Konformitätsmangel.'),
+    r(eq('qk_lueftung', 'verdeckt'), 'LOW', mfrom=('N20-K14', 'Lüftungsöffnungen teilweise'),
+      evidence='HIGH_CONFIDENCE',
+      notes='Regelprüfung 20.09.2026: Mittel auf Niedrig: Die Öffnungen sind vorhanden und nur teilweise '
+            'beeinträchtigt; die Ursache wird durch Reinigung bei nächster Gelegenheit '
+            'beseitigt – genau das ist die eigene Maßnahme der Regel.'),
+    r(eq('qk_lueftung', 'keine_zwang'), 'LOW', mfrom=('N20-K14', 'Keine Zwangsbelüftung'),
+      sofort='Betreiber informieren; bei hoher Belegung Fahrgastzahl begrenzen und '
+             'Befreiungszeiten verkürzen',
+      mittel='Zwangsbelüftung des Fahrkorbs nachrüsten oder freien Lüftungsquerschnitt '
+             'vergrößern (Nachrüstbedarf nach EN 81-80 bzw. ASR A3.4)',
+      evidence='HIGH_CONFIDENCE',
+      notes='Regelprüfung 20.09.2026: Mittel auf Niedrig: DIN EN 81-20 5.4.9 fordert Lüftungsöffnungen, keine '
+            'Zwangsbelüftung – ohne nachgewiesene Beeinträchtigung ist der Mangel ohne '
+            'unmittelbaren Gefährdungsbeitrag. „Belegung und Fahrzeiten beobachten" war keine '
+            'Sofortmaßnahme, sondern eine Dauerbeobachtung ohne Schutzwirkung.')],
    sources=[en8120('5.4.9')], factor=F_UMGEBUNG, persons=[NUTZER], bereich='K')
 
 hz('MF-K08', 'Fehlende Brandfallsteuerung trotz Anforderung im Brandschutzkonzept', GRP_BRAND,
    [('qa_bfs_gefordert', 'APPLICABILITY', 'NEVER'),
     ('qk_bfs_vorhanden', 'TRIGGER', 'ALWAYS'),
+    ('qk_bfs_ausloesung', 'TRIGGER', 'CONDITIONAL', {'required_when': yes('qk_bfs_vorhanden')}),
     ('qk_bfs_geprueft', 'TRIGGER', 'CONDITIONAL', {'required_when': yes('qk_bfs_vorhanden')})],
    [r(no('qk_bfs_vorhanden'), 'HIGH', mfrom=('N20-K15', 'Brandschutzkonzept fordert'),
       evidence='HIGH_CONFIDENCE'),
+    r(eq('qk_bfs_ausloesung', 'manuell'), 'MEDIUM',
+      sofort='Feuerwehr und Brandschutzbeauftragten über die nur manuelle Auslösung informieren; '
+             'Auslösestelle kennzeichnen',
+      mittel='Automatische Ansteuerung der Brandfallsteuerung über die vorhandene oder '
+             'nachzurüstende Branddetektion nach DIN EN 81-73 herstellen; Umfang mit dem '
+             'Brandschutzkonzept und dem Brandschutzbeauftragten abstimmen',
+      evidence='INFERRED',
+      notes='Prüfbericht 20.09.2026: aus der bisherigen Doppelfrage 8.21 herausgelöst – fehlt '
+            'nur die Einbindung, ist nicht die ganze Brandfallsteuerung nachzurüsten. '
+            'Regelprüfung 20.09.2026: Die Maßnahme verlangte faktisch die Nachrüstung einer Gebäude-Brandmeldeanlage '
+            'und ging dort ins Leere, wo keine existiert.'),
+    r(eq('qk_bfs_ausloesung', 'unklar'), 'MEDIUM',
+      sofort='Einbindung des Aufzugs in das Brandschutzkonzept beim Betreiber klären',
+      mittel='Brandschutzkonzept und Ansteuerung dokumentieren und in die Prüfung aufnehmen',
+      evidence='INFERRED',
+      notes='Entspricht dem Istzustand „Einbindung des Aufzugs in das Brandschutzkonzept '
+            'unbekannt" der VFA-/Riedl-Vorlage.'),
     r(no('qk_bfs_geprueft'), 'MEDIUM', mfrom=('N20-K15', 'Brandfallsteuerung vorhanden, Funktion'),
       evidence='HIGH_CONFIDENCE')],
    sources=[en('DIN EN 81-73'), trbs3121('Anh. 4')], factor=F_BRAND, persons=[NUTZER, FEUERWEHR],
@@ -615,12 +806,45 @@ hz('MF-K10', 'Eingeschränkte Zugänglichkeit für Personen mit eingeschränkter
    GRP_K,
    [('qa_nutzung_pmem', 'APPLICABILITY', 'NEVER',
      {'applicable_when': any_(yes('qa_nutzung_pmem'), yes('qa_barrierefrei_gefordert'))}),
-    ('qa_barrierefrei_gefordert', 'OPTIONAL', 'NEVER'),
+    ('qa_barrierefrei_gefordert', 'MODIFIER', 'CONDITIONAL',
+     {'required_when': yes('qa_nutzung_pmem'),
+      'notes': 'Regelprüfung 20.09.2026: Pflicht, sobald die Gefährdung greift – der '
+               'rechtliche Status entscheidet über die Stufe, eine unbeantwortete Frage '
+               'führt regelkonform zu „unvollständig" statt zu einer stillen Absenkung.'}),
     ('qk_en8170', 'TRIGGER', 'ALWAYS'),
-    ('qk_bedienelemente', 'TRIGGER', 'ALWAYS'),
-    ('qk_rollstuhl_mass', 'TRIGGER', 'ALWAYS')],
-   [r(no('qk_rollstuhl_mass'), 'HIGH', mfrom=('N20-K16', 'Fahrkorbabmessungen'), evidence='HIGH_CONFIDENCE'),
-    r(no('qk_en8170'), 'MEDIUM', mfrom=('N20-K16', 'Hinweise auf Nutzung'), evidence='HIGH_CONFIDENCE'),
+    ('qk_bedienelemente', 'TRIGGER', 'CONDITIONAL', {'required_when': no('qk_en8170')}),
+    ('qk_rollstuhl_mass', 'TRIGGER', 'CONDITIONAL', {'required_when': no('qk_en8170')})],
+   [r(no('qk_rollstuhl_mass'), 'MEDIUM', mfrom=('N20-K16', 'Fahrkorbabmessungen'),
+      mittel='Umbau oder Ersatz der Anlage prüfen; Verhältnismäßigkeit der Nachrüstung nach '
+             'DIN EN 81-80 bewerten',
+      evidence='HIGH_CONFIDENCE',
+      notes='Regelprüfung 20.09.2026: Hoch auf Mittel: Ein zu kleiner Fahrkorb ist eine Nutzungseinschränkung, keine '
+            'unmittelbare Gefahr; das Maß 1,00 m × 1,25 m stammt aus DIN EN 81-70 und gilt für '
+            'die Errichtung – an der Bestandsanlage ist das Unterschreiten Nachrüstbedarf nach '
+            'EN 81-80. Der Teilaspekt stand zudem über der Oberregel zu 8.22.'),
+    r(all_(no('qk_en8170'), yes('qa_barrierefrei_gefordert')), 'MEDIUM',
+      mfrom=('N20-K16', 'Hinweise auf Nutzung'),
+      sofort='Betreiber auf die fehlende barrierefreie Ausführung hinweisen; alternative '
+             'Zugangsmöglichkeit benennen',
+      mittel='Nachrüstung nach DIN EN 81-70 herstellen (Bedienelemente, Handlauf, Spiegel, '
+             'akustische Ansage)',
+      evidence='HIGH_CONFIDENCE',
+      notes='Prüfbericht 20.09.2026: Sofortmaßnahme („Bündigkeit und Türoffenhaltezeit prüfen") '
+            'passte nicht zur Frage; 8.23/8.24 sind jetzt Teilaspekte von 8.22. '
+            'Regelprüfung 20.09.2026: Mittel gilt jetzt nur, wenn die barrierefreie Ausführung rechtlich gefordert '
+            'ist (4.9a) – sonst traf die Stufe nahezu den gesamten Bestand.'),
+    r(all_(no('qk_en8170'), no('qa_barrierefrei_gefordert')), 'LOW',
+      mfrom=('N20-K16', 'Hinweise auf Nutzung'),
+      sofort='Betreiber auf die fehlende barrierefreie Ausführung hinweisen; alternative '
+             'Zugangsmöglichkeit benennen',
+      mittel='Nachrüstung nach DIN EN 81-70 bei der nächsten Modernisierung prüfen '
+             '(Bedienelemente, Handlauf, Spiegel, akustische Ansage); Verhältnismäßigkeit '
+             'nach DIN EN 81-80 bewerten',
+      evidence='INFERRED',
+      notes='Regelprüfung 20.09.2026: Neu: Ist die barrierefreie Ausführung nicht gefordert, sondern nur die Nutzung '
+            'durch Personen mit eingeschränkter Mobilität zu erwarten, ist das Nachrüstbedarf '
+            'nach DIN EN 81-80 und kein Konformitätsmangel. Bleibt 4.9a unbeantwortet, greift '
+            'keine der beiden Regeln und die Gefährdung bleibt unvollständig – gewollt.'),
     r(no('qk_bedienelemente'), 'MEDIUM', mfrom=('N20-K16', 'Bedienelemente'), evidence='HIGH_CONFIDENCE')],
    sources=[en('DIN EN 81-70')], factor=F_STURZ, persons=[NUTZER], agg='MAXIMUM', bereich='K')
 
@@ -680,7 +904,9 @@ hz('MF-K12', 'Fehlender Schutz gegen unbeabsichtigte Fahrkorbbewegung bei offene
 
 hz('MF-K13', 'Fehlender Schutz gegen Übergeschwindigkeit aufwärts / Sturz nach oben',
    GRP_SK,
-   [('qa_aufzugsart', 'APPLICABILITY', 'NEVER', {'applicable_when': all_(TREIB, yes('qa_gegengewicht'))}),
+   [('qa_aufzugsart', 'APPLICABILITY', 'NEVER', {'applicable_when': all_(TREIB, yes('qa_gegengewicht')),
+     'notes': 'Prüfbericht 20.09.2026: Sichtbarkeit von 8.28 auf denselben Umfang gebracht – '
+              'bei indirekter Hydraulik wurde die Frage gestellt, aber nie bewertet.'}),
     ('qa_gegengewicht', 'APPLICABILITY', 'NEVER'),
     ('qk_schutz_aufwaerts', 'TRIGGER', 'ALWAYS')],
    [r(eq('qk_schutz_aufwaerts', 'nicht'), 'HIGH', mfrom=('N20-K4.1', 'Sturz nach oben nicht'),
@@ -703,9 +929,16 @@ hz('MF-K14', 'Statisch unbestimmt gelagerte Antriebswelle (3-Punkt-Lagerung)', G
       notes='Blaupause Schindler M004: 3-Punkt-Lagerung mit SAFÜ = Niedrig (DIRECT belegt).'),
     r(no('qa_lagerung_statisch_bestimmt'), 'HIGH', prio=100,
       mfrom=('N20-K4.2', 'Der Antrieb hat eine statisch'),
+      sofort='Betreiber unverzüglich unterrichten; Lagerung, Welle und Maschinenrahmen '
+             'sichtprüfen (Risse, Lagerspiel, Ölaustritt, ungewöhnliche Geräusche); bei '
+             'Auffälligkeiten Anlage stilllegen',
       mittel='Antrieb mit statisch bestimmter Lagerung einbauen oder Maschinenrahmen umbauen; '
-             'bis dahin Schutz gegen Übergeschwindigkeit aufwärts / Sturz nach oben nachrüsten',
-      evidence='HIGH_CONFIDENCE', pb='H05 – UCM ist keine Abhilfe gegen Wellenbruch')],
+             'bis dahin Schutz gegen Übergeschwindigkeit aufwärts / Sturz nach oben nachrüsten '
+             'und den Zustand der Lagerung wiederkehrend prüfen lassen (z. B. Ultraschall)',
+      evidence='HIGH_CONFIDENCE', pb='H05 – UCM ist keine Abhilfe gegen Wellenbruch',
+      notes='Regelprüfung 20.09.2026: „Regelmäßige Materialprüfung (Ultraschall)" braucht Fachfirma, Termin und '
+            'Zugänglichkeit und wirkt frühestens in Wochen – sie steht jetzt in der '
+            'mittelfristigen Maßnahme.')],
    sources=[en8120('5.9.2.2.2'), trbs3121('Anh. 1 Nr. 16')], factor=F_KINETISCH,
    persons=[NUTZER], bereich='K')
 

@@ -160,12 +160,20 @@ hz('CY-O05', 'Fehlende Prüforganisation und Nachweise der Wirksamkeit', GRP_NAC
    [('qo_pruefung_fristen', 'TRIGGER', 'ALWAYS'),
     ('qo_wirksamkeit', 'TRIGGER', 'ALWAYS'),
     ('qo_funktion', 'TRIGGER', 'ALWAYS'),
-    ('qo_zues_beruecksichtigt', 'DOCUMENTATION', 'ALWAYS',
-     {'notes': 'ZÜS-Prüfpunkt 1 (K-C20).'}),
-    ('qo_zues_erfasst', 'DOCUMENTATION', 'ALWAYS', {'notes': 'ZÜS-Prüfpunkt 2 (K-C20).'}),
-    ('qo_zues_erhebliches_risiko', 'DOCUMENTATION', 'CONDITIONAL',
-     {'required_when': yes('qa_ueberwachungsbeduerftig'), 'notes': 'ZÜS-Prüfpunkt 3 (K-C20).'}),
-    ('qo_zues_stand_technik', 'DOCUMENTATION', 'ALWAYS', {'notes': 'ZÜS-Prüfpunkt 5 (K-C20).'})],
+    # Prüfbericht 20.09.2026: Die vier Punkte sind Selbstauskünfte über die
+    # Bearbeitung dieser Beurteilung (5.11: „diese Cyber-GBU vollständig bearbeitet")
+    # und tragen keine Stufe. Als Pflichtfragen hielten sie die Gefährdung
+    # fail-closed offen, ohne etwas zu bewerten – und 5.11 lässt sich vor dem
+    # Abschluss gar nicht wahrheitsgemäß bejahen. Sie bleiben im Bogen als
+    # Abschluss-Checkliste, halten die Bewertung aber nicht mehr auf.
+    ('qo_zues_beruecksichtigt', 'DOCUMENTATION', 'NEVER',
+     {'notes': 'ZÜS-Prüfpunkt 1 (K-C20). Abschluss-Checkliste, keine Pflichtfrage.'}),
+    ('qo_zues_erfasst', 'DOCUMENTATION', 'NEVER',
+     {'notes': 'ZÜS-Prüfpunkt 2 (K-C20). Abschluss-Checkliste, keine Pflichtfrage.'}),
+    ('qo_zues_erhebliches_risiko', 'DOCUMENTATION', 'NEVER',
+     {'notes': 'ZÜS-Prüfpunkt 3 (K-C20). Abschluss-Checkliste, keine Pflichtfrage.'}),
+    ('qo_zues_stand_technik', 'DOCUMENTATION', 'NEVER',
+     {'notes': 'ZÜS-Prüfpunkt 5 (K-C20). Abschluss-Checkliste, keine Pflichtfrage.'})],
    [r(all_(no('qo_pruefung_fristen'), no('qo_wirksamkeit'), no('qo_funktion')), 'HIGH',
       prio=300,
       sofort='Wirksamkeit und Funktion der Maßnahmen durch fachkundige Person '

@@ -142,6 +142,52 @@ def bj_ab(jahr):
     return gte('qa_baujahr', jahr)
 
 
+# Gueltigkeitszeitraeume der Errichtungsregelwerke (Optionen von 1.28
+# qa_norm_inverkehrbringen) als (erstes Jahr, letztes Jahr); None = offen.
+NORM_ZEITRAUM = [
+    ('tra',      None, BJ_AUFZUGSRICHTLINIE - 1),
+    ('en81_1_2', BJ_AUFZUGSRICHTLINIE, BJ_EN8120 - 1),
+    ('en81_20',  BJ_EN8120, None),
+]
+
+
+def norm_ab(jahr):
+    """Die Anforderung galt nach dem ERRICHTUNGSREGELWERK der Anlage.
+
+    Entscheidung Arne, 20.09.2026 (zum Pruefbericht, Befund B07): Der Nachweis
+    ist das Regelwerk, nach dem die Anlage in Verkehr gebracht wurde - das
+    Baujahr ist davon nur eine Ableitung. Der Hilfetext von 1.28 sagt dasselbe
+    („Weicht die Angabe vom Baujahr ab, gilt das Regelwerk, nicht das
+    Baujahr"), die Annahmen sind ihm bis dahin nicht gefolgt.
+
+    Daraus drei Faelle je Anforderungsschwelle <jahr>:
+      * Regelwerk beginnt erst AB der Schwelle (z. B. EN 81-20 fuer eine
+        Anforderung von 2012) -> die Anforderung galt durchgehend, das Baujahr
+        spielt keine Rolle. Genau das fehlte bisher: eine 1985 gebaute, 2020
+        nach EN 81-20 modernisierte Anlage bekam die Annahme nicht.
+      * Regelwerk UMSPANNT die Schwelle (EN 81-1/2 laeuft 1999-2016, die
+        UCM-Anforderung kam 2012 mit A3 hinzu) -> innerhalb des Regelwerks
+        entscheidet das Baujahr.
+      * Regelwerk endet VOR der Schwelle (TRA 200 fuer eine Anforderung von
+        1999) -> die Anforderung galt nie, keine Annahme. Das ist die zweite
+        Luecke: Eine als TRA-Anlage dokumentierte Anlage mit Baujahr 2014 bekam
+        die Annahme allein wegen der Jahreszahl.
+    Ohne Angabe („Unbekannt") entscheidet weiterhin das Baujahr allein - dann
+    ist es die einzige Ableitung, die es gibt. Unbeantwortet traegt nichts:
+    die Annahme greift nicht (fail-closed, wie ANNAHMEN_HINFAELLIG).
+    """
+    immer = [n for n, a, _b in NORM_ZEITRAUM if a is not None and a >= jahr]
+    umspannt = [n for n, a, b in NORM_ZEITRAUM
+                if (a is None or a < jahr) and (b is None or b >= jahr)]
+    zweige = []
+    if immer:
+        zweige.append(in_('qa_norm_inverkehrbringen', immer))
+    if umspannt:
+        zweige.append(all_(in_('qa_norm_inverkehrbringen', umspannt), bj_ab(jahr)))
+    zweige.append(all_(eq('qa_norm_inverkehrbringen', 'unbekannt'), bj_ab(jahr)))
+    return zweige[0] if len(zweige) == 1 else {'any': zweige}
+
+
 # ---- Begruendete Annahmen ("Best Case") ------------------------------------
 #
 # Merkmale, die zum Baujahr der Anlage vorgeschrieben waren, mussten vor der
@@ -170,14 +216,21 @@ def bj_ab(jahr):
 # Die Vermutung ist widerlegbar: Gibt die Fachkraft an, dass Konformitaets-
 # erklaerung und Abnahmeunterlagen NICHT vorliegen, ist die Abnahme nicht
 # belegt - dann greift keine einzige Annahme und alles wird wieder erhoben.
-ANNAHMEN_HINFAELLIG = no('qd_konformitaet_geprueft')
+# Prueffbericht 20.09.2026: positiv formuliert. Vorher war die Bedingung
+# no('qd_konformitaet_geprueft') - eine UNBEANTWORTETE Frage 1.29 ist weder
+# „Ja" noch „Nein", das Blatt war damit falsch und alle Annahmen griffen
+# (fail-open). Jetzt gilt: Annahmen greifen nur, wenn der Konformitaetsnachweis
+# ausdruecklich bestaetigt ist.
+ANNAHMEN_HINFAELLIG = {'not': yes('qd_konformitaet_geprueft')}  # not_() folgt weiter unten
 
 
-def annahme(code, ab_jahr, grund, wert=True):
-    """Frage <code> gilt ab Baujahr <ab_jahr> als <wert>, solange sie
-    unbeantwortet bleibt. <grund> erscheint in Fragebogen, Bewertung und PDF -
-    er muss die Rechtsgrundlage nennen, nicht nur das Jahr."""
-    ANNAHMEN.append({'question': code, 'when': bj_ab(ab_jahr),
+def annahme(code, ab_jahr, grund, wert=True):  # noqa: E302
+    """Frage <code> gilt als <wert>, solange sie unbeantwortet bleibt - wenn
+    das Errichtungsregelwerk der Anlage die Anforderung ab <ab_jahr> kannte
+    (norm_ab: Regelwerk 1.28 fuehrend, Baujahr 1.24 als Ableitung).
+    <grund> erscheint in Fragebogen, Bewertung und PDF - er muss die
+    Rechtsgrundlage nennen, nicht nur das Jahr."""
+    ANNAHMEN.append({'question': code, 'when': norm_ab(ab_jahr),
                      'value': wert, 'reason': grund})
 def all_(*xs):   return {'all': list(xs)}
 def any_(*xs):   return {'any': list(xs)}
@@ -237,6 +290,8 @@ TEXTKORREKTUR = [
     ('Machinenrahmen', 'Maschinenrahmen'),
     ('Steuerung nachrüste /', 'Steuerung nachrüsten /'),
     ('Auf Eignung , ', 'Auf Eignung, '),
+    ('DGUV V3 Püfung', 'DGUV V3 Prüfung'),          # Prüfbericht 20.09.2026
+    ('Kolbenabsinkverhinderrung', 'Kolbenabsinkverhinderung'),
 ]
 
 # Maßnahmenart nach dem TOP-Prinzip (Prüfbericht 15.09.2026, H12). Bis dahin

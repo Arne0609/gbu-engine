@@ -70,6 +70,11 @@ Aufruf aus gen_mf_catalog.build():
 und aus check(): errors += erhebung.pruefen(seed).
 """
 from collections import OrderedDict
+import json as _json
+
+# Baujahrgrenzen und Ausdruckshelfer der Regelsprache – für Nachweis-Einträge
+# mit Zusatzbedingung (Prüfbericht 20.09.2026 B05: Schutzraum je Regelwerk).
+from .common import BJ_AUFZUGSRICHTLINIE, BJ_EN8120, lt
 
 # ---------------------------------------------------------------------------
 # Strukturänderungen
@@ -109,7 +114,10 @@ D05 = {
                   '3.3 (2) Nr. 1–31; die Prüfberichte gehören nach TRBS 3121 3.2 zu den Unterlagen des Betreibers. '
                   'Ein im Prüfbericht gemeldeter Mangel setzt die betroffene Frage nicht auf „unauffällig“.'),
 }
-D05_HAZARD = 'MF-D04'   # Prüfplakette / Prüffrist – dort als DOCUMENTATION angehängt
+# Seit 20.09.2026 legt mf_content/sonderfunktion_doku.py die Frage selbst an und
+# bewertet sie in MF-D04 (Prüfbericht mit offenen Mängeln). vorbereiten() legt sie
+# nur noch an, wenn sie fehlt – der Wortlaut hier bleibt die einzige Quelle.
+D05_HAZARD = 'MF-D04'   # Prüfplakette / Prüffrist
 
 # Zahlenfrage -> Schwellenfrage. bands: (wert, label) in absteigender Güte;
 # ops: (operator, schwelle) -> Liste der Optionswerte, die die Bedingung erfüllen.
@@ -119,24 +127,25 @@ SCHWELLEN = OrderedDict([
         'help': 'Regelgrenzen 10 mm und 20 mm (DIN EN 81-20 5.12.1.1.4: Anhaltegenauigkeit ± 10 mm). Vorbelegung aus dem ZÜS-Prüfbericht (Hauptprüfung Nr. 5, Haltegenauigkeit in allen Etagen). Messwert optional im Feld daneben.',
         'bands': [('bis_10', '≤ 10 mm'), ('11_20', '11–20 mm'), ('ueber_20', 'über 20 mm')],
         'ops': {('GT', 20): ['ueber_20'], ('GT', 10): ['11_20', 'ueber_20']},
-        'wert': ('qk_stufe_mm_wert', 'Stufenbildung gemessen [mm] (optional)')}),
+        'wert': ('qk_stufe_mm_wert', 'Stufenbildung gemessen [mm]')}),
     ('qk_schuerze_mm', {
         'type': 'SELECT', 'text': 'Fahrkorbtürschürze',
         'help': 'Regelgrenzen 300 mm und 750 mm (DIN EN 81-20 5.4.5.2: vertikaler Teil mindestens 0,75 m; TRA 200 Nr. 245.1: 0,75 m, Güteraufzüge 0,3 m). Messwert optional im Feld daneben.',
         'bands': [('ab_750', '≥ 750 mm'), ('300_749', '300–749 mm'), ('unter_300', 'unter 300 mm oder keine Schürze')],
         'ops': {('LT', 300): ['unter_300'], ('LT', 750): ['300_749', 'unter_300']},
-        'wert': ('qk_schuerze_mm_wert', 'Schürzenlänge gemessen [mm] (optional)')}),
+        'wert': ('qk_schuerze_mm_wert', 'Schürzenlänge gemessen [mm]')}),
     ('qk_abstand_schwelle_mm', {
         'type': 'YES_NO', 'text': 'Abstand Fahrkorbschwelle – Schachtwand über 150 mm?',
         'help': 'Regelgrenze 150 mm (DIN EN 81-20 5.2.5.3.1: höchstens 0,15 m über die gesamte Schachthöhe). Nur bei Ja oder Unsicherheit messen; Messwert optional im Feld daneben.',
         'ops': {('GT', 150): True},
-        'wert': ('qk_abstand_schwelle_mm_wert', 'Abstand gemessen [mm] (optional)')}),
+        'wert': ('qk_abstand_schwelle_mm_wert', 'Abstand gemessen [mm]')}),
     ('qf_spalt_mm', {
         'type': 'SELECT', 'text': 'Größter horizontaler Abstand Fahrkorbdachkante – Schachtwand',
         'help': 'Regelgrenzen 300, 500 und 850 mm: Geländer ab 0,30 m (DIN EN 81-20 5.4.7.2 b)); Höhe 0,70 m bis 0,50 m Abstand, 1,10 m darüber (5.4.7.4 b)); nach EN 81-1 8.13.3.2 lag die Grenze bei 0,85 m. Messwert optional im Feld daneben.',
         'bands': [('bis_300', '≤ 300 mm'), ('301_500', '301–500 mm'), ('501_850', '501–850 mm'), ('ueber_850', 'über 850 mm')],
-        'ops': {('GT', 300): ['301_500', '501_850', 'ueber_850'], ('GT', 500): ['501_850', 'ueber_850'], ('GT', 850): ['ueber_850']},
-        'wert': ('qf_spalt_mm_wert', 'Abstand gemessen [mm] (optional)')}),
+        'ops': {('GT', 300): ['301_500', '501_850', 'ueber_850'], ('GT', 500): ['501_850', 'ueber_850'],
+                ('GT', 850): ['ueber_850'], ('LTE', 850): ['bis_300', '301_500', '501_850']},
+        'wert': ('qf_spalt_mm_wert', 'Abstand gemessen [mm]')}),
     ('qf_gelaender_hoehe_mm', {
         'type': 'SELECT', 'text': 'Geländerhöhe auf dem Fahrkorbdach',
         'help': 'Regelgrenzen 700 mm und 1 100 mm (DIN EN 81-20 5.4.7.4 b); EN 81-1 8.13.3.2).',
@@ -268,12 +277,28 @@ OHNE_KATALOGFRAGE = OrderedDict([
     ('28', 'Sicherheitsrelevante MSR-Einrichtungen, funktionale Sicherheit, '
            'Software-Stand und Parameter – im Cyber-Fragebogen (CY)'),
 ])
+# ---------------------------------------------------------------------------
+# Prüfpunkte der Hauptprüfung, die es im Katalog GIBT, die aber bewusst KEINE
+# Vorbelegung tragen (Prüfbericht 20.09.2026). Unterschied zu OHNE_KATALOGFRAGE:
+# dort fehlt die Frage, hier fehlt die Tragfähigkeit des Nachweises.
+NICHT_VORBELEGBAR = OrderedDict([
+    ('1', 'Sicherer und ungehinderter Zugang (5.4 Durchgangsmaße): Der Prüfbericht belegt den '
+          'ungehinderten Zugang, nicht die Einhaltung der EN-81-20-Maße an einer Altanlage.'),
+    ('22', 'Schutz gegen unkontrolliert aufwärtsfahrenden Fahrkorb (8.28): Der Prüfbericht '
+           'belegt die Wirksamkeit, nicht die Bauart (aktiv/passiv) – genau die entscheidet '
+           'aber über die Kompensation in MF-K14.'),
+    ('29', 'Zusammenwirken aufzugsexterner Sicherheitseinrichtungen (8.21 Brandfallsteuerung): '
+           'Der Prüfbericht bewertet eine VORHANDENE Brandfallsteuerung; ob überhaupt eine '
+           'gefordert und vorhanden ist, sagt er nicht.'),
+])
 NACHWEISE = [
     # --- auch bei Anlagen vor 1999 tragfähig (Einrichtung nach TRA 200 gefordert oder geprüfter Zustand)
     # Prüfpunkt 1 und 7 nachgetragen am 17.09.2026 (Auswertung der bis dahin
     # ungenutzten Prüfpunkte 1, 7, 15, 16, 17, 24, 25, 28):
-    ('qz_weg_eng', False, None, '1', 'Sicherer und ungehinderter Zugang zur Aufzugsanlage in der Hauptprüfung geprüft; Durchgangsmaße sind baulich und ändern sich zwischen zwei Prüfungen nicht'),
-    ('qt_glas_einzugsschutz', True, None, '7', 'Funktionsfähigkeit der Schutzeinrichtungen gegen Quetschen, Scheren und Einziehen von Händen in der Hauptprüfung geprüft'),
+    # 20.09.2026 gestrichen (Prüfbericht): Prüfpunkt 1 belegt den ungehinderten Zugang,
+    # nicht die Einhaltung der EN-81-20-Durchgangsmaße an einer Altanlage.
+    #   ('qz_weg_eng', False, None, '1', …)
+    ('qt_glas_einzugsschutz', True, 2017, '7', 'Funktionsfähigkeit der Schutzeinrichtungen gegen Quetschen, Scheren und Einziehen von Händen in der Hauptprüfung geprüft; der Schutz gegen Einziehen von Kinderhänden ist erst mit DIN EN 81-20 gefordert – bei Altanlagen ist er Nachrüstbedarf und kein Prüfmangel (Prüfbericht 20.09.2026)'),
     ('qz_bel_vorhanden', True, None, '6', 'Funktionsfähigkeit der Beleuchtung der Zugänge in der Hauptprüfung geprüft'),
     ('qm_bel_vorhanden', True, None, '6', 'Funktionsfähigkeit der Beleuchtung im Triebwerksraum in der Hauptprüfung geprüft'),
     ('qs_bel_vorhanden', True, None, '6', 'Funktionsfähigkeit der Schachtbeleuchtung in der Hauptprüfung geprüft'),
@@ -289,12 +314,15 @@ NACHWEISE = [
     ('qm_notbetrieb', True, None, '4', 'Maßnahmen und Hilfsmittel zur Personenbefreiung in der Hauptprüfung auf Eignung und Funktion geprüft; TRA 200 Nr. 228'),
     ('qt_verriegelung_elektrisch', True, None, '9', 'Funktionsfähigkeit der Türverschlüsse und ihrer elektrischen Sicherheitseinrichtungen in der Hauptprüfung geprüft; TRA 200 Nr. 212'),
     ('qk_notbeleuchtung', 'netzersatz', None, '6', 'Notbeleuchtung im Fahrkorb in der Hauptprüfung geprüft; TRA 200 Nr. 260.53 (Hilfsstromquelle für Notruf und Beleuchtung)'),
-    ('qk_bfs_vorhanden', True, None, '29', 'Zusammenwirken der aufzugsexternen Sicherheitseinrichtungen (Anhang 4 Nr. 1.6 Brandfallsteuerung, ZÜS-SV) in der Hauptprüfung geprüft – nur, wenn das Gebäude sie verlangt'),
+    # 20.09.2026 gestrichen (Prüfbericht): Prüfpunkt 29 prüft das Zusammenwirken einer
+    # VORHANDENEN Brandfallsteuerung. Dass überhaupt eine vorhanden ist, sagt der
+    # Prüfbericht nicht – das ist eine Anforderung des Brandschutzkonzepts.
+    #   ('qk_bfs_vorhanden', True, None, '29', …)
     ('qs_fang', True, None, '21', 'Fangvorrichtung in der Hauptprüfung geprüft; TRA 200 Nr. 250 ff.'),
     ('qs_begrenzer', True, None, '12', 'Geschwindigkeitsbegrenzer in der Hauptprüfung geprüft; TRA 200 Nr. 250 ff.'),
     ('qs_fang_geprueft', True, None, '21', 'Prüfung von Fangvorrichtung und Begrenzer ist Teil der Hauptprüfung (Prüfbericht = Dokumentation)'),
     ('qg_puffer', True, None, '14', 'Funktionsfähigkeit der Puffer in der Hauptprüfung geprüft; TRA 200 Nr. 255'),
-    ('qg_puffer_zustand', True, None, '14', 'Puffer in der Hauptprüfung funktionsgeprüft'),
+    ('qg_puffer_zustand', 'ok', None, '14', 'Puffer in der Hauptprüfung funktionsgeprüft'),
     ('qd_notbefreiungsanleitung', 'aktuell', None, '3', 'Notfallplan und Notbefreiungsanleitung in der Hauptprüfung auf Übereinstimmung mit der BetrSichV geprüft'),
     ('qk_stufe_mm', 'bis_10', None, '5', 'Haltegenauigkeit in allen Etagen in der Hauptprüfung geprüft (Zustand zum Prüfzeitpunkt)'),
     ('qk_notruf_vorhanden', True, None, '2', 'Funktionsfähigkeit der Notrufeinrichtung in der Hauptprüfung geprüft (nicht: Organisation der besetzten Stelle); TRA 200 Nr. 260.521 forderte die Notrufeinrichtung im Fahrkorb bei Personen- und Lastenaufzügen'),
@@ -316,9 +344,19 @@ NACHWEISE = [
     ('qk_ueberlast', True, 1999, '30', 'Überlastkontrolle als technische Schutzmaßnahme in der Hauptprüfung geprüft'),
     ('qk_ueberlast_geprueft', True, 1999, '30', 'Funktionsprüfung in der Hauptprüfung'),
     ('qa_ucm_a3', True, 2012, '23', 'Schutzeinrichtung gegen unbeabsichtigte Bewegung des Fahrkorbs in der Hauptprüfung geprüft'),
-    ('qk_schutz_aufwaerts', 'aktiv', 1999, '22', 'Schutzeinrichtung für den unkontrolliert aufwärtsfahrenden Fahrkorb in der Hauptprüfung geprüft'),
-    ('qf_schutzraum', 'normgerecht', 1999, '26', 'Schutzräume: Vorrichtungen zur Herstellung temporärer Schutzräume in der Hauptprüfung geprüft; bei fester Kopffreiheit Bestandsangabe nach EN 81-1/2 (Baujahr-Annahme)'),
-    ('qg_schutzraum', 'normgerecht', 1999, '26', 'Schutzräume: Vorrichtungen zur Herstellung temporärer Schutzräume in der Hauptprüfung geprüft; bei fester Grubentiefe Bestandsangabe nach EN 81-1/2 (Baujahr-Annahme)'),
+    # 20.09.2026 (Prüfbericht): Der Prüfbericht belegt, dass eine Schutzeinrichtung wirkt –
+    # nicht, ob sie aktiv (SAFÜ/Notbremse) oder passiv ausgeführt ist. Die Unterscheidung
+    # ist für die Kompensation in MF-K14 entscheidend und bleibt zu erheben.
+    #   ('qk_schutz_aufwaerts', 'aktiv', 1999, '22', …)
+    # Prüfbericht 20.09.2026 B05: „normgerecht" heißt im Katalog „nach EN 81-20".
+    # Anlagen von 1999 bis 2016 sind nach EN 81-1/-2 errichtet; ihr Schutzraum ist
+    # „altnorm" (MF-F04-R3 / MF-G02-R2: Niedrig). Eine Vorbelegung mit „normgerecht"
+    # widerspräche der eigenen Regel – deshalb zwei Einträge je Frage, getrennt durch
+    # das Baujahr. Der sechste Eintrag ist die Zusatzbedingung.
+    ('qf_schutzraum', 'normgerecht', BJ_EN8120, '26', 'Schutzräume: Vorrichtungen zur Herstellung temporärer Schutzräume in der Hauptprüfung geprüft; Abmessungen nach DIN EN 81-20 (Baujahr ab 2017)'),
+    ('qf_schutzraum', 'altnorm', BJ_AUFZUGSRICHTLINIE, '26', 'Schutzräume: Vorrichtungen zur Herstellung temporärer Schutzräume in der Hauptprüfung geprüft; bei fester Kopffreiheit Bestandsangabe nach DIN EN 81-1/-2 (Baujahr 1999 bis 2016)', lt('qa_baujahr', BJ_EN8120)),
+    ('qg_schutzraum', 'normgerecht', BJ_EN8120, '26', 'Schutzräume: Vorrichtungen zur Herstellung temporärer Schutzräume in der Hauptprüfung geprüft; Abmessungen nach DIN EN 81-20 (Baujahr ab 2017)'),
+    ('qg_schutzraum', 'altnorm', BJ_AUFZUGSRICHTLINIE, '26', 'Schutzräume: Vorrichtungen zur Herstellung temporärer Schutzräume in der Hauptprüfung geprüft; bei fester Grubentiefe Bestandsangabe nach DIN EN 81-1/-2 (Baujahr 1999 bis 2016)', lt('qa_baujahr', BJ_EN8120)),
     ('qm_stromlaufplan', 'aktuell', 1999, '31', 'Ordnungsprüfung (Nr. 31): technische Unterlagen'),
 ]
 
@@ -396,7 +434,9 @@ g('BS1', 'S', 'Schachtbeleuchtung und Beleuchtung der Haltestellen', [
     ('qs_bel_altnorm',),
     ('qs_bel_splitterschutz', 'Leuchten ohne Splitterschutz / an ungeeigneter Stelle', False),
     ('qs_zugang_bel', 'Beleuchtung an den Haltestellen (Schachtzugängen) unzureichend', False)], ui='10.1',
-  help='Sollwerte DIN EN 81-20:2020-06: Schacht 50 lx 1 m über dem Fahrkorbdach, 20 lx sonst (5.2.1.4.1); Haltestellen 50 lx am Boden (5.3.7.1).')
+  help='Sollwerte DIN EN 81-20:2020-06: Schacht 50 lx 1 m über dem Fahrkorbdach, 20 lx sonst '
+       '(5.2.1.4.1); Haltestellen 50 lx am Boden (5.3.7.1) – derselbe Wert wie in Frage 10.2 '
+       '(Entscheidung Arne 20.09.2026, Prüfbericht B42).')
 g('BG1', 'G', 'Beleuchtung der Schachtgrube', [
     ('qg_bel_vorhanden', 'Keine Beleuchtung', False),
     ('qg_bel_50lux', 'Unter 50 lx / Leuchten ungeeignet angeordnet', False)], ui='11.2',
@@ -404,15 +444,18 @@ g('BG1', 'G', 'Beleuchtung der Schachtgrube', [
 # Umgebung je Ort: Schadstoffe, Verschmutzung, brennbare Stoffe, Fremdeinrichtungen (17 Fragen -> 4 Karten + 1)
 g('UZ1', 'Z', 'Zugangsbereich – Umgebung und Lagerung', [
     ('qz_asbest', 'Asbest-/Schadstoffverdacht (Bremsbeläge, Dichtungen, Brandschutzverkleidungen)', True),
+    ('qz_asbest_zustand',),
     ('qz_verschmutzung', 'Erhebliche Verschmutzung (Taubenkot, Unrat, Schimmel, Ablagerungen)', True),
     ('qz_brennbar_lager', 'Lagerung brennbarer oder leicht entzündlicher Stoffe', True)], ui='5.60')
 g('UM1', 'M', 'Triebwerksraum – Umgebung, Lagerung und Fremdeinrichtungen', [
     ('qm_asbest', 'Asbest-/Schadstoffverdacht (Bremsbeläge, Dichtungen, Brandschutzverkleidungen)', True),
+    ('qm_asbest_zustand',),
     ('qm_verschmutzung', 'Erhebliche Verschmutzung (Taubenkot, Unrat, Schimmel, Ablagerungen)', True),
     ('qm_brennbar_lager', 'Lagerung brennbarer oder leicht entzündlicher Stoffe', True),
     ('qm_fremd_frei', 'Aufzugsfremde Einrichtungen (Lager, Leitungen, Geräte Dritter)', False)], ui='5.59')
 g('US1', 'S', 'Schacht und Fahrkorb – Umgebung und Fremdeinrichtungen', [
     ('qs_asbest', 'Asbest-/Schadstoffverdacht (Bremsbeläge, Dichtungen, Brandschutzverkleidungen)', True),
+    ('qs_asbest_zustand',),
     ('qs_verschmutzung', 'Erhebliche Verschmutzung (Taubenkot, Unrat, Schimmel, Ablagerungen)', True),
     ('qs_brennbar_lager', 'Lagerung brennbarer oder leicht entzündlicher Stoffe', True),
     ('qs_fremd_frei', 'Aufzugsfremde Einrichtungen im Schacht', False),
@@ -420,6 +463,7 @@ g('US1', 'S', 'Schacht und Fahrkorb – Umgebung und Fremdeinrichtungen', [
     ('qs_fremd_behindert', 'Fremde Einrichtungen behindern Arbeiten oder Rettungswege', True)], ui='10.12')
 g('UG1', 'G', 'Schachtgrube – Umgebung und Lagerung', [
     ('qg_asbest', 'Asbest-/Schadstoffverdacht (Bremsbeläge, Dichtungen)', True),
+    ('qg_asbest_zustand',),
     ('qg_verschmutzung', 'Erhebliche Verschmutzung (Taubenkot, Unrat, Schimmel, Ablagerungen)', True),
     ('qg_brennbar_lager', 'Lagerung brennbarer oder leicht entzündlicher Stoffe', True)], ui='11.20')
 # Einzugstellen
@@ -484,7 +528,9 @@ g('Z06', 'Z', 'Zugangstür zum Triebwerks-/Maschinenraum', [
     ('qz_tuer_abschliessbar', 'Nicht abschließbar', False),
     ('qz_tuer_zustand', 'Beschädigt oder schwergängig', False),
     ('qz_tuer_mass', 'Durchgangsmaß zu klein (unter 2,00 m hoch / 0,60 m breit)', False),
-    ('qz_von_innen',)], ui='5.12')
+    ('qz_von_innen',),
+    ('qz_schaltschrank_abschliessbar', 'Ohne Triebwerksraum: Steuerschrank nicht abschließbar', False)],
+  ui='5.12')
 g('Z07', 'Z', 'Flucht- und Rettungsweg vom Triebwerks-/Steuerungsraum', [
     ('qz_flucht_frei', 'Nicht frei oder nicht benutzbar', False),
     ('qz_flucht_gekennz', 'Nicht gekennzeichnet oder nicht beleuchtet', False),
@@ -531,10 +577,12 @@ g('M10', 'M', 'Schutzeinrichtungen der Steuerung (nach Unterlagen / Prüfbericht
 g('M12', 'M', 'Hydraulik: Absinken des Fahrkorbs und Rohrbruchsicherung', [
     ('qm_kav', 'Keine Einrichtung gegen Absinken (Kolbenabsinkverhinderung / Nachholsteuerung)', False),
     ('qm_absinkt', 'Fahrkorb sinkt im Stillstand merklich ab', True),
-    ('qm_rohrbruch', 'Kein Rohrbruchsicherungsventil vorhanden', False)], ui='6.12')
+    ('qm_rohrbruch', 'Kein Rohrbruchsicherungsventil vorhanden', False),
+    ('qm_absturzsicherung_alt',)], ui='6.12')
 g('M13', 'M', 'Hydraulik: Absperrventil am Aggregat', [
     ('qm_absperrventil', 'Absperrventil fehlt', False),
-    ('qm_absperrventil_gekennz', 'Nicht gekennzeichnet oder schlecht zugänglich', False)], ui='6.10')
+    ('qm_absperrventil_zugang', 'Absperrventil schlecht zugänglich', False),
+    ('qm_absperrventil_gekennz', 'Absperrventil nicht gekennzeichnet', False)], ui='6.10')
 g('M14', 'M', 'Anschlagpunkte / Hebezeuge zum Anheben schwerer Teile', [
     ('qm_anschlagpunkte', 'Keine Anschlagpunkte / Hebezeuge', False),
     ('qm_tragfaehigkeit', 'Tragfähigkeit nicht angegeben', False),
@@ -570,8 +618,10 @@ g('T04', 'T', 'Glas in Schacht- und Fahrkorbtüren', [
     ('qt_glas_drahtglas', 'Drahtglas (Gitterglas) verbaut', True)], ui='7.8')
 g('T05', 'T', 'Glas-Schiebetüren: Schutz gegen Einziehen von Kinderhänden', [
     ('qt_glas_schiebetuer',),
+    ('qt_glas_flaeche_gross', 'Glasflächen größer als ein Sichtfenster nach DIN EN 81-20 5.3.7.2.1 a) (Breite über 150 mm)', True),
     ('qt_glas_einzugsschutz', 'Kein Schutz gegen Einziehen von Kinderhänden (Sensorleiste, Abstand, Reibungsarmut)', False)], ui='7.9a')
 g('T08', 'T', 'Schließkantensicherung der Fahrkorbtür / Schutz ohne Fahrkorbtür', [
+    ('qt_fk_tuer_automatisch',),
     ('qt_schliesskante',),
     ('qt_lichtgitter_ohne_tuer',),
     ('qt_scherengitter',)], ui='8.8')
@@ -594,7 +644,8 @@ g('K08', 'K', 'Überlastkontrolle', [
     ('qk_ueberlast', 'Keine Überlastkontrolle / Lastmessung', False),
     ('qk_ueberlast_geprueft', 'Funktion nicht nachweislich geprüft', False)], ui='8.18')
 g('K11', 'K', 'Brandfall: Steuerung und Hinweisschilder', [
-    ('qk_bfs_vorhanden', 'Keine Brandfallsteuerung / nicht in die Brandmeldeanlage eingebunden', False),
+    ('qk_bfs_vorhanden', 'Keine Brandfallsteuerung', False),
+    ('qk_bfs_ausloesung',),
     ('qk_bfs_geprueft', 'Funktion nicht regelmäßig geprüft (kein Nachweis)', False),
     ('qk_hinweis_brandfall', 'Hinweisschild „Aufzug im Brandfall nicht benutzen" fehlt an mindestens einer Haltestelle', False)], ui='8.21')
 g('K12', 'K', 'Barrierefreie Ausführung', [
@@ -639,7 +690,8 @@ g('F05', 'F', 'Klappe / Notausstieg im Fahrkorbdach', [
 g('S01', 'S', 'Schachtumwehrung und Zugänge zum Schacht', [
     ('qs_vollumwehrt', 'Schacht nicht vollständig umwehrt (Wände, Decke, Boden)', False),
     ('qs_teilumwehrt_zulaessig', 'Teilumwehrung nicht nach EN 81-20 5.2.5.2.3 ausgeführt (Höhen, Abstände)', False),
-    ('qs_zugang_schacht_sicher', 'Zugänge zum Schacht oder die zugehörigen Schalter nicht gesichert / unwirksam (Schacht-, Inspektionstüren)', False)], ui='10.3')
+    ('qs_zugang_schacht_sicher', 'Zugänge zum Schacht zugestellt oder nicht sicher erreichbar', False),
+    ('qs_zugang_schalter_wirksam', 'Sicherheitseinrichtung der Schacht-/Inspektionstüren fehlt oder ist unwirksam', False)], ui='10.3')
 g('S02', 'S', 'Schachtwände, Verglasung und Führungsschienen', [
     ('qs_wand_fest', 'Schachtwände nicht ausreichend fest / Durchbrüche', False),
     ('qs_glas_vsg', 'Kein VSG-Nachweis für die Schachtverglasung', False),
@@ -647,6 +699,8 @@ g('S02', 'S', 'Schachtwände, Verglasung und Führungsschienen', [
 g('S04', 'S', 'Fangvorrichtung, Geschwindigkeitsbegrenzer und Schlaffseilsicherung', [
     ('qs_fang', 'Fangvorrichtung am Fahrkorb fehlt', False),
     ('qs_begrenzer', 'Geschwindigkeitsbegrenzer fehlt', False),
+    ('qs_fang_ersatzausloesung', 'Zulässige Ersatzauslösung der Fangvorrichtung fehlt '
+     '(indirekt angetriebener Hydraulikaufzug ohne Geschwindigkeitsbegrenzer)', False),
     ('qs_fang_geprueft', 'Prüfung von Fangvorrichtung und Begrenzer nicht dokumentiert', False),
     ('qs_spanngewicht_schalter', 'Spanngewicht des Begrenzerseils ohne Schlaffseilschalter', False),
     ('qs_schlaffseil', 'Schlaffseil-/Schlaffkettensicherung fehlt', False)], ui='10.7')
@@ -658,15 +712,16 @@ g('G02', 'G', 'Zugang zur Schachtgrube', [
     ('qg_zugangstuer_schalter', 'Grubenzugangstür ohne elektrische Sicherheitseinrichtung', False)], ui='11.6')
 g('G03', 'G', 'Puffer', [
     ('qg_puffer', 'Puffer für Fahrkorb und Gegengewicht fehlen', False),
-    ('qg_puffer_zustand', 'Puffer beschädigt oder verschlissen', False),
-    ('qg_puffer_oelstand', 'Ölstand hydraulischer Puffer nicht prüfbar / Kennzeichnung fehlt', False),
-    ('qg_puffer_art',)], ui='11.10')
+    ('qg_puffer_zustand',),
+    ('qg_puffer_art',),
+    ('qg_puffer_oelstand', 'Ölstand hydraulischer Puffer nicht prüfbar', False),
+    ('qg_puffer_kennz', 'Kennzeichnung der hydraulischen Puffer fehlt', False)], ui='11.10')
 g('G04', 'G', 'Gegengewicht in der Grube', [
     ('qg_gg_abtrennung',),
     ('qg_gg_fuellung', 'Gegengewichtsfüllung nicht gegen Herausfallen gesichert (Rahmen)', False),
     ('qg_gg_fang', 'Keine Fangvorrichtung am Gegengewicht / kein durchgehendes Fundament bei betretbarem Raum unter der Grube', False)], ui='11.11')
 g('G07', 'G', 'Wasser, Feuchtigkeit und wassergefährdende Stoffe in der Grube', [
-    ('qg_wasser', 'Wasser oder Feuchtigkeit in der Schachtgrube', True),
+    ('qg_wasser',),
     ('qg_oel', 'Öl oder wassergefährdende Stoffe ohne Auffangmöglichkeit', True)], ui='11.15')
 
 # ---- U Umfeld -----------------------------------------------------------------------
@@ -676,16 +731,21 @@ g('U01', 'U', 'Gefahrstoffe und Schadstoffsituation der Anlage', [
     ('qu_asbest_unbekannt', 'Asbest-/Schadstoffsituation der Anlage unbekannt (Baujahr vor 1995, keine Unterlagen, keine Beprobung)', True)], ui='15.28')
 g('U02', 'U', 'Transport gefährlicher Stoffe mit dem Aufzug', [
     ('qu_transport_chem', 'Chemische Gefahrstoffe', True),
+    ('qu_transport_chem_geregelt', 'Transport chemischer Gefahrstoffe nicht verbindlich geregelt', False),
     ('qu_transport_bio', 'Biologische Arbeitsstoffe / infektiöse Stoffe', True),
+    ('qu_transport_bio_geregelt', 'Transport biologischer Arbeitsstoffe nicht verbindlich geregelt', False),
     ('qu_transport_brennbar', 'Brennbare oder leicht entzündliche Stoffe', True),
-    ('qu_transport_radioaktiv', 'Radioaktive Stoffe', True)], ui='15.32')
+    ('qu_transport_brennbar_geregelt', 'Transport brennbarer Stoffe nicht verbindlich geregelt', False),
+    ('qu_transport_radioaktiv', 'Radioaktive Stoffe', True),
+    ('qu_transport_radioaktiv_geregelt', 'Strahlenschutzanweisung erfasst den Aufzugstransport nicht', False)],
+  ui='15.32')
 g('U03', 'U', 'Explosionsfähige Atmosphäre im Bereich der Anlage', [
     ('qu_ex_moeglich', 'Explosionsfähiges Gemisch im Bereich der Anlage möglich (Gase, Dämpfe, Stäube)', True),
     ('qu_ex_bewertet',),
     ('qu_ex_umgesetzt',)], ui='15.25')
 g('U04', 'U', 'Umgebungsbedingungen', [
     ('qu_temperatur', 'Unzulässige Temperaturen im Triebwerksraum oder Schacht möglich', True),
-    ('qu_feuchte_sicherheitsteile', 'Feuchtigkeit oder Kondensat an sicherheitsrelevanten Bauteilen', True),
+    ('qu_feuchte_sicherheitsteile', 'Feuchtigkeit oder Kondensat an sicherheitsrelevanten Bauteilen (außerhalb der Grube)', True),
     ('qu_korrosion', 'Massive Korrosion, Betonabplatzungen oder andere bauliche Schäden', True)], ui='15.23')
 g('U05', 'U', 'Bauliche Änderungen', [
     ('qu_bauliche_aenderung', 'Bauliche Änderungen am Schacht / Triebwerksraum ohne statische und sicherheitstechnische Bewertung', True),
@@ -693,10 +753,11 @@ g('U05', 'U', 'Bauliche Änderungen', [
 g('U06', 'U', 'Brandschutzeinrichtungen des Gebäudes und ihre Schnittstellen zum Aufzug', [
     ('qu_bma_abgestimmt', 'Schnittstelle BMA – Aufzug nicht bekannt / nicht abgestimmt', False, 'Brandmeldeanlage'),
     ('qu_bma_geprueft', 'Funktion der Schnittstelle nicht geprüft (kein Nachweis)', False, 'Brandmeldeanlage'),
-    ('qu_evak_in_gbu', 'Evakuierungs-/Sonderfunktion in dieser Gefährdungsbeurteilung nicht berücksichtigt', False, 'Brandmeldeanlage'),
-    ('qu_brandschutz_behindert', 'Brandschutzeinrichtung behindert den Aufzugsbetrieb oder die Personenrettung (Brandschutztür, Abschottung)', True, 'Bauliche Brandschutzeinrichtungen'),
+    ('qu_evak_in_gbu', 'Evakuierungs-/Sonderfunktion nicht im Brandschutzkonzept und in der Betriebsanweisung beschrieben', False, 'Brandmeldeanlage'),
+    ('qu_brandschutz_behindert', None, None, 'Bauliche Brandschutzeinrichtungen'),
     ('qu_entrauchung', None, None, 'Entrauchung / RWA'),
-    ('qu_sprinkler_bewertet', 'Wechselwirkung der Löschanlage mit der Aufzugsanlage nicht bewertet (Wasserbeaufschlagung, Abschaltung)', False, 'Löschanlage')], ui='15.8a')
+    ('qu_sprinkler_abschaltung', 'Abschaltung der Aufzugsenergie vor Wasserbeaufschlagung nicht sichergestellt', False, 'Löschanlage'),
+    ('qu_sprinkler_geprueft', 'Wirksamkeit der Abschaltung nicht geprüft und dokumentiert', False, 'Löschanlage')], ui='15.8a')
 g('U10', 'U', 'Fremdgewerke und Reinigungspersonal im Aufzugsbereich', [
     ('qu_wartung_gefaehrlicher_zugang', 'Fremdgewerke (Lüftung, Elektro, Reinigung) müssen für ihre Arbeiten in Aufzugsbereiche', True),
     ('qu_fremd_zugangskonzept', 'Kein Zugangs- und Schutzkonzept für Fremdgewerke / Reinigungspersonal', False)], ui='15.36')
@@ -708,6 +769,7 @@ g('U12', 'U', 'Verkehrsflächen und Flurförderzeuge', [
     ('qa_nutzung_flurfoerderzeug', 'Beladung mit Flurförderzeugen oder Transportwagen', True)], ui='15.27')
 g('U13', 'U', 'Emissionen, Lärm und soziales Umfeld', [
     ('qu_abgase', 'Abgase oder Emissionen (Tiefgarage, Werkstatt, Notstromaggregat)', True),
+    ('qu_abgase_lueftung', 'Keine wirksame Lüftung/Absaugung des Aufstellbereichs nachgewiesen', False),
     ('qu_laerm', 'Erhöhte Lärmbelastung (über 85 dB(A))', True),
     ('qu_umfeld_kritisch', 'Kritisches soziales Umfeld (Vandalismus, Missbrauch der Anlage)', True)], ui='15.24')
 
@@ -940,12 +1002,17 @@ def anreichern(seed):
     seed['question_groups'] = groups
     # Nachweise
     nachweise = []
-    for code, wert, min_bj, nr, grund in NACHWEISE:
+    for eintrag in NACHWEISE:
+        code, wert, min_bj, nr, grund = eintrag[:5]
+        zusatz = eintrag[5] if len(eintrag) > 5 else None
         q = qmap.get(code)
         if q is None or q['type'] == 'NUMBER':
             continue
+        wann = {'question': D05['code'], 'operator': 'EQ', 'value': 'ohne_maengel'}
+        if zusatz:
+            wann = {'all': [wann, zusatz]}
         d = {'question': code, 'value': wert,
-             'when': {'question': D05['code'], 'operator': 'EQ', 'value': 'ohne_maengel'},
+             'when': wann,
              'min_baujahr': min_bj, 'reason': grund,
              'source': (_HP % nr) if not nr.startswith('Anh') else 'TRBS 1201 Teil 4, ' + nr}
         nachweise.append(d)
@@ -987,15 +1054,18 @@ def pruefen(seed):
             for k in ('applicable_when', 'required_when'):
                 for lf in _leaves(x.get(k), []):
                     steuert.add(lf['question'])
-    genutzt = {nr for _c, _w, _b, nr, _g in NACHWEISE if nr.isdigit()}
-    fehlt = {str(i) for i in range(1, ZUES_PRUEFPUNKTE + 1)} - genutzt - set(OHNE_KATALOGFRAGE)
+    genutzt = {e[3] for e in NACHWEISE if e[3].isdigit()}
+    fehlt = ({str(i) for i in range(1, ZUES_PRUEFPUNKTE + 1)} - genutzt
+             - set(OHNE_KATALOGFRAGE) - set(NICHT_VORBELEGBAR))
     if fehlt:
         warnings.append('erhebung: Prüfpunkte der Hauptprüfung weder genutzt noch in '
-                        'OHNE_KATALOGFRAGE begründet: %s' % ', '.join(sorted(fehlt, key=int)))
-    doppelt = genutzt & set(OHNE_KATALOGFRAGE)
+                        'OHNE_KATALOGFRAGE / NICHT_VORBELEGBAR begründet: %s'
+                        % ', '.join(sorted(fehlt, key=int)))
+    doppelt = (genutzt & set(OHNE_KATALOGFRAGE)) | (genutzt & set(NICHT_VORBELEGBAR))
     if doppelt:
-        errors.append('erhebung: Prüfpunkt %s steht in OHNE_KATALOGFRAGE, wird aber für eine '
-                      'Vorbelegung genutzt' % ', '.join(sorted(doppelt, key=int)))
+        errors.append('erhebung: Prüfpunkt %s ist als „ohne Katalogfrage" bzw. „nicht '
+                      'vorbelegbar" begründet, wird aber für eine Vorbelegung genutzt'
+                      % ', '.join(sorted(doppelt, key=int)))
     for code in KEIN_SAMMEL:
         if code not in qmap:
             warnings.append('erhebung: KEIN_SAMMEL %s nicht im Katalog' % code)
@@ -1040,12 +1110,16 @@ def pruefen(seed):
         for it in grp['items']:
             if it['question'] not in qmap:
                 warnings.append('Gruppe %s: Frage %s nicht im Katalog (übersprungen)' % (grp['id'], it['question']))
-    gesehen = set()
+    # Mehrere Vorbelegungen je Frage sind zulässig, solange ihre Freischalt-
+    # bedingungen sich unterscheiden (Prüfbericht 20.09.2026 B05: Schutzraum
+    # „normgerecht" ab 2017, „altnorm" davor). Gleiche Bedingung = echte Dopplung.
+    gesehen = {}
     for n in seed.get('nachweise', []):
         code = n['question']
-        if code in gesehen:
-            errors.append('Nachweis %s: doppelt' % code)
-        gesehen.add(code)
+        kennung = _json.dumps(n['when'], sort_keys=True, ensure_ascii=False)
+        if kennung in gesehen.get(code, set()):
+            errors.append('Nachweis %s: doppelt (gleiche Freischaltbedingung)' % code)
+        gesehen.setdefault(code, set()).add(kennung)
         q = qmap.get(code)
         if q is None:
             errors.append('Nachweis %s: unbekannte Frage' % code); continue
@@ -1063,7 +1137,7 @@ def pruefen(seed):
             errors.append('Nachweis %s: Typ %s nicht vorbelegbar' % (code, q['type']))
         if n.get('min_baujahr') is not None and not isinstance(n['min_baujahr'], int):
             errors.append('Nachweis %s: min_baujahr muss Jahr oder null sein' % code)
-    for code, wert, min_bj, nr, grund in NACHWEISE:
+    for code in {e[0] for e in NACHWEISE}:
         if code not in qmap:
             warnings.append('Nachweis %s: Frage nicht im Katalog (übersprungen)' % code)
         elif qmap[code]['type'] == 'NUMBER':

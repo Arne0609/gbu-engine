@@ -20,10 +20,17 @@ yn('qz_service_gesichert', 'Sind die Service- und Programmierschnittstellen '
    '(Serviceanschluss, USB, Speicherkarte, Diagnosestecker) gegen unbefugte '
    'Nutzung gesichert (verschlossene Abdeckung, Freigabe nur mit Schlüssel/'
    'Code)?', ui='2.4')
-yn('qz_default_zugangsdaten', 'Werden Standard-/Werkszugangsdaten (Passwörter, '
-   'PINs, Servicecodes) verwendet oder sind die Zugangsdaten nicht bekannt?',
-   ui='2.5', help='Ja = Mangel. Gemeint sind alle Zugänge: Steuerung, Notruf, '
-                  'Umrichter, Gateway, Fernwartung.')
+yn('qz_default_zugangsdaten', 'Werden Standard-/Werkszugangsdaten (Passwörter, PINs, '
+   'Servicecodes) verwendet?', ui='2.5',
+   help='Ja = Mangel. Gemeint sind alle Zugänge: Steuerung, Notruf, Umrichter, Gateway, '
+        'Fernwartung. Ob die Zugangsdaten überhaupt bekannt sind, steht unter 2.5a – beides '
+        'stand bisher in einer Frage, obwohl nur der erste Fall mit „Werkszugangsdaten '
+        'ändern" zu beheben ist (Prüfbericht 20.09.2026).')
+yn('qz_zugangsdaten_bekannt', 'Sind dem Betreiber die Zugangsdaten der Anlage bekannt und '
+   'liegen sie gesichert vor (Übergabe durch Hersteller/Wartungsfirma dokumentiert)?',
+   ui='2.5a',
+   help='Nein = Mangel: Der Betreiber kann Zugänge weder prüfen noch bei einem Firmenwechsel '
+        'entziehen (TRBS 1115-1, Zugangskontrolle Software).')
 yn('qz_rollen', 'Sind Zugriffsrechte rollenbasiert vergeben (Betreiber, '
    'Wartungsfirma, Hersteller) und werden sie bei Personal- oder Firmenwechsel '
    'entzogen?', ui='2.6')
@@ -85,6 +92,7 @@ hz('CY-Z01', 'Unbefugter physischer Zugang zur Aufzugssteuerung', GRP_ZUGANG,
 hz('CY-Z04', 'Unzureichende logische Zugangskontrolle (Werkszugangsdaten, fehlende '
    'Rollen)', GRP_ZUGANG,
    [('qz_default_zugangsdaten', 'TRIGGER', 'ALWAYS'),
+    ('qz_zugangsdaten_bekannt', 'TRIGGER', 'ALWAYS'),
     ('qz_rollen', 'TRIGGER', 'ALWAYS'),
     ('qa_vernetzt', 'MODIFIER', 'NEVER')],
    [r(all_(yes('qz_default_zugangsdaten'), yes('qa_vernetzt')), 'HIGH', prio=300,
@@ -98,6 +106,14 @@ hz('CY-Z04', 'Unzureichende logische Zugangskontrolle (Werkszugangsdaten, fehlen
       mittel='Passwort-/Berechtigungskonzept einführen und Wechsel bei '
              'Personal- oder Firmenwechsel festlegen',
       klaerung=['K-C13']),
+    r(no('qz_zugangsdaten_bekannt'), 'MEDIUM', prio=220,
+      sofort='Zugangsdaten bei Hersteller und Wartungsfirma anfordern und gesichert '
+             'hinterlegen (Passwortverwaltung des Betreibers)',
+      mittel='Übergabe der Zugangsdaten vertraglich regeln; Zugänge des Betreibers bei '
+             'jedem Firmenwechsel prüfen und erneuern',
+      notes='Prüfbericht 20.09.2026: aus der bisherigen Doppelfrage 2.5 herausgelöst – '
+            '„Zugangsdaten nicht bekannt" ist nicht mit „Werkszugangsdaten ändern" zu '
+            'beheben und brauchte eine eigene Maßnahme.'),
     r(no('qz_rollen'), 'LOW', prio=200,
       sofort='Zugriffsrechte prüfen und nicht mehr benötigte Zugänge entziehen',
       mittel='Rollenkonzept (Betreiber, Wartung, Hersteller) mit Entzug bei '

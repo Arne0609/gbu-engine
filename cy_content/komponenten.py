@@ -137,7 +137,15 @@ def komponente(code, key, name, ui, group, factor, persons, schutz, folge,
     lokal_ok = all_(in_(qs, IF_LOKAL), eq(qm, M_UMGESETZT))
     fern_bad = all_(in_(qs, IF_ENTFERNT), neq(qm, M_UMGESETZT))
     fern_ok = all_(in_(qs, IF_ENTFERNT), eq(qm, M_UMGESETZT))
-    mittel = standard[0]
+    # Prüfbericht 20.09.2026: Der Zusatz „Wirksamkeit nachweisen" stand nur an
+    # einem Teil der Regeln und erzeugte fünf Maßnahmenpaare, die sich allein
+    # durch diesen Satz unterschieden. Der Nachweis ist nach TRBS 1115-1 Abschn. 5
+    # ohnehin für jede festgelegte Maßnahme zu führen – er gehört deshalb in
+    # jeden Maßnahmentext, nicht in die Hälfte.
+    mittel = standard[0].rstrip()
+    if not mittel.endswith('.'):
+        mittel += '.'
+    mittel += ' Wirksamkeit nachweisen (TRBS 1115-1 Abschn. 5).'
 
     rules = [
         r(eq(qs, IF_KEINE), 'NO_RISK', prio=600, evidence='HIGH_CONFIDENCE',
@@ -150,7 +158,7 @@ def komponente(code, key, name, ui, group, factor, persons, schutz, folge,
             rules += [
                 r(all_(yes(qu), neq(qs, IF_KEINE), neq(qm, M_UMGESETZT)), 'LOW', prio=520,
                   sofort='Unabhängige Sicherheitskette bei jeder Prüfung mitprüfen',
-                  mittel=mittel + ' Wirksamkeit nachweisen (TRBS 1115-1 Abschn. 5).',
+                  mittel=mittel,
                   klaerung=['K-C07']),
                 r(all_(yes(qu), neq(qs, IF_KEINE), eq(qm, M_UMGESETZT)), 'NO_RISK', prio=510,
                   sofort='Zustand erhalten; unabhängige Sicherheitskette und Maßnahmen '
@@ -163,7 +171,7 @@ def komponente(code, key, name, ui, group, factor, persons, schutz, folge,
                   sofort='Fern-/Funkzugang der Komponente bis zur Umsetzung der '
                          'Maßnahmen deaktivieren; unabhängige Sicherheitseinrichtung '
                          'bei jeder Prüfung mitprüfen',
-                  mittel=mittel + ' Wirksamkeit nachweisen (TRBS 1115-1 Abschn. 5).',
+                  mittel=mittel,
                   klaerung=['K-C08']),
                 r(all_(yes(qu), lokal_none, zugang), 'MEDIUM', prio=510,
                   sofort='Zugang zur Komponente sofort beschränken; Service'
@@ -175,12 +183,12 @@ def komponente(code, key, name, ui, group, factor, persons, schutz, folge,
         r(all_(eq(qs, IF_FERN), neq(qm, M_UMGESETZT)), 'HIGH', prio=400,
           sofort='Fernzugang der Komponente „%s" deaktivieren oder physisch trennen, '
                  'bis die Schutzmaßnahmen umgesetzt und nachgewiesen sind' % name,
-          mittel=mittel + ' Wirksamkeit nachweisen (TRBS 1115-1 Abschn. 5).',
+          mittel=mittel,
           klaerung=['K-C01']),
         r(all_(eq(qs, IF_KABELLOS), neq(qm, M_UMGESETZT)), 'HIGH', prio=390,
           sofort='Funkschnittstelle der Komponente „%s" deaktivieren oder auf das '
                  'Notwendige beschränken, bis die Schutzmaßnahmen umgesetzt sind' % name,
-          mittel=mittel + ' Wirksamkeit nachweisen (TRBS 1115-1 Abschn. 5).',
+          mittel=mittel,
           klaerung=['K-C01']),
         r(all_(lokal_none, zugang), 'HIGH', prio=380,
           sofort='Zugang zur Komponente/zum Steuerschrank sofort beschränken; Service- '
@@ -234,6 +242,9 @@ komponente('CY-C01', 'steuerung', 'Aufzugssteuerung', '3.1', GRP_STEUERUNG, F_MA
                  'oder Geschwindigkeit.',
            standard=STEUERUNG_MASS,
            sources=[en('DIN EN 81-20', '5.11'), zues_ba017('Beispiel Steuerung')],
+           # Prüfbericht 20.09.2026: Bei vorhandenem PESSRAL (3.2.1) ist der
+           # Sicherheitskreis selbst programmierbar – „Ja" ist dann nur mit
+           # nachgewiesener elektromechanischer Rückfallebene zulässig.
            unab_text='Bleibt der Sicherheitskreis (Türkontakte, Endschalter, Fang-/'
                      'Begrenzerkontakte) bei Manipulation der Steuerung durch eine '
                      'unabhängige elektromechanische Kette wirksam?',
@@ -427,17 +438,22 @@ hz('CY-C12', 'Unbefugter Fernzugriff über Remote-Service / Fernwartung', GRP_NE
              'umgesetzt sind',
       mittel='Aufzugsnetz segmentieren; individuelle Authentifizierung einführen',
       klaerung=['K-C01']),
-    r(no('qn_fern_freigabe'), 'LOW', prio=300,
-      sofort='Fernwartungszugang nur bei Bedarf freischalten (Betreiberfreigabe)',
-      mittel='Freigabeverfahren mit der Wartungsfirma vertraglich festlegen',
-      klaerung=['K-C23']),
-    r(no('qn_fern_auth'), 'MEDIUM', prio=290,
+    # Prüfbericht 20.09.2026: Reihenfolge korrigiert. Bei der Aggregation NONE gewinnt
+    # die Regel mit der höchsten Priorität – die Niedrig-Regel „keine Betreiberfreigabe"
+    # stand mit prio=300 ÜBER den beiden Mittel-Regeln und hat sie verdrängt. Ein
+    # dauerhaft offener, unsegmentierter Fernwartungszugang wurde dadurch als Niedrig
+    # bewertet. Jetzt gilt: schwerere Stufe zuerst, Niedrig zuletzt.
+    r(no('qn_fern_auth'), 'MEDIUM', prio=300,
       sofort='Gemeinsam genutzte oder unverschlüsselte Fernzugänge sperren',
       mittel='Individuelle, verschlüsselte Authentifizierung (Zwei-Faktor oder '
              'gleichwertig) einführen'),
-    r(no('qn_segmentierung'), 'MEDIUM', prio=280,
+    r(no('qn_segmentierung'), 'MEDIUM', prio=290,
       sofort='Direkte Erreichbarkeit der Steuerung aus Fremdnetzen unterbinden',
       mittel='Aufzugsnetz vom Gebäude-/Büronetz und Internet trennen (Segmentierung)'),
+    r(no('qn_fern_freigabe'), 'LOW', prio=280,
+      sofort='Fernwartungszugang nur bei Bedarf freischalten (Betreiberfreigabe)',
+      mittel='Freigabeverfahren mit der Wartungsfirma vertraglich festlegen',
+      klaerung=['K-C23']),
     r(no('qn_protokoll'), 'LOW', prio=250,
       sofort='Protokollierung der Fernzugriffe aktivieren',
       mittel='Protokolle regelmäßig auswerten (Überwachung nach TRBS 1115-1)')],

@@ -14,7 +14,7 @@ function gut(): Record<string, any> {
     qa_maschinenraum: true, qa_vernetzt: true, qa_gebaeude_anbindung: true,
     qa_hersteller_vorgaben: 'beruecksichtigt',
     qz_steuerung_frei: false, qz_triebwerksraum_frei: false, qz_schacht_frei: false,
-    qz_service_gesichert: true, qz_default_zugangsdaten: false, qz_rollen: true, qz_servicegeraete: true,
+    qz_service_gesichert: true, qz_default_zugangsdaten: false, qz_zugangsdaten_bekannt: true, qz_rollen: true, qz_servicegeraete: true,
     qc_steuerung_schnittstelle: 'kabelgebunden', qc_steuerung_massnahmen: 'umgesetzt', qc_steuerung_unabhaengig: true,
     qn_segmentierung: true, qn_fern_freigabe: true, qn_fern_auth: true, qn_protokoll: true,
     qn_softwarestand: 'geregelt', qn_funktionsreduzierung: true,
@@ -99,15 +99,34 @@ const r9a = run('Fernwartung offen, keine Auth', { ...gut(), qn_fern_freigabe: f
 expect(r9a.of('CY-C12')?.status === 'HIGH', 'Fernwartung offen nicht Hoch');
 const r9b = run('Fernwartung ohne Freigabe', { ...gut(), qn_fern_freigabe: false });
 expect(r9b.of('CY-C12')?.status === 'LOW', 'Fernwartung ohne Freigabe (authentifiziert) nicht Niedrig (K-C23)');
+// 9b2) Prüfbericht 20.09.2026: Prioritätsinversion in CY-C12. Vorher verdrängte die
+//      Niedrig-Regel „keine Betreiberfreigabe" (prio 300) die Mittel-Regeln für
+//      fehlende Segmentierung und fehlende Authentifizierung – ein dauerhaft offener
+//      Fernwartungszugang im unsegmentierten Netz galt als Niedrig.
+const r9b2 = run('Fernwartung: offen + unsegmentiert',
+  { ...gut(), qn_fern_freigabe: false, qn_segmentierung: false });
+expect(r9b2.of('CY-C12')?.status === 'MEDIUM',
+  'Prioritätsinversion CY-C12: ' + r9b2.of('CY-C12')?.status);
 // 9c) K-C06: Fernzugriff mit umgesetzten Maßnahmen -> Kein Risiko
 const r9c = run('UCM Fernzugriff, umgesetzt', { ...gut(), qc_ucm_schnittstelle: 'fernzugriff', qc_ucm_massnahmen: 'umgesetzt' });
 expect(r9c.of('CY-C07')?.status === 'NO_RISK', 'Fern umgesetzt nicht Kein Risiko (K-C06)');
 // 9d) K-C10: Fernüberwachung rein lesend ohne Segmentierung -> Niedrig
 const r9d = run('Fernüberw. lesend, keine Segm.', { ...gut(), qn_segmentierung: false });
 expect(r9d.of('CY-C11')?.status === 'LOW', 'Fernüberwachung lesend ohne Segmentierung nicht Niedrig (K-C10)');
-// 9e) K-C20: ZÜS-Dokumentationsfrage fehlt -> CY-O05 unvollständig
-const zd = gut(); delete zd['qo_zues_erfasst'];
-expect(evaluate(seed as any, zd).find(r => r.hazard === 'CY-O05')?.status === 'INCOMPLETE', 'ZÜS-Dokumentationsfrage nicht Pflicht (K-C20)');
+// 9e) K-C20 / Prüfbericht 20.09.2026: Die vier ZÜS-Dokumentationsfragen (5.11–5.14)
+//      sind Selbstauskünfte über die Bearbeitung dieser Beurteilung und tragen keine
+//      Stufe. Als Pflichtfragen hielten sie CY-O05 fail-closed offen, ohne etwas zu
+//      bewerten – 5.11 ist vor dem Abschluss gar nicht wahrheitsgemäß zu bejahen.
+//      Sie bleiben Abschluss-Checkliste, blockieren die Bewertung aber nicht mehr.
+const zd = gut();
+for (const k of ['qo_zues_beruecksichtigt', 'qo_zues_erfasst',
+                 'qo_zues_erhebliches_risiko', 'qo_zues_stand_technik']) delete zd[k];
+expect(evaluate(seed as any, zd).find(r => r.hazard === 'CY-O05')?.status === 'NO_RISK',
+  'ZÜS-Dokumentationsfragen halten CY-O05 noch auf');
+expect(seed.hazards.find((h: any) => h.code === 'CY-O05').questions
+  .filter((q: any) => q.question.startsWith('qo_zues_'))
+  .every((q: any) => (q.required_mode ?? 'NEVER') === 'NEVER'),
+  'ZÜS-Dokumentationsfragen sind noch Pflicht');
 // 9f) K-C21/K-C24: entfernte Gefährdungen existieren nicht mehr
 for (const h of ['CY-Z02', 'CY-Z03', 'CY-C15']) expect(!seed.hazards.some((x: any) => x.code === h), h + ' sollte entfernt sein');
 

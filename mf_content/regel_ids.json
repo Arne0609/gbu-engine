@@ -5,184 +5,239 @@
   "MF-Z01": {
    "MF-Z01-R1": {
     "sachverhalt": "a6f0e20611b4",
-    "rev": 1,
-    "fp": "aa220d7707e5",
-    "stand": "81-20-mf-2026.9"
+    "rev": 2,
+    "fp": "c0ce6f7b2481",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "c0ce6f7b2481"
    },
    "MF-Z01-R2": {
     "sachverhalt": "869fddb183f0",
-    "rev": 1,
-    "fp": "c46634010407",
-    "stand": "81-20-mf-2026.9"
+    "rev": 3,
+    "fp": "5bf8b8315c9f",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "5bf8b8315c9f"
    },
    "MF-Z01-R3": {
     "sachverhalt": "9064d70bbd3a",
-    "rev": 1,
-    "fp": "6abcc1826034",
-    "stand": "81-20-mf-2026.9"
+    "rev": 3,
+    "fp": "d49788aa4e5c",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "d49788aa4e5c"
    },
    "MF-Z01-R4": {
     "sachverhalt": "e13071b70e0d",
-    "rev": 1,
-    "fp": "494c261437b3",
-    "stand": "81-20-mf-2026.9"
+    "rev": 2,
+    "fp": "7ff30537fb39",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "7ff30537fb39"
    }
   },
   "MF-Z02": {
    "MF-Z02-R1": {
     "sachverhalt": "1eb936866a83",
-    "rev": 2,
-    "fp": "9614f2e0436f",
-    "stand": "81-20-mf-2026.9"
+    "rev": 4,
+    "fp": "4378759524d3",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "4378759524d3"
    },
    "MF-Z02-R2": {
     "sachverhalt": "a2092eaf6dd4",
+    "rev": 2,
+    "fp": "db7920dcc7d3",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "db7920dcc7d3"
+   },
+   "MF-Z02-R3": {
+    "sachverhalt": "37b7eb79d551",
     "rev": 1,
-    "fp": "f0b95439e49b",
-    "stand": "81-20-mf-2026.9"
+    "fp": "9e7a9df7e208",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "9e7a9df7e208"
+   },
+   "MF-Z02-R4": {
+    "sachverhalt": "a24047c7a121",
+    "rev": 1,
+    "fp": "57e0eb3e6675",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "57e0eb3e6675"
    }
   },
   "MF-Z03": {
    "MF-Z03-R1": {
     "sachverhalt": "c682900f1abc",
-    "rev": 2,
-    "fp": "14d25312e04e",
-    "stand": "81-20-mf-2026.9"
+    "rev": 3,
+    "fp": "e4f5497372f4",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "e4f5497372f4"
    },
    "MF-Z03-R2": {
     "sachverhalt": "baf259ff5531",
-    "rev": 2,
-    "fp": "965e0300578c",
-    "stand": "81-20-mf-2026.9"
+    "rev": 3,
+    "fp": "0a381e57c827",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "0a381e57c827"
    },
    "MF-Z03-R3": {
     "sachverhalt": "74628c4f3c52",
-    "rev": 1,
-    "fp": "73607f5d0526",
-    "stand": "81-20-mf-2026.9",
-    "fp_verifiziert": "73607f5d0526"
+    "rev": 2,
+    "fp": "d660a68e0b1d",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "d660a68e0b1d"
    },
    "MF-Z03-R4": {
     "sachverhalt": "4ce9dc207ff9",
-    "rev": 1,
-    "fp": "69a298fc33b9",
-    "stand": "81-20-mf-2026.9"
+    "rev": 3,
+    "fp": "c5f0e8e15f33",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "c5f0e8e15f33"
    },
    "MF-Z03-R5": {
     "sachverhalt": "30f652d991b4",
-    "rev": 1,
-    "fp": "7e656bf63340",
-    "stand": "81-20-mf-2026.9"
+    "rev": 3,
+    "fp": "3e2e8c3ad0a2",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "3e2e8c3ad0a2"
    },
    "MF-Z03-R6": {
     "sachverhalt": "917e3ca73bd6",
-    "rev": 1,
-    "fp": "b9ada30c639e",
-    "stand": "81-20-mf-2026.9"
+    "rev": 2,
+    "fp": "407667dd90d1",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "407667dd90d1"
    }
   },
   "MF-Z04": {
    "MF-Z04-R1": {
     "sachverhalt": "793500931589",
-    "rev": 1,
-    "fp": "58257b2fda77",
-    "stand": "81-20-mf-2026.9"
+    "rev": 2,
+    "fp": "40e32cb21d87",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "40e32cb21d87"
    },
    "MF-Z04-R2": {
     "sachverhalt": "0b5ff87bef15",
-    "rev": 2,
-    "fp": "36ef362336ce",
-    "stand": "81-20-mf-2026.9"
+    "rev": 3,
+    "fp": "cd13a2362abe",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "cd13a2362abe"
    },
    "MF-Z04-R3": {
     "sachverhalt": "b079f0893002",
-    "rev": 1,
-    "fp": "1d419d0c7168",
-    "stand": "81-20-mf-2026.9"
+    "rev": 2,
+    "fp": "db3f83be4055",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "db3f83be4055"
    },
    "MF-Z04-R4": {
     "sachverhalt": "ff1abcae5a17",
-    "rev": 1,
-    "fp": "371a15a37ad6",
-    "stand": "81-20-mf-2026.9"
+    "rev": 2,
+    "fp": "28fbf9d56d20",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "28fbf9d56d20"
    }
   },
   "MF-Z05": {
    "MF-Z05-R1": {
     "sachverhalt": "1d1067ace4bf",
-    "rev": 1,
-    "fp": "f5939eb4c038",
-    "stand": "81-20-mf-2026.9"
+    "rev": 2,
+    "fp": "351ea40deec1",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "351ea40deec1"
    },
    "MF-Z05-R2": {
     "sachverhalt": "44fe151975b7",
-    "rev": 1,
-    "fp": "b3af74f2e214",
-    "stand": "81-20-mf-2026.9"
+    "rev": 2,
+    "fp": "1c7a1bf9e771",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "1c7a1bf9e771"
    },
    "MF-Z05-R3": {
     "sachverhalt": "08d3bfca2727",
-    "rev": 1,
-    "fp": "526bcc691da7",
-    "stand": "81-20-mf-2026.9"
+    "rev": 2,
+    "fp": "4c8b234df3f4",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "4c8b234df3f4"
    }
   },
   "MF-Z06": {
    "MF-Z06-R1": {
     "sachverhalt": "27826b9d633e",
-    "rev": 1,
-    "fp": "f0e6f2eda78f",
-    "stand": "81-20-mf-2026.9"
+    "rev": 2,
+    "fp": "2aa93db0ff37",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "2aa93db0ff37"
    },
    "MF-Z06-R2": {
     "sachverhalt": "2796ff2d13fa",
     "rev": 2,
     "fp": "478aa6d0718a",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "478aa6d0718a"
    },
    "MF-Z06-R3": {
     "sachverhalt": "bf897a451e05",
-    "rev": 1,
-    "fp": "254d03829a7c",
-    "stand": "81-20-mf-2026.9"
+    "rev": 2,
+    "fp": "e64e9bbdcb5f",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "e64e9bbdcb5f"
    },
    "MF-Z06-R4": {
     "sachverhalt": "a10da578487c",
     "rev": 1,
     "fp": "c02f36c1a4f7",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "c02f36c1a4f7"
    }
   },
   "MF-Z07": {
    "MF-Z07-R1": {
     "sachverhalt": "0eeb3ada4d08",
-    "rev": 1,
-    "fp": "f485979014d4",
-    "stand": "81-20-mf-2026.9"
+    "rev": 4,
+    "fp": "5ab326108c91",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "5ab326108c91"
    },
    "MF-Z07-R2": {
     "sachverhalt": "982cbb34ef74",
-    "rev": 1,
-    "fp": "5cc800da3e75",
-    "stand": "81-20-mf-2026.9"
+    "rev": 4,
+    "fp": "febbde7350ef",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "febbde7350ef"
    },
    "MF-Z07-R3": {
     "sachverhalt": "9762c08f41e5",
-    "rev": 1,
-    "fp": "8b0d926ea7e7",
-    "stand": "81-20-mf-2026.9"
+    "rev": 4,
+    "fp": "3f7da73f5f02",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "3f7da73f5f02"
    },
    "MF-Z07-R4": {
     "sachverhalt": "b9840cbf61b7",
-    "rev": 1,
-    "fp": "d968d79af23b",
-    "stand": "81-20-mf-2026.9"
+    "rev": 4,
+    "fp": "a186d4ddb91e",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "a186d4ddb91e"
    },
    "MF-Z07-R5": {
     "sachverhalt": "f15ef257bbe3",
     "rev": 1,
     "fp": "cdd684d1d5d7",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.9",
+    "stillgelegt": true
+   },
+   "MF-Z07-R6": {
+    "sachverhalt": "d4f688f9e560",
+    "rev": 3,
+    "fp": "d263991cb0b7",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "d263991cb0b7"
+   },
+   "MF-Z07-R7": {
+    "sachverhalt": "b4b7a74e9cc2",
+    "rev": 3,
+    "fp": "56ea85332233",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "56ea85332233"
    }
   },
   "MF-Z08": {
@@ -190,28 +245,29 @@
     "sachverhalt": "b125d61bc55a",
     "rev": 1,
     "fp": "06c2c6503537",
-    "stand": "81-20-mf-2026.9",
+    "stand": "81-20-mf-2026.10",
     "fp_verifiziert": "06c2c6503537"
    },
    "MF-Z08-R2": {
     "sachverhalt": "c827dccc0765",
     "rev": 1,
     "fp": "c0165f07059a",
-    "stand": "81-20-mf-2026.9",
+    "stand": "81-20-mf-2026.10",
     "fp_verifiziert": "c0165f07059a"
    },
    "MF-Z08-R3": {
     "sachverhalt": "6a1bd8ceaaae",
     "rev": 1,
     "fp": "0de9fb29d427",
-    "stand": "81-20-mf-2026.9",
+    "stand": "81-20-mf-2026.10",
     "fp_verifiziert": "0de9fb29d427"
    },
    "MF-Z08-R4": {
     "sachverhalt": "30bded01b75d",
     "rev": 1,
     "fp": "48e28d02490a",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "48e28d02490a"
    }
   },
   "MF-Z09": {
@@ -219,97 +275,117 @@
     "sachverhalt": "4d978d12824f",
     "rev": 1,
     "fp": "dba254d3fd36",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "dba254d3fd36"
    },
    "MF-Z09-R2": {
     "sachverhalt": "5e30ce1cc49f",
-    "rev": 2,
-    "fp": "a3a166484844",
-    "stand": "81-20-mf-2026.9"
+    "rev": 3,
+    "fp": "5baaad80bcac",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "5baaad80bcac"
    },
    "MF-Z09-R3": {
     "sachverhalt": "8a9b682e019f",
     "rev": 1,
     "fp": "594722e64ee2",
-    "stand": "81-20-mf-2026.9",
+    "stand": "81-20-mf-2026.10",
     "fp_verifiziert": "594722e64ee2"
    },
    "MF-Z09-R4": {
     "sachverhalt": "b8dab03202e2",
     "rev": 1,
     "fp": "a1dfaaaa7946",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "a1dfaaaa7946"
    }
   },
   "MF-M01": {
    "MF-M01-R1": {
     "sachverhalt": "1250f49afb60",
-    "rev": 1,
-    "fp": "3aed5208c5a3",
-    "stand": "81-20-mf-2026.9"
+    "rev": 2,
+    "fp": "cb377f971789",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "cb377f971789"
    },
    "MF-M01-R2": {
     "sachverhalt": "d8ee0d4de1e3",
     "rev": 1,
     "fp": "bc2e35aa0dd9",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "bc2e35aa0dd9"
    },
    "MF-M01-R3": {
     "sachverhalt": "410aaba85ab2",
     "rev": 1,
     "fp": "bdb469c2f80f",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "bdb469c2f80f"
    },
    "MF-M01-R4": {
     "sachverhalt": "6b98d2ca9f47",
-    "rev": 2,
-    "fp": "05d04cb225a4",
-    "stand": "81-20-mf-2026.9"
+    "rev": 3,
+    "fp": "42529798d27b",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "42529798d27b"
    },
    "MF-M01-R5": {
     "sachverhalt": "6dc42f1a7170",
     "rev": 1,
     "fp": "2709d685a836",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "2709d685a836"
    }
   },
   "MF-M02": {
    "MF-M02-R1": {
     "sachverhalt": "c91e78879a91",
-    "rev": 1,
-    "fp": "8b0eb47c9073",
-    "stand": "81-20-mf-2026.9"
+    "rev": 3,
+    "fp": "ad3091438288",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "ad3091438288"
    },
    "MF-M02-R2": {
     "sachverhalt": "62009e077495",
-    "rev": 1,
-    "fp": "be1675d4d67e",
-    "stand": "81-20-mf-2026.9"
+    "rev": 2,
+    "fp": "e2bb4c2e3b77",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "e2bb4c2e3b77"
    },
    "MF-M02-R3": {
     "sachverhalt": "b6f868e0e38e",
-    "rev": 1,
-    "fp": "4b85900f9e65",
-    "stand": "81-20-mf-2026.9"
+    "rev": 2,
+    "fp": "f409d99d74c5",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "f409d99d74c5"
    },
    "MF-M02-R4": {
     "sachverhalt": "5acbabbc1ccf",
-    "rev": 1,
-    "fp": "c201cdb194ed",
-    "stand": "81-20-mf-2026.9"
+    "rev": 2,
+    "fp": "a3f504fc0055",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "a3f504fc0055"
    },
    "MF-M02-R5": {
     "sachverhalt": "f3bcd98406eb",
-    "rev": 1,
-    "fp": "78cfb9712035",
-    "stand": "81-20-mf-2026.9",
-    "fp_verifiziert": "78cfb9712035"
+    "rev": 4,
+    "fp": "65c91c07ee6b",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "65c91c07ee6b"
    },
    "MF-M02-R6": {
     "sachverhalt": "c48de3a7c55e",
+    "rev": 2,
+    "fp": "b6265df2db13",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "b6265df2db13"
+   },
+   "MF-M02-R7": {
+    "sachverhalt": "b320d44f6a6c",
     "rev": 1,
-    "fp": "603997be7183",
-    "stand": "81-20-mf-2026.9"
+    "fp": "396e9b54b926",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "396e9b54b926"
    }
   },
   "MF-M03": {
@@ -317,57 +393,66 @@
     "sachverhalt": "a76bfb669288",
     "rev": 1,
     "fp": "bc92dbd3f519",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "bc92dbd3f519"
    },
    "MF-M03-R2": {
     "sachverhalt": "1ececb32dcfe",
     "rev": 1,
     "fp": "f69bcc665c49",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "f69bcc665c49"
    },
    "MF-M03-R3": {
     "sachverhalt": "a558c75eb348",
     "rev": 1,
     "fp": "09ae0942b522",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "09ae0942b522"
    },
    "MF-M03-R4": {
     "sachverhalt": "bf7b7afdc95f",
     "rev": 1,
     "fp": "7ccf8dac8b92",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "7ccf8dac8b92"
    },
    "MF-M03-R5": {
     "sachverhalt": "9277fc592ec1",
     "rev": 1,
     "fp": "b06287e70dd6",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "b06287e70dd6"
    }
   },
   "MF-M04": {
    "MF-M04-R1": {
     "sachverhalt": "5fdf77c8efd8",
-    "rev": 1,
-    "fp": "abc385ac9d40",
-    "stand": "81-20-mf-2026.9"
+    "rev": 2,
+    "fp": "94b0ccf2977a",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "94b0ccf2977a"
    },
    "MF-M04-R2": {
     "sachverhalt": "42d77bbc0f83",
     "rev": 1,
     "fp": "24c92d6faf91",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "24c92d6faf91"
    },
    "MF-M04-R3": {
     "sachverhalt": "aa34e0966a77",
     "rev": 1,
     "fp": "e5386cc48685",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "e5386cc48685"
    },
    "MF-M04-R4": {
     "sachverhalt": "15d13e9e82a5",
     "rev": 1,
     "fp": "fba35935274b",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "fba35935274b"
    }
   },
   "MF-M05": {
@@ -375,25 +460,29 @@
     "sachverhalt": "1a5dd80ba2ef",
     "rev": 1,
     "fp": "0098288bebf4",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "0098288bebf4"
    },
    "MF-M05-R2": {
     "sachverhalt": "b9237a69af38",
     "rev": 1,
     "fp": "dc93a79fea5b",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "dc93a79fea5b"
    },
    "MF-M05-R3": {
     "sachverhalt": "adb92b883a9a",
     "rev": 1,
     "fp": "cc4f37723f19",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "cc4f37723f19"
    },
    "MF-M05-R4": {
     "sachverhalt": "a1c7e3615a23",
     "rev": 1,
     "fp": "49709a02e23b",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "49709a02e23b"
    }
   },
   "MF-M06": {
@@ -401,25 +490,29 @@
     "sachverhalt": "5eae50f2bfaa",
     "rev": 1,
     "fp": "b8668e7775f1",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "b8668e7775f1"
    },
    "MF-M06-R2": {
     "sachverhalt": "f064446ffd69",
-    "rev": 1,
-    "fp": "2fd3f593d67a",
-    "stand": "81-20-mf-2026.9"
+    "rev": 2,
+    "fp": "1eb0acb7cf04",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "1eb0acb7cf04"
    },
    "MF-M06-R3": {
     "sachverhalt": "6b38980037b7",
     "rev": 1,
     "fp": "72ad0584dc33",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "72ad0584dc33"
    },
    "MF-M06-R4": {
     "sachverhalt": "8552c9446c04",
     "rev": 1,
     "fp": "220e140cecad",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "220e140cecad"
    }
   },
   "MF-M07": {
@@ -427,26 +520,29 @@
     "sachverhalt": "0bd0e043fe2f",
     "rev": 1,
     "fp": "96679fde9863",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "96679fde9863"
    },
    "MF-M07-R2": {
     "sachverhalt": "06a626643d31",
     "rev": 1,
     "fp": "086a9efe08ab",
-    "stand": "81-20-mf-2026.9",
+    "stand": "81-20-mf-2026.10",
     "fp_verifiziert": "086a9efe08ab"
    },
    "MF-M07-R3": {
     "sachverhalt": "ad7f4634cabc",
     "rev": 1,
     "fp": "fb91b2ead3a9",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "fb91b2ead3a9"
    },
    "MF-M07-R4": {
     "sachverhalt": "24df2c03804c",
     "rev": 1,
     "fp": "83da71afc6fe",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "83da71afc6fe"
    }
   },
   "MF-M08": {
@@ -454,20 +550,22 @@
     "sachverhalt": "2368dc2e0b15",
     "rev": 2,
     "fp": "66ddb40daeae",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "66ddb40daeae"
    },
    "MF-M08-R2": {
     "sachverhalt": "74b87bd89b8c",
-    "rev": 2,
-    "fp": "3fd726b9c02f",
-    "stand": "81-20-mf-2026.9",
-    "fp_verifiziert": "50ab0c973383"
+    "rev": 3,
+    "fp": "6d47561fca27",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "6d47561fca27"
    },
    "MF-M08-R3": {
     "sachverhalt": "5ca8f1ed3f4a",
     "rev": 2,
     "fp": "6071d9773d9f",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "6071d9773d9f"
    }
   },
   "MF-M09": {
@@ -475,49 +573,54 @@
     "sachverhalt": "f1ed3cd5e302",
     "rev": 1,
     "fp": "169e0cd567f2",
-    "stand": "81-20-mf-2026.9",
+    "stand": "81-20-mf-2026.10",
     "fp_verifiziert": "169e0cd567f2"
    },
    "MF-M09-R2": {
     "sachverhalt": "9a4e930fa4fd",
     "rev": 1,
     "fp": "d82b59a1dc20",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "d82b59a1dc20"
    }
   },
   "MF-M10": {
    "MF-M10-R1": {
     "sachverhalt": "80b74c2b215c",
-    "rev": 1,
-    "fp": "281d8f827e16",
-    "stand": "81-20-mf-2026.9",
-    "fp_verifiziert": "281d8f827e16"
+    "rev": 2,
+    "fp": "fbdd06d7c028",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "fbdd06d7c028"
    },
    "MF-M10-R2": {
     "sachverhalt": "32361feb5e6e",
-    "rev": 2,
-    "fp": "1aae9718966a",
-    "stand": "81-20-mf-2026.9"
+    "rev": 3,
+    "fp": "50c999e17516",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "50c999e17516"
    },
    "MF-M10-R3": {
     "sachverhalt": "43a7446710c7",
-    "rev": 1,
-    "fp": "821ea8de9690",
-    "stand": "81-20-mf-2026.9"
+    "rev": 2,
+    "fp": "c7c828e90ee1",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "c7c828e90ee1"
    }
   },
   "MF-M11": {
    "MF-M11-R1": {
     "sachverhalt": "6099ed222cab",
-    "rev": 1,
-    "fp": "f4fdfb50ae61",
-    "stand": "81-20-mf-2026.9"
+    "rev": 2,
+    "fp": "33a31fef99b5",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "33a31fef99b5"
    },
    "MF-M11-R2": {
     "sachverhalt": "2785cdc22395",
     "rev": 1,
     "fp": "86767797103a",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "86767797103a"
    }
   },
   "MF-M12": {
@@ -525,131 +628,177 @@
     "sachverhalt": "9c99e2f984e3",
     "rev": 1,
     "fp": "f8c1429792e9",
-    "stand": "81-20-mf-2026.9",
+    "stand": "81-20-mf-2026.10",
     "fp_verifiziert": "f8c1429792e9"
    },
    "MF-M12-R2": {
     "sachverhalt": "f8681e641fb4",
     "rev": 1,
     "fp": "1ba873d2e3ac",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "1ba873d2e3ac"
    }
   },
   "MF-M13": {
    "MF-M13-R1": {
     "sachverhalt": "13daa67cd1e8",
-    "rev": 1,
-    "fp": "16437b996f74",
-    "stand": "81-20-mf-2026.9"
+    "rev": 2,
+    "fp": "a51aa1d7f0cc",
+    "stand": "81-20-mf-2026.10",
+    "stillgelegt": true
    },
    "MF-M13-R2": {
     "sachverhalt": "387415f64b1b",
-    "rev": 1,
-    "fp": "d92ea8f83afc",
-    "stand": "81-20-mf-2026.9"
+    "rev": 3,
+    "fp": "fceadad4149f",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "fceadad4149f"
    },
    "MF-M13-R3": {
     "sachverhalt": "5080322de940",
-    "rev": 2,
-    "fp": "d5160d0bdfb1",
-    "stand": "81-20-mf-2026.9"
+    "rev": 4,
+    "fp": "082b46c0152b",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "082b46c0152b"
    },
    "MF-M13-R4": {
     "sachverhalt": "94d42a741bf1",
-    "rev": 2,
-    "fp": "8ba5ccab5704",
-    "stand": "81-20-mf-2026.9"
+    "rev": 4,
+    "fp": "b2c3a665f98c",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "b2c3a665f98c"
    },
    "MF-M13-R5": {
     "sachverhalt": "3d19cf957ffe",
-    "rev": 1,
-    "fp": "74b3631cf604",
-    "stand": "81-20-mf-2026.9"
+    "rev": 3,
+    "fp": "f4ed36d79611",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "f4ed36d79611"
    },
    "MF-M13-R6": {
     "sachverhalt": "9d2d1ced14e5",
+    "rev": 3,
+    "fp": "7277706c8aa4",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "7277706c8aa4"
+   },
+   "MF-M13-R7": {
+    "sachverhalt": "fa899428903e",
+    "rev": 3,
+    "fp": "35aca432fbd5",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "35aca432fbd5"
+   },
+   "MF-M13-R8": {
+    "sachverhalt": "f13c8938c280",
+    "rev": 2,
+    "fp": "f4207ade6590",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "f4207ade6590"
+   },
+   "MF-M13-R9": {
+    "sachverhalt": "c4cbd4605af0",
     "rev": 1,
-    "fp": "2c28ca732389",
-    "stand": "81-20-mf-2026.9"
+    "fp": "3edc2cd280ed",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "3edc2cd280ed"
+   },
+   "MF-M13-R10": {
+    "sachverhalt": "e597f38b961d",
+    "rev": 1,
+    "fp": "f3b493203f75",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "f3b493203f75"
    }
   },
   "MF-M14": {
    "MF-M14-R1": {
     "sachverhalt": "ef9b6ddf8122",
-    "rev": 1,
-    "fp": "bb2bf01170ca",
-    "stand": "81-20-mf-2026.9"
+    "rev": 2,
+    "fp": "2814c8cc76a3",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "2814c8cc76a3"
    },
    "MF-M14-R2": {
     "sachverhalt": "21ba1559c41c",
     "rev": 1,
     "fp": "b82bba03952b",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "b82bba03952b"
    },
    "MF-M14-R3": {
     "sachverhalt": "392086bc38de",
-    "rev": 1,
-    "fp": "d6cfb1bd9aa2",
-    "stand": "81-20-mf-2026.9"
+    "rev": 2,
+    "fp": "45b761af2f74",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "45b761af2f74"
    },
    "MF-M14-R4": {
     "sachverhalt": "068f03cfbbed",
     "rev": 1,
     "fp": "6fb175dd9c57",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "6fb175dd9c57"
    }
   },
   "MF-M15": {
    "MF-M15-R1": {
     "sachverhalt": "6ae08b0fb075",
-    "rev": 1,
-    "fp": "ba9694e372a6",
-    "stand": "81-20-mf-2026.9"
+    "rev": 2,
+    "fp": "6f7cbbc4fc0b",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "6f7cbbc4fc0b"
    },
    "MF-M15-R2": {
     "sachverhalt": "83bf931be3e9",
-    "rev": 1,
-    "fp": "8ab71bfc53a5",
-    "stand": "81-20-mf-2026.9"
+    "rev": 2,
+    "fp": "a5cb0b954561",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "a5cb0b954561"
    },
    "MF-M15-R3": {
     "sachverhalt": "af07b385a93b",
-    "rev": 1,
-    "fp": "21a0ae9fb68c",
-    "stand": "81-20-mf-2026.9"
+    "rev": 2,
+    "fp": "8da32aedd99f",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "8da32aedd99f"
    },
    "MF-M15-R4": {
     "sachverhalt": "3f4d2888b0bf",
-    "rev": 1,
-    "fp": "bd3f04c65275",
-    "stand": "81-20-mf-2026.9"
+    "rev": 2,
+    "fp": "7af4b9d9aa0f",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "7af4b9d9aa0f"
    }
   },
   "MF-M16": {
    "MF-M16-R1": {
     "sachverhalt": "818fcd36f450",
-    "rev": 1,
-    "fp": "fe94a30fa301",
-    "stand": "81-20-mf-2026.9",
-    "fp_verifiziert": "fe94a30fa301"
+    "rev": 2,
+    "fp": "170f76243eeb",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "170f76243eeb"
    },
    "MF-M16-R2": {
     "sachverhalt": "0e87478ad736",
-    "rev": 1,
-    "fp": "da67fbdd0f48",
-    "stand": "81-20-mf-2026.9"
+    "rev": 2,
+    "fp": "278c720e01ad",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "278c720e01ad"
    },
    "MF-M16-R3": {
     "sachverhalt": "49b42b94fb94",
-    "rev": 1,
-    "fp": "290fe3504867",
-    "stand": "81-20-mf-2026.9"
+    "rev": 2,
+    "fp": "44284b16d77b",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "44284b16d77b"
    },
    "MF-M16-R4": {
     "sachverhalt": "31bf482c4b66",
-    "rev": 1,
-    "fp": "7cb1ef741988",
-    "stand": "81-20-mf-2026.9"
+    "rev": 2,
+    "fp": "e6fbca0668cf",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "e6fbca0668cf"
    }
   },
   "MF-M17": {
@@ -657,57 +806,66 @@
     "sachverhalt": "3229aafbba48",
     "rev": 1,
     "fp": "26e5c42482ec",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "stillgelegt": true
    },
    "MF-M17-R2": {
     "sachverhalt": "b9a111c393a6",
     "rev": 1,
     "fp": "02aa4a694251",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "02aa4a694251"
    },
    "MF-M17-R3": {
     "sachverhalt": "f26113ba603a",
-    "rev": 1,
-    "fp": "90dfbf400dd9",
-    "stand": "81-20-mf-2026.9"
+    "rev": 2,
+    "fp": "7962e4e4eca4",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "7962e4e4eca4"
    },
    "MF-M17-R4": {
     "sachverhalt": "771cbbc1ed04",
     "rev": 1,
     "fp": "a68d4735cb15",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "a68d4735cb15"
    },
    "MF-M17-R5": {
     "sachverhalt": "bfd70c8c5590",
     "rev": 1,
     "fp": "e68eaa88b6b2",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "e68eaa88b6b2"
    },
    "MF-M17-R6": {
     "sachverhalt": "9065d02a5b79",
     "rev": 1,
     "fp": "a8df9c425beb",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "a8df9c425beb"
    }
   },
   "MF-M18": {
    "MF-M18-R1": {
     "sachverhalt": "5e6e3aa7feb1",
-    "rev": 1,
-    "fp": "e919ac84a5d1",
-    "stand": "81-20-mf-2026.9"
+    "rev": 2,
+    "fp": "669260e8f343",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "669260e8f343"
    },
    "MF-M18-R2": {
     "sachverhalt": "f342d3252093",
     "rev": 1,
     "fp": "73514f46be76",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "73514f46be76"
    },
    "MF-M18-R3": {
     "sachverhalt": "d63d26ff04cb",
     "rev": 1,
     "fp": "3c171cfc1b12",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "3c171cfc1b12"
    }
   },
   "MF-M19": {
@@ -715,13 +873,15 @@
     "sachverhalt": "2bed573e6a5b",
     "rev": 1,
     "fp": "a8b2b1aa9dc2",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "a8b2b1aa9dc2"
    },
    "MF-M19-R2": {
     "sachverhalt": "d08cad5126fc",
     "rev": 1,
     "fp": "bd4029fccd45",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "bd4029fccd45"
    }
   },
   "MF-M20": {
@@ -729,13 +889,15 @@
     "sachverhalt": "24dbad173a79",
     "rev": 2,
     "fp": "5a5f88bd5951",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "5a5f88bd5951"
    },
    "MF-M20-R2": {
     "sachverhalt": "77c54d49aafb",
     "rev": 1,
     "fp": "4ec85d288826",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "4ec85d288826"
    }
   },
   "MF-M21": {
@@ -743,35 +905,35 @@
     "sachverhalt": "0775987191ba",
     "rev": 1,
     "fp": "308fae0bdee7",
-    "stand": "81-20-mf-2026.9",
+    "stand": "81-20-mf-2026.10",
     "fp_verifiziert": "308fae0bdee7"
    },
    "MF-M21-R2": {
     "sachverhalt": "6557831e9a84",
     "rev": 1,
     "fp": "0eab1a75e577",
-    "stand": "81-20-mf-2026.9",
+    "stand": "81-20-mf-2026.10",
     "fp_verifiziert": "0eab1a75e577"
    },
    "MF-M21-R3": {
     "sachverhalt": "2c146181077a",
     "rev": 1,
     "fp": "21cc35c3b07c",
-    "stand": "81-20-mf-2026.9",
+    "stand": "81-20-mf-2026.10",
     "fp_verifiziert": "21cc35c3b07c"
    },
    "MF-M21-R4": {
     "sachverhalt": "b1b1775c611e",
     "rev": 1,
     "fp": "4c8eea2fd560",
-    "stand": "81-20-mf-2026.9",
+    "stand": "81-20-mf-2026.10",
     "fp_verifiziert": "4c8eea2fd560"
    },
    "MF-M21-R5": {
     "sachverhalt": "9869af53ba78",
     "rev": 1,
     "fp": "4c041f5b3206",
-    "stand": "81-20-mf-2026.9",
+    "stand": "81-20-mf-2026.10",
     "fp_verifiziert": "4c041f5b3206"
    }
   },
@@ -780,46 +942,52 @@
     "sachverhalt": "0304b84bd623",
     "rev": 1,
     "fp": "e803cb5fe4dc",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "e803cb5fe4dc"
    },
    "MF-T01-R2": {
     "sachverhalt": "2ecbc1692599",
     "rev": 2,
     "fp": "1556ac7d4014",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "1556ac7d4014"
    },
    "MF-T01-R3": {
     "sachverhalt": "94cdab3b5dd5",
     "rev": 1,
     "fp": "c45b222b2807",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "c45b222b2807"
    }
   },
   "MF-T02": {
    "MF-T02-R1": {
     "sachverhalt": "e08aa0014e82",
-    "rev": 1,
-    "fp": "2a9cf16696a1",
-    "stand": "81-20-mf-2026.9"
+    "rev": 2,
+    "fp": "97ce4e172cfa",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "97ce4e172cfa"
    },
    "MF-T02-R2": {
     "sachverhalt": "bb2c2bf90d07",
     "rev": 2,
     "fp": "6069b1f4974a",
-    "stand": "81-20-mf-2026.9",
-    "fp_verifiziert": "f5c600595aa2"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "6069b1f4974a"
    },
    "MF-T02-R3": {
     "sachverhalt": "9cb7dc04c479",
     "rev": 1,
     "fp": "6942d77f3945",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "6942d77f3945"
    },
    "MF-T02-R4": {
     "sachverhalt": "868d8500a34e",
     "rev": 1,
     "fp": "478bbbcb0450",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "478bbbcb0450"
    }
   },
   "MF-T03": {
@@ -827,19 +995,22 @@
     "sachverhalt": "f9433e618d3e",
     "rev": 2,
     "fp": "00a8b10bcf65",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "00a8b10bcf65"
    },
    "MF-T03-R2": {
     "sachverhalt": "d6244301f2f5",
     "rev": 2,
     "fp": "eddd0df2d413",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "eddd0df2d413"
    },
    "MF-T03-R3": {
     "sachverhalt": "e6d4bfbe5bed",
     "rev": 1,
     "fp": "a5e24f4e54c4",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "a5e24f4e54c4"
    }
   },
   "MF-T04": {
@@ -859,34 +1030,45 @@
    },
    "MF-T04-R3": {
     "sachverhalt": "2f9ef77e838e",
-    "rev": 2,
-    "fp": "1f232afdc47a",
-    "stand": "81-20-mf-2026.9",
-    "fp_verifiziert": "e1c8d3ef3c87"
+    "rev": 5,
+    "fp": "6bb784158560",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "6bb784158560"
    },
    "MF-T04-R4": {
     "sachverhalt": "fbf170c1c0a0",
-    "rev": 2,
-    "fp": "b782c96ffbc3",
-    "stand": "81-20-mf-2026.9"
+    "rev": 5,
+    "fp": "db7ccdf5747a",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "db7ccdf5747a"
    },
    "MF-T04-R5": {
     "sachverhalt": "ce03d90674d4",
-    "rev": 1,
-    "fp": "d345988b4fc1",
-    "stand": "81-20-mf-2026.9"
+    "rev": 4,
+    "fp": "9e6060d25b0d",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "9e6060d25b0d"
    },
    "MF-T04-R6": {
     "sachverhalt": "a7b31c3794f4",
-    "rev": 1,
-    "fp": "e261305bf564",
-    "stand": "81-20-mf-2026.9"
+    "rev": 4,
+    "fp": "ad06b459ec2a",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "ad06b459ec2a"
    },
    "MF-T04-R7": {
     "sachverhalt": "d2b6483029c6",
+    "rev": 3,
+    "fp": "d24ec550767c",
+    "stand": "81-20-mf-2026.10",
+    "stillgelegt": true
+   },
+   "MF-T04-R8": {
+    "sachverhalt": "97dd4d9e1fe8",
     "rev": 1,
-    "fp": "f1e82ac6e260",
-    "stand": "81-20-mf-2026.9"
+    "fp": "27792ec05861",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "27792ec05861"
    }
   },
   "MF-T05": {
@@ -894,35 +1076,38 @@
     "sachverhalt": "58bb48444e54",
     "rev": 1,
     "fp": "089159867bfb",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "089159867bfb"
    },
    "MF-T05-R2": {
     "sachverhalt": "5fe5b80eb9d5",
     "rev": 1,
     "fp": "4eef33455082",
-    "stand": "81-20-mf-2026.9",
+    "stand": "81-20-mf-2026.10",
     "fp_verifiziert": "4eef33455082"
    },
    "MF-T05-R3": {
     "sachverhalt": "22efa0366656",
     "rev": 1,
     "fp": "3bf7be6b8282",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "3bf7be6b8282"
    }
   },
   "MF-T06": {
    "MF-T06-R1": {
     "sachverhalt": "cd9df1087da5",
-    "rev": 2,
-    "fp": "bfb69635f006",
-    "stand": "81-20-mf-2026.9"
+    "rev": 3,
+    "fp": "2da49e5e8b1d",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "2da49e5e8b1d"
    },
    "MF-T06-R2": {
     "sachverhalt": "d00354b2513d",
-    "rev": 2,
-    "fp": "64c70367e64c",
-    "stand": "81-20-mf-2026.9",
-    "fp_verifiziert": "504ea6b4f88c"
+    "rev": 4,
+    "fp": "75e280f5371a",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "75e280f5371a"
    },
    "MF-T06-R3": {
     "sachverhalt": "fe656aebd8f1",
@@ -940,53 +1125,81 @@
    },
    "MF-T06-R5": {
     "sachverhalt": "3fb50cb3155b",
-    "rev": 2,
-    "fp": "d0fee1f1ab9f",
-    "stand": "81-20-mf-2026.9"
+    "rev": 3,
+    "fp": "5369de296f48",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "5369de296f48"
    },
    "MF-T06-R6": {
     "sachverhalt": "7d2b3c1fd05a",
     "rev": 2,
     "fp": "06ce991ef0d4",
     "stand": "81-20-mf-2026.9",
-    "fp_verifiziert": "8a5a6e380a4f"
+    "fp_verifiziert": "8a5a6e380a4f",
+    "stillgelegt": true
    },
    "MF-T06-R7": {
     "sachverhalt": "e17aeeedf172",
-    "rev": 2,
-    "fp": "5368074e86bb",
-    "stand": "81-20-mf-2026.9",
-    "fp_verifiziert": "2e76cda433bd"
+    "rev": 3,
+    "fp": "1ef4f73436fd",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "1ef4f73436fd"
    },
    "MF-T06-R8": {
     "sachverhalt": "7caa12bd2e56",
-    "rev": 2,
-    "fp": "3636bfeba809",
-    "stand": "81-20-mf-2026.9"
+    "rev": 3,
+    "fp": "ab6d024913f0",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "ab6d024913f0"
    },
    "MF-T06-R9": {
     "sachverhalt": "31b2be7067f3",
-    "rev": 1,
-    "fp": "683b8f5b9c89",
-    "stand": "81-20-mf-2026.9"
+    "rev": 2,
+    "fp": "e4925874634e",
+    "stand": "81-20-mf-2026.10",
+    "stillgelegt": true
    },
    "MF-T06-R10": {
     "sachverhalt": "4f8a23de9f39",
-    "rev": 1,
-    "fp": "72b01d963214",
-    "stand": "81-20-mf-2026.9"
+    "rev": 2,
+    "fp": "a35cc70ba442",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "a35cc70ba442"
    },
    "MF-T06-R11": {
     "sachverhalt": "49bf88a83bf6",
-    "rev": 1,
-    "fp": "94c6b31b71c8",
-    "stand": "81-20-mf-2026.9"
+    "rev": 3,
+    "fp": "9226f4e7047a",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "9226f4e7047a"
    },
    "MF-T06-R12": {
     "sachverhalt": "b24b3ebf6fdd",
     "rev": 1,
     "fp": "0dc2916842ff",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.9",
+    "stillgelegt": true
+   },
+   "MF-T06-R13": {
+    "sachverhalt": "e8c5d7cea453",
+    "rev": 1,
+    "fp": "a9f2ced6165c",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "a9f2ced6165c"
+   },
+   "MF-T06-R14": {
+    "sachverhalt": "02d172569bd1",
+    "rev": 1,
+    "fp": "d92abc1501e2",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "d92abc1501e2"
+   },
+   "MF-T06-R15": {
+    "sachverhalt": "18674feee4f8",
+    "rev": 1,
+    "fp": "d74633c56285",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "d74633c56285"
    }
   },
   "MF-T07": {
@@ -994,21 +1207,21 @@
     "sachverhalt": "1341998b30f7",
     "rev": 1,
     "fp": "c9531b2274d6",
-    "stand": "81-20-mf-2026.9",
+    "stand": "81-20-mf-2026.10",
     "fp_verifiziert": "c9531b2274d6"
    },
    "MF-T07-R2": {
     "sachverhalt": "820bea64fa02",
     "rev": 1,
     "fp": "2df6be9968ee",
-    "stand": "81-20-mf-2026.9",
+    "stand": "81-20-mf-2026.10",
     "fp_verifiziert": "2df6be9968ee"
    },
    "MF-T07-R3": {
     "sachverhalt": "a16c6c42e648",
     "rev": 1,
     "fp": "8bfc16eef9aa",
-    "stand": "81-20-mf-2026.9",
+    "stand": "81-20-mf-2026.10",
     "fp_verifiziert": "8bfc16eef9aa"
    }
   },
@@ -1017,28 +1230,28 @@
     "sachverhalt": "0ecfd32236de",
     "rev": 1,
     "fp": "f0e682e08375",
-    "stand": "81-20-mf-2026.9",
+    "stand": "81-20-mf-2026.10",
     "fp_verifiziert": "f0e682e08375"
    },
    "MF-T08-R2": {
     "sachverhalt": "e23e95ef2942",
     "rev": 1,
     "fp": "15e7d9a02d93",
-    "stand": "81-20-mf-2026.9",
+    "stand": "81-20-mf-2026.10",
     "fp_verifiziert": "15e7d9a02d93"
    },
    "MF-T08-R3": {
     "sachverhalt": "928b98d64423",
     "rev": 1,
     "fp": "531cd936716a",
-    "stand": "81-20-mf-2026.9",
+    "stand": "81-20-mf-2026.10",
     "fp_verifiziert": "531cd936716a"
    },
    "MF-T08-R4": {
     "sachverhalt": "26d30dc522c7",
     "rev": 1,
     "fp": "099830c03958",
-    "stand": "81-20-mf-2026.9",
+    "stand": "81-20-mf-2026.10",
     "fp_verifiziert": "099830c03958"
    }
   },
@@ -1047,169 +1260,193 @@
     "sachverhalt": "91000f31ec32",
     "rev": 1,
     "fp": "e9d81704c2dc",
-    "stand": "81-20-mf-2026.9",
+    "stand": "81-20-mf-2026.10",
     "fp_verifiziert": "e9d81704c2dc"
    },
    "MF-T09-R2": {
     "sachverhalt": "598e3764354a",
     "rev": 1,
     "fp": "624f5181a4f9",
-    "stand": "81-20-mf-2026.9",
+    "stand": "81-20-mf-2026.10",
     "fp_verifiziert": "624f5181a4f9"
    },
    "MF-T09-R3": {
     "sachverhalt": "af342d845b14",
     "rev": 1,
     "fp": "55caae680676",
-    "stand": "81-20-mf-2026.9",
+    "stand": "81-20-mf-2026.10",
     "fp_verifiziert": "55caae680676"
    }
   },
   "MF-K01": {
    "MF-K01-R1": {
     "sachverhalt": "a5783f6953b3",
-    "rev": 2,
-    "fp": "2eb575990429",
-    "stand": "81-20-mf-2026.9"
+    "rev": 3,
+    "fp": "2628e4a938a9",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "2628e4a938a9"
    },
    "MF-K01-R2": {
     "sachverhalt": "96f0bef7304a",
-    "rev": 2,
-    "fp": "bdf7d74c7ccb",
-    "stand": "81-20-mf-2026.9"
+    "rev": 3,
+    "fp": "7e7d9875238b",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "7e7d9875238b"
    },
    "MF-K01-R3": {
     "sachverhalt": "25ddb24abc19",
-    "rev": 2,
-    "fp": "3fd91d39e9e8",
-    "stand": "81-20-mf-2026.9"
+    "rev": 3,
+    "fp": "c97509f13d07",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "c97509f13d07"
    },
    "MF-K01-R4": {
     "sachverhalt": "5f29085dedcb",
-    "rev": 2,
-    "fp": "84a824efc667",
-    "stand": "81-20-mf-2026.9"
+    "rev": 3,
+    "fp": "16dface83bf8",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "16dface83bf8"
    },
    "MF-K01-R5": {
     "sachverhalt": "faba17f98883",
-    "rev": 2,
-    "fp": "4b43a6b3fb87",
-    "stand": "81-20-mf-2026.9",
-    "fp_verifiziert": "c30d84cc3179"
+    "rev": 3,
+    "fp": "be0e6e3271f5",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "be0e6e3271f5"
    },
    "MF-K01-R6": {
     "sachverhalt": "22e8507f2e12",
-    "rev": 2,
-    "fp": "219473ce986b",
-    "stand": "81-20-mf-2026.9"
+    "rev": 3,
+    "fp": "624f9d009621",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "624f9d009621"
+   },
+   "MF-K01-R7": {
+    "sachverhalt": "144598123029",
+    "rev": 1,
+    "fp": "f3f9ed879d17",
+    "stand": "81-20-mf-2026.10",
+    "stillgelegt": true
    }
   },
   "MF-K02": {
    "MF-K02-R1": {
     "sachverhalt": "3bb1378a7dd0",
-    "rev": 2,
-    "fp": "96daa67c3331",
-    "stand": "81-20-mf-2026.9",
-    "fp_verifiziert": "b949343e473c"
+    "rev": 3,
+    "fp": "f8bfc41c7c90",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "f8bfc41c7c90"
    },
    "MF-K02-R2": {
     "sachverhalt": "07210bfd2190",
     "rev": 2,
     "fp": "a7a36f906f7f",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "a7a36f906f7f"
    },
    "MF-K02-R3": {
     "sachverhalt": "cf1933a46a30",
     "rev": 1,
     "fp": "f8f61728bcce",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "f8f61728bcce"
    }
   },
   "MF-K03": {
    "MF-K03-R1": {
     "sachverhalt": "49c9f9cbc251",
-    "rev": 3,
-    "fp": "0dc38833250c",
-    "stand": "81-20-mf-2026.9"
+    "rev": 4,
+    "fp": "2b0b81781487",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "2b0b81781487"
    },
    "MF-K03-R2": {
     "sachverhalt": "0e21c964c27c",
-    "rev": 3,
-    "fp": "ace8299d3359",
-    "stand": "81-20-mf-2026.9",
-    "fp_verifiziert": "bad45a0c7cc5"
+    "rev": 4,
+    "fp": "a3307e424b6d",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "a3307e424b6d"
    },
    "MF-K03-R3": {
     "sachverhalt": "556a4e9ea18e",
-    "rev": 3,
-    "fp": "1d1673189a36",
-    "stand": "81-20-mf-2026.9",
-    "fp_verifiziert": "fa526a956166"
+    "rev": 5,
+    "fp": "2f449f62b13a",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "2f449f62b13a"
    },
    "MF-K03-R4": {
     "sachverhalt": "23009dd6570f",
-    "rev": 2,
-    "fp": "4fa4b75dc44a",
-    "stand": "81-20-mf-2026.9"
+    "rev": 3,
+    "fp": "2a8cb8d44b6c",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "2a8cb8d44b6c"
    }
   },
   "MF-K04": {
    "MF-K04-R1": {
     "sachverhalt": "c348394f1eb5",
-    "rev": 3,
-    "fp": "d78d0a7cea6c",
-    "stand": "81-20-mf-2026.9"
+    "rev": 4,
+    "fp": "f57d6441ff70",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "f57d6441ff70"
    },
    "MF-K04-R2": {
     "sachverhalt": "2c47d896d40e",
-    "rev": 3,
-    "fp": "7ffec49c8e3b",
-    "stand": "81-20-mf-2026.9"
+    "rev": 4,
+    "fp": "a1b56d0a9e50",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "a1b56d0a9e50"
    },
    "MF-K04-R3": {
     "sachverhalt": "f77bae91a0b1",
-    "rev": 3,
-    "fp": "f60ff2156910",
-    "stand": "81-20-mf-2026.9"
+    "rev": 4,
+    "fp": "6cb9aba96ba4",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "6cb9aba96ba4"
    },
    "MF-K04-R4": {
     "sachverhalt": "70d4927b2369",
-    "rev": 2,
-    "fp": "f8bcf1b9e848",
-    "stand": "81-20-mf-2026.9"
+    "rev": 3,
+    "fp": "5fa4ff594e0d",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "5fa4ff594e0d"
    }
   },
   "MF-K05": {
    "MF-K05-R1": {
     "sachverhalt": "efa3d4a9b4ca",
-    "rev": 3,
-    "fp": "658e414aa520",
-    "stand": "81-20-mf-2026.9",
-    "fp_verifiziert": "6516bc9c99f1"
+    "rev": 4,
+    "fp": "5fc472e92931",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "5fc472e92931"
    },
    "MF-K05-R2": {
     "sachverhalt": "446550ffd087",
-    "rev": 3,
-    "fp": "cc6cbc6df333",
-    "stand": "81-20-mf-2026.9"
+    "rev": 4,
+    "fp": "16a64257545b",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "16a64257545b"
    },
    "MF-K05-R3": {
     "sachverhalt": "2fde6d3360b6",
-    "rev": 3,
-    "fp": "6fc774d4b993",
-    "stand": "81-20-mf-2026.9"
+    "rev": 4,
+    "fp": "c8c528ee082b",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "c8c528ee082b"
    },
    "MF-K05-R4": {
     "sachverhalt": "b5bbc5d68880",
-    "rev": 2,
-    "fp": "0ac11f64db63",
-    "stand": "81-20-mf-2026.9"
+    "rev": 3,
+    "fp": "b5aae02d5701",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "b5aae02d5701"
    },
    "MF-K05-R5": {
     "sachverhalt": "f3373a96a191",
-    "rev": 2,
-    "fp": "4a9af60c3b2b",
-    "stand": "81-20-mf-2026.9"
+    "rev": 4,
+    "fp": "cd9fa6c373ff",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "cd9fa6c373ff"
    }
   },
   "MF-K06": {
@@ -1217,84 +1454,110 @@
     "sachverhalt": "a804e13eb534",
     "rev": 1,
     "fp": "4b5e2eda9bcd",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "4b5e2eda9bcd"
    },
    "MF-K06-R2": {
     "sachverhalt": "8d33d110d999",
     "rev": 1,
     "fp": "ec452f863998",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "ec452f863998"
    },
    "MF-K06-R3": {
     "sachverhalt": "53669a1b8267",
     "rev": 1,
     "fp": "2d7c007ec168",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "2d7c007ec168"
    },
    "MF-K06-R4": {
     "sachverhalt": "b5d45091d298",
-    "rev": 1,
-    "fp": "85405ea659e5",
-    "stand": "81-20-mf-2026.9"
+    "rev": 2,
+    "fp": "13d11202368c",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "13d11202368c"
    },
    "MF-K06-R5": {
     "sachverhalt": "f34cb32e32b3",
     "rev": 1,
     "fp": "cd047a6310e0",
-    "stand": "81-20-mf-2026.9",
+    "stand": "81-20-mf-2026.10",
     "fp_verifiziert": "cd047a6310e0"
    },
    "MF-K06-R6": {
     "sachverhalt": "1c2e2d3daf98",
     "rev": 1,
     "fp": "c4e4aee9ccd6",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "c4e4aee9ccd6"
    }
   },
   "MF-K07": {
    "MF-K07-R1": {
     "sachverhalt": "25202af3c357",
-    "rev": 1,
-    "fp": "6b7af6a9447f",
-    "stand": "81-20-mf-2026.9"
+    "rev": 2,
+    "fp": "2f7256bd4186",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "2f7256bd4186"
    },
    "MF-K07-R2": {
     "sachverhalt": "f3754d7d7a5e",
-    "rev": 1,
-    "fp": "50802a0f73cd",
-    "stand": "81-20-mf-2026.9"
+    "rev": 2,
+    "fp": "9a447674816e",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "9a447674816e"
    },
    "MF-K07-R3": {
     "sachverhalt": "b1721b01f1a2",
-    "rev": 1,
-    "fp": "4434044252ed",
-    "stand": "81-20-mf-2026.9"
+    "rev": 2,
+    "fp": "fad9b826dcf6",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "fad9b826dcf6"
    },
    "MF-K07-R4": {
     "sachverhalt": "80d2cf61bb63",
     "rev": 1,
     "fp": "7ebd31ec069c",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "7ebd31ec069c"
    }
   },
   "MF-K08": {
    "MF-K08-R1": {
     "sachverhalt": "34b3884b4fac",
-    "rev": 1,
-    "fp": "b7e80596d93f",
-    "stand": "81-20-mf-2026.9"
+    "rev": 3,
+    "fp": "7ff354c22afc",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "7ff354c22afc"
    },
    "MF-K08-R2": {
     "sachverhalt": "ddc548158f2c",
-    "rev": 1,
-    "fp": "43ca32abd103",
-    "stand": "81-20-mf-2026.9"
+    "rev": 3,
+    "fp": "6562c138432f",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "6562c138432f"
    },
    "MF-K08-R3": {
     "sachverhalt": "825198735827",
-    "rev": 1,
-    "fp": "4ac9441adf81",
-    "stand": "81-20-mf-2026.9"
+    "rev": 3,
+    "fp": "e4103175442f",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "e4103175442f"
+   },
+   "MF-K08-R4": {
+    "sachverhalt": "f97f95050c65",
+    "rev": 2,
+    "fp": "6ba2b651020b",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "6ba2b651020b"
+   },
+   "MF-K08-R5": {
+    "sachverhalt": "36c841a72cf1",
+    "rev": 2,
+    "fp": "8ed051b1721f",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "8ed051b1721f"
    }
   },
   "MF-K09": {
@@ -1302,39 +1565,59 @@
     "sachverhalt": "c616d6c1ee91",
     "rev": 1,
     "fp": "e7cb021478b2",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "e7cb021478b2"
    },
    "MF-K09-R2": {
     "sachverhalt": "94bce1d4f02e",
     "rev": 1,
     "fp": "e8d221d91966",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "e8d221d91966"
    }
   },
   "MF-K10": {
    "MF-K10-R1": {
     "sachverhalt": "cb6563c366e6",
-    "rev": 2,
-    "fp": "ed4e5321cb41",
-    "stand": "81-20-mf-2026.9"
+    "rev": 5,
+    "fp": "8bc966c16097",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "8bc966c16097"
    },
    "MF-K10-R2": {
     "sachverhalt": "e46d6fb87b6f",
-    "rev": 2,
-    "fp": "f2f2e4f9d060",
-    "stand": "81-20-mf-2026.9"
+    "rev": 3,
+    "fp": "e5ab57bca887",
+    "stand": "81-20-mf-2026.10",
+    "stillgelegt": true
    },
    "MF-K10-R3": {
     "sachverhalt": "979116ee082c",
-    "rev": 2,
-    "fp": "84cf6649bd07",
-    "stand": "81-20-mf-2026.9"
+    "rev": 4,
+    "fp": "f04e629b7cff",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "f04e629b7cff"
    },
    "MF-K10-R4": {
     "sachverhalt": "b060fe2521dd",
-    "rev": 2,
-    "fp": "8b27774dc59e",
-    "stand": "81-20-mf-2026.9"
+    "rev": 4,
+    "fp": "1c3b5cfedbe3",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "1c3b5cfedbe3"
+   },
+   "MF-K10-R5": {
+    "sachverhalt": "138d6f2777cc",
+    "rev": 1,
+    "fp": "67500f0f36d1",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "67500f0f36d1"
+   },
+   "MF-K10-R6": {
+    "sachverhalt": "5c68c9aaf007",
+    "rev": 1,
+    "fp": "b93a145acceb",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "b93a145acceb"
    }
   },
   "MF-K11": {
@@ -1342,25 +1625,29 @@
     "sachverhalt": "6fed828fcc47",
     "rev": 2,
     "fp": "b20d5e6f1c01",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "b20d5e6f1c01"
    },
    "MF-K11-R2": {
     "sachverhalt": "915bcec94db0",
     "rev": 2,
     "fp": "3b548e40b909",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "3b548e40b909"
    },
    "MF-K11-R3": {
     "sachverhalt": "bd1e6e74b3fc",
     "rev": 3,
     "fp": "0f2780a44c5c",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "0f2780a44c5c"
    },
    "MF-K11-R4": {
     "sachverhalt": "c0e777929219",
     "rev": 2,
     "fp": "e080fd747c5c",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "e080fd747c5c"
    }
   },
   "MF-K12": {
@@ -1368,68 +1655,75 @@
     "sachverhalt": "e73d0655da90",
     "rev": 2,
     "fp": "614c4fb5eb8e",
-    "stand": "81-20-mf-2026.9",
-    "fp_verifiziert": "0fb5201a2fe4"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "614c4fb5eb8e"
    },
    "MF-K12-R2": {
     "sachverhalt": "7b9bc57e6137",
     "rev": 2,
     "fp": "9bc9fa26c44a",
-    "stand": "81-20-mf-2026.9",
-    "fp_verifiziert": "90e963fd1463"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "9bc9fa26c44a"
    },
    "MF-K12-R3": {
     "sachverhalt": "a0da4ca244ef",
     "rev": 2,
     "fp": "60996b3ba7d9",
-    "stand": "81-20-mf-2026.9",
-    "fp_verifiziert": "d73f821e46dc"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "60996b3ba7d9"
    },
    "MF-K12-R4": {
     "sachverhalt": "91acd4e89b18",
     "rev": 2,
     "fp": "ca1bc581839c",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "ca1bc581839c"
    },
    "MF-K12-R5": {
     "sachverhalt": "b88c58c5ff6e",
     "rev": 2,
     "fp": "ae713c283e10",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "ae713c283e10"
    }
   },
   "MF-K13": {
    "MF-K13-R1": {
     "sachverhalt": "1f85b8c75cc4",
-    "rev": 2,
-    "fp": "7b2f691b5351",
-    "stand": "81-20-mf-2026.9"
+    "rev": 3,
+    "fp": "c322ca843787",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "c322ca843787"
    },
    "MF-K13-R2": {
     "sachverhalt": "bd5087dcdfff",
-    "rev": 2,
-    "fp": "09bc83eccea6",
-    "stand": "81-20-mf-2026.9"
+    "rev": 3,
+    "fp": "80e98d914713",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "80e98d914713"
    }
   },
   "MF-K14": {
    "MF-K14-R1": {
     "sachverhalt": "1d59a5bac423",
-    "rev": 2,
-    "fp": "cc94e6c5a4b3",
-    "stand": "81-20-mf-2026.9"
+    "rev": 3,
+    "fp": "d4a32a0cdc7b",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "d4a32a0cdc7b"
    },
    "MF-K14-R2": {
     "sachverhalt": "02505693e995",
-    "rev": 2,
-    "fp": "a16457104b37",
-    "stand": "81-20-mf-2026.9"
+    "rev": 4,
+    "fp": "c623bd13e12e",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "c623bd13e12e"
    },
    "MF-K14-R3": {
     "sachverhalt": "ac44c0a13ee9",
-    "rev": 2,
-    "fp": "aee36dac48dd",
-    "stand": "81-20-mf-2026.9"
+    "rev": 3,
+    "fp": "cc8d0e3bdd58",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "cc8d0e3bdd58"
    }
   },
   "MF-K15": {
@@ -1437,76 +1731,94 @@
     "sachverhalt": "20588407168c",
     "rev": 1,
     "fp": "1f7894b7c328",
-    "stand": "81-20-mf-2026.9",
+    "stand": "81-20-mf-2026.10",
     "fp_verifiziert": "1f7894b7c328"
    },
    "MF-K15-R2": {
     "sachverhalt": "cd6c682a4306",
     "rev": 1,
     "fp": "80dacb3d2527",
-    "stand": "81-20-mf-2026.9",
+    "stand": "81-20-mf-2026.10",
     "fp_verifiziert": "80dacb3d2527"
    },
    "MF-K15-R3": {
     "sachverhalt": "de2d644ee055",
     "rev": 1,
     "fp": "f3b28989ef1e",
-    "stand": "81-20-mf-2026.9",
+    "stand": "81-20-mf-2026.10",
     "fp_verifiziert": "f3b28989ef1e"
    },
    "MF-K15-R4": {
     "sachverhalt": "6163d05c4e55",
     "rev": 1,
     "fp": "7a8af9a404f4",
-    "stand": "81-20-mf-2026.9",
+    "stand": "81-20-mf-2026.10",
     "fp_verifiziert": "7a8af9a404f4"
    },
    "MF-K15-R5": {
     "sachverhalt": "1000f83b5b2a",
     "rev": 1,
     "fp": "73b537e68cc8",
-    "stand": "81-20-mf-2026.9",
+    "stand": "81-20-mf-2026.10",
     "fp_verifiziert": "73b537e68cc8"
    }
   },
   "MF-F01": {
    "MF-F01-R1": {
     "sachverhalt": "80b8831421b1",
-    "rev": 2,
-    "fp": "b926ea1378a1",
-    "stand": "81-20-mf-2026.9",
-    "fp_verifiziert": "3dde7154bdde"
+    "rev": 3,
+    "fp": "20493613358b",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "20493613358b"
    },
    "MF-F01-R2": {
     "sachverhalt": "20eddcdfcba6",
-    "rev": 2,
-    "fp": "cd6eb006303a",
-    "stand": "81-20-mf-2026.9"
+    "rev": 3,
+    "fp": "239b72190f1a",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "239b72190f1a"
    },
    "MF-F01-R3": {
     "sachverhalt": "02db1715dadf",
-    "rev": 2,
-    "fp": "7c0f7dad8ec8",
-    "stand": "81-20-mf-2026.9",
-    "fp_verifiziert": "630a3b16446d"
+    "rev": 3,
+    "fp": "2109439fb9a3",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "2109439fb9a3"
    },
    "MF-F01-R4": {
     "sachverhalt": "6a533d14533d",
     "rev": 2,
     "fp": "0df98fb11c23",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.9",
+    "stillgelegt": true
    },
    "MF-F01-R5": {
     "sachverhalt": "d9adb214ae87",
-    "rev": 2,
-    "fp": "092a229161af",
-    "stand": "81-20-mf-2026.9"
+    "rev": 3,
+    "fp": "4e9ffd897cf8",
+    "stand": "81-20-mf-2026.10",
+    "stillgelegt": true
    },
    "MF-F01-R6": {
     "sachverhalt": "ddc5703093eb",
+    "rev": 3,
+    "fp": "4eae154bccea",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "4eae154bccea"
+   },
+   "MF-F01-R7": {
+    "sachverhalt": "1b8a918cc7ae",
     "rev": 2,
-    "fp": "681c1770c01d",
-    "stand": "81-20-mf-2026.9"
+    "fp": "fcafddcdb19f",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "fcafddcdb19f"
+   },
+   "MF-F01-R8": {
+    "sachverhalt": "03c91b880407",
+    "rev": 1,
+    "fp": "cd40087d5af1",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "cd40087d5af1"
    }
   },
   "MF-F02": {
@@ -1514,19 +1826,22 @@
     "sachverhalt": "11b8b4dd10b4",
     "rev": 2,
     "fp": "54e70c5664b9",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "54e70c5664b9"
    },
    "MF-F02-R2": {
     "sachverhalt": "8ae6d8fe1461",
     "rev": 2,
     "fp": "d1a5ce22f2b4",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "d1a5ce22f2b4"
    },
    "MF-F02-R3": {
     "sachverhalt": "e2cd7327c05a",
     "rev": 1,
     "fp": "c11bee0141ca",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "c11bee0141ca"
    }
   },
   "MF-F03": {
@@ -1534,37 +1849,57 @@
     "sachverhalt": "4bdce0c6d730",
     "rev": 2,
     "fp": "daabee3c2511",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "daabee3c2511"
    },
    "MF-F03-R2": {
     "sachverhalt": "e16ec4da13ed",
     "rev": 2,
     "fp": "20a623b0e9de",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "20a623b0e9de"
    },
    "MF-F03-R3": {
     "sachverhalt": "3184c6fa9972",
     "rev": 2,
     "fp": "9782d68504e0",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "9782d68504e0"
    },
    "MF-F03-R4": {
     "sachverhalt": "2a52c13da2ed",
     "rev": 2,
     "fp": "1091c8777b6f",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "1091c8777b6f"
    },
    "MF-F03-R5": {
     "sachverhalt": "76166c2cc194",
     "rev": 1,
     "fp": "6d38fffb3db2",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.9",
+    "stillgelegt": true
    },
    "MF-F03-R6": {
     "sachverhalt": "472263dec374",
     "rev": 1,
     "fp": "68f7dcebb38f",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "68f7dcebb38f"
+   },
+   "MF-F03-R7": {
+    "sachverhalt": "323c7151ea9d",
+    "rev": 2,
+    "fp": "7aafb548b26a",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "7aafb548b26a"
+   },
+   "MF-F03-R8": {
+    "sachverhalt": "38e09bc6fbc7",
+    "rev": 2,
+    "fp": "169fd6474144",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "169fd6474144"
    }
   },
   "MF-F04": {
@@ -1572,65 +1907,73 @@
     "sachverhalt": "b7c81043b3f1",
     "rev": 1,
     "fp": "8b08b07d21fc",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "8b08b07d21fc"
    },
    "MF-F04-R2": {
     "sachverhalt": "66220a1d1486",
     "rev": 2,
     "fp": "b0c09c75d22f",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "b0c09c75d22f"
    },
    "MF-F04-R3": {
     "sachverhalt": "84399c857537",
     "rev": 1,
     "fp": "02dbe1401790",
-    "stand": "81-20-mf-2026.9",
+    "stand": "81-20-mf-2026.10",
     "fp_verifiziert": "02dbe1401790"
    },
    "MF-F04-R4": {
     "sachverhalt": "2193a0c18184",
     "rev": 1,
     "fp": "9475b9092982",
-    "stand": "81-20-mf-2026.9",
+    "stand": "81-20-mf-2026.10",
     "fp_verifiziert": "9475b9092982"
    },
    "MF-F04-R5": {
     "sachverhalt": "4416eb157aaa",
     "rev": 1,
     "fp": "d08e9146d0ed",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "d08e9146d0ed"
    }
   },
   "MF-F05": {
    "MF-F05-R1": {
     "sachverhalt": "730a737b17a4",
-    "rev": 1,
-    "fp": "c120b774d538",
-    "stand": "81-20-mf-2026.9"
+    "rev": 2,
+    "fp": "d788db0c6c97",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "d788db0c6c97"
    },
    "MF-F05-R2": {
     "sachverhalt": "7988a2aa5964",
     "rev": 2,
     "fp": "b6aa7e9e496b",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "b6aa7e9e496b"
    },
    "MF-F05-R3": {
     "sachverhalt": "b856a1e52f64",
     "rev": 2,
     "fp": "3258cbdf0af2",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "3258cbdf0af2"
    },
    "MF-F05-R4": {
     "sachverhalt": "fe6418c9995f",
     "rev": 2,
     "fp": "2ba38193f9e8",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "2ba38193f9e8"
    },
    "MF-F05-R5": {
     "sachverhalt": "9d150ab59501",
     "rev": 1,
     "fp": "ec74dbc218ff",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "ec74dbc218ff"
    }
   },
   "MF-F06": {
@@ -1638,25 +1981,29 @@
     "sachverhalt": "38ef850dab38",
     "rev": 1,
     "fp": "645e789f380e",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "645e789f380e"
    },
    "MF-F06-R2": {
     "sachverhalt": "ced6b31740fb",
     "rev": 1,
     "fp": "a7d24532f1ac",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "a7d24532f1ac"
    },
    "MF-F06-R3": {
     "sachverhalt": "15048b54fb7c",
-    "rev": 1,
-    "fp": "703cd94adffe",
-    "stand": "81-20-mf-2026.9"
+    "rev": 2,
+    "fp": "93e380d42ea2",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "93e380d42ea2"
    },
    "MF-F06-R4": {
     "sachverhalt": "c17e735022b8",
     "rev": 1,
     "fp": "b1c778c0bad0",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "b1c778c0bad0"
    }
   },
   "MF-F07": {
@@ -1664,19 +2011,22 @@
     "sachverhalt": "20f480482080",
     "rev": 2,
     "fp": "8130ef04343d",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "8130ef04343d"
    },
    "MF-F07-R2": {
     "sachverhalt": "c08adc7c2ab3",
     "rev": 1,
     "fp": "2d34684424f2",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "2d34684424f2"
    },
    "MF-F07-R3": {
     "sachverhalt": "7dd34fd01a79",
     "rev": 1,
     "fp": "9289042bcbd2",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "9289042bcbd2"
    }
   },
   "MF-F08": {
@@ -1684,14 +2034,15 @@
     "sachverhalt": "1600e045a9f5",
     "rev": 1,
     "fp": "730e7e303e78",
-    "stand": "81-20-mf-2026.9",
+    "stand": "81-20-mf-2026.10",
     "fp_verifiziert": "730e7e303e78"
    },
    "MF-F08-R2": {
     "sachverhalt": "38bb8cc24f16",
     "rev": 1,
     "fp": "d177034b9219",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "d177034b9219"
    }
   },
   "MF-F09": {
@@ -1699,13 +2050,15 @@
     "sachverhalt": "c361a3052840",
     "rev": 1,
     "fp": "bc2f5baedb76",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "bc2f5baedb76"
    },
    "MF-F09-R2": {
     "sachverhalt": "0bd449fd67d3",
     "rev": 1,
     "fp": "693995203430",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "693995203430"
    }
   },
   "MF-S01": {
@@ -1713,7 +2066,8 @@
     "sachverhalt": "153d94d9a00d",
     "rev": 2,
     "fp": "97c0348eead8",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "97c0348eead8"
    },
    "MF-S01-R2": {
     "sachverhalt": "26459a7eeb30",
@@ -1724,41 +2078,47 @@
    },
    "MF-S01-R3": {
     "sachverhalt": "f889c3c3bfa4",
-    "rev": 2,
-    "fp": "b56ef0bd95b2",
-    "stand": "81-20-mf-2026.9"
+    "rev": 3,
+    "fp": "654b0e2dd4ea",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "654b0e2dd4ea"
    },
    "MF-S01-R4": {
     "sachverhalt": "6e9b41f5eb0f",
     "rev": 2,
     "fp": "b6af8e970b9e",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "b6af8e970b9e"
    },
    "MF-S01-R5": {
     "sachverhalt": "934ab06e1554",
     "rev": 1,
     "fp": "c9a7159e23ec",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "c9a7159e23ec"
    },
    "MF-S01-R6": {
     "sachverhalt": "1072ff841f2c",
     "rev": 1,
     "fp": "d1ed041327d5",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "d1ed041327d5"
    }
   },
   "MF-S02": {
    "MF-S02-R1": {
     "sachverhalt": "03183e600011",
-    "rev": 1,
-    "fp": "562647e4a5b0",
-    "stand": "81-20-mf-2026.9"
+    "rev": 2,
+    "fp": "6c196972673d",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "6c196972673d"
    },
    "MF-S02-R2": {
     "sachverhalt": "baa7c4be04d4",
-    "rev": 1,
-    "fp": "6290c16eb966",
-    "stand": "81-20-mf-2026.9"
+    "rev": 2,
+    "fp": "5dd7eee676cb",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "5dd7eee676cb"
    }
   },
   "MF-S03": {
@@ -1766,84 +2126,125 @@
     "sachverhalt": "b12ef1705993",
     "rev": 1,
     "fp": "e9c1d90fdb1d",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "e9c1d90fdb1d"
    },
    "MF-S03-R2": {
     "sachverhalt": "ae71d8b5bd6d",
     "rev": 1,
     "fp": "f06e3132ee0e",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "f06e3132ee0e"
    },
    "MF-S03-R3": {
     "sachverhalt": "cc27cecbff8c",
     "rev": 1,
     "fp": "7a7b548ca474",
-    "stand": "81-20-mf-2026.9",
+    "stand": "81-20-mf-2026.10",
     "fp_verifiziert": "7a7b548ca474"
    },
    "MF-S03-R4": {
     "sachverhalt": "591f4891044f",
-    "rev": 1,
-    "fp": "9ac8a9275db9",
-    "stand": "81-20-mf-2026.9"
+    "rev": 2,
+    "fp": "9cfe9ea49775",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "9cfe9ea49775"
    },
    "MF-S03-R5": {
     "sachverhalt": "7fa7fe86af88",
     "rev": 1,
     "fp": "b398f2f72173",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "b398f2f72173"
    }
   },
   "MF-S04": {
    "MF-S04-R1": {
     "sachverhalt": "14d664adbf7f",
-    "rev": 1,
-    "fp": "e8418020b60b",
-    "stand": "81-20-mf-2026.9"
+    "rev": 2,
+    "fp": "5b502d963f4d",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "5b502d963f4d"
    },
    "MF-S04-R2": {
     "sachverhalt": "c702b614eb11",
     "rev": 1,
     "fp": "e01c1647a7a4",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "e01c1647a7a4"
    }
   },
   "MF-S05": {
    "MF-S05-R1": {
     "sachverhalt": "e313dc4013e5",
-    "rev": 1,
-    "fp": "69008068fd72",
-    "stand": "81-20-mf-2026.9"
+    "rev": 3,
+    "fp": "22be84df8e03",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "22be84df8e03"
    },
    "MF-S05-R2": {
     "sachverhalt": "9d9aae0b6247",
     "rev": 2,
     "fp": "d211350a93a4",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "stillgelegt": true
    },
    "MF-S05-R3": {
     "sachverhalt": "d570c26cfc03",
-    "rev": 1,
-    "fp": "afe201458df5",
-    "stand": "81-20-mf-2026.9"
+    "rev": 3,
+    "fp": "fcb74e59a0e5",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "fcb74e59a0e5"
    },
    "MF-S05-R4": {
     "sachverhalt": "e91b7cbd4673",
-    "rev": 1,
-    "fp": "bf9f0cdc47c5",
-    "stand": "81-20-mf-2026.9"
+    "rev": 3,
+    "fp": "130edf461700",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "130edf461700"
    },
    "MF-S05-R5": {
     "sachverhalt": "b3290a5d21e7",
-    "rev": 1,
-    "fp": "6ac3ec74874e",
-    "stand": "81-20-mf-2026.9"
+    "rev": 4,
+    "fp": "abbebb6ae77c",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "abbebb6ae77c"
    },
    "MF-S05-R6": {
     "sachverhalt": "d190bbab1778",
+    "rev": 3,
+    "fp": "a87099ebfad0",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "a87099ebfad0"
+   },
+   "MF-S05-R7": {
+    "sachverhalt": "a078305c13e8",
     "rev": 1,
-    "fp": "ba4381dbf02a",
-    "stand": "81-20-mf-2026.9"
+    "fp": "6090bf7b70de",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "6090bf7b70de",
+    "stillgelegt": true
+   },
+   "MF-S05-R8": {
+    "sachverhalt": "f0cb76b8505c",
+    "rev": 1,
+    "fp": "d6a57c36051f",
+    "stand": "81-20-mf-2026.10",
+    "stillgelegt": true
+   },
+   "MF-S05-R9": {
+    "sachverhalt": "388e6e7a67b1",
+    "rev": 1,
+    "fp": "af32bf052aea",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "af32bf052aea"
+   },
+   "MF-S05-R10": {
+    "sachverhalt": "a00cc5432cff",
+    "rev": 1,
+    "fp": "0ee5de1d7cc0",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "0ee5de1d7cc0"
    }
   },
   "MF-S06": {
@@ -1851,60 +2252,75 @@
     "sachverhalt": "e8ff04d70400",
     "rev": 1,
     "fp": "8b8d3019d6cb",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "8b8d3019d6cb"
    },
    "MF-S06-R2": {
     "sachverhalt": "1474c8f04ca0",
     "rev": 1,
     "fp": "0cd232867153",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "0cd232867153"
    },
    "MF-S06-R3": {
     "sachverhalt": "2bf37a5707f9",
     "rev": 1,
     "fp": "024ee2e6ba29",
-    "stand": "81-20-mf-2026.9",
+    "stand": "81-20-mf-2026.10",
     "fp_verifiziert": "024ee2e6ba29"
    },
    "MF-S06-R4": {
     "sachverhalt": "03e3e309175a",
     "rev": 1,
     "fp": "3aaf45da5430",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "3aaf45da5430"
    }
   },
   "MF-S07": {
    "MF-S07-R1": {
     "sachverhalt": "b2c5af295294",
-    "rev": 1,
-    "fp": "b8bd38f6a2f6",
-    "stand": "81-20-mf-2026.9"
+    "rev": 3,
+    "fp": "a3f702360ab0",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "a3f702360ab0"
    },
    "MF-S07-R2": {
     "sachverhalt": "e6397ccfd37e",
-    "rev": 1,
-    "fp": "4d769b0d5b63",
-    "stand": "81-20-mf-2026.9"
+    "rev": 2,
+    "fp": "8c038724d7e9",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "8c038724d7e9"
+   },
+   "MF-S07-R3": {
+    "sachverhalt": "cf1fd16079e8",
+    "rev": 2,
+    "fp": "3da13901e683",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "3da13901e683"
    }
   },
   "MF-G01": {
    "MF-G01-R1": {
     "sachverhalt": "abf140f2be88",
-    "rev": 1,
-    "fp": "e4e1169b639f",
-    "stand": "81-20-mf-2026.9"
+    "rev": 2,
+    "fp": "094547e0eb8f",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "094547e0eb8f"
    },
    "MF-G01-R2": {
     "sachverhalt": "c91d04dab368",
-    "rev": 1,
-    "fp": "de035cf3c26e",
-    "stand": "81-20-mf-2026.9"
+    "rev": 2,
+    "fp": "ecbb2f77e6f3",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "ecbb2f77e6f3"
    },
    "MF-G01-R3": {
     "sachverhalt": "79e3c53c12cd",
     "rev": 1,
     "fp": "c52f3aaeaa61",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "c52f3aaeaa61"
    }
   },
   "MF-G02": {
@@ -1912,27 +2328,29 @@
     "sachverhalt": "055532244f51",
     "rev": 1,
     "fp": "5164d74deb95",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "5164d74deb95"
    },
    "MF-G02-R2": {
     "sachverhalt": "9396ce35f24d",
     "rev": 1,
     "fp": "122153d16bb2",
-    "stand": "81-20-mf-2026.9",
+    "stand": "81-20-mf-2026.10",
     "fp_verifiziert": "122153d16bb2"
    },
    "MF-G02-R3": {
     "sachverhalt": "8803c61af713",
     "rev": 1,
     "fp": "a3b413a08560",
-    "stand": "81-20-mf-2026.9",
+    "stand": "81-20-mf-2026.10",
     "fp_verifiziert": "a3b413a08560"
    },
    "MF-G02-R4": {
     "sachverhalt": "d814f068dc66",
     "rev": 1,
     "fp": "4a2d61406128",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "4a2d61406128"
    }
   },
   "MF-G03": {
@@ -1940,32 +2358,36 @@
     "sachverhalt": "c80205a170bd",
     "rev": 2,
     "fp": "058554b063ec",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "058554b063ec"
    },
    "MF-G03-R2": {
     "sachverhalt": "f085b79e505c",
     "rev": 2,
     "fp": "ff88246d0b7b",
-    "stand": "81-20-mf-2026.9",
-    "fp_verifiziert": "d5b602467e3a"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "ff88246d0b7b"
    },
    "MF-G03-R3": {
     "sachverhalt": "3f0dada1d823",
     "rev": 2,
     "fp": "2a85452199e4",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "2a85452199e4"
    },
    "MF-G03-R4": {
     "sachverhalt": "c735e3c82801",
-    "rev": 2,
-    "fp": "4c6bd3e777aa",
-    "stand": "81-20-mf-2026.9"
+    "rev": 3,
+    "fp": "a8f980093bd8",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "a8f980093bd8"
    },
    "MF-G03-R5": {
     "sachverhalt": "ae27bd4657e9",
     "rev": 2,
     "fp": "b872a8b539da",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "b872a8b539da"
    }
   },
   "MF-G04": {
@@ -1980,7 +2402,8 @@
     "sachverhalt": "1dbdabcf3464",
     "rev": 2,
     "fp": "d05ab9307fb7",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "d05ab9307fb7"
    },
    "MF-G04-R3": {
     "sachverhalt": "7d08d152e768",
@@ -2015,31 +2438,43 @@
     "sachverhalt": "72f05a93606a",
     "rev": 1,
     "fp": "870c5db699f0",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "870c5db699f0"
    },
    "MF-G04-R8": {
     "sachverhalt": "08e176a54409",
     "rev": 1,
     "fp": "808cb9680561",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "808cb9680561"
    },
    "MF-G04-R9": {
     "sachverhalt": "6ea98cfdd40f",
-    "rev": 1,
-    "fp": "20ed4e8d1e74",
-    "stand": "81-20-mf-2026.9"
+    "rev": 2,
+    "fp": "90f4198de45b",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "90f4198de45b"
    },
    "MF-G04-R10": {
     "sachverhalt": "ee5778094616",
     "rev": 1,
     "fp": "dac170951331",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "dac170951331"
    },
    "MF-G04-R11": {
     "sachverhalt": "aff0804ad6b2",
     "rev": 1,
     "fp": "8fdbb3dd1017",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "8fdbb3dd1017"
+   },
+   "MF-G04-R12": {
+    "sachverhalt": "6525a08a0a74",
+    "rev": 1,
+    "fp": "bdd20220d10b",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "bdd20220d10b"
    }
   },
   "MF-G05": {
@@ -2047,58 +2482,87 @@
     "sachverhalt": "a24b387d2e9b",
     "rev": 1,
     "fp": "b4d5807eec88",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "b4d5807eec88"
    },
    "MF-G05-R2": {
     "sachverhalt": "5562fde40817",
     "rev": 1,
     "fp": "4effb944ed04",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "4effb944ed04"
    },
    "MF-G05-R3": {
     "sachverhalt": "1269b4656d25",
     "rev": 1,
     "fp": "fe8cc93932ef",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "fe8cc93932ef"
    },
    "MF-G05-R4": {
     "sachverhalt": "57c3c84f44a0",
     "rev": 1,
     "fp": "dbf479432f07",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "dbf479432f07"
    }
   },
   "MF-G06": {
    "MF-G06-R1": {
     "sachverhalt": "4b9e11d42245",
-    "rev": 1,
-    "fp": "bcf5f2184d62",
-    "stand": "81-20-mf-2026.9"
+    "rev": 2,
+    "fp": "cdee8dd15d18",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "cdee8dd15d18"
    },
    "MF-G06-R2": {
     "sachverhalt": "617a914379b6",
     "rev": 1,
     "fp": "b478569862f4",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "stillgelegt": true
    },
    "MF-G06-R3": {
     "sachverhalt": "3a52fdb8be43",
-    "rev": 1,
-    "fp": "972830e23eb0",
-    "stand": "81-20-mf-2026.9",
-    "fp_verifiziert": "972830e23eb0"
+    "rev": 2,
+    "fp": "cf7f9c0863e1",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "cf7f9c0863e1"
    },
    "MF-G06-R4": {
     "sachverhalt": "810df0edef62",
-    "rev": 1,
-    "fp": "e02e03b23cb7",
-    "stand": "81-20-mf-2026.9"
+    "rev": 2,
+    "fp": "746375a3ad74",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "746375a3ad74"
    },
    "MF-G06-R5": {
     "sachverhalt": "e21f68a59d85",
+    "rev": 2,
+    "fp": "ba0007efe474",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "ba0007efe474"
+   },
+   "MF-G06-R6": {
+    "sachverhalt": "84dfac1c6e1e",
     "rev": 1,
-    "fp": "1d391bf8f2f4",
-    "stand": "81-20-mf-2026.9"
+    "fp": "ada077a9af3c",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "ada077a9af3c"
+   },
+   "MF-G06-R7": {
+    "sachverhalt": "dfb43db729d0",
+    "rev": 1,
+    "fp": "9d32e01882e6",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "9d32e01882e6"
+   },
+   "MF-G06-R8": {
+    "sachverhalt": "87b491b33577",
+    "rev": 1,
+    "fp": "f315fe289b92",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "f315fe289b92"
    }
   },
   "MF-G07": {
@@ -2106,31 +2570,36 @@
     "sachverhalt": "c16724295806",
     "rev": 3,
     "fp": "2d9eb5284095",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "2d9eb5284095"
    },
    "MF-G07-R2": {
     "sachverhalt": "2786b7bed055",
     "rev": 2,
     "fp": "b90bc46725a5",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "b90bc46725a5"
    },
    "MF-G07-R3": {
     "sachverhalt": "b6539d50a6d4",
     "rev": 2,
     "fp": "3dba19b8da67",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "3dba19b8da67"
    },
    "MF-G07-R4": {
     "sachverhalt": "a799a4eee354",
-    "rev": 3,
-    "fp": "93aa9c28fb13",
-    "stand": "81-20-mf-2026.9"
+    "rev": 4,
+    "fp": "327df5c68405",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "327df5c68405"
    },
    "MF-G07-R5": {
     "sachverhalt": "d4f8d1b1e1f3",
     "rev": 2,
     "fp": "31de200a909b",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "31de200a909b"
    }
   },
   "MF-G08": {
@@ -2138,139 +2607,214 @@
     "sachverhalt": "ff93585c54da",
     "rev": 2,
     "fp": "bff6b7bef29b",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "bff6b7bef29b"
    },
    "MF-G08-R2": {
     "sachverhalt": "2fc908936816",
     "rev": 2,
     "fp": "c2547a1d956d",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "c2547a1d956d"
    },
    "MF-G08-R3": {
     "sachverhalt": "a191ae3c7a5c",
-    "rev": 1,
-    "fp": "8c65d2c64db0",
-    "stand": "81-20-mf-2026.9"
+    "rev": 2,
+    "fp": "445273842d6d",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "445273842d6d"
    },
    "MF-G08-R4": {
     "sachverhalt": "9deb6f662af0",
     "rev": 1,
     "fp": "06966601ccb3",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "06966601ccb3"
    }
   },
   "MF-U01": {
    "MF-U01-R1": {
     "sachverhalt": "b69a3263debb",
-    "rev": 2,
-    "fp": "9456ec4dde3e",
-    "stand": "81-20-mf-2026.9",
-    "fp_verifiziert": "90a1d821891e"
+    "rev": 3,
+    "fp": "1cb21eb24281",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "90a1d821891e",
+    "stillgelegt": true
    },
    "MF-U01-R2": {
     "sachverhalt": "58ff1f256f81",
-    "rev": 2,
-    "fp": "dcaf5c3983e2",
-    "stand": "81-20-mf-2026.9",
-    "fp_verifiziert": "9245e9edc365"
+    "rev": 3,
+    "fp": "fbda5be11473",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "9245e9edc365",
+    "stillgelegt": true
    },
    "MF-U01-R3": {
     "sachverhalt": "39c7531138a6",
-    "rev": 2,
-    "fp": "295f2935e0c1",
-    "stand": "81-20-mf-2026.9",
-    "fp_verifiziert": "7591534fd9fd"
+    "rev": 3,
+    "fp": "a81beb07ee5a",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "7591534fd9fd",
+    "stillgelegt": true
    },
    "MF-U01-R4": {
     "sachverhalt": "90d2af88564a",
-    "rev": 2,
-    "fp": "0e98d9090f02",
-    "stand": "81-20-mf-2026.9",
-    "fp_verifiziert": "1b04f041eac8"
+    "rev": 3,
+    "fp": "22fd958fd615",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "1b04f041eac8",
+    "stillgelegt": true
    },
    "MF-U01-R5": {
     "sachverhalt": "b7d3ef4ce77c",
-    "rev": 2,
-    "fp": "0e4656d6925a",
-    "stand": "81-20-mf-2026.9"
+    "rev": 3,
+    "fp": "681573abca2f",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "681573abca2f"
    },
    "MF-U01-R6": {
     "sachverhalt": "8eb1ee32c4ec",
+    "rev": 2,
+    "fp": "60c4aa66cdb9",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "60c4aa66cdb9"
+   },
+   "MF-U01-R7": {
+    "sachverhalt": "08a1ffda6481",
     "rev": 1,
-    "fp": "0e48e195874a",
-    "stand": "81-20-mf-2026.9"
+    "fp": "21570f495af7",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "21570f495af7"
+   },
+   "MF-U01-R8": {
+    "sachverhalt": "6c188bea2f1c",
+    "rev": 1,
+    "fp": "0bbf5786a6a5",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "0bbf5786a6a5"
+   },
+   "MF-U01-R9": {
+    "sachverhalt": "9fc6b8bbeda6",
+    "rev": 1,
+    "fp": "1d4030b9d0cf",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "1d4030b9d0cf"
+   },
+   "MF-U01-R10": {
+    "sachverhalt": "06b0002d24a5",
+    "rev": 1,
+    "fp": "ab47366d80d8",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "ab47366d80d8"
+   },
+   "MF-U01-R11": {
+    "sachverhalt": "f45ca47e1899",
+    "rev": 1,
+    "fp": "23bbb53168f2",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "23bbb53168f2"
+   },
+   "MF-U01-R12": {
+    "sachverhalt": "d460d31d6e2a",
+    "rev": 1,
+    "fp": "e1981dfd3ccd",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "e1981dfd3ccd"
+   },
+   "MF-U01-R13": {
+    "sachverhalt": "002514c1fe9c",
+    "rev": 1,
+    "fp": "88248bd1abd1",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "88248bd1abd1"
+   },
+   "MF-U01-R14": {
+    "sachverhalt": "ee520b27610d",
+    "rev": 1,
+    "fp": "736c49d0fa7d",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "736c49d0fa7d"
+   },
+   "MF-U01-R15": {
+    "sachverhalt": "2903c7f0659c",
+    "rev": 1,
+    "fp": "cf9c109c3fda",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "cf9c109c3fda"
    }
   },
   "MF-U02": {
    "MF-U02-R1": {
     "sachverhalt": "d3930fb77b5c",
-    "rev": 2,
-    "fp": "2405eada0a33",
-    "stand": "81-20-mf-2026.9",
-    "fp_verifiziert": "e3516436685b"
+    "rev": 3,
+    "fp": "7008795432b5",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "7008795432b5"
    },
    "MF-U02-R2": {
     "sachverhalt": "63e26602981d",
-    "rev": 2,
-    "fp": "43009a048836",
-    "stand": "81-20-mf-2026.9",
-    "fp_verifiziert": "4eb3d7841127"
+    "rev": 3,
+    "fp": "d2fdff8b243a",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "d2fdff8b243a"
    },
    "MF-U02-R3": {
     "sachverhalt": "61c874d3dbaf",
-    "rev": 2,
-    "fp": "7829d23b34ac",
-    "stand": "81-20-mf-2026.9",
-    "fp_verifiziert": "a70af5659c22"
+    "rev": 3,
+    "fp": "93bb16ac2f6f",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "93bb16ac2f6f"
    },
    "MF-U02-R4": {
     "sachverhalt": "f9f4931b6ec9",
-    "rev": 2,
-    "fp": "bcc3f9d39fdb",
-    "stand": "81-20-mf-2026.9",
-    "fp_verifiziert": "3426edaa2a7c"
+    "rev": 3,
+    "fp": "3a5f4c5f62e5",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "3a5f4c5f62e5"
    },
    "MF-U02-R5": {
     "sachverhalt": "4c371dff2841",
     "rev": 1,
     "fp": "b322efef3764",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "b322efef3764"
    }
   },
   "MF-U03": {
    "MF-U03-R1": {
     "sachverhalt": "4d526273a9b8",
-    "rev": 2,
-    "fp": "edf2fed1b07d",
-    "stand": "81-20-mf-2026.9",
-    "fp_verifiziert": "8d1c66157ad8"
+    "rev": 3,
+    "fp": "ad337f37a800",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "ad337f37a800"
    },
    "MF-U03-R2": {
     "sachverhalt": "ff5b475135bf",
-    "rev": 2,
-    "fp": "d41847ecb8d6",
-    "stand": "81-20-mf-2026.9",
-    "fp_verifiziert": "b62ca99e4c99"
+    "rev": 3,
+    "fp": "cb5e04517b4b",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "cb5e04517b4b"
    },
    "MF-U03-R3": {
     "sachverhalt": "85694f783171",
-    "rev": 2,
-    "fp": "5d6b434d55d0",
-    "stand": "81-20-mf-2026.9",
-    "fp_verifiziert": "9387e3d93593"
+    "rev": 3,
+    "fp": "0b7c43359c2c",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "0b7c43359c2c"
    },
    "MF-U03-R4": {
     "sachverhalt": "67b7ccea44b3",
-    "rev": 2,
-    "fp": "09dcc54ef770",
-    "stand": "81-20-mf-2026.9",
-    "fp_verifiziert": "b9257d2fe9da"
+    "rev": 3,
+    "fp": "ccae1b71783d",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "ccae1b71783d"
    },
    "MF-U03-R5": {
     "sachverhalt": "9231a2d845df",
     "rev": 1,
     "fp": "1b69196bb77d",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "1b69196bb77d"
    }
   },
   "MF-U04": {
@@ -2278,21 +2822,22 @@
     "sachverhalt": "939cd7a8de3c",
     "rev": 1,
     "fp": "bebfdb434497",
-    "stand": "81-20-mf-2026.9",
+    "stand": "81-20-mf-2026.10",
     "fp_verifiziert": "bebfdb434497"
    },
    "MF-U04-R2": {
     "sachverhalt": "5765b50ef6fd",
     "rev": 1,
     "fp": "2203892809bd",
-    "stand": "81-20-mf-2026.9",
+    "stand": "81-20-mf-2026.10",
     "fp_verifiziert": "2203892809bd"
    },
    "MF-U04-R3": {
     "sachverhalt": "8981be57ae14",
     "rev": 1,
     "fp": "603c555fa241",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "603c555fa241"
    }
   },
   "MF-U05": {
@@ -2300,31 +2845,92 @@
     "sachverhalt": "db8db9e82d01",
     "rev": 1,
     "fp": "e5c5b29e2fc8",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "stillgelegt": true
    },
    "MF-U05-R2": {
     "sachverhalt": "1a5c4e5652ae",
     "rev": 1,
     "fp": "9489b996cf9b",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "stillgelegt": true
    },
    "MF-U05-R3": {
     "sachverhalt": "4159af58d3dc",
     "rev": 1,
     "fp": "bb68768132e3",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "stillgelegt": true
    },
    "MF-U05-R4": {
     "sachverhalt": "2c330bcdf121",
     "rev": 1,
     "fp": "310bd2f3ffd6",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "stillgelegt": true
    },
    "MF-U05-R5": {
     "sachverhalt": "cdcfe578fc00",
+    "rev": 2,
+    "fp": "adf94ece3e88",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "adf94ece3e88"
+   },
+   "MF-U05-R6": {
+    "sachverhalt": "34c5b3fe3b04",
     "rev": 1,
-    "fp": "f9b86e733ab2",
-    "stand": "81-20-mf-2026.9"
+    "fp": "034698468c46",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "034698468c46"
+   },
+   "MF-U05-R7": {
+    "sachverhalt": "e28f0df91b13",
+    "rev": 1,
+    "fp": "dd11b7a60ea3",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "dd11b7a60ea3"
+   },
+   "MF-U05-R8": {
+    "sachverhalt": "6c1726ea2630",
+    "rev": 1,
+    "fp": "667e2839415d",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "667e2839415d"
+   },
+   "MF-U05-R9": {
+    "sachverhalt": "48e983520ddc",
+    "rev": 1,
+    "fp": "a8ed38ad1a51",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "a8ed38ad1a51"
+   },
+   "MF-U05-R10": {
+    "sachverhalt": "dfdc753563b5",
+    "rev": 1,
+    "fp": "d37e30c5d9d9",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "d37e30c5d9d9"
+   },
+   "MF-U05-R11": {
+    "sachverhalt": "b2a4887debf5",
+    "rev": 1,
+    "fp": "e8deb9d7c87d",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "e8deb9d7c87d"
+   },
+   "MF-U05-R12": {
+    "sachverhalt": "47bfcfc49d54",
+    "rev": 1,
+    "fp": "85d3f9003a4f",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "85d3f9003a4f"
+   },
+   "MF-U05-R13": {
+    "sachverhalt": "081dd0071acf",
+    "rev": 1,
+    "fp": "0f4127170eb8",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "0f4127170eb8"
    }
   },
   "MF-U06": {
@@ -2338,67 +2944,89 @@
    },
    "MF-U06-R2": {
     "sachverhalt": "83eb730bc2c0",
-    "rev": 2,
-    "fp": "cc1bdd5cbe0d",
-    "stand": "81-20-mf-2026.9",
-    "fp_verifiziert": "db2a42272859"
+    "rev": 3,
+    "fp": "04795a40c86d",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "04795a40c86d"
    },
    "MF-U06-R3": {
     "sachverhalt": "0b99ee86cb38",
     "rev": 2,
     "fp": "f9d875f1f3e3",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "f9d875f1f3e3"
    },
    "MF-U06-R4": {
     "sachverhalt": "85a5db78109f",
-    "rev": 1,
-    "fp": "8e5dddf969a7",
-    "stand": "81-20-mf-2026.9"
+    "rev": 2,
+    "fp": "8d27196c87c7",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "8d27196c87c7"
    },
    "MF-U06-R5": {
     "sachverhalt": "26bc714d2c29",
     "rev": 1,
     "fp": "597550071aac",
-    "stand": "81-20-mf-2026.9",
+    "stand": "81-20-mf-2026.10",
     "fp_verifiziert": "597550071aac"
    }
   },
   "MF-U07": {
    "MF-U07-R1": {
     "sachverhalt": "d9395ebfb948",
-    "rev": 2,
-    "fp": "42b99984acd6",
-    "stand": "81-20-mf-2026.9"
+    "rev": 3,
+    "fp": "6d2ca0de2d8c",
+    "stand": "81-20-mf-2026.10",
+    "stillgelegt": true
    },
    "MF-U07-R2": {
     "sachverhalt": "971d99615f54",
-    "rev": 2,
-    "fp": "7f8a1a294b8a",
-    "stand": "81-20-mf-2026.9"
+    "rev": 5,
+    "fp": "f79d91dc72c3",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "f79d91dc72c3"
    },
    "MF-U07-R3": {
     "sachverhalt": "3f3625a0e40c",
-    "rev": 2,
-    "fp": "9e77cfa77272",
-    "stand": "81-20-mf-2026.9"
+    "rev": 4,
+    "fp": "c4e747f291f4",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "c4e747f291f4"
    },
    "MF-U07-R4": {
     "sachverhalt": "bdcce495a378",
-    "rev": 2,
-    "fp": "c3312884ce00",
-    "stand": "81-20-mf-2026.9"
+    "rev": 4,
+    "fp": "5dadd12ef332",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "5dadd12ef332"
    },
    "MF-U07-R5": {
     "sachverhalt": "ac887b36ffa5",
-    "rev": 2,
-    "fp": "dfc97d8c3e5a",
-    "stand": "81-20-mf-2026.9"
+    "rev": 4,
+    "fp": "c965f347435d",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "c965f347435d"
    },
    "MF-U07-R6": {
     "sachverhalt": "a020fe6fb197",
+    "rev": 3,
+    "fp": "750761c8f77a",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "750761c8f77a"
+   },
+   "MF-U07-R7": {
+    "sachverhalt": "67001881fd3b",
     "rev": 1,
-    "fp": "454ee20ae98b",
-    "stand": "81-20-mf-2026.9"
+    "fp": "d7f9579ca278",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "d7f9579ca278"
+   },
+   "MF-U07-R8": {
+    "sachverhalt": "8c50863544a1",
+    "rev": 1,
+    "fp": "11837837293a",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "11837837293a"
    }
   },
   "MF-U08": {
@@ -2406,51 +3034,80 @@
     "sachverhalt": "03f17e84306b",
     "rev": 2,
     "fp": "ae55ca3bd05b",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "ae55ca3bd05b"
    },
    "MF-U08-R2": {
     "sachverhalt": "48d73b2be719",
     "rev": 2,
     "fp": "d2b40e98bb79",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "d2b40e98bb79"
    },
    "MF-U08-R3": {
     "sachverhalt": "69498b394ec4",
     "rev": 1,
     "fp": "45e5eec12b76",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "45e5eec12b76"
    }
   },
   "MF-U09": {
    "MF-U09-R1": {
     "sachverhalt": "8e52e98ed89f",
-    "rev": 2,
-    "fp": "93781255bd58",
-    "stand": "81-20-mf-2026.9"
+    "rev": 4,
+    "fp": "716ef4e34d5c",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "716ef4e34d5c"
    },
    "MF-U09-R2": {
     "sachverhalt": "3f316d0420db",
-    "rev": 2,
-    "fp": "14d19cc82509",
-    "stand": "81-20-mf-2026.9"
+    "rev": 4,
+    "fp": "fe5dbe98ff42",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "fe5dbe98ff42"
    },
    "MF-U09-R3": {
     "sachverhalt": "6fd18bdd33d4",
-    "rev": 2,
-    "fp": "1fec5cf1c21c",
-    "stand": "81-20-mf-2026.9"
+    "rev": 5,
+    "fp": "e83fef666787",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "e83fef666787"
    },
    "MF-U09-R4": {
     "sachverhalt": "f41f2b7cc9fb",
-    "rev": 2,
-    "fp": "407b42f0986c",
-    "stand": "81-20-mf-2026.9"
+    "rev": 3,
+    "fp": "ee19f95ce598",
+    "stand": "81-20-mf-2026.10",
+    "stillgelegt": true
    },
    "MF-U09-R5": {
     "sachverhalt": "324544e62d87",
     "rev": 1,
     "fp": "77a05f5c50b0",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.9",
+    "stillgelegt": true
+   },
+   "MF-U09-R6": {
+    "sachverhalt": "e07076ac5166",
+    "rev": 2,
+    "fp": "6bb2ea41659f",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "6bb2ea41659f"
+   },
+   "MF-U09-R7": {
+    "sachverhalt": "08a13bd4e9e5",
+    "rev": 1,
+    "fp": "528c98eb59e6",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "528c98eb59e6"
+   },
+   "MF-U09-R8": {
+    "sachverhalt": "1c67836db6e5",
+    "rev": 1,
+    "fp": "2b2795fd047c",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "2b2795fd047c"
    }
   },
   "MF-U10": {
@@ -2458,25 +3115,37 @@
     "sachverhalt": "d589a49aa10b",
     "rev": 2,
     "fp": "cf553ae716b1",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "stillgelegt": true
    },
    "MF-U10-R2": {
     "sachverhalt": "e6bde21486a8",
     "rev": 2,
     "fp": "385172fa21f5",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "385172fa21f5",
+    "stillgelegt": true
    },
    "MF-U10-R3": {
     "sachverhalt": "88b7d6fe6108",
-    "rev": 2,
-    "fp": "4c9d15619a9d",
-    "stand": "81-20-mf-2026.9"
+    "rev": 3,
+    "fp": "5ac855596ce8",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "5ac855596ce8"
    },
    "MF-U10-R4": {
     "sachverhalt": "3746bfe4f01d",
+    "rev": 2,
+    "fp": "5a8b64c5e267",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "5a8b64c5e267"
+   },
+   "MF-U10-R5": {
+    "sachverhalt": "52a3decac478",
     "rev": 1,
-    "fp": "90a086749b24",
-    "stand": "81-20-mf-2026.9"
+    "fp": "ff87261fd3c8",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "ff87261fd3c8"
    }
   },
   "MF-U11": {
@@ -2484,13 +3153,37 @@
     "sachverhalt": "214e28798c86",
     "rev": 2,
     "fp": "2e4ffc41a41b",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "stillgelegt": true
    },
    "MF-U11-R2": {
     "sachverhalt": "e2be73140624",
     "rev": 1,
     "fp": "365b86cae9a2",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "365b86cae9a2",
+    "stillgelegt": true
+   },
+   "MF-U11-R3": {
+    "sachverhalt": "f9ccdc895435",
+    "rev": 1,
+    "fp": "258f6761073c",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "258f6761073c"
+   },
+   "MF-U11-R4": {
+    "sachverhalt": "26ef1d97b0ca",
+    "rev": 1,
+    "fp": "4036b59fcff9",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "4036b59fcff9"
+   },
+   "MF-U11-R5": {
+    "sachverhalt": "ca16d16943b6",
+    "rev": 1,
+    "fp": "3dfd6d333c2f",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "3dfd6d333c2f"
    }
   },
   "MF-U12": {
@@ -2498,19 +3191,22 @@
     "sachverhalt": "5f8c1e5d8219",
     "rev": 2,
     "fp": "da49b8f4c1a4",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "da49b8f4c1a4"
    },
    "MF-U12-R2": {
     "sachverhalt": "33cdba6b146e",
     "rev": 1,
     "fp": "4decadb98c0d",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "stillgelegt": true
    },
    "MF-U12-R3": {
     "sachverhalt": "ab4c4e14e46f",
-    "rev": 1,
-    "fp": "6a97ac012299",
-    "stand": "81-20-mf-2026.9"
+    "rev": 2,
+    "fp": "dcac3c9fd64f",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "dcac3c9fd64f"
    }
   },
   "MF-U13": {
@@ -2518,19 +3214,22 @@
     "sachverhalt": "65d26ff42bd9",
     "rev": 2,
     "fp": "02308067b580",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "02308067b580"
    },
    "MF-U13-R2": {
     "sachverhalt": "f62befb81c06",
     "rev": 2,
     "fp": "bfb5dca98d4e",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "bfb5dca98d4e"
    },
    "MF-U13-R3": {
     "sachverhalt": "fd0ef3e4db4f",
     "rev": 1,
     "fp": "cd534ca7bc53",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "cd534ca7bc53"
    }
   },
   "MF-U14": {
@@ -2538,35 +3237,45 @@
     "sachverhalt": "6f5b6937d295",
     "rev": 1,
     "fp": "4f90b41247e1",
-    "stand": "81-20-mf-2026.9",
+    "stand": "81-20-mf-2026.10",
     "fp_verifiziert": "4f90b41247e1"
    },
    "MF-U14-R2": {
     "sachverhalt": "9d2f652476d1",
     "rev": 1,
     "fp": "f54c348e9649",
-    "stand": "81-20-mf-2026.9",
+    "stand": "81-20-mf-2026.10",
     "fp_verifiziert": "f54c348e9649"
    },
    "MF-U14-R3": {
     "sachverhalt": "08465fe0c517",
     "rev": 1,
     "fp": "8655edceab72",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "8655edceab72"
    }
   },
   "MF-U15": {
    "MF-U15-R1": {
     "sachverhalt": "df6b2863090d",
-    "rev": 1,
-    "fp": "17dd82aa25cc",
-    "stand": "81-20-mf-2026.9"
+    "rev": 2,
+    "fp": "d6f975a17055",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "d6f975a17055"
    },
    "MF-U15-R2": {
     "sachverhalt": "c08e0379c358",
+    "rev": 2,
+    "fp": "d2752a67356d",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "d2752a67356d"
+   },
+   "MF-U15-R3": {
+    "sachverhalt": "e61bf8168275",
     "rev": 1,
-    "fp": "f84ba466439a",
-    "stand": "81-20-mf-2026.9"
+    "fp": "9f4190a64ce7",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "9f4190a64ce7"
    }
   },
   "MF-SF01": {
@@ -2574,77 +3283,78 @@
     "sachverhalt": "5870d5ce5bdc",
     "rev": 1,
     "fp": "b76a13941084",
-    "stand": "81-20-mf-2026.9",
+    "stand": "81-20-mf-2026.10",
     "fp_verifiziert": "b76a13941084"
    },
    "MF-SF01-R2": {
     "sachverhalt": "595499d37d5a",
     "rev": 1,
     "fp": "f052fbf83adf",
-    "stand": "81-20-mf-2026.9",
+    "stand": "81-20-mf-2026.10",
     "fp_verifiziert": "f052fbf83adf"
    },
    "MF-SF01-R3": {
     "sachverhalt": "3cb350fbb3ba",
     "rev": 1,
     "fp": "ab0227ba8bcb",
-    "stand": "81-20-mf-2026.9",
+    "stand": "81-20-mf-2026.10",
     "fp_verifiziert": "ab0227ba8bcb"
    },
    "MF-SF01-R4": {
     "sachverhalt": "99e6f0ad50dd",
     "rev": 1,
     "fp": "2f412404cb5b",
-    "stand": "81-20-mf-2026.9",
+    "stand": "81-20-mf-2026.10",
     "fp_verifiziert": "2f412404cb5b"
    },
    "MF-SF01-R5": {
     "sachverhalt": "0656a0289c6b",
     "rev": 1,
     "fp": "61fde9086bc4",
-    "stand": "81-20-mf-2026.9",
+    "stand": "81-20-mf-2026.10",
     "fp_verifiziert": "61fde9086bc4"
    },
    "MF-SF01-R6": {
     "sachverhalt": "9d5b920a30d2",
     "rev": 1,
     "fp": "79816d6c00a9",
-    "stand": "81-20-mf-2026.9",
+    "stand": "81-20-mf-2026.10",
     "fp_verifiziert": "79816d6c00a9"
    },
    "MF-SF01-R7": {
     "sachverhalt": "70ea7683b981",
     "rev": 1,
     "fp": "b37eae9a14e1",
-    "stand": "81-20-mf-2026.9",
+    "stand": "81-20-mf-2026.10",
     "fp_verifiziert": "b37eae9a14e1"
    },
    "MF-SF01-R8": {
     "sachverhalt": "364cee697e6f",
     "rev": 1,
     "fp": "96329931b1ff",
-    "stand": "81-20-mf-2026.9",
+    "stand": "81-20-mf-2026.10",
     "fp_verifiziert": "96329931b1ff"
    },
    "MF-SF01-R9": {
     "sachverhalt": "cf9ccc83cc51",
     "rev": 1,
     "fp": "565806f13ec2",
-    "stand": "81-20-mf-2026.9",
+    "stand": "81-20-mf-2026.10",
     "fp_verifiziert": "565806f13ec2"
    },
    "MF-SF01-R10": {
     "sachverhalt": "4b8e8dcb8897",
     "rev": 1,
     "fp": "9b0dab0223bf",
-    "stand": "81-20-mf-2026.9",
+    "stand": "81-20-mf-2026.10",
     "fp_verifiziert": "9b0dab0223bf"
    },
    "MF-SF01-R11": {
     "sachverhalt": "9fd83564e144",
     "rev": 1,
     "fp": "2542a6acb2bd",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "2542a6acb2bd"
    }
   },
   "MF-D01": {
@@ -2652,14 +3362,15 @@
     "sachverhalt": "17d3ce420327",
     "rev": 1,
     "fp": "2dcdf0dae00c",
-    "stand": "81-20-mf-2026.9",
+    "stand": "81-20-mf-2026.10",
     "fp_verifiziert": "2dcdf0dae00c"
    },
    "MF-D01-R2": {
     "sachverhalt": "7dc88f160010",
     "rev": 1,
     "fp": "c7610b082839",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "c7610b082839"
    }
   },
   "MF-D02": {
@@ -2667,21 +3378,22 @@
     "sachverhalt": "14e9b05080cf",
     "rev": 1,
     "fp": "5297472e6f7d",
-    "stand": "81-20-mf-2026.9",
+    "stand": "81-20-mf-2026.10",
     "fp_verifiziert": "5297472e6f7d"
    },
    "MF-D02-R2": {
     "sachverhalt": "e2085358d7f3",
     "rev": 1,
     "fp": "a8768ce10f66",
-    "stand": "81-20-mf-2026.9",
+    "stand": "81-20-mf-2026.10",
     "fp_verifiziert": "a8768ce10f66"
    },
    "MF-D02-R3": {
     "sachverhalt": "1d2b51c9649c",
     "rev": 1,
     "fp": "ce9128812a86",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "ce9128812a86"
    }
   },
   "MF-D03": {
@@ -2689,42 +3401,59 @@
     "sachverhalt": "5592d7c6399e",
     "rev": 1,
     "fp": "5f131aa75e0e",
-    "stand": "81-20-mf-2026.9",
+    "stand": "81-20-mf-2026.10",
     "fp_verifiziert": "5f131aa75e0e"
    },
    "MF-D03-R2": {
     "sachverhalt": "5dcc40fb2b36",
     "rev": 1,
     "fp": "aee252789b90",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "aee252789b90"
    },
    "MF-D03-R3": {
     "sachverhalt": "b82a76d1afaa",
     "rev": 1,
     "fp": "0ed1f5ae6113",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "0ed1f5ae6113"
    }
   },
   "MF-D04": {
    "MF-D04-R1": {
     "sachverhalt": "cfdd06eb67d7",
-    "rev": 2,
-    "fp": "021d4dc9d867",
-    "stand": "81-20-mf-2026.9",
-    "fp_verifiziert": "4005b915d7f8"
+    "rev": 3,
+    "fp": "9b4db9d6766a",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "9b4db9d6766a"
    },
    "MF-D04-R2": {
     "sachverhalt": "f73e61a6e1e3",
-    "rev": 2,
-    "fp": "d306eefb6b16",
-    "stand": "81-20-mf-2026.9",
-    "fp_verifiziert": "534b90406252"
+    "rev": 4,
+    "fp": "3c0f384e7d68",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "3c0f384e7d68"
    },
    "MF-D04-R3": {
     "sachverhalt": "6a4b9b3444dd",
-    "rev": 2,
-    "fp": "719975876341",
-    "stand": "81-20-mf-2026.9"
+    "rev": 3,
+    "fp": "9f1f45f52289",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "9f1f45f52289"
+   },
+   "MF-D04-R4": {
+    "sachverhalt": "3449b8066275",
+    "rev": 1,
+    "fp": "4b68e42cbaac",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "4b68e42cbaac"
+   },
+   "MF-D04-R5": {
+    "sachverhalt": "016448e267c4",
+    "rev": 1,
+    "fp": "8d7942dc22d0",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "8d7942dc22d0"
    }
   },
   "MF-D05": {
@@ -2732,81 +3461,106 @@
     "sachverhalt": "39c508ea8f4a",
     "rev": 1,
     "fp": "efb7435ca1fe",
-    "stand": "81-20-mf-2026.9",
+    "stand": "81-20-mf-2026.10",
     "fp_verifiziert": "efb7435ca1fe"
    },
    "MF-D05-R2": {
     "sachverhalt": "f8c311723b7a",
     "rev": 1,
     "fp": "d92af159e6c1",
-    "stand": "81-20-mf-2026.9",
+    "stand": "81-20-mf-2026.10",
     "fp_verifiziert": "d92af159e6c1"
    },
    "MF-D05-R3": {
     "sachverhalt": "8ae75cba8423",
     "rev": 1,
     "fp": "91d33b2dccf5",
-    "stand": "81-20-mf-2026.9",
+    "stand": "81-20-mf-2026.10",
     "fp_verifiziert": "91d33b2dccf5"
    },
    "MF-D05-R4": {
     "sachverhalt": "78dbf782f093",
     "rev": 1,
     "fp": "3bd530b69ce9",
-    "stand": "81-20-mf-2026.9",
+    "stand": "81-20-mf-2026.10",
     "fp_verifiziert": "3bd530b69ce9"
    },
    "MF-D05-R5": {
     "sachverhalt": "1e122fbab502",
     "rev": 1,
     "fp": "efd52e56b157",
-    "stand": "81-20-mf-2026.9"
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "efd52e56b157"
    }
   },
   "MF-D06": {
    "MF-D06-R1": {
     "sachverhalt": "398a677f869d",
-    "rev": 1,
-    "fp": "20bcb353fe98",
-    "stand": "81-20-mf-2026.9",
-    "fp_verifiziert": "20bcb353fe98"
+    "rev": 2,
+    "fp": "4c59a25212ff",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "20bcb353fe98",
+    "stillgelegt": true
    },
    "MF-D06-R2": {
     "sachverhalt": "e0c5eae5c428",
-    "rev": 1,
-    "fp": "0bb85c136def",
-    "stand": "81-20-mf-2026.9",
-    "fp_verifiziert": "0bb85c136def"
+    "rev": 2,
+    "fp": "cec824f88394",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "0bb85c136def",
+    "stillgelegt": true
    },
    "MF-D06-R3": {
     "sachverhalt": "9cf16702e890",
-    "rev": 1,
-    "fp": "2e66237204fa",
-    "stand": "81-20-mf-2026.9",
-    "fp_verifiziert": "2e66237204fa"
+    "rev": 2,
+    "fp": "dce1166e9b54",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "2e66237204fa",
+    "stillgelegt": true
    },
    "MF-D06-R4": {
     "sachverhalt": "43b5661888ac",
-    "rev": 1,
-    "fp": "948c7edebcc6",
-    "stand": "81-20-mf-2026.9",
-    "fp_verifiziert": "948c7edebcc6"
+    "rev": 2,
+    "fp": "bed7c4ccd7cb",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "bed7c4ccd7cb"
    },
    "MF-D06-R5": {
     "sachverhalt": "0ffd7286aa98",
-    "rev": 1,
-    "fp": "0ee6c83a3d54",
-    "stand": "81-20-mf-2026.9",
-    "fp_verifiziert": "0ee6c83a3d54"
+    "rev": 2,
+    "fp": "8174dd582533",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "8174dd582533"
    },
    "MF-D06-R6": {
     "sachverhalt": "f28badd2ece9",
+    "rev": 2,
+    "fp": "ea6de9703763",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "ea6de9703763"
+   },
+   "MF-D06-R7": {
+    "sachverhalt": "1cbe95fe0f6c",
     "rev": 1,
-    "fp": "61799298f90f",
-    "stand": "81-20-mf-2026.9",
-    "fp_verifiziert": "61799298f90f"
+    "fp": "b398f0417b53",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "b398f0417b53"
+   },
+   "MF-D06-R8": {
+    "sachverhalt": "615e83718d54",
+    "rev": 1,
+    "fp": "3c76abc8c6c5",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "3c76abc8c6c5"
+   },
+   "MF-D06-R9": {
+    "sachverhalt": "4250301891ed",
+    "rev": 1,
+    "fp": "fded94181400",
+    "stand": "81-20-mf-2026.10",
+    "fp_verifiziert": "fded94181400"
    }
   }
  },
- "stand": "81-20-mf-2026.9"
+ "stand": "81-20-mf-2026.10"
 }

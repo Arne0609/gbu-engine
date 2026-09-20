@@ -9,15 +9,20 @@ from .common import *
 # ---- Fragen ----------------------------------------------------------------
 yn('qn_segmentierung', 'Ist das Aufzugsnetz vom Gebäude-/Büronetz und vom Internet '
    'getrennt (eigenes Segment, Firewall, keine direkte Erreichbarkeit der '
-   'Steuerung von außen)?', ui='4.1', visible_when=yes('qa_vernetzt'))
+   'Steuerung von außen)?', ui='4.1', visible_when=yes('qa_vernetzt'),
+   help='Gilt kanalübergreifend für ALLE Zugangswege der Anlage (Fernüberwachung, Remote-Service/Fernwartung, Gateway, Servicegeräte vor Ort). Sind die Kanäle technisch getrennt – etwa Hersteller-Cloud und Wartungs-VPN –, gilt der schlechteste Fall: „Ja" nur, wenn es für JEDEN vorhandenen Kanal zutrifft (Prüfbericht 20.09.2026).')
 yn('qn_fern_freigabe', 'Wird ein Fernzugriff nur nach Freigabe durch den Betreiber '
    'und nur für die Dauer des Bedarfs aktiviert?', ui='4.2',
-   visible_when=yes('qa_vernetzt'))
+   visible_when=all_(yes('qa_vernetzt'), yes('qc_remote_vorhanden')),
+   help='Nur bei vorhandenem Remote-Service / vorhandener Fernwartung (3.12.1). Eine reine '
+        'Fernüberwachung ohne Schreibzugriff braucht kein Freigabeverfahren '
+        '(Prüfbericht 20.09.2026).')
 yn('qn_fern_auth', 'Ist der Fernzugriff individuell authentifiziert (personen'
    'bezogene Zugänge, Zwei-Faktor oder gleichwertig) und verschlüsselt?', ui='4.3',
-   visible_when=yes('qa_vernetzt'))
+   visible_when=yes('qa_vernetzt'), help='Gilt kanalübergreifend für ALLE Zugangswege der Anlage (Fernüberwachung, Remote-Service/Fernwartung, Gateway, Servicegeräte vor Ort). Sind die Kanäle technisch getrennt – etwa Hersteller-Cloud und Wartungs-VPN –, gilt der schlechteste Fall: „Ja" nur, wenn es für JEDEN vorhandenen Kanal zutrifft (Prüfbericht 20.09.2026).')
 yn('qn_protokoll', 'Werden Zugriffe auf die Anlage (vor Ort über Servicegeräte und '
-   'per Fernzugriff) protokolliert und die Protokolle ausgewertet?', ui='4.4')
+   'per Fernzugriff) protokolliert und die Protokolle ausgewertet?', ui='4.4',
+   help='Gilt kanalübergreifend für ALLE Zugangswege der Anlage (Fernüberwachung, Remote-Service/Fernwartung, Gateway, Servicegeräte vor Ort). Sind die Kanäle technisch getrennt – etwa Hersteller-Cloud und Wartungs-VPN –, gilt der schlechteste Fall: „Ja" nur, wenn es für JEDEN vorhandenen Kanal zutrifft (Prüfbericht 20.09.2026).')
 sel('qn_softwarestand', 'Software-/Firmwarestand und bekannte Schwachstellen', ui='4.5',
     options=[('geregelt', 'Stand bekannt; Sicherheitsupdates und Schwachstellen'
                           'hinweise des Herstellers werden geregelt umgesetzt'),
@@ -54,10 +59,20 @@ hz('CY-N01', 'Unbekannte oder ungepatchte Schwachstellen (Softwarestand)', GRP_H
     r(eq('qn_softwarestand', 'bekannt_ungeregelt'), 'MEDIUM', prio=250,
       sofort='Herstellerhinweise zu Schwachstellen einholen und bewerten',
       mittel='Update- und Schwachstellenverfahren festlegen (Zuständigkeit, Fristen)'),
-    r(eq('qn_softwarestand', 'unbekannt'), 'LOW', prio=240,
+    r(all_(eq('qn_softwarestand', 'unbekannt'), yes('qa_vernetzt')), 'HIGH', prio=245,
+      sofort='Software-/Firmwarestände aller programmierbaren Komponenten erfassen; '
+             'Fernzugänge bis zur Klärung deaktivieren',
+      mittel='Versionsdokumentation einführen und mit Herstellerhinweisen abgleichen',
+      klaerung=['K-C14'],
+      notes='Prüfbericht 20.09.2026: Wer den Stand nicht kennt, kann auch kein '
+            'Schwachstellenverfahren führen – der Fall darf nicht günstiger bewertet '
+            'werden als „Stand bekannt, aber kein Verfahren" (vorher Niedrig).'),
+    r(eq('qn_softwarestand', 'unbekannt'), 'MEDIUM', prio=240,
       sofort='Software-/Firmwarestände aller programmierbaren Komponenten erfassen',
       mittel='Versionsdokumentation einführen und mit Herstellerhinweisen abgleichen',
-      klaerung=['K-C14'])],
+      klaerung=['K-C14'],
+      notes='Prüfbericht 20.09.2026: Niedrig auf Mittel – entspricht jetzt dem Vorschlag '
+            'der Klärung K-C14 („Mittel"), die Umsetzung stand auf Niedrig.')],
    sources=[trbs1115('3.3 Stand der Technik'), zues_b002('Anhang 2 Nr. 5, 10')],
    factor=F_MANIP, persons=[NUTZER, WARTUNG, BETREIBER], bereich='N')
 

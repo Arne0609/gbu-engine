@@ -49,6 +49,13 @@ yn('qd_wartungsunterlagen', 'Wartungsunterlagen und Prüfbuch vorhanden und aktu
 yn('qd_regelmaessige_wartung', 'Wird die Anlage regelmäßig durch ein Fachunternehmen '
    'instand gehalten (Wartungsvertrag)?', ui='3.10')
 yn('qd_pruefplakette', 'Prüfplakette der ZÜS vorhanden und lesbar?', ui='3.6')
+# 3.7 steuert die Nachweis-Vorbelegung (mf_content/erhebung.py, D05) und wird seit
+# dem Prüfbericht vom 20.09.2026 zusätzlich bewertet: Ein Prüfbericht mit offenen
+# sicherheitsrelevanten Mängeln blieb bis dahin ohne jede Stufe.
+from .erhebung import D05 as _D05  # noqa: E402
+sel('qd_zues_bericht', _D05['text'],
+    [(x['value'], x['label']) for x in _D05['options']],
+    ui=_D05['ui_number'], help=_D05['help_text'])
 yn('qd_pruefung_ueberfaellig', 'Prüffrist der wiederkehrenden Prüfung (ZÜS) überschritten?',
    ui='3.8')
 yn('qd_beauftragte_person', 'Beauftragte Person für die Aufzugsanlage (Aufzugswärter) '
@@ -127,15 +134,40 @@ hz('MF-D03', 'Wartungsunterlagen fehlen oder keine regelmäßige Instandhaltung'
 
 hz('MF-D04', 'Prüfplakette fehlt oder Prüffrist der ZÜS überschritten', GRP_DOC,
    [('qd_pruefplakette', 'TRIGGER', 'ALWAYS'),
-    ('qd_pruefung_ueberfaellig', 'TRIGGER', 'ALWAYS')],
-   [r(yes('qd_pruefung_ueberfaellig'), 'HIGH',
+    ('qd_pruefung_ueberfaellig', 'TRIGGER', 'ALWAYS'),
+    ('qd_zues_bericht', 'TRIGGER', 'ALWAYS',
+     {'notes': 'Steuerfrage der Nachweis-Vorbelegung und zugleich Befund '
+               '(Prüfbericht 20.09.2026).'})],
+   [r(eq('qd_zues_bericht', 'mit_maengeln'), 'HIGH', prio=110,
+      sofort='Offene sicherheitsrelevante Mängel des ZÜS-Prüfberichts mit dem Betreiber und '
+             'dem Instandhalter abarbeiten; bei Gefahr im Verzug Anlage stilllegen',
+      mittel='Mängel beseitigen lassen und die Nachprüfung durch die ZÜS veranlassen; '
+             'Erledigung im Prüfbuch dokumentieren',
+      evidence='HIGH_CONFIDENCE',
+      notes='Prüfbericht 20.09.2026: Die Option „Prüfbericht liegt vor, aber mit offenen '
+            'sicherheitsrelevanten Mängeln" wurde bisher von keiner Regel ausgewertet – '
+            'festgestellte ZÜS-Mängel blieben im Bericht grün.'),
+    r(eq('qd_zues_bericht', 'nicht_vorhanden'), 'MEDIUM', prio=105,
+      sofort='Prüfbescheinigung der letzten Hauptprüfung beim Betreiber anfordern',
+      mittel='Prüfbescheinigungen nach BetrSichV § 17 Abs. 2 bei der Anlage vorhalten '
+             '(TRBS 3121 Abschn. 3.2)',
+      evidence='INFERRED',
+      notes='Ohne Prüfbericht greift zugleich keine Nachweis-Vorbelegung – es ist vollständig '
+            'zu erheben.'),
+    r(yes('qd_pruefung_ueberfaellig'), 'HIGH',
       sofort='Betreiber informieren; Prüfung durch die ZÜS unverzüglich veranlassen',
       mittel='Prüffristen im Prüfbuch führen und Wiedervorlage einrichten', evidence='INFERRED',
       klaerung='K-D03'),
-    r(no('qd_pruefplakette'), 'MEDIUM',
-      sofort='Prüfbescheinigung einsehen; Plakette nachbeschaffen',
+    r(no('qd_pruefplakette'), 'LOW',
+      sofort='Prüfbescheinigung der letzten ZÜS-Prüfung einsehen und Plakette bei der '
+             'prüfenden ZÜS anfordern',
       mittel='Prüfplakette im Fahrkorb anbringen (BetrSichV § 17 Abs. 3)', evidence='INFERRED',
-      klaerung='K-D03')],
+      klaerung='K-D03',
+      notes='Regelprüfung 20.09.2026: Mittel auf Niedrig. Die fehlende oder unleserliche Plakette ist ein '
+            'Kennzeichnungsmangel ohne eigenen Gefährdungsbeitrag; der sicherheitsrelevante '
+            'Sachverhalt dahinter steht getrennt in 3.8 (Frist überschritten, Hoch) und 3.7 '
+            '(kein Prüfbericht, Mittel). Die Plakette gibt die ZÜS aus – „nachbeschaffen" war '
+            'missverständlich.')],
    sources=[law('BetrSichV', '§ 16'), law('BetrSichV', '§ 17 Abs. 3'), law('BetrSichV', 'Anh. 2 Abschn. 2')],
    factor=F_ORGA, persons=[BETREIBER, NUTZER], agg='MAXIMUM', bereich='D')
 
@@ -190,7 +222,10 @@ hz('MF-D05', 'Betreiberorganisation: beauftragte Person, Unterweisung, Betriebsa
 yn('qd_konformitaet_geprueft', 'Konformitätserklärung und Abnahmeunterlagen der '
    'Anlage liegen vor?', ui='1.29',
    help='Nur für Anlagen, die nach der Aufzugsrichtlinie in Verkehr gebracht '
-        'wurden (ab 1999). Bei Altanlagen nach TRA: Nein wählen.')
+        'wurden (ab 1999). Bei Altanlagen nach TRA: Nein wählen. Die Frage schaltet '
+        'zugleich alle Baujahr-Annahmen: Nur bei „Ja" gelten Merkmale, die zum '
+        'Baujahr vorgeschrieben waren, als abgenommen (Prüfbericht 20.09.2026 – '
+        'bisher reichte dafür eine unbeantwortete Frage).')
 
 hz('MF-D06', 'Ausstattung passt nicht zum Regelwerk des Inverkehrbringens '
    '(Konformitätsmangel)', GRP_DOC,
@@ -198,33 +233,52 @@ hz('MF-D06', 'Ausstattung passt nicht zum Regelwerk des Inverkehrbringens '
     ('qa_norm_inverkehrbringen', 'TRIGGER', 'ALWAYS'),
     ('qa_ucm_a3', 'TRIGGER', 'ALWAYS'),
     ('qa_fahrkorbtuer', 'TRIGGER', 'ALWAYS'),
-    ('qd_konformitaet_geprueft', 'OPTIONAL', 'NEVER')],
+    ('qd_konformitaet_geprueft', 'TRIGGER', 'CONDITIONAL',
+     {'required_when': bj_ab(BJ_AUFZUGSRICHTLINIE),
+      'notes': 'Pflicht ab Baujahr 1999: Das Baujahr trägt nur dann eine '
+               'Konformitätsvermutung, wenn die Unterlagen vorliegen – und nur dann '
+               'greifen die Baujahr-Annahmen (Prüfbericht 20.09.2026).'})],
    [# Ab EN 81-20 (2017) sind UCM-Schutz und Fahrkorbtür Stand der Norm. Fehlen
     # sie an einer so jungen Anlage, ist die Anlage nicht normkonform gebaut.
-    r(all_(bj_ab(BJ_EN8120), no('qa_fahrkorbtuer')), 'HIGH', prio=300,
-      sofort='Errichter und Konformitätserklärung prüfen; Anlage bis zur Klärung '
-             'nur mit eingewiesenen Personen betreiben',
+    r(all_(norm_ab(BJ_EN8120), no('qa_fahrkorbtuer')), 'HIGH', prio=300,
+      sofort='Betreiber unterrichten; Aufzug für den Personentransport sperren; '
+             'Errichter und Konformitätserklärung prüfen',
       mittel='Fahrkorbabschlusstür nachrüsten und die Konformität der Anlage '
              'durch den Errichter nachweisen lassen (DIN EN 81-20 5.4.6)',
       evidence='HIGH_CONFIDENCE',
       notes='Fahrkorbtür ist seit EN 81-1/2 (1999) gefordert und in EN 81-20 '
-            'unverändert – an einer Anlage ab 2017 ist ihr Fehlen ein '
-            'Konformitätsmangel, keine Nachrüstfrage.'),
-    r(all_(bj_ab(BJ_UCM), no('qa_ucm_a3')), 'HIGH', prio=250,
-      sofort='Errichter einbeziehen; Konformitätserklärung und Baumusterprüfung '
-             'der Anlage anfordern',
+            'unverändert – an einer nach EN 81-20 in Verkehr gebrachten Anlage ist ihr '
+            'Fehlen ein Konformitätsmangel, keine Nachrüstfrage. Regelprüfung 20.09.2026: Bedingung vom Baujahr '
+            'auf das Errichtungsregelwerk (1.28) umgestellt – die durchgreifend '
+            'modernisierte Altanlage wurde sonst nicht erfasst. Sofortmaßnahme „nur mit '
+            'eingewiesenen Personen betreiben" gestrichen: sie widersprach MF-T06-R1 '
+            '(Sperren) und nahm eine Kompensation vorweg, die nur dort und nur beim '
+            'Lastenaufzug zulässig ist.'),
+    r(all_(norm_ab(BJ_UCM), no('qa_ucm_a3')), 'HIGH', prio=250,
+      sofort='Betreiber unverzüglich unterrichten; Nachregulieren und Voraböffnen mit '
+             'offener Tür sowie die Haltegenauigkeit prüfen; bei Wegsacken oder Anfahren '
+             'mit offener Tür Anlage stilllegen; Konformitätserklärung und '
+             'Baumusterprüfung beim Errichter anfordern',
       mittel='UCM-Schutz nachrüsten und die Konformität nachweisen lassen '
              '(EN 81-1/2 + A3 bzw. DIN EN 81-20 5.6.7)',
       evidence='HIGH_CONFIDENCE',
-      notes='EN 81-1/2 + A3 (UCM) ist seit 2012 verbindlich.'),
-    r(all_(bj_ab(BJ_AUFZUGSRICHTLINIE), no('qa_fahrkorbtuer')), 'MEDIUM', prio=200,
-      sofort='Unterlagen zum Inverkehrbringen prüfen (Baujahr und Ausstattung '
+      notes='EN 81-1/2 + A3 (UCM) ist seit 2012 verbindlich, EN 81-20 durchgehend. '
+            'Regelprüfung 20.09.2026: Bedingung auf das Errichtungsregelwerk umgestellt; die Sofortmaßnahme '
+            '„Unterlagen anfordern" hatte für eine Hoch-Regel keine Schutzwirkung. Die '
+            'Kompensationen aus MF-K12 (Zweikreisbremse, Bremsüberwachung, statisch '
+            'bestimmte Lagerung) heilen den Konformitätsmangel nicht und bleiben dort.'),
+    r(all_(norm_ab(BJ_AUFZUGSRICHTLINIE), not_(norm_ab(BJ_EN8120)),
+           no('qa_fahrkorbtuer')), 'MEDIUM', prio=200,
+      sofort='Unterlagen zum Inverkehrbringen prüfen (Regelwerk und Ausstattung '
              'passen nicht zusammen)',
       mittel='Fahrkorbabschlusstür nachrüsten (DIN EN 81-1/2 5.4, EN 81-80 5.5.2)',
       evidence='HIGH_CONFIDENCE',
       notes='Ab Geltung der Aufzugsrichtlinie (01.07.1999) ist die Fahrkorbtür '
-            'gefordert. Vor 1999 gebaute Anlagen ohne Fahrkorbtür sind dagegen '
-            'ein Nachrüstfall nach EN 81-80, kein Konformitätsmangel.'),
+            'gefordert. Vor 1999 in Verkehr gebrachte Anlagen ohne Fahrkorbtür sind '
+            'dagegen ein Nachrüstfall nach EN 81-80, kein Konformitätsmangel. '
+            'Regelprüfung 20.09.2026: Bedingung auf das Errichtungsregelwerk umgestellt und gegen R1 '
+            'abgegrenzt – vorher lösten bei Baujahr ab 2017 beide Regeln aus und der '
+            'Bericht führte denselben Befund zweimal mit verschiedenen Begründungen.'),
     # Widerspruch zwischen Baujahr und angegebenem Regelwerk: kein technischer
     # Mangel, aber die Unterlagen taugen dann nicht als Beurteilungsgrundlage.
     r(all_(bj_ab(BJ_EN8120), eq('qa_norm_inverkehrbringen', 'tra')), 'MEDIUM', prio=150,

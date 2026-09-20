@@ -1,0 +1,1772 @@
+[
+ {
+  "code": "MF-D01-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-D02-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-D03-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-D03-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-D04-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": "Beanstandung in der Gegenprüfung widerlegt: Die Beanstandung trägt nicht. Sie ist eine Formulierungsfrage, kein Bewertungsfehler: Bedingung, Stufe, Priorität und Anwendbarkeit bleiben unverändert, und der Prüfer bestätigt Hoch selbst. Der Katalogmaßstab nennt „Betreiber unterrichten“ ausdrücklich als zulässige Sofortmaßnahme – genau das leistet „Betreiber informieren; Prüfung durch die ZÜS unverzüglich veranlassen“, und beides ist sofort und ohne Fachfirma ausführbar. Katalogintern ist das der etablierte Standard für organisatorische Hoch-Regeln: MF-D03-R1 (Hoch, freigegeben) lautet praktisch gleich („Betreiber auf die Instandhaltungspf"
+ },
+ {
+  "code": "MF-D04-R2",
+  "entscheidung": "Ändern",
+  "korrektur": "Eine fehlende oder unleserliche Prüfplakette ist eine Kennzeichnungspflichtverletzung ohne eigenen Gefährdungsbeitrag – nach dem Stufenmaßstab „Niedrig“ (Maßnahme bei nächster Gelegenheit). Der sicherheitsrelevante Sachverhalt dahinter (Prüffrist überschritten, kein Prüfbericht) ist über 3.8 und 3.7 getrennt mit Hoch bzw. Mittel erfasst; bei Aggregation MAXIMUM geht durch die Absenkung daher nichts verloren, während heute eine sonst mängelfreie Anlage allein wegen der Plakette auf Mittel gehoben wird. -> Stufe von Mittel auf Niedrig setzen. Sofortmaßnahme präzisieren: „Prüfbescheinigung der letzten ZÜS-Prüfung einsehen und Plakette bei der prüfenden ZÜS anfordern“ – „nachbeschaffen“ ist missverständlich, die Plakette wird von der ZÜS ausgegeben. Mittelfristige Maßnahme bleibt."
+ },
+ {
+  "code": "MF-D04-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-D04-R4",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-D04-R5",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-D05-R5",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-D06-R1",
+  "entscheidung": "Ändern",
+  "korrektur": "Maßgeblich für den Soll-Zustand ist nach dem Hilfetext zu 1.28 ausdrücklich das Errichtungsregelwerk, nicht das Baujahr; die Bedingung [1.24] ≥ 2017 verfehlt die durchgreifend modernisierte Altanlage (z. B. Baujahr 1985, 1.28 = EN 81-20) und löst umgekehrt bei bloßem Stammdatenwiderspruch aus. Zusätzlich übergeht die Regel die in MF-T06 geführten Kompensationen (8.9 Lichtgitter, 8.9a Scherengitter, 8.9b eingewiesener Nutzerkreis): ein Lastenaufzug, den MF-T06 mit Mittel bewertet, erhält hier ungeprüft Hoch – bei Aggregation MAXIMUM ist das über die Priorität nicht heilbar. Die Sofortmaßnahme widerspricht überdies MF-T06-R1 („Aufzug für Personentransport sperren“). -> 1) Bedingung umstellen auf: ([1.28] = „DIN EN 81-20 (ab 2017)“ ODER ([1.28] = „Unbekannt / keine Unterlagen“ UND [1.24] ≥ 2017)) UND [8.6] = Nein. 2) Sofortmaßnahme ersetzen durch: „Betreiber unterrichten; Aufzug für den Personentransport sperren; Errichter und Konformitätserklärung prüfen“ – „nur mit eingewiesenen Personen betreiben“ ersatzlos streichen (Widerspruch zu MF-T06-R1; Kompensation nur dort und nur beim Lastenaufzug zulässig). 3) Stufe Hoch und Priorität P300 bleiben; KEINE Auswertung von 8.9/8.9a/8.9b in MF-D06 – die Betriebskompensation nach TRBS 3121 Anh. 1 Nr. 14 c) heilt den Konformitätsmangel einer ab 2017 in Verkehr gebrachten Anlage nicht und wird in MF-T06 geführt. 4) Fundstelle „DIN EN 81-20 5.4.6“ in MF-D06-R1 belassen und stattdessen die Zitierung in MF-T06 (5.3/5.3.6) gegen den Fahrkorbtür-Abschnitt prüfen; beide Nummern vor der Freigabe am Normtext verifizieren (Zuversicht zur Fundstelle: niedrig)."
+ },
+ {
+  "code": "MF-D06-R2",
+  "entscheidung": "Ändern",
+  "korrektur": "Die Bedingung knüpft allein an das Baujahr an, obwohl der Hilfetext zu 4.5 ausdrücklich das Errichtungsregelwerk (1.28) für maßgeblich erklärt – die 2020 modernisierte Altanlage ohne UCM-Schutz wird nicht erfasst. Stufe Hoch überschreibt zudem ungeprüft die Kompensationslogik von MF-K12, die dieselbe Frage 4.5 über Zweikreisbremse, Bremsüberwachung und statisch bestimmte Lagerung bis auf Niedrig abstuft; bei MAXIMUM lässt sich das in MF-D06 nicht über die Priorität korrigieren. Die Sofortmaßnahme (Unterlagen anfordern) ist für eine Hoch-Regel ohne Schutzwirkung. -> 1) Bedingung umstellen auf: ([1.28] = „DIN EN 81-20 (ab 2017)“ ODER (([1.28] = „DIN EN 81-1 / 81-2 (1999–2017)“ ODER [1.28] = „Unbekannt / keine Unterlagen“) UND [1.24] ≥ 2012)) UND [4.5] = Nein – die Klammer um den Baujahrvorbehalt ist zwingend, sonst greift ≥ 2012 nur für den Unbekannt-Zweig. 2) Stufe Hoch und Priorität P250 beibehalten; keine Kopplung an MF-K12 und keine Auswertung von 6.2/6.2a/4.6 in MF-D06 – die Kompensationen nach TRBS 3121 Anh. 1 Nr. 16 heilen den Konformitäts- und Nachweismangel nicht und werden in MF-K12 (Aggregation NONE) bereits richtig verrechnet. 3) Sofortmaßnahme ersetzen durch: „Betreiber unverzüglich unterrichten; Nachregulieren und Voraböffnen mit offener Tür sowie die Haltegenauigkeit prüfen; bei Wegsacken oder Anfahren mit offener Tür Anlage stilllegen; Konformitätserklärung und Baumusterprüfung beim Errichter anfordern.“ 4) Fundstelle 5.6.7 vor der Freigabe am Normtext verifizieren und mit MF-K12 gemeinsam festschreiben."
+ },
+ {
+  "code": "MF-D06-R3",
+  "entscheidung": "Ändern",
+  "korrektur": "Die Bedingung [1.24] ≥ 1999 ist nach oben offen und überschneidet sich vollständig mit R1: bei Baujahr ab 2017 ohne Fahrkorbtür lösen beide Regeln aus und erzeugen im Bericht zwei Befunde mit zwei verschiedenen Nachrüstbegründungen. Außerdem wieder Baujahr statt Errichtungsregelwerk, mit derselben Lücke wie bei R1 (modernisierte Altanlage). -> 1) Bedingung eingrenzen auf: ([1.28] = „DIN EN 81-1 / 81-2 (1999–2017)“ ODER ([1.28] = „Unbekannt / keine Unterlagen“ UND [1.24] zwischen 1999 und 2016)) UND [8.6] = Nein – damit entfällt die Überschneidung mit R1. 2) Fundstelle „DIN EN 81-1/2 5.4“ auf den Fahrkorbtür-Abschnitt der EN 81-1/-2 korrigieren und den EN-81-80-Verweis verifizieren. 3) Stufe Mittel kann bleiben (bewertet wird der Konformitätsaspekt), solange MF-T06 die Gefährdung selbst unverändert mit Hoch und Sperrung führt."
+ },
+ {
+  "code": "MF-D06-R4",
+  "entscheidung": "Freigeben",
+  "korrektur": "Beanstandung in der Gegenprüfung widerlegt: Die Beanstandung trägt nicht. Sie stützt sich allein auf Symmetrie zu R5 („derselbe Fehlertyp“), aber die beiden Konstellationen sind gerade nicht symmetrisch, und der Katalog sagt das selbst. R5 (Baujahr ≤ 1998, Regelwerk EN 81-20) ist ausweislich seines Hinweises „Kein Fehler: Eine alte Anlage kann nach einer wesentlichen Veränderung neu in Verkehr gebracht worden sein“ – eine plausible, nur unzureichend dokumentierte Lage, und die daraus abgeleitete Beurteilung geht in die STRENGERE Richtung (EN 81-20 als Soll-Zustand). R4 (Baujahr ≥ 2017, Regelwerk TRA 200/102) ist dagegen ein sachlich unm"
+ },
+ {
+  "code": "MF-D06-R5",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-D06-R6",
+  "entscheidung": "Freigeben",
+  "korrektur": "Beanstandung in der Gegenprüfung widerlegt: Beide Hauptvorwürfe sind nachweisbar falsch. Zu (1): 1.29 (qd_konformitaet_geprueft) ist alles andere als wirkungslos – sie ist der globale Schalter für sämtliche Baujahr-Annahmen des Katalogs. common.py setzt ANNAHMEN_HINFAELLIG = not(yes('qd_konformitaet_geprueft')); gen_mf_catalog schreibt das als seed['assumptions_void_when'] in den Katalog, und evaluator.ts wertet es aus („Ist Ruleset.assumptions_void_when wahr, greift keine einzige Annahme\"). Ein „Nein\" bei 1.29 setzt also jede einzelne Baujahr-Annahme außer Kraft – rund vier Dutzend Ausstattungsfragen müssen dann wieder erhoben werden. "
+ },
+ {
+  "code": "MF-F01-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-F01-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-F01-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-F01-R5",
+  "entscheidung": "Ändern",
+  "korrektur": "Frage 9.4 wird ALWAYS gestellt, die Regel greift damit auch bei Spalt ≤ 300 mm, wo weder EN 81-20 noch EN 81-1 eine Umwehrung und folglich keine Fußleiste fordern. Die Regel erzeugt dort einen Befund „Mittel\" ohne Normgrundlage (Bedingung zu weit). Zusätzlich ist die Sofortmaßnahme „Mit Fuß nicht über den Rand des Fahrkorbdaches treten!\" reine Ermahnung und keine sofort wirksame Maßnahme im Sinne des Maßstabs. -> Bedingung ergänzen: [9.4] = Nein UND [9.1] ist eines von „301–500 mm\" / „501–850 mm\" / „über 850 mm\" (nur wo eine Umwehrung gefordert ist). Sofortmaßnahme ersetzen durch: „Dachrand kennzeichnen, keine losen Teile und Werkzeuge im Randbereich ablegen, Betreiber unterrichten; auf dem Dach nur innerhalb der Umwehrung arbeiten.\" Stufe Mittel bleibt (unvollständige Umwehrung)."
+ },
+ {
+  "code": "MF-F01-R6",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-F01-R7",
+  "entscheidung": "Freigeben",
+  "korrektur": "Beanstandung in der Gegenprüfung widerlegt: Widerlegt. Der Prüfer räumt selbst ein, dass Ergebnis und Stufe stimmen und die Doppelbedingung „genau die beabsichtigte Wirkung\" hat. Seine einzige verbleibende Beanstandung ist die Vermutung einer latenten Fehlerquelle in der Engine – die ist nachgerechnet falsch: /home/claude/engine_model/evaluator.ts Z. 205 wertet `all` als `expr.all.every(...)` aus, also eine schlichte Konjunktion unabhängiger Blattausdrücke; es gibt keine Indizierung nach Fragencode, kein Überschreiben, kein „letzte Bedingung gewinnt\". Zwei IN-Blätter auf [9.1] werden korrekt geschnitten (501–850 mm). Auch collectQuestio"
+ },
+ {
+  "code": "MF-F02-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-F02-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-F02-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-F03-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-F03-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-F03-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-F03-R4",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-F03-R6",
+  "entscheidung": "Freigeben",
+  "korrektur": "Beanstandung in der Gegenprüfung widerlegt: Widerlegt. Der Prüfer bestätigt selbst, dass die Kompensation ausdrücklich beschrieben und durch 9.6b belastbar abgesichert ist (Funktion geprüft, alle Nachbaranlagen erfasst, Wirkung im Inspektionsbetrieb bestätigt) – damit ist die Prioritätsinversion nach dem Maßstab für NONE-Aggregation zulässig. Seine Aufspaltung stützt sich allein darauf, dass bei „Keine Abdeckung / kein Trenngitter\" die Sicherheit an einer „einzelnen, nicht redundanten elektrischen Einrichtung\" hänge. Dieses Argument trägt im Aufzugsrecht nicht: das gesamte Schutzkonzept der EN 81-20 beruht auf einzelnen elektrischen Sic"
+ },
+ {
+  "code": "MF-F03-R7",
+  "entscheidung": "Ändern",
+  "korrektur": "Der Fail-closed-Ansatz ist richtig: ohne Funktionsnachweis darf die Abschaltung die Stufe nicht senken, Hoch bleibt. Problem ist die Aggregation NONE: mit P212 verdrängt R7 die Basisregel R1 (P100) – und damit auch deren technische Mittelfristmaßnahme. Übrig bleibt eine rein organisatorische Maßnahme („Funktion prüfen und dokumentieren\"), obwohl die Ursache – gar keine Abtrennung bei einem Abstand unter 0,50 m – technisch beseitigt werden muss. Das verletzt das TOP-Prinzip. -> Nur die Mittelfristmaßnahme ändern, Bedingung, Stufe Hoch und Priorität P212 unverändert lassen: „Trenngitter über die volle Schachthöhe nachrüsten oder Abstand über 0,5 m zu beweglichen Teilen des Nachbaraufzugs herstellen; alternativ Funktion der automatischen Abschaltung für alle Nachbaranlagen nachweisen und dokumentieren [TECH]\". Die Sofortmaßnahme („Nachbaraufzug zusätzlich von Hand abschalten und gegen Wiedereinschalten sichern\") bleibt, sie ist sofort wirksam und richtig. Die Anmerkung zur Quellenangabe gehört nicht zu R7 – der Buchstabenzusatz „c)\" steht ausschließlich im Hinweis von MF-F03-R6 und ist dort zu bereinigen."
+ },
+ {
+  "code": "MF-F03-R8",
+  "entscheidung": "Ändern",
+  "korrektur": "Die Stufenlogik ist korrekt (fehlender Funktionsnachweis senkt nicht, hebt aber auch nicht). Wie bei R7 verdrängt die Regel mit P210 die Basisregeln R2/R3 (P100) und ersetzt deren technische Mittelfristmaßnahme (Abdeckung bzw. engmaschiges Trenngitter nachrüsten) durch eine rein organisatorische. Die Ursache – die unzureichende Abtrennung – bleibt damit unbenannt. -> Mittelfristmaßnahme ergänzen: „Abdeckung vervollständigen bzw. engmaschiges Trenngitter nachrüsten; alternativ Funktion der automatischen Abschaltung für alle Nachbaranlagen nachweisen und dokumentieren [TECH]\"."
+ },
+ {
+  "code": "MF-F04-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-F04-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": "Beanstandung in der Gegenprüfung widerlegt: Widerlegt. Der Vergleich mit MF-F04-R3 vergleicht zwei verschiedene Kategorien. R3 erfasst einen bei Errichtung regelkonformen Zustand (Schutzraum nach TRA 200 / EN 81-1/-2) – nach dem Prüfmaßstab ausdrücklich Nachrüstbedarf nach EN 81-80 und kein Konformitätsmangel; die Stufe Niedrig ist dort über TRBS 3121 Anh. 1 Nr. 5 gesetzt und freigegeben. R2 erfasst dagegen einen aktuell unvollständigen Schutzsatz: Der reduzierte Schachtkopf ist nur in der Kombination aus wirksamer Zusatzeinrichtung UND zugehöriger Kennzeichnung/Betriebsanweisung zulässig – der Prüfer führt das selbst so aus. Fehlt die "
+ },
+ {
+  "code": "MF-F04-R5",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-F05-R1",
+  "entscheidung": "Ändern",
+  "korrektur": "Ohne Inspektionssteuerung fährt der Aufzug mit Personen auf dem Dach im Normalbetrieb mit Nenngeschwindigkeit – unmittelbare Quetschgefahr im Schachtkopf, Hoch ist richtig. Die Sofortmaßnahme trägt aber nicht: „Keine Alleinarbeit\" und ein Verweis auf die DGUV Information 209-053 verhindern die Fahrt nicht und wirken nicht sofort gegen die benannte Gefährdung. -> Sofortmaßnahme ersetzen durch: „Fahrkorbdach nur nach Freischalten der Anlage und Sichern gegen Wiedereinschalten betreten; keine Fahrt mit Personen auf dem Fahrkorbdach; Betreiber unterrichten [ORGA]\". Der Hinweis auf DGUV Information 209-053 und das Verbot der Alleinarbeit können als Ergänzung bleiben."
+ },
+ {
+  "code": "MF-F05-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-F05-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-F05-R4",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-F05-R5",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-F06-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-F06-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-F06-R3",
+  "entscheidung": "Ändern",
+  "korrektur": "Bedingung, Stufe und Mittelfristmaßnahme sind in Ordnung. Die Sofortmaßnahme „Position vor dem Betreten prüfen\" benennt jedoch keine Handlung, die die Gefährdung sofort begrenzt – sie entspricht der unzulässigen Kategorie „Vorsicht walten lassen\" und ist zudem inhaltsleer (welche Position, mit welcher Konsequenz). -> Sofortmaßnahme ersetzen durch: „Fahrkorbdach erst betreten, nachdem die Anlage stillgesetzt und gegen Wiedereinschalten gesichert ist; Lage des Not-Halt vor dem Betreten feststellen und den Beschäftigten bekannt machen; Betreiber unterrichten [ORGA]\"."
+ },
+ {
+  "code": "MF-F06-R4",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-F07-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-F07-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-F07-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-F08-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-F09-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-F09-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-G01-R1",
+  "entscheidung": "Ändern",
+  "korrektur": "Fehlende Grubenbeleuchtung ist keine unmittelbare Gefahr für Leben und Gesundheit ohne weiteres Versagen; sie wirkt erst zusammen mit Abstieg, Fehltritt oder Annäherung an bewegte Teile. Die Regel widerlegt sich selbst: eine Gefährdung, die mit einer Handlampe vollständig beherrscht wird, trägt keine Stufe Hoch. Unter MAXIMUM hebt sie das Gesamtergebnis der Schachtgrube allein wegen der Beleuchtung auf Hoch. -> Stufe von Hoch auf Mittel. Sofortmaßnahme präzisieren: „Grube nur mit ausreichender, mitgeführter Handleuchte betreten; Not-Halt vor dem Abstieg betätigen“. Mittelfristmaßnahme (Leuchten nachrüsten, TECH) bleibt."
+ },
+ {
+  "code": "MF-G01-R2",
+  "entscheidung": "Ändern",
+  "korrektur": "Beleuchtung ist vorhanden, nur unzureichend – ein Mangel ohne unmittelbaren Gefährdungsbeitrag, Maßnahme bei nächster Gelegenheit. Mit Mittel liegt die Regel gleichauf mit dem vollständigen Fehlen der Beleuchtung, was die Abstufung einebnet. Zusätzlich trägt die Mittelfristmaßnahme nicht: „Leuchten versetzen“ beseitigt eine zu geringe Beleuchtungsstärke nicht, die Frage erfasst aber beide Fälle (zu wenig Lux und ungeeignete Anordnung). -> Stufe auf Niedrig. Mittelfristmaßnahme ersetzen: „Beleuchtung ergänzen, ersetzen oder neu anordnen, bis mindestens 50 lx 1 m über der Grubensohle erreicht werden; Leuchten gegen Beschädigung schützen“ [TECH]."
+ },
+ {
+  "code": "MF-G01-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-G02-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-G02-R4",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-G03-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-G03-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": "Beanstandung in der Gegenprüfung widerlegt: Die Beanstandung trägt nicht. Erstens verfehlt sie den eigenen Prüfmaßstab: beanstandet werden soll eine Regel, die eine EN-81-20-Neuanforderung unbesehen auf eine Altanlage anwendet UND dafür Hoch vergibt. Diese Regel vergibt Mittel. Zweitens ist die Stufe gefährdungsbezogen, nicht konformitätsbezogen: ohne Inspektionssteuerung in der Grube fehlt die Möglichkeit, Fahrbewegungen vom Arbeitsplatz aus kontrolliert zu beherrschen – diese Gefährdung (unbeabsichtigte Fahrt) ist bei einer TRA-Anlage exakt dieselbe wie bei einer EN-81-20-Anlage. Eine Absenkung auf Niedrig allein wegen des Errichtungs"
+ },
+ {
+  "code": "MF-G03-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-G03-R4",
+  "entscheidung": "Ändern",
+  "korrektur": "Bedingung, Stufe (eine erreichbare Halteinrichtung ist vorhanden, die zweite schützt den bereits abgestiegenen Beschäftigten – Mittel) und Maßnahmenart sind richtig. Fehlerhaft ist allein die Fundstelle in der Mittelfristmaßnahme: im Prüfbericht erscheint damit eine Forderung unter einer Nummer, die sie nicht trägt, was die Maßnahme gegenüber Betreiber und ZÜS angreifbar macht. -> In der Mittelfristmaßnahme „DIN EN 81-20, 5.4.8“ durch „DIN EN 81-20, 5.2.1.5.1“ ersetzen (gleiche Fundstelle wie in Frage 11.1 und in den Quellen der Gefährdung)."
+ },
+ {
+  "code": "MF-G03-R5",
+  "entscheidung": "Freigeben",
+  "korrektur": "Beanstandung in der Gegenprüfung widerlegt: Dieselbe Fehlannahme wie bei MF-S03. 11.1 (qa_grubentiefe) ist keine vergessene optionale Frage, sondern eine Stammdatenfrage: source = „anlagenstamm\", stamm_key = „grubentiefe_ueber_160\", Kategorie „A – Anlagenmerkmale\", Phase „stamm\". Sie ist außerdem eine der sechs Schwellenfragen, die nach README-Regelversion 81-20-mf-2026.9 in eine Ja/Nein-Frage mit genau der Regelgrenze umgeschrieben wurden; im erzeugten Katalog lautet sie „Schachtgrubentiefe über 1,60 m?\" und die Sichtbarkeit von 11.4b ist mechanisch auf qa_grubentiefe = true umgeschrieben. Der Wert kommt aus dem Anlagenstamm der App, n"
+ },
+ {
+  "code": "MF-G04-R10",
+  "entscheidung": "Freigeben",
+  "korrektur": "Beanstandung in der Gegenprüfung widerlegt: Der behauptete Wertungswiderspruch besteht nicht. Der Katalog stuft in MF-G04 erkennbar nach der Verfügbarkeit einer Steigeinrichtung AN DER ANLAGE, nicht nach der Qualität einer Leiter: fest installiert (kein Befund) – mobile Leiter im Schacht (R12, Niedrig) – Leiter beim Kunden deponiert (R9, Mittel) – nur im Fahrzeug mitgeführt (R10, Hoch) – keine Leiter (R7, Hoch). Anlagenseitig ist im Fall R10 keinerlei Steigeinrichtung vorhanden; die Lage ist damit für jeden, der nicht mit dem Kundendienstfahrzeug anreist, identisch mit R7. Das räumt der Prüfer selbst ein, wenn er schreibt, die Fahrzeugl"
+ },
+ {
+  "code": "MF-G04-R11",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-G04-R12",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-G04-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-G04-R7",
+  "entscheidung": "Freigeben",
+  "korrektur": "Beanstandung in der Gegenprüfung widerlegt: Die Beanstandung übersieht die Sichtbarkeitsbedingung, die den beanstandeten Fall bereits ausschließt. Frage 11.6 ist nur sichtbar und pflichtig, wenn [11.7] = Nein, und 11.7 fragt ausdrücklich nach dem Zugang „ebenerdig, ohne Abstieg über eine Leiter\"; die Hilfe zu 11.7 schreibt die Steuerung sogar explizit fest: „Zuerst die Zugangsart klären: Nur wenn der Zugang über eine Leiter erfolgt, werden die Leiterfragen gestellt (TRBS 3121 Anh. 1 Nr. 6 a/b).\" Die flache, ohne Steighilfe sicher betret- und verlassbare Grube löst die Leiterfragen damit gar nicht aus; MF-G04-R7 greift bereits nur dort, "
+ },
+ {
+  "code": "MF-G04-R8",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-G04-R9",
+  "entscheidung": "Ändern",
+  "korrektur": "Bedingung, Stufe und Mittelfristmaßnahme sind richtig. Die Sofortmaßnahme „Auf Eignung, Unversehrtheit, Vollständigkeit achten“ ist jedoch keine Maßnahme, sondern eine Ermahnung zur Vorsicht: sie sagt nicht, was zu tun ist, wenn die Leiter untauglich oder nicht auffindbar ist. Die Parallelregel MF-G04-R12 formuliert denselben Sachverhalt korrekt. -> Sofortmaßnahme ersetzen: „Leiter vor dem Abstieg holen, auf Eignung, Unversehrtheit und sicheren Stand prüfen, Not-Halt vorher betätigen; ohne geeignete Leiter nicht einsteigen“ [ORGA]. Mittelfristmaßnahme bleibt."
+ },
+ {
+  "code": "MF-G05-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-G05-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-G05-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-G05-R4",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-G06-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-G06-R2",
+  "entscheidung": "Ändern",
+  "korrektur": "Die Frage 11.10a fasst „beschädigt“ und „verschlissen“ zusammen und belegt beides mit Hoch samt Stilllegung. Funktionsverlust (gerissener oder loser Puffer, hydraulischer Puffer ohne Öl oder ohne Rückstellung) rechtfertigt Hoch; Alterungsverschleiß bei erhaltener Funktion ist eine wirksame, aber unvollständige Schutzmaßnahme und damit Mittel. In der jetzigen Fassung führt sichtbarer Verschleiß zur Stilllegung der gesamten Anlage – ein unverhältnismäßiges und damit falsches Bewertungsergebnis. -> Wie vorgeschlagen, aber technisch sauber über eine Auswahlfrage statt über eine Ja/Nein-Frage, sonst hat die neue Mittel-Regel keine Bedingung, auf die sie greifen kann: Frage 11.10a zu einer Auswahlfrage machen mit den Optionen „Puffer fest verankert, unbeschädigt und funktionsfähig\" | „Verschleiß ohne Beeinträchtigung der Funktion (z. B. Oberflächenrisse, Verhärtung, Korrosion)\" | „Beschädigung oder Funktionsverlust (Puffer lose oder gerissen, hydraulischer Puffer ohne Öl oder ohne Rückstellung)\". MF-G06-R2 (Hoch, Sofort: Aufzug stilllegen; Mittelfrist: Puffer nach DIN EN 81-20, 5.8.1 ersetzen [TECH]) nur noch auf die dritte Option auslösen. Neue Regel gleicher Priorität, Stufe Mittel, auf die zweite Option – Sofort: „Betreiber unterrichten, Pufferzustand bei jeder Wartung dokumentiert überwachen\" [ORGA]; Mittelfrist: „Puffer bei der nächsten Wartung ersetzen\" [TECH]."
+ },
+ {
+  "code": "MF-G06-R4",
+  "entscheidung": "Ändern",
+  "korrektur": "Die Sofortmaßnahme „Zustand sichtprüfen“ ist keine Maßnahme, sondern der Prüfschritt selbst – sie wirkt nichts und nennt keine Konsequenz. Außerdem bündelt die Regel zwei ungleiche Mängel: die fehlende Kennzeichnung ist ein Mangel ohne unmittelbaren Gefährdungsbeitrag (Niedrig), der nicht prüfbare Ölstand lässt die Funktion des Sicherheitsbauteils unbelegt (Mittel). -> Frage 11.10c trennen: fehlende Kennzeichnung → eigene Regel Stufe Niedrig; Ölstand nicht prüfbar → Stufe Mittel beibehalten. Sofortmaßnahme ersetzen: „Betreiber unterrichten und Ölstandsprüfung über die Wartungsfirma veranlassen; bei erkennbarem Ölaustritt oder nicht zurückgestelltem Puffer Anlage stilllegen“ [ORGA]. Mittelfristmaßnahme bleibt."
+ },
+ {
+  "code": "MF-G06-R5",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-G07-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-G07-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-G07-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-G07-R4",
+  "entscheidung": "Ändern",
+  "korrektur": "Die Stufe Mittel ist richtig – eine wirksame, aber unvollständige Schutzmaßnahme. Die Sofortmaßnahme trägt jedoch nicht: ein Warnhinweis schützt niemanden, der die Grube betreten muss, und „sichere Position einnehmen“ ist ein Appell zur Vorsicht, keine Maßnahme. Vor dem Betreten muss die Anlage gegen Fahrt gesichert werden; das können Prüfer und Betreiber sofort tun. -> Sofortmaßnahme ersetzen: „Vor dem Betreten der Grube Not-Halt betätigen bzw. Anlage freischalten und gegen Wiedereinschalten sichern; Gefahrstelle am Gegengewicht kennzeichnen“ [ORGA]. Mittelfristmaßnahme (Abtrennung ertüchtigen, TECH) bleibt."
+ },
+ {
+  "code": "MF-G07-R5",
+  "entscheidung": "Freigeben",
+  "korrektur": "Beanstandung in der Gegenprüfung widerlegt: Auch hier trägt die Tatsachengrundlage nicht. 4.8a (qa_raum_unter_schacht) ist eine Stammdatenfrage: source = „anlagenstamm\", stamm_key = „raum_unter_schacht\", Kategorie „A – Anlagenmerkmale\", Phase „stamm\", Fragetext „Betretbarer Raum unterhalb der Schachtgrube?\" mit Hilfetext, der die Rechtsfolge ausdrücklich nennt („Dann ist eine Fangvorrichtung am Gegengewicht oder ein durchgehendes Fundament erforderlich\"). Die Angabe wird im Anlagenstamm gepflegt und im Fragebogen angezeigt; sie ist nicht eine vom Prüfer zu entdeckende Frage, die versehentlich leer bleibt. Pflicht NEVER folgt wiederum de"
+ },
+ {
+  "code": "MF-G08-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-G08-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-G08-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": "Beanstandung in der Gegenprüfung widerlegt: Die Beanstandung trägt nicht. Sie verkennt, was in diesem Regelzweig die Ursache ist. MF-G08-R3 greift ausdrücklich nur, wenn eine automatische Abschaltung VORHANDEN ist ([11.14a] = Ja), ihre Wirkung aber nicht nachgewiesen wurde ([11.14b] = Nein). TRBS 3121 Anh. 1 Nr. 3 b) lässt diese Abschaltung als gleichwertige Alternative zur Abtrennung zu – das bestätigt der Prüfer selbst. Der Befund ist damit der fehlende Wirksamkeitsnachweis, und genau den beseitigt die Maßnahme „Funktion der automatischen Abschaltung für alle Nachbaranlagen prüfen und dokumentieren\". Der Funktionsnachweis einer bereit"
+ },
+ {
+  "code": "MF-G08-R4",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-K01-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-K01-R5",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-K01-R6",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-K01-R7",
+  "entscheidung": "Ändern",
+  "korrektur": "Die Zusammenfassung der drei Antworten auf eine Stufe ist fachlich falsch. 'Klingel im Schacht ohne Weiterleitung' ist in der Wirkung identisch mit 'kein Notruf vorhanden' ([8.1]=Nein, dort Hoch): niemand nimmt das Signal entgegen, die Rettungskette startet nicht. 'Klingel zu staendig besetzter Stelle' ist dagegen der mildeste Fall - die Rettungskette funktioniert, nur die Sprechverbindung fehlt. Eine gemeinsame Stufe Mittel unterbewertet den ersten Fall, und die sehr einschneidende Sofortmassnahme ist im letzten Fall unverhaeltnismaessig. Da MF-K01 mit MAXIMUM aggregiert, ist eine Aufteilung ohne Nebenwirkung moeglich. -> Regel in drei Regeln aufteilen: (a) [8.2]='Klingel im Schacht ohne Weiterleitung' -> Hoch, Sofortmassnahme wie MF-K01-R1 (Aufzug fuer Personentransport sperren); (b) [8.2]='Sprechverbindung oder Klingel zu nicht staendig besetzter Stelle' -> Mittel, Sofortmassnahme wie bisher; (c) [8.2]='Klingel zu staendig besetzter Stelle' -> Mittel, Sofortmassnahme auf 'Betreiber informieren, Erreichbarkeit und Befreiungsablauf der besetzten Stelle organisatorisch sicherstellen' abschwaechen. Mittelfristige Massnahme (Sprechverbindung nach EN 81-28) bleibt in allen drei Faellen."
+ },
+ {
+  "code": "MF-K02-R1",
+  "entscheidung": "Ändern",
+  "korrektur": "Stufe Hoch ist nach dem Stufenmassstab nicht gedeckt: Ein dunkler Fahrkorb bedroht Leben und Gesundheit nicht unmittelbar, die Gefaehrdung entsteht erst beim Zusammentreffen von Netzausfall und Einschluss - also bei einem zusaetzlichen Ereignis. Das raeumt die Regel selbst ein, indem ihre Sofortmassnahme auf den Notfallplan abstellt. Zusaetzlich ist die Sofortmassnahme in sich unsauber: 'Notbeleuchtung kurzfristig nachruesten lassen' braucht eine Fachfirma und ist keine Sofortmassnahme. -> Stufe von Hoch auf Mittel. Sofortmassnahme auf den sofort wirksamen Teil kuerzen: 'Betreiber informieren; Verhalten bei Stromausfall im Notfallplan festlegen und Befreiung innerhalb definierter Zeit sicherstellen'; den Nachruestauftrag in die mittelfristige Massnahme verschieben. Hoch bleibt dem Zusammentreffen mit fehlendem/unwirksamem Notruf vorbehalten (dort ueber MF-K01)."
+ },
+ {
+  "code": "MF-K02-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-K02-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-K03-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-K03-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": "Beanstandung in der Gegenprüfung widerlegt: Die Beanstandung trägt nicht. Erstens stützt der Normbezug den Abwertungsvorschlag nicht: DIN EN 81-20 5.12.1.1.4 lässt nicht 'bis ±20 mm' als Sollzustand zu – die Anhaltegenauigkeit ist ±10 mm, die ±20 mm sind die Grenze, ab der die Nachstelleinrichtung eingreifen muss. Eine dauerhafte Stufe von 11–20 mm ist also auch nach EN 81-20 eine Abweichung, der Katalog bildet das mit R3 (Mittel) bereits richtig ab. Die für die Verschärfung herangezogene EN-81-70-Stelle gibt der Prüfer selbst als 'nicht verifiziert' an. Zweitens übersieht die Beanstandung die Konstruktion der Gefährdung: [4.9] ist ausd"
+ },
+ {
+  "code": "MF-K03-R3",
+  "entscheidung": "Ändern",
+  "korrektur": "Stufe, Bedingung und Prioritaet sind in Ordnung, die Sofortmassnahme ist es nicht. 'Aufzug/Bremse/Motorregelung einstellen' kann weder der Pruefer noch der Betreiber sofort tun - das ist Arbeit einer Aufzugsfachfirma und inhaltlich identisch mit der mittelfristigen Massnahme; die Regel hat damit faktisch keine wirksame Sofortmassnahme. Die Kennzeichnung [ORGA] ist zudem falsch, es handelt sich um eine technische Massnahme. -> Sofortmassnahme ersetzen durch eine tatsaechlich sofort wirksame Massnahme, z. B. 'Betroffene Haltestellen kennzeichnen (Stufenmarkierung), Nutzer und Reinigungspersonal auf die Stufe hinweisen, Betreiber informieren und Nachregulierung beauftragen' [ORGA]. Die Einstellarbeiten verbleiben in der mittelfristigen technischen Massnahme."
+ },
+ {
+  "code": "MF-K03-R4",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-K04-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-K04-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-K04-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": "Beanstandung in der Gegenprüfung widerlegt: Die Beanstandung trägt nicht. Der Normbezug-Maßstab verlangt die Beanstandung dort, wo eine EN-81-20-Anforderung unbesehen auf eine TRA-Anlage angewendet und dafür 'Hoch' vergeben wird. Genau das tut R3 nicht: Sie vergibt Mittel – also die Stufe, die dem Nachrüstbedarf nach EN 81-80 bei fortbestehendem, aber nicht unmittelbarem Gefährdungsbeitrag entspricht. Eine weitere Absenkung auf Niedrig wäre fail-open. Der Wirkpfad besteht auch beim Güteraufzug: Eine Schürze von 300 mm lässt bei einem oberhalb der Haltestelle stehenden Fahrkorb eine offene Schachtöffnung an der Haltestelle stehen – Abstu"
+ },
+ {
+  "code": "MF-K04-R4",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-K05-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-K05-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-K05-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-K05-R4",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-K05-R5",
+  "entscheidung": "Ändern",
+  "korrektur": "Stufe, Bedingung und Einordnung in die Prioritaetskette (R5 schlaegt die Grundregel R2, wird aber von den Kompensationsregeln R1/R4 verdraengt) sind richtig. Falsch ist die Sofortmassnahme: Ausloeser der Regel sind gerade unbeaufsichtigte Kinder, und 'Nutzer ueber die Absturzgefahr bei Selbstbefreiung unterweisen' ist bei diesem Personenkreis wirkungslos. Eine Hoch-Regel ohne wirksame Sofortmassnahme laesst die Gefaehrdung bis zur Nachruestung offen. -> Sofortmassnahme so fassen, dass sie ohne Mitwirkung der gefaehrdeten Person wirkt, z. B.: 'Betreiber unterrichten; Aufsichtspflichtige (Schule/Kita/Hausverwaltung) unterweisen und Nutzung durch Kinder ohne Begleitung unterbinden; Aushang im Fahrkorb: Fahrkorbtuer nicht oeffnen, auf Befreiung warten; Personenbefreiung ausschliesslich durch fachkundige Personen mit vereinbarter Reaktionszeit; solange dies nicht sichergestellt ist, Aufzug fuer die Nutzung durch Kinder sperren' [ORGA]. Mittelfristige technische Massnahme bleibt unveraendert."
+ },
+ {
+  "code": "MF-K06-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": "Beanstandung in der Gegenprüfung widerlegt: Die Beanstandung trägt nicht. Bedingung der Regel ist nicht die Tabelle der EN 81-20, sondern der Befund des Prüfers zu Frage 8.17 ('Nutzfläche des Fahrkorbs passt zur Nennlast'); die Normangabe im Fragetext ist ein Verweis auf den Regelmaßstab, keine Rechenvorschrift der Engine. Eine Anlage, deren größere Nutzfläche nach ihrem Errichtungsregelwerk oder nach der Ausnahme für nicht zur Personenbeförderung bestimmte Aufzüge zulässig ist, wird vom fachkundigen Prüfer mit 'Ja' beantwortet – der behauptete Fehlbefund ist ein Anwendungs-, kein Regelfehler. Der Prüfer gibt die tragende Unterabschnitt"
+ },
+ {
+  "code": "MF-K06-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-K06-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-K06-R4",
+  "entscheidung": "Ändern",
+  "korrektur": "Zwei Punkte: Erstens deckt keine der angegebenen Quellen die Kennzeichnungspflicht ab, die Fundstelle fehlt. Zweitens ist Mittel zu hoch, wenn eine wirksame Ueberlastkontrolle vorhanden ist: die fehlende Beschilderung hat dann keinen unmittelbaren Gefaehrdungsbeitrag, weil die Ueberlast technisch abgefangen wird - das ist nach dem Stufenmassstab Niedrig (Massnahme bei naechster Gelegenheit). Fehlt die Ueberlastkontrolle, ergibt sich Mittel ohnehin ueber MF-K06-R3, weil die Gefaehrdung mit MAXIMUM aggregiert. -> Stufe von Mittel auf Niedrig. Quellenliste der Gefährdung um den Kennzeichnungsabschnitt der DIN EN 81-20 ergänzen – nach meiner Kenntnis liegt die Kennzeichnung von Nennlast und zulässiger Personenzahl im Fahrkorb im Abschnitt zur Benutzerinformation/Kennzeichnung (EN 81-20 Abschnitt 7); die genaue Nummer ist von mir NICHT verifiziert (Zuversicht niedrig) und vor Übernahme in der Norm nachzuschlagen – sowie um BetrSichV § 12 (Unterweisung/Betriebsanweisung). Beide Maßnahmen bleiben wie bisher mit [ORGA] gekennzeichnet: provisorische wie dauerhafte Kennzeichnung sind Warn-/Organisationsmaßnahmen, keine technischen Maßnahmen im TOP-Sinn; der insoweit erhobene Teilvorwurf ist nicht umzusetzen."
+ },
+ {
+  "code": "MF-K06-R6",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-K07-R1",
+  "entscheidung": "Ändern",
+  "korrektur": "Die Bedingung ist richtig, die Stufe nicht. Fehlende Lueftungsoeffnungen bedrohen Leben und Gesundheit nicht unmittelbar - der Fahrkorb ist nie gasdicht, und die Gefaehrdung (Hitze, verbrauchte Luft) entsteht erst bei Einschluss mit laengerer Befreiungsdauer, also bei einem zusaetzlichen Ereignis. Genau darauf stellt die Regel mit ihrer eigenen Sofortmassnahme ('Notbefreiung sicherstellen') ab. Hoch ist damit nicht dem Stufenmassstab entsprechend. -> Stufe von Hoch auf Mittel. Sofortmaßnahme ersetzen durch: 'Betreiber informieren; Befreiung innerhalb einer festgelegten kurzen Reaktionszeit sicherstellen (Notfallplan/Befreiungsanweisung); Belegung begrenzen' [ORGA]. Mittelfristige Maßnahme (Lüftungsöffnungen nach DIN EN 81-20 5.4.9 herstellen) bleibt [TECH], im Hinweis als Nachrüstbedarf nach EN 81-80 kennzeichnen. KEINE gefährdungsübergreifende Verknüpfung mit den Fragen 8.1/8.2 aufnehmen – der Fall 'unzureichende Lüftung UND gestörte Notrufkette' ergibt über MF-K01 bereits Hoch; die Bedingung von R1 bleibt unverändert [8.19]='Lüftungsöffnungen fehlen oder unzureichend'."
+ },
+ {
+  "code": "MF-K07-R2",
+  "entscheidung": "Ändern",
+  "korrektur": "Die Oeffnungen sind vorhanden und nur teilweise beeintraechtigt; ein unmittelbarer Gefaehrdungsbeitrag ist damit nicht verbunden, die Behebung erfolgt bei naechster Gelegenheit durch Reinigung. Das ist nach dem Stufenmassstab Niedrig. Die Regel selbst bestaetigt das, indem ihre Sofortmassnahme in schlichtem Freimachen und Reinigen besteht - eine Mittel-Einstufung mit einer solchen Massnahme ist in sich widerspruechlich und fuehrt in der Auswertung zu einer ueberhoehten Rangfolge gegenueber echten Mittel-Befunden. -> Stufe von Mittel auf Niedrig. Sofort- und mittelfristige Massnahme koennen bleiben (Reinigung ist hier die ursaechliche Massnahme, eine technische Alternative existiert nicht). Bei vollstaendig zugesetzten Oeffnungen gilt die Option 'Lueftungsoeffnungen fehlen oder unzureichend' - das im Hilfetext klarstellen."
+ },
+ {
+  "code": "MF-K07-R3",
+  "entscheidung": "Ändern",
+  "korrektur": "Die Regel leitet aus einer Anforderung, die die zitierte Quelle nicht enthaelt, eine Mittel-Einstufung und eine erhebliche technische Nachruestung (Zwangsbelueftung) ab. Ohne nachgewiesene Beeintraechtigung ist der Mangel ohne unmittelbaren Gefaehrdungsbeitrag; ausserdem ist die Sofortmassnahme 'Belegung und Fahrzeiten beobachten' keine Sofortmassnahme, sondern eine Dauerbeobachtung ohne Schutzwirkung. -> Stufe von Mittel auf Niedrig. Bedingung unverändert lassen ([8.19]='Keine Zwangsbelüftung bei langen Fahrzeiten / hoher Belegung') – KEINE zusätzliche Frage und kein Messwert, der Anlass steckt bereits in der Antwortoption; stattdessen im Hilfetext zu 8.19 klarstellen, wann diese Option zu wählen ist (z. B. Fahrzeit über mehrere Minuten bei voll besetztem Fahrkorb). Sofortmaßnahme ersetzen durch 'Betreiber informieren; bei hoher Belegung Fahrgastzahl begrenzen und Befreiungszeiten verkürzen' [ORGA]. Mittelfristige Maßnahme als Option formulieren ('Zwangsbelüftung des Fahrkorbs nachrüsten oder freien Lüftungsquerschnitt vergrößern') [TECH] und im Hinweis als Nachrüstbedarf nach EN 81-80 bzw. als Anforderung aus ASR A3.4 kennzeichnen, nicht als Normabweichung von DIN EN 81-20 5.4.9."
+ },
+ {
+  "code": "MF-K07-R4",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-K08-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-K08-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-K08-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-K08-R4",
+  "entscheidung": "Ändern",
+  "korrektur": "Die Bedingung ist zu weit: Sie erzeugt auch dort einen Mittel-Befund, wo gar keine Brandmeldeanlage existiert, und die mittelfristige Maßnahme („Ansteuerung aus der BMA herstellen\") geht dann ins Leere bzw. verlangt faktisch die Nachrüstung einer Gebäude-BMA. Zusätzlich fehlt in 8.21b die Option „automatisch über örtliche Brandmelder ohne gebäudeweite BMA\"; dieser häufige Fall muss derzeit als „nur manuell\" erfasst werden und erzeugt einen Fehlbefund. -> Nicht die Bedingung auf [15.8] = Ja einschränken und NICHT auf Niedrig absenken – das würde über eine Frage aus einem fremden Erhebungsbereich (MF-U09) eine Abhängigkeit einziehen und die Stufe dort senken, wo tatsächlich gar keine automatische Auslösung existiert, obwohl das Brandschutzkonzept die Brandfallsteuerung fordert (Fail-open-Tendenz). Stattdessen: (1) Option „bma\" umbenennen in „Automatisch über Branddetektion (Brandmelder im Aufzugsvorraum oder Brandmeldeanlage des Gebäudes)\" – damit verschwindet der Fehlbefund an der Wurzel. (2) Option „manuell\" präzisieren: „Nur manuell (Schlüsselschalter, Taster, Feuerwehr) – keine automatische Auslösung durch Branddetektion\". (3) MF-K08-R4 bleibt bei Mittel, mittelfristige Maßnahme umformulieren: „Automatische Ansteuerung der Brandfallsteuerung über die vorhandene oder nachzurüstende Branddetektion nach DIN EN 81-73 herstellen; Umfang mit dem Brandschutzkonzept und dem Brandschutzbeauftragten abstimmen\" [TECH]. (4) Hilfetext zu 8.21b ergänzen: Schreibt das Brandschutzkonzept ausdrücklich nur die manuelle Auslösung vor, ist das im Prüfbericht zu vermerken; die Abstimmung der Schnittstelle wird über 15.8a/15.8c bewertet."
+ },
+ {
+  "code": "MF-K08-R5",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-K09-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-K09-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-K10-R1",
+  "entscheidung": "Ändern",
+  "korrektur": "Ein zu kleiner Fahrkorb ist eine Nutzungseinschränkung, keine unmittelbare Gefahr für Leben und Gesundheit; der hinterlegte Gefährdungsfaktor (Stolpern, Rutschen, Stürzen) trägt „Hoch\" ebenfalls nicht. Hinzu kommt eine Inkonsistenz in der Bewertungskette: 8.24 wird nur gestellt, wenn 8.22 = Nein, also feuert R2 (Mittel) immer mit – der Teilaspekt wird damit höher bewertet als die Oberregel und hebt über MAXIMUM jede nicht nach EN 81-70 ausgeführte Altanlage mit knappem Fahrkorb auf Hoch. -> Stufe auf Mittel senken und damit nicht über die Oberregel R2 heben. „Hoch\" bleibt Fällen mit unmittelbarer Gefahr vorbehalten (z. B. Absturz- oder Quetschgefahr an der Schwelle), nicht dem Maßunterschritt. Mittelfristige Maßnahme „Umbau oder Ersatz der Anlage prüfen\" als [TECH] kennzeichnen und um den Verhältnismäßigkeitsvorbehalt nach EN 81-80 ergänzen; die Sofortmaßnahme (alternativen barrierefreien Zugang festlegen und ausschildern) bleibt unverändert."
+ },
+ {
+  "code": "MF-K10-R2",
+  "entscheidung": "Ändern",
+  "korrektur": "4.9 (erwartete Nutzung durch Personen mit eingeschränkter Mobilität) und 4.9a (geforderte barrierefreie Ausführung) sind als Auslöser der Befragung zu Recht gleichwertig, als Maßstab für die Stufe aber nicht: Ein Aufzug von 1978 in einem Wohngebäude mit älteren Bewohnern erfüllt EN 81-70 praktisch nie, bekäme aber pauschal Mittel – das trifft nahezu den gesamten Bestand und entwertet die Stufe. Ist die barrierefreie Ausführung dagegen rechtlich gefordert, ist Mittel richtig. -> Aufspaltung ja, aber fail-closed: (1) 4.9a verpflichtend machen, sobald die Gefährdung greift – „Pflicht wenn: [4.9] = Ja\"; damit ist der rechtliche Status immer erhoben und eine unbeantwortete Frage führt regelkonform zu INCOMPLETE statt zu einer stillen Absenkung. (2) MF-K10-R2 bleibt bei Mittel mit der Bedingung „[8.22] = Nein UND [4.9a] = Ja\" (barrierefreie Ausführung gefordert, aber nicht erfüllt). (3) Neue Regel MF-K10-R2b, Stufe Niedrig, gleiche Priorität P100, Bedingung „[8.22] = Nein UND [4.9a] = Nein\" – ausdrücklich als Nachrüstbedarf nach DIN EN 81-80 und nicht als Konformitätsmangel, Sofortmaßnahme wie bisher (Betreiber hinweisen, alternative Zugangsmöglichkeit benennen) [ORGA], mittelfristig „Nachrüstung nach DIN EN 81-70 bei nächster Modernisierung prüfen (Bedienelemente, Handlauf, Spiegel, akustische Ansage), Verhältnismäßigkeit nach EN 81-80 bewerten\" [TECH]. (4) Der Fall „[4.9a] unbeantwortet\" wird von keiner der beiden Regeln getroffen und ergibt damit INCOMPLETE – gewollt. (5) Die mittelfristige Maßnahme in R2 von [ORGA] auf [TECH] umstellen (TOP-Prinzip), wie vom Prüfer zutreffend verlangt."
+ },
+ {
+  "code": "MF-K10-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-K10-R4",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-K11-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-K11-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": "Beanstandung in der Gegenprüfung widerlegt: Die Beanstandung trägt nicht. Der Prüfer liest die Antwortoption „Beschädigt ohne unmittelbare Gefährdung\" wie eine Stufenzuweisung; das ist sie nicht. Der Stufenmaßstab des Katalogs kennt für Mittel ausdrücklich zwei Alternativen: „Gefahr erst bei ZUSÄTZLICHEM EREIGNIS oder Fehlverhalten, ODER eine wirksame, aber unvollständige Schutzmaßnahme.\" Genau die erste Alternative liegt hier vor – und nur sie muss zutreffen, nicht die Niedrig-Definition. Die Option nennt beispielhaft Tableau, SPIEGEL und Verkleidung: Ein gerissener Fahrkorbspiegel, eine gelockerte Wandverkleidung oder ein gebrochenes "
+ },
+ {
+  "code": "MF-K11-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-K11-R4",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-K12-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-K12-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-K12-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-K12-R4",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-K12-R5",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-K13-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-K13-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": "Beanstandung in der Gegenprüfung widerlegt: Widerlegt. Erstens am Quellkatalog: q_n20_k4_1 führt „Sturz nach oben durch passive technische Maßnahmen (z. B. geringer Beschleunigungsweg) verhindert\" (o8f820249) als eigene Option, und Regel N20-K4.1-R2 bewertet sie als NO_RISK, origin NORM_DERIVED, evidence DIRECT, quality_status VERIFIED. Die Auffangregel MF-K13-R2 gibt diese belegte Quellregel unverändert wieder. Entscheidend ist der Wortlaut der Option: die passive Maßnahme VERHINDERT den Sturz nach oben – das Schutzziel ist damit erreicht, und für einen erreichten Soll-Zustand ist „Kein Risiko\" die richtige Stufe. Zweitens besteht der "
+ },
+ {
+  "code": "MF-K14-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-K14-R2",
+  "entscheidung": "Ändern",
+  "korrektur": "„Regelmäßige Materialprüfung (z. B. Ultraschall)\" ist keine Sofortmaßnahme: Sie setzt eine Fachfirma, Terminierung und Zugänglichkeit voraus und wirkt frühestens in Wochen – der Prüfbericht H05 hat genau diesen Text bei MF-K13-R1 bereits als sachfremd ersetzt, in MF-K14-R2 ist er stehen geblieben. Damit liefert die einzige Hoch-Regel dieser Gefährdung keine sofort wirksame Schutzhandlung. -> Sofortmaßnahme ersetzen durch eine vor Ort umsetzbare Handlung: „Betreiber unverzüglich unterrichten; Lagerung, Welle und Maschinenrahmen sichtprüfen (Risse, Lagerspiel, Ölaustritt, ungewöhnliche Geräusche); bei Auffälligkeiten Anlage stilllegen\" [ORGA]. Die Materialprüfung (z. B. Ultraschall) als wiederkehrende Überwachungsmaßnahme in die mittelfristige Maßnahme bzw. den Prüfplan verschieben, neben den dort bereits richtig genannten Umbau und die Nachrüstung des Schutzes gegen Übergeschwindigkeit aufwärts."
+ },
+ {
+  "code": "MF-K14-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-M01-R1",
+  "entscheidung": "Ändern",
+  "korrektur": "Fehlende Beleuchtung ist ein echter Mangel, die Gefahr entsteht aber erst beim Betreten und Arbeiten im Raum und wird durch eine mitgeführte Leuchte vollständig beherrscht. Eine Hoch-Regel, deren eigene Sofortmaßnahme 'Handlampe benutzen' lautet, widerspricht dem Stufenmaßstab: Hoch verlangt Absperren/Stilllegen, nicht eine Taschenlampe. -> Stufe Hoch auf Mittel. Sofortmaßnahme neu fassen: 'Betreten des Raumes ohne ausreichende Beleuchtung untersagen; ortsveränderliche Leuchte (Handlampe/Akkustrahler) dauerhaft im Zugangsbereich bereitstellen, Betreiber unterrichten [ORGA]'. Mittelfristmaßnahme 'Geeignete Leuchten nachrüsten [TECH]' bleibt, ergänzt um den Zielwert 200 lx an den Arbeitsflächen nach DIN EN 81-20 5.2.1.4.2 / ASR A3.4."
+ },
+ {
+  "code": "MF-M01-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-M01-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-M01-R4",
+  "entscheidung": "Ändern",
+  "korrektur": "Ein ungeschütztes Leuchtmittel im Kopfbereich führt zu Schnittverletzungen erst nach einem Anstoßen und ist damit ein Mangel ohne unmittelbaren Gefährdungsbeitrag. Zudem passt die Sofortmaßnahme nicht zur Bedingung: die Regel feuert bei FEHLENDEM Splitterschutz, die Sofortmaßnahme spricht von 'beschädigten Leuchten'. -> Stufe Mittel BLEIBT. Nur die Sofortmaßnahme ersetzen: 'Ungeschützte Leuchtmittel im Kopfbereich provisorisch sichern (Splitterschutzschlauch/-folie) oder betroffene Leuchte außer Betrieb nehmen und Handlampe verwenden; Betreiber unterrichten [ORGA]'. Mittelfristmaßnahme 'Splitterschutz nachrüsten [TECH]' bleibt. Quellenangabe der Gefährdung um den arbeitsschutzrechtlichen Bezug (ArbStättV/ASR A3.4, bruchsichere Leuchten über Arbeitsplätzen) ERGÄNZEN, DIN EN 81-20 5.2.1.4.2 nicht streichen, da sie R1 bis R3 trägt."
+ },
+ {
+  "code": "MF-M01-R5",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-M02-R1",
+  "entscheidung": "Ändern",
+  "korrektur": "Stufe und Bedingung sind richtig. Die Sofortmaßnahme ist aber nur teilwirksam: Das Ausschalten des Hauptschalters trennt die Einspeisung vor dem Hauptschalter (Zuleitung, Vorsicherung, Beleuchtungs-/Notrufkreis) gerade nicht – an einer offenen Schalttafel bleiben damit spannungsführende Teile berührbar. -> Sofortmaßnahme ergänzen: Triebwerksraum verschlossen halten, Zutritt nur für Elektrofachkräfte bzw. elektrotechnisch unterwiesene Personen; beim Betreten Hauptschalter ausschalten MIT dem Hinweis, dass die Einspeisung davor weiterhin unter Spannung steht. Mittelfristmaßnahme aufweiten: Berührungsschutz herstellen (Abdeckungen/Schaltschrank), sofern nicht möglich Steuerung erneuern. Stufe Hoch bleibt."
+ },
+ {
+  "code": "MF-M02-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-M02-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-M02-R4",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-M02-R5",
+  "entscheidung": "Ändern",
+  "korrektur": "Stufe und Bedingung sind mit der geschärften Abgrenzung (nur Aufzugsanlage, bauseitige Installation unter 5.37) stimmig. Die Mittelfristmaßnahme beseitigt die Ursache aber nicht verbindlich: 'Bei Notwendigkeit DGUV V3 Prüfung beauftragen' stellt die Prüfung in das Ermessen, obwohl der fehlende Nachweis die Notwendigkeit gerade begründet. Die Einstufung als [TECH] ist zudem falsch, eine Prüfbeauftragung ist organisatorisch. -> Mittelfristmaßnahme neu fassen: 'Prüfung der Aufzugsanlage nach DGUV Vorschrift 3 unverzüglich beauftragen, Prüfprotokoll und Plakette dokumentieren, Prüffrist in den Prüfplan nach BetrSichV § 3 aufnehmen [ORGA]'. Vorbehalt 'bei Notwendigkeit' streichen, Kennzeichnung [TECH] auf [ORGA] ändern. Stufe Mittel bleibt."
+ },
+ {
+  "code": "MF-M02-R6",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-M02-R7",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-M03-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-M03-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-M03-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-M03-R4",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-M03-R5",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-M04-R1",
+  "entscheidung": "Ändern",
+  "korrektur": "Ein Mangel, den die eigene Sofortmaßnahme durch Freiräumen binnen Minuten beseitigt, ist keine unmittelbare Gefahr für Leben und Gesundheit. Die Unterschreitung des Flächenmaßes bedeutet erschwerten, nicht unmöglichen Notbetrieb; die Gefahr tritt erst mit dem Zusatzereignis Personenbefreiung ein. Hoch steht zudem unplausibel neben R3 (Lagerung = Mittel), obwohl die Lagerung regelmäßig die Ursache von R1 ist. -> Stufe Hoch auf Mittel. KEINE neue Regel und keine neue Frage anlegen – der Hoch-Fall (Notbetriebseinrichtung nicht zugänglich/bedienbar, Personenbefreiung nicht durchführbar) ist über MF-M15 Frage 5.53 und MF-M15-R1 bereits mit Hoch abgebildet; stattdessen die Hilfe zu 5.44 um den Verweis ergänzen: 'Ist der Zugang zu Handrad/Bremslüftung dadurch vollständig versperrt, ist zusätzlich 5.53 mit Nein zu beantworten.' Mittelfristmaßnahme zusätzlich technisch fassen (TOP): 'Einbauten/Lagerflächen verlagern, Freifläche dauerhaft herstellen und am Boden markieren [TECH]', die organisatorische Sicherstellung nur ergänzend."
+ },
+ {
+  "code": "MF-M04-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-M04-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-M04-R4",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-M05-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-M05-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-M05-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": "Beanstandung in der Gegenprüfung widerlegt: Die Beanstandung trägt nicht. Der Prüfer liest Frage 5.47 isoliert und übersieht die Kontextbindung, die den beanstandeten Bagatellfall bereits ausschließt. Die Frage lautet 'UNGESICHERTE Bodenöffnung oder Vertiefung im Raum?' und steht unter der Gefährdung MF-M05, deren Gefährdungsfaktor ausdrücklich 'Mechanische Gefährdung durch Absturz' ist und deren übrige Fragen (5.46 Niveauunterschiede über 0,50 m, 5.46b Podest mit Absturzhöhe über 1,00 m) denselben Maßstab anlegen. Das Wort 'ungesichert' setzt einen Sicherungsbedarf voraus; eine flache Bodenmulde von wenigen Zentimetern ist weder ungesi"
+ },
+ {
+  "code": "MF-M05-R4",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-M06-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": "Beanstandung in der Gegenprüfung widerlegt: Die Beanstandung trägt nicht, weil der Prüfer die einschränkende Bedingung in der Frage übersehen hat. Frage 5.50 lautet 'Ausgetretenes Öl / Hydrauliköl OHNE AUFFANGMÖGLICHKEIT?'. Der Bagatellfall, den der Prüfer beschreibt – die bei älteren Getriebemaschinen alltäglichen Öltropfen und Ölnebelspuren, die von einer Tropfschale oder Auffangwanne aufgenommen werden – erfüllt diese Bedingung gerade nicht und wird mit Nein beantwortet. Die Regel feuert nur, wenn Öl unkontrolliert in den Raum gelangt. Damit besteht der behauptete Anwendungsüberschuss nicht, und eine Differenzierung nach Ausmaß über "
+ },
+ {
+  "code": "MF-M06-R2",
+  "entscheidung": "Ändern",
+  "korrektur": "TOP-Verstoß: Die Frage bündelt 'rutschhemmend' (baulich) und 'sauber' (organisatorisch), die einzige Mittelfristmaßnahme ist aber rein organisatorisch. Ist der Boden baulich glatt – glatter Estrich, Fliesen, abgenutzte Beschichtung – beseitigt die Aufnahme in den Wartungsplan die Ursache nicht, obwohl eine technische Maßnahme möglich ist. -> Mittelfristmaßnahme ergänzen zu: 'Rutschhemmenden Bodenbelag bzw. rutschhemmende Beschichtung herstellen (Bewertungsgruppe nach ASR A1.5 / DGUV-Regelwerk) [TECH]; Reinigung zusätzlich in den Wartungsplan aufnehmen [ORGA]'. Die Aufteilung von Frage 5.48 in zwei Fragen ist NICHT erforderlich – sie destabilisiert die Regel-ID und erzwingt eine zweite Regel, obwohl die ergänzte Maßnahme beide Fälle sauber abdeckt. Stufe Mittel bleibt."
+ },
+ {
+  "code": "MF-M06-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": "Beanstandung in der Gegenprüfung widerlegt: Die Beanstandung trägt in keinem ihrer drei Punkte. Zur Stufe: Der Auftragsmaßstab definiert Mittel als 'Gefahr erst bei zusätzlichem Ereignis oder Fehlverhalten, oder eine wirksame, aber unvollständige Schutzmaßnahme'. Ein fehlender oder beschädigter ölfester Anstrich ist genau das – eine unvollständige Schutzmaßnahme, deren Fehlen sich mit dem Zusatzereignis Ölaustritt auswirkt. Das Argument des Prüfers, dann greife ohnehin R1, kehrt die Logik um: R1 setzt bereits ausgetretenes Öl ohne Auffangmöglichkeit voraus, R3 sichert den Boden vorsorglich ab, damit Öl überhaupt aufnehmbar bleibt und ni"
+ },
+ {
+  "code": "MF-M06-R4",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-M07-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-M07-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-M07-R4",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-M08-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-M08-R2",
+  "entscheidung": "Ändern",
+  "korrektur": "Bedingung, Stufe (Gefahr erst beim zusätzlichen Ausfall eines Bremskreises) und Aggregation sind richtig. Falsch ist die Sofortmaßnahme: „bei jeder Wartung prüfen“ ist eine wiederkehrende organisatorische Maßnahme und wirkt nicht sofort; die Gefahr entsteht gerade durch das aktive SR-Modul, das man sofort abschalten kann. -> Sofortmaßnahme ersetzen durch: „Türüberbrückung (Nachregulieren/Voraböffnen mit offener Tür) sofort außer Betrieb setzen – Betrieb nur mit geschlossener Tür – und Wirksamkeit beider Bremskreise prüfen; Betreiber unterrichten.“ Mittelfristmaßnahme (Bremskontrollschalter nachrüsten) bleibt."
+ },
+ {
+  "code": "MF-M08-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-M09-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-M10-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-M10-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-M10-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-M11-R1",
+  "entscheidung": "Ändern",
+  "korrektur": "Stufe „Mittel“ ist richtig: Brand entsteht erst, wenn zusätzlich eine Blockade/Seilrutsch auftritt und der Motorschutz versagt. Zu beanstanden ist die Sofortmaßnahme – „bei Auffälligkeiten stilllegen“ nennt weder einen konkreten Auslöser noch eine Handlung und liegt nahe am unzulässigen „Vorsicht walten lassen“. -> Sofortmaßnahme konkretisieren, z. B.: „Thermischen Motorschutz (Thermistor/Motorschutzschalter) auf Vorhandensein und Funktion prüfen; bei blockierter Anlage oder Anzeichen von Überhitzung (Geruch, Verfärbung, heißes Öl) Hauptschalter ausschalten, Anlage stilllegen und Betreiber unterrichten.“ Stufe Mittel und Mittelfristmaßnahme bleiben."
+ },
+ {
+  "code": "MF-M11-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-M12-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-M13-R1",
+  "entscheidung": "Ändern",
+  "korrektur": "Die Bedingung ist zu weit: Sie vergibt „Hoch“ auch für Anlagen, die normkonform statt eines Rohrbruchventils eine zulässige Drossel/Drosselrückschlagventil besitzen. Die Sofortmaßnahme trägt zudem nicht – ein Rohrbruchventil schützt gegen den plötzlichen Leitungsbruch, den man durch „Absinkverhalten überwachen“ nicht beherrscht, und „nur eingeschränkt betreiben“ ist unbestimmt. Die Stufe „Hoch“ ist bei tatsächlich fehlendem Absturzschutz richtig und altersunabhängig. -> Bedingung auf „keine zulässige Absturzsicherung (weder Rohrbruchventil noch Drossel-/Drosselrückschlagventil bzw. Fangvorrichtung mit Geschwindigkeitsbegrenzer)“ erweitern und dafür eine Zusatzfrage zur Drossel einführen; Sofortmaßnahme ersetzen durch: „Aufzug sofort außer Betrieb nehmen und gegen Benutzung sichern, bis eine zulässige Absturzsicherung nachgewiesen ist; Betreiber unterrichten.“"
+ },
+ {
+  "code": "MF-M13-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-M13-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-M13-R4",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-M13-R5",
+  "entscheidung": "Ändern",
+  "korrektur": "Die Frage 6.10a fasst zwei verschiedene Mängel zusammen: Ein nicht zugängliches Ventil verhindert das sichere Absperren bei Arbeiten (Mittel), eine bloß fehlende Kennzeichnung ist ein Mangel ohne unmittelbaren Gefährdungsbeitrag (Niedrig). Beides pauschal mit „Mittel“ zu bewerten überzeichnet den Kennzeichnungsmangel. Außerdem ist „Ventil zugänglich anordnen“ eine technische, keine organisatorische Maßnahme – die Kennzeichnung als einzige Mittelfristmaßnahme verstößt beim Zugänglichkeitsmangel gegen das TOP-Prinzip. -> Frage 6.10a in zwei Fragen trennen (Zugänglichkeit / Kennzeichnung). R5 auf „nicht zugänglich“ beschränken, Stufe Mittel, Mittelfristmaßnahme „Ventil zugänglich anordnen“ als [TECH] kennzeichnen; für die fehlende Kennzeichnung allein eine eigene Regel mit Stufe Niedrig (Sofort: provisorisch kennzeichnen; Mittelfrist: dauerhaft kennzeichnen [ORGA])."
+ },
+ {
+  "code": "MF-M13-R6",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-M13-R7",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-M14-R1",
+  "entscheidung": "Ändern",
+  "korrektur": "„Hoch“ setzt nach dem Stufenmaßstab eine unmittelbare Gefahr ohne weiteres Versagen voraus. Hier entsteht die Gefahr erst, wenn tatsächlich schwere Teile gehoben werden und eine improvisierte Anschlagstelle versagt – das ist ein zusätzliches Ereignis und damit „Mittel“. Die Maßnahmen selbst sind in Ordnung: Das Verbot von Hebearbeiten ohne festgelegtes Verfahren wirkt sofort, die Nachrüstung ist technisch. -> Stufe von „Hoch“ auf „Mittel“ herabsetzen; Bedingung ([5.52] = Nein) und beide Maßnahmen unverändert lassen. Im Maßnahmen-/Hinweistext NICHT pauschal „Nachrüstung nach Stand der Technik“ schreiben, sondern nach Errichtungsregelwerk (Frage 1.28) differenzieren: Bei EN-81-1/-2-Anlagen (1999–2016) und EN-81-20-Anlagen ist das Fehlen von Anschlagpunkten ein Konformitätsmangel (EN 81-20 5.2.1.7 bzw. entsprechende Anforderung der EN 81-1:1998, Abschnitt 6.3 – Abschnittsnummer vor Übernahme an der Norm verifizieren); nur bei TRA-Anlagen (vor 1999) handelt es sich um Nachrüstbedarf nach Stand der Technik (EN 81-80)."
+ },
+ {
+  "code": "MF-M14-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-M14-R3",
+  "entscheidung": "Ändern",
+  "korrektur": "Der fehlende Prüfnachweis ist ein Dokumentationsmangel ohne unmittelbaren Gefährdungsbeitrag – der Anschlagpunkt ist vorhanden und gekennzeichnet. Nach dem Stufenmaßstab gehört das zu „Niedrig“ (Maßnahme bei nächster Gelegenheit); mit „Mittel“ steht er auf einer Stufe mit der fehlenden Tragfähigkeitsangabe, die einen echten Überlastbeitrag hat. Die Maßnahmen selbst sind zutreffend. -> Stufe von „Mittel“ auf „Niedrig“ herabsetzen und als Normbezug BetrSichV § 10 (Instandhaltung) bzw. die Prüfpflicht für Anschlagmittel angeben statt EN 81-20 5.2.1.7. Maßnahmen bleiben."
+ },
+ {
+  "code": "MF-M14-R4",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-M15-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": "Beanstandung in der Gegenprüfung widerlegt: Die Beanstandung trägt nicht. Bedingung der Regel ist der Fragetext, nicht der Hilfetext: 5.53 fragt „Einrichtung für Notbetrieb / Personenbefreiung vorhanden (Handrad, Bremslüfthebel, Evakuierungseinheit, Notablass)?\" – also Vorhandensein und Bedienbarkeit. Der Hilfetext ist Prüfanleitung (worauf ist beim Vor-Ort-Blick zu achten), er erweitert die Bedingung nicht; ein Prüfer, der wegen einer fehlenden Anleitung an einer vollständigen, bedienbaren Einrichtung „Nein\" ankreuzt, wendet die Frage falsch an. Der vom Prüfer befürchtete Fall ist im Katalog außerdem bereits doppelt abgedeckt: die Kenn"
+ },
+ {
+  "code": "MF-M15-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-M15-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-M15-R4",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-M16-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-M16-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": "Beanstandung in der Gegenprüfung widerlegt: Die Beanstandung trägt nicht, und die vorgeschlagene Korrektur würde den Katalog fail-open machen. Die Frage, ob durch eine Beschädigung spannungsführende Teile berührbar werden, ist eine Beurteilung, die der Elektrofachkraft obliegt, nicht dem Aufzugsprüfer; sie zur Voraussetzung der Stufe Hoch zu machen, verlagert eine sicherheitsentscheidende Bewertung auf eine Laienbeurteilung vor Ort. Nach DGUV Vorschrift 3 § 5 und DIN VDE 0105-100 ist ein beschädigtes elektrisches Betriebsmittel bis zur Beurteilung durch eine Elektrofachkraft als unsicher zu behandeln – der Basisschutz (Abdeckung, Umhüll"
+ },
+ {
+  "code": "MF-M16-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-M16-R4",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-M17-R1",
+  "entscheidung": "Streichen",
+  "korrektur": "Fehlende Kennzeichnung plus fehlender Stromlaufplan ist ein Dokumentationsmangel: Die Gefahr entsteht erst, wenn jemand an der Elektrik arbeitet und sich zusätzlich irrt – nach dem Stufenmaßstab höchstens Mittel. Die Regel enthält zudem keine eigene Maßnahme, sondern wiederholt wörtlich die von R3; bei Aggregation MAXIMUM greifen in genau dieser Antwortkombination ohnehin R2 (Mittel) und R3 (Mittel). R1 hebt damit nur die Stufe an, ohne fachlichen Mehrwert. -> Regel ersatzlos entfernen. Es gilt dann in der Kombination [5.54]=Nein und [5.55]=„Nicht vorhanden\" über MAXIMUM das Ergebnis Mittel aus R2 und R3, mit deren jeweils eigenen Maßnahmen. Soll die Häufung mehrerer Dokumentationsmängel gesondert ausgewiesen werden, gehört das in den Berichtstext, nicht in eine Stufenanhebung auf Hoch."
+ },
+ {
+  "code": "MF-M17-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-M17-R3",
+  "entscheidung": "Ändern",
+  "korrektur": "Bedingung und Stufe sind korrekt, die Maßnahmen sind es nicht: Die Sofortmaßnahme „Arbeiten an der Elektrik nur durch Elektrofachkraft\" wiederholt nur die ohnehin geltende Rechtslage (DGUV V3) und ist damit keine zusätzliche Schutzmaßnahme. Die Mittelfristmaßnahme enthält außerdem eine aus R1 übernommene DGUV-V3-Prüfung, die mit der Ursache „fehlender Stromlaufplan\" nichts zu tun hat und die Zuständigkeit verwischt (Prüfung liegt bei 5.35/5.37). -> Sofortmaßnahme ersetzen durch: „Vor Arbeiten an Steuerung und Antrieb Anlage freischalten und gegen Wiedereinschalten sichern; Schaltunterlagen bei Betreiber/Wartungsunternehmen anfordern [ORGA]\". Mittelfristmaßnahme ersetzen durch: „Stromlaufplan und Schaltunterlagen anlagenbezogen beschaffen oder neu erstellen lassen und im Triebwerksraum hinterlegen [TECH]\"; den Verweis auf die DGUV-V3-Prüfung ersatzlos streichen."
+ },
+ {
+  "code": "MF-M17-R4",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-M17-R5",
+  "entscheidung": "Freigeben",
+  "korrektur": "Beanstandung in der Gegenprüfung widerlegt: Die Beanstandung trägt nicht. Erstens ist die Zusammenfassung von „vorhanden, aber nicht aktuell/unvollständig\" und „nicht vorhanden\" in einer Regel die durchgängige Bauweise dieses Katalogs – MF-M17-R3 fasst bei 5.55 dieselben beiden Optionen ebenso auf Mittel zusammen, und der Prüfer hat das dort nicht beanstandet. Zweitens wäre die Herabstufung von „vorhanden, aber nicht aktuell oder unvollständig\" auf Niedrig fail-open: gerade eine unvollständige Anleitung kann den Abschnitt zur Notbefreiung nicht enthalten, was der Prüfer vor Ort nicht ausschließen kann; der sicherheitsrelevante Rest wäre"
+ },
+ {
+  "code": "MF-M17-R6",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-M18-R1",
+  "entscheidung": "Ändern",
+  "korrektur": "Eine fehlende Sprechverbindung gefährdet das Wartungspersonal erst, wenn zusätzlich im Schacht gearbeitet wird und jemand unabgestimmt handelt – der eigentliche Schutz ist dabei die Stoppeinrichtung, nicht die Sprechstelle; nach dem Stufenmaßstab ist das Mittel, nicht Hoch. Dass die Regel selbst eine vollwertige organisatorische Kompensation angibt (zweite Person, vereinbarte Signale), bestätigt das. Hinzu kommt: Eine Anforderung, die die Norm unterhalb 30 m Förderhöhe gar nicht stellt, kann bei ihrer Nichterfüllung nicht „unmittelbare Lebensgefahr\" bedeuten. -> Nur die Stufe von Hoch auf Mittel herabsetzen; Bedingung, Sofort- und Mittelfristmaßnahme bleiben unverändert. Die bestehende Anwendbarkeitsbedingung über die Option „Verständigung ohne Hilfsmittel möglich (kurze Wege)\" beibehalten – KEINE zusätzliche Förderhöhenfrage und keine Kopplung der Regel an > 30 m, da die Regel sonst für Anlagen unter 30 m ohne jede Verständigungsmöglichkeit nicht mehr greift (fail-open)."
+ },
+ {
+  "code": "MF-M18-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-M18-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-M19-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-M19-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-M20-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-M20-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-S01-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": "Beanstandung in der Gegenprüfung widerlegt: Die Beanstandung trägt nicht. (1) Der behauptete innere Widerspruch existiert nicht: 10.1a ist nur sichtbar/pflichtig bei [10.1] = Ja. R1 (gar keine Beleuchtung) und R5/R6 (vorhandene, aber schwache Beleuchtung) schließen einander aus und beschreiben verschiedene Sachverhalte. Dass der vollständige Ausfall härter bewertet wird als eine vorhandene Altnorm-Beleuchtung, ist die richtige Rangfolge, kein Widerspruch – die Argumentation des Prüfers verlangt, den schlimmeren Zustand milder zu bewerten. (2) Der Altnorm-Vorbehalt greift hier sachlich nicht: eine ortsfeste Schachtbeleuchtung war bereits"
+ },
+ {
+  "code": "MF-S01-R3",
+  "entscheidung": "Ändern",
+  "korrektur": "Die Sofortmaßnahme „Beschädigte Leuchten sofort ersetzen\" passt nicht zum Befund: 10.1b fragt nach fehlendem Splitterschutz und ungeeignetem Anbringungsort, nicht nach beschädigten Leuchten – und ein Leuchtentausch ist für Prüfer/Betreiber keine Sofortmaßnahme. Die Stufe Mittel ist richtig (Gefahr erst bei Bruch der Leuchte, also zusätzliches Ereignis). -> Nur Maßnahmen ändern, Bedingung und Stufe (Mittel) unverändert lassen. Sofort: 'Ungeschützte oder bruchgefährdete Leuchten spannungsfrei schalten bzw. außer Betrieb nehmen und gegen herabfallende Splitter sichern; Betreiber unterrichten [ORGA]'. Mittelfrist: 'Leuchten mit Splitterschutz ausstatten und außerhalb des Fahrbereichs und der Arbeitsbereiche auf Fahrkorbdach und in der Grube anordnen [TECH]'. Die Quellenangabe der Gefährdung nur um den einschlägigen Abschnitt zum Schutz der Schachtleuchten gegen mechanische Beschädigung ergänzen, sobald die Nummer am Normtext verifiziert ist – bis dahin keine Nummer eintragen (Zuversicht zur genauen Fundstelle: niedrig)."
+ },
+ {
+  "code": "MF-S01-R4",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-S01-R5",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-S01-R6",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-S02-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-S02-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-S03-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-S03-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-S03-R4",
+  "entscheidung": "Ändern",
+  "korrektur": "Die Maßnahme „Statischen Nachweis erbringen\" geht am Befund vorbei: gefordert ist der Nachweis des Verbundsicherheitsglases (Kennzeichnung der Scheibe, Hersteller-/Übereinstimmungsbescheinigung), nicht eine statische Berechnung – das führt zur falschen Abhilfe. Außerdem deckt 10.5 zwei sehr unterschiedliche Sachverhalte ab (Papier fehlt vs. Glas ist erkennbar kein VSG), die nicht gleich bewertet werden dürfen. -> Nur die mittelfristige Maßnahme ändern, Bedingung, Stufe (Mittel) und Sofortmaßnahme unverändert: 'Nachweis des Verbundsicherheitsglases (Scheibenkennzeichnung, Hersteller- bzw. Übereinstimmungsbescheinigung) beibringen; andernfalls Verglasung durch Verbundsicherheitsglas nach DIN EN 81-20 5.2.5 ersetzen [TECH]'. Keine zusätzliche Regel und keine neue Frage anlegen; falls sich bei der Besichtigung erkennbar kein VSG zeigt, greift bereits 10.4/MF-S03-R1 (Hoch, Gefahrbereich absperren)."
+ },
+ {
+  "code": "MF-S03-R5",
+  "entscheidung": "Freigeben",
+  "korrektur": "Beanstandung in der Gegenprüfung widerlegt: Die tragende Tatsachenbehauptung ist falsch. Der Prüfer schreibt, 4.2 (qa_glas_schacht) werde „in keiner Gefährdung verlangt\" und bleibe deshalb leer. 4.2 ist jedoch kein freiwillig auszufüllendes Feld des Prüfers, sondern eine STAMMDATENFRAGE: im erzeugten Katalog trägt sie source = „anlagenstamm\" und stamm_key = „glas_schacht\" (erhebung.STAMM), Kategorie „A – Anlagenmerkmale\", Phase „stamm\". Der Wert kommt aus dem Anlagenstamm der App und wird im Fragebogen nur angezeigt; eine Korrektur schreibt dorthin zurück. Zusätzlich steht 4.2 auf der Ankreuzkarte A09 „Glas an\" (kind checklist, ui 4.1) "
+ },
+ {
+  "code": "MF-S04-R1",
+  "entscheidung": "Ändern",
+  "korrektur": "Bedingung und Frage 10.6 sind zu weit: sie erfassen auch Gegengewichtsschienen ohne Fangvorrichtung, für die die Norm Stahl gar nicht verlangt – das erzeugt einen Befund ohne Normverstoß. Die Sofortmaßnahme „Zustand bei jeder Wartung prüfen\" ist keine Sofortmaßnahme, sondern eine dauerhafte organisatorische Auflage und wirkt im Prüfzeitpunkt nicht. -> Ausschließlich die Sofortmaßnahme ersetzen: 'Führungsschienen, Verbindungen und Halterungen im Rahmen dieser Prüfung sichtprüfen; bei Verformung, Korrosion, Verschleiß oder erkennbar unzureichender Bremsfläche Anlage stilllegen; Betreiber unterrichten [ORGA]'. Die wiederkehrende Sichtprüfung als Wartungsvorgabe in der mittelfristigen Maßnahme führen, nicht als Sofortmaßnahme. Bedingung, Frage 10.6, Stufe Mittel und Quellenangabe bleiben unverändert – die vom Prüfer verlangte Einschränkung auf Schienen mit Fangvorrichtung wird ausdrücklich NICHT übernommen."
+ },
+ {
+  "code": "MF-S04-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-S05-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-S05-R2",
+  "entscheidung": "Ändern",
+  "korrektur": "Frage 10.8 ist für alle drei Bauarten sichtbar, die Regel vergibt aber ohne Ausnahme Hoch mit Stilllegung – bei einem normkonformen Trommelaufzug mit schlaffseilausgelöster Fangvorrichtung ist das ein falsch positiver Befund mit schwerwiegender Rechtsfolge. Für den Treibscheibenaufzug ist Hoch dagegen richtig. -> Statt einer zusätzlichen Kompensationsfrage die vorhandene Struktur nutzen: R2 in der Anwendbarkeit auf [3.1] = 'Seil-/Riemenaufzug (Treibscheibe)' beschränken (Hoch und Stilllegung bleiben dort unverändert). Für 'Trommel- oder Kettenaufzug' eine neue Regel auf der bereits vorhandenen Frage 10.11 aufsetzen: [10.8] = Nein UND [10.11] = Nein -> Hoch (Stilllegung); [10.8] = Nein UND [10.11] = Ja -> kein Befund. Für 'Seil-Hydraulikaufzug (indirekt)' die Sichtbarkeit von 10.11 auf diese Bauart erweitern und dieselbe Regelpaarung anwenden; im Hilfetext von 10.11 festhalten, dass die Ersatzauslösung nur unter den in DIN EN 81-20 5.6.2.2 genannten Bedingungen zulässig ist (u. a. Begrenzung der Nenngeschwindigkeit – die genaue Zahl vor Übernahme am Normtext verifizieren, nicht schätzen). Text von 10.8 auf 'Geschwindigkeitsbegrenzer vorhanden?' belassen, damit 10.8 und 10.11 trennscharf bleiben."
+ },
+ {
+  "code": "MF-S05-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-S05-R4",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-S05-R5",
+  "entscheidung": "Ändern",
+  "korrektur": "Die Stufe Mittel ist richtig – ohne Schlaffseilschalter bleibt ein Seilbruch/Schlaffwerden unentdeckt, die Gefahr entsteht erst mit diesem zusätzlichen Versagen. Die Sofortmaßnahme „Spanngewicht bei Wartung sichtprüfen\" wirkt jedoch im Prüfzeitpunkt nicht; sie ist eine Dauerauflage, keine Sofortmaßnahme. -> Sofortmaßnahme ersetzen durch: „Begrenzerseil und Spanngewicht im Rahmen dieser Prüfung sichtprüfen; bei schlaffem, beschädigtem oder abgelaufenem Seil Anlage stilllegen; Betreiber unterrichten und Nachrüstung veranlassen [ORGA]\". Die wiederkehrende Sichtprüfung als zusätzliche organisatorische Maßnahme in der Betriebsanweisung/Wartungsvorgabe führen, nicht als Sofortmaßnahme."
+ },
+ {
+  "code": "MF-S05-R6",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-S06-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-S06-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": "Beanstandung in der Gegenprüfung widerlegt: Die Beanstandung trägt nicht. (1) Der Prüfer übersieht, was 10.12a tatsächlich abfragt: 'fachgerecht verlegt und gekennzeichnet'. Ein 'Nein' bedeutet gerade den gefahrbringenden Zustand – lose, ungeschützte oder nicht gekennzeichnete Leitungen im Schacht. Genau diese Unterscheidung will er mit einer neuen Frage erst schaffen; sie steht bereits im Katalog. Die Berührung einer ungeschützten spannungsführenden Leitung durch Wartungspersonal auf dem Fahrkorbdach ist kein 'zusätzliches Ereignis oder Fehlverhalten' im Sinne des Stufenmaßstabs, sondern Folge des bestimmungsgemäßen Arbeitens – Hoch is"
+ },
+ {
+  "code": "MF-S06-R4",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-S07-R1",
+  "entscheidung": "Ändern",
+  "korrektur": "Frage 10.13 erfasst zwei Sachverhalte – „zugestellt\" (Ordnungsmangel) und „verbaut\" (bauliche Veränderung). Für den verbauten Zugang ist eine technische Maßnahme möglich und nach dem TOP-Prinzip vorrangig; die Regel bietet mittelfristig ausschließlich eine organisatorische Maßnahme (Betriebsanweisung, Betreiberkontrolle) an und lässt die Ursache damit bestehen. -> Mittelfristige Maßnahme um die technische Komponente ergänzen und beide Arten getrennt ausweisen: 'Bauliche Verbauungen und ortsfeste Einbauten vor Schacht- und Inspektionstüren sowie vor den zugehörigen Schalteinrichtungen zurückbauen, Freihaltefläche dauerhaft kennzeichnen bzw. abgrenzen (ASR A1.7, ASR A1.3) [TECH]' – daneben die bestehende Maßnahme unverändert als [ORGA] beibehalten: 'Freihaltung der Schachtzugänge und Schalteinrichtungen in der Betriebsanweisung festlegen und bei Betreiberkontrollen prüfen [ORGA]'."
+ },
+ {
+  "code": "MF-S07-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-S07-R3",
+  "entscheidung": "Ändern",
+  "korrektur": "Stufe Hoch und die Herauslösung aus 10.13 sind fachlich richtig: ein unwirksamer oder überbrückter Türkontakt erlaubt die Fahrt bei offener Tür – Absturz und Scheren ohne weiteres Versagen. Falsch ist nur die Maßnahmenart: das Instandsetzen bzw. Nachrüsten des Türkontakts im Sicherheitskreis ist eine technische Maßnahme, ist aber als [ORGA] ausgewiesen, was die TOP-Bewertung der Regel verfälscht. -> Mittelfristige Maßnahme von [ORGA] auf [TECH] umstellen: „Türkontakt/Verriegelung im Sicherheitskreis instand setzen bzw. nachrüsten und Wirksamkeit prüfen (DIN EN 81-20 5.3.9.1) [TECH]\". Zusätzlich im Hinweis festhalten, dass eine festgestellte Überbrückung vor Wiederinbetriebnahme zu entfernen und die Wirksamkeit durch Funktionsprüfung zu belegen ist."
+ },
+ {
+  "code": "MF-SF01-R11",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-T01-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-T01-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-T01-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-T02-R1",
+  "entscheidung": "Ändern",
+  "korrektur": "Der Stufenmaßstab setzt Hoch bei Einschluss ohne Notruf. Hier ist die Notentriegelung vorhanden und die Befreiung möglich; sie verzögert sich nur, weil der Schlüssel nicht vor Ort liegt – Aufzugsunternehmen und Feuerwehr führen Dreikantschlüssel mit. Gefahr also erst bei zusätzlichem Ereignis, das ist Mittel. Gleichzustufen mit MF-T02-R2 (Notentriegelung fehlt vollständig) ist unverhältnismäßig und entwertet die Abstufung innerhalb der Gefährdung. Zudem wirkt die Sofortmaßnahme 'Schlüssel beschaffen' nicht sofort, wenn erst beschafft werden muss. -> Stufe von Hoch auf Mittel setzen. Sofortmaßnahme so fassen, dass sie bis zur Hinterlegung wirkt: 'Betreiber unterrichten; Personenbefreiung bis zur Hinterlegung des Schlüssels ausschließlich über Notruf und Aufzugsunternehmen sicherstellen und im Notfallplan festhalten', anschließend Schlüssel beschaffen und im Schlüsseltresor hinterlegen. Hoch nur dann, wenn zusätzlich keine funktionierende Notrufverbindung besteht – dafür wäre eine Verknüpfung mit der Notruf-Gefährdung nötig (siehe Querbefunde)."
+ },
+ {
+  "code": "MF-T02-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-T02-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-T02-R4",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-T03-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-T03-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-T03-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-T04-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-T04-R4",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-T04-R5",
+  "entscheidung": "Ändern",
+  "korrektur": "Stufe Hoch, Sofortabschaltung und technische Mittelfristmaßnahme sind richtig. Die Bedingung ist aber fail-open konstruiert: 7.8 und 7.9 sind zwei unabhängige Ja/Nein-Fragen zur Anlage insgesamt. Sind Drahtglas UND eine weitere, nicht normgerechte Glasart (z. B. Floatglas oder ESG) verbaut, ergibt sich 7.8 = Nein und 7.9 = Ja; MF-T04-R5 greift dann nicht mehr, und es bleibt bei MF-T04-R3 mit Niedrig. Damit verschwindet der Hoch-Befund für das tatsächlich gefährliche Glas – ein falsches Bewertungsergebnis und ein Widerspruch zur Fail-closed-Auslegung der Engine. -> Die minimale Variante wählen, nicht die vom Prüfer bevorzugte Umstellung auf eine Einfachauswahl 'Glasart': Diese würde MF-T04-R3 ([7.9]=Ja) und die Kein-Risiko-Regel MF-T04-R4 ([7.8] ist beantwortet) mitreißen und zwei Fragen-IDs destabilisieren. Stattdessen nur 7.9 eindeutig fassen: 'Ist das nicht normgerechte Glas ausschließlich Drahtglas (Gitterglas)?' mit Hilfetext: 'Ja nur, wenn außer Drahtglas kein weiteres nicht normgerechtes Glas (Float, ESG, unbekannt) verbaut ist. Bei gemischter oder unbekannter Verglasung Nein.' Damit ergibt reines Drahtglas weiterhin 7.9=Ja und MF-T04-R3 (Niedrig), die Mischkonstellation ergibt 7.8=Nein und 7.9=Nein und fällt fail-closed auf MF-T04-R5 mit Hoch. MF-T04-R5, seine Stufe, Priorität und Maßnahmen bleiben unverändert."
+ },
+ {
+  "code": "MF-T04-R6",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-T04-R7",
+  "entscheidung": "Ändern",
+  "korrektur": "Stufe Hoch ist trotz des Nachrüstcharakters richtig: Die Anforderung kam erst mit EN 81-1/-2 A3 bzw. EN 81-20, das Einziehen einer Kinderhand führt aber unmittelbar zu schweren Verletzungen, und EN 81-80 führt den Einzugsschutz als sicherheitsrelevante Nachrüstung. Der Verzicht auf den Modifikator 4.12 ist normgerecht, die Norm knüpft nicht an den erwarteten Nutzerkreis an. Die Bedingung ist jedoch zu weit: 7.9a fragt nur, ob verglaste Türen kraftbetätigte Schiebetüren sind. Eine kraftbetätigte Schiebetür mit bloßem Sichtfenster (schmaler Glasstreifen) löst damit Hoch und eine Betriebseinschränkung aus, obwohl die Norm für Glasflächen bis Sichtfenstergröße keinen Einzugsschutz verlangt. -> Nicht 7.9a um ein zweites Kriterium erweitern – eine Ja/Nein-Frage mit zwei Merkmalen ('kraftbetätigte Schiebetür UND Glasfläche über 150 mm') wird uneindeutig beantwortet und 7.9a steuert zugleich die Sichtbarkeit von 7.10. Stattdessen eine eigene Frage 7.9b einführen: 'Glasflächen in den kraftbetätigten Schiebetüren größer als ein Sichtfenster nach DIN EN 81-20 5.3.7.2 (Breite über 150 mm)?', sichtbar und Pflicht wenn [7.9a] = Ja, Hilfetext: 'Sichtfenster nach 5.3.7.2 sind höchstens 150 mm breit. Bei größeren Glasflächen oder wenn die Breite nicht sicher feststellbar ist: Ja.' MF-T04-R7 dann auf '[7.9a] = Ja UND [7.9b] = Ja UND [7.10] = Nein' stellen und 7.10 zusätzlich an [7.9b] = Ja knüpfen. Die Im-Zweifel-Ja-Regel im Hilfetext hält die Auslegung fail-closed. Stufe Hoch, Priorität und beide Maßnahmen bleiben unverändert; der Vorbehalt zur Zahl 150 mm kann entfallen, sie ist durch 5.3.7.2 gedeckt."
+ },
+ {
+  "code": "MF-T05-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-T05-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-T06-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-T06-R10",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-T06-R11",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-T06-R13",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-T06-R15",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-T06-R2",
+  "entscheidung": "Ändern",
+  "korrektur": "Bedingung, Stufe und Priorität sind richtig: Mit P250 verdrängt die Regel die Kompensationsregeln MF-T06-R9/R10 (P200), sobald Kinder oder mobilitätseingeschränkte Personen zu erwarten sind – genau das ist die gewollte Wirkung und keine Prioritätsinversion. Zu beanstanden ist die Sofortmaßnahme: 'Ohne weitere Schließkantensicherung für Personentransport sperren' ist bedingt formuliert und bezieht sich auf die Schließkantensicherung, um die es bei fehlender Fahrkorbtür gar nicht geht. Sie lässt sich so lesen, dass der Aufzug weiterbetrieben werden darf, sobald irgendeine Schließkantensicherung vorhanden ist. Eine Sofortmaßnahme zu einem Hoch-Befund muss unbedingt und eindeutig sein. -> Sofortmaßnahme unbedingt fassen, z. B.: 'Aufzug für die Personenbeförderung sperren; bis zur Nachrüstung nur Güterbeförderung durch eingewiesene Personen.' Bedingung, Stufe Hoch und Priorität 250 bleiben unverändert."
+ },
+ {
+  "code": "MF-T06-R5",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-T06-R7",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-T06-R8",
+  "entscheidung": "Freigeben",
+  "korrektur": "Beanstandung in der Gegenprüfung widerlegt: Widerlegt am Quellkatalog. Der Prüfer nimmt an, „Umsteuereinrichtung (Schachtdrehtür)\" sei eine schwache, erst bei Berührung wirkende Ersatzlösung. Das Gegenteil ist der Fall: Die Option stammt aus N20-K2.2 und ist dort der SOLL-Zustand. norm_81_20.json enthält zu q_n20_k2_2 zwei getrennte Optionen – „Kabinenabschlusstür MIT Umsteuereinrichtung bei Schachtdrehtür vorhanden\" (oa60f0323) und „Kabinenabschlusstür OHNE Umsteuereinrichtung bei Schachtdrehtür vorhanden\" (o17998e58). Regel N20-K2.2-R2 bewertet die Variante MIT Umsteuereinrichtung als NO_RISK, origin NORM_DERIVED, evidence DIRECT, qua"
+ },
+ {
+  "code": "MF-T06-R9",
+  "entscheidung": "Ändern",
+  "korrektur": "Die Regel setzt mit P200 eine Mittel-Bewertung über die Hoch-Regel MF-T06-R11 (P150), also eine Kompensation. Dafür fehlt der Normbezug, und die Bedingung greift zu weit: Nach dem Hilfetext zu 8.6 zählt ein Gitter mit Schließstellungsüberwachung bereits als Fahrkorbabschlusstür (8.6 = Ja); 8.9a erfasst deshalb gerade die Scherengitter, deren Schließstellung nicht überwacht ist. Ein nicht überwachtes Gitter verhindert die Fahrt bei offener Fahrkorböffnung nicht und kann die Fahrkorbtür nicht ersetzen – Mittel ist hier eine Prioritätsinversion zugunsten eines wirkungslosen Schutzes und führt zu einem zu günstigen Ergebnis. Hinzu kommt die eigene Scher- und Quetschgefahr des Scherengitters (Finger im Gitterwerk), die eine Gleichstellung mit dem Lichtgitter zusätzlich ausschließt. -> Die vom Prüfer primär vorgeschlagene Zusatzfrage zur Schließstellungsüberwachung an 8.9a ist nicht umsetzbar und würde den Katalog in sich widersprüchlich machen: Ein überwachtes Gitter ist nach dem Hilfetext zu 8.6 bereits Fahrkorbabschlusstür, dann wäre [8.6] = Ja und 8.9a gar nicht sichtbar. Deshalb die vom Prüfer selbst genannte Rückfallvariante wählen und MF-T06-R9 ersatzlos STREICHEN. Es gilt dann MF-T06-R11 (P150, Hoch) mit der Sofortmaßnahme 'Aufzug für die Personenbeförderung durch nicht eingewiesene Personen sperren' und der technischen Mittelfristmaßnahme 'Fahrkorbtür nachrüsten'; die Regelabdeckung bleibt lückenlos, ein rule_gap entsteht nicht. Frage 8.9a bleibt unverändert erhalten, weil sie in den Bedingungen von MF-T06-R1 und MF-T06-R11 gebraucht wird. Zusätzlich die Mittelfristmaßnahme von MF-T06-R11 bereinigen: Sie nennt derzeit 'Lichtgitter oder Scherengitter genügen nur bei Lastenaufzügen mit ausschließlich eingewiesenem Nutzerkreis' – das Scherengitter ist dort zu streichen,"
+ },
+ {
+  "code": "MF-U01-R1",
+  "entscheidung": "Ändern",
+  "korrektur": "Die Regel vergibt \"Hoch\" für jeden Fund, unabhängig vom Zustand des Materials. Fest gebundenes, unbeschädigtes Material (Asbestzement-Brandschutzplatte, Dichtung) setzt ohne Bearbeitung keine Fasern frei – das ist nach dem Stufenmaßstab \"Gefahr erst bei zusätzlichem Ereignis\", also Mittel. Dass die Regel selbst keine Stilllegung, sondern nur ein Bearbeitungsverbot anordnet, bestätigt: die Maßnahmen sind auf Mittel-Niveau, die Stufe ist es nicht. -> Korrektur im Grundsatz übernehmen, aber fail-closed ausgestalten: Zustandsfrage mit DREI Optionen statt zwei – (a) fest gebunden und unbeschädigt, (b) schwach gebunden, beschädigt oder abriebbelastet, (c) Zustand nicht beurteilbar. Hoch bei (b) UND bei (c); Mittel nur bei (a). Der Vorschlag des Prüfers ließe den nicht beurteilten Zustand auf Mittel fallen und wäre damit schwächer als die bestehende Regel. Maßnahmentext: \"durch Sachkundige nach der für den festgestellten Stoff einschlägigen TRGS (TRGS 519 Asbest, TRGS 521 künstliche Mineralfasern, TRGS 524 Arbeiten in kontaminierten Bereichen) bewerten und sanieren lassen\". Auf die Asbest-Richtlinie würde ich mich nicht festlegen (in mehreren Ländern zurückgezogen) – stattdessen neutral \"Zustandsbewertung und wiederkehrende Zustandskontrolle durch Sachkundige\". Stufe Mittel bei (a) zusätzlich mit Kennzeichnung und Aufnahme in das Gebäudeschadstoffkataster."
+ },
+ {
+  "code": "MF-U01-R2",
+  "entscheidung": "Ändern",
+  "korrektur": "Im Triebwerksraum ist \"Hoch\" für einen Teilfall wirklich richtig: ein asbesthaltiger Bremsbelag wird bei jedem Halt abgerieben, die Freisetzung erfolgt ohne weiteres Zutun. Für unbeschädigte Brandschutzplatten oder Dichtungen im selben Raum ist Hoch dagegen zu hoch. Eine Regel, die beides zusammenfasst, trifft in der Hälfte der Fälle die falsche Stufe. -> Wie R1: dreistufige Zustandsfrage mit \"Zustand nicht beurteilbar\" -> Hoch. Für den Triebwerksraum zusätzlich ausdrücklich: Asbesthaltige Bremsbeläge oder Bremsstaubablagerungen an Maschine/Bremse sind IMMER Hoch, unabhängig vom sonstigen Materialzustand, weil der Abrieb im bestimmungsgemäßen Betrieb erfolgt. Sofortmaßnahme in diesem Fall über das Bearbeitungsverbot hinaus ergänzen: keine trockene Reinigung, kein Ausblasen, Bremsstaub nur mit Staubsauger der Staubklasse H aufnehmen."
+ },
+ {
+  "code": "MF-U01-R3",
+  "entscheidung": "Ändern",
+  "korrektur": "Identische Stufen- und TRGS-Problematik wie R1. Hinzu kommt: die Frage 10.20 erfasst ausdrücklich den Fahrkorb; asbesthaltige Verkleidungen im Fahrkorb exponieren auch die Nutzer, die bei MF-U01 nicht als Betroffene geführt werden. Die Regel bewertet damit einen Personenkreis mit, der in der Gefährdung nicht abgebildet ist. -> Korrektur übernehmen, mit zwei Schärfungen: (1) Zustandsfrage dreistufig, \"Zustand nicht beurteilbar\" -> Hoch (siehe R1). (2) Für den Fahrkorb gilt die Zustandsabstufung NICHT uneingeschränkt: beschädigte oder abriebbelastete Verkleidungen im Fahrgastbereich bleiben Hoch, weil hier – anders als im Triebwerksraum – ein unkontrollierter Personenkreis dauerhaft exponiert ist und kein Bearbeitungsverbot wirkt. Sofortmaßnahme für diesen Fall ergänzen: Fahrkorb bis zur Bewertung außer Betrieb nehmen oder beschädigte Verkleidung staubdicht sichern."
+ },
+ {
+  "code": "MF-U01-R4",
+  "entscheidung": "Ändern",
+  "korrektur": "Gleiche Stufen- und Zuordnungsproblematik wie R1. In der Schachtgrube kommt erschwerend hinzu, dass Ablagerungen und Feuchte beschädigtes Material eher freisetzen – das spricht für eine Zustandsdifferenzierung, nicht gegen sie. -> Zustandsfrage wie R1 (dreistufig, \"nicht beurteilbar\" -> Hoch), Maßnahmentext auf die einschlägige TRGS öffnen. Zusätzlich gegen den Vorschlag des Prüfers: Ablagerungen/Staub mit Abriebanteil in der Grube sind dem Fall \"schwach gebunden/abriebbelastet\" zuzuordnen und bleiben Hoch – nicht Mittel. Sofortmaßnahme ergänzen: Grube nicht trocken kehren oder ausblasen, Reinigung nur nass oder mit Sauger der Staubklasse H, bis die Beprobung vorliegt."
+ },
+ {
+  "code": "MF-U01-R5",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-U01-R6",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-U02-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-U02-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-U02-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-U02-R4",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-U02-R5",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-U03-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-U03-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-U03-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-U03-R4",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-U03-R5",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-U04-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-U05-R1",
+  "entscheidung": "Ändern",
+  "korrektur": "Die Regel bewertet eine Nutzungsart, keinen Mangel: Sobald chemische Gefahrstoffe transportiert werden, entsteht ein Mittel-Befund, der auch bei vorbildlicher Regelung nie wieder auf \"Kein Risiko\" fällt. Der Katalog kennt das richtige Muster bereits (MF-U06 und MF-U12 arbeiten mit Kompensationsfragen); hier fehlt es. -> Korrektur übernehmen; nur die Zielstufe bei erfüllter Kompensation präzisieren: Niedrig, nicht Kein Risiko. Der Transport chemischer Gefahrstoffe bleibt auch geregelt ein Restrisiko mit Fortschreibungs- und Unterweisungspflicht (GefStoffV § 14); \"Kein Risiko\" würde die Maßnahmen aus dem Bericht verschwinden lassen. Kompensationsfrage 15.32a als CONDITIONAL (sichtbar/Pflicht bei [15.32]=Ja) anlegen, damit sie bei Nein nicht zur Regellücke führt."
+ },
+ {
+  "code": "MF-U05-R2",
+  "entscheidung": "Ändern",
+  "korrektur": "Gleiche Konstruktionsschwäche wie R1: In Kliniken und Laboren ist der Transport infektiöser Stoffe der Normalfall und in der Regel geregelt; die Regel erzeugt trotzdem unverändert Mittel. Die Maßnahmen beschreiben genau die Regelung, deren Vorhandensein nirgends abgefragt wird. -> Korrektur übernehmen, Zielstufe bei erfüllter Kompensation Niedrig statt Kein Risiko (Wirksamkeitskontrolle und Fortschreibung des Desinfektionsplans bleiben geschuldet). Kompensationsfrage sollte zwei Punkte zusammenfassen, sonst ist sie zu grob beantwortbar: dichte, gekennzeichnete Transportbehälter festgelegt UND Reinigungs-/Desinfektionsverfahren für den Fahrkorb nach Kontamination festgelegt und unterwiesen."
+ },
+ {
+  "code": "MF-U05-R3",
+  "entscheidung": "Ändern",
+  "korrektur": "Neben der fehlenden Kompensation (wie R1/R2) fehlt der Bezug zu MF-U06: Der regelmäßige Transport von Lösemitteln oder Gasflaschen kann im Fahrkorb selbst eine explosionsfähige Atmosphäre erzeugen, MF-U06 wird aber nur über die separat beantwortete Frage 15.25 ausgelöst. Die Regel fordert eine Ex-Bewertung, ohne sie in die zuständige Gefährdung zu überführen. -> Kompensationsfrage wie bei R1 ergänzen und in die Bedingung aufnehmen (Mittel nur ohne Regelung, sonst Niedrig). Die vorgeschlagene Verknüpfung \"[15.34]=Ja als Anlass für 15.25\" NICHT als Regeländerung umsetzen – 15.25 wird ohnehin immer gestellt; stattdessen im Hilfetext zu 15.25 den Transportfall nennen. Mittelfristmaßnahme von R3 entschlacken: die Explosionsschutzbewertung gehört nach MF-U06; in MF-U05-R3 nur noch Mengenbegrenzung, Behälter, Lüftung und Verhalten bei Freisetzung regeln, mit Verweis auf MF-U06 statt eigener Ex-Forderung."
+ },
+ {
+  "code": "MF-U05-R4",
+  "entscheidung": "Ändern",
+  "korrektur": "Die Regel erzeugt Mittel allein aus der Tatsache des Transports. Bei einer genehmigten Einrichtung mit Strahlenschutzanweisung ist das Restrisiko für Wartungspersonal gering (abgeschirmte Behälter) – der Befund bildet dann nur noch die Nutzung ab, nicht eine Gefährdung. -> Korrektur übernehmen. Zielstufe bei erfüllter Kompensation: Niedrig, nicht Kein Risiko – die Strahlenschutzanweisung muss den Aufzugstransport ausdrücklich erfassen und fortgeschrieben werden, und das Wartungspersonal ist über das Verhalten bei beschädigten Versandstücken zu unterweisen. Kompensationsfrage präzise fassen: \"Strahlenschutzanweisung liegt vor UND erfasst den Transport mit dem Aufzug (Behälter, Begleitung, Verhalten bei Kontamination)?\""
+ },
+ {
+  "code": "MF-U05-R5",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-U06-R2",
+  "entscheidung": "Ändern",
+  "korrektur": "Bedingung, Stufe und Priorität (P100 als Auffangregel unter R4/R5) sind richtig, ebenso die mittelfristige Maßnahme. Wie bei R4 greift die Sofortmaßnahme aber zu kurz: Sie regelt nur Arbeiten mit Zündquellen und den Hinweis an den Betreiber, lässt die Anlage selbst als mögliche Zündquelle im unbewerteten Bereich aber weiterlaufen. -> Korrektur übernehmen, aber die Verhältnismäßigkeit ausdrücklich in den Text: Anders als bei R4 ist bei fehlendem Explosionsschutzdokument nicht erwiesen, dass der Aufzug in einer Zone liegt. Sofortmaßnahme deshalb abgestuft formulieren: \"Betreiber unverzüglich schriftlich unterrichten; bis zur Vorlage der Explosionsschutzbewertung den Betrieb der Anlage im möglicherweise explosionsgefährdeten Bereich mit dem Betreiber verbindlich regeln (Einschränkung, Freigaberegelung oder Außerbetriebnahme); Erlaubnisscheinverfahren für Arbeiten mit Zündquellen beibehalten.\" Stufe und Priorität unverändert."
+ },
+ {
+  "code": "MF-U06-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-U06-R4",
+  "entscheidung": "Ändern",
+  "korrektur": "Bedingung, Stufe und Prioritätslage sind richtig: festgelegte, aber nicht umgesetzte Ex-Schutzmaßnahmen dürfen nicht von der Mittel-Regel verdrängt werden. Falsch ist die Sofortmaßnahme: Sie deckt nur die Zündquelle \"Fremdarbeit\" ab, während die eigentliche Gefährdung darin besteht, dass die Aufzugsanlage selbst im Ex-Bereich betrieben wird und ungeeignete Betriebsmittel enthält. Bei Stufe Hoch bleibt die Gefahr damit unbeantwortet. -> Sofortmaßnahme ergänzen: Betrieb der Anlage im betroffenen Bereich bis zur Umsetzung der festgelegten Schutzmaßnahmen einstellen oder nur nach schriftlicher Freigaberegelung des Betreibers zulassen, Betreiber unverzüglich schriftlich unterrichten; das Erlaubnisscheinverfahren für Arbeiten mit Zündquellen bleibt daneben bestehen. Stufe und Priorität unverändert."
+ },
+ {
+  "code": "MF-U07-R1",
+  "entscheidung": "Ändern",
+  "korrektur": "Die Bedingung ist zu weit: Frage 11.15 lautet \"Wasser ODER Feuchtigkeit\", und die Regel ordnet daraufhin ausnahmslos Hoch mit Außerbetriebnahme an. Feuchte Grubenwände und Kondensat sind in Altschächten der Regelfall und rechtfertigen keine Stilllegung; stehendes Wasser an Puffern, Fangvorrichtung, Grubenschalter oder Leitungen dagegen schon. Auffällig ist auch die Asymmetrie: Bei 15.23a wurde die Bedingung ausdrücklich auf sicherheitsrelevante Bauteile geschärft, bei 11.15 nicht. -> Korrektur übernehmen, mit fail-closed-Ausgestaltung: Auswahlfrage zu 11.15 mit den Optionen (a) stehendes Wasser in der Grube bzw. Wasser an elektrischen oder sicherheitsrelevanten Bauteilen, (b) nur Feuchte/Kondensat ohne Bauteilkontakt, (c) Umfang nicht beurteilbar. Hoch mit Außerbetriebnahme bei (a) und (c); Mittel bei (b) mit Abdichtung, Entwässerung und Zustandsüberwachung. Die Quellenangabe der Gefährdung sollte bei dieser Gelegenheit bereinigt werden: statt DIN EN 81-20 5.2.1.2 / 5.2.6.1 die tragenden Anforderungen benennen (Schutzart der elektrischen Betriebsmittel und Funktionssicherheit der Sicherheitsbauteile, TRBS 3121 zum Zustand der Schachtgrube). Erfundene Abschnittsnummern dabei nicht ersetzen durch neue – lieber die Norm ohne Abschnitt zitieren."
+ },
+ {
+  "code": "MF-U07-R2",
+  "entscheidung": "Ändern",
+  "korrektur": "Bedingung und Stufe sind richtig: Feuchte an Bremse oder Türverriegelung kann zum Versagen einer Einrichtung im Sicherheitskreis führen, das ist unmittelbare Gefahr und damit Hoch. Falsch ist die Mittelfristmaßnahme: Sie stammt unverändert aus dem Wasser-Textblock der Schachtgrube (\"Wassereintritt beseitigen, Abdichtung, Pumpensumpf\") und passt nicht zu der 2026 geschärften Bedingung, die ausdrücklich den Bereich außerhalb der Grube und den Fall Kondensat erfasst. Für Kondensat an der Steuerung liegt die Ursache in Lüftung, Beheizung und Schutzart, nicht im Wassereintritt. -> Korrektur übernehmen und um einen Punkt erweitern, den der Prüfer übersehen hat: Auch die SOFORTMASSNAHME ist ein unbereinigter Textrest aus R1 (\"Anlage bei Wasser IN DER GRUBE oder an Sicherheitsbauteilen außer Betrieb nehmen\") und nennt einen Bereich, den 15.23a ausdrücklich ausschließt. Sie ist auf \"Anlage bei Feuchtigkeit oder Wasser an Steuerung, Bremse oder Türverriegelung außer Betrieb nehmen; Ursache mit dem Betreiber klären\" zu kürzen. Mittelfrist wie vorgeschlagen: Ursache nach Befund beseitigen – bei Wassereintritt abdichten, bei Kondensat Belüftung/Beheizung von Triebwerksraum bzw. Schacht herstellen und die Schutzart der betroffenen Betriebsmittel anheben; betroffene Sicherheitsbauteile prüfen und bei Korrosionsspuren austauschen lassen."
+ },
+ {
+  "code": "MF-U07-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": "Beanstandung in der Gegenprüfung widerlegt: Die Beanstandung trägt nicht. Der Prüfer bestätigt Bedingung und Stufe und beanstandet allein die Sofortmaßnahme als \"Untersuchung statt Schutzmaßnahme\". Der Maßnahmentext lautet aber vollständig: \"Tragende und sicherheitsrelevante Bauteile auf Tragfähigkeit prüfen; BEI ZWEIFEL ANLAGE AUSSER BETRIEB NEHMEN.\" Der zweite Halbsatz ist eine sofort wirksame Schutzmaßnahme genau der Art, die der Katalogmaßstab verlangt (stilllegen), und sie greift bei massiver Korrosion oder Betonabplatzungen regelmäßig. Der erste Halbsatz beschreibt die Inaugenscheinnahme durch den Prüfer vor Ort, nicht einen stati"
+ },
+ {
+  "code": "MF-U07-R4",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-U07-R5",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-U07-R6",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-U08-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-U08-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": "Beanstandung in der Gegenprüfung widerlegt: Die Beanstandung trägt nicht, weil der Prüfer die Abdeckung durch andere Gefährdungen übersehen hat. Alle drei von ihm als \"Hoch\" reklamierten Teilfälle werden im Katalog bereits an ihrem sachlichen Ort mit Hoch bewertet: (1) Schutzraum Schachtgrube – MF-G02-R1, Frage 11.3, Option \"Schutzraum nicht gegeben\", Hoch mit Stilllegung; (2) Schutzraum Schachtkopf – MF-F04, Frage 9.7, deren Option ausdrücklich lautet \"Schutzraum nicht gegeben (z. B. NACHTRÄGLICHE EINBAUTEN)\", Hoch; (3) versperrte Zugänge und Rettungswege – MF-S06-R1 (Frage 10.12b, \"Behindern aufzugsfremde Einrichtungen Arbeiten oder R"
+ },
+ {
+  "code": "MF-U08-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-U09-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-U09-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-U09-R3",
+  "entscheidung": "Ändern",
+  "korrektur": "Die Mittelfristmaßnahme sagt weiterhin 'in diese GBU aufnehmen' und bewertet damit wieder das eigene Dokument – genau der Fehler, wegen dessen die Frage geändert wurde. Die Sofortmaßnahme läuft bei der Mehrzahl der Anlagen ins Leere: ein Aufzug ohne Evakuierungs- oder Feuerwehrfunktion hat keine 'Evakuierungsfunktion', die man 'nicht nutzen' könnte, und die Feuerwehr wegen eines fehlenden Betriebsanweisungs-Eintrags zu informieren ist unverhältnismäßig. Der eigentlich sicherheitsrelevante Fall – fehlende Festlegung/Kennzeichnung des Benutzungsverbots im Brandfall – wird von beiden Maßnahmen nicht erfasst. Stufe Mittel ist richtig. -> Im Kern wie vorgeschlagen, aber knapper und mit korrekter Kennzeichnungsfundstelle. Sofort: 'Betreiber unterrichten; bis zur Festlegung gilt der Aufzug im Brandfall als nicht benutzbar – Vorhandensein und Lesbarkeit des Verbotszeichens \"Im Brandfall Aufzug nicht benutzen\" (ASR A1.3 / ISO 7010 P020) an allen Haltestellen prüfen; nur bei Anlagen mit Evakuierungs- oder Feuerwehrfunktion zusätzlich Feuerwehr bzw. Brandschutzbeauftragten informieren' [ORGA]. Mittelfrist: 'Festlegung im Brandschutzkonzept und in der Betriebsanweisung treffen lassen (Benutzungsverbot im Brandfall bzw. – bei Evakuierungs- oder Feuerwehraufzügen – Evakuierungsbetrieb nach CEN/TS 81-76 bzw. DIN EN 81-72), mit Angabe, wer den Aufzug wie benutzen darf; fehlende Kennzeichnung nachrüsten' [TECH]. Verweis 'in diese GBU aufnehmen' streichen, 'DIN EN 81-76' nicht durch eine andere EN-Nummer ersetzen, sondern durch CEN/TS 81-76 bzw. EN 81-72. Stufe Mittel unverändert."
+ },
+ {
+  "code": "MF-U09-R4",
+  "entscheidung": "Ändern",
+  "korrektur": "Die Bedingung bündelt zwei Sachverhalte sehr unterschiedlicher Schwere: die behinderte Personenrettung (verstellter Zugang zu Triebwerksraum, Notentriegelung oder Schachttür – unmittelbare Gefahr bei Einschluss, Hoch ist richtig) und die reine Betriebsbehinderung (z. B. Abschottung verengt den Zugang, Brandschutztür schlägt gegen die Schachttür). Letztere ist kein unmittelbares Lebensrisiko und wird mit Hoch überbewertet. Zusätzlich kehrt die Maßnahmenlogik das TOP-Prinzip um: sofort wird technisch beseitigt, mittelfristig bleibt es bei einer vagen organisatorischen 'Abstimmung', obwohl die Ursachenbeseitigung baulich-technisch ist. -> Frage 15.8d nicht in zwei Fragen aufteilen, sondern als Optionsfrage mit fail-closed-Voreinstellung fassen: 'Behindert eine Brandschutzeinrichtung (Brandschutztür, Abschottung) den Aufzugsbetrieb oder die Personenrettung?' mit den Optionen nein='Keine Behinderung' | rettung='Zugang zur Anlage, Notentriegelung, Schachttür oder Rettungsweg behindert – oder nicht sicher beurteilbar' | betrieb='Nur der Aufzugsbetrieb behindert, Rettungszugang und Rettungsweg nachweislich frei'. Regel R4 auf die Option 'rettung' einengen -> Hoch (der unklare Fall fällt ausdrücklich hierunter, damit keine Absenkung durch Unsicherheit entsteht). Neue Regel R5 für 'betrieb' -> Mittel. Maßnahmen von R4: Sofort 'Betreiber unterrichten; Zugang zu Triebwerksraum, Notentriegelung und Schachttür freiräumen bzw. sichern; ist die Personenrettung weiter behindert, Anlage bis zur Beseitigung außer Betrieb nehmen' [ORGA]; Mittelfrist 'Brandschutzeinrichtung und Aufzug baulich/technisch entflechten (Türfeststellanlage, geänderter Anschlag, Revisionsöffnung in der Abschottung) und Ergebnis im Brandschutzkonzept fortschreiben' [TECH]."
+ },
+ {
+  "code": "MF-U09-R6",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-U10-R1",
+  "entscheidung": "Ändern",
+  "korrektur": "Die Option 'Funktion unklar' beschreibt keinen festgestellten Mangel, sondern eine fehlende Feststellung – eine RWA-Auslösung ist ohne Auslöseversuch vor Ort oft nicht beurteilbar. Ein Prüfer, der ehrlich 'unklar' wählt, erzeugt damit zwingend 'Hoch'; das ist ein falsches Bewertungsergebnis und drängt zum Ausweichen auf 'kein Nachweis'. Zweitens ist 'blockiert' physikalisch derselbe Zustand wie das in R2 mit Mittel bewertete 'verschlossen' – die Abstufung Hoch/Mittel trennt hier nur die Ursache (Defekt gegenüber baulicher Veränderung), nicht das Risiko. Drittens setzt die Gefahr in beiden Fällen das Brandereignis voraus, was nach dem Stufenmaßstab Mittel ergibt, konsistent zu MF-U09-R1/R2. -> Wichtig ist, dass die Option selbst geteilt wird – sonst entsteht durch die bloße Umhängung der Regelbedingung eine Regellücke. Frage 15.9a auf vier Optionen umstellen: ok='Funktion geprüft, Öffnungen frei' | gestoert='Entrauchung/RWA blockiert oder defekt' | veraendert='Öffnungen verschlossen, verändert oder unzureichend' | kein_nachweis='Funktion unklar oder kein Nachweis über Prüfung'. R1 und R2 zu einer Regel zusammenfassen: 'Entrauchung/RWA nicht wirksam (blockiert, defekt, verschlossen, verändert oder unzureichend)' -> Mittel, Sofort 'Betreiber unterrichten und Funktionsprüfung durch die Fachfirma des Gewerks veranlassen' [ORGA], Mittelfrist 'Entrauchung instand setzen bzw. Öffnungsquerschnitt nach Brandschutzkonzept wiederherstellen und Prüfnachweis vorlegen lassen' [TECH]. R3 auf 'Funktion unklar oder kein Nachweis' erweitern (Stufe Mittel unverändert). Eine Anhebung auf Hoch nur über eine zusätzliche Feststellung vorsehen, dass die Entrauchung nach Brandschutzkonzept zwingend gefordert und vollständig unwirksam ist. Quelle 'DIN EN 81-20 5.2.1.4.1' durch Landesbauordnung/Br"
+ },
+ {
+  "code": "MF-U10-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-U10-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-U10-R4",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-U11-R1",
+  "entscheidung": "Ändern",
+  "korrektur": "Bewertet wird ein Dokumentationszustand ('Wechselwirkung bewertet?'), vergeben wird dafür die Stufe Hoch. Das ist derselbe Fehlertyp, der bei 15.8c bereits korrigiert wurde: Die fehlende Bewertung ist kein unmittelbares Lebensrisiko, das Risiko entsteht erst bei Auslösung der Löschanlage. Hoch ist nach dem Stufenmaßstab nur gerechtfertigt, wenn festgestellt wird, dass die Abschaltung vor Wasserbeaufschlagung tatsächlich fehlt. Zusätzlich ist die Mittelfristmaßnahme als ORGA angelegt ('bewerten und umsetzen lassen'), obwohl die Ursachenbeseitigung technisch ist (Abschaltung über Sprinklerauslösung, Schutzart der Steuerung) – TOP-Verstoß. -> Wie vorgeschlagen, mit einer Präzisierung zur Fail-closed-Sicherung: 15.10a auf den prüfbaren Sachverhalt umstellen ('Ist sichergestellt, dass die Energieversorgung des Aufzugs vor Wasserbeaufschlagung abgeschaltet wird – Auslösekontakt/Abschaltung vorhanden?') und eine zweite Frage 15.10b für den Nachweis ergänzen ('Wirksamkeit der Abschaltung geprüft und dokumentiert?', sichtbar und Pflicht wenn [15.10a] = Ja). Regeln: [15.10a] = Nein -> Hoch (Sofort: Betreiber unterrichten; bis zur Klärung Steuerung gegen Wasserbeaufschlagung schützen bzw. Anlage stilllegen [ORGA]; Mittelfrist: Abschaltung der Aufzugsenergie bei Auslösung der Löschanlage herstellen und Schutzart der Steuerung sicherstellen [TECH]); [15.10b] = Nein -> Mittel (Sofort: Nachweis beim Betreiber anfordern [ORGA]; Mittelfrist: Wirk-Prinzip-Prüfung der Abschaltung in den Prüfplan aufnehmen und dokumentieren [ORGA]). Beide Fragen als Pflicht führen, damit die Nichtbeantwortung INCOMPLETE ergibt und nicht Kein Risiko."
+ },
+ {
+  "code": "MF-U11-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-U12-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-U12-R2",
+  "entscheidung": "Streichen",
+  "korrektur": "Die Regel vergibt 'Niedrig', obwohl die Kompensation 15.36a erfüllt ist; der Stufenmaßstab setzt für Niedrig aber einen Mangel voraus, und hier liegt keiner vor ('Kein Risiko = Soll-Zustand erfüllt'). Folge: jede Anlage mit Fremdgewerken und vorhandenem Konzept erzeugt dauerhaft einen Befund, der bei MAXIMUM-Aggregation die Kein-Risiko-Regel R3 verdrängt und den Bericht mit Scheinmängeln füllt. Die beiden Maßnahmen – Konzept fortschreiben, Wirksamkeit prüfen – sind exakt die Erhaltungsmaßnahmen, die die Kein-Risiko-Regel R3 bereits trägt. Die Evidenz ist folgerichtig nur INFERRED. -> Regel entfernen. Bei [15.36] = Ja UND [15.36a] = Ja greift MF-U12-R3 (Kein Risiko); dessen Erhaltungstext um den Zusatz ergänzen: 'Zugangs- und Schutzkonzept bei Änderungen der Gewerke fortschreiben, Unterweisungsnachweise bei der Betreiberkontrolle stichprobenartig prüfen'. Ein echter Befund entsteht erst, wenn das Konzept unwirksam oder nicht unterwiesen ist – dafür gegebenenfalls eine eigene Frage ('Unterweisungsnachweise der Fremdfirmen vorhanden?') mit Stufe Mittel vorsehen."
+ },
+ {
+  "code": "MF-U12-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-U13-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-U13-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-U13-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-U14-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-U15-R1",
+  "entscheidung": "Ändern",
+  "korrektur": "Die Bedingung ist zu weit: Sie löst bereits aus, wenn der Aufstellbereich eine Tiefgarage, Werkstatt oder ein Notstromaggregat-Raum ist – also auch dann, wenn die nach Garagenverordnung bzw. ASR A3.6 erforderliche maschinelle Lüftung wirksam vorhanden ist und der Soll-Zustand erfüllt ist. Damit entsteht bei einem großen Teil der Anlagen ein Dauerbefund 'Mittel' ohne Mangel. Die Stufe selbst ist für den echten Mangelfall (Emissionen ohne wirksame Lüftung) richtig, weil die Gesundheitsgefahr expositions- und dauerabhängig ist. Zusätzlich ist die Mittelfristmaßnahme als [ORGA] gekennzeichnet, obwohl Lüftung und Absaugung technische Maßnahmen sind. -> Bei NONE-Aggregation ist die katalogtypische Form die Kompensationsregel, nicht die Einengung der Bedingung. Neue Kompensationsfrage 15.24a 'Wirksame Lüftung/Absaugung des Aufstellbereichs vorhanden und nachgewiesen (Garagenverordnung, ASR A3.6)?', Typ Kompensation, sichtbar und Pflicht wenn [15.24] = Ja. Neue Regel MF-U15-R1a mit höherer Priorität als R1 (z. B. P150): [15.24] = Ja UND [15.24a] = Ja -> Kein Risiko, Sofort 'Zustand erhalten; Wirksamkeit der Lüftung bei der Betreiberkontrolle erneut prüfen' [ORGA]. R1 unverändert bei [15.24] = Ja (greift damit, solange die Kompensation nicht erfüllt ist) -> Mittel, Mittelfristmaßnahme aber als [TECH] kennzeichnen: 'Lüftung/Absaugung im Aufstellbereich technisch sicherstellen bzw. instand setzen; Fahrkorb- und Triebwerksraumlüftung prüfen'. Die Umkennzeichnung [ORGA] -> [TECH] ist auch dann vorzunehmen, wenn die Kompensationsfrage nicht ergänzt wird."
+ },
+ {
+  "code": "MF-U15-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-Z01-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": "Beanstandung in der Gegenprüfung widerlegt: Die Beanstandung trägt nicht. (1) Katalogsystematik: Der Katalog bewertet „Beleuchtung nicht vorhanden“ durchgängig mit „Hoch“ – MF-S01-R1 (Schachtbeleuchtung), MF-G01-R1 (Grubenbeleuchtung), MF-M01-R1 (Triebwerksraum), jeweils mit exakt derselben Sofortmaßnahme „Handlampe benutzen [ORGA]“ und derselben Mittelfristmaßnahme. MF-Z01-R1 folgt genau diesem Muster. Eine isolierte Absenkung nur bei Z01 bricht die Systematik, ohne dass ein Z01-spezifischer Grund genannt wäre. (2) Das Handlampen-Argument ist kein Stufenkriterium: Es gälte wortgleich für S01/G01/M01; wenn eine wirksame Sofortmaßnahme d"
+ },
+ {
+  "code": "MF-Z01-R2",
+  "entscheidung": "Ändern",
+  "korrektur": "Stufe „Mittel“ und Bedingung sind richtig. Die Mittelfristmaßnahme ist jedoch zu eng: Frage 5.2 fasst drei verschiedene Mängel zusammen (weniger als 50 lx, nicht funktionsfähig, Leuchten an ungeeigneter Stelle). „Leuchten versetzen“ trifft nur den dritten Fall und beseitigt bei zu geringer Beleuchtungsstärke die Ursache nicht. Außerdem entsteht bei gleichzeitigem Greifen von R3 (MAXIMUM) ein Widerspruch: einmal „versetzen“, einmal „instand setzen“. -> Mittelfristmaßnahme verallgemeinern, z. B.: „Beleuchtung der Zuwege so herstellen, dass dauerhaft mindestens 50 lx erreicht werden – Leuchten ergänzen, Leuchtmittel erneuern oder Leuchten versetzen [TECH]“. Stufe, Bedingung und Priorität bleiben."
+ },
+ {
+  "code": "MF-Z01-R3",
+  "entscheidung": "Ändern",
+  "korrektur": "Sofort- und Mittelfristmaßnahme sind gegeneinander vertauscht. Die Sofortmaßnahme („defekte Leuchten umgehend instand setzen“, TECH) schützt den Prüfer, der den Zuweg jetzt begehen muss, gerade nicht und setzt je nach Defekt eine Elektrofachkraft voraus. Die Mittelfristmaßnahme („Prüfintervall festlegen“, ORGA) beseitigt die Ursache nicht, sondern verhindert nur die Wiederholung – das verlangte TOP-Prinzip ist damit umgekehrt. Stufe „Mittel“ und Bedingung sind richtig. -> Sofortmaßnahme: „Zuweg nur mit Handlampe begehen; Betreiber unverzüglich zur Instandsetzung auffordern [ORGA]“. Mittelfristmaßnahme: „Defekte Leuchten und Leuchtmittel instand setzen und die Beleuchtung der Zuwege in die wiederkehrende Instandhaltung aufnehmen (Prüfintervall festlegen) [TECH]“."
+ },
+ {
+  "code": "MF-Z01-R4",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-Z02-R1",
+  "entscheidung": "Ändern",
+  "korrektur": "Bedingung und Stufe „Mittel“ sind richtig. Die Mittelfristmaßnahme ist jedoch rein organisatorisch („Bodenbelag prüfen und häufig reinigen“), obwohl technische Abhilfe möglich und nach dem TOP-Prinzip vorrangig ist. Sie passt außerdem nicht auf alle von 5.3 erfassten Fälle: Ein Verkehrsweg kann auch deshalb unsicher sein, weil er zugestellt oder nicht frei ist – dagegen hilft Reinigen nicht. Dieser Restfall wird weder von 5.3a noch von 5.3b erfasst, so dass R1 die einzige tragende Regel ist. -> Mittelfristmaßnahme technisch fassen und auf alle von 5.3 erfassten Fälle erstrecken: „Ursache beseitigen – Verkehrsweg dauerhaft freihalten, Bodenschäden instand setzen, rutschhemmenden Belag herstellen; Reinigungsintervall zusätzlich festlegen [TECH]“. Sofortmaßnahme um das Freiräumen ergänzen: „… abgestellte Gegenstände aus dem Verkehrsweg entfernen lassen“. Die Bedingung von R1 NICHT einschränken: Die Aggregation ist MAXIMUM und alle drei Regeln liegen auf „Mittel“, ein Doppelbefund ändert das Ergebnis also nicht, während eine Einschränkung auf Restfälle den Befund bei [5.3]=Nein und 5.3a/5.3b=Nein verlieren würde (fail-open). Quellenangabe der Gefährdung um ASR A1.5/A1.8 und TRBS 3121 ergänzen."
+ },
+ {
+  "code": "MF-Z02-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-Z02-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-Z02-R4",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-Z03-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-Z03-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-Z03-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": "Beanstandung in der Gegenprüfung widerlegt: Die Beanstandung trägt nicht. (1) Normbezug: DIN EN 81-20 5.2.2.2 lässt Leitern als Zugang nur unter engen Bedingungen zu – unter anderem muss die Leiter dauerhaft vorhanden und gegen Verschieben und Umkippen gesichert sein. Genau das erfüllt eine mobile Anlegeleiter nicht; der Katalog trennt das mit der eigenen Option „Fest angebrachte Steigleiter mit Rückenschutz/Haltegriff“ (kein Befund) sauber ab. TRBS 2121 Teil 2 regelt die Benutzung von Leitern als Arbeitsmittel bei gelegentlichen Arbeiten und macht eine Anlegeleiter nicht zum zulässigen ständigen Zugang eines regelmäßig zu betretenden B"
+ },
+ {
+  "code": "MF-Z03-R4",
+  "entscheidung": "Ändern",
+  "korrektur": "Die Sofortmaßnahme ist in sich widersprüchlich und damit unwirksam: Wenn festgestellt wurde, dass kein sicherer Aufstieg vorhanden ist, kann nicht zugleich eine „geeignete Aufstiegshilfe“ verwendet werden – sie existiert ja gerade nicht. Das ist eine Leerformel derselben Art wie das im Katalog bereits beanstandete „Vorsicht walten lassen“ und lässt die Gefährdung im Prüfmoment unbeseitigt. -> Sofortmaßnahme ersetzen durch: „Aufstieg unterlassen, Zugang sperren und Betreiber unverzüglich unterrichten; Begehung erst nach Herstellung eines sicheren Aufstiegs [ORGA]“. Stufe „Hoch“ und Mittelfristmaßnahme bleiben unverändert."
+ },
+ {
+  "code": "MF-Z03-R5",
+  "entscheidung": "Ändern",
+  "korrektur": "Die Sofortmaßnahme „nur mit Absturzsicherung begehen“ greift nicht: Gegen das Durchbrechen einer beschädigten Stufe oder das Kippen einer losen Leiter schützt PSA gegen Absturz nicht, und im Zugangsbereich zum Triebwerksraum ist in aller Regel kein geprüfter Anschlagpunkt vorhanden. Damit wird eine unmittelbare Gefahr mit einer Maßnahme belegt, die im Prüfmoment nicht verfügbar und in der Sache ungeeignet ist. -> Sofortmaßnahme ersetzen durch: „Aufstieg sofort sperren und nicht benutzen, Betreiber unverzüglich unterrichten; Zugang bis zur Instandsetzung nur über einen anderen sicheren Weg [ORGA]“. Stufe „Hoch“ und Mittelfristmaßnahme (Treppe/Leiter erneuern) bleiben."
+ },
+ {
+  "code": "MF-Z03-R6",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-Z04-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-Z04-R2",
+  "entscheidung": "Ändern",
+  "korrektur": "Die Regel setzt die Kompensation voraus, prüft sie aber nicht ab. Die Bedingung fragt über 5.7b nur, ob der Verkehrsweg festgelegt und gekennzeichnet ist; erst die Sofortmaßnahme nennt den 2-m-Abstand. Verläuft der gekennzeichnete Weg – etwa auf einem schmalen Dachstreifen oder einer Empore – näher an der Kante, ist die Kennzeichnung keine wirksame Kompensation, die Regel stuft den Fall aber trotzdem auf „Mittel“ herab. Für den Fall mit eingehaltenem Abstand ist „Mittel“ (wirksame, aber unvollständige Schutzmaßnahme) dagegen richtig. -> Frage 5.7b erweitern, das Abstandsmaß aber nicht pauschal auf 2 m festlegen, weil das im Gebäudeinneren (Empore, Treppenauge) unerfüllbar wäre und dort ohnehin eine Umwehrung baurechtlich gefordert ist. Vorschlag: „Verkehrsweg an der Absturzkante festgelegt, gekennzeichnet und mit ausreichendem Sicherheitsabstand zur Absturzkante geführt (auf Dachflächen mindestens 2 m nach ASR A2.1)?“. Wird der Abstand nicht eingehalten, ergibt 5.7b „Nein“ und MF-Z04-R1 („Hoch“) greift automatisch – eine zusätzliche Regel ist nicht nötig. Hilfetext zu 5.7b mit dem ASR-A2.1-Bezug ergänzen; Stufe und Maßnahmen von R2 bleiben unverändert."
+ },
+ {
+  "code": "MF-Z04-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-Z04-R4",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-Z05-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-Z05-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-Z05-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-Z06-R1",
+  "entscheidung": "Ändern",
+  "korrektur": "Die Stufe „Hoch“ passt nicht zum Gefährdungsfaktor dieser Gefährdung (physische Belastung / Zugangsorganisation) und nicht zum Stufenmaßstab: Ein Zugang durch eine Wohnung bedroht Leben und Gesundheit nicht unmittelbar. Das tatsächlich lebensbedrohliche Szenario – der Befreiungsdienst kommt nicht rechtzeitig an die Anlage – wird in MF-Z09 mit „Hoch“ erfasst; hier wird es ein zweites Mal und ohne Bezug zur Antwort auf 3.4 bewertet. Die Sofortmaßnahme „im Notfall Dritte hinzuziehen“ ist zudem unbestimmt. -> Stufe von „Hoch“ auf „Mittel“ ändern. Keine Querbedingung auf [3.4] einbauen – der Notfallzugang ist in MF-Z09 vollständig und mit dem richtigen Betroffenenkreis abgebildet; eine zweite Hoch-Regel erzeugt nur einen Doppelbefund. Stattdessen im Hilfetext zu 5.10 ausdrücklich auf Frage 3.4 verweisen („Zugang durch eine Wohnung: Erreichbarkeit für die Personenbefreiung unter 3.4 bewerten“). Sofortmaßnahme konkretisieren: „Zutritt und Schlüsselregelung vorab schriftlich mit dem Betreiber vereinbaren; Erreichbarkeit des Wohnungsinhabers im Notfallplan hinterlegen [ORGA]“. Mittelfristmaßnahme (Zugang dauerhaft ändern, TECH) bleibt."
+ },
+ {
+  "code": "MF-Z06-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": "Beanstandung in der Gegenprüfung widerlegt: Die Beanstandung trägt nicht. Ihr einziges eigenständiges Argument ist die behauptete Einebnung der Abstufung zu R1 – und das ist ein bloßes Folgeargument der bei R1 vorgeschlagenen Absenkung, kein eigener Fehler von R2. Auch bei R1 = „Mittel“ bleibt R2 sachlich richtig eingestuft, und da die Aggregation MAXIMUM ist, ändert die Gleichstufigkeit zweier verschiedener Sachverhalte am Ergebnis nichts. Inhaltlich ist „Mittel“ der zutreffende Maßstab: Ein Zugangsweg durch Arbeits-, Lager- oder Technikräume Dritter ist nicht bloß ein Mangel ohne Gefährdungsbeitrag, sondern führt typischerweise zu zug"
+ },
+ {
+  "code": "MF-Z06-R3",
+  "entscheidung": "Ändern",
+  "korrektur": "Die Sofortmaßnahme „Geeignete Transporthilfen verwenden“ ist eine Leerformel derselben Art, die der Katalog an anderen Stellen bereits ersetzt hat (vgl. die Prüfbericht-Hinweise in MF-Z02/Z03/Z04): Sie benennt weder, was zu tun ist, noch ist sie im Prüfmoment ohne vorhandene Hilfsmittel wirksam. Gerade der sicherheitstechnisch entscheidende Grundsatz – beim Auf- und Abstieg keine Last in der Hand – fehlt. Bedingung, Stufe und technische Mittelfristmaßnahme sind richtig. -> Sofortmaßnahme ersetzen durch: „Material in tragbaren Teilmengen befördern, Lasten mit Seil/Hebehilfe getrennt hochgeben; Leiter oder Treppe nur mit freien Händen begehen (Dreipunktkontakt) [ORGA]“. Stufe und Mittelfristmaßnahme bleiben."
+ },
+ {
+  "code": "MF-Z06-R4",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-Z07-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-Z07-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-Z07-R3",
+  "entscheidung": "Ändern",
+  "korrektur": "Die Sofortmaßnahme „Tür gangbar machen [TECH]“ ist inhaltsgleich mit der Mittelfristmaßnahme („Tür instand setzen oder ersetzen“) und damit keine eigenständige Sofortmaßnahme; je nach Schadensbild (verzogenes Türblatt, defektes Schloss) ist sie im Prüfmoment gar nicht ausführbar. Vor allem schützt sie nicht vor der eigentlichen Gefahr: dem Einschließen der Person im Triebwerksraum. Stufe „Mittel“ und Bedingung sind richtig. -> Sofortmaßnahme ersetzen durch: „Tür beim Betreten gegen Zufallen sichern (feststellen/aufkeilen), Raum nicht allein betreten, beim Betreiber an- und abmelden; Betreiber unverzüglich unterrichten [ORGA]“. Mittelfristmaßnahme (instand setzen oder ersetzen, TECH) bleibt."
+ },
+ {
+  "code": "MF-Z07-R4",
+  "entscheidung": "Ändern",
+  "korrektur": "Trifft meine Kenntnis zu, ist die Regel zu weit: Sie erzeugt bei normkonformen Türen (1,80 m bis unter 2,00 m) einen Mangel mit der Stufe „Mittel“, also ein falsches Bewertungsergebnis. Hinzu kommt, dass bei Bestandsanlagen das Errichtungsregelwerk (Frage 1.28) maßgeblich ist; ein nachträglich verschärftes Maß wäre Nachrüstbedarf nach EN 81-80, kein Konformitätsmangel. Schließlich ist „Türöffnung anpassen“ als einzige Mittelfristmaßnahme für eine geringfügige Maßunterschreitung unverhältnismäßig, obwohl mit Anstoßschutz eine mildere technische Lösung zur Verfügung steht. -> Höhenmaß in Frage 5.12c von 2,00 m auf 1,80 m korrigieren, Breitenmaß 0,60 m bleibt; Hilfetext mit Fundstelle DIN EN 81-20 5.2.3.3 versehen. Ein Vorbehalt zum Errichtungsregelwerk (Frage 1.28) ist für dieses Maß entbehrlich, weil EN 81-1/-2 dieselben 0,60 m x 1,80 m forderten – er wäre allenfalls für TRA-Anlagen vor 1999 sinnvoll und sollte, wenn überhaupt, nur als Hilfetext-Hinweis und nicht als zusätzliche Bedingung aufgenommen werden, um die Regel nicht fail-open zu machen. Sofortmaßnahme (Anstoßstelle kennzeichnen, Kopfschutz verwenden) bleibt; Mittelfristmaßnahme erweitern auf: „Anstoßschutz (Polsterung) und dauerhafte Kennzeichnung anbringen; Türöffnung nach DIN EN 81-20 5.2.3.3 anpassen, soweit verhältnismäßig [TECH]“."
+ },
+ {
+  "code": "MF-Z07-R6",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-Z07-R7",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-Z08-R4",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-Z09-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ },
+ {
+  "code": "MF-Z09-R2",
+  "entscheidung": "Ändern",
+  "korrektur": "Stufe „Mittel“ (Zugang möglich, aber von der Anwesenheit einer Person abhängig – Verzögerung der Befreiung) und die Sofortmaßnahme sind richtig. Die Mittelfristmaßnahme ist jedoch rein organisatorisch („ständige Besetzung der Leitwarte/Pforte gewährleisten“), obwohl mit einem Schlüsseldepot beziehungsweise Schlüsseltresor für den Befreiungsdienst eine technische Lösung zur Verfügung steht, die dieselbe Ursache dauerhaft und personenunabhängig beseitigt – genau diese Lösung nennt die Parallelregel MF-Z09-R1 bereits. Das verstößt gegen das TOP-Prinzip. -> Mittelfristmaßnahme ändern in: „Schlüsseldepot/Schlüsseltresor mit Zugriff für den Befreiungsdienst einrichten [TECH]; ersatzweise, wo technisch nicht möglich, ständige Besetzung von Leitwarte/Pforte vertraglich sicherstellen [ORGA]“. Stufe, Bedingung und Sofortmaßnahme bleiben unverändert."
+ },
+ {
+  "code": "MF-Z09-R4",
+  "entscheidung": "Freigeben",
+  "korrektur": ""
+ }
+]

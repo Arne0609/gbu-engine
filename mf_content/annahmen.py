@@ -21,9 +21,10 @@ BJ_NOTRUF_EN8128 = BJ_EN8120
 
 _AR = ('Bei Inverkehrbringen ab 01.07.1999 nach Aufzugsrichtlinie 95/16/EG '
        'und DIN EN 81-1/2 gefordert und bei der Abnahme nachgewiesen')
-_A3 = ('Seit 01.01.2012 verbindlich (DIN EN 81-1/2 + A3); ohne Nachweis und '
-       'Funktionspruefung des UCM-Schutzes durfte die Anlage nicht in Betrieb '
-       'genommen werden')
+_A3 = ('Nach dem Errichtungsregelwerk der Anlage (1.28) gefordert: DIN EN 81-1/2 + A3 '
+       'seit 01.01.2012, DIN EN 81-20 durchgehend. Ohne Nachweis und Funktions'
+       'pruefung des UCM-Schutzes durfte die Anlage nicht in Betrieb genommen '
+       'werden; die Konformitaetserklaerung (1.29) belegt die Abnahme')
 _20 = ('Bei Inverkehrbringen ab 01.09.2017 nach DIN EN 81-20/50 gefordert und '
        'bei der Abnahme nachgewiesen')
 
@@ -33,12 +34,18 @@ def registriere():
     Fragen und Gefaehrdungen gerufen."""
 
     # ── Ab 2012: unbeabsichtigte Fahrkorbbewegung ────────────────────────
-    # Der Anlass fuer die ganze Mechanik: Das UCM-System sieht man der Anlage
-    # nicht an, es steht in den Abnahmeunterlagen - und ohne bestandene
-    # Funktionspruefung gab es keine Inbetriebnahme.
+    # Pruefbericht 20.09.2026 B07 und Entscheidung Arne: Der Hinweistext von 4.5
+    # verlangt „Nachweis in den Anlagenunterlagen; das Baujahr allein ist kein
+    # Nachweis." Genau das leistet die Annahme jetzt - sie haengt seit 20.09.2026
+    # am ERRICHTUNGSREGELWERK (1.28, common.norm_ab) und greift ohnehin nur,
+    # wenn die Konformitaetserklaerung vorliegt (1.29, ANNAHMEN_HINFAELLIG).
+    # Beides zusammen IST der Nachweis aus den Anlagenunterlagen; das Baujahr
+    # traegt nur noch, wo das Regelwerk mehrere Jahre umspannt oder unbekannt ist.
     annahme('qa_ucm_a3', BJ_UCM, _A3)
     annahme('qm_bremse_ueberwacht', BJ_UCM,
-            _A3 + '; die Bremsueberwachung ist Teil dieses Schutzes')
+            'Der Bremskontrollschalter ist seit 01.01.2012 mit DIN EN 81-1/2 + A3 '
+            'gefordert (Ueberwachung der Bremskreise) und war bei der Abnahme '
+            'nachzuweisen')
 
     # ── Ab 1999: Grundausstattung nach Aufzugsrichtlinie ─────────────────
     # Schachttueren
@@ -75,19 +82,26 @@ def registriere():
     annahme('qm_rohrbruch', BJ_AUFZUGSRICHTLINIE, _AR)
     annahme('qm_hauptschalter', BJ_AUFZUGSRICHTLINIE, _AR)
     annahme('qm_hauptschalter_abschliessbar', BJ_AUFZUGSRICHTLINIE, _AR)
-    annahme('qm_hauptschalter_gekennz', BJ_AUFZUGSRICHTLINIE, _AR)
-    annahme('qm_beruehrungssicher', BJ_AUFZUGSRICHTLINIE, _AR)
-    annahme('qm_einzug_treibscheibe', BJ_AUFZUGSRICHTLINIE, _AR)
-    annahme('qm_einzug_begrenzer', BJ_AUFZUGSRICHTLINIE, _AR)
+    # entfaellt 20.09.2026 (Zustandsfrage, Grenze 1 in common.annahme): Kennzeichnung - Zustand
+    # annahme('qm_hauptschalter_gekennz', BJ_AUFZUGSRICHTLINIE, _AR)
+    # entfaellt 20.09.2026 (Zustandsfrage, Grenze 1 in common.annahme): Abdeckungen und Schranktueren - Zustand, nicht Konstruktion
+    # annahme('qm_beruehrungssicher', BJ_AUFZUGSRICHTLINIE, _AR)
+    # entfaellt 20.09.2026 (Zustandsfrage, Grenze 1 in common.annahme): Abdeckungen koennen entfernt sein - Zustand
+    # annahme('qm_einzug_treibscheibe', BJ_AUFZUGSRICHTLINIE, _AR)
+    # entfaellt 20.09.2026 (Zustandsfrage, Grenze 1 in common.annahme): Abdeckung koennte entfernt sein - Zustand
+    # annahme('qm_einzug_begrenzer', BJ_AUFZUGSRICHTLINIE, _AR)
     annahme('qm_potenzialausgleich', BJ_AUFZUGSRICHTLINIE, _AR)
     annahme('qm_hoehe_180', BJ_AUFZUGSRICHTLINIE, _AR)
-    annahme('qm_freiflaeche', BJ_AUFZUGSRICHTLINIE, _AR)
+    # entfaellt 20.09.2026 (Zustandsfrage, Grenze 1 in common.annahme): Freiflaeche wird zugestellt - Zustand
+    # annahme('qm_freiflaeche', BJ_AUFZUGSRICHTLINIE, _AR)
     annahme('qm_notbetrieb', BJ_AUFZUGSRICHTLINIE, _AR)
-    annahme('qm_notbetrieb_gekennz', BJ_AUFZUGSRICHTLINIE, _AR)
+    # entfaellt 20.09.2026 (Zustandsfrage, Grenze 1 in common.annahme): Kennzeichnung verblasst oder fehlt - Zustand
+    # annahme('qm_notbetrieb_gekennz', BJ_AUFZUGSRICHTLINIE, _AR)
     annahme('qm_rollenraum_nothalt', BJ_AUFZUGSRICHTLINIE, _AR)
 
     # Zugang zum Triebwerksraum
-    annahme('qz_tuer_abschliessbar', BJ_AUFZUGSRICHTLINIE, _AR)
+    # entfaellt 20.09.2026 (Zustandsfrage, Grenze 1 in common.annahme): Schloss kann ausgebaut/defekt sein - Zustand
+    # annahme('qz_tuer_abschliessbar', BJ_AUFZUGSRICHTLINIE, _AR)
     annahme('qz_tuer_mass', BJ_AUFZUGSRICHTLINIE, _AR)
 
     # Fahrkorb
@@ -95,7 +109,8 @@ def registriere():
     annahme('qk_nennlast_gekennz', BJ_AUFZUGSRICHTLINIE, _AR)
     annahme('qk_nutzflaeche_ok', BJ_AUFZUGSRICHTLINIE, _AR)
     annahme('qk_ueberlast', BJ_AUFZUGSRICHTLINIE, _AR)
-    annahme('qk_bel_zwei_lampen', BJ_AUFZUGSRICHTLINIE, _AR)
+    # entfaellt 20.09.2026 (Zustandsfrage, Grenze 1 in common.annahme): Leuchtmittel - Zustand
+    # annahme('qk_bel_zwei_lampen', BJ_AUFZUGSRICHTLINIE, _AR)
 
     # Fahrkorbdach und Schachtkopf
     annahme('qf_gelaender', BJ_AUFZUGSRICHTLINIE, _AR)

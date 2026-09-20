@@ -25,7 +25,8 @@ for mod in ['anlage', 'zugang', 'netz', 'komponenten', 'organisation']:
 
 import catalog_check as FT  # noqa: E402  (check/validate ohne Nebenwirkungen)
 
-RULE_VERSION = 'cyber-mf-2026.2'  # 2026.1 = Entwurf vor Gegenlesung 03.09.2026
+RULE_VERSION = 'cyber-mf-2026.3'  # .3: Prüfbericht 20.09.2026 (Prioritäten, Sichtbarkeit, Erhebungskarten)
+# .2 = nach Gegenlesung 03.09.2026, 2026.1 = Entwurf davor
 
 # Zuordnung der 14 ZÜS-Prüfpunkte (EK-ZÜS B-002 rev. 5 Anhang 2) zu Fragen und
 # Gefährdungen dieses Katalogs – Grundlage für den Berichtsabschnitt
@@ -102,17 +103,26 @@ def build():
         fg = FREIGABE.get(r['code'])
         if not fg or r.get('quality_status') == 'VERIFIED':
             continue
-        entscheidung, korrektur = fg
+        # Drittes Element (optional) ist das Datum dieser einzelnen Entscheidung;
+        # ohne Angabe gilt DATUM der Datei. Eingeführt 20.09.2026, damit eine
+        # Nachfreigabe die älteren Einträge nicht umdatiert.
+        entscheidung, korrektur = fg[0], fg[1]
+        datum = fg[2] if len(fg) > 2 and fg[2] else FREIGABE_DATUM
         sep = ' ' if r.get('notes', '').strip() else ''
         if entscheidung == 'Freigeben':
             r['quality_status'] = 'VERIFIED'
             r['notes'] = r.get('notes', '').rstrip() + sep + \
-                'Freigegeben %s.' % FREIGABE_DATUM
+                'Freigegeben %s.' % datum
         else:
             r['notes'] = r.get('notes', '').rstrip() + sep + \
-                'OFFEN (%s %s): %s' % (entscheidung, FREIGABE_DATUM, korrektur or '-')
-    return {'rule_version': RULE_VERSION, 'questions': questions,
+                'OFFEN (%s %s): %s' % (entscheidung, datum, korrektur or '-')
+    seed = {'rule_version': RULE_VERSION, 'questions': questions,
             'measures': measures, 'hazards': hazards, 'rules': rules}
+    # Erhebungskarten (Prüfbericht 20.09.2026, Befund R12): reine Darstellung,
+    # die Bewertung bleibt unverändert.
+    from cy_content import karten
+    karten.anreichern(seed)
+    return seed
 
 
 def check_zues_map(seed):
@@ -131,6 +141,8 @@ def main():
     seed = build()
     errors, warnings = FT.check(seed)
     errors += check_zues_map(seed)
+    from cy_content import karten
+    errors += karten.pruefen(seed)
     for w in warnings:
         print('WARNUNG', w)
     if errors:
@@ -163,7 +175,7 @@ def main():
           % (os.path.basename(out), len(seed['questions']), dict(types),
              len(seed['hazards']), len(seed['rules']), len(seed['measures']),
              len(C.KLAERUNG)))
-    print('Erhebungsbereiche:', dict(cats))
+    print('Erhebungsbereiche:', dict(cats), '| Karten:', len(seed.get('question_groups', [])))
     print('Baugruppen:', dict(grp))
     print('Stufen:', dict(res), '| Evidenz:', dict(ev))
     print('Schema: gültig')

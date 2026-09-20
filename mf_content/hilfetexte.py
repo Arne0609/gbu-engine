@@ -9,8 +9,9 @@ fachlich gegenzulesen (Blatt „Fragen“ der Regelprüfung)."""
 HILFE = {
     'qa_ucm_a3':
         'Prüfen: Typenschild/Baumusterbescheinigung der UCM-Komponenten (z. B. Bremse als '
-        'Bremselement mit Baumusterprüfung, Überwachung der Türzonen). Ja nur mit Nachweis in '
-        'den Anlagenunterlagen; das Baujahr allein ist kein Nachweis.',
+        'Bremselement mit Baumusterprüfung, Überwachung der Türzonen). Ab Baujahr 2012 aus '
+        'dem Baujahr vorbelegt und als Annahme gekennzeichnet – den Nachweis in den '
+        'Anlagenunterlagen prüfen und die Angabe bestätigen oder ändern.',
     'qa_fahrkorbtuer':
         'Ja, wenn jeder Fahrkorbzugang eine Tür oder ein Gitter mit Schließstellungsüberwachung '
         'hat. Lichtgitter oder Scherengitter ohne Tür unter 8.9/8.9a erfassen.',

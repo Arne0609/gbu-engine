@@ -1,0 +1,31 @@
+{
+ "P1 Seilaufzug, Triebwerksraum, Wohnhaus, Bj. 1995": {
+  "fragen": 188,
+  "karten": 101,
+  "vorbelegt_stamm": 17,
+  "stamm": 1,
+  "vorab": 19,
+  "vorbelegt_nachweis": 4,
+  "vor_ort": 50,
+  "vorbelegt_baujahr": 10
+ },
+ "P2 Seilaufzug ohne Triebwerksraum, Büro mit BMA, Glastüren, Doppelschacht, Bj. 2019": {
+  "fragen": 180,
+  "karten": 98,
+  "vorbelegt_stamm": 16,
+  "stamm": 1,
+  "vorab": 19,
+  "vorbelegt_nachweis": 3,
+  "vor_ort": 45,
+  "vorbelegt_baujahr": 14
+ },
+ "P3 Hydraulik-Lastenaufzug mit Personenbegleitung, Bj. 1988": {
+  "fragen": 176,
+  "karten": 95,
+  "vorbelegt_stamm": 15,
+  "stamm": 1,
+  "vorab": 19,
+  "vorbelegt_nachweis": 6,
+  "vor_ort": 54
+ }
+}

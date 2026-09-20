@@ -1,0 +1,347 @@
+[
+ {
+  "code": "MF-Z01-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026, vorherige Entscheidung: Ändern). Regelprüfung 20.09.2026: Mittelfristmaßnahme verallgemeinert. „Leuchten versetzen\" traf nur einen der drei von 5.2 erfassten Mängel (zu wenig Lux, nicht funktionsfähig, ungeeignete Stelle) und beseitigte bei zu geringer Beleuchtungsstärke die Ursache nicht; zusammen mit R3 entstand unter MAXIMUM zudem der Widerspruch „versetzen\" gegen „instand setzen\". Stufe, Bedingung und Priorität bleiben. OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
+ },
+ {
+  "code": "MF-Z01-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026, vorherige Entscheidung: Ändern). Regelprüfung 20.09.2026: Sofort- und Mittelfristmaßnahme waren gegeneinander vertauscht: Die Instandsetzung [TECH] schützte den Prüfer, der den Zuweg jetzt begehen muss, gerade nicht und setzt je nach Defekt eine Elektrofachkraft voraus, während das Prüfintervall [ORGA] nur die Wiederholung verhindert. Damit war das TOP-Prinzip umgekehrt. Stufe Mittel und Bedingung bleiben. OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
+ },
+ {
+  "code": "MF-Z02-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026, vorherige Entscheidung: Ändern). Regelprüfung 20.09.2026: Mittelfristmaßnahme war rein organisatorisch („Bodenbelag prüfen und häufig reinigen\"), obwohl technische Abhilfe möglich und nach TOP vorrangig ist, und traf nicht alle von 5.3 erfassten Fälle: Ein Verkehrsweg kann auch zugestellt sein – dagegen hilft Reinigen nicht, und dieser Restfall wird weder von 5.3a noch von 5.3b erfasst. Die Bedingung bleibt bewusst weit: Die Aggregation ist MAXIMUM und alle drei Regeln liegen auf Mittel, ein Doppelbefund ändert also nichts, während eine Einschränkung den Befund bei 5.3=Nein mit 5.3a/5.3b=Nein verlieren würde (fail-open). OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
+ },
+ {
+  "code": "MF-Z03-R4",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026, vorherige Entscheidung: Ändern). Regelprüfung 20.09.2026: Sofortmaßnahme ersetzt. „Geeignete Aufstiegshilfe verwenden\" war in sich widersprüchlich: Ist festgestellt, dass kein sicherer Aufstieg vorhanden ist, kann nicht zugleich eine geeignete Aufstiegshilfe verwendet werden – eine Leerformel derselben Art wie das bereits beanstandete „Vorsicht walten lassen\". Stufe Hoch und Mittelfristmaßnahme bleiben. OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
+ },
+ {
+  "code": "MF-Z03-R5",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026, vorherige Entscheidung: Ändern). Regelprüfung 20.09.2026: Sofortmaßnahme ersetzt. „Nur mit Absturzsicherung begehen\" greift hier nicht: Gegen das Durchbrechen einer beschädigten Stufe oder das Kippen einer losen Leiter schützt PSA gegen Absturz nicht, und im Zugangsbereich zum Triebwerksraum ist in aller Regel kein geprüfter Anschlagpunkt vorhanden. Stufe Hoch und Mittelfristmaßnahme bleiben. OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
+ },
+ {
+  "code": "MF-Z04-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026, vorherige Entscheidung: Ändern). Regelprüfung 20.09.2026: Stufe und Maßnahmen bleiben – für den Fall mit eingehaltenem Abstand ist Mittel (wirksame, aber unvollständige Schutzmaßnahme) richtig. Die Regel setzte die Kompensation aber voraus, ohne sie abzuprüfen: 5.7b fragte nur nach Festlegung und Kennzeichnung, den Abstand nannte erst die Sofortmaßnahme. Ein gekennzeichneter Weg dicht an der Kante ist keine wirksame Kompensation und durfte den Fall nicht auf Mittel herabstufen. Der Abstand steht deshalb jetzt in der Frage 5.7b selbst; wird er nicht eingehalten, ergibt 5.7b „Nein\" und R1 (Hoch) greift von selbst – eine zusätzliche Regel ist nicht nötig. [Prüfbericht 16.09.2026: konkrete Sofortmaßnahme statt „Vorsicht“] OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
+ },
+ {
+  "code": "MF-Z06-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026, vorherige Entscheidung: Ändern). Regelprüfung 20.09.2026: Hoch auf Mittel. Die Stufe passte weder zum Gefährdungsfaktor dieser Gefährdung (physische Belastung, Zugangsorganisation) noch zum Stufenmaßstab: Ein Zugang durch eine Wohnung bedroht Leben und Gesundheit nicht unmittelbar. Das lebensbedrohliche Szenario – der Befreiungsdienst kommt nicht rechtzeitig an die Anlage – ist in MF-Z09 über 3.4 mit Hoch und dem richtigen Betroffenenkreis erfasst; eine Querbedingung auf 3.4 wurde bewusst NICHT eingebaut, sie erzeugte nur einen Doppelbefund. Stattdessen verweist die Hilfe zu 5.10 auf 3.4. Die unbestimmte Sofortmaßnahme („im Notfall Dritte hinzuziehen\") ist konkretisiert. OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
+ },
+ {
+  "code": "MF-Z06-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026, vorherige Entscheidung: Ändern). Regelprüfung 20.09.2026: Sofortmaßnahme ersetzt. „Geeignete Transporthilfen verwenden\" ist eine Leerformel derselben Art, die der Katalog an anderen Stellen bereits ersetzt hat: Sie benennt nicht, was zu tun ist, und ist im Prüfmoment ohne vorhandene Hilfsmittel unwirksam. Der entscheidende Grundsatz – beim Auf- und Abstieg keine Last in der Hand – fehlte. Bedingung, Stufe und Mittelfristmaßnahme bleiben. OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
+ },
+ {
+  "code": "MF-Z07-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026, vorherige Entscheidung: Ändern). Regelprüfung 20.09.2026: Sofortmaßnahme ersetzt. „Tür gangbar machen\" war inhaltsgleich mit der Mittelfristmaßnahme („Tür instand setzen oder ersetzen\") und damit keine eigenständige Sofortmaßnahme; je nach Schadensbild (verzogenes Türblatt, defektes Schloss) ist sie im Prüfmoment gar nicht ausführbar. Vor allem schützte sie nicht vor der eigentlichen Gefahr, dem Einschließen im Triebwerksraum. Stufe Mittel und Bedingung bleiben. OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
+ },
+ {
+  "code": "MF-Z07-R4",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026, vorherige Entscheidung: Ändern). Regelprüfung 20.09.2026: Das Höhenmaß in 5.12c ist von 2,00 m auf 1,80 m berichtigt – die Regel erzeugte sonst bei normgerechten Türen (1,80 m bis unter 2,00 m) einen Mangel. Die Mittelfristmaßnahme ist um den Anstoßschutz erweitert: „Türöffnung anpassen\" als einzige Maßnahme ist für eine geringfügige Maßunterschreitung unverhältnismäßig, obwohl eine mildere technische Lösung zur Verfügung steht. Sofortmaßnahme und Stufe bleiben. OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
+ },
+ {
+  "code": "MF-Z09-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026, vorherige Entscheidung: Ändern). Regelprüfung 20.09.2026: Mittelfristmaßnahme war rein organisatorisch („ständige Besetzung der Leitwarte/Pforte gewährleisten\"), obwohl mit dem Schlüsseldepot eine technische Lösung zur Verfügung steht, die dieselbe Ursache dauerhaft und personenunabhängig beseitigt – genau diese Lösung nennt die Parallelregel R1 bereits. TOP-Verstoß behoben. Stufe, Bedingung und Sofortmaßnahme bleiben. [Prüfbericht: H11 – Sofortmaßnahme ergänzt] OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
+ },
+ {
+  "code": "MF-M01-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026, vorherige Entscheidung: Ändern). Regelprüfung 20.09.2026: Hoch auf Mittel. Die Gefahr entsteht erst beim Betreten und wird von einer mitgeführten Leuchte vollständig beherrscht; eine Hoch-Regel, deren eigene Sofortmaßnahme „Handlampe benutzen\" lautet, widerspricht dem Stufenmaßstab (Hoch verlangt Absperren/Stilllegen). Sofortmaßnahme auf ein Betretungsverbot mit bereitgestellter Leuchte umgestellt [ORGA], Zielwert 200 lx ergänzt. OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
+ },
+ {
+  "code": "MF-M01-R4",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026, vorherige Entscheidung: Ändern). Regelprüfung 20.09.2026: Stufe Mittel bleibt. Die bisherige Sofortmaßnahme „Beschädigte Leuchten sofort ersetzen\" passte nicht zur Bedingung – die Regel feuert bei FEHLENDEM Splitterschutz, nicht bei beschädigten Leuchten – und war technisch statt organisatorisch. [Prüfbericht: H11 – Sofortmaßnahme ergänzt] OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
+ },
+ {
+  "code": "MF-M02-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026, vorherige Entscheidung: Ändern). Regelprüfung 20.09.2026: Stufe Hoch bleibt. Die bisherige Sofortmaßnahme „Bei Betreten des Maschinenraumes ausschalten\" war nur teilwirksam: Der Hauptschalter trennt die Einspeisung vor ihm gerade nicht, an einer offenen Schalttafel bleiben spannungsführende Teile berührbar. Mittelfristmaßnahme vom reinen Steuerungstausch auf den Berührungsschutz aufgeweitet. OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
+ },
+ {
+  "code": "MF-M02-R5",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026, vorherige Entscheidung: Ändern). Regelprüfung 20.09.2026: Mittelfristmaßnahme neu gefasst. „Bei Notwendigkeit DGUV V3 Prüfung beauftragen\" stellte die Prüfung ins Ermessen, obwohl der fehlende Nachweis die Notwendigkeit gerade begründet; der Vorbehalt ist gestrichen. Die Beauftragung einer Prüfung ist organisatorisch, nicht technisch [ORGA]. Stufe Mittel bleibt. Entschieden 2026-09-02: K-M01. [Freigabe bezog sich auf einen früheren Stand (Regel, abhängige Fragen oder Gefährdungslogik geändert) – neu prüfen]"
+ },
+ {
+  "code": "MF-M04-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026, vorherige Entscheidung: Ändern). Regelprüfung 20.09.2026: Hoch auf Mittel. Ein Mangel, den die eigene Sofortmaßnahme durch Freiräumen binnen Minuten beseitigt, ist keine unmittelbare Gefahr; die Unterschreitung bedeutet erschwerten, nicht unmöglichen Notbetrieb, und Hoch stand unplausibel neben R3 (Lagerung = Mittel), obwohl die Lagerung regelmäßig die Ursache ist. Der Hoch-Fall (Notbetriebseinrichtung nicht bedienbar) ist über 5.53 / MF-M15-R1 abgebildet – Hilfe zu 5.44 entsprechend ergänzt. Mittelfristmaßnahme technisch gefasst (TOP: T vor O). OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
+ },
+ {
+  "code": "MF-M06-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026, vorherige Entscheidung: Ändern). Regelprüfung 20.09.2026: TOP-Verstoß behoben. Frage 5.48 bündelt „rutschhemmend\" (baulich) und „sauber\" (organisatorisch), die einzige Mittelfristmaßnahme war aber rein organisatorisch: Bei baulich glattem Boden beseitigt der Wartungsplan die Ursache nicht. Eine Aufteilung der Frage ist nicht erforderlich, die ergänzte technische Maßnahme deckt beide Fälle. Stufe Mittel bleibt. OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
+ },
+ {
+  "code": "MF-M08-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026, vorherige Entscheidung: Ändern). Regelprüfung 20.09.2026: Sofortmaßnahme ersetzt – „bei jeder Wartung prüfen\" ist eine wiederkehrende organisatorische Maßnahme und wirkt nicht sofort. Die Gefahr entsteht gerade durch das aktive SR-Modul, das sich sofort abschalten lässt. [Prüfbericht: H11 – Sofortmaßnahme ergänzt] Frühere Klärung (vor der Änderung entschieden): K-M09 OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
+ },
+ {
+  "code": "MF-M11-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026, vorherige Entscheidung: Ändern). Regelprüfung 20.09.2026: Sofortmaßnahme konkretisiert. „Anlage bei Auffälligkeiten stilllegen\" nennt weder Auslöser noch Handlung und liegt nahe am unzulässigen „Vorsicht walten lassen\". Stufe Mittel bleibt: Brand entsteht erst, wenn zusätzlich eine Blockade oder ein Seilrutsch auftritt und der Motorschutz versagt. OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
+ },
+ {
+  "code": "MF-M14-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026, vorherige Entscheidung: Ändern). Regelprüfung 20.09.2026: Hoch auf Mittel. Die Gefahr entsteht erst, wenn tatsächlich schwere Teile gehoben werden und eine improvisierte Anschlagstelle versagt – ein zusätzliches Ereignis. Bedingung und beide Maßnahmen bleiben. Der Rang des Mangels hängt am Errichtungsregelwerk (1.28): Bei EN 81-1/-2 (1999–2016) und EN 81-20 ist das Fehlen von Anschlagpunkten ein Konformitätsmangel, bei TRA-Anlagen (vor 1999) Nachrüstbedarf nach Stand der Technik (EN 81-80). OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
+ },
+ {
+  "code": "MF-M14-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026, vorherige Entscheidung: Ändern). Regelprüfung 20.09.2026: Mittel auf Niedrig. Der fehlende Prüfnachweis ist ein Dokumentationsmangel ohne unmittelbaren Gefährdungsbeitrag – der Anschlagpunkt ist vorhanden und gekennzeichnet; mit Mittel stand er auf einer Stufe mit der fehlenden Tragfähigkeitsangabe, die einen echten Überlastbeitrag hat. Normbezug ist die Prüfpflicht nach BetrSichV § 10, nicht EN 81-20 5.2.1.7. Maßnahmen bleiben. OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
+ },
+ {
+  "code": "MF-M17-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026, vorherige Entscheidung: Ändern). Regelprüfung 20.09.2026: Beide Maßnahmen ersetzt. „Arbeiten an der Elektrik nur durch Elektrofachkraft\" wiederholte nur die ohnehin geltende Rechtslage (DGUV V3) und war damit keine zusätzliche Schutzmaßnahme; die Mittelfristmaßnahme enthielt eine aus der entfallenen R1 übernommene DGUV-V3-Prüfung, die mit der Ursache „fehlender Stromlaufplan\" nichts zu tun hat und die Zuständigkeit (5.35/5.37) verwischt. Bedingung und Stufe bleiben. Die Beschaffung der Schaltunterlagen bleibt organisatorisch [ORGA] – der Prüfentwurf hatte sie als [TECH] vorgeschlagen; ein Dokument ist keine technische Schutzmaßnahme. OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
+ },
+ {
+  "code": "MF-M18-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026, vorherige Entscheidung: Ändern). Regelprüfung 20.09.2026: Hoch auf Mittel. Die fehlende Sprechverbindung gefährdet das Wartungspersonal erst, wenn zusätzlich im Schacht gearbeitet wird und jemand unabgestimmt handelt; der eigentliche Schutz ist die Stoppeinrichtung, nicht die Sprechstelle. Dass die Regel selbst eine vollwertige organisatorische Kompensation nennt, bestätigt das. Zudem stellt die Norm die Anforderung unterhalb 30 m Förderhöhe gar nicht. Bedingung und beide Maßnahmen bleiben; die Anwendbarkeit über die Option „Verständigung ohne Hilfsmittel möglich\" bleibt ebenfalls – eine Kopplung an > 30 m würde Anlagen unter 30 m ohne jede Verständigungsmöglichkeit herausfallen lassen (fail-open). OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
+ },
+ {
+  "code": "MF-T02-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026, vorherige Entscheidung: Ändern). Regelprüfung 20.09.2026: Hoch auf Mittel: Die Notentriegelung ist vorhanden, die Befreiung möglich – sie verzögert sich, weil der Schlüssel nicht vor Ort liegt; Aufzugsunternehmen und Feuerwehr führen Dreikantschlüssel mit. Gleichzustufen mit dem völligen Fehlen der Notentriegelung war unverhältnismäßig. OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
+ },
+ {
+  "code": "MF-T04-R5",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026, vorherige Entscheidung: Ändern). Regelprüfung 20.09.2026: Stufe, Priorität, Bedingung und Maßnahmen bleiben; berichtigt ist der Text von 7.9. Die Bedingung war fail-open: 7.8 und 7.9 sind zwei unabhängige Fragen zur Anlage insgesamt. Waren Drahtglas UND eine weitere nicht normgerechte Glasart verbaut, ergab sich 7.8 = Nein und 7.9 = Ja, diese Regel griff nicht mehr, und es blieb bei Niedrig – der Hoch-Befund für das tatsächlich gefährliche Glas verschwand. 7.9 lautet jetzt „ausschließlich Drahtglas?\"; die Mischkonstellation ergibt damit 7.8 = Nein und 7.9 = Nein und fällt fail-closed auf diese Regel. Eine Umstellung auf eine Einfachauswahl „Glasart\" wurde verworfen – sie hätte R3 und die Kein-Risiko-Regel R4 mitgerissen und zwei Fragen-IDs destabilisiert. [Prüfbericht: B06 – Drahtglas ausgenommen, damit die Niedrig-Regel (TRBS 3121 Anh. 1 Nr. 9) greift] OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
+ },
+ {
+  "code": "MF-T06-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026, vorherige Entscheidung: Ändern). Regelprüfung 20.09.2026: Die bisherige Sofortmaßnahme („ohne weitere Schließkantensicherung für Personentransport sperren\") war bedingt formuliert und bezog sich auf die Schließkantensicherung, um die es bei fehlender Fahrkorbtür gar nicht geht – sie ließ sich als Freibrief lesen, sobald irgendeine Schließkantensicherung da ist. Entschieden 2026-09-02: K-K09. [Freigabe bezog sich auf einen früheren Stand (Regel, abhängige Fragen oder Gefährdungslogik geändert) – neu prüfen]"
+ },
+ {
+  "code": "MF-T06-R11",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026, vorherige Entscheidung: Freigeben). Regelprüfung 20.09.2026: Das Scherengitter aus der Maßnahme gestrichen – TRBS 3121 Anh. 1 Nr. 14 c) nennt nur das Sicherheitslichtgitter. [Prüfbericht: B07/Prüfbericht 16.09.2026 – Ersatzlösung ohne diese Voraussetzung ist keine zulässige Kompensation] OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
+ },
+ {
+  "code": "MF-K01-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026). Regelprüfung 20.09.2026: Eine nur im Schacht läutende Klingel ist in der Wirkung dasselbe wie gar kein Notruf: niemand nimmt das Signal entgegen, die Rettungskette startet nicht. Vorher lag der Fall mit den beiden milderen Ausführungen auf Mittel."
+ },
+ {
+  "code": "MF-K01-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026). Regelprüfung 20.09.2026: Aus der bisherigen Sammelregel herausgelöst: die Rettungskette läuft, die Gegenstelle ist aber nicht ständig besetzt."
+ },
+ {
+  "code": "MF-K01-R4",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026). Regelprüfung 20.09.2026: Mildester Fall: die Rettungskette funktioniert, nur die Sprechverbindung fehlt. Die einschneidende Sperrung aus der Sammelregel war hier unverhältnismäßig."
+ },
+ {
+  "code": "MF-K02-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026, vorherige Entscheidung: Ändern). Regelprüfung 20.09.2026: Hoch auf Mittel: Ein dunkler Fahrkorb bedroht Leben und Gesundheit nicht unmittelbar – die Gefährdung entsteht erst beim Zusammentreffen von Netzausfall und Einschluss. Hoch bleibt dem Zusammentreffen mit fehlendem Notruf vorbehalten (MF-K01). Der Nachrüstauftrag braucht eine Fachfirma und ist in die mittelfristige Maßnahme gewandert. Entschieden 2026-09-02: K-K02. [Freigabe bezog sich auf einen früheren Stand (Regel, abhängige Fragen oder Gefährdungslogik geändert) – neu prüfen]"
+ },
+ {
+  "code": "MF-K03-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026, vorherige Entscheidung: Ändern). Regelprüfung 20.09.2026: Sofortmaßnahme war das Einstellen von Aufzug/Bremse/Motorregelung – das ist keine Sofortmaßnahme, sondern genau die mittelfristige technische Nachregulierung. Sofort wirkt nur die organisatorische Kennzeichnung der Stufe (TOP: O vor T). [Prüfbericht: H11 – mittelfristige Maßnahme ergänzt] Frühere Klärung (vor der Änderung entschieden): K-K10 OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
+ },
+ {
+  "code": "MF-K05-R5",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026, vorherige Entscheidung: Ändern). Regelprüfung 20.09.2026: Auslöser der Regel sind unbeaufsichtigte Kinder – eine Unterweisung genau dieses Personenkreises wirkt dort nicht. Die Sofortmaßnahme greift jetzt ohne Mitwirkung der gefährdeten Person. [Prüfbericht: Prüfbericht 16.09.2026 – neu: Nutzerkreis Kinder] OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
+ },
+ {
+  "code": "MF-K06-R4",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026, vorherige Entscheidung: Ändern). Regelprüfung 20.09.2026: Mittel auf Niedrig: Bei wirksamer Überlastkontrolle hat die fehlende Beschilderung keinen unmittelbaren Gefährdungsbeitrag – die Überlast wird technisch abgefangen. Fehlt die Überlastkontrolle, ergibt sich Mittel ohnehin über die Regel zu 8.16 (Aggregation MAXIMUM). OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
+ },
+ {
+  "code": "MF-K07-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026, vorherige Entscheidung: Ändern). Regelprüfung 20.09.2026: Hoch auf Mittel: Der Fahrkorb ist nie gasdicht; Hitzestau und verbrauchte Luft entstehen erst bei Einschluss mit längerer Befreiungsdauer. Nachrüstbedarf nach EN 81-80, kein unmittelbarer Konformitätsmangel. OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
+ },
+ {
+  "code": "MF-K07-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026, vorherige Entscheidung: Ändern). Regelprüfung 20.09.2026: Mittel auf Niedrig: Die Öffnungen sind vorhanden und nur teilweise beeinträchtigt; die Ursache wird durch Reinigung bei nächster Gelegenheit beseitigt – genau das ist die eigene Maßnahme der Regel. OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
+ },
+ {
+  "code": "MF-K07-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026, vorherige Entscheidung: Ändern). Regelprüfung 20.09.2026: Mittel auf Niedrig: DIN EN 81-20 5.4.9 fordert Lüftungsöffnungen, keine Zwangsbelüftung – ohne nachgewiesene Beeinträchtigung ist der Mangel ohne unmittelbaren Gefährdungsbeitrag. „Belegung und Fahrzeiten beobachten\" war keine Sofortmaßnahme, sondern eine Dauerbeobachtung ohne Schutzwirkung. OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
+ },
+ {
+  "code": "MF-K08-R4",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026, vorherige Entscheidung: Ändern). Regelprüfung 20.09.2026: Die Maßnahme verlangte faktisch die Nachrüstung einer Gebäude-Brandmeldeanlage und ging dort ins Leere, wo keine existiert. OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
+ },
+ {
+  "code": "MF-K10-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026, vorherige Entscheidung: Ändern). Regelprüfung 20.09.2026: Hoch auf Mittel: Ein zu kleiner Fahrkorb ist eine Nutzungseinschränkung, keine unmittelbare Gefahr; das Maß 1,00 m × 1,25 m stammt aus DIN EN 81-70 und gilt für die Errichtung – an der Bestandsanlage ist das Unterschreiten Nachrüstbedarf nach EN 81-80. Der Teilaspekt stand zudem über der Oberregel zu 8.22. OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
+ },
+ {
+  "code": "MF-K10-R5",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026). Regelprüfung 20.09.2026: Mittel gilt jetzt nur, wenn die barrierefreie Ausführung rechtlich gefordert ist (4.9a) – sonst traf die Stufe nahezu den gesamten Bestand."
+ },
+ {
+  "code": "MF-K10-R6",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026). Regelprüfung 20.09.2026: Neu: Ist die barrierefreie Ausführung nicht gefordert, sondern nur die Nutzung durch Personen mit eingeschränkter Mobilität zu erwarten, ist das Nachrüstbedarf nach DIN EN 81-80 und kein Konformitätsmangel. Bleibt 4.9a unbeantwortet, greift keine der beiden Regeln und die Gefährdung bleibt unvollständig – gewollt."
+ },
+ {
+  "code": "MF-K14-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026, vorherige Entscheidung: Ändern). Regelprüfung 20.09.2026: „Regelmäßige Materialprüfung (Ultraschall)\" braucht Fachfirma, Termin und Zugänglichkeit und wirkt frühestens in Wochen – sie steht jetzt in der mittelfristigen Maßnahme. [Prüfbericht: H05 – UCM ist keine Abhilfe gegen Wellenbruch] OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
+ },
+ {
+  "code": "MF-F01-R8",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026). Regelprüfung 20.09.2026: Die Frage 9.4 wird immer gestellt, die Regel griff dadurch auch bei einem Spalt bis 300 mm, wo weder EN 81-20 noch EN 81-1 eine Umwehrung und damit auch keine Fußleiste fordern. Bedingung an denselben Spalt gebunden wie die Umwehrung selbst. Sofortmaßnahme: „Mit dem Fuß nicht über den Rand treten\" war eine Ermahnung, keine Maßnahme."
+ },
+ {
+  "code": "MF-F03-R7",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026, vorherige Entscheidung: Ändern). Regelprüfung 20.09.2026: Die Regel verdrängt mit P212 die Grundregel R4 und damit deren technische Maßnahme; die Ursache – gar keine Abtrennung – muss in der Maßnahme stehen bleiben (TOP-Prinzip). [Prüfbericht: Prüfbericht 16.09.2026 – Abschaltung ohne Funktionsnachweis] OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
+ },
+ {
+  "code": "MF-F03-R8",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026, vorherige Entscheidung: Ändern). Regelprüfung 20.09.2026: Die Regel verdrängt mit P210 die Grundregeln R5/R6 und damit deren technische Maßnahme – die unzureichende Abtrennung muss benannt bleiben (TOP-Prinzip). [Prüfbericht: Prüfbericht 16.09.2026 – Abschaltung ohne Funktionsnachweis] OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
+ },
+ {
+  "code": "MF-F05-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026, vorherige Entscheidung: Ändern). Regelprüfung 20.09.2026: Ohne Inspektionssteuerung fährt der Aufzug im Normalbetrieb mit Nenngeschwindigkeit, während Personen auf dem Dach stehen. Das Verbot der Alleinarbeit und ein Literaturhinweis verhindern diese Fahrt nicht – die Sofortmaßnahme setzt jetzt am Freischalten an. OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
+ },
+ {
+  "code": "MF-F06-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026, vorherige Entscheidung: Ändern). Regelprüfung 20.09.2026: „Position vor dem Betreten prüfen\" benennt keine Handlung, die die Gefährdung begrenzt. OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
+ },
+ {
+  "code": "MF-S01-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026, vorherige Entscheidung: Ändern). Regelprüfung 20.09.2026: Die Sofortmaßnahme traf einen anderen Sachverhalt als die Bedingung (beschädigte Leuchte statt fehlender Splitterschutz) und war für Prüfer und Betreiber nicht sofort ausführbar. [Prüfbericht: H11 – Sofortmaßnahme ergänzt] OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
+ },
+ {
+  "code": "MF-S03-R4",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026, vorherige Entscheidung: Ändern). Regelprüfung 20.09.2026: Gefordert ist der Werkstoffnachweis der Scheibe, nicht ein statischer Nachweis – „Statischen Nachweis erbringen\" führte zur falschen Abhilfe. OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
+ },
+ {
+  "code": "MF-S04-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026, vorherige Entscheidung: Ändern). Regelprüfung 20.09.2026: „Zustand bei jeder Wartung prüfen\" ist eine Dauerauflage und wirkt im Prüfzeitpunkt nicht; sie steht jetzt in der mittelfristigen Maßnahme. OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
+ },
+ {
+  "code": "MF-S05-R7",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026). Regelprüfung 20.09.2026 (vormals MF-S05-R2; die eingeschränkte Anwendbarkeit ist ein neuer Sachverhalt und bekommt nach der ID-Regel eine neue Regel-ID): Anwendbarkeit auf den Treibscheibenaufzug (3.1) beschränkt. Frage 10.8 ist für alle drei Seil-Bauarten sichtbar, die Regel vergab aber ausnahmslos Hoch mit Stilllegung – bei einem normgerechten Trommel-, Ketten- oder indirekt wirkenden Hydraulikaufzug mit schlaffseilausgelöster Fangvorrichtung war das ein falsch positiver Befund mit schwerwiegender Rechtsfolge. Nach DIN EN 81-20 5.6.2.2 darf die Fangvorrichtung bei diesen Bauarten unter den dort genannten Bedingungen auch durch die Schlaffseil-/Schlaffketteneinrichtung ausgelöst werden. Für sie trägt R3 den Befund: fehlt die Ersatzauslösung (10.11 = Nein), bleibt es bei Hoch; ist sie vorhanden, entsteht kein Befund. Eine zusätzliche Frage und eine zusätzliche Regel sind damit nicht nötig. Stufe, Bedingung und Maßnahmen bleiben. [Prüfbericht: B11 – Maßnahme zielte auf die Fangvorrichtung statt den Begrenzer]"
+ },
+ {
+  "code": "MF-S05-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026, vorherige Entscheidung: Freigeben). Regelprüfung 20.09.2026: Gilt jetzt auch für den Seil-Hydraulikaufzug (indirekt) – die Sichtbarkeit von 10.11 ist auf diese Bauart erweitert. Die Regel trägt damit zugleich den Befund für die fehlende Ersatzauslösung der Fangvorrichtung, auf den R2 bei diesen Bauarten verzichtet. Bei Trommel-, Ketten- und indirekt wirkenden Hydraulikaufzügen verlangt DIN EN 81-20 5.5.5.3 die Schlaffseil- bzw. Schlaffketteneinrichtung ohnehin für sich. OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
+ },
+ {
+  "code": "MF-S05-R5",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026, vorherige Entscheidung: Ändern). Regelprüfung 20.09.2026: „Spanngewicht bei Wartung sichtprüfen\" ist eine Dauerauflage, keine Sofortmaßnahme. OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
+ },
+ {
+  "code": "MF-S07-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026, vorherige Entscheidung: Ändern). Regelprüfung 20.09.2026: Maßnahme als technische Maßnahme geführt (vorher organisatorisch, was die TOP-Bewertung der Regel verfälschte). Eine festgestellte Überbrückung ist vor Wiederinbetriebnahme zu entfernen und die Wirksamkeit durch Funktionsprüfung zu belegen. OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
+ },
+ {
+  "code": "MF-S07-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026, vorherige Entscheidung: Ändern). Regelprüfung 20.09.2026: Frage 10.13 erfasst zwei Sachverhalte – „zugestellt\" (Ordnungsmangel) und „verbaut\" (bauliche Veränderung). Für den verbauten Zugang ist eine technische Maßnahme möglich und nach TOP vorrangig; die Mittelfristmaßnahme war rein organisatorisch und ließ die Ursache bestehen. Sie nennt jetzt beide Arten getrennt und ist als [TECH] geführt. OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
+ },
+ {
+  "code": "MF-G01-R1",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026, vorherige Entscheidung: Ändern). Regelprüfung 20.09.2026: Hoch auf Mittel. Die Gefahr entsteht erst beim Abstieg und wird von der eigenen Sofortmaßnahme (Handleuchte) vollständig beherrscht – alle übrigen Hoch-Regeln der Schachtgrube verlangen Stilllegen oder Nichtbetreten. OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
+ },
+ {
+  "code": "MF-G01-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026, vorherige Entscheidung: Ändern). Regelprüfung 20.09.2026: Mittel auf Niedrig – Beleuchtung ist vorhanden, nur unzureichend; mit Mittel lag die Regel gleichauf mit dem völligen Fehlen. Die Maßnahme „Leuchten versetzen\" traf nur einen der beiden von 11.2a erfassten Fälle. OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
+ },
+ {
+  "code": "MF-G03-R4",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026, vorherige Entscheidung: Ändern). Regelprüfung 20.09.2026: Fundstelle korrigiert: 5.2.1.5.1 a) statt 5.4.8 – dieselbe Stelle, die die Hilfe zu 11.1 und die Quellen der Gefährdung nennen. OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
+ },
+ {
+  "code": "MF-G04-R9",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026, vorherige Entscheidung: Ändern). Regelprüfung 20.09.2026: „Auf Eignung, Unversehrtheit, Vollständigkeit achten\" war eine Ermahnung ohne Handlung und ohne Folge für den Fall, dass die beim Kunden deponierte Leiter untauglich oder nicht auffindbar ist. [Prüfbericht: Prüfbericht 16.09.2026 – nur bei Zugang über Leiter] OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
+ },
+ {
+  "code": "MF-G07-R4",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026, vorherige Entscheidung: Ändern). Regelprüfung 20.09.2026: Ein Warnhinweis schützt niemanden, der die Grube betreten muss, und „sichere Position einnehmen\" ist ein Appell zur Vorsicht. Gesichert wird jetzt vor dem Betreten. [Prüfbericht: B03 – organisatorische Maßnahme nach TRBS 3121 Anh. 1 Nr. 2] OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
+ },
+ {
+  "code": "MF-U06-R4",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026, vorherige Entscheidung: Ändern). Regelprüfung 20.09.2026: Sofortmaßnahme ergänzt. Sie deckte nur die Zündquelle „Fremdarbeit\" ab, während die Gefährdung darin besteht, dass die Aufzugsanlage selbst im Ex-Bereich betrieben wird und ungeeignete Betriebsmittel enthält – bei Stufe Hoch blieb die Gefahr damit unbeantwortet. Bedingung, Stufe und Priorität bleiben. [Prüfbericht: Prüfbericht 16.09.2026 – Dokumentation allein ist keine Schutzmaßnahme (§ 6 GefStoffV, § 4 BetrSichV)] OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
+ },
+ {
+  "code": "MF-U06-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026, vorherige Entscheidung: Ändern). Regelprüfung 20.09.2026: Sofortmaßnahme erweitert wie bei R4, aber abgestuft: Anders als dort ist bei fehlendem Explosionsschutzdokument nicht erwiesen, dass der Aufzug in einer Zone liegt – deshalb „mit dem Betreiber verbindlich regeln\" statt Betriebseinstellung. Die bisherige Fassung ließ die Anlage als mögliche Zündquelle im unbewerteten Bereich weiterlaufen. Stufe und Priorität bleiben. [Prüfbericht: H07 – gefährdungsspezifische Maßnahmen statt generischer Schnittstellen-Texte] Frühere Klärung (vor der Änderung entschieden): K-U03 OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
+ },
+ {
+  "code": "MF-U07-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026, vorherige Entscheidung: Ändern). Regelprüfung 20.09.2026: Beide Maßnahmen von MU['wasser'] gelöst. Sie stammten unverändert aus dem Wasser-Textblock der Schachtgrube und passten nicht zu der 2026 geschärften Bedingung, die ausdrücklich den Bereich AUSSERHALB der Grube und den Fall Kondensat erfasst: Die Sofortmaßnahme nannte einen Bereich, den 15.23a gerade ausschließt, und für Kondensat an der Steuerung liegt die Ursache in Lüftung, Beheizung und Schutzart, nicht im Wassereintritt. Bedingung und Stufe Hoch bleiben – Feuchte an Bremse oder Türverriegelung kann eine Einrichtung im Sicherheitskreis zum Versagen bringen. [Prüfbericht: H07 – gefährdungsspezifische Maßnahmen statt generischer Schnittstellen-Texte] OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
+ },
+ {
+  "code": "MF-U09-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026, vorherige Entscheidung: Ändern). Regelprüfung 20.09.2026: Stufe Mittel bleibt, beide Maßnahmen neu gefasst (siehe MU['evak']): Der sicherheitsrelevante Kern ist die fehlende Festlegung und Kennzeichnung des Benutzungsverbots im Brandfall, nicht eine Evakuierungsfunktion, die die meisten Anlagen gar nicht haben. [Prüfbericht: H07 – gefährdungsspezifische Maßnahmen statt generischer Schnittstellen-Texte] OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
+ },
+ {
+  "code": "MF-U12-R3",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026, vorherige Entscheidung: Freigeben). Regelprüfung 20.09.2026: Erhaltungstext um die Fortschreibung des Zugangskonzepts ergänzt, die vorher in der entfallenen Niedrig-Regel R2 stand. OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
+ },
+ {
+  "code": "MF-D04-R2",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026, vorherige Entscheidung: Ändern). Regelprüfung 20.09.2026: Mittel auf Niedrig. Die fehlende oder unleserliche Plakette ist ein Kennzeichnungsmangel ohne eigenen Gefährdungsbeitrag; der sicherheitsrelevante Sachverhalt dahinter steht getrennt in 3.8 (Frist überschritten, Hoch) und 3.7 (kein Prüfbericht, Mittel). Die Plakette gibt die ZÜS aus – „nachbeschaffen\" war missverständlich. Entschieden 2026-09-02: K-D03. [Freigabe bezog sich auf einen früheren Stand (Regel, abhängige Fragen oder Gefährdungslogik geändert) – neu prüfen]"
+ },
+ {
+  "code": "MF-D06-R7",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026). Regelprüfung 20.09.2026: Bedingung vom Baujahr auf das Errichtungsregelwerk (1.28) umgestellt – die durchgreifend modernisierte Altanlage wurde sonst nicht erfasst. Sofortmaßnahme „nur mit eingewiesenen Personen betreiben\" gestrichen: sie widersprach MF-T06-R1 (Sperren) und nahm eine Kompensation vorweg, die nur dort und nur beim Lastenaufzug zulässig ist."
+ },
+ {
+  "code": "MF-D06-R8",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026). Regelprüfung 20.09.2026: Bedingung auf das Errichtungsregelwerk umgestellt; die Sofortmaßnahme „Unterlagen anfordern\" hatte für eine Hoch-Regel keine Schutzwirkung. Die Kompensationen aus MF-K12 (Zweikreisbremse, Bremsüberwachung, statisch bestimmte Lagerung) heilen den Konformitätsmangel nicht und bleiben dort."
+ },
+ {
+  "code": "MF-D06-R9",
+  "entscheidung": "Freigeben",
+  "korrektur": "Korrektur umgesetzt (Quelle: Regelprüfung 20.09.2026). Regelprüfung 20.09.2026: Bedingung auf das Errichtungsregelwerk umgestellt und gegen R1 abgegrenzt – vorher lösten bei Baujahr ab 2017 beide Regeln aus und der Bericht führte denselben Befund zweimal mit verschiedenen Begründungen."
+ }
+]

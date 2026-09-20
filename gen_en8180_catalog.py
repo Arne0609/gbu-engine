@@ -34,7 +34,8 @@ sys.path.insert(0, HERE)
 from en8180_content import ZUORDNUNG  # noqa: E402
 import catalog_check  # noqa: E402
 
-RULE_VERSION = '81-80-mf-2026.7'  # .7: Erhebung gekürzt (Gruppen, Nachweise, Stammdaten, Phasen, Schwellenfragen) 17.09.2026
+RULE_VERSION = '81-80-mf-2026.8'  # .8: erbt den Prüfbericht-Stand 20.09.2026 des MF-Katalogs
+# .7: Erhebung gekürzt (Gruppen, Nachweise, Stammdaten, Phasen, Schwellenfragen) 17.09.2026
 # .6: Korrekturen aus dem externen Prüfbericht 15.09.2026
 # .5: best_case je Frage (Sammelantwort) 07.09.2026
 # .4: begruendete Annahmen (Baujahr) 07.09.2026
@@ -111,6 +112,19 @@ def build():
     for r in rules:
         collect(r['condition'], fragen)
         collect(r.get('applicability'), fragen)
+    # … Steuerfragen der begruendeten Annahmen und der Nachweise (Regelwerk bei
+    # Inverkehrbringen, Baujahr, ZUES-Pruefbericht): Fehlen sie, greift die
+    # Vorbelegung im Bestandstyp anders als im MF-Katalog (Pruefbericht
+    # 20.09.2026) …
+    for a in mf.get('assumptions', []):
+        if a['question'] in fragen:
+            collect(a.get('when'), fragen)
+    void = mf.get('assumptions_void_when')
+    if void and any(a['question'] in fragen for a in mf.get('assumptions', [])):
+        collect(void, fragen)
+    for n in mf.get('nachweise', []):
+        if n['question'] in fragen:
+            collect(n.get('when'), fragen)
     # … und die vollständige Kette der Sichtbarkeitsregeln.
     todo = list(fragen)
     while todo:
@@ -145,8 +159,16 @@ def build():
     annahmen = [a for a in mf.get('assumptions', []) if a['question'] in fragen]
     if annahmen:
         seed['assumptions'] = annahmen
+        # siehe katalog_teilmenge.teilmenge(): zusammengesetzte Ruecknahme-
+        # bedingungen tragen kein 'question' und gingen bisher verloren (fail-open).
         void = mf.get('assumptions_void_when')
-        if void and void.get('question') in fragen:
+        if void:
+            noetig = set()
+            collect(void, noetig)
+            fehlend = noetig - fragen
+            if fehlend:
+                raise SystemExit('assumptions_void_when braucht Fragen, die nicht im '
+                                 'Bestandstyp sind: %s' % ', '.join(sorted(fehlend)))
             seed['assumptions_void_when'] = void
     # Erhebung (17.09.2026): Gruppen, Nachweise, Phasen und Reihenfolge des
     # MF-Katalogs gelten auch fuer den Bestandstyp – beschnitten auf die hier
@@ -166,8 +188,15 @@ def build():
             gruppen.append(g2)
     if gruppen:
         seed['question_groups'] = gruppen
+    # Zusammengesetzte Freischaltbedingung (Prüfbericht 20.09.2026 B05) – wie
+    # in katalog_teilmenge.teilmenge(): alle darin genannten Fragen müssen da sein.
+    def _wenn_fragen(expr):
+        noetig = set()
+        collect(expr, noetig)
+        return noetig
+
     nachweise = [n for n in mf.get('nachweise', []) if n['question'] in fragen
-                 and n['when']['question'] in fragen]
+                 and _wenn_fragen(n.get('when')) <= fragen]
     if nachweise:
         seed['nachweise'] = nachweise
     return seed, mf

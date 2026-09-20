@@ -50,8 +50,8 @@ UNTERTITEL = ('Anlagenbezogene Beurteilung nach ArbSchG, BetrSichV, TRBS 3121 '
               'und TRBS 1115 unter Berücksichtigung der DIN EN 81-20/80')
 VARIANTE = 'Riedl'                 # Anzeigename der Variante
 TYP_SCHLUESSEL = 'riedl'           # Vorschlag für GbuTypen in der App
-RULE_VERSION_GBU = 'riedl-mf-2026.1'
-RULE_VERSION_CYBER = 'riedl-cyber-2026.1'
+RULE_VERSION_GBU = 'riedl-mf-2026.2'      # .2: Prüfbericht Fragenkatalog 20.09.2026
+RULE_VERSION_CYBER = 'riedl-cyber-2026.2'  # .2: Prüfbericht + Erhebungskarten 20.09.2026
 VORLAGE_GBU = 'VFA Interlift, Version 21.08.2024 R 1.7.2 (Nutzungsrecht VFA-Akademie)'
 VORLAGE_CYBER = 'Vorlage GBU Cybersicherheit ab 04-26 (TRBS 1115-1, IEC 62443)'
 
@@ -67,6 +67,41 @@ AMPEL = {
 }
 AMPEL_TEXT = {'gruen': 'Grün', 'gelb': 'Gelb', 'rot': 'Rot', 'offen': 'offen',
               'na': 'n. a.'}
+
+# Prüfbericht 20.09.2026: „Niedrig" zählt in der Ampel weiter als Grün (so ist die
+# Riedl-/VFA-Vorlage gebaut), wird im Bericht aber als eigene Kategorie ausgewiesen.
+# Sonst stehen Maßnahmen zu Befunden wie Drahtglas (MF-T04-R3), Schutzraum nach
+# Altnorm (MF-F04-R3/MF-G02-R2) oder einer von zwei Verriegelungen (MF-K05-R4)
+# ohne erkennbaren Anlass in einer grünen Zeile.
+STUFE_ANZEIGE = {
+    'NO_RISK': ('Kein Risiko', 'gruen', ''),
+    'LOW': ('Niedrig', 'gruen', 'Hinweis – Maßnahme bei nächster Gelegenheit'),
+    'MEDIUM': ('Mittel', 'gelb', ''),
+    'HIGH': ('Hoch', 'rot', ''),
+    'INCOMPLETE': ('unvollständig', 'offen', 'Pflichtangabe fehlt'),
+    'NOT_APPLICABLE': ('nicht zutreffend', 'na', ''),
+}
+
+# Brücke zwischen der Engine-Stufe und der Riedl-Risikomatrix (W × S -> R).
+# Die Engine bewertet regelbasiert und kennt kein W/S; die Vorlage erwartet je
+# Zeile ein R. Festgelegt 20.09.2026 (Prüfbericht): Die Engine-Stufe ist führend,
+# der R-Wert wird daraus abgeleitet und ist vom Prüfer nach oben überschreibbar.
+# Rückrichtung wie in der App (stufeAusR): R >= 7 Hoch, >= 3 Mittel, 1 Niedrig, 0 Kein.
+STUFE_ZU_R = {'NO_RISK': 0, 'LOW': 1, 'MEDIUM': 5, 'HIGH': 7}
+R_ZU_STUFE = [(7, 'HIGH'), (3, 'MEDIUM'), (1, 'LOW'), (0, 'NO_RISK')]
+
+
+def r_aus_stufe(status):
+    """R-Wert der Riedl-Matrix zu einer Engine-Stufe (None = nicht bewertbar)."""
+    return STUFE_ZU_R.get(status)
+
+
+def stufe_aus_r(r):
+    """Umkehrung – für von Hand gesetzte oder verschärfte R-Werte."""
+    for grenze, stufe in R_ZU_STUFE:
+        if r >= grenze:
+            return stufe
+    return 'NO_RISK'
 # Legende des Deckblatts (VFA): Grün = kein Handlungsbedarf, Gelb = kurz- bis
 # mittelfristiger Handlungsbedarf, Rot = sofortiger Handlungsbedarf.
 AMPEL_LEGENDE = {
