@@ -1,0 +1,1123 @@
+{
+ "variante": "Riedl",
+ "typ_schluessel": "riedl",
+ "titel": "Gefährdungsbeurteilung und Sicherheitskonzept für Aufzugsanlagen",
+ "untertitel": "Anlagenbezogene Beurteilung nach ArbSchG, BetrSichV, TRBS 3121 und TRBS 1115 unter Berücksichtigung der DIN EN 81-20/80",
+ "deckblatt_untertitel": "Beurteilung der Gefahrenorte der Aufzugsanlage für Verwender (Betreiber), Instandhalter und Benutzer",
+ "vorlagen": {
+  "gbu": "VFA Interlift, Version 21.08.2024 R 1.7.2 (Nutzungsrecht VFA-Akademie)",
+  "cyber": "Vorlage GBU Cybersicherheit ab 04-26 (TRBS 1115-1, IEC 62443)"
+ },
+ "kataloge": {
+  "gbu": "riedl-mf-2026.1",
+  "cyber": "riedl-cyber-2026.1",
+  "gbu_quelle": "81-20-mf-2026.9",
+  "cyber_quelle": "cyber-mf-2026.2"
+ },
+ "ampel": {
+  "NO_RISK": "gruen",
+  "LOW": "gruen",
+  "MEDIUM": "gelb",
+  "HIGH": "rot",
+  "INCOMPLETE": "offen",
+  "NOT_APPLICABLE": "na"
+ },
+ "ampel_text": {
+  "gruen": "Grün",
+  "gelb": "Gelb",
+  "rot": "Rot",
+  "offen": "offen",
+  "na": "n. a."
+ },
+ "ampel_legende": {
+  "gruen": "kein Handlungsbedarf",
+  "gelb": "kurz- bis mittelfristiger Handlungsbedarf",
+  "rot": "sofortiger Handlungsbedarf"
+ },
+ "nohl_legende": [
+  {
+   "stufe": "Kein Risiko",
+   "r": "R = 0",
+   "potenzial": "ohne",
+   "massnahmen": "keine Maßnahme"
+  },
+  {
+   "stufe": "Niedrig",
+   "r": "R = 1",
+   "potenzial": "Kleinst",
+   "massnahmen": "Risiko noch akzeptabel, wenn möglich Maßnahmen umsetzen"
+  },
+  {
+   "stufe": "Mittel",
+   "r": "R = 3 … 5",
+   "potenzial": "Klein / Mittel",
+   "massnahmen": "Maßnahmen mittel- bzw. kurzfristig planen und umsetzen"
+  },
+  {
+   "stufe": "Hoch",
+   "r": "R = 7 … 10",
+   "potenzial": "Groß / Sehr groß",
+   "massnahmen": "Sofortmaßnahmen notwendig, sonst Arbeiten einstellen"
+  }
+ ],
+ "verantwortlich": [
+  "Nicht anwendbar",
+  "Betreiber",
+  "Wartungsfirma",
+  "Servicetechniker",
+  "Aufzugswärter"
+ ],
+ "termin": [
+  "Nicht anwendbar",
+  "Sofort",
+  "Kurzfristig",
+  "Mittelfristig",
+  "Vor Arbeitsbeginn",
+  "Ständig",
+  "Bis Quartalsende",
+  "Bis Jahresende",
+  "Bis zur ZÜS-Prüfung"
+ ],
+ "termin_aus_gruppe": {
+  "sofort": "Sofort",
+  "mittel": "Mittelfristig"
+ },
+ "deckblatt_felder": [
+  {
+   "key": "ersteller",
+   "label": "Beurteilungs-/Konzeptersteller"
+  },
+  {
+   "key": "verwender",
+   "label": "Anlagenverwender (Betreiber)"
+  },
+  {
+   "key": "stand",
+   "label": "Bearbeitungsstand"
+  },
+  {
+   "key": "bezeichnung",
+   "label": "Bezeichnung / Bauvorhaben"
+  },
+  {
+   "key": "standort",
+   "label": "Standort der Anlage"
+  },
+  {
+   "key": "fabriknummer",
+   "label": "Anl.- / Fabrik-Nr."
+  }
+ ],
+ "block_z": [
+  {
+   "key": "verwender",
+   "titel": "Aufgaben für den Verwender",
+   "verantwortliche": [
+    "Betreiber",
+    "Aufzugswärter"
+   ]
+  },
+  {
+   "key": "wartung",
+   "titel": "Aufgaben für die Wartungsfirma",
+   "verantwortliche": [
+    "Wartungsfirma"
+   ]
+  },
+  {
+   "key": "service",
+   "titel": "Hinweise für den Servicetechniker",
+   "verantwortliche": [
+    "Servicetechniker"
+   ]
+  }
+ ],
+ "unterschriften": [
+  "Ort, Datum, Ersteller",
+  "Ort, Datum, Verwender (Betreiber)"
+ ],
+ "sonstiges": {
+  "titel": "Sonstiges (Freitext, eigene Einstufung)",
+  "hinweis": "Für Feststellungen ohne Katalogzeile; Einstufung Kein/Niedrig/Mittel/Hoch durch den Ersteller, geht in die Blatt-Ampel ein."
+ },
+ "blaetter": [
+  {
+   "key": "kabine",
+   "kuerzel": "K",
+   "titel": "Kabine und Aufzugsbenutzung",
+   "anlagenbereich": "In der Kabine / Aufzugsbenutzung",
+   "katalog": "81-20-mf-2026.9",
+   "zeilen": [
+    {
+     "nr": 1,
+     "titel": "Notrufsystem / Personenbefreiung",
+     "vfa": "K1",
+     "hazards": [
+      "MF-K01",
+      "MF-D01",
+      "MF-D02"
+     ],
+     "deckung": "voll",
+     "bemerkung": "Art der Notrufeinrichtung (8.2) bildet die Excel-Liste 1:1 ab; Notfallplan und Notbefreiungsanleitung (D01/D02) sind die organisatorische Seite der Personenbefreiung (Excel K10 „Kein Alarmplan\").",
+     "trbs_anhang1": []
+    },
+    {
+     "nr": 2,
+     "titel": "Kabinenabschlusstür / Schließkantensicherung",
+     "vfa": "K2",
+     "hazards": [
+      "MF-T06"
+     ],
+     "deckung": "voll",
+     "bemerkung": "„Keine selbstschließenden Schachttüren\" aus K2 steht in Zeile 9 (MF-T03).",
+     "trbs_anhang1": [
+      10,
+      14
+     ]
+    },
+    {
+     "nr": 3,
+     "titel": "Kabinenbeleuchtung / Notbeleuchtung",
+     "vfa": "K3",
+     "hazards": [
+      "MF-K15",
+      "MF-K02"
+     ],
+     "deckung": "voll",
+     "bemerkung": "",
+     "trbs_anhang1": []
+    },
+    {
+     "nr": 4,
+     "titel": "Haltegenauigkeit / Bündigkeit",
+     "vfa": "K4",
+     "hazards": [
+      "MF-K03"
+     ],
+     "deckung": "voll",
+     "bemerkung": "Schwellen im MF-Katalog: bis 10 / 11–20 / über 20 mm (EN 81-20 5.4.5.2, Entscheidung Fragenkatalog 2026.9) statt 5 / 15 mm der Vorlage.",
+     "trbs_anhang1": [
+      1
+     ]
+    },
+    {
+     "nr": 5,
+     "titel": "Überlastsicherung / Nennlast",
+     "vfa": "K5",
+     "hazards": [
+      "MF-K06"
+     ],
+     "deckung": "voll",
+     "bemerkung": "MF-K06 fragt zusätzlich Nennlastkennzeichnung und Nutzfläche (EN 81-80 Nr. 38).",
+     "trbs_anhang1": []
+    },
+    {
+     "nr": 6,
+     "titel": "Sturzverhinderung nach oben / unbeabsichtigte Fahrkorbbewegung (UCM)",
+     "vfa": "K6",
+     "hazards": [
+      "MF-K13",
+      "MF-K12",
+      "MF-K14"
+     ],
+     "deckung": "voll",
+     "bemerkung": "TRBS 3121 Anh. 1 Nr. 16 fasst UCM und Aufwärts-Übergeschwindigkeit zusammen; die A3-Zeilen aus Excel K10 gehören deshalb hierher.",
+     "trbs_anhang1": [
+      16
+     ]
+    },
+    {
+     "nr": 7,
+     "titel": "Kabinentürschürze / Abstand zur Schachtwand",
+     "vfa": "K7",
+     "hazards": [
+      "MF-K04",
+      "MF-K05"
+     ],
+     "deckung": "voll",
+     "bemerkung": "MF-K05 (Schwellenabstand, TRBS Anh. 1 Nr. 19) hat in der Vorlage keine Zeile.",
+     "trbs_anhang1": [
+      13,
+      19
+     ]
+    },
+    {
+     "nr": 8,
+     "titel": "Brandfallsteuerung / Verhalten im Brandfall / Schachtentrauchung",
+     "vfa": "K8",
+     "hazards": [
+      "MF-K08",
+      "MF-K09",
+      "MF-U09",
+      "MF-U10"
+     ],
+     "deckung": "voll",
+     "bemerkung": "MF-K08 nur, wenn das Brandschutzkonzept eine Brandfallsteuerung fordert (4.11); „Einbindung unbekannt\" über MF-U09 (BMA-Schnittstelle). MF-U10 wegen der Schachtentrauchung in der Riedl-Cyber-Vorlage.",
+     "trbs_anhang1": []
+    },
+    {
+     "nr": 9,
+     "titel": "Schachttüren: Verriegelung, Selbstschließen, Notentriegelung, Glas",
+     "vfa": "K10",
+     "hazards": [
+      "MF-T01",
+      "MF-T03",
+      "MF-T02",
+      "MF-T04"
+     ],
+     "deckung": "voll",
+     "bemerkung": "Ersetzt die alte Cyber-Zeile K9 der Vorlage; TRBS Anh. 1 Nr. 9, 11, 12. Glas (T04) nur bei Türen mit Glas (Anlagenmerkmal 4.1).",
+     "trbs_anhang1": [
+      9,
+      10,
+      11,
+      12
+     ]
+    },
+    {
+     "nr": 10,
+     "titel": "Betrieb und Organisation: Wartung, Prüfung, beauftragte Person",
+     "vfa": "K10",
+     "hazards": [
+      "MF-D03",
+      "MF-D04",
+      "MF-D05"
+     ],
+     "deckung": "voll",
+     "bemerkung": "Betreiberpflichten nach BetrSichV (Vorabbogen D); Zutrittsregelung E4 in D05.",
+     "trbs_anhang1": []
+    },
+    {
+     "nr": 11,
+     "titel": "Sonstiges: Nutzung, Ausstattung, Umfeld",
+     "vfa": "K10",
+     "hazards": [
+      "MF-K11",
+      "MF-K10",
+      "MF-U03"
+     ],
+     "deckung": "teilweise",
+     "bemerkung": "Denkmalschutz, unruhige Fahrt, Fahrgeräusche, technische Mängel und missbräuchliche Nutzung haben keine MF-Gefährdung – dafür die Freitextzeile „Sonstige Gefährdung\" des Blatts (Lärm/Unfälle sind im MF nur Dokumentation).",
+     "trbs_anhang1": []
+    }
+   ]
+  },
+  {
+   "key": "zugang",
+   "kuerzel": "Z",
+   "titel": "Zugang zum Maschinenraum",
+   "anlagenbereich": "Zugang zum Aufzug, Maschinen- oder Steuerungsraum",
+   "katalog": "81-20-mf-2026.9",
+   "zeilen": [
+    {
+     "nr": 1,
+     "titel": "Beleuchtung",
+     "vfa": "Z1",
+     "hazards": [
+      "MF-Z01"
+     ],
+     "deckung": "voll",
+     "bemerkung": "",
+     "trbs_anhang1": []
+    },
+    {
+     "nr": 2,
+     "titel": "Leitern, Aufstiege, Absturzkanten",
+     "vfa": "Z2",
+     "hazards": [
+      "MF-Z03",
+      "MF-Z04"
+     ],
+     "deckung": "voll",
+     "bemerkung": "Art des Aufstiegs (5.5) bildet die Excel-Liste ab; Absturzkanten über MF-Z04.",
+     "trbs_anhang1": []
+    },
+    {
+     "nr": 3,
+     "titel": "Wege",
+     "vfa": "Z3",
+     "hazards": [
+      "MF-Z02",
+      "MF-Z05"
+     ],
+     "deckung": "voll",
+     "bemerkung": "„Wege dunkel\" über Zeile 1, „Absturzgefahr\" über Zeile 2, „Einsperrrisiko\" über MF-Z05.",
+     "trbs_anhang1": []
+    },
+    {
+     "nr": 4,
+     "titel": "Zugangstür und Zutritt (nur befugte Personen)",
+     "vfa": "Z4",
+     "hazards": [
+      "MF-Z07"
+     ],
+     "deckung": "voll",
+     "bemerkung": "In der Vorlage die Cyber-Zeile Z4; hier die technische Seite (abschließbare Tür), die Zugangsfrage der Cyber-GBU (2.1/2.2) bleibt im Cyber-Blatt.",
+     "trbs_anhang1": []
+    },
+    {
+     "nr": 5,
+     "titel": "Zugang für die Notbefreiung (Schlüsseltresor)",
+     "vfa": "Z6",
+     "hazards": [
+      "MF-Z09"
+     ],
+     "deckung": "voll",
+     "bemerkung": "Frage 3.4 bildet die drei Excel-Werte 1:1 ab.",
+     "trbs_anhang1": []
+    }
+   ]
+  },
+  {
+   "key": "maschinenraum",
+   "kuerzel": "M",
+   "titel": "Maschinenraum",
+   "anlagenbereich": "Maschinen- oder Steuerungsraum (wenn nicht im Fahrschacht)",
+   "katalog": "81-20-mf-2026.9",
+   "zeilen": [
+    {
+     "nr": 1,
+     "titel": "Elektrische Berührungssicherheit",
+     "vfa": "M1",
+     "hazards": [
+      "MF-M02",
+      "MF-M16"
+     ],
+     "deckung": "voll",
+     "bemerkung": "MF-M16 (Potenzialausgleich, bauseitige Installation) ergänzt TRBS Anh. 1 Nr. 21.",
+     "trbs_anhang1": [
+      21
+     ]
+    },
+    {
+     "nr": 2,
+     "titel": "Einzugsgefahr",
+     "vfa": "M2",
+     "hazards": [
+      "MF-M03"
+     ],
+     "deckung": "voll",
+     "bemerkung": "Auch Excel M4 „Ungeschützt bewegte Maschinenteile\".",
+     "trbs_anhang1": []
+    },
+    {
+     "nr": 3,
+     "titel": "Beleuchtung",
+     "vfa": "M3",
+     "hazards": [
+      "MF-M01"
+     ],
+     "deckung": "voll",
+     "bemerkung": "",
+     "trbs_anhang1": []
+    },
+    {
+     "nr": 4,
+     "titel": "Antrieb, Bremse und Hydraulik",
+     "vfa": "",
+     "hazards": [
+      "MF-M08",
+      "MF-M13"
+     ],
+     "deckung": "voll",
+     "bemerkung": "TRBS Anh. 1 Nr. 16/17 (Bremse, Hydraulik) – in der Vorlage ohne eigene Zeile, aber im Blatt „Bezug zum Stand der Technik\" geführt.",
+     "trbs_anhang1": [
+      16,
+      17
+     ]
+    },
+    {
+     "nr": 5,
+     "titel": "Stand der Technik: unabhängige Fahrschütze, abschließbarer Hauptschalter, Kennzeichnung und Stromlaufpläne",
+     "vfa": "M6",
+     "hazards": [
+      "MF-M10",
+      "MF-M07",
+      "MF-M17"
+     ],
+     "deckung": "voll",
+     "bemerkung": "Drei Unterzeilen wie in der Vorlage (Zeilen 24/26/28).",
+     "trbs_anhang1": [
+      20,
+      21
+     ]
+    },
+    {
+     "nr": 6,
+     "titel": "Notbetrieb und Personenbefreiung",
+     "vfa": "",
+     "hazards": [
+      "MF-M15"
+     ],
+     "deckung": "voll",
+     "bemerkung": "Handrad/Bremslüftung/Evakuierungssteuerung und Einweisung (EN 81-80 Nr. 60) – Grundlage der Aufgaben „Personenbefreiung\" auf dem Deckblatt.",
+     "trbs_anhang1": []
+    }
+   ]
+  },
+  {
+   "key": "fahrkorbdach",
+   "kuerzel": "F",
+   "titel": "Kabinendach",
+   "anlagenbereich": "Auf dem Fahrkorbdach",
+   "katalog": "81-20-mf-2026.9",
+   "zeilen": [
+    {
+     "nr": 1,
+     "titel": "Absturzgefahr",
+     "vfa": "F1",
+     "hazards": [
+      "MF-F01"
+     ],
+     "deckung": "voll",
+     "bemerkung": "Schwellen 300/500/850 mm und 700/1100 mm wie EN 81-20 5.4.7.",
+     "trbs_anhang1": [
+      15
+     ]
+    },
+    {
+     "nr": 2,
+     "titel": "Einzugsgefahr",
+     "vfa": "F2",
+     "hazards": [
+      "MF-F02"
+     ],
+     "deckung": "voll",
+     "bemerkung": "",
+     "trbs_anhang1": []
+    },
+    {
+     "nr": 3,
+     "titel": "Gegengewicht / Nachbaraufzug",
+     "vfa": "F3",
+     "hazards": [
+      "MF-F03"
+     ],
+     "deckung": "voll",
+     "bemerkung": "Frage 9.6 bildet die Excel-Liste ab; nur bei mehreren Aufzügen im Schacht (4.8).",
+     "trbs_anhang1": [
+      4
+     ]
+    },
+    {
+     "nr": 4,
+     "titel": "Stand der Technik: Schutzraum, Not-Halt und Inspektionssteuerung auf dem Fahrkorbdach",
+     "vfa": "F5",
+     "hazards": [
+      "MF-F04",
+      "MF-F06",
+      "MF-F05"
+     ],
+     "deckung": "voll",
+     "bemerkung": "Inspektionsgeschwindigkeit ist Frage 9.8c in MF-F05.",
+     "trbs_anhang1": [
+      5,
+      22
+     ]
+    },
+    {
+     "nr": 5,
+     "titel": "Notruf auf dem Fahrkorbdach",
+     "vfa": "K11",
+     "hazards": [
+      "MF-F09"
+     ],
+     "deckung": "voll",
+     "bemerkung": "Die Grube steht im Schacht-Blatt (MF-G05).",
+     "trbs_anhang1": []
+    }
+   ]
+  },
+  {
+   "key": "schacht",
+   "kuerzel": "S",
+   "titel": "Fahrschacht und Schachtgrube",
+   "anlagenbereich": "In der Schachtgrube und im Fahrschacht",
+   "katalog": "81-20-mf-2026.9",
+   "zeilen": [
+    {
+     "nr": 1,
+     "titel": "Beleuchtung",
+     "vfa": "S1",
+     "hazards": [
+      "MF-S01",
+      "MF-G01"
+     ],
+     "deckung": "voll",
+     "bemerkung": "Schacht und Grube getrennt (TRBS Anh. 1 Nr. 8).",
+     "trbs_anhang1": [
+      8
+     ]
+    },
+    {
+     "nr": 2,
+     "titel": "Schachtzugänge, Schachtabsperrungen, Selbstbefreiung und Notruf in der Grube",
+     "vfa": "S2",
+     "hazards": [
+      "MF-S07",
+      "MF-G05"
+     ],
+     "deckung": "teilweise",
+     "bemerkung": "Absperrungen (Kundendienstfahrzeug, Flatterband) sind Arbeitsmittel des Monteurs (DGUV 209-085) und keine Anlageneigenschaft – im MF bewusst nicht erhoben; bei Bedarf Freitext oder Hinweis für den Servicetechniker.",
+     "trbs_anhang1": []
+    },
+    {
+     "nr": 3,
+     "titel": "Grubenleiter / Zugang zur Schachtgrube",
+     "vfa": "S3",
+     "hazards": [
+      "MF-G04"
+     ],
+     "deckung": "voll",
+     "bemerkung": "Frage 11.6 bildet die Excel-Liste ab (fest, mobil, schwer, kunde, fahrzeug, keine).",
+     "trbs_anhang1": [
+      6
+     ]
+    },
+    {
+     "nr": 4,
+     "titel": "Stand der Technik: Schutzraum, Not-Halt und Inspektionssteuerung in der Schachtgrube, Puffer",
+     "vfa": "S5",
+     "hazards": [
+      "MF-G02",
+      "MF-G03",
+      "MF-G06"
+     ],
+     "deckung": "voll",
+     "bemerkung": "Auch Excel S4 (Inspektionssteuerung, Not-Aus Grube).",
+     "trbs_anhang1": [
+      5,
+      7,
+      18
+     ]
+    },
+    {
+     "nr": 5,
+     "titel": "Gegengewicht und Nachbaraufzug in der Schachtgrube",
+     "vfa": "",
+     "hazards": [
+      "MF-G07",
+      "MF-G08"
+     ],
+     "deckung": "voll",
+     "bemerkung": "TRBS Anh. 1 Nr. 2 und 3 – in der Vorlage nur im Blatt „Bezug zum Stand der Technik\".",
+     "trbs_anhang1": [
+      2,
+      3
+     ]
+    },
+    {
+     "nr": 6,
+     "titel": "Verschmutzung, Wasser und Umgebungsbedingungen",
+     "vfa": "S4",
+     "hazards": [
+      "MF-U02",
+      "MF-U07"
+     ],
+     "deckung": "voll",
+     "bemerkung": "MF-U02/U07 sind Ortsfragen über alle Bereiche (Zugang, Triebwerksraum, Schacht, Grube); im Bericht hier zusammengefasst.",
+     "trbs_anhang1": []
+    }
+   ]
+  }
+ ],
+ "cyber": {
+  "key": "cyber",
+  "kuerzel": "C",
+  "titel": "Cybersicherheit",
+  "anlagenbereich": "Cybersicherheit – anlagenbezogene Beurteilung nach TRBS 1115-1",
+  "katalog": "cyber-mf-2026.2",
+  "zeilen": [
+   {
+    "nr": 1,
+    "titel": "Steuerung",
+    "vfa": "",
+    "hazards": [
+     "CY-C01"
+    ],
+    "deckung": "voll",
+    "bemerkung": "Schnittstellenkategorie 3.1.2 deckt die Excel-Gefährdungen ab (keine / kabelgebunden / Benutzer / kabellos / Fernzugriff); Relais-Steuerungen sind nicht zutreffend.",
+    "trbs_anhang1": [],
+    "komponente": "steuerung",
+    "erlaeuterung": "Die Steuerung sitzt in einem geschlossenen Schaltschrank im Maschinenraum bzw. im Steuerschrank (maschinenraumlos) ohne Zugriff von außen. Einstellungen sind nur vor Ort möglich; Parameteränderungen sind durch ein Passwort gesichert. Ergänzend gelten die Festlegungen zu Maschinenraum/Steuerschrank."
+   },
+   {
+    "nr": 2,
+    "titel": "PESSRAL-Komponenten",
+    "vfa": "",
+    "hazards": [
+     "CY-C02"
+    ],
+    "deckung": "voll",
+    "bemerkung": "Elektronische UCM-/SAFÜ-Module (CY-C07/C08) laufen in dieser Variante unter PESSRAL (Klärung K-R03).",
+    "trbs_anhang1": [],
+    "komponente": "pessral",
+    "erlaeuterung": "PESSRAL-Komponenten befinden sich im Maschinenraum, im Schaltschrank oder im Schacht und sind von außen nicht erreichbar. Ein Eingriff ist nur manuell vor Ort möglich und setzt die Anlage dabei still."
+   },
+   {
+    "nr": 3,
+    "titel": "Frequenzumrichter",
+    "vfa": "",
+    "hazards": [
+     "CY-C03"
+    ],
+    "deckung": "voll",
+    "bemerkung": "",
+    "trbs_anhang1": [],
+    "komponente": "fu",
+    "erlaeuterung": "Der Umrichter befindet sich im Maschinenraum, im Schaltschrank oder im Schacht. Einstellungen sind nur vor Ort möglich; das Handterminal wird nur zum Parametrieren angesteckt und danach sicher verwahrt. Ergänzend gelten die Festlegungen zu Maschinenraum/Steuerschrank und Aufzugsschacht."
+   },
+   {
+    "nr": 4,
+    "titel": "Notruf",
+    "vfa": "",
+    "hazards": [
+     "CY-C04"
+    ],
+    "deckung": "voll",
+    "bemerkung": "Routineruf/Testruf = Frage 3.4.4 (Kompensation).",
+    "trbs_anhang1": [],
+    "komponente": "notruf",
+    "erlaeuterung": "Das Notrufgerät sitzt auf dem Fahrkorbdach; ein Zugriff über die Telefon-/Mobilfunkverbindung ist grundsätzlich möglich. Die Rufnummer ist nur dem Befreiungsdienst bekannt und an der Anlage nicht dokumentiert. Das Gerät setzt in festen Abständen einen Routineruf ab; bleibt er aus, wird ein Serviceeinsatz ausgelöst."
+   },
+   {
+    "nr": 5,
+    "titel": "Türsteuergerät",
+    "vfa": "",
+    "hazards": [
+     "CY-C06"
+    ],
+    "deckung": "voll",
+    "bemerkung": "",
+    "trbs_anhang1": [],
+    "komponente": "tuer",
+    "erlaeuterung": "Das Türsteuergerät ist auf dem Fahrkorbdach verbaut und nur über den Schacht erreichbar. Einstellungen sind nur vor Ort möglich; das Handterminal wird nur zum Parametrieren angesteckt und danach sicher verwahrt. Ergänzend gelten die Festlegungen zum Aufzugsschacht."
+   },
+   {
+    "nr": 6,
+    "titel": "Schachtentrauchung und bauseitige Einrichtungen (Gebäudeschnittstelle)",
+    "vfa": "",
+    "hazards": [
+     "CY-C14"
+    ],
+    "deckung": "voll",
+    "bemerkung": "Die Riedl-Vorlage führt Schachtentrauchung und bauseitige Einrichtungen getrennt; im CY-Katalog ist beides die Gebäudeschnittstelle (3.14.1 rückwirkungsfrei, 3.14.2 sicherer Zustand). Hersteller/Typ werden trotzdem getrennt erfasst.",
+    "trbs_anhang1": [],
+    "komponente": "gebaeude",
+    "erlaeuterung": "Die Steuerung der Schachtentrauchung sitzt im Maschinenraum oder in einem abgeschlossenen Schaltschrank; Einstellungen sind nur vor Ort möglich. Bei Störung oder Stromausfall öffnet der Rauchabzug, ein gefährlicher Zustand entsteht nicht. Bauseitige Systeme (Zutrittskontrolle, Brandmeldeanlage, Kartenleser, Notstrom) wirken über potenzialfreie Kontakte auf den nicht sicherheitsgerichteten Teil der Steuerung; die Schnittstelle ist rückwirkungsfrei. Die Cybersicherheit dieser Systeme selbst beurteilt deren Hersteller bzw. der Betreiber."
+   },
+   {
+    "nr": 7,
+    "titel": "Zugang und Zugriff: Maschinenraum/Steuerschrank, Aufzugsschacht, Schlüsseldepot, Servicegeräte",
+    "vfa": "",
+    "hazards": [
+     "CY-Z01",
+     "CY-Z04",
+     "CY-Z05"
+    ],
+    "deckung": "voll",
+    "bemerkung": "Die Zugangsfragen 2.1–2.3 wirken zusätzlich als Modifier an jeder Komponente (K-C21).",
+    "trbs_anhang1": [],
+    "komponente": "",
+    "erlaeuterung": "Maschinenraum und Steuerschrank sind nur befugten Personen zugänglich; das Schloss hat keine Standardschließung, der Schlüssel liegt für die Notbefreiung im Schlüsseldepot. Der Schacht ist nur über die Schachttüren mit dem vorgesehenen Werkzeug (Dreikant) betretbar; das Werkzeug ist im Maschinenraum gesichert hinterlegt. Die Schließung des Schlüsseldepots legt der Befreiungsdienst fest, die Ausgabe der Schlüssel ist organisatorisch geregelt."
+   },
+   {
+    "nr": 8,
+    "titel": "Netz, Fernzugriff und Fernwartung (nur bei vernetzter Anlage)",
+    "vfa": "",
+    "hazards": [
+     "CY-C11",
+     "CY-C12",
+     "CY-C13",
+     "CY-N01",
+     "CY-N02"
+    ],
+    "deckung": "voll",
+    "bemerkung": "Ohne Netzanbindung (1.5) sind C11–C13 nicht zutreffend; Softwarestand (4.5) und Härtung (4.6) werden immer gefragt.",
+    "trbs_anhang1": [],
+    "komponente": "",
+    "erlaeuterung": ""
+   },
+   {
+    "nr": 9,
+    "titel": "Organisation und Nachweise: Herstellervorgaben, Rückwirkungsfreiheit, Wirksamkeit, Änderungen",
+    "vfa": "",
+    "hazards": [
+     "CY-O02",
+     "CY-O07",
+     "CY-O05",
+     "CY-O06",
+     "CY-O08"
+    ],
+    "deckung": "voll",
+    "bemerkung": "Bildet die Textblöcke „Allgemeines\" und „Überprüfung der Wirksamkeit\" der Vorlage als Fragen ab; Verantwortlichkeit/Notfallmanagement/Unterweisung (O01/O03/O04) bewusst nicht.",
+    "trbs_anhang1": [],
+    "komponente": "",
+    "erlaeuterung": ""
+   }
+  ]
+ },
+ "cyber_allgemeines": [
+  "Bei überwachungsbedürftigen Anlagen nach ÜAnlG ist grundsätzlich von einem erheblichen Risiko für die Sicherheit und Gesundheit von Beschäftigten und weiteren Personen im Gefahrenbereich auszugehen; das wurde bei der Beurteilung berücksichtigt.",
+  "Grundlage der Bewertung der Cybersicherheitsmaßnahmen sind TRBS 1115 Teil 1 und IEC 62443.",
+  "Die Umsetzung von Cybersicherheitsmaßnahmen darf bestehende Sicherheitsfunktionen nicht beeinträchtigen; die Rückwirkungsfreiheit ist sicherzustellen.",
+  "Die Vorgaben der Hersteller der eingesetzten Komponenten werden bei der Festlegung der Maßnahmen berücksichtigt.",
+  "Wirksamkeit und Funktionsfähigkeit der Maßnahmen werden regelmäßig nach TRBS 1115 Teil 1 (Abschnitte 5 und 8.2) geprüft."
+ ],
+ "cyber_wirksamkeit": [
+  "Die Maßnahmen sind in geeigneten Zeitabständen, nach Änderungen an der Anlage, bei Änderung des Stands der Technik und bei neuen Erkenntnissen zu Cyberbedrohungen zu überprüfen.",
+  "Änderungen im Umfeld der Aufzugsanlage sind der Wartungsfirma unverzüglich mitzuteilen und in der Gefährdungsbeurteilung zur Cybersicherheit zu vermerken; Maßnahmen sind anzupassen."
+ ],
+ "cyber_unterschrift": "Mit der Unterschrift wird bestätigt, dass die grundlegenden Anforderungen und Prinzipien der Cybersicherheit an Aufzugsanlagen bekannt sind. Das Dokument wird mit beiden Unterschriften gültig.",
+ "cyber_zues": [
+  {
+   "nr": 1,
+   "frage": "Wurden Cyberbedrohungen gemäß TRBS 1115 Teil 1 bei der Gefährdungsbeurteilung berücksichtigt?",
+   "erfuellung": "dokumentiert",
+   "fragen": [
+    "qo_zues_beruecksichtigt"
+   ],
+   "hazards": [
+    "CY-O05"
+   ],
+   "deckung": "voll"
+  },
+  {
+   "nr": 2,
+   "frage": "Sind die sicherheitsrelevanten MSR-Einrichtungen und weitere schutzbedürftige Einrichtungen erfasst und dokumentiert?",
+   "erfuellung": "dokumentiert",
+   "fragen": [
+    "qo_zues_erfasst"
+   ],
+   "hazards": [
+    "CY-O05",
+    "CY-C01",
+    "CY-C02",
+    "CY-C03",
+    "CY-C04",
+    "CY-C06"
+   ],
+   "deckung": "teilweise"
+  },
+  {
+   "nr": 3,
+   "frage": "Wurde berücksichtigt, dass bei überwachungsbedürftigen Anlagen gemäß ÜAnlG stets von einem erheblichen Risiko auszugehen ist?",
+   "erfuellung": "dokumentiert",
+   "fragen": [
+    "qa_ueberwachungsbeduerftig",
+    "qo_zues_erhebliches_risiko"
+   ],
+   "hazards": [
+    "CY-O05"
+   ],
+   "deckung": "voll"
+  },
+  {
+   "nr": 4,
+   "frage": "Erfolgte die Festlegung der Maßnahmen durch fachkundige Personen (TRBS 1115-1 3.3.2)?",
+   "erfuellung": null,
+   "fragen": [],
+   "hazards": [],
+   "deckung": "nicht_erhoben"
+  },
+  {
+   "nr": 5,
+   "frage": "Wurde der Stand der Technik herangezogen?",
+   "erfuellung": "dokumentiert",
+   "fragen": [
+    "qo_zues_stand_technik",
+    "qn_softwarestand",
+    "qa_hersteller_vorgaben"
+   ],
+   "hazards": [
+    "CY-O05",
+    "CY-N01",
+    "CY-O02"
+   ],
+   "deckung": "voll"
+  },
+  {
+   "nr": 6,
+   "frage": "Wurden Maßnahmen mit den Mindestinhalten nach TRBS 1115-1 4.5.2 im erforderlichen Umfang festgelegt?",
+   "erfuellung": "abgeleitet",
+   "fragen": [],
+   "hazards": [
+    "CY-C01",
+    "CY-C02",
+    "CY-C03",
+    "CY-C04",
+    "CY-C06",
+    "CY-C11",
+    "CY-C12",
+    "CY-C13",
+    "CY-C14"
+   ],
+   "deckung": "teilweise"
+  },
+  {
+   "nr": 7,
+   "frage": "Gibt es Vorgaben von Herstellern und wurden diese berücksichtigt?",
+   "erfuellung": null,
+   "fragen": [
+    "qa_hersteller_vorgaben"
+   ],
+   "hazards": [
+    "CY-O02"
+   ],
+   "deckung": "voll"
+  },
+  {
+   "nr": 8,
+   "frage": "Sind Art, Umfang und Fristen der Überprüfungen und Kontrollen der Maßnahmen schriftlich festgelegt?",
+   "erfuellung": null,
+   "fragen": [
+    "qo_pruefung_fristen"
+   ],
+   "hazards": [
+    "CY-O05"
+   ],
+   "deckung": "voll"
+  },
+  {
+   "nr": 9,
+   "frage": "Wird sichergestellt, dass CS-Maßnahmen die Sicherheitsmaßnahmen nicht negativ beeinflussen (Rückwirkungsfreiheit)?",
+   "erfuellung": null,
+   "fragen": [
+    "qo_rueckwirkung",
+    "qc_geb_rueckwirkungsfrei"
+   ],
+   "hazards": [
+    "CY-O07",
+    "CY-C14"
+   ],
+   "deckung": "voll"
+  },
+  {
+   "nr": 10,
+   "frage": "Werden neue Erkenntnisse zur Cybersicherheit in die Gefährdungsbeurteilung eingebunden?",
+   "erfuellung": null,
+   "fragen": [
+    "qo_erkenntnisse",
+    "qn_softwarestand"
+   ],
+   "hazards": [
+    "CY-O08",
+    "CY-N01"
+   ],
+   "deckung": "voll"
+  },
+  {
+   "nr": 11,
+   "frage": "Sind Unterweisungen von Beschäftigten zur Cybersicherheit durchgeführt?",
+   "erfuellung": null,
+   "fragen": [],
+   "hazards": [],
+   "deckung": "nicht_erhoben"
+  },
+  {
+   "nr": 12,
+   "frage": "Liegt für die CS-Maßnahmen ein Nachweis der Wirksamkeit (TRBS 1115-1 Abschn. 5) vor?",
+   "erfuellung": null,
+   "fragen": [
+    "qo_wirksamkeit"
+   ],
+   "hazards": [
+    "CY-O05"
+   ],
+   "deckung": "voll"
+  },
+  {
+   "nr": 13,
+   "frage": "Liegt für die CS-Maßnahmen eine Bestätigung der Funktionsfähigkeit (TRBS 1115-1 Abschn. 8.2) vor?",
+   "erfuellung": null,
+   "fragen": [
+    "qo_funktion"
+   ],
+   "hazards": [
+    "CY-O05"
+   ],
+   "deckung": "voll"
+  },
+  {
+   "nr": 14,
+   "frage": "Wurden nach Aussage des Betreibers prüfpflichtige Änderungen mit Einfluss auf die Cybersicherheit durchgeführt?",
+   "erfuellung": null,
+   "fragen": [
+    "qo_aenderungen",
+    "qo_aenderungen_geprueft"
+   ],
+   "hazards": [
+    "CY-O06"
+   ],
+   "deckung": "voll"
+  }
+ ],
+ "komponenten_stamm": [
+  {
+   "key": "steuerung",
+   "label": "Steuerung",
+   "hersteller": [
+    "NEW",
+    "Schneider Lisa",
+    "Hydroware",
+    "KLST",
+    "Kollmorgen",
+    "Riedl"
+   ]
+  },
+  {
+   "key": "pessral",
+   "label": "PESSRAL-Komponenten",
+   "hersteller": [
+    "NEW",
+    "Elgo"
+   ]
+  },
+  {
+   "key": "fu",
+   "label": "Frequenzumrichter",
+   "hersteller": [
+    "Ziehl-Abegg",
+    "LiftEquip",
+    "Brunner & Fecher",
+    "Nidec",
+    "KEB",
+    "Danfoss"
+   ]
+  },
+  {
+   "key": "notruf",
+   "label": "Notruf",
+   "hersteller": [
+    "Base",
+    "Telegärtner",
+    "Safeline",
+    "Telenot",
+    "Behnke",
+    "Ascendor",
+    "MS AG"
+   ]
+  },
+  {
+   "key": "tuer",
+   "label": "Türsteuergerät",
+   "hersteller": [
+    "Riedl Quantum",
+    "Meiller",
+    "Fermator",
+    "Wittur",
+    "Langer & Laumann"
+   ]
+  },
+  {
+   "key": "entrauchung",
+   "label": "Schachtentrauchung",
+   "hersteller": [
+    "B.A.S.E.",
+    "D&H"
+   ]
+  },
+  {
+   "key": "bauseitig",
+   "label": "bauseitige Einrichtungen",
+   "hersteller": []
+  }
+ ],
+ "nicht_enthalten": {
+  "MF-Z06": "Zugang über fremde Räume / Materialtransport – in der Vorlage nicht abgefragt.",
+  "MF-Z08": "Flucht- und Rettungswege – Arbeitsstätte (ASR A2.3), in der Vorlage nicht abgefragt.",
+  "MF-M04": "Raumhöhe/Freiflächen – Konstruktionspunkt, in der Vorlage nicht abgefragt.",
+  "MF-M05": "Ebenen/Podeste im Triebwerksraum – in der Vorlage nicht abgefragt.",
+  "MF-M06": "Boden im Triebwerksraum – in der Vorlage nicht abgefragt (Verschmutzung über MF-U02).",
+  "MF-M09": "Motorschutz – EN 81-80 Nr. 67, kein TRBS-Anhang-1-Punkt, in der Vorlage nicht abgefragt.",
+  "MF-M11": "Laufzeitüberwachung – wie MF-M09.",
+  "MF-M12": "Phasenumkehrschutz – wie MF-M09.",
+  "MF-M14": "Hebezeuge/Anschlagpunkte – Instandhaltungsthema, in der Vorlage nicht abgefragt.",
+  "MF-M18": "Sprechverbindung Triebwerksraum–Fahrkorb – nur bei Förderhöhe > 30 m, in der Vorlage nicht abgefragt.",
+  "MF-M19": "Aufzugsfremde Einrichtungen im Triebwerksraum – in der Vorlage nicht abgefragt.",
+  "MF-M20": "Not-Halt im Rollenraum – Sonderfall, in der Vorlage nicht abgefragt.",
+  "MF-M21": "Notendschalter – EN 81-80 Nr. 57, kein TRBS-Anhang-1-Punkt.",
+  "MF-T05": "Feuerwiderstand der Schachttüren – Bauaufsicht, in der Vorlage nicht abgefragt.",
+  "MF-T07": "Fläche unter der Schachttürschwelle – EN 81-80 Nr. 9, kein TRBS-Anhang-1-Punkt.",
+  "MF-T08": "Rückhaltung der Türblätter – EN 81-80 Nr. 26, kein TRBS-Anhang-1-Punkt.",
+  "MF-T09": "Verbindung mehrteiliger Türblätter – EN 81-80 Nr. 35, kein TRBS-Anhang-1-Punkt.",
+  "MF-K07": "Lüftung des Fahrkorbs – EN 81-80 Nr. 44, in der Vorlage nicht abgefragt.",
+  "MF-F07": "Tragfähigkeit Fahrkorbdach / Dachklappe – EN 81-80 Nr. 41/42, in der Vorlage nicht abgefragt.",
+  "MF-F08": "Notbeleuchtung Fahrkorbdach – in der Vorlage nicht abgefragt.",
+  "MF-S02": "Beleuchtung an den Schachtzugängen – Arbeitsstätte, in der Vorlage nicht abgefragt.",
+  "MF-S03": "Schachtumwehrung – Konstruktionspunkt (Gitterschächte), in der Vorlage nicht abgefragt.",
+  "MF-S04": "Führungsschienen nicht aus Stahl – Sonderfall Altanlagen.",
+  "MF-S05": "Fangvorrichtung/Begrenzer/Schlaffseil – Prüfumfang der ZÜS und Wartung (Entscheidung 17.09.2026: Prüfpunkte ohne Katalogfrage bleiben Wartung/ZÜS).",
+  "MF-S06": "Aufzugsfremde Einrichtungen im Schacht – in der Vorlage nicht abgefragt.",
+  "MF-U01": "Asbest/Schadstoffe – eigenes Thema (Schadstoffkataster), in der Vorlage nicht abgefragt.",
+  "MF-U04": "Gefahrstofflagerung chemisch/biologisch – Sondernutzung.",
+  "MF-U05": "Gefahrstofftransport – Sondernutzung.",
+  "MF-U06": "Explosionsschutz – Sondernutzung.",
+  "MF-U08": "Bauliche Änderungen/Statik – in der Vorlage nicht abgefragt.",
+  "MF-U11": "Löschanlage/Sprinkler – Sonderfall.",
+  "MF-U12": "Fremdgewerke/Reinigung – Betreiberorganisation, in der Vorlage nicht abgefragt.",
+  "MF-U13": "Prüfnachweise der Gewerkeschnittstellen – in der Vorlage nicht abgefragt.",
+  "MF-U14": "Aufzugszugang an Fahrwegen – Sonderfall (Tiefgarage).",
+  "MF-U15": "Abgase/Emissionen, Lärm, Unfallhistorie – Dokumentation; in der Vorlage nur als Freitext.",
+  "MF-SF01": "Feuerwehraufzug – Sonderfunktion mit eigenem Prüfumfang (EN 81-72); in der Vorlage nur als Istzustand „Feuerwehraufzug\" (Grün).",
+  "MF-D06": "Konformität Baujahr/Ausstattung – Plausibilitätsprüfung des vollen Typs, für den Riedl-Bericht nicht vorgesehen.",
+  "CY-C05": "Schachtkopierung – nicht unter den sieben Riedl-Komponenten.",
+  "CY-C07": "UCM-Erkennung – in dieser Variante Teil der PESSRAL-Zeile (K-R03).",
+  "CY-C08": "SAFÜ – in dieser Variante Teil der PESSRAL-Zeile (K-R03).",
+  "CY-C09": "Tragmittelüberwachung – nicht unter den sieben Riedl-Komponenten.",
+  "CY-C10": "Hydraulischer Steuerblock – nicht unter den sieben Riedl-Komponenten.",
+  "CY-O01": "Verantwortlichkeit/Fachkunde – in der Vorlage nicht abgefragt (Unterschrift des Verwenders).",
+  "CY-O03": "Notfallmanagement Cyber – in der Vorlage nicht abgefragt.",
+  "CY-O04": "Unterweisung Cyber – in der Vorlage nur über die Unterschriftserklärung."
+ },
+ "klaerungen": [
+  {
+   "id": "K-R01",
+   "thema": "Umfangsregel",
+   "vorschlag": "Umfang = VFA-Zeilen + 22 TRBS-Anhang-1-Punkte + Betreiberpflichten (63 von 100 MF-Gefährdungen). Vorschlag: so lassen; einzelne Gefährdungen aus NICHT_ENTHALTEN bei Bedarf in eine Zeile ziehen.",
+   "alternative": "Alternative: nur die VFA-Zeilen (ohne Nr. M4 Antrieb/Bremse/Hydraulik, S5 Gegengewicht/Nachbaraufzug, K9 Schachttüren) – dann fehlen TRBS-Anhang-1-Punkte 2, 3, 9, 11, 12, 16, 17 im Bericht."
+  },
+  {
+   "id": "K-R02",
+   "thema": "Freitextzeile „Sonstiges\" je Blatt",
+   "vorschlag": "Vorschlag: die Freitext-Gefährdung des Befund-Bereichs (eigene Einstufung Kein/Niedrig/Mittel/Hoch) als letzte Zeile jedes Blatts drucken; sie zählt in die Blatt-Ampel.",
+   "alternative": "Alternative: kein Freitext, alles über den Katalog."
+  },
+  {
+   "id": "K-R03",
+   "thema": "PESSRAL-Zeile",
+   "vorschlag": "Vorschlag: elektronische UCM-/SAFÜ-Module unter „PESSRAL-Komponenten\" (CY-C02) führen; CY-C07/C08 bleiben draußen.",
+   "alternative": "Alternative: C07 und C08 als eigene Zeilen 2a/2b aufnehmen (je 7 Fragen, meist nicht zutreffend)."
+  },
+  {
+   "id": "K-R04",
+   "thema": "Schachtentrauchung im Cyber-Blatt",
+   "vorschlag": "Vorschlag: mit den bauseitigen Einrichtungen als Gebäudeschnittstelle (CY-C14) bewerten, Hersteller/Typ getrennt erfassen.",
+   "alternative": "Alternative: eigene Komponente im CY-Katalog anlegen (neue Fragen 3.15.x, Regeln REVIEW_REQUIRED)."
+  },
+  {
+   "id": "K-R05",
+   "thema": "Zeilen ohne Excel-Vorbild",
+   "vorschlag": "Vorschlag: M4 „Antrieb, Bremse und Hydraulik\", M6 „Notbetrieb und Personenbefreiung\", S5 „Gegengewicht und Nachbaraufzug in der Grube\" und K9 „Schachttüren\" bleiben (TRBS-Punkte / Grundlage des Deckblatts).",
+   "alternative": "Alternative: streichen (siehe K-R01)."
+  },
+  {
+   "id": "K-R06",
+   "thema": "Nohl-Legende",
+   "vorschlag": "Vorschlag: die Nohl-Matrix als Legende drucken und die Engine-Stufe daneben mit R-Bereich (0 / 1 / 3–5 / 7–10) ausweisen, damit die Leser die gewohnte Skala wiederfinden.",
+   "alternative": "Alternative: nur Kein/Niedrig/Mittel/Hoch mit Ampel, ohne R-Werte."
+  },
+  {
+   "id": "K-R07",
+   "thema": "Block Z (Aufgaben Verwender / Wartungsfirma / Servicetechniker)",
+   "vorschlag": "Vorschlag: aus den Maßnahmen der roten/gelben Zeilen nach „Verantwortlich\" vorbelegen (Betreiber/Aufzugswärter -> Verwender; Wartungsfirma; Servicetechniker) und als Freitext nachbearbeitbar halten.",
+   "alternative": "Alternative: reiner Freitext wie in der Vorlage."
+  },
+  {
+   "id": "K-R08",
+   "thema": "Spalte „Termin\"",
+   "vorschlag": "Vorschlag: aus der Maßnahmengruppe vorbelegen (sofort -> „Sofort\", mittel -> „Mittelfristig\"), Auswahlliste der Vorlage (Sofort … Bis zur ZÜS-Prüfung) zum Überschreiben.",
+   "alternative": "Alternative: Termin als Datum."
+  }
+ ]
+}

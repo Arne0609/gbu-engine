@@ -13,7 +13,7 @@ Dieses Verzeichnis enthält die Engine, die REST-API und die Referenz-UI. Der Se
 - `db.ts` – Pool aus `DATABASE_URL` (Railway, SSL automatisch) oder `PG*`-Variablen; optionales Schema.
 - `seed_catalogs.ts` / `seed_loader.ts` – Schema anlegen und die sechs Norm-Kataloge laden.
 - `gbu_engine_schema.sql` – Datenmodell (21 Enums, 31 Tabellen).
-- `norm_*.json` – neun Regelversionen (81-20, 81-80, 2026, EN 81-41, Cyber voll/minimal, **81-20 mehrfragig**, **Cyber komponentenbasiert**, **81-80 Bestand als Fragebogen**); dazu `norm_fahrtreppe.json` (noch nicht in `seed_catalogs.ts`).
+- `norm_*.json` – elf Regelversionen (81-20, 81-80, 2026, EN 81-41, Cyber voll/minimal, **81-20 mehrfragig**, **Cyber komponentenbasiert**, **81-80 Bestand als Fragebogen**, **Variante Riedl** GBU + Cyber); dazu `norm_fahrtreppe.json` (noch nicht in `seed_catalogs.ts`).
 - `gen_mf_catalog.py` + `mf_content/` – Generator und Inhalt des mehrfragigen Typs (Frage → Gefährdung mit Rollen, Anlagenmerkmale als Filter, Zahlenschwellen, Kompensation über Priorität). `gen_mf_review_xlsx.py` erzeugt daraus die Klärungsliste `GBU_MF_Klaerungsliste.xlsx` für die fachliche Gegenlesung.
 - `gen_ft_catalog.py` + `ft_content/` – Generator und Inhalt des Typs **Fahrtreppen und Fahrsteige** (ein Typ, drei Erhebungsbereiche: B Betrieb/Betreiber, I Instandhaltung, N Bestandsanlage nach DIN EN 115-2 Anhang B; Umschalter `qa_teil_instandhaltung` und `qa_teil_en115_2`). `gen_ft_review_xlsx.py` erzeugt `GBU_Fahrtreppe_Klaerungsliste.xlsx`, `ft_smoke.ts` prüft den Katalog gegen den Referenz-Evaluator.
 - `gen_cy_catalog.py` + `cy_content/` – Generator und Inhalt des Typs **Cyber-GBU komponentenbasiert** (fünf Erhebungsbereiche A/Z/C/N/O; je Komponente „vorhanden → Schnittstellenkategorie → Zugang frei → Maßnahmen", unabhängige Sicherheitseinrichtung als Kompensation; 14 ZÜS-Prüfpunkte in `cy_zues_map.json`; Regelversion `cyber-mf-2026.2`, 25 Klärungen entschieden und alle 188 Regeln fachlich freigegeben 03.09.2026). `gen_cy_review_xlsx.py` erzeugt `GBU_Cyber_Klaerungsliste.xlsx`, `gen_cy_regelpruefung_xlsx.py`/`apply_cy_regelpruefung.py` bilden die Regelprüfung (Freigabe der Eigenregeln ohne Klärungspunkt), `cy_smoke.ts` prüft den Katalog gegen den Referenz-Evaluator (inkl. Lückensuche über alle Schnittstellen-/Maßnahmen-Kombinationen), `cy_catalog.test.ts` ist der E2E-Test gegen PostgreSQL. `catalog_check.py` bündelt die Konsistenz-/Schemaprüfung ohne Import-Nebenwirkungen.
@@ -204,6 +204,44 @@ Prioritäten und Zeitplan); die Prioritätsstufe wird aus A.1/A.2 berechnet
 MF-Katalog geschlossen. 68 der 99 MF-Gefährdungen haben eine Entsprechung in
 EN 81-80; der MF-Katalog ist bewusst weiter gefasst (Umfeld, Gebäude,
 Betreiberorganisation).
+
+## Variante „Riedl" (VFA-Umfang, abgeleitet)
+
+GBU-Variante für Riedl Aufzüge (Festlegung 17.09.2026), die die beiden bislang
+genutzten Excel-Vorlagen ersetzt (VFA „GBU Anlage leer" R 1.7.2 und „Vorlage
+GBU Cybersicherheit ab 04-26"). **Abgeleitet** aus dem mehrfragigen Katalog
+und dem Cyber-Katalog – gleiche Fragen, Gefährdungen, Regeln, Maßnahmen,
+Karten und Nachweise mit denselben Codes, nur weniger Umfang, plus die
+Blattstruktur der Vorlage für den Bericht:
+
+```bash
+python3 gen_riedl_catalog.py                    # -> norm_riedl_mf.json (riedl-mf-2026.1),
+                                                #    norm_riedl_cyber.json (riedl-cyber-2026.1),
+                                                #    riedl_map.json (Blätter, Zeilen, Ampel, Texte)
+python3 gen_riedl_review_xlsx.py                # -> GBU_Riedl_Zuordnung.xlsx (Gegenlesung)
+node --experimental-strip-types riedl_smoke.ts  # Struktur, Deckungsgleichheit, Ampel, leerer Bogen
+python3 gen_app_asset.py norm_riedl_mf.json     # -> gbu_aufzug_app/assets/engine/
+python3 gen_app_asset.py norm_riedl_cyber.json  #    (riedl_map.json unverändert als Asset kopieren)
+```
+
+Inhalt in `riedl_content.py`: sechs Blätter (Kabine, Zugang, Maschinenraum,
+Kabinendach, Fahrschacht/Schachtgrube, Cybersicherheit) mit den Zeilen der
+Vorlage; je Zeile die MF- bzw. CY-Gefährdungen, die sie bilden. Umfangsregel:
+VFA-Zeile **oder** TRBS-3121-Anhang-1-Punkt (alle 22 vertreten) **oder**
+Betreiberpflicht des Deckblatts; alles andere steht mit Begründung in
+`NICHT_ENTHALTEN` – der Generator bricht ab, wenn eine Gefährdung weder
+zugeordnet noch begründet ist. Ergebnis: **202 Fragen, 63 Gefährdungen,
+270 Regeln, 65 Karten** (MF: 295/100/404/83) und **57 Fragen, 19 Gefährdungen,
+114 Regeln** (CY: 82/27/188). Bewertung: Engine-Stufe als Ampel (Kein
+Risiko/Niedrig = Grün, Mittel = Gelb, Hoch = Rot; unvollständig = offen),
+Blatt- und Gesamtampel nach der Deckblatt-Formel der Vorlage.
+
+`katalog_teilmenge.py` ist das gemeinsame Ableitungsverfahren (wie
+`gen_en8180_catalog.py`, aber importierbar); es nimmt auch die Steuerfragen
+der begründeten Annahmen und Nachweise mit (Baujahr, Konformitätsnachweis,
+ZÜS-Bericht), sonst würde die Teilmenge anders bewerten als das Original –
+`riedl_smoke.ts` prüft das auf 300 zufälligen Antwortsätzen je Katalog.
+In `seed_catalogs.ts` eingetragen (zehnter und elfter Katalog).
 
 ## Cyber-Typ ändern
 

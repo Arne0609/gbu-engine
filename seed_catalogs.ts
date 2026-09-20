@@ -29,6 +29,8 @@ export const CATALOG_FILES = [
   'norm_81_20_mf.json',
   'norm_cyber_mf.json',
   'norm_81_80_mf.json',
+  'norm_riedl_mf.json',     // Variante Riedl (VFA-Umfang), abgeleitet aus norm_81_20_mf.json
+  'norm_riedl_cyber.json',  // Variante Riedl, Cyber-Teil, abgeleitet aus norm_cyber_mf.json
 ];
 
 export async function applySchema(db: any): Promise<void> {
