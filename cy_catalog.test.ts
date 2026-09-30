@@ -21,7 +21,7 @@ const HOST = process.env.PGHOST ?? '127.0.0.1';
 const USER = process.env.PGUSER ?? 'postgres';
 const DB = 'gbu_cy_e2e';
 const schemaSql = readFileSync(new URL('./gbu_engine_schema.sql', import.meta.url), 'utf8');
-const seed = JSON.parse(readFileSync(new URL('./norm_cyber_mf.json', import.meta.url).pathname, 'utf8'));
+const seed = JSON.parse(readFileSync(new URL('./norm_cyber_mf.json', import.meta.url), 'utf8'));
 
 let pool: pg.Pool;
 let rv: string;

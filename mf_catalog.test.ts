@@ -20,7 +20,7 @@ const HOST = process.env.PGHOST ?? '127.0.0.1';
 const USER = process.env.PGUSER ?? 'postgres';
 const DB = 'gbu_mf_e2e';
 const schemaSql = readFileSync(new URL('./gbu_engine_schema.sql', import.meta.url), 'utf8');
-const seed = JSON.parse(readFileSync(new URL('./norm_81_20_mf.json', import.meta.url).pathname, 'utf8'));
+const seed = JSON.parse(readFileSync(new URL('./norm_81_20_mf.json', import.meta.url), 'utf8'));
 
 let pool: pg.Pool;
 let rv: string;
@@ -148,7 +148,7 @@ test('Katalog-Export fuer den Client traegt die neuen Felder', async () => {
 });
 
 test('Review 02.09.2026: jede Gefaehrdung hat eine ausdrueckliche Kein-Risiko-Regel, Massnahmen aller Treffer', async () => {
-  const seed = JSON.parse(readFileSync(new URL('./norm_81_20_mf.json', import.meta.url).pathname, 'utf8'));
+  const seed = JSON.parse(readFileSync(new URL('./norm_81_20_mf.json', import.meta.url), 'utf8'));
   const withNoRisk = new Set(seed.rules.filter((r: any) => r.result === 'NO_RISK').map((r: any) => r.hazard));
   const missing = seed.hazards.filter((h: any) => !withNoRisk.has(h.code)).map((h: any) => h.code);
   assert.deepEqual(missing, [], 'ohne NO_RISK-Regel: ' + missing.join(','));
@@ -182,7 +182,7 @@ test('Review 02.09.2026: jede Gefaehrdung hat eine ausdrueckliche Kein-Risiko-Re
 });
 
 test('K-K12: Hydraulikaufzug hat immer Tueruebrueckung -> ohne UCM HIGH, Frage 8.27 nicht noetig', async () => {
-  const seed = JSON.parse(readFileSync(new URL('./norm_81_20_mf.json', import.meta.url).pathname, 'utf8'));
+  const seed = JSON.parse(readFileSync(new URL('./norm_81_20_mf.json', import.meta.url), 'utf8'));
   const st = (a: Record<string, any>) => evaluate(seed, a).find((r) => r.hazard === 'MF-K12')!;
   assert.equal(st({ qa_aufzugsart: 'hydraulik', qa_ucm_a3: false }).status, 'HIGH');
   assert.equal(st({ qa_aufzugsart: 'hydraulik', qa_ucm_a3: false }).matched_rule, 'MF-K12-R1');
