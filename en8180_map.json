@@ -1,17 +1,80 @@
 {
- "quelle": "DIN EN 81-80:2004-02, Tabelle 1 sowie Anhang A (Tabellen A.1 und A.2)",
- "katalog": "81-20-mf-2026.3",
+ "quelle": "DIN EN 81-80:2019-11, Anhang A (normativ), Tabelle A.1, sowie Abschnitt 5.4 mit Tabelle 4 (Prioritäten und Zeitplan)",
+ "katalog": "81-20-mf-2026.10",
  "gegengelesen": "2026-09-04",
- "gegengelesen_hinweis": "Zuordnung und Deckungsangaben fachlich gegengelesen; die Bemerkungen zu den teilweise abgedeckten Punkten (Nr. 25, 33, 58) sind bestätigt.",
+ "gegengelesen_hinweis": "Zuordnung und Deckungsangaben der Ausgabe 2004 fachlich gegengelesen und mit der Spalte „Nr. in EN 81-80:2003\" auf die Nummerierung der Ausgabe 2019 gehoben. Noch nicht gegengelesen: die elf neuen Punkte und die 37 geänderten Prioritätsstufen.",
  "punkte": [
   {
-   "nr": 1,
-   "abschnitt": "5.1.4",
-   "titel": "Schädliche Stoffe an der Anlage (z. B. Asbest in Bremsbelägen, Löschkammern, Verkleidungen)",
-   "prioritaet": "Hoch",
-   "risikoprofil": [
-    "I/C-D"
+   "nr": "1.1",
+   "alt2003": "2",
+   "gruppe": "Allgemeines",
+   "titel": "Zugänglichkeit für Personen mit eingeschränkter Mobilität (EN 81-82)",
+   "prioritaet": "",
+   "zeitplan": "Kein Zeitplan; der Punkt verweist auf eine eigene Norm der Reihe EN 81",
+   "hazards": [
+    "MF-K10"
    ],
+   "deckung": "voll",
+   "bemerkung": "In der Prüfliste ohne Prioritätsstufe: der Punkt verweist auf eine eigene Norm der Reihe EN 81."
+  },
+  {
+   "nr": "1.2",
+   "alt2003": "4",
+   "gruppe": "Allgemeines",
+   "titel": "Widerstand gegen mutwillige Zerstörung (CEN/TS 81-83)",
+   "prioritaet": "",
+   "zeitplan": "Kein Zeitplan; der Punkt verweist auf eine eigene Norm der Reihe EN 81",
+   "hazards": [
+    "MF-K11"
+   ],
+   "deckung": "voll",
+   "bemerkung": "In der Prüfliste ohne Prioritätsstufe: der Punkt verweist auf eine eigene Norm der Reihe EN 81."
+  },
+  {
+   "nr": "1.3",
+   "alt2003": "",
+   "gruppe": "Allgemeines",
+   "titel": "Feuerwehraufzug (EN 81-72)",
+   "prioritaet": "",
+   "zeitplan": "Kein Zeitplan; der Punkt verweist auf eine eigene Norm der Reihe EN 81",
+   "hazards": [
+    "MF-SF01"
+   ],
+   "deckung": "teilweise",
+   "bemerkung": "MF-SF01 erhebt die gebäudeseitige Sonderfunktion Feuerwehraufzug; die Bauartanforderungen nach EN 81-72 selbst sind nicht Gegenstand des MF-Fragebogens."
+  },
+  {
+   "nr": "1.4",
+   "alt2003": "5",
+   "gruppe": "Allgemeines",
+   "titel": "Verhalten des Aufzugs im Brandfall (EN 81-73)",
+   "prioritaet": "",
+   "zeitplan": "Kein Zeitplan; der Punkt verweist auf eine eigene Norm der Reihe EN 81",
+   "hazards": [
+    "MF-K08",
+    "MF-K09",
+    "MF-U09"
+   ],
+   "deckung": "voll",
+   "bemerkung": "In der Prüfliste ohne Prioritätsstufe: der Punkt verweist auf eine eigene Norm der Reihe EN 81."
+  },
+  {
+   "nr": "1.5",
+   "alt2003": "",
+   "gruppe": "Allgemeines",
+   "titel": "Erdbebensicherheit (EN 81-77)",
+   "prioritaet": "",
+   "zeitplan": "Kein Zeitplan; der Punkt verweist auf eine eigene Norm der Reihe EN 81",
+   "hazards": [],
+   "deckung": "offen",
+   "bemerkung": "Erdbebensicherheit (EN 81-77) wird im MF-Fragebogen nicht erhoben."
+  },
+  {
+   "nr": "1.6",
+   "alt2003": "1",
+   "gruppe": "Allgemeines",
+   "titel": "Anlage frei von schädlichen Stoffen (z. B. Asbest)",
+   "prioritaet": "Hoch",
    "zeitplan": "Kurzfristig",
    "hazards": [
     "MF-U01"
@@ -20,100 +83,11 @@
    "bemerkung": ""
   },
   {
-   "nr": 2,
-   "abschnitt": "5.2.1",
-   "titel": "Zugänglichkeit für Personen mit eingeschränkter Mobilität",
-   "prioritaet": "",
-   "risikoprofil": [],
-   "zeitplan": "Nach Risikobeurteilung im Einzelfall (5.1.5)",
-   "hazards": [
-    "MF-K10"
-   ],
-   "deckung": "voll",
-   "bemerkung": "In A.1 nicht risikoprofiliert (besondere Anforderung nach 5.1.5)."
-  },
-  {
-   "nr": 3,
-   "abschnitt": "5.2.2",
-   "titel": "Anhalte- und Nachregulierungsgenauigkeit",
+   "nr": "2.1",
+   "alt2003": "8",
+   "gruppe": "Schacht",
+   "titel": "Schließeinrichtungen an Zugangs-, Notfall- und Inspektionstüren zu Schacht und Schachtgrube",
    "prioritaet": "Hoch",
-   "risikoprofil": [
-    "I/C-D",
-    "II/C"
-   ],
-   "zeitplan": "Kurzfristig",
-   "hazards": [
-    "MF-K03"
-   ],
-   "deckung": "voll",
-   "bemerkung": ""
-  },
-  {
-   "nr": 4,
-   "abschnitt": "5.3",
-   "titel": "Widerstand gegen mutwillige Zerstörung (Vandalismus)",
-   "prioritaet": "",
-   "risikoprofil": [],
-   "zeitplan": "Nach Risikobeurteilung im Einzelfall (5.1.5)",
-   "hazards": [
-    "MF-K11"
-   ],
-   "deckung": "voll",
-   "bemerkung": "In A.1 nicht risikoprofiliert (besondere Anforderung nach 5.1.5)."
-  },
-  {
-   "nr": 5,
-   "abschnitt": "5.4",
-   "titel": "Verhalten und Überwachungsfunktionen im Brandfall",
-   "prioritaet": "",
-   "risikoprofil": [],
-   "zeitplan": "Nach Risikobeurteilung im Einzelfall (5.1.5)",
-   "hazards": [
-    "MF-K08",
-    "MF-K09",
-    "MF-U09"
-   ],
-   "deckung": "voll",
-   "bemerkung": "In A.1 nicht risikoprofiliert (besondere Anforderung nach 5.1.5)."
-  },
-  {
-   "nr": 6,
-   "abschnitt": "5.5.1.1",
-   "titel": "Durchbrochene (nicht geschlossene) Schachtumwehrung",
-   "prioritaet": "Extrem",
-   "risikoprofil": [
-    "I/B"
-   ],
-   "zeitplan": "Sofort, Aufzug muss stillgelegt werden",
-   "hazards": [
-    "MF-S03"
-   ],
-   "deckung": "voll",
-   "bemerkung": ""
-  },
-  {
-   "nr": 7,
-   "abschnitt": "5.5.1.2",
-   "titel": "Teilumwehrter Schacht mit zu niedriger Umwehrung",
-   "prioritaet": "Hoch",
-   "risikoprofil": [
-    "I/C-D"
-   ],
-   "zeitplan": "Kurzfristig",
-   "hazards": [
-    "MF-S03"
-   ],
-   "deckung": "voll",
-   "bemerkung": ""
-  },
-  {
-   "nr": 8,
-   "abschnitt": "5.5.2",
-   "titel": "Schließeinrichtungen an Zugangstüren zu Schacht und Schachtgrube",
-   "prioritaet": "Hoch",
-   "risikoprofil": [
-    "I/C-D"
-   ],
    "zeitplan": "Kurzfristig",
    "hazards": [
     "MF-S07",
@@ -123,29 +97,79 @@
    "bemerkung": ""
   },
   {
-   "nr": 9,
-   "abschnitt": "5.5.3",
-   "titel": "Senkrechte Fläche unterhalb der Schachttürschwelle",
+   "nr": "2.2",
+   "alt2003": "8",
+   "gruppe": "Schacht",
+   "titel": "Anhalten des Fahrkorbs bei geöffneten Zugangs-, Notfall- und Inspektionstüren",
    "prioritaet": "Hoch",
-   "risikoprofil": [
-    "II/C"
+   "zeitplan": "Kurzfristig",
+   "hazards": [
+    "MF-S07",
+    "MF-G04"
    ],
+   "deckung": "voll",
+   "bemerkung": ""
+  },
+  {
+   "nr": "2.3",
+   "alt2003": "6",
+   "gruppe": "Schacht",
+   "titel": "Vollwandige Schachtumwehrung",
+   "prioritaet": "Hoch",
+   "zeitplan": "Kurzfristig",
+   "hazards": [
+    "MF-S03"
+   ],
+   "deckung": "voll",
+   "bemerkung": ""
+  },
+  {
+   "nr": "2.4",
+   "alt2003": "33",
+   "gruppe": "Schacht",
+   "titel": "Zugang zu den Verriegelungseinrichtungen der Schachttür bei durchbrochener Umwehrung",
+   "prioritaet": "Hoch",
+   "zeitplan": "Kurzfristig",
+   "hazards": [
+    "MF-S03",
+    "MF-T01"
+   ],
+   "deckung": "teilweise",
+   "bemerkung": "Nr. 33 (2003): MF erhebt Umwehrung und Verriegelung getrennt, nicht ihren Abstand zueinander."
+  },
+  {
+   "nr": "2.5",
+   "alt2003": "7",
+   "gruppe": "Schacht",
+   "titel": "Teilumwehrter Schacht",
+   "prioritaet": "Hoch",
+   "zeitplan": "Kurzfristig",
+   "hazards": [
+    "MF-S03"
+   ],
+   "deckung": "voll",
+   "bemerkung": ""
+  },
+  {
+   "nr": "2.6",
+   "alt2003": "9",
+   "gruppe": "Schacht",
+   "titel": "Höhe der senkrechten Fläche unterhalb der Schachttürschwelle",
+   "prioritaet": "Hoch",
    "zeitplan": "Kurzfristig",
    "hazards": [
     "MF-T07"
    ],
    "deckung": "voll",
-   "bemerkung": "Ergänzt 04.09.2026 (EN 81-20 5.2.5.3.2)."
+   "bemerkung": "Nr. 9 (2003): Ergänzt 04.09.2026 (EN 81-20 5.2.5.3.2)."
   },
   {
-   "nr": 10,
-   "abschnitt": "5.5.4",
-   "titel": "Betretbarer Raum unter dem Schacht ohne Fangvorrichtung am Gegengewicht",
-   "prioritaet": "Mittel",
-   "risikoprofil": [
-    "I/D-E"
-   ],
-   "zeitplan": "Mittelfristig oder im Rahmen einer umfangreichen Modernisierung",
+   "nr": "2.7",
+   "alt2003": "10",
+   "gruppe": "Schacht",
+   "titel": "Schutz der Zugangsbereiche unter dem Schacht (Fangvorrichtung am Gegengewicht)",
+   "prioritaet": "Niedrig",
+   "zeitplan": "Langfristig oder im Rahmen einer Modernisierung der betroffenen Komponente",
    "hazards": [
     "MF-G07"
    ],
@@ -153,14 +177,12 @@
    "bemerkung": ""
   },
   {
-   "nr": 11,
-   "abschnitt": "5.5.5",
-   "titel": "Abtrennung der Fahrbahn des Gegengewichts/Ausgleichsgewichts",
-   "prioritaet": "Mittel",
-   "risikoprofil": [
-    "I/D-E"
-   ],
-   "zeitplan": "Mittelfristig oder im Rahmen einer umfangreichen Modernisierung",
+   "nr": "2.8",
+   "alt2003": "11",
+   "gruppe": "Schacht",
+   "titel": "Abtrennung der Fahrbahn des Gegen- oder Ausgleichsgewichts",
+   "prioritaet": "Niedrig",
+   "zeitplan": "Langfristig oder im Rahmen einer Modernisierung der betroffenen Komponente",
    "hazards": [
     "MF-G07"
    ],
@@ -168,13 +190,11 @@
    "bemerkung": ""
   },
   {
-   "nr": 12,
-   "abschnitt": "5.5.6.1",
+   "nr": "2.9",
+   "alt2003": "12",
+   "gruppe": "Schacht",
    "titel": "Abtrennung in der Schachtgrube bei mehreren Aufzügen im selben Schacht",
    "prioritaet": "Hoch",
-   "risikoprofil": [
-    "I/C-D"
-   ],
    "zeitplan": "Kurzfristig",
    "hazards": [
     "MF-G08"
@@ -183,13 +203,11 @@
    "bemerkung": ""
   },
   {
-   "nr": 13,
-   "abschnitt": "5.5.6.2",
-   "titel": "Abtrennung über die Schachthöhe bei mehreren Aufzügen im selben Schacht",
+   "nr": "2.10",
+   "alt2003": "13",
+   "gruppe": "Schacht",
+   "titel": "Abtrennung beweglicher Teile über die volle Höhe bei gemeinsam genutztem Schacht",
    "prioritaet": "Hoch",
-   "risikoprofil": [
-    "I/C-D"
-   ],
    "zeitplan": "Kurzfristig",
    "hazards": [
     "MF-F03",
@@ -199,13 +217,11 @@
    "bemerkung": ""
   },
   {
-   "nr": 14,
-   "abschnitt": "5.5.7",
-   "titel": "Schutzräume in Schachtkopf und Schachtgrube",
+   "nr": "2.11",
+   "alt2003": "14",
+   "gruppe": "Schacht",
+   "titel": "Schutzräume und Freiräume im Schachtkopf",
    "prioritaet": "Hoch",
-   "risikoprofil": [
-    "I/C-D"
-   ],
    "zeitplan": "Kurzfristig",
    "hazards": [
     "MF-F04",
@@ -215,13 +231,25 @@
    "bemerkung": ""
   },
   {
-   "nr": 15,
-   "abschnitt": "5.5.8",
-   "titel": "Sicherer Zugang zur Schachtgrube",
+   "nr": "2.12",
+   "alt2003": "14",
+   "gruppe": "Schacht",
+   "titel": "Schutzräume und Freiräume in der Schachtgrube",
    "prioritaet": "Hoch",
-   "risikoprofil": [
-    "II/C"
+   "zeitplan": "Kurzfristig",
+   "hazards": [
+    "MF-F04",
+    "MF-G02"
    ],
+   "deckung": "voll",
+   "bemerkung": ""
+  },
+  {
+   "nr": "2.13",
+   "alt2003": "15",
+   "gruppe": "Schacht",
+   "titel": "Maßnahmen für den Zugang zur Schachtgrube",
+   "prioritaet": "Hoch",
    "zeitplan": "Kurzfristig",
    "hazards": [
     "MF-G04"
@@ -230,30 +258,11 @@
    "bemerkung": ""
   },
   {
-   "nr": 16,
-   "abschnitt": "5.5.9",
-   "titel": "Not-Halt in Schachtgrube und Rollenraum",
-   "prioritaet": "Hoch",
-   "risikoprofil": [
-    "I/C-D"
-   ],
-   "zeitplan": "Kurzfristig",
-   "hazards": [
-    "MF-G03",
-    "MF-M20"
-   ],
-   "deckung": "voll",
-   "bemerkung": ""
-  },
-  {
-   "nr": 17,
-   "abschnitt": "5.5.10",
+   "nr": "2.14",
+   "alt2003": "17",
+   "gruppe": "Schacht",
    "titel": "Schachtbeleuchtung",
    "prioritaet": "Hoch",
-   "risikoprofil": [
-    "I/C-D",
-    "II/C"
-   ],
    "zeitplan": "Kurzfristig",
    "hazards": [
     "MF-S01",
@@ -263,14 +272,26 @@
    "bemerkung": ""
   },
   {
-   "nr": 18,
-   "abschnitt": "5.5.11",
-   "titel": "Notruf in Schachtgrube und auf dem Fahrkorbdach",
+   "nr": "2.15",
+   "alt2003": "16",
+   "gruppe": "Schacht",
+   "titel": "Notbremsschalter in der Schachtgrube",
    "prioritaet": "Hoch",
-   "risikoprofil": [
-    "II/C-D"
-   ],
    "zeitplan": "Kurzfristig",
+   "hazards": [
+    "MF-G03",
+    "MF-M20"
+   ],
+   "deckung": "voll",
+   "bemerkung": ""
+  },
+  {
+   "nr": "2.16",
+   "alt2003": "18",
+   "gruppe": "Schacht",
+   "titel": "Notrufauslöseeinrichtungen in der Schachtgrube und auf dem Fahrkorbdach",
+   "prioritaet": "Mittel",
+   "zeitplan": "Mittelfristig oder im Rahmen einer umfangreichen Modernisierung",
    "hazards": [
     "MF-G05",
     "MF-F09"
@@ -279,13 +300,48 @@
    "bemerkung": ""
   },
   {
-   "nr": 19,
-   "abschnitt": "5.6.1",
-   "titel": "Zugänge zum Triebwerks- oder Rollenraum",
+   "nr": "2.17",
+   "alt2003": "58",
+   "gruppe": "Schacht",
+   "titel": "Horizontaler Abstand zwischen innerer Schachtwand und Türschwelle bzw. Türrahmen des Fahrkorbs",
    "prioritaet": "Hoch",
-   "risikoprofil": [
-    "II/C"
+   "zeitplan": "Kurzfristig",
+   "hazards": [
+    "MF-F01"
    ],
+   "deckung": "teilweise",
+   "bemerkung": "Nr. 58 (2003): MF erhebt den Abstand an der Fahrkorbdachkante (Absturzsicherung)."
+  },
+  {
+   "nr": "2.18",
+   "alt2003": "59",
+   "gruppe": "Schacht",
+   "titel": "Horizontaler Abstand zwischen geschlossener Fahrkorbtür und Schachttür",
+   "prioritaet": "Hoch",
+   "zeitplan": "Kurzfristig",
+   "hazards": [
+    "MF-K05"
+   ],
+   "deckung": "voll",
+   "bemerkung": ""
+  },
+  {
+   "nr": "2.19",
+   "alt2003": "",
+   "gruppe": "Schacht",
+   "titel": "Abstand zwischen den Führungskanten von Fahrkorbtür und Schachttür",
+   "prioritaet": "Hoch",
+   "zeitplan": "Kurzfristig",
+   "hazards": [],
+   "deckung": "offen",
+   "bemerkung": "Wird nicht erhoben; MF-K05 erfasst den Abstand Fahrkorbschwelle/Schachtwand, nicht den Abstand der Führungskanten."
+  },
+  {
+   "nr": "3.1",
+   "alt2003": "19",
+   "gruppe": "Betriebsräume und Rollenräume",
+   "titel": "Zugänge zu den Aufstellungsorten von Triebwerks- und Rollenraum",
+   "prioritaet": "Hoch",
    "zeitplan": "Kurzfristig",
    "hazards": [
     "MF-Z03",
@@ -296,58 +352,11 @@
    "bemerkung": ""
   },
   {
-   "nr": 20,
-   "abschnitt": "5.6.2",
-   "titel": "Rutschiger Boden im Triebwerks- oder Rollenraum",
-   "prioritaet": "Mittel",
-   "risikoprofil": [
-    "II/D"
-   ],
-   "zeitplan": "Mittelfristig oder im Rahmen einer umfangreichen Modernisierung",
-   "hazards": [
-    "MF-M06"
-   ],
-   "deckung": "voll",
-   "bemerkung": ""
-  },
-  {
-   "nr": 21,
-   "abschnitt": "5.6.3",
-   "titel": "Abstände und Freiflächen im Triebwerksraum",
+   "nr": "3.2",
+   "alt2003": "23",
+   "gruppe": "Betriebsräume und Rollenräume",
+   "titel": "Beleuchtung in den Betriebsräumen und Rollenräumen",
    "prioritaet": "Hoch",
-   "risikoprofil": [
-    "II/C-D"
-   ],
-   "zeitplan": "Kurzfristig",
-   "hazards": [
-    "MF-M04"
-   ],
-   "deckung": "voll",
-   "bemerkung": ""
-  },
-  {
-   "nr": 22,
-   "abschnitt": "5.6.4",
-   "titel": "Unterschiedliche Ebenen im Triebwerks- oder Rollenraum",
-   "prioritaet": "Hoch",
-   "risikoprofil": [
-    "II/C"
-   ],
-   "zeitplan": "Kurzfristig",
-   "hazards": [
-    "MF-M05"
-   ],
-   "deckung": "voll",
-   "bemerkung": ""
-  },
-  {
-   "nr": 23,
-   "abschnitt": "5.6.5",
-   "titel": "Beleuchtung im Triebwerks- oder Rollenraum",
-   "prioritaet": "Hoch",
-   "risikoprofil": [
-    "II/C"
-   ],
    "zeitplan": "Kurzfristig",
    "hazards": [
     "MF-M01"
@@ -356,15 +365,26 @@
    "bemerkung": ""
   },
   {
-   "nr": 24,
-   "abschnitt": "5.6.6",
-   "titel": "Hebezeuge und Anschlagpunkte",
+   "nr": "3.3",
+   "alt2003": "16",
+   "gruppe": "Betriebsräume und Rollenräume",
+   "titel": "Notbremsschalter in Rollenräumen",
    "prioritaet": "Hoch",
-   "risikoprofil": [
-    "I/D-E",
-    "II/C-D"
-   ],
    "zeitplan": "Kurzfristig",
+   "hazards": [
+    "MF-G03",
+    "MF-M20"
+   ],
+   "deckung": "voll",
+   "bemerkung": ""
+  },
+  {
+   "nr": "3.4",
+   "alt2003": "24",
+   "gruppe": "Betriebsräume und Rollenräume",
+   "titel": "Aufhängepunkte für die Handhabung von Einrichtungen in Betriebsräumen und oben im Schacht",
+   "prioritaet": "Mittel",
+   "zeitplan": "Mittelfristig oder im Rahmen einer umfangreichen Modernisierung",
    "hazards": [
     "MF-M14"
    ],
@@ -372,45 +392,115 @@
    "bemerkung": ""
   },
   {
-   "nr": 25,
-   "abschnitt": "5.7.1",
-   "titel": "Durchbrochene Schacht- und Fahrkorbtüren (Gittertüren)",
-   "prioritaet": "Extrem",
-   "risikoprofil": [
-    "I/B"
+   "nr": "3.5",
+   "alt2003": "20",
+   "gruppe": "Betriebsräume und Rollenräume",
+   "titel": "Rutschhemmender Boden an den Aufstellungsorten von Triebwerks- und Rollenraum",
+   "prioritaet": "Niedrig",
+   "zeitplan": "Langfristig oder im Rahmen einer Modernisierung der betroffenen Komponente",
+   "hazards": [
+    "MF-M06"
    ],
-   "zeitplan": "Sofort, Aufzug muss stillgelegt werden",
+   "deckung": "voll",
+   "bemerkung": ""
+  },
+  {
+   "nr": "3.6",
+   "alt2003": "21",
+   "gruppe": "Betriebsräume und Rollenräume",
+   "titel": "Horizontale und vertikale Freiräume in den Betriebsräumen für sicheres Arbeiten",
+   "prioritaet": "Mittel",
+   "zeitplan": "Mittelfristig oder im Rahmen einer umfangreichen Modernisierung",
+   "hazards": [
+    "MF-M04"
+   ],
+   "deckung": "voll",
+   "bemerkung": ""
+  },
+  {
+   "nr": "3.7",
+   "alt2003": "22",
+   "gruppe": "Betriebsräume und Rollenräume",
+   "titel": "Arbeitsebenen und Vertiefungen im Triebwerksraum",
+   "prioritaet": "Hoch",
+   "zeitplan": "Kurzfristig",
+   "hazards": [
+    "MF-M05"
+   ],
+   "deckung": "voll",
+   "bemerkung": ""
+  },
+  {
+   "nr": "3.8",
+   "alt2003": "72",
+   "gruppe": "Betriebsräume und Rollenräume",
+   "titel": "Gegensprechanlage zwischen Fahrkorb und Ort des Notbetriebs",
+   "prioritaet": "Mittel",
+   "zeitplan": "Mittelfristig oder im Rahmen einer umfangreichen Modernisierung",
+   "hazards": [
+    "MF-M18"
+   ],
+   "deckung": "voll",
+   "bemerkung": ""
+  },
+  {
+   "nr": "4.1",
+   "alt2003": "25",
+   "gruppe": "Schachttüren und Fahrkorbtüren",
+   "titel": "Vollwandige Schachttüren",
+   "prioritaet": "Hoch",
+   "zeitplan": "Kurzfristig",
    "hazards": [
     "MF-T04",
     "MF-T06"
    ],
    "deckung": "teilweise",
-   "bemerkung": "MF erhebt Glaseinsätze und den Fahrkorbabschluss; Gittertüren nur über Scherengitter/Lichtgitter."
+   "bemerkung": "Nr. 25 (2003): MF erhebt Glaseinsätze und den Fahrkorbabschluss; Gittertüren nur über Scherengitter/Lichtgitter."
   },
   {
-   "nr": 26,
-   "abschnitt": "5.7.2",
-   "titel": "Ausführung der Schachttürbefestigungen",
+   "nr": "4.2",
+   "alt2003": "25",
+   "gruppe": "Schachttüren und Fahrkorbtüren",
+   "titel": "Vollwandige Fahrkorbtüren",
    "prioritaet": "Hoch",
-   "risikoprofil": [
-    "I/C-D"
+   "zeitplan": "Kurzfristig",
+   "hazards": [
+    "MF-T04",
+    "MF-T06"
    ],
+   "deckung": "teilweise",
+   "bemerkung": "Nr. 25 (2003): MF erhebt Glaseinsätze und den Fahrkorbabschluss; Gittertüren nur über Scherengitter/Lichtgitter."
+  },
+  {
+   "nr": "4.3",
+   "alt2003": "26",
+   "gruppe": "Schachttüren und Fahrkorbtüren",
+   "titel": "Festigkeit von Schachttüren",
+   "prioritaet": "Hoch",
    "zeitplan": "Kurzfristig",
    "hazards": [
     "MF-T08"
    ],
    "deckung": "voll",
-   "bemerkung": "Ergänzt 04.09.2026 (EN 81-20 5.3.5.3.2 Rückhalteeinrichtungen)."
+   "bemerkung": "Nr. 26 (2003): Ergänzt 04.09.2026 (EN 81-20 5.3.5.3.2 Rückhalteeinrichtungen)."
   },
   {
-   "nr": 27,
-   "abschnitt": "5.7.3",
-   "titel": "Geeignetes Glas in Schachttüren",
+   "nr": "4.4",
+   "alt2003": "",
+   "gruppe": "Schachttüren und Fahrkorbtüren",
+   "titel": "Festigkeit von Fahrkorbtüren",
+   "prioritaet": "Mittel",
+   "zeitplan": "Mittelfristig oder im Rahmen einer umfangreichen Modernisierung",
+   "hazards": [],
+   "deckung": "offen",
+   "bemerkung": "Festigkeit der Fahrkorbtüren wird nicht erhoben; MF-T02/T04 betreffen die Schachttüren."
+  },
+  {
+   "nr": "4.5",
+   "alt2003": "27",
+   "gruppe": "Schachttüren und Fahrkorbtüren",
+   "titel": "Glas in den Schachttüren außer Schauöffnungen",
    "prioritaet": "Hoch",
-   "risikoprofil": [
-    "I/C-D",
-    "II/C"
-   ],
    "zeitplan": "Kurzfristig",
    "hazards": [
     "MF-T04"
@@ -419,13 +509,87 @@
    "bemerkung": ""
   },
   {
-   "nr": 28,
-   "abschnitt": "5.7.4",
-   "titel": "Schutz gegen Einziehen von Fingern an Glas-Schiebetüren",
-   "prioritaet": "Mittel",
-   "risikoprofil": [
-    "III/C-D"
+   "nr": "4.6",
+   "alt2003": "27",
+   "gruppe": "Schachttüren und Fahrkorbtüren",
+   "titel": "Glas in den Fahrkorbtüren außer Schauöffnungen",
+   "prioritaet": "Hoch",
+   "zeitplan": "Kurzfristig",
+   "hazards": [
+    "MF-T04"
    ],
+   "deckung": "voll",
+   "bemerkung": ""
+  },
+  {
+   "nr": "4.7",
+   "alt2003": "27",
+   "gruppe": "Schachttüren und Fahrkorbtüren",
+   "titel": "Glasschauöffnungen in den Schachttüren",
+   "prioritaet": "Hoch",
+   "zeitplan": "Kurzfristig",
+   "hazards": [
+    "MF-T04"
+   ],
+   "deckung": "voll",
+   "bemerkung": ""
+  },
+  {
+   "nr": "4.8",
+   "alt2003": "27",
+   "gruppe": "Schachttüren und Fahrkorbtüren",
+   "titel": "Glasschauöffnungen in den Fahrkorbtüren",
+   "prioritaet": "Hoch",
+   "zeitplan": "Kurzfristig",
+   "hazards": [
+    "MF-T04"
+   ],
+   "deckung": "voll",
+   "bemerkung": ""
+  },
+  {
+   "nr": "4.9",
+   "alt2003": "30b",
+   "gruppe": "Schachttüren und Fahrkorbtüren",
+   "titel": "Nichttrennende Schutzeinrichtung (z. B. Lichtschranke) an kraftbetätigten Türen",
+   "prioritaet": "Hoch",
+   "zeitplan": "Kurzfristig",
+   "hazards": [
+    "MF-T06"
+   ],
+   "deckung": "voll",
+   "bemerkung": ""
+  },
+  {
+   "nr": "4.10",
+   "alt2003": "30a",
+   "gruppe": "Schachttüren und Fahrkorbtüren",
+   "titel": "Begrenzung des Kraftaufwands beim Schließen kraftbetätigter Schiebetüren (150 N)",
+   "prioritaet": "Hoch",
+   "zeitplan": "Kurzfristig",
+   "hazards": [
+    "MF-T06"
+   ],
+   "deckung": "voll",
+   "bemerkung": ""
+  },
+  {
+   "nr": "4.11",
+   "alt2003": "",
+   "gruppe": "Schachttüren und Fahrkorbtüren",
+   "titel": "Begrenzung des Kraftaufwands (150 N) beim Schließen anderer als automatisch kraftbetätigter Schiebetüren",
+   "prioritaet": "Hoch",
+   "zeitplan": "Kurzfristig",
+   "hazards": [],
+   "deckung": "offen",
+   "bemerkung": "Kraftbegrenzung an anderen als automatisch kraftbetätigten Schiebetüren wird nicht erhoben."
+  },
+  {
+   "nr": "4.12",
+   "alt2003": "28",
+   "gruppe": "Schachttüren und Fahrkorbtüren",
+   "titel": "Schutz gegen das Einziehen von Kinderhänden bei waagerecht bewegten Glastüren",
+   "prioritaet": "Mittel",
    "zeitplan": "Mittelfristig oder im Rahmen einer umfangreichen Modernisierung",
    "hazards": [
     "MF-T04"
@@ -434,13 +598,11 @@
    "bemerkung": ""
   },
   {
-   "nr": 29,
-   "abschnitt": "5.7.5",
-   "titel": "Beleuchtung an den Schachtzugängen",
+   "nr": "4.13",
+   "alt2003": "29",
+   "gruppe": "Schachttüren und Fahrkorbtüren",
+   "titel": "Beleuchtung der Ladestellen in der Nähe der Schachttüren",
    "prioritaet": "Mittel",
-   "risikoprofil": [
-    "III/C"
-   ],
    "zeitplan": "Mittelfristig oder im Rahmen einer umfangreichen Modernisierung",
    "hazards": [
     "MF-S02"
@@ -449,29 +611,11 @@
    "bemerkung": ""
   },
   {
-   "nr": 30,
-   "abschnitt": "5.7.6",
-   "titel": "Schutzeinrichtungen an kraftbetätigten Türen (Schließkantensicherung)",
-   "prioritaet": "Extrem",
-   "risikoprofil": [
-    "I/B",
-    "III/A"
-   ],
-   "zeitplan": "Sofort, Aufzug muss stillgelegt werden",
-   "hazards": [
-    "MF-T06"
-   ],
-   "deckung": "voll",
-   "bemerkung": ""
-  },
-  {
-   "nr": 31,
-   "abschnitt": "5.7.7",
-   "titel": "Verriegelungseinrichtung der Schachttür",
+   "nr": "4.14",
+   "alt2003": "31",
+   "gruppe": "Schachttüren und Fahrkorbtüren",
+   "titel": "Schachttürverriegelungen",
    "prioritaet": "Hoch",
-   "risikoprofil": [
-    "I/C-D"
-   ],
    "zeitplan": "Kurzfristig",
    "hazards": [
     "MF-T01"
@@ -480,13 +624,11 @@
    "bemerkung": ""
   },
   {
-   "nr": 32,
-   "abschnitt": "5.7.8.1",
-   "titel": "Notentriegelung der Schachttür nur mit besonderem Werkzeug",
+   "nr": "4.15",
+   "alt2003": "32",
+   "gruppe": "Schachttüren und Fahrkorbtüren",
+   "titel": "Notentriegelung der Schachttüren nur mit besonderen Mitteln (z. B. Dreikantschlüssel)",
    "prioritaet": "Hoch",
-   "risikoprofil": [
-    "I/C-D"
-   ],
    "zeitplan": "Kurzfristig",
    "hazards": [
     "MF-T02"
@@ -495,29 +637,11 @@
    "bemerkung": ""
   },
   {
-   "nr": 33,
-   "abschnitt": "5.7.8.2",
-   "titel": "Durchbrochene Schachtwand in der Nähe der Türverriegelung",
+   "nr": "4.16",
+   "alt2003": "34",
+   "gruppe": "Schachttüren und Fahrkorbtüren",
+   "titel": "Selbsttätiges Schließen und Verriegeln einer geöffneten Schachttür bei Fahrkorb außerhalb der Entriegelungszone",
    "prioritaet": "Hoch",
-   "risikoprofil": [
-    "I/D"
-   ],
-   "zeitplan": "Kurzfristig",
-   "hazards": [
-    "MF-S03",
-    "MF-T01"
-   ],
-   "deckung": "teilweise",
-   "bemerkung": "MF erhebt Umwehrung und Verriegelung getrennt, nicht ihren Abstand zueinander."
-  },
-  {
-   "nr": 34,
-   "abschnitt": "5.7.9",
-   "titel": "Selbstschließen der Schachttüren (Sperrmittel)",
-   "prioritaet": "Hoch",
-   "risikoprofil": [
-    "I/D"
-   ],
    "zeitplan": "Kurzfristig",
    "hazards": [
     "MF-T03"
@@ -526,29 +650,25 @@
    "bemerkung": ""
   },
   {
-   "nr": 35,
-   "abschnitt": "5.7.10",
-   "titel": "Verbindung zwischen den Türblättern mehrteiliger Schachttüren",
-   "prioritaet": "Hoch",
-   "risikoprofil": [
-    "I/D"
-   ],
-   "zeitplan": "Kurzfristig",
+   "nr": "4.17",
+   "alt2003": "35",
+   "gruppe": "Schachttüren und Fahrkorbtüren",
+   "titel": "Schachtschiebetüren mit mehreren Türblättern: Verbindung und elektrische Prüfung der geschlossenen Position",
+   "prioritaet": "Mittel",
+   "zeitplan": "Mittelfristig oder im Rahmen einer umfangreichen Modernisierung",
    "hazards": [
     "MF-T09"
    ],
    "deckung": "voll",
-   "bemerkung": "Ergänzt 04.09.2026 (EN 81-20 5.3.11)."
+   "bemerkung": "Nr. 35 (2003): Ergänzt 04.09.2026 (EN 81-20 5.3.11)."
   },
   {
-   "nr": 36,
-   "abschnitt": "5.7.11",
-   "titel": "Feuerwiderstandsfähigkeit der Schachttüren",
-   "prioritaet": "Hoch",
-   "risikoprofil": [
-    "I/D"
-   ],
-   "zeitplan": "Kurzfristig",
+   "nr": "4.18",
+   "alt2003": "36",
+   "gruppe": "Schachttüren und Fahrkorbtüren",
+   "titel": "Feuerwiderstand von Schachttüren",
+   "prioritaet": "Mittel",
+   "zeitplan": "Mittelfristig oder im Rahmen einer umfangreichen Modernisierung",
    "hazards": [
     "MF-T05"
    ],
@@ -556,59 +676,24 @@
    "bemerkung": ""
   },
   {
-   "nr": 37,
-   "abschnitt": "5.7.12",
-   "titel": "Fahrkorbtür bewegt sich bei geöffneter Schachttür",
-   "prioritaet": "Hoch",
-   "risikoprofil": [
-    "III/B"
-   ],
-   "zeitplan": "Kurzfristig",
+   "nr": "4.19",
+   "alt2003": "37",
+   "gruppe": "Schachttüren und Fahrkorbtüren",
+   "titel": "Kraftbetriebene Fahrkorb-Schiebetür bewegt sich erst nach dem Schließen der Schachtdrehtür",
+   "prioritaet": "Mittel",
+   "zeitplan": "Mittelfristig oder im Rahmen einer umfangreichen Modernisierung",
    "hazards": [
     "MF-K05"
    ],
    "deckung": "voll",
-   "bemerkung": "Über die Fahrkorbtür-Verriegelung außerhalb der Entriegelungszone."
+   "bemerkung": "Nr. 37 (2003): Über die Fahrkorbtür-Verriegelung außerhalb der Entriegelungszone."
   },
   {
-   "nr": 38,
-   "abschnitt": "5.8.1",
-   "titel": "Verhältnis von Nutzfläche zur Nennlast",
-   "prioritaet": "Mittel",
-   "risikoprofil": [
-    "II/D"
-   ],
-   "zeitplan": "Mittelfristig oder im Rahmen einer umfangreichen Modernisierung",
-   "hazards": [
-    "MF-K06"
-   ],
-   "deckung": "voll",
-   "bemerkung": ""
-  },
-  {
-   "nr": 39,
-   "abschnitt": "5.8.2",
-   "titel": "Länge der Fahrkorbtürschürze",
+   "nr": "4.20",
+   "alt2003": "40",
+   "gruppe": "Schachttüren und Fahrkorbtüren",
+   "titel": "Vorhandensein der Fahrkorbtür(en)",
    "prioritaet": "Hoch",
-   "risikoprofil": [
-    "I/D"
-   ],
-   "zeitplan": "Kurzfristig",
-   "hazards": [
-    "MF-K04"
-   ],
-   "deckung": "voll",
-   "bemerkung": ""
-  },
-  {
-   "nr": 40,
-   "abschnitt": "5.8.3",
-   "titel": "Fahrkorb ohne Abschlusstür",
-   "prioritaet": "Hoch",
-   "risikoprofil": [
-    "I/D",
-    "II/C"
-   ],
    "zeitplan": "Kurzfristig",
    "hazards": [
     "MF-T06"
@@ -617,28 +702,48 @@
    "bemerkung": ""
   },
   {
-   "nr": 41,
-   "abschnitt": "5.8.4",
-   "titel": "Verriegelung und Überwachung der Klappe im Fahrkorbdach",
-   "prioritaet": "Hoch",
-   "risikoprofil": [
-    "II/C-D"
-   ],
-   "zeitplan": "Kurzfristig",
+   "nr": "4.21",
+   "alt2003": "",
+   "gruppe": "Schachttüren und Fahrkorbtüren",
+   "titel": "Fahrkorbtürdrossel, wo die Verriegelungseinrichtung der Schachttür zugänglich ist",
+   "prioritaet": "Mittel",
+   "zeitplan": "Mittelfristig oder im Rahmen einer umfangreichen Modernisierung",
+   "hazards": [],
+   "deckung": "offen",
+   "bemerkung": "Fahrkorbtürdrossel bei zugänglicher Schachttürverriegelung wird nicht erhoben."
+  },
+  {
+   "nr": "5.1",
+   "alt2003": "38",
+   "gruppe": "Fahrkorb, Gegengewicht und Ausgleichsgewicht",
+   "titel": "Verhältnis von Nutzfläche zur Nennlast",
+   "prioritaet": "Niedrig",
+   "zeitplan": "Langfristig oder im Rahmen einer Modernisierung der betroffenen Komponente",
    "hazards": [
-    "MF-F07"
+    "MF-K06"
    ],
    "deckung": "voll",
    "bemerkung": ""
   },
   {
-   "nr": 42,
-   "abschnitt": "5.8.5",
-   "titel": "Festigkeit des Fahrkorbdachs",
-   "prioritaet": "Mittel",
-   "risikoprofil": [
-    "III/C-D"
+   "nr": "5.2",
+   "alt2003": "39",
+   "gruppe": "Fahrkorb, Gegengewicht und Ausgleichsgewicht",
+   "titel": "Fahrkorbschürze",
+   "prioritaet": "Hoch",
+   "zeitplan": "Kurzfristig",
+   "hazards": [
+    "MF-K04"
    ],
+   "deckung": "voll",
+   "bemerkung": ""
+  },
+  {
+   "nr": "5.3",
+   "alt2003": "41",
+   "gruppe": "Fahrkorb, Gegengewicht und Ausgleichsgewicht",
+   "titel": "Verriegelung der Notklappe auf dem Fahrkorb",
+   "prioritaet": "Mittel",
    "zeitplan": "Mittelfristig oder im Rahmen einer umfangreichen Modernisierung",
    "hazards": [
     "MF-F07"
@@ -647,13 +752,24 @@
    "bemerkung": ""
   },
   {
-   "nr": 43,
-   "abschnitt": "5.8.6",
-   "titel": "Umwehrung (Geländer) auf dem Fahrkorbdach",
-   "prioritaet": "Hoch",
-   "risikoprofil": [
-    "I/D"
+   "nr": "5.4",
+   "alt2003": "42",
+   "gruppe": "Fahrkorb, Gegengewicht und Ausgleichsgewicht",
+   "titel": "Festigkeit des Fahrkorbdachs und der Notklappe",
+   "prioritaet": "Niedrig",
+   "zeitplan": "Langfristig oder im Rahmen einer Modernisierung der betroffenen Komponente",
+   "hazards": [
+    "MF-F07"
    ],
+   "deckung": "voll",
+   "bemerkung": ""
+  },
+  {
+   "nr": "5.5",
+   "alt2003": "43",
+   "gruppe": "Fahrkorb, Gegengewicht und Ausgleichsgewicht",
+   "titel": "Schutz gegen Absturz vom Fahrkorbdach (Umwehrung)",
+   "prioritaet": "Hoch",
    "zeitplan": "Kurzfristig",
    "hazards": [
     "MF-F01"
@@ -662,14 +778,12 @@
    "bemerkung": ""
   },
   {
-   "nr": 44,
-   "abschnitt": "5.8.7",
-   "titel": "Lüftung des Fahrkorbs",
-   "prioritaet": "Hoch",
-   "risikoprofil": [
-    "II/C-D"
-   ],
-   "zeitplan": "Kurzfristig",
+   "nr": "5.6",
+   "alt2003": "44",
+   "gruppe": "Fahrkorb, Gegengewicht und Ausgleichsgewicht",
+   "titel": "Fahrkorbbelüftung",
+   "prioritaet": "Mittel",
+   "zeitplan": "Mittelfristig oder im Rahmen einer umfangreichen Modernisierung",
    "hazards": [
     "MF-K07"
    ],
@@ -677,29 +791,25 @@
    "bemerkung": ""
   },
   {
-   "nr": 45,
-   "abschnitt": "5.8.8.1",
-   "titel": "Beleuchtung im Fahrkorb (Normalbetrieb)",
+   "nr": "5.7",
+   "alt2003": "45",
+   "gruppe": "Fahrkorb, Gegengewicht und Ausgleichsgewicht",
+   "titel": "Normale Beleuchtung im Fahrkorb",
    "prioritaet": "Mittel",
-   "risikoprofil": [
-    "III/C"
-   ],
    "zeitplan": "Mittelfristig oder im Rahmen einer umfangreichen Modernisierung",
    "hazards": [
     "MF-K15"
    ],
    "deckung": "voll",
-   "bemerkung": "Ergänzt 04.09.2026 (EN 81-20 5.4.10.1 bis 5.4.10.3: mind. 100 Lux an den Befehlsgebern und 1 m über dem Boden bis 100 mm an die Wände)."
+   "bemerkung": "Nr. 45 (2003): Ergänzt 04.09.2026 (EN 81-20 5.4.10.1 bis 5.4.10.3: mind. 100 Lux an den Befehlsgebern und 1 m über dem Boden bis 100 mm an die Wände)."
   },
   {
-   "nr": 46,
-   "abschnitt": "5.8.8.2",
+   "nr": "5.8",
+   "alt2003": "46",
+   "gruppe": "Fahrkorb, Gegengewicht und Ausgleichsgewicht",
    "titel": "Notbeleuchtung im Fahrkorb",
-   "prioritaet": "Hoch",
-   "risikoprofil": [
-    "III/B"
-   ],
-   "zeitplan": "Kurzfristig",
+   "prioritaet": "Mittel",
+   "zeitplan": "Mittelfristig oder im Rahmen einer umfangreichen Modernisierung",
    "hazards": [
     "MF-K02"
    ],
@@ -707,43 +817,50 @@
    "bemerkung": ""
   },
   {
-   "nr": 47,
-   "abschnitt": "5.9.1",
-   "titel": "Schutz an Treibscheiben, Rollen und Kettenrädern gegen Verletzungen",
-   "prioritaet": "Hoch",
-   "risikoprofil": [
-    "II/C-D"
-   ],
-   "zeitplan": "Kurzfristig",
+   "nr": "5.9",
+   "alt2003": "",
+   "gruppe": "Fahrkorb, Gegengewicht und Ausgleichsgewicht",
+   "titel": "Notbeleuchtung auf dem Fahrkorbdach",
+   "prioritaet": "Niedrig",
+   "zeitplan": "Langfristig oder im Rahmen einer Modernisierung der betroffenen Komponente",
    "hazards": [
-    "MF-M03"
+    "MF-F08"
+   ],
+   "deckung": "voll",
+   "bemerkung": "Im MF-Fragebogen bereits enthalten (Frage 9.12), obwohl in der Ausgabe 2003 nicht abgedeckt."
+  },
+  {
+   "nr": "5.10",
+   "alt2003": "73",
+   "gruppe": "Fahrkorb, Gegengewicht und Ausgleichsgewicht",
+   "titel": "Kontrolle der Beladung, um einen Start des Fahrkorbs bei Überladung zu verhindern",
+   "prioritaet": "Niedrig",
+   "zeitplan": "Langfristig oder im Rahmen einer Modernisierung der betroffenen Komponente",
+   "hazards": [
+    "MF-K06"
    ],
    "deckung": "voll",
    "bemerkung": ""
   },
   {
-   "nr": 48,
-   "abschnitt": "5.9.1",
-   "titel": "Schutz gegen Herausspringen von Seilen oder Ketten",
+   "nr": "5.11",
+   "alt2003": "71",
+   "gruppe": "Fahrkorb, Gegengewicht und Ausgleichsgewicht",
+   "titel": "Fernnotrufeinrichtung mit Zweiwegeverständigung",
    "prioritaet": "Hoch",
-   "risikoprofil": [
-    "II/C-D"
-   ],
    "zeitplan": "Kurzfristig",
    "hazards": [
-    "MF-M03"
+    "MF-K01"
    ],
    "deckung": "voll",
    "bemerkung": ""
   },
   {
-   "nr": 49,
-   "abschnitt": "5.9.1",
-   "titel": "Schutz gegen Eindringen von Fremdkörpern in Treibscheibe und Rollen",
+   "nr": "6.1",
+   "alt2003": "47",
+   "gruppe": "Aufhängungsmittel, Ausgleichsmittel, Schutz gegen freien Fall, Übergeschwindigkeit, unbeabsichtigte Bewegung und Absinken des Fahrkorbs",
+   "titel": "Schutz gegen Verletzungen an Treibscheiben, Seilrollen oder Kettenrädern",
    "prioritaet": "Mittel",
-   "risikoprofil": [
-    "III/C-D"
-   ],
    "zeitplan": "Mittelfristig oder im Rahmen einer umfangreichen Modernisierung",
    "hazards": [
     "MF-M03"
@@ -752,46 +869,52 @@
    "bemerkung": ""
   },
   {
-   "nr": 50,
-   "abschnitt": "5.9.2",
-   "titel": "Fangvorrichtung und Geschwindigkeitsbegrenzer bei elektrisch angetriebenen Aufzügen",
-   "prioritaet": "Hoch",
-   "risikoprofil": [
-    "I/D",
-    "II/C"
-   ],
-   "zeitplan": "Kurzfristig",
+   "nr": "6.2",
+   "alt2003": "48",
+   "gruppe": "Aufhängungsmittel, Ausgleichsmittel, Schutz gegen freien Fall, Übergeschwindigkeit, unbeabsichtigte Bewegung und Absinken des Fahrkorbs",
+   "titel": "Schutz gegen das Herausspringen von Seilen oder Ketten",
+   "prioritaet": "Mittel",
+   "zeitplan": "Mittelfristig oder im Rahmen einer umfangreichen Modernisierung",
    "hazards": [
-    "MF-S05"
+    "MF-M03"
    ],
    "deckung": "voll",
    "bemerkung": ""
   },
   {
-   "nr": 51,
-   "abschnitt": "5.9.3",
-   "titel": "Schlaffseilschalter am Begrenzerseil (Spanngewicht)",
-   "prioritaet": "Hoch",
-   "risikoprofil": [
-    "I/D"
-   ],
-   "zeitplan": "Kurzfristig",
+   "nr": "6.3",
+   "alt2003": "49",
+   "gruppe": "Aufhängungsmittel, Ausgleichsmittel, Schutz gegen freien Fall, Übergeschwindigkeit, unbeabsichtigte Bewegung und Absinken des Fahrkorbs",
+   "titel": "Schutz gegen das Eindringen von Fremdkörpern zwischen Seil/Kette und Scheibe",
+   "prioritaet": "Niedrig",
+   "zeitplan": "Langfristig oder im Rahmen einer Modernisierung der betroffenen Komponente",
    "hazards": [
-    "MF-S05"
+    "MF-M03"
    ],
    "deckung": "voll",
    "bemerkung": ""
   },
   {
-   "nr": 52,
-   "abschnitt": "5.9.4",
-   "titel": "Schutz gegen unkontrollierte Aufwärtsbewegung des Fahrkorbs",
+   "nr": "6.4",
+   "alt2003": "50, 54",
+   "gruppe": "Aufhängungsmittel, Ausgleichsmittel, Schutz gegen freien Fall, Übergeschwindigkeit, unbeabsichtigte Bewegung und Absinken des Fahrkorbs",
+   "titel": "Schutz gegen freien Fall und Abwärtsbewegung mit überhöhter Geschwindigkeit",
    "prioritaet": "Hoch",
-   "risikoprofil": [
-    "I/D",
-    "II/C-D"
-   ],
    "zeitplan": "Kurzfristig",
+   "hazards": [
+    "MF-S05",
+    "MF-M13"
+   ],
+   "deckung": "voll",
+   "bemerkung": ""
+  },
+  {
+   "nr": "6.5",
+   "alt2003": "52",
+   "gruppe": "Aufhängungsmittel, Ausgleichsmittel, Schutz gegen freien Fall, Übergeschwindigkeit, unbeabsichtigte Bewegung und Absinken des Fahrkorbs",
+   "titel": "Schutz gegen unkontrollierte Aufwärtsbewegung (Treibscheibenaufzug mit Gegengewicht)",
+   "prioritaet": "Mittel",
+   "zeitplan": "Mittelfristig oder im Rahmen einer umfangreichen Modernisierung",
    "hazards": [
     "MF-K13"
    ],
@@ -799,13 +922,11 @@
    "bemerkung": ""
   },
   {
-   "nr": 53,
-   "abschnitt": "5.9.4, 5.12.1",
-   "titel": "Auslegung des Triebwerks und der Bremse",
+   "nr": "6.6",
+   "alt2003": "53",
+   "gruppe": "Aufhängungsmittel, Ausgleichsmittel, Schutz gegen freien Fall, Übergeschwindigkeit, unbeabsichtigte Bewegung und Absinken des Fahrkorbs",
+   "titel": "Schutz gegen unbeabsichtigte Bewegung des Fahrkorbs bei offenen Türen (UCM)",
    "prioritaet": "Hoch",
-   "risikoprofil": [
-    "I/D"
-   ],
    "zeitplan": "Kurzfristig",
    "hazards": [
     "MF-M08"
@@ -814,13 +935,11 @@
    "bemerkung": ""
   },
   {
-   "nr": 54,
-   "abschnitt": "5.9.5",
-   "titel": "Schutz gegen freien Fall, Übergeschwindigkeit und Absinken bei Hydraulikaufzügen",
+   "nr": "6.7",
+   "alt2003": "54",
+   "gruppe": "Aufhängungsmittel, Ausgleichsmittel, Schutz gegen freien Fall, Übergeschwindigkeit, unbeabsichtigte Bewegung und Absinken des Fahrkorbs",
+   "titel": "Schutz gegen Absinken bei Hydraulikaufzügen (oder Klemmvorrichtung)",
    "prioritaet": "Hoch",
-   "risikoprofil": [
-    "I/D"
-   ],
    "zeitplan": "Kurzfristig",
    "hazards": [
     "MF-M13"
@@ -829,15 +948,38 @@
    "bemerkung": ""
   },
   {
-   "nr": 55,
-   "abschnitt": "5.10.1",
-   "titel": "Gegengewicht oder Ausgleichsgewicht durch Seile statt Schienen geführt",
+   "nr": "6.8",
+   "alt2003": "51",
+   "gruppe": "Aufhängungsmittel, Ausgleichsmittel, Schutz gegen freien Fall, Übergeschwindigkeit, unbeabsichtigte Bewegung und Absinken des Fahrkorbs",
+   "titel": "Schlaffseilschalter am Begrenzerseil für Übergeschwindigkeit",
    "prioritaet": "Mittel",
-   "risikoprofil": [
-    "I/D-E",
-    "II/D"
-   ],
    "zeitplan": "Mittelfristig oder im Rahmen einer umfangreichen Modernisierung",
+   "hazards": [
+    "MF-S05"
+   ],
+   "deckung": "voll",
+   "bemerkung": ""
+  },
+  {
+   "nr": "6.9",
+   "alt2003": "63",
+   "gruppe": "Aufhängungsmittel, Ausgleichsmittel, Schutz gegen freien Fall, Übergeschwindigkeit, unbeabsichtigte Bewegung und Absinken des Fahrkorbs",
+   "titel": "Sicherheitseinrichtung gegen Schlaffseil oder Schlaffkette",
+   "prioritaet": "Mittel",
+   "zeitplan": "Mittelfristig oder im Rahmen einer umfangreichen Modernisierung",
+   "hazards": [
+    "MF-S05"
+   ],
+   "deckung": "voll",
+   "bemerkung": ""
+  },
+  {
+   "nr": "7.1",
+   "alt2003": "55",
+   "gruppe": "Führungsschienen, Puffer und Notendschalter",
+   "titel": "Führungen für Gegengewicht oder Ausgleichsgewicht",
+   "prioritaet": "Niedrig",
+   "zeitplan": "Langfristig oder im Rahmen einer Modernisierung der betroffenen Komponente",
    "hazards": [
     "MF-S04"
    ],
@@ -845,13 +987,11 @@
    "bemerkung": ""
   },
   {
-   "nr": 56,
-   "abschnitt": "5.10.2",
-   "titel": "Puffer für Fahrkorb und Gegengewicht",
+   "nr": "7.2",
+   "alt2003": "56",
+   "gruppe": "Führungsschienen, Puffer und Notendschalter",
+   "titel": "Fahrkorb- und Gegengewichtspuffer",
    "prioritaet": "Hoch",
-   "risikoprofil": [
-    "II/C"
-   ],
    "zeitplan": "Kurzfristig",
    "hazards": [
     "MF-G06"
@@ -860,60 +1000,38 @@
    "bemerkung": ""
   },
   {
-   "nr": 57,
-   "abschnitt": "5.10.3",
+   "nr": "7.3",
+   "alt2003": "57",
+   "gruppe": "Führungsschienen, Puffer und Notendschalter",
    "titel": "Notendschalter",
-   "prioritaet": "Hoch",
-   "risikoprofil": [
-    "III/B"
-   ],
-   "zeitplan": "Kurzfristig",
+   "prioritaet": "Mittel",
+   "zeitplan": "Mittelfristig oder im Rahmen einer umfangreichen Modernisierung",
    "hazards": [
     "MF-M21"
    ],
    "deckung": "voll",
-   "bemerkung": "Ergänzt 04.09.2026 (EN 81-20 5.12.2)."
+   "bemerkung": "Nr. 57 (2003): Ergänzt 04.09.2026 (EN 81-20 5.12.2)."
   },
   {
-   "nr": 58,
-   "abschnitt": "5.11.1",
-   "titel": "Abstand zwischen Fahrkorb und der dem Zugang gegenüber-liegenden Schachtwand",
+   "nr": "8.1",
+   "alt2003": "",
+   "gruppe": "Triebwerk",
+   "titel": "Mindestens zwei unabhängige Bremssätze",
    "prioritaet": "Hoch",
-   "risikoprofil": [
-    "I/D"
-   ],
    "zeitplan": "Kurzfristig",
    "hazards": [
-    "MF-F01"
-   ],
-   "deckung": "teilweise",
-   "bemerkung": "MF erhebt den Abstand an der Fahrkorbdachkante (Absturzsicherung)."
-  },
-  {
-   "nr": 59,
-   "abschnitt": "5.11.2",
-   "titel": "Abstand zwischen Fahrkorbschwelle und Schachttür",
-   "prioritaet": "Hoch",
-   "risikoprofil": [
-    "I/D"
-   ],
-   "zeitplan": "Kurzfristig",
-   "hazards": [
-    "MF-K05"
+    "MF-M08"
    ],
    "deckung": "voll",
-   "bemerkung": ""
+   "bemerkung": "MF-M08 erhebt die Zweikreisbremse (Frage 6.2) und ihre Überwachung."
   },
   {
-   "nr": 60,
-   "abschnitt": "5.12.2",
-   "titel": "Einrichtung für den Notbetrieb und die Personenbefreiung",
-   "prioritaet": "Extrem",
-   "risikoprofil": [
-    "I/B",
-    "I/D"
-   ],
-   "zeitplan": "Sofort, Aufzug muss stillgelegt werden",
+   "nr": "8.2",
+   "alt2003": "60",
+   "gruppe": "Triebwerk",
+   "titel": "Notbetriebssystem",
+   "prioritaet": "Hoch",
+   "zeitplan": "Kurzfristig",
    "hazards": [
     "MF-M15"
    ],
@@ -921,28 +1039,11 @@
    "bemerkung": ""
   },
   {
-   "nr": 61,
-   "abschnitt": "5.12.3",
-   "titel": "Absperrventil am Hydraulikaggregat",
-   "prioritaet": "Mittel",
-   "risikoprofil": [
-    "III/C-D"
-   ],
-   "zeitplan": "Mittelfristig oder im Rahmen einer umfangreichen Modernisierung",
-   "hazards": [
-    "MF-M13"
-   ],
-   "deckung": "voll",
-   "bemerkung": ""
-  },
-  {
-   "nr": 62,
-   "abschnitt": "5.12.4",
-   "titel": "Zwei unabhängige Schütze im Antriebsstromkreis",
+   "nr": "8.3",
+   "alt2003": "62",
+   "gruppe": "Triebwerk",
+   "titel": "Mittel zum Stillsetzen des Antriebs und Überwachung seines Stillstands",
    "prioritaet": "Hoch",
-   "risikoprofil": [
-    "I/D"
-   ],
    "zeitplan": "Kurzfristig",
    "hazards": [
     "MF-M10"
@@ -951,29 +1052,12 @@
    "bemerkung": ""
   },
   {
-   "nr": 63,
-   "abschnitt": "5.12.5",
-   "titel": "Schlaffseil-/Schlaffketteneinrichtung",
-   "prioritaet": "Hoch",
-   "risikoprofil": [
-    "II/C-D"
-   ],
-   "zeitplan": "Kurzfristig",
-   "hazards": [
-    "MF-S05"
-   ],
-   "deckung": "voll",
-   "bemerkung": ""
-  },
-  {
-   "nr": 64,
-   "abschnitt": "5.12.6",
-   "titel": "Laufzeitüberwachung des Antriebs",
-   "prioritaet": "Mittel",
-   "risikoprofil": [
-    "III/C-D"
-   ],
-   "zeitplan": "Mittelfristig oder im Rahmen einer umfangreichen Modernisierung",
+   "nr": "8.4",
+   "alt2003": "64",
+   "gruppe": "Triebwerk",
+   "titel": "Motorlaufzeitüberwachung",
+   "prioritaet": "Niedrig",
+   "zeitplan": "Langfristig oder im Rahmen einer Modernisierung der betroffenen Komponente",
    "hazards": [
     "MF-M11"
    ],
@@ -981,14 +1065,12 @@
    "bemerkung": ""
   },
   {
-   "nr": 65,
-   "abschnitt": "5.12.7",
-   "titel": "Einrichtung gegen Absinken des Kolbens",
-   "prioritaet": "Hoch",
-   "risikoprofil": [
-    "II/C-D"
-   ],
-   "zeitplan": "Kurzfristig",
+   "nr": "8.5",
+   "alt2003": "61",
+   "gruppe": "Triebwerk",
+   "titel": "Absperrventil (Hydraulikaufzüge)",
+   "prioritaet": "Niedrig",
+   "zeitplan": "Langfristig oder im Rahmen einer Modernisierung der betroffenen Komponente",
    "hazards": [
     "MF-M13"
    ],
@@ -996,13 +1078,24 @@
    "bemerkung": ""
   },
   {
-   "nr": 66,
-   "abschnitt": "5.13.1",
-   "titel": "Schutz gegen elektrischen Schlag und Kennzeichnung elektrischer Einrichtungen",
-   "prioritaet": "Hoch",
-   "risikoprofil": [
-    "I/D"
+   "nr": "8.6",
+   "alt2003": "65",
+   "gruppe": "Triebwerk",
+   "titel": "Kolbenabsinkvorrichtung bei Hydraulikaufzügen",
+   "prioritaet": "Mittel",
+   "zeitplan": "Mittelfristig oder im Rahmen einer umfangreichen Modernisierung",
+   "hazards": [
+    "MF-M13"
    ],
+   "deckung": "voll",
+   "bemerkung": ""
+  },
+  {
+   "nr": "9.1",
+   "alt2003": "66",
+   "gruppe": "Elektrische Installationen und Einrichtungen",
+   "titel": "Schutz gegen elektrischen Schlag (direktes Berühren)",
+   "prioritaet": "Hoch",
    "zeitplan": "Kurzfristig",
    "hazards": [
     "MF-M02",
@@ -1012,14 +1105,26 @@
    "bemerkung": ""
   },
   {
-   "nr": 67,
-   "abschnitt": "5.13.2",
-   "titel": "Schutz des Triebwerksmotors gegen Überhitzen",
-   "prioritaet": "Mittel",
-   "risikoprofil": [
-    "II/D"
+   "nr": "9.2",
+   "alt2003": "66",
+   "gruppe": "Elektrische Installationen und Einrichtungen",
+   "titel": "Kennzeichnung von Anschlussklemmen, die nach dem Ausschalten des Hauptschalters unter Strom bleiben",
+   "prioritaet": "Hoch",
+   "zeitplan": "Kurzfristig",
+   "hazards": [
+    "MF-M02",
+    "MF-M17"
    ],
-   "zeitplan": "Mittelfristig oder im Rahmen einer umfangreichen Modernisierung",
+   "deckung": "voll",
+   "bemerkung": ""
+  },
+  {
+   "nr": "9.3",
+   "alt2003": "67",
+   "gruppe": "Elektrische Installationen und Einrichtungen",
+   "titel": "Schutz gegen Überhitzung des Triebwerksmotors",
+   "prioritaet": "Niedrig",
+   "zeitplan": "Langfristig oder im Rahmen einer Modernisierung der betroffenen Komponente",
    "hazards": [
     "MF-M09"
    ],
@@ -1027,13 +1132,11 @@
    "bemerkung": ""
   },
   {
-   "nr": 68,
-   "abschnitt": "5.13.3",
+   "nr": "9.4",
+   "alt2003": "68",
+   "gruppe": "Elektrische Installationen und Einrichtungen",
    "titel": "Abschließbarer Hauptschalter",
    "prioritaet": "Hoch",
-   "risikoprofil": [
-    "I/D"
-   ],
    "zeitplan": "Kurzfristig",
    "hazards": [
     "MF-M07"
@@ -1042,14 +1145,34 @@
    "bemerkung": ""
   },
   {
-   "nr": 69,
-   "abschnitt": "5.14.1",
-   "titel": "Schutz gegen Phasenumkehr und Phasenausfall",
+   "nr": "9.5",
+   "alt2003": "",
+   "gruppe": "Elektrische Installationen und Einrichtungen",
+   "titel": "Bremseinrichtung an der Anlage am Aufstellungsort von Triebwerk und Steuerung",
+   "prioritaet": "Niedrig",
+   "zeitplan": "Langfristig oder im Rahmen einer Modernisierung der betroffenen Komponente",
+   "hazards": [],
+   "deckung": "offen",
+   "bemerkung": "Bremseinrichtung am Aufstellungsort von Triebwerk und Steuerung wird nicht gesondert erhoben."
+  },
+  {
+   "nr": "10.1",
+   "alt2003": "",
+   "gruppe": "Schutz gegen elektrische Fehler, Steuerungen, Vorrechte",
+   "titel": "Erdfehlerschutz in Stromkreisen mit elektrischen Sicherheitseinrichtungen und in Bremsen-/Abwärtsventil-Schaltkreisen",
    "prioritaet": "Mittel",
-   "risikoprofil": [
-    "II/D"
-   ],
    "zeitplan": "Mittelfristig oder im Rahmen einer umfangreichen Modernisierung",
+   "hazards": [],
+   "deckung": "offen",
+   "bemerkung": "Erdfehlerschutz in Sicherheits- und Bremsstromkreisen wird nicht erhoben."
+  },
+  {
+   "nr": "10.2",
+   "alt2003": "69",
+   "gruppe": "Schutz gegen elektrische Fehler, Steuerungen, Vorrechte",
+   "titel": "Schutz gegen Stromphasenumkehr",
+   "prioritaet": "Niedrig",
+   "zeitplan": "Langfristig oder im Rahmen einer Modernisierung der betroffenen Komponente",
    "hazards": [
     "MF-M12"
    ],
@@ -1057,14 +1180,25 @@
    "bemerkung": ""
   },
   {
-   "nr": 70,
-   "abschnitt": "5.14.2",
-   "titel": "Inspektionssteuerung und Not-Halt auf dem Fahrkorbdach",
-   "prioritaet": "Extrem",
-   "risikoprofil": [
-    "I/C"
+   "nr": "10.3",
+   "alt2003": "3",
+   "gruppe": "Schutz gegen elektrische Fehler, Steuerungen, Vorrechte",
+   "titel": "Nachregulierungs- und Anhaltegenauigkeit des Fahrkorbs",
+   "prioritaet": "Hoch",
+   "zeitplan": "Kurzfristig",
+   "hazards": [
+    "MF-K03"
    ],
-   "zeitplan": "Sofort, Aufzug muss stillgelegt werden",
+   "deckung": "voll",
+   "bemerkung": ""
+  },
+  {
+   "nr": "10.4",
+   "alt2003": "70",
+   "gruppe": "Schutz gegen elektrische Fehler, Steuerungen, Vorrechte",
+   "titel": "Inspektionssteuerung und Bremseinrichtung auf dem Fahrkorbdach",
+   "prioritaet": "Hoch",
+   "zeitplan": "Kurzfristig",
    "hazards": [
     "MF-F05",
     "MF-F06"
@@ -1073,61 +1207,25 @@
    "bemerkung": ""
   },
   {
-   "nr": 71,
-   "abschnitt": "5.14.3",
-   "titel": "Notrufeinrichtung im Fahrkorb (Zweiwege-System nach EN 81-28)",
-   "prioritaet": "Hoch",
-   "risikoprofil": [
-    "I/D",
-    "II/C"
-   ],
-   "zeitplan": "Kurzfristig",
+   "nr": "10.5",
+   "alt2003": "",
+   "gruppe": "Schutz gegen elektrische Fehler, Steuerungen, Vorrechte",
+   "titel": "Inspektionskontrolle in der Schachtgrube",
+   "prioritaet": "Niedrig",
+   "zeitplan": "Langfristig oder im Rahmen einer Modernisierung der betroffenen Komponente",
    "hazards": [
-    "MF-K01"
+    "MF-G03"
    ],
-   "deckung": "voll",
-   "bemerkung": ""
+   "deckung": "teilweise",
+   "bemerkung": "MF-G03 erhebt die Inspektionssteuerung in der Schachtgrube (Frage 11.5) zusammen mit dem Not-Halt."
   },
   {
-   "nr": 72,
-   "abschnitt": "5.14.4",
-   "titel": "Sprechverbindung Triebwerksraum – Fahrkorb (Förderhöhe > 30 m)",
-   "prioritaet": "Hoch",
-   "risikoprofil": [
-    "I/D"
-   ],
-   "zeitplan": "Kurzfristig",
-   "hazards": [
-    "MF-M18"
-   ],
-   "deckung": "voll",
-   "bemerkung": ""
-  },
-  {
-   "nr": 73,
-   "abschnitt": "5.14.5",
-   "titel": "Kontrolle der Beladung des Fahrkorbs (Überlastkontrolle)",
+   "nr": "11.1",
+   "alt2003": "74",
+   "gruppe": "Hinweise, Kennzeichnungen und Betriebsanleitungen",
+   "titel": "Hinweise zum sicheren Betrieb und zur Instandhaltung des Aufzugs",
    "prioritaet": "Mittel",
-   "risikoprofil": [
-    "I/D-E",
-    "II/D"
-   ],
    "zeitplan": "Mittelfristig oder im Rahmen einer umfangreichen Modernisierung",
-   "hazards": [
-    "MF-K06"
-   ],
-   "deckung": "voll",
-   "bemerkung": ""
-  },
-  {
-   "nr": 74,
-   "abschnitt": "5.15",
-   "titel": "Hinweise, Kennzeichnungen und Bedienungsanleitung",
-   "prioritaet": "Hoch",
-   "risikoprofil": [
-    "I/D"
-   ],
-   "zeitplan": "Kurzfristig",
    "hazards": [
     "MF-M17",
     "MF-D02"

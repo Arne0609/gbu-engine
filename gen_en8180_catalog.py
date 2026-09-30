@@ -90,8 +90,10 @@ def build():
     M = {m['code']: m for m in mf['measures']}
 
     kern = OrderedDict()
+    # Index 3: seit der Umstellung auf DIN EN 81-80:2019-11 (30.09.2026) steht
+    # an Stelle 0 die Nummer der Ausgabe 2003 und an Stelle 2 die Priorität.
     for nr in sorted(ZUORDNUNG):
-        for c in ZUORDNUNG[nr][2]:
+        for c in ZUORDNUNG[nr][3]:
             kern[c] = True
     fehlend = [c for c in list(kern) + ZUSATZ if c not in H]
     if fehlend:
