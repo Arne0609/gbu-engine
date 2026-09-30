@@ -4686,6 +4686,30 @@
    "priority_class": "MITTELFRISTIG"
   },
   {
+   "code": "m_4ad8ce0e47",
+   "title": "Betreiber unverzüglich unterrichten; Lagerung, Welle und Maschinenrahmen sichtprüfen; Arbeiten im Schachtkopf nur bei gegen Bewegung gesichertem Fahrkorb",
+   "type": "ORGANISATIONAL",
+   "priority_class": "SOFORT"
+  },
+  {
+   "code": "m_fa2b021a0c",
+   "title": "Schutzeinrichtung gegen Übergeschwindigkeit aufwärts nachrüsten UND statisch bestimmte Lagerung herstellen; bis dahin den Zustand der Lagerung wiederkehrend prüfen lassen",
+   "type": "TECHNICAL",
+   "priority_class": "MITTELFRISTIG"
+  },
+  {
+   "code": "m_7520750a78",
+   "title": "Bremse und Treibfähigkeit bei jeder Wartung prüfen; Arbeiten im Schachtkopf nur bei gegen Bewegung gesichertem Fahrkorb",
+   "type": "ORGANISATIONAL",
+   "priority_class": "SOFORT"
+  },
+  {
+   "code": "m_1b6f5b6d51",
+   "title": "Schutzeinrichtung gegen Übergeschwindigkeit aufwärts nachrüsten; Bremse auf zwei unabhängig wirkende Bremskreise umrüsten",
+   "type": "TECHNICAL",
+   "priority_class": "MITTELFRISTIG"
+  },
+  {
    "code": "m_133a63fa36",
    "title": "Bremse, Treibfähigkeit und Tragmittel bei jeder Wartung prüfen; Arbeiten im Schachtkopf nur bei gegen Bewegung gesichertem Fahrkorb",
    "type": "ORGANISATIONAL",
@@ -7848,6 +7872,34 @@
      "question": "qk_schutz_aufwaerts",
      "role": "TRIGGER",
      "required_mode": "ALWAYS"
+    },
+    {
+     "question": "qa_lagerung_statisch_bestimmt",
+     "role": "COMPENSATION",
+     "required_mode": "CONDITIONAL",
+     "required_when": {
+      "question": "qa_aufzugsart",
+      "operator": "IN",
+      "value": [
+       "seil",
+       "trommel"
+      ]
+     },
+     "notes": "Pflicht, weil bewertungsrelevant (automatisch gesetzt)."
+    },
+    {
+     "question": "qm_zweikreisbremse",
+     "role": "COMPENSATION",
+     "required_mode": "CONDITIONAL",
+     "required_when": {
+      "question": "qa_aufzugsart",
+      "operator": "IN",
+      "value": [
+       "seil",
+       "trommel"
+      ]
+     },
+     "notes": "Pflicht, weil bewertungsrelevant (automatisch gesetzt)."
     }
    ],
    "sources": [
@@ -14177,6 +14229,82 @@
   },
   {
    "hazard": "MF-K13",
+   "code": "MF-K13-R3",
+   "priority": 300,
+   "condition": {
+    "all": [
+     {
+      "question": "qk_schutz_aufwaerts",
+      "operator": "EQ",
+      "value": "nicht"
+     },
+     {
+      "question": "qa_lagerung_statisch_bestimmt",
+      "operator": "EQ",
+      "value": false
+     }
+    ]
+   },
+   "result": "HIGH",
+   "origin": "OWN_RULE",
+   "evidence": "HIGH_CONFIDENCE",
+   "quality_status": "REVIEW_REQUIRED",
+   "measures": [
+    {
+     "measure": "m_4ad8ce0e47",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_fa2b021a0c",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ],
+   "notes": "3-Punkt-Lagerung ohne Aufwärtsschutz: der Wellenbruch führt unmittelbar zum Durchgehen nach oben. MF-K14 nennt den Aufwärtsschutz selbst als Überbrückung. [Prüfbericht: Prüfbericht 30.09.2026 – Hoch nur noch mit verschärfendem Befund]"
+  },
+  {
+   "hazard": "MF-K13",
+   "code": "MF-K13-R4",
+   "priority": 250,
+   "condition": {
+    "all": [
+     {
+      "question": "qk_schutz_aufwaerts",
+      "operator": "EQ",
+      "value": "nicht"
+     },
+     {
+      "question": "qm_zweikreisbremse",
+      "operator": "EQ",
+      "value": false
+     }
+    ]
+   },
+   "result": "HIGH",
+   "origin": "OWN_RULE",
+   "evidence": "HIGH_CONFIDENCE",
+   "quality_status": "REVIEW_REQUIRED",
+   "measures": [
+    {
+     "measure": "m_7520750a78",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_1b6f5b6d51",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ],
+   "notes": "Ohne zweiten Bremskreis gibt es gegen das Durchgehen nach oben keine Redundanz mehr. [Prüfbericht: Prüfbericht 30.09.2026 – Hoch nur noch mit verschärfendem Befund]"
+  },
+  {
+   "hazard": "MF-K13",
    "code": "MF-K13-R1",
    "priority": 100,
    "condition": {
@@ -14184,10 +14312,10 @@
     "operator": "EQ",
     "value": "nicht"
    },
-   "result": "HIGH",
+   "result": "MEDIUM",
    "origin": "OWN_RULE",
    "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "VERIFIED",
+   "quality_status": "REVIEW_REQUIRED",
    "measures": [
     {
      "measure": "m_133a63fa36",
@@ -14202,7 +14330,7 @@
      "mandatory": true
     }
    ],
-   "notes": "[Prüfbericht: H05 – sachfremde Sofortmaßnahme (Ultraschall) ersetzt] Freigegeben 2026-09-20."
+   "notes": "[Prüfbericht: Prüfbericht 30.09.2026 – Bestandsabweichung, Stufe nach EN 81-80:2019-11 Nr. 6.5 auf Mittel] OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
   },
   {
    "hazard": "MF-K13",
@@ -14215,7 +14343,7 @@
    "result": "NO_RISK",
    "origin": "OWN_RULE",
    "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "VERIFIED",
+   "quality_status": "REVIEW_REQUIRED",
    "measures": [
     {
      "measure": "m_148f9590b0",
@@ -14224,7 +14352,7 @@
      "mandatory": true
     }
    ],
-   "notes": "Kein Risiko: keine Mangelregel trifft zu, alle Pflichtfragen beantwortet. Freigegeben 2026-09-20."
+   "notes": "Kein Risiko: keine Mangelregel trifft zu, alle Pflichtfragen beantwortet. OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
   },
   {
    "hazard": "MF-K14",

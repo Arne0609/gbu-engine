@@ -908,13 +908,43 @@ hz('MF-K13', 'Fehlender Schutz gegen Übergeschwindigkeit aufwärts / Sturz nach
      'notes': 'Prüfbericht 20.09.2026: Sichtbarkeit von 8.28 auf denselben Umfang gebracht – '
               'bei indirekter Hydraulik wurde die Frage gestellt, aber nie bewertet.'}),
     ('qa_gegengewicht', 'APPLICABILITY', 'NEVER'),
-    ('qk_schutz_aufwaerts', 'TRIGGER', 'ALWAYS')],
-   [r(eq('qk_schutz_aufwaerts', 'nicht'), 'HIGH', mfrom=('N20-K4.1', 'Sturz nach oben nicht'),
+    ('qk_schutz_aufwaerts', 'TRIGGER', 'ALWAYS'),
+    ('qa_lagerung_statisch_bestimmt', 'COMPENSATION', 'NEVER'),
+    ('qm_zweikreisbremse', 'COMPENSATION', 'NEVER')],
+   # Externe Prüfung 30.09.2026: Der fehlende Aufwärtsschutz ist an einer
+   # Bestandsanlage eine Abweichung vom heutigen Sicherheitsniveau, kein akuter
+   # Anlagenfehler. DIN EN 81-80 sieht das seit der Ausgabe 2019-11 genauso und
+   # hat denselben Punkt (6.5, alte Nr. 52) von Hoch auf MITTEL gesenkt. Hoch
+   # bleibt für die Fälle, in denen der verbleibende Schutz selbst angegriffen
+   # ist: statisch unbestimmte Lagerung (Wellenbruch, vgl. MF-K14) oder eine
+   # Bremse ohne zweiten Bremskreis. Beide Fragen sind COMPENSATION/NEVER –
+   # unbeantwortet verschärfen sie nicht, sie halten die Gefährdung aber auch
+   # nicht offen.
+   [r(all_(eq('qk_schutz_aufwaerts', 'nicht'), no('qa_lagerung_statisch_bestimmt')), 'HIGH', prio=300,
+      sofort='Betreiber unverzüglich unterrichten; Lagerung, Welle und Maschinenrahmen sichtprüfen; '
+             'Arbeiten im Schachtkopf nur bei gegen Bewegung gesichertem Fahrkorb',
+      mittel='Schutzeinrichtung gegen Übergeschwindigkeit aufwärts nachrüsten UND statisch bestimmte '
+             'Lagerung herstellen; bis dahin den Zustand der Lagerung wiederkehrend prüfen lassen',
+      evidence='HIGH_CONFIDENCE',
+      pb='Prüfbericht 30.09.2026 – Hoch nur noch mit verschärfendem Befund',
+      notes='3-Punkt-Lagerung ohne Aufwärtsschutz: der Wellenbruch führt unmittelbar zum '
+            'Durchgehen nach oben. MF-K14 nennt den Aufwärtsschutz selbst als Überbrückung.'),
+    r(all_(eq('qk_schutz_aufwaerts', 'nicht'), no('qm_zweikreisbremse')), 'HIGH', prio=250,
+      sofort='Bremse und Treibfähigkeit bei jeder Wartung prüfen; Arbeiten im Schachtkopf nur bei '
+             'gegen Bewegung gesichertem Fahrkorb',
+      mittel='Schutzeinrichtung gegen Übergeschwindigkeit aufwärts nachrüsten; Bremse auf zwei '
+             'unabhängig wirkende Bremskreise umrüsten',
+      evidence='HIGH_CONFIDENCE',
+      pb='Prüfbericht 30.09.2026 – Hoch nur noch mit verschärfendem Befund',
+      notes='Ohne zweiten Bremskreis gibt es gegen das Durchgehen nach oben keine Redundanz mehr.'),
+    r(eq('qk_schutz_aufwaerts', 'nicht'), 'MEDIUM', prio=100,
+      mfrom=('N20-K4.1', 'Sturz nach oben nicht'),
       sofort='Bremse, Treibfähigkeit und Tragmittel bei jeder Wartung prüfen; Arbeiten im Schachtkopf '
              'nur bei gegen Bewegung gesichertem Fahrkorb',
       mittel='Schutzeinrichtung gegen Übergeschwindigkeit aufwärts nachrüsten (z. B. Fangvorrichtung am '
              'Gegengewicht, Seil- oder Treibscheibenbremse), baumustergeprüft und zur Anlage passend',
-      evidence='HIGH_CONFIDENCE', pb='H05 – sachfremde Sofortmaßnahme (Ultraschall) ersetzt')],
+      evidence='HIGH_CONFIDENCE',
+      pb='Prüfbericht 30.09.2026 – Bestandsabweichung, Stufe nach EN 81-80:2019-11 Nr. 6.5 auf Mittel')],
    sources=[en8120('5.6.6'), trbs3121('Anh. 1 Nr. 16')], factor=F_KINETISCH, persons=[NUTZER],
    bereich='K')
 

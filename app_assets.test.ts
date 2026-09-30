@@ -55,6 +55,30 @@ for (const name of SEEDS) {
   });
 }
 
+/**
+ * Zweite Driftart, gefunden am 01.10.2026: riedl_map.json nennt in `kataloge`
+ * die Regelwerksversionen, gegen die der Riedl-Bericht erzeugt wird. Die Karte
+ * im App-Repo war auf riedl-mf-2026.1 / 81-20-mf-2026.9 zurueckgefallen,
+ * waehrend die Regelwerke daneben schon 2026.2 / 2026.10 waren. Sichtbar wurde
+ * das erst in riedl_typ_test.dart der App. Hier scheitert es frueher.
+ */
+test('riedl_map nennt die Versionen der Regelwerke, die daneben liegen', () => {
+  const map = JSON.parse(readFileSync(path.join(HIER, 'riedl_map.json'), 'utf8'));
+  const version = (datei: string) =>
+    JSON.parse(readFileSync(path.join(HIER, datei), 'utf8')).rule_version;
+  const paare: [string, string][] = [
+    ['gbu', 'norm_riedl_mf.json'],
+    ['cyber', 'norm_riedl_cyber.json'],
+    ['gbu_quelle', 'norm_81_20_mf.json'],
+    ['cyber_quelle', 'norm_cyber_mf.json'],
+  ];
+  for (const [schluessel, datei] of paare) {
+    assert.equal(map.kataloge?.[schluessel], version(datei),
+      `riedl_map.kataloge.${schluessel} passt nicht zu ${datei} ` +
+      '- Karte und Regelwerk laufen auseinander.');
+  }
+});
+
 for (const name of KOPIEN) {
   test(`App-Asset ${name} ist eine unveränderte Kopie`, () => {
     const ziel = path.join(APP, name);

@@ -526,17 +526,26 @@ CYBER_BLATT = {
  ]}
 
 # Texte des Cyber-Deckblatts (eigene Formulierung nach der Vorlage).
+# Externe Prüfung 30.09.2026: Drei dieser Sätze behaupteten Vollzug – „das
+# wurde berücksichtigt", „werden berücksichtigt", „werden geprüft" –, während
+# der ZÜS-Abschlusscheck dieselben Punkte zwei Seiten später als offen bzw.
+# nicht erfüllt auswies (5.5 bis 5.8 alle Nein, 1.7 offen). Ein Dokument, das
+# sich selbst widerspricht, ist vor einer ZÜS nicht zu halten. Der Abschnitt
+# formuliert deshalb Anforderungen; die Feststellungen stehen im
+# ZÜS-Abschlusscheck, der sie aus denselben Antworten ableitet.
 CYBER_ALLGEMEINES = [
     'Bei überwachungsbedürftigen Anlagen nach ÜAnlG ist grundsätzlich von einem erheblichen '
     'Risiko für die Sicherheit und Gesundheit von Beschäftigten und weiteren Personen im '
-    'Gefahrenbereich auszugehen; das wurde bei der Beurteilung berücksichtigt.',
+    'Gefahrenbereich auszugehen; das ist bei der Festlegung der Maßnahmen zu berücksichtigen.',
     'Grundlage der Bewertung der Cybersicherheitsmaßnahmen sind TRBS 1115 Teil 1 und IEC 62443.',
     'Die Umsetzung von Cybersicherheitsmaßnahmen darf bestehende Sicherheitsfunktionen nicht '
     'beeinträchtigen; die Rückwirkungsfreiheit ist sicherzustellen.',
-    'Die Vorgaben der Hersteller der eingesetzten Komponenten werden bei der Festlegung der '
-    'Maßnahmen berücksichtigt.',
-    'Wirksamkeit und Funktionsfähigkeit der Maßnahmen werden regelmäßig nach TRBS 1115 Teil 1 '
-    '(Abschnitte 5 und 8.2) geprüft.',
+    'Die Vorgaben der Hersteller der eingesetzten Komponenten sind bei der Festlegung der '
+    'Maßnahmen zu berücksichtigen.',
+    'Wirksamkeit und Funktionsfähigkeit der Maßnahmen sind regelmäßig nach TRBS 1115 Teil 1 '
+    '(Abschnitte 5 und 8.2) zu prüfen.',
+    'Die Punkte dieses Abschnitts sind Anforderungen, keine Feststellungen. Ob sie an dieser '
+    'Anlage erfüllt sind, weist der ZÜS-Abschlusscheck aus.',
 ]
 CYBER_WIRKSAMKEIT = [
     'Die Maßnahmen sind in geeigneten Zeitabständen, nach Änderungen an der Anlage, bei '

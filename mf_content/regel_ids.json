@@ -1690,17 +1690,29 @@
   "MF-K13": {
    "MF-K13-R1": {
     "sachverhalt": "1f85b8c75cc4",
-    "rev": 3,
-    "fp": "c322ca843787",
+    "rev": 4,
+    "fp": "5bd3925f543d",
     "stand": "81-20-mf-2026.10",
     "fp_verifiziert": "c322ca843787"
    },
    "MF-K13-R2": {
     "sachverhalt": "bd5087dcdfff",
-    "rev": 3,
-    "fp": "80e98d914713",
+    "rev": 4,
+    "fp": "95d2e4a0e3e5",
     "stand": "81-20-mf-2026.10",
     "fp_verifiziert": "80e98d914713"
+   },
+   "MF-K13-R3": {
+    "sachverhalt": "fa7749fe8dd2",
+    "rev": 1,
+    "fp": "7f06208150cf",
+    "stand": "81-20-mf-2026.10"
+   },
+   "MF-K13-R4": {
+    "sachverhalt": "25b679b51b73",
+    "rev": 1,
+    "fp": "2e1da33fd114",
+    "stand": "81-20-mf-2026.10"
    }
   },
   "MF-K14": {
