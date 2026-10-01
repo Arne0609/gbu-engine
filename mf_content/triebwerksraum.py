@@ -182,6 +182,10 @@ yn('qm_notbetrieb_gekennz', 'Notbetriebseinrichtung gekennzeichnet (Fahrtrichtun
    'Bündigmarken)?', ui='5.53a', visible_when=yes('qm_notbetrieb'))
 yn('qm_personal_eingewiesen', 'Beauftragte Personen in die Personenbefreiung '
    'eingewiesen?', ui='5.53b', visible_when=yes('qd_beauftragte_person'),
+   # Ob eingewiesen wurde, kann ein Monteur im Maschinenraum nicht feststellen
+   # – anders als Stromlaufplan, Betriebsanleitung und Entriegelungsschlüssel,
+   # die ebenfalls im D-Block stehen, aber vor Ort sichtbar sind (01.10.2026).
+   rolle='betreiber',
    help='Setzt eine benannte beauftragte Person voraus (E1). Fehlt sie ganz, ist das der Befund '
         'von MF-D05 – die Einweisung wird dann nicht zusätzlich bemängelt '
         '(Prüfbericht 20.09.2026).')

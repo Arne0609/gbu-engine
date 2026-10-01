@@ -7,6 +7,7 @@
    "domain": "GBU",
    "text": "Aufzugsart",
    "category": "A – Anlagenmerkmale",
+   "rolle": "techniker",
    "ui_number": "3.1",
    "help_text": "Steuert, welche Gefährdungen überhaupt bewertet werden (z. B. Bremse und Gegengewicht nur bei Seilanlagen, Hydraulikeinrichtungen nur bei Hydraulik).",
    "options": [
@@ -36,6 +37,7 @@
    "domain": "GBU",
    "text": "Nenngeschwindigkeit [m/s]",
    "category": "A – Anlagenmerkmale",
+   "rolle": "techniker",
    "ui_number": "3.1a",
    "help_text": "Für die Pufferbewertung (energiespeichernde Puffer nur bis 1,0 m/s).",
    "min": 0.1,
@@ -49,6 +51,7 @@
    "domain": "GBU",
    "text": "Gegengewicht oder Ausgleichsgewicht vorhanden?",
    "category": "A – Anlagenmerkmale",
+   "rolle": "techniker",
    "ui_number": "3.1b",
    "help_text": "Trommelaufzüge ohne Gegengewicht: Nein. Schaltet Abtrennung und Sicherung des Gegengewichts sowie die Sturzverhinderung nach oben.",
    "visible_when": {
@@ -69,6 +72,7 @@
    "domain": "GBU",
    "text": "Eigener Triebwerks-/Maschinenraum vorhanden?",
    "category": "A – Anlagenmerkmale",
+   "rolle": "techniker",
    "ui_number": "4.7",
    "help_text": "Nein = maschinenraumlose Anlage (Antrieb im Schacht, Steuerung im Schaltschrank). Raumbezogene Gefährdungen entfallen dann.",
    "source": "anlagenstamm",
@@ -80,6 +84,7 @@
    "domain": "GBU",
    "text": "Mehrere Aufzüge in einem gemeinsamen Schacht?",
    "category": "A – Anlagenmerkmale",
+   "rolle": "techniker",
    "ui_number": "4.8",
    "source": "anlagenstamm",
    "stamm_key": "mehrere_aufzuege_im_schacht"
@@ -90,6 +95,7 @@
    "domain": "GBU",
    "text": "Betretbarer Raum unterhalb der Schachtgrube?",
    "category": "A – Anlagenmerkmale",
+   "rolle": "techniker",
    "ui_number": "4.8a",
    "help_text": "Zum Beispiel Keller, Technikraum oder Tiefgarage unter der Grube. Dann ist eine Fangvorrichtung am Gegengewicht oder ein durchgehendes Fundament erforderlich.",
    "source": "anlagenstamm",
@@ -101,6 +107,7 @@
    "domain": "GBU",
    "text": "Fahrkorbabschlusstür vorhanden?",
    "category": "A – Anlagenmerkmale",
+   "rolle": "techniker",
    "ui_number": "8.6",
    "help_text": "Ja, wenn jeder Fahrkorbzugang eine Tür oder ein Gitter mit Schließstellungsüberwachung hat. Lichtgitter oder Scherengitter ohne Tür unter 8.9/8.9a erfassen."
   },
@@ -110,6 +117,7 @@
    "domain": "GBU",
    "text": "Schachttüren mit Glas?",
    "category": "A – Anlagenmerkmale",
+   "rolle": "techniker",
    "ui_number": "4.1",
    "source": "anlagenstamm",
    "stamm_key": "glas_schachttueren",
@@ -121,6 +129,7 @@
    "domain": "GBU",
    "text": "Fahrkorbtüren mit Glas?",
    "category": "A – Anlagenmerkmale",
+   "rolle": "techniker",
    "ui_number": "4.3",
    "source": "anlagenstamm",
    "stamm_key": "glas_fahrkorbtueren",
@@ -132,6 +141,7 @@
    "domain": "GBU",
    "text": "Nutzungsart der Anlage",
    "category": "A – Anlagenmerkmale",
+   "rolle": "techniker",
    "ui_number": "2.1",
    "options": [
     {
@@ -160,6 +170,7 @@
    "domain": "GBU",
    "text": "Nutzung durch Personen mit eingeschränkter Mobilität (Rollstuhl, Rollator, Sehbehinderung) zu erwarten?",
    "category": "A – Anlagenmerkmale",
+   "rolle": "techniker",
    "ui_number": "4.9",
    "help_text": "Wirkt als Verschärfung (Modifier) bei Haltegenauigkeit, Türen und Zugang und schaltet die Barrierefreiheits-Gefährdung.",
    "source": "anlagenstamm",
@@ -172,6 +183,7 @@
    "domain": "GBU",
    "text": "Barrierefreie Ausführung gefordert (Baugenehmigung, Nutzungskonzept, öffentlich zugängliches Gebäude)?",
    "category": "A – Anlagenmerkmale",
+   "rolle": "techniker",
    "ui_number": "4.9a",
    "help_text": "Löst zusammen mit 4.9 die Prüfung der Barrierefreiheit aus: Es genügt, wenn entweder die Nutzung zu erwarten oder die Ausführung gefordert ist.",
    "source": "anlagenstamm",
@@ -184,6 +196,7 @@
    "domain": "GBU",
    "text": "Nutzung durch unbeaufsichtigte Kinder zu erwarten (Schule, Kita, Wohnanlage)?",
    "category": "A – Anlagenmerkmale",
+   "rolle": "techniker",
    "ui_number": "4.12",
    "source": "anlagenstamm",
    "stamm_key": "nutzung_durch_kinder",
@@ -195,6 +208,7 @@
    "domain": "GBU",
    "text": "Baujahr der Anlage",
    "category": "A – Anlagenmerkmale",
+   "rolle": "techniker",
    "ui_number": "1.24",
    "help_text": "Wird aus den Stammdaten übernommen. Steuerfeld: Es entscheidet mit über den passenden GBU-Typ (bis 1998 in aller Regel Bestand nach DIN EN 81-80) und darüber, ob eine fehlende Einrichtung eine Nachrüstung nach dem Stand der Technik oder ein Konformitätsmangel ist. Es blendet bewusst KEINE Frage aus – die Gefährdung besteht unabhängig vom Alter der Anlage.",
    "min": 1900,
@@ -208,6 +222,7 @@
    "domain": "GBU",
    "text": "Regelwerk bei Inverkehrbringen / letzter Modernisierung",
    "category": "A – Anlagenmerkmale",
+   "rolle": "techniker",
    "ui_number": "1.28",
    "help_text": "Ergänzt das Baujahr (1.24): Eine 1985 gebaute, 2020 durchgreifend modernisierte Anlage ist nach EN 81-20 in Verkehr gebracht. Weicht die Angabe vom Baujahr ab, gilt für die Beurteilung des Soll-Zustands das Regelwerk, nicht das Baujahr.",
    "options": [
@@ -237,6 +252,7 @@
    "domain": "GBU",
    "text": "Fordert das Brandschutzkonzept des Gebäudes eine Brandfallsteuerung?",
    "category": "A – Anlagenmerkmale",
+   "rolle": "techniker",
    "ui_number": "4.11",
    "help_text": "Unbekannt = Ja wählen und in K prüfen lassen.",
    "source": "anlagenstamm",
@@ -249,6 +265,7 @@
    "domain": "GBU",
    "text": "Brandmeldeanlage (BMA) im Gebäude vorhanden?",
    "category": "A – Anlagenmerkmale",
+   "rolle": "techniker",
    "ui_number": "15.8",
    "source": "anlagenstamm",
    "stamm_key": "bma_vorhanden",
@@ -260,6 +277,7 @@
    "domain": "GBU",
    "text": "Schachtentrauchung / RWA / Lüftungsöffnung im Schachtkopf vorhanden?",
    "category": "A – Anlagenmerkmale",
+   "rolle": "techniker",
    "ui_number": "15.9",
    "source": "anlagenstamm",
    "stamm_key": "entrauchung_vorhanden",
@@ -271,6 +289,7 @@
    "domain": "GBU",
    "text": "UCM-Schutz (unbeabsichtigte Fahrkorbbewegung, A3 / EN 81-20 5.6.7) vorhanden?",
    "category": "A – Anlagenmerkmale",
+   "rolle": "techniker",
    "ui_number": "4.5",
    "help_text": "„Ja\" nur mit Nachweis in den Anlagenunterlagen. Vorbelegt wird die Frage nicht aus dem Baujahr, sondern aus dem Errichtungsregelwerk (1.28: EN 81-1/2 + A3 seit 2012, EN 81-20 durchgehend) und nur, wenn die Konformitätserklärung vorliegt (1.29) – beides zusammen ist der Nachweis. Liegt sie nicht vor oder ist das Regelwerk unbekannt und das Baujahr vor 2012, bleibt die Frage zu erheben (Entscheidung Arne 20.09.2026 zum Prüfbericht, Befund B07).",
    "source": "anlagenstamm",
@@ -282,6 +301,7 @@
    "domain": "GBU",
    "text": "Antriebswelle statisch bestimmt gelagert (keine 3-Punkt-Lagerung)?",
    "category": "A – Anlagenmerkmale",
+   "rolle": "techniker",
    "ui_number": "4.6",
    "help_text": "Nur bei Treibscheiben- und Trommelantrieb. Indirekte Hydraulikaufzüge haben keine Antriebswelle im Sinne von TRBS 3121 Anh. 1 Nr. 16.",
    "visible_when": {
@@ -301,6 +321,7 @@
    "domain": "GBU",
    "text": "Schachtgrubentiefe über 1,60 m?",
    "category": "A – Anlagenmerkmale",
+   "rolle": "techniker",
    "ui_number": "11.1",
    "help_text": "Regelgrenze 1,60 m (DIN EN 81-20 5.2.1.5.1 a): bei Grubentiefe über 1,60 m zwei Notbremsschalter). Aus dem Anlagenstamm (Grubentiefe [m]).",
    "source": "anlagenstamm",
@@ -312,6 +333,7 @@
    "domain": "GBU",
    "text": "Ohne Fahrkorbtür: Lastenaufzug, der ausschließlich von eingewiesenen Personen benutzt wird (Einweisung dokumentiert)?",
    "category": "A – Anlagenmerkmale",
+   "rolle": "techniker",
    "ui_number": "8.9b",
    "help_text": "TRBS 3121 Anh. 1 Nr. 14 c): Das Sicherheitslichtgitter ersetzt die Fahrkorbtür nur bei Lastenaufzügen mit ausschließlich eingewiesenem Nutzerkreis.",
    "visible_when": {
@@ -345,6 +367,7 @@
    "domain": "GBU",
    "text": "Beauftragte Personen in die Personenbefreiung eingewiesen?",
    "category": "D – Unterlagen und Betreiberorganisation",
+   "rolle": "betreiber",
    "ui_number": "5.53b",
    "help_text": "Setzt eine benannte beauftragte Person voraus (E1). Fehlt sie ganz, ist das der Befund von MF-D05 – die Einweisung wird dann nicht zusätzlich bemängelt (Prüfbericht 20.09.2026).",
    "visible_when": {
@@ -360,6 +383,7 @@
    "domain": "GBU",
    "text": "Stromlaufplan / Schaltunterlagen",
    "category": "D – Unterlagen und Betreiberorganisation",
+   "rolle": "techniker",
    "ui_number": "5.55",
    "options": [
     {
@@ -383,6 +407,7 @@
    "domain": "GBU",
    "text": "Betriebs-/Bedienungsanleitung der Anlage",
    "category": "D – Unterlagen und Betreiberorganisation",
+   "rolle": "techniker",
    "ui_number": "5.57",
    "options": [
     {
@@ -406,6 +431,7 @@
    "domain": "GBU",
    "text": "Passender Entriegelungsschlüssel (Dreikant) für die Personenbefreiung vor Ort hinterlegt?",
    "category": "D – Unterlagen und Betreiberorganisation",
+   "rolle": "techniker",
    "ui_number": "7.6",
    "group": "D07"
   },
@@ -415,6 +441,7 @@
    "domain": "GBU",
    "text": "Notfallplan für die Anlage vorhanden und aktuell (Ansprechpartner, Befreiungsdienst, Meldewege)?",
    "category": "D – Unterlagen und Betreiberorganisation",
+   "rolle": "betreiber",
    "ui_number": "3.2",
    "help_text": "Nachweis: Aushang bzw. Dokument mit Ansprechpartnern, Notrufdienst, Befreiungsdienst und Zugangsregelung (BetrSichV Anh. 1 Nr. 4.1, TRBS 3121 Abschnitt 3.6)."
   },
@@ -424,6 +451,7 @@
    "domain": "GBU",
    "text": "Anlagenbezogene Notbefreiungs-/Evakuierungsanleitung",
    "category": "D – Unterlagen und Betreiberorganisation",
+   "rolle": "betreiber",
    "ui_number": "3.3",
    "options": [
     {
@@ -446,6 +474,7 @@
    "domain": "GBU",
    "text": "Wartungsunterlagen und Prüfbuch vorhanden und aktuell?",
    "category": "D – Unterlagen und Betreiberorganisation",
+   "rolle": "betreiber",
    "ui_number": "3.9",
    "group": "D03"
   },
@@ -455,6 +484,7 @@
    "domain": "GBU",
    "text": "Wird die Anlage regelmäßig durch ein Fachunternehmen instand gehalten (Wartungsvertrag)?",
    "category": "D – Unterlagen und Betreiberorganisation",
+   "rolle": "betreiber",
    "ui_number": "3.10",
    "group": "D03"
   },
@@ -464,6 +494,7 @@
    "domain": "GBU",
    "text": "Prüfplakette der ZÜS vorhanden und lesbar?",
    "category": "D – Unterlagen und Betreiberorganisation",
+   "rolle": "betreiber",
    "ui_number": "3.6",
    "group": "D04"
   },
@@ -473,6 +504,7 @@
    "domain": "GBU",
    "text": "Letzte ZÜS-Hauptprüfung: Prüfbericht liegt vor und ohne offene sicherheitsrelevante Mängel?",
    "category": "D – Unterlagen und Betreiberorganisation",
+   "rolle": "betreiber",
    "ui_number": "3.7",
    "help_text": "Steuerfrage ohne eigene Bewertung. Bei „Ja“ werden die im Prüfbericht geprüften Einrichtungen (Verriegelungen, Fangvorrichtung, Begrenzer, Puffer, Bremse, Notruf-Funktion, Beleuchtung, Haltegenauigkeit, elektrische Anlage) als unauffällig vorbelegt – Herkunft „Nachweis“ mit Datum des Prüfberichts, bereichsweise zu bestätigen. Grundlage: TRBS 1201 Teil 4 3.3 (2) Nr. 1–31; die Prüfberichte gehören nach TRBS 3121 3.2 zu den Unterlagen des Betreibers. Ein im Prüfbericht gemeldeter Mangel setzt die betroffene Frage nicht auf „unauffällig“.",
    "options": [
@@ -497,6 +529,7 @@
    "domain": "GBU",
    "text": "Prüffrist der wiederkehrenden Prüfung (ZÜS) überschritten?",
    "category": "D – Unterlagen und Betreiberorganisation",
+   "rolle": "betreiber",
    "ui_number": "3.8",
    "group": "D04"
   },
@@ -506,6 +539,7 @@
    "domain": "GBU",
    "text": "Beauftragte Person für die Aufzugsanlage (Aufzugswärter) schriftlich benannt?",
    "category": "D – Unterlagen und Betreiberorganisation",
+   "rolle": "betreiber",
    "ui_number": "E1",
    "group": "D06"
   },
@@ -515,6 +549,7 @@
    "domain": "GBU",
    "text": "Unterweisung der beauftragten Person dokumentiert?",
    "category": "D – Unterlagen und Betreiberorganisation",
+   "rolle": "betreiber",
    "ui_number": "E2",
    "visible_when": {
     "question": "qd_beauftragte_person",
@@ -529,6 +564,7 @@
    "domain": "GBU",
    "text": "Betriebsanweisung für die Anlage vorhanden und ausgehängt?",
    "category": "D – Unterlagen und Betreiberorganisation",
+   "rolle": "betreiber",
    "ui_number": "E3",
    "group": "D07"
   },
@@ -538,6 +574,7 @@
    "domain": "GBU",
    "text": "Zutritt zum Triebwerksraum / Steuerschrank organisatorisch geregelt (Schlüsselverwaltung, nur befugte Personen)?",
    "category": "D – Unterlagen und Betreiberorganisation",
+   "rolle": "betreiber",
    "ui_number": "E4",
    "group": "D07"
   },
@@ -547,6 +584,7 @@
    "domain": "GBU",
    "text": "Liegt für die Anlage bereits eine dokumentierte Gefährdungsbeurteilung des Betreibers vor?",
    "category": "D – Unterlagen und Betreiberorganisation",
+   "rolle": "betreiber",
    "ui_number": "E5",
    "optional": true
   },
@@ -556,6 +594,7 @@
    "domain": "GBU",
    "text": "Konformitätserklärung und Abnahmeunterlagen der Anlage liegen vor?",
    "category": "D – Unterlagen und Betreiberorganisation",
+   "rolle": "betreiber",
    "ui_number": "1.29",
    "help_text": "Nur für Anlagen, die nach der Aufzugsrichtlinie in Verkehr gebracht wurden (ab 1999). Bei Altanlagen nach TRA: Nein wählen. Die Frage schaltet zugleich alle Baujahr-Annahmen: Nur bei „Ja\" gelten Merkmale, die zum Baujahr vorgeschrieben waren, als abgenommen (Prüfbericht 20.09.2026 – bisher reichte dafür eine unbeantwortete Frage)."
   },
@@ -565,6 +604,7 @@
    "domain": "GBU",
    "text": "Beladung mit Flurförderzeugen oder Transportwagen?",
    "category": "U – Umfeld, Gebäude und Nutzung",
+   "rolle": "techniker",
    "ui_number": "4.10",
    "source": "anlagenstamm",
    "stamm_key": "nutzung_flurfoerderzeug",
@@ -576,6 +616,7 @@
    "domain": "GBU",
    "text": "Unzulässige Temperaturen im Triebwerksraum oder Schacht möglich (Überhitzung über 40 °C, Frost)?",
    "category": "U – Umfeld, Gebäude und Nutzung",
+   "rolle": "techniker",
    "ui_number": "15.23",
    "best_case": false,
    "group": "U04"
@@ -586,6 +627,7 @@
    "domain": "GBU",
    "text": "Feuchtigkeit oder Kondensat an sicherheitsrelevanten Bauteilen außerhalb der Schachtgrube (Steuerung, Bremse, Türverriegelung)?",
    "category": "U – Umfeld, Gebäude und Nutzung",
+   "rolle": "techniker",
    "ui_number": "15.23a",
    "help_text": "Wasser und Feuchtigkeit IN der Schachtgrube werden unter 11.15 erfasst – hier nur Triebwerksraum, Schacht und Fahrkorb (Prüfbericht 20.09.2026: Abgrenzung geschärft, beide Fragen führten zuvor zur selben Stufe mit derselben Maßnahme).",
    "best_case": false,
@@ -597,6 +639,7 @@
    "domain": "GBU",
    "text": "Massive Korrosion, Betonabplatzungen oder andere bauliche Schäden am Schacht oder Triebwerksraum?",
    "category": "U – Umfeld, Gebäude und Nutzung",
+   "rolle": "techniker",
    "ui_number": "15.23b",
    "best_case": false,
    "group": "U04"
@@ -607,6 +650,7 @@
    "domain": "GBU",
    "text": "Schnittstelle Brandmeldeanlage – Aufzug bekannt und abgestimmt (Brandfallsteuerung, Rückholung, Evakuierung)?",
    "category": "U – Umfeld, Gebäude und Nutzung",
+   "rolle": "techniker",
    "ui_number": "15.8a",
    "visible_when": {
     "question": "qa_bma_vorhanden",
@@ -622,6 +666,7 @@
    "domain": "GBU",
    "text": "Funktion der Schnittstelle BMA – Aufzug geprüft (Nachweis)?",
    "category": "U – Umfeld, Gebäude und Nutzung",
+   "rolle": "techniker",
    "ui_number": "15.8b",
    "visible_when": {
     "question": "qu_bma_abgestimmt",
@@ -637,6 +682,7 @@
    "domain": "GBU",
    "text": "Evakuierungs-/Sonderfunktion des Aufzugs im Brandschutzkonzept und in der Betriebsanweisung beschrieben (wer den Aufzug im Brandfall wie benutzen darf)?",
    "category": "U – Umfeld, Gebäude und Nutzung",
+   "rolle": "techniker",
    "ui_number": "15.8c",
    "help_text": "Prüfbericht 20.09.2026: Die Frage lautete bisher „… in dieser Gefährdungsbeurteilung berücksichtigt?\" und bewertete damit das eigene Dokument. Gefragt ist jetzt die Festlegung des Betreibers, die vor Ort prüfbar ist.",
    "visible_when": {
@@ -653,6 +699,7 @@
    "domain": "GBU",
    "text": "Behindert eine Brandschutzeinrichtung (Brandschutztür, Abschottung) den Aufzugsbetrieb oder die Personenrettung?",
    "category": "U – Umfeld, Gebäude und Nutzung",
+   "rolle": "techniker",
    "ui_number": "15.8d",
    "help_text": "Regelprüfung 20.09.2026: Aus der Ja/Nein-Frage geworden. Sie bündelte die behinderte Personenrettung (unmittelbare Gefahr bei Einschluss – Hoch) mit der reinen Betriebsbehinderung (etwa eine Abschottung, die den Zugang verengt, oder eine Brandschutztür, die gegen die Schachttür schlägt) und bewertete beides mit Hoch. Fail-closed: Der nicht sicher beurteilbare Fall gehört ausdrücklich zur Option „Rettung behindert\", damit keine Absenkung durch Unsicherheit entsteht.",
    "options": [
@@ -678,6 +725,7 @@
    "domain": "GBU",
    "text": "Zustand der Schachtentrauchung / RWA / Lüftungsöffnung",
    "category": "U – Umfeld, Gebäude und Nutzung",
+   "rolle": "techniker",
    "ui_number": "15.9a",
    "help_text": "Regelprüfung 20.09.2026: Die frühere Option „Funktion unklar, blockiert oder defekt\" ist geteilt. „Unklar\" beschreibt keinen festgestellten Mangel, sondern eine fehlende Feststellung – eine RWA-Auslösung ist ohne Auslöseversuch vor Ort oft nicht beurteilbar. Ein Prüfer, der ehrlich „unklar\" wählte, erzeugte damit zwingend Hoch; das drängte zum Ausweichen auf „kein Nachweis\". „Unklar\" steht jetzt bei „kein Nachweis\", der festgestellte Defekt bei „blockiert oder defekt\".",
    "visible_when": {
@@ -712,6 +760,7 @@
    "domain": "GBU",
    "text": "Beleuchtung an den Zuwegen zum Triebwerks-/Steuerungsraum vorhanden?",
    "category": "Z – Zugang zum Triebwerks-/Steuerungsraum",
+   "rolle": "techniker",
    "ui_number": "5.1",
    "best_case": true,
    "group": "BZ1"
@@ -722,6 +771,7 @@
    "domain": "GBU",
    "text": "Beleuchtung an den Zuwegen ausreichend (mind. 50 Lux, funktionsfähig, Leuchten an geeigneter Stelle)?",
    "category": "Z – Zugang zum Triebwerks-/Steuerungsraum",
+   "rolle": "techniker",
    "ui_number": "5.2",
    "visible_when": {
     "question": "qz_bel_vorhanden",
@@ -737,6 +787,7 @@
    "domain": "GBU",
    "text": "Defekte Leuchten oder Leuchtkörper an den Zuwegen?",
    "category": "Z – Zugang zum Triebwerks-/Steuerungsraum",
+   "rolle": "techniker",
    "ui_number": "5.2a",
    "help_text": "Folgefrage zu 5.2: nennt den Grund der unzureichenden Beleuchtung und steuert die Maßnahme (Instandsetzung statt Umbau).",
    "visible_when": {
@@ -753,6 +804,7 @@
    "domain": "GBU",
    "text": "Sicherer, freier Verkehrsweg zum Triebwerks-/Steuerungsraum (trocken, sauber, ohne Stolperstellen)?",
    "category": "Z – Zugang zum Triebwerks-/Steuerungsraum",
+   "rolle": "techniker",
    "ui_number": "5.3",
    "help_text": "Absturzkanten und Überstiege auf dem Zugangsweg unter 5.7/5.8 erfassen.",
    "best_case": true,
@@ -764,6 +816,7 @@
    "domain": "GBU",
    "text": "Verkehrsweg rutschig, glatt oder verschmutzt?",
    "category": "Z – Zugang zum Triebwerks-/Steuerungsraum",
+   "rolle": "techniker",
    "ui_number": "5.3a",
    "visible_when": {
     "question": "qz_weg_sicher",
@@ -779,6 +832,7 @@
    "domain": "GBU",
    "text": "Stolperstellen auf dem Verkehrsweg?",
    "category": "Z – Zugang zum Triebwerks-/Steuerungsraum",
+   "rolle": "techniker",
    "ui_number": "5.3b",
    "visible_when": {
     "question": "qz_weg_sicher",
@@ -794,6 +848,7 @@
    "domain": "GBU",
    "text": "Enge oder niedrige Durchgänge (Breite < 0,60 m oder Höhe < 2,00 m)?",
    "category": "Z – Zugang zum Triebwerks-/Steuerungsraum",
+   "rolle": "techniker",
    "ui_number": "5.4",
    "group": "Z01"
   },
@@ -803,6 +858,7 @@
    "domain": "GBU",
    "text": "Art des Aufstiegs zum Triebwerksraum",
    "category": "Z – Zugang zum Triebwerks-/Steuerungsraum",
+   "rolle": "techniker",
    "ui_number": "5.5",
    "visible_when": {
     "question": "qa_maschinenraum",
@@ -851,6 +907,7 @@
    "domain": "GBU",
    "text": "Bruch- oder Kippgefahr am Aufstieg (beschädigte Stufen, lose Leiter, fehlende Befestigung)?",
    "category": "Z – Zugang zum Triebwerks-/Steuerungsraum",
+   "rolle": "techniker",
    "ui_number": "5.6",
    "visible_when": {
     "question": "qz_aufstieg",
@@ -866,6 +923,7 @@
    "domain": "GBU",
    "text": "Führt der Zugang über eine Dachfläche, Dachkante, Empore oder eine andere Absturzkante?",
    "category": "Z – Zugang zum Triebwerks-/Steuerungsraum",
+   "rolle": "techniker",
    "ui_number": "5.7",
    "best_case": false,
    "group": "Z03"
@@ -876,6 +934,7 @@
    "domain": "GBU",
    "text": "Absturzkante durch Geländer oder Umwehrung dauerhaft gesichert?",
    "category": "Z – Zugang zum Triebwerks-/Steuerungsraum",
+   "rolle": "techniker",
    "ui_number": "5.7a",
    "visible_when": {
     "question": "qz_absturzkante",
@@ -891,6 +950,7 @@
    "domain": "GBU",
    "text": "Verkehrsweg an der Absturzkante festgelegt, gekennzeichnet und mit ausreichendem Sicherheitsabstand zur Absturzkante geführt (auf Dachflächen mindestens 2,00 m nach ASR A2.1)?",
    "category": "Z – Zugang zum Triebwerks-/Steuerungsraum",
+   "rolle": "techniker",
    "ui_number": "5.7b",
    "help_text": "Regelprüfung 20.09.2026: Der Abstand gehört in die Frage, nicht erst in die Maßnahme: Ein gekennzeichneter Weg dicht an der Kante ist keine wirksame Kompensation. Auf Dachflächen gilt das Maß von 2,00 m nach ASR A2.1; im Gebäudeinneren (Empore, Treppenauge) ist es regelmäßig unerfüllbar – dort ist ohnehin eine Umwehrung baurechtlich gefordert, zu bewerten über 5.7a. Wird der Abstand nicht eingehalten, ist hier „Nein\" zu wählen; dann greift die Hoch-Regel.",
    "visible_when": {
@@ -915,6 +975,7 @@
    "domain": "GBU",
    "text": "Muss ein Treppenauge, eine Brüstung oder ein Fenster überstiegen werden?",
    "category": "Z – Zugang zum Triebwerks-/Steuerungsraum",
+   "rolle": "techniker",
    "ui_number": "5.8",
    "best_case": false,
    "group": "Z03"
@@ -925,6 +986,7 @@
    "domain": "GBU",
    "text": "Lässt sich der Zugangsbereich / Triebwerksraum jederzeit von innen verlassen?",
    "category": "Z – Zugang zum Triebwerks-/Steuerungsraum",
+   "rolle": "techniker",
    "ui_number": "5.9",
    "visible_when": {
     "question": "qa_maschinenraum",
@@ -954,6 +1016,7 @@
    "domain": "GBU",
    "text": "Zugangstür zum Triebwerks-/Maschinenraum vorhanden?",
    "category": "Z – Zugang zum Triebwerks-/Steuerungsraum",
+   "rolle": "techniker",
    "ui_number": "5.12",
    "visible_when": {
     "question": "qa_maschinenraum",
@@ -969,6 +1032,7 @@
    "domain": "GBU",
    "text": "Zugangstür abschließbar (Zutritt nur für befugte Personen)?",
    "category": "Z – Zugang zum Triebwerks-/Steuerungsraum",
+   "rolle": "techniker",
    "ui_number": "5.12a",
    "visible_when": {
     "question": "qz_tuer_vorhanden",
@@ -984,6 +1048,7 @@
    "domain": "GBU",
    "text": "Zugangstür unbeschädigt und leichtgängig?",
    "category": "Z – Zugang zum Triebwerks-/Steuerungsraum",
+   "rolle": "techniker",
    "ui_number": "5.12b",
    "visible_when": {
     "question": "qz_tuer_vorhanden",
@@ -999,6 +1064,7 @@
    "domain": "GBU",
    "text": "Durchgangsmaß der Zugangstür ausreichend (mind. 1,80 m hoch, 0,60 m breit)?",
    "category": "Z – Zugang zum Triebwerks-/Steuerungsraum",
+   "rolle": "techniker",
    "ui_number": "5.12c",
    "help_text": "Regelprüfung 20.09.2026: Maß von 2,00 m auf 1,80 m berichtigt. DIN EN 81-20 5.2.3.3 fordert für die Zugangstür zum Triebwerksraum 0,60 m x 1,80 m; mit 2,00 m erzeugte die Frage bei normgerechten Türen einen Mangel. EN 81-1/-2 forderten dasselbe Maß, ein Vorbehalt zum Errichtungsregelwerk (1.28) ist deshalb entbehrlich – nur bei TRA-Anlagen vor 1999 kann das Maß abweichen; das ist im Bericht zu würdigen, nicht über eine Zusatzbedingung, die die Regel fail-open machen würde.",
    "visible_when": {
@@ -1015,6 +1081,7 @@
    "domain": "GBU",
    "text": "Ohne Triebwerksraum: Steuerschrank (an der Haltestelle oder im Schacht) abschließbar, Zutritt nur für befugte Personen?",
    "category": "Z – Zugang zum Triebwerks-/Steuerungsraum",
+   "rolle": "techniker",
    "ui_number": "5.14",
    "help_text": "Gegenstück zu 5.12a für maschinenraumlose Anlagen (Prüfbericht 20.09.2026): Der Steuerschrank ersetzt den Triebwerksraum und muss gegen unbefugten Zugriff verschlossen sein (DIN EN 81-20 5.2.6, Steuerschränke außerhalb von Triebwerksräumen).",
    "visible_when": {
@@ -1031,6 +1098,7 @@
    "domain": "GBU",
    "text": "Zugang zur Anlage für die Personenbefreiung jederzeit gewährleistet?",
    "category": "Z – Zugang zum Triebwerks-/Steuerungsraum",
+   "rolle": "techniker",
    "ui_number": "3.4",
    "options": [
     {
@@ -1055,6 +1123,7 @@
    "domain": "GBU",
    "text": "Erhebliche Verschmutzungen (Taubenkot, Unrat, Schimmel, Ablagerungen) im Zugangsbereich zum Triebwerksraum?",
    "category": "Z – Zugang zum Triebwerks-/Steuerungsraum",
+   "rolle": "techniker",
    "ui_number": "5.62",
    "best_case": false,
    "group": "UZ1"
@@ -1065,6 +1134,7 @@
    "domain": "GBU",
    "text": "Lagerung brennbarer oder leicht entzündlicher Stoffe im Zugangsbereich zum Triebwerksraum?",
    "category": "Z – Zugang zum Triebwerks-/Steuerungsraum",
+   "rolle": "techniker",
    "ui_number": "5.64",
    "best_case": false,
    "group": "UZ1"
@@ -1075,6 +1145,7 @@
    "domain": "GBU",
    "text": "Beleuchtung im Triebwerks-/Maschinenraum vorhanden?",
    "category": "M – Triebwerks-/Maschinenraum und Steuerung",
+   "rolle": "techniker",
    "ui_number": "5.20",
    "visible_when": {
     "question": "qa_maschinenraum",
@@ -1090,6 +1161,7 @@
    "domain": "GBU",
    "text": "Beleuchtungsstärke an den Arbeitsflächen (Antrieb, Steuerschrank) mind. 200 Lux, Leuchten funktionsfähig?",
    "category": "M – Triebwerks-/Maschinenraum und Steuerung",
+   "rolle": "techniker",
    "ui_number": "5.21",
    "visible_when": {
     "question": "qm_bel_vorhanden",
@@ -1105,6 +1177,7 @@
    "domain": "GBU",
    "text": "Leuchten an geeigneter Stelle (Arbeitsflächen nicht abgeschattet)?",
    "category": "M – Triebwerks-/Maschinenraum und Steuerung",
+   "rolle": "techniker",
    "ui_number": "5.22",
    "visible_when": {
     "question": "qm_bel_vorhanden",
@@ -1120,6 +1193,7 @@
    "domain": "GBU",
    "text": "Leuchten im Kopfbereich mit Splitterschutz / bruchsicher?",
    "category": "M – Triebwerks-/Maschinenraum und Steuerung",
+   "rolle": "techniker",
    "ui_number": "5.23",
    "visible_when": {
     "question": "qm_bel_vorhanden",
@@ -1135,6 +1209,7 @@
    "domain": "GBU",
    "text": "Alle spannungsführenden Teile berührungssicher (Abdeckungen vorhanden, Schaltschrank geschlossen)?",
    "category": "M – Triebwerks-/Maschinenraum und Steuerung",
+   "rolle": "techniker",
    "ui_number": "5.30",
    "best_case": true,
    "group": "M01"
@@ -1145,6 +1220,7 @@
    "domain": "GBU",
    "text": "Offene Schalttafel ohne Schaltschrank vorhanden?",
    "category": "M – Triebwerks-/Maschinenraum und Steuerung",
+   "rolle": "techniker",
    "ui_number": "5.31",
    "visible_when": {
     "question": "qm_beruehrungssicher",
@@ -1160,6 +1236,7 @@
    "domain": "GBU",
    "text": "Offene Kontakte oder Schalter an Maschine, Kopierwerk oder Begrenzer?",
    "category": "M – Triebwerks-/Maschinenraum und Steuerung",
+   "rolle": "techniker",
    "ui_number": "5.32",
    "visible_when": {
     "question": "qm_beruehrungssicher",
@@ -1175,6 +1252,7 @@
    "domain": "GBU",
    "text": "Nicht berührungssichere Bauteile im Schaltschrank (bei geöffneter Tür erreichbar)?",
    "category": "M – Triebwerks-/Maschinenraum und Steuerung",
+   "rolle": "techniker",
    "ui_number": "5.33",
    "visible_when": {
     "question": "qm_beruehrungssicher",
@@ -1190,6 +1268,7 @@
    "domain": "GBU",
    "text": "Warnkennzeichnung für offene elektrische Kontakte vorhanden?",
    "category": "M – Triebwerks-/Maschinenraum und Steuerung",
+   "rolle": "techniker",
    "ui_number": "5.34",
    "help_text": "Die Kennzeichnung ersetzt den Berührungsschutz nicht (Entscheidung 02.09.2026, K-K10); sie fehlt, ist das ein eigener – geringer – Mangel.",
    "visible_when": {
@@ -1206,6 +1285,7 @@
    "domain": "GBU",
    "text": "Nachweis der elektrischen Prüfung der AUFZUGSANLAGE nach DGUV Vorschrift 3 vorhanden (Steuerung, Antrieb, Leitungen der Anlage; Prüfplakette / Protokoll aktuell)?",
    "category": "M – Triebwerks-/Maschinenraum und Steuerung",
+   "rolle": "techniker",
    "ui_number": "5.35",
    "help_text": "Nur die Aufzugsanlage selbst. Die bauseitige ortsfeste Installation des Raumes (Steckdosen, Raumbeleuchtung, Zuleitung) wird unter 5.37 erfasst (Prüfbericht 20.09.2026: Abgrenzung geschärft).",
    "best_case": true,
@@ -1217,6 +1297,7 @@
    "domain": "GBU",
    "text": "Bauseitige Elektroinstallation im Raum (Steckdosen, Schalter, Leitungen) unbeschädigt?",
    "category": "M – Triebwerks-/Maschinenraum und Steuerung",
+   "rolle": "techniker",
    "ui_number": "5.36",
    "best_case": true,
    "group": "M01"
@@ -1227,6 +1308,7 @@
    "domain": "GBU",
    "text": "Prüfung der BAUSEITIGEN ortsfesten elektrischen Anlage des Raumes nachgewiesen (Zuleitung, Steckdosen, Raumbeleuchtung)?",
    "category": "M – Triebwerks-/Maschinenraum und Steuerung",
+   "rolle": "techniker",
    "ui_number": "5.37",
    "help_text": "Bauseitige Installation, nicht die Aufzugsanlage (die steht unter 5.35). Zuständig ist der Betreiber bzw. das Elektrogewerk des Gebäudes.",
    "best_case": true,
@@ -1238,6 +1320,7 @@
    "domain": "GBU",
    "text": "Hauptpotenzialausgleich an der Aufzugskonstruktion vorhanden?",
    "category": "M – Triebwerks-/Maschinenraum und Steuerung",
+   "rolle": "techniker",
    "ui_number": "5.38",
    "best_case": true,
    "group": "M01"
@@ -1248,6 +1331,7 @@
    "domain": "GBU",
    "text": "Einzugsschutz an Treibscheibe, Umlenkrollen und Kopierwerk vorhanden?",
    "category": "M – Triebwerks-/Maschinenraum und Steuerung",
+   "rolle": "techniker",
    "ui_number": "5.40",
    "visible_when": {
     "question": "qa_aufzugsart",
@@ -1266,6 +1350,7 @@
    "domain": "GBU",
    "text": "Einzugsschutz am Geschwindigkeitsbegrenzer vorhanden?",
    "category": "M – Triebwerks-/Maschinenraum und Steuerung",
+   "rolle": "techniker",
    "ui_number": "5.41",
    "visible_when": {
     "question": "qa_aufzugsart",
@@ -1285,6 +1370,7 @@
    "domain": "GBU",
    "text": "Abdeckung der Einzugstellen insgesamt",
    "category": "M – Triebwerks-/Maschinenraum und Steuerung",
+   "rolle": "techniker",
    "ui_number": "5.42",
    "visible_when": {
     "question": "qa_aufzugsart",
@@ -1318,6 +1404,7 @@
    "domain": "GBU",
    "text": "Hauptschalter vorhanden und Wirkung nachvollziehbar?",
    "category": "M – Triebwerks-/Maschinenraum und Steuerung",
+   "rolle": "techniker",
    "ui_number": "5.51",
    "help_text": "Prüfen: Hauptschalter ausschalten – Antrieb und Steuerung müssen spannungsfrei sein (Beleuchtung und Notruf bleiben versorgt). Abschließbarkeit unter 5.51a erfassen.",
    "best_case": true,
@@ -1329,6 +1416,7 @@
    "domain": "GBU",
    "text": "Hauptschalter abschließbar?",
    "category": "M – Triebwerks-/Maschinenraum und Steuerung",
+   "rolle": "techniker",
    "ui_number": "5.51a",
    "visible_when": {
     "question": "qm_hauptschalter",
@@ -1344,6 +1432,7 @@
    "domain": "GBU",
    "text": "Hauptschalter eindeutig gekennzeichnet?",
    "category": "M – Triebwerks-/Maschinenraum und Steuerung",
+   "rolle": "techniker",
    "ui_number": "5.51b",
    "visible_when": {
     "question": "qm_hauptschalter",
@@ -1359,6 +1448,7 @@
    "domain": "GBU",
    "text": "Zweikreisbremse (redundante Betriebsbremse) vorhanden?",
    "category": "M – Triebwerks-/Maschinenraum und Steuerung",
+   "rolle": "techniker",
    "ui_number": "6.2",
    "visible_when": {
     "question": "qa_aufzugsart",
@@ -1377,6 +1467,7 @@
    "domain": "GBU",
    "text": "Bremse elektrisch überwacht (Bremskontrollschalter)?",
    "category": "M – Triebwerks-/Maschinenraum und Steuerung",
+   "rolle": "techniker",
    "ui_number": "6.2a",
    "visible_when": {
     "question": "qm_zweikreisbremse",
@@ -1392,6 +1483,7 @@
    "domain": "GBU",
    "text": "Zwei unabhängige Fahrschütze / Abschaltwege vorhanden?",
    "category": "M – Triebwerks-/Maschinenraum und Steuerung",
+   "rolle": "techniker",
    "ui_number": "6.4",
    "visible_when": {
     "not": {
@@ -1413,6 +1505,7 @@
    "domain": "GBU",
    "text": "Bei nur einem Schütz: selbstüberwachende Steuerung mit Baumusterprüfung?",
    "category": "M – Triebwerks-/Maschinenraum und Steuerung",
+   "rolle": "techniker",
    "ui_number": "6.4a",
    "visible_when": {
     "question": "qm_schuetze_unabhaengig",
@@ -1428,6 +1521,7 @@
    "domain": "GBU",
    "text": "Absperrventil am Hydraulikaggregat vorhanden?",
    "category": "M – Triebwerks-/Maschinenraum und Steuerung",
+   "rolle": "techniker",
    "ui_number": "6.10",
    "visible_when": {
     "question": "qa_aufzugsart",
@@ -1447,6 +1541,7 @@
    "domain": "GBU",
    "text": "Absperrventil gut zugänglich (ohne Hilfsmittel, ohne Umbauten erreichbar und bedienbar)?",
    "category": "M – Triebwerks-/Maschinenraum und Steuerung",
+   "rolle": "techniker",
    "ui_number": "6.10a",
    "help_text": "Regelprüfung 20.09.2026: Aus der früheren Doppelfrage „gekennzeichnet UND gut zugänglich\" herausgelöst. Ein nicht zugängliches Ventil verhindert das sichere Absperren bei Arbeiten (Mittel, technische Abhilfe); die bloß fehlende Kennzeichnung ist ein Mangel ohne unmittelbaren Gefährdungsbeitrag und steht unter 6.10b (Niedrig).",
    "visible_when": {
@@ -1463,6 +1558,7 @@
    "domain": "GBU",
    "text": "Absperrventil dauerhaft gekennzeichnet (Funktion, Wirkrichtung)?",
    "category": "M – Triebwerks-/Maschinenraum und Steuerung",
+   "rolle": "techniker",
    "ui_number": "6.10b",
    "help_text": "Regelprüfung 20.09.2026: Aus 6.10a herausgelöst; eigener Befund mit Stufe Niedrig.",
    "visible_when": {
@@ -1479,6 +1575,7 @@
    "domain": "GBU",
    "text": "Rohrbruchsicherungsventil (Leitungsbruchventil) vorhanden?",
    "category": "M – Triebwerks-/Maschinenraum und Steuerung",
+   "rolle": "techniker",
    "ui_number": "6.11",
    "visible_when": {
     "question": "qa_aufzugsart",
@@ -1498,6 +1595,7 @@
    "domain": "GBU",
    "text": "Zulässige Absturzsicherung statt Leitungsbruchventil",
    "category": "M – Triebwerks-/Maschinenraum und Steuerung",
+   "rolle": "techniker",
    "ui_number": "6.11a",
    "help_text": "Regelprüfung 20.09.2026: Nur zu beantworten, wenn kein Leitungsbruchventil vorhanden ist. Maßgeblich ist DIN EN 81-20 Tabelle 12. Beim indirekt angetriebenen Aufzug genügt die Drossel allein nicht – sie muss mit einer Fangvorrichtung kombiniert sein, die durch Bruch der Tragmittel oder ein Sicherheitsseil ausgelöst wird; das wird unter 10.8 und 10.8a erhoben. Im Zweifel „Keine dieser Einrichtungen vorhanden\".",
    "visible_when": {
@@ -1539,6 +1637,7 @@
    "domain": "GBU",
    "text": "Einrichtung gegen Absinken (Kolbenabsinkverhinderung / Nachholsteuerung) vorhanden?",
    "category": "M – Triebwerks-/Maschinenraum und Steuerung",
+   "rolle": "techniker",
    "ui_number": "6.12",
    "visible_when": {
     "question": "qa_aufzugsart",
@@ -1556,6 +1655,7 @@
    "domain": "GBU",
    "text": "Sinkt der Fahrkorb im Stillstand merklich ab?",
    "category": "M – Triebwerks-/Maschinenraum und Steuerung",
+   "rolle": "techniker",
    "ui_number": "6.13",
    "visible_when": {
     "question": "qa_aufzugsart",
@@ -1574,6 +1674,7 @@
    "domain": "GBU",
    "text": "Einrichtung für Notbetrieb / Personenbefreiung vorhanden (Handrad, Bremslüfthebel, Evakuierungseinheit, Notablass)?",
    "category": "M – Triebwerks-/Maschinenraum und Steuerung",
+   "rolle": "techniker",
    "ui_number": "5.53",
    "help_text": "Prüfen: Einrichtung vorhanden, vollständig und für die beauftragte Person bedienbar; Notbefreiungsanleitung an der Einrichtung.",
    "best_case": true,
@@ -1585,6 +1686,7 @@
    "domain": "GBU",
    "text": "Notbetriebseinrichtung gekennzeichnet (Fahrtrichtung, Bündigmarken)?",
    "category": "M – Triebwerks-/Maschinenraum und Steuerung",
+   "rolle": "techniker",
    "ui_number": "5.53a",
    "visible_when": {
     "question": "qm_notbetrieb",
@@ -1600,6 +1702,7 @@
    "domain": "GBU",
    "text": "Elektrische Einrichtungen gekennzeichnet (Zuordnung im Notfall möglich)?",
    "category": "M – Triebwerks-/Maschinenraum und Steuerung",
+   "rolle": "techniker",
    "ui_number": "5.54",
    "best_case": true,
    "group": "M16"
@@ -1610,6 +1713,7 @@
    "domain": "GBU",
    "text": "Beschilderung vollständig (Schutzraum, Notablass, Entriegelungsschlüssel, Verhalten bei Personenbefreiung)?",
    "category": "M – Triebwerks-/Maschinenraum und Steuerung",
+   "rolle": "techniker",
    "ui_number": "5.56",
    "best_case": true,
    "group": "M16"
@@ -1620,6 +1724,7 @@
    "domain": "GBU",
    "text": "Erhebliche Verschmutzungen (Taubenkot, Unrat, Schimmel, Ablagerungen) im Triebwerks-/Maschinenraum?",
    "category": "M – Triebwerks-/Maschinenraum und Steuerung",
+   "rolle": "techniker",
    "ui_number": "5.63",
    "visible_when": {
     "question": "qa_maschinenraum",
@@ -1635,6 +1740,7 @@
    "domain": "GBU",
    "text": "Lagerung brennbarer oder leicht entzündlicher Stoffe im Triebwerks-/Maschinenraum?",
    "category": "M – Triebwerks-/Maschinenraum und Steuerung",
+   "rolle": "techniker",
    "ui_number": "5.65",
    "visible_when": {
     "question": "qa_maschinenraum",
@@ -1650,6 +1756,7 @@
    "domain": "GBU",
    "text": "Größter horizontaler Abstand Fahrkorbdachkante – Schachtwand",
    "category": "F – Fahrkorbdach und Schachtkopf",
+   "rolle": "techniker",
    "ui_number": "9.1",
    "help_text": "Regelgrenzen 300, 500 und 850 mm: Geländer ab 0,30 m (DIN EN 81-20 5.4.7.2 b)); Höhe 0,70 m bis 0,50 m Abstand, 1,10 m darüber (5.4.7.4 b)); nach EN 81-1 8.13.3.2 lag die Grenze bei 0,85 m. Messwert optional im Feld daneben.",
    "options": [
@@ -1681,6 +1788,7 @@
    "min": 0,
    "max": 3000,
    "optional": true,
+   "rolle": "techniker",
    "help_text": "Dokumentation des Messwerts; die Bewertung nimmt die Bereichsauswahl.",
    "ui_number": "9.1m",
    "group": "F01"
@@ -1691,6 +1799,7 @@
    "domain": "GBU",
    "text": "Geländer auf dem Fahrkorbdach vorhanden?",
    "category": "F – Fahrkorbdach und Schachtkopf",
+   "rolle": "techniker",
    "ui_number": "9.2",
    "visible_when": {
     "question": "qf_spalt_mm",
@@ -1710,6 +1819,7 @@
    "domain": "GBU",
    "text": "Geländerhöhe auf dem Fahrkorbdach",
    "category": "F – Fahrkorbdach und Schachtkopf",
+   "rolle": "techniker",
    "ui_number": "9.3",
    "visible_when": {
     "question": "qf_gelaender",
@@ -1739,6 +1849,7 @@
    "domain": "GBU",
    "text": "Fußleiste (mind. 100 mm) am Rand des Fahrkorbdachs vorhanden?",
    "category": "F – Fahrkorbdach und Schachtkopf",
+   "rolle": "techniker",
    "ui_number": "9.4",
    "best_case": true,
    "group": "F01a"
@@ -1749,6 +1860,7 @@
    "domain": "GBU",
    "text": "Einzugstellen im Schachtkopf / auf dem Fahrkorbdach vorhanden (Umlenkrollen, Heberrolle, Seilrollen)?",
    "category": "F – Fahrkorbdach und Schachtkopf",
+   "rolle": "techniker",
    "ui_number": "9.5",
    "group": "BF6"
   },
@@ -1758,6 +1870,7 @@
    "domain": "GBU",
    "text": "Abdeckung der Einzugstellen",
    "category": "F – Fahrkorbdach und Schachtkopf",
+   "rolle": "techniker",
    "ui_number": "9.5a",
    "visible_when": {
     "question": "qf_einzugstellen",
@@ -1787,6 +1900,7 @@
    "domain": "GBU",
    "text": "Abtrennung zum Nachbaraufzug / Nachbar-Gegengewicht im Bereich des Fahrkorbdachs",
    "category": "F – Fahrkorbdach und Schachtkopf",
+   "rolle": "techniker",
    "ui_number": "9.6",
    "visible_when": {
     "question": "qa_mehrere_aufzuege",
@@ -1827,6 +1941,7 @@
    "domain": "GBU",
    "text": "Einrichtung zum automatischen Abschalten des Nachbaraufzugs bei Arbeiten im Fahrschacht vorhanden?",
    "category": "F – Fahrkorbdach und Schachtkopf",
+   "rolle": "techniker",
    "ui_number": "9.6a",
    "visible_when": {
     "question": "qf_nachbar_trennung",
@@ -1845,6 +1960,7 @@
    "domain": "GBU",
    "text": "Automatische Abschaltung in der Funktion geprüft, alle Nachbaranlagen erfasst und Wirkung bei Inspektionsbetrieb bestätigt?",
    "category": "F – Fahrkorbdach und Schachtkopf",
+   "rolle": "techniker",
    "ui_number": "9.6b",
    "visible_when": {
     "question": "qf_nachbar_abschaltung",
@@ -1860,6 +1976,7 @@
    "domain": "GBU",
    "text": "Schutzraum im Schachtkopf",
    "category": "F – Fahrkorbdach und Schachtkopf",
+   "rolle": "techniker",
    "ui_number": "9.7",
    "options": [
     {
@@ -1888,6 +2005,7 @@
    "domain": "GBU",
    "text": "Warnkennzeichnung zur reduzierten Kopffreiheit vorhanden?",
    "category": "F – Fahrkorbdach und Schachtkopf",
+   "rolle": "techniker",
    "ui_number": "9.7a",
    "visible_when": {
     "question": "qf_schutzraum",
@@ -1903,6 +2021,7 @@
    "domain": "GBU",
    "text": "Inspektionssteuerung auf dem Fahrkorbdach vorhanden?",
    "category": "F – Fahrkorbdach und Schachtkopf",
+   "rolle": "techniker",
    "ui_number": "9.8",
    "help_text": "Prüfen: Inspektionsschalter umschalten – Normalbetrieb muss gesperrt sein, Fahrt nur mit Richtungstaste und Freigabe.",
    "best_case": true,
@@ -1914,6 +2033,7 @@
    "domain": "GBU",
    "text": "Inspektionssteuerung gegen unbeabsichtigtes Betätigen geschützt?",
    "category": "F – Fahrkorbdach und Schachtkopf",
+   "rolle": "techniker",
    "ui_number": "9.8a",
    "visible_when": {
     "question": "qf_inspektion",
@@ -1929,6 +2049,7 @@
    "domain": "GBU",
    "text": "Inspektionssteuerung vom Zugang aus gut erreichbar?",
    "category": "F – Fahrkorbdach und Schachtkopf",
+   "rolle": "techniker",
    "ui_number": "9.8b",
    "visible_when": {
     "question": "qf_inspektion",
@@ -1944,6 +2065,7 @@
    "domain": "GBU",
    "text": "Inspektionsgeschwindigkeit max. 0,63 m/s?",
    "category": "F – Fahrkorbdach und Schachtkopf",
+   "rolle": "techniker",
    "ui_number": "9.8c",
    "visible_when": {
     "question": "qf_inspektion",
@@ -1959,6 +2081,7 @@
    "domain": "GBU",
    "text": "Notbremsschalter (Not-Halt) auf dem Fahrkorbdach vorhanden?",
    "category": "F – Fahrkorbdach und Schachtkopf",
+   "rolle": "techniker",
    "ui_number": "9.9",
    "help_text": "Prüfen: Not-Halt vom Zugang aus erreichbar betätigen – Fahrt darf nicht möglich sein.",
    "best_case": true,
@@ -1970,6 +2093,7 @@
    "domain": "GBU",
    "text": "Not-Halt vom Zugang aus erreichbar?",
    "category": "F – Fahrkorbdach und Schachtkopf",
+   "rolle": "techniker",
    "ui_number": "9.9a",
    "visible_when": {
     "question": "qf_nothalt",
@@ -1985,6 +2109,7 @@
    "domain": "GBU",
    "text": "Not-Halt wirksam (Funktion geprüft)?",
    "category": "F – Fahrkorbdach und Schachtkopf",
+   "rolle": "techniker",
    "ui_number": "9.9b",
    "visible_when": {
     "question": "qf_nothalt",
@@ -2000,6 +2125,7 @@
    "domain": "GBU",
    "text": "Eindeutig erkennbarer Auslöser für den (Fern-)Notruf auf dem Fahrkorbdach vorhanden?",
    "category": "F – Fahrkorbdach und Schachtkopf",
+   "rolle": "techniker",
    "ui_number": "9.13",
    "best_case": true,
    "group": "BF8"
@@ -2010,6 +2136,7 @@
    "domain": "GBU",
    "text": "Schachtbeleuchtung vorhanden?",
    "category": "S – Schacht",
+   "rolle": "techniker",
    "ui_number": "10.1",
    "best_case": true,
    "group": "BS1"
@@ -2020,6 +2147,7 @@
    "domain": "GBU",
    "text": "Schachtbeleuchtung ausreichend (mind. 50 Lux 1 m über dem Fahrkorbdach, mind. 20 Lux im übrigen Schacht)?",
    "category": "S – Schacht",
+   "rolle": "techniker",
    "ui_number": "10.1a",
    "help_text": "TRBS 3121 Anh. 1 Nr. 8 / DIN EN 81-20 5.2.1.4.1: Arbeitsbereiche auf dem Fahrkorbdach und in der Grube mindestens 50 lx. Die Grube wird unter 11.2a erfasst.",
    "visible_when": {
@@ -2036,6 +2164,7 @@
    "domain": "GBU",
    "text": "Falls nicht ausreichend: erfüllt die Schachtbeleuchtung die Anforderungen des Errichtungs-Regelwerks (TRA 200 bzw. DIN EN 81-1/-2)?",
    "category": "S – Schacht",
+   "rolle": "techniker",
    "ui_number": "10.1c",
    "visible_when": {
     "question": "qs_bel_ausreichend",
@@ -2050,6 +2179,7 @@
    "domain": "GBU",
    "text": "Leuchten im Schacht mit Splitterschutz und an geeigneter Stelle?",
    "category": "S – Schacht",
+   "rolle": "techniker",
    "ui_number": "10.1b",
    "visible_when": {
     "question": "qs_bel_vorhanden",
@@ -2065,6 +2195,7 @@
    "domain": "GBU",
    "text": "Zugänge zum Schacht (Schachttüren, Inspektionstüren) frei und sicher erreichbar (nicht zugestellt, nicht verbaut)?",
    "category": "S – Schacht",
+   "rolle": "techniker",
    "ui_number": "10.13",
    "help_text": "Nur die Erreichbarkeit. Die Wirksamkeit der zugehörigen Sicherheitsschalter steht unter 10.13a (Prüfbericht 20.09.2026: bisher beides in einer Frage mit Stufe Hoch).",
    "best_case": true,
@@ -2076,6 +2207,7 @@
    "domain": "GBU",
    "text": "Elektrische Sicherheitseinrichtungen der Schacht- und Inspektionstüren vorhanden und wirksam (Türkontakt im Sicherheitskreis)?",
    "category": "S – Schacht",
+   "rolle": "techniker",
    "ui_number": "10.13a",
    "best_case": true,
    "group": "S01"
@@ -2086,6 +2218,7 @@
    "domain": "GBU",
    "text": "Erhebliche Verschmutzungen (Taubenkot, Unrat, Schimmel, Ablagerungen) im Schacht / am Fahrkorb?",
    "category": "S – Schacht",
+   "rolle": "techniker",
    "ui_number": "10.21",
    "best_case": false,
    "group": "US1"
@@ -2096,6 +2229,7 @@
    "domain": "GBU",
    "text": "Lagerung brennbarer oder leicht entzündlicher Stoffe im Schacht / am Fahrkorb?",
    "category": "S – Schacht",
+   "rolle": "techniker",
    "ui_number": "10.22",
    "best_case": false,
    "group": "US1"
@@ -2106,6 +2240,7 @@
    "domain": "GBU",
    "text": "Beleuchtung in der Schachtgrube vorhanden?",
    "category": "G – Schachtgrube",
+   "rolle": "techniker",
    "ui_number": "11.2",
    "best_case": true,
    "group": "BG1"
@@ -2116,6 +2251,7 @@
    "domain": "GBU",
    "text": "Grubenbeleuchtung ausreichend (mind. 50 Lux), Leuchten geeignet angeordnet?",
    "category": "G – Schachtgrube",
+   "rolle": "techniker",
    "ui_number": "11.2a",
    "visible_when": {
     "question": "qg_bel_vorhanden",
@@ -2131,6 +2267,7 @@
    "domain": "GBU",
    "text": "Schutzraum in der Schachtgrube",
    "category": "G – Schachtgrube",
+   "rolle": "techniker",
    "ui_number": "11.3",
    "options": [
     {
@@ -2158,6 +2295,7 @@
    "domain": "GBU",
    "text": "Notbremsschalter in der Schachtgrube vorhanden?",
    "category": "G – Schachtgrube",
+   "rolle": "techniker",
    "ui_number": "11.4",
    "help_text": "Prüfen: Not-Halt in der Grube betätigen – Fahrt darf nicht möglich sein. Erreichbarkeit von der Schachttür aus unter 11.4a erfassen.",
    "best_case": true,
@@ -2169,6 +2307,7 @@
    "domain": "GBU",
    "text": "Notbremsschalter von der Schachttür aus erreichbar?",
    "category": "G – Schachtgrube",
+   "rolle": "techniker",
    "ui_number": "11.4a",
    "visible_when": {
     "question": "qg_nothalt",
@@ -2184,6 +2323,7 @@
    "domain": "GBU",
    "text": "Bei Grubentiefe über 1,60 m: zweiter Notbremsschalter am Grubenboden vorhanden?",
    "category": "G – Schachtgrube",
+   "rolle": "techniker",
    "ui_number": "11.4b",
    "visible_when": {
     "all": [
@@ -2208,6 +2348,7 @@
    "domain": "GBU",
    "text": "Inspektionssteuerung in der Schachtgrube vorhanden?",
    "category": "G – Schachtgrube",
+   "rolle": "techniker",
    "ui_number": "11.5",
    "best_case": true,
    "group": "BG7"
@@ -2218,6 +2359,7 @@
    "domain": "GBU",
    "text": "Zugang zur Grube über eine separate Grubenzugangstür (ebenerdig, ohne Abstieg über eine Leiter)?",
    "category": "G – Schachtgrube",
+   "rolle": "techniker",
    "ui_number": "11.7",
    "help_text": "Zuerst die Zugangsart klären: Nur wenn der Zugang über eine Leiter erfolgt, werden die Leiterfragen gestellt (TRBS 3121 Anh. 1 Nr. 6 a/b).",
    "best_case": true,
@@ -2229,6 +2371,7 @@
    "domain": "GBU",
    "text": "Grubenleiter",
    "category": "G – Schachtgrube",
+   "rolle": "techniker",
    "ui_number": "11.6",
    "visible_when": {
     "question": "qg_zugangstuer",
@@ -2270,6 +2413,7 @@
    "domain": "GBU",
    "text": "Elektrische Sicherheitseinrichtung an der Grubenzugangstür?",
    "category": "G – Schachtgrube",
+   "rolle": "techniker",
    "ui_number": "11.7a",
    "visible_when": {
     "question": "qg_zugangstuer",
@@ -2285,6 +2429,7 @@
    "domain": "GBU",
    "text": "Selbstbefreiung aus der Grube über die Schachttür möglich (Verschluss innerhalb 1,80 m Höhe / 0,80 m horizontal)?",
    "category": "G – Schachtgrube",
+   "rolle": "techniker",
    "ui_number": "11.8",
    "best_case": true,
    "group": "BG8"
@@ -2295,6 +2440,7 @@
    "domain": "GBU",
    "text": "Notrufeinrichtung in der Schachtgrube vorhanden?",
    "category": "G – Schachtgrube",
+   "rolle": "techniker",
    "ui_number": "11.9",
    "best_case": true,
    "group": "BG8"
@@ -2305,6 +2451,7 @@
    "domain": "GBU",
    "text": "Puffer für Fahrkorb und Gegengewicht vorhanden?",
    "category": "G – Schachtgrube",
+   "rolle": "techniker",
    "ui_number": "11.10",
    "help_text": "Sichtprüfung: Puffer unter Fahrkorb und Gegengewicht vorhanden und fest verankert.",
    "best_case": true,
@@ -2316,6 +2463,7 @@
    "domain": "GBU",
    "text": "Zustand der Puffer",
    "category": "G – Schachtgrube",
+   "rolle": "techniker",
    "ui_number": "11.10a",
    "help_text": "Regelprüfung 20.09.2026: Aus der Ja/Nein-Frage „unbeschädigt und nicht verschlissen?\" geworden. Sie fasste Verschleiß und Funktionsverlust zusammen und belegte beides mit Hoch samt Stilllegung der gesamten Anlage – bei bloßem Alterungsverschleiß mit erhaltener Funktion ist das unverhältnismäßig. Maßgeblich ist die Funktion: Ein gerissener oder loser Puffer, ein hydraulischer Puffer ohne Öl oder ohne Rückstellung ist Funktionsverlust; Oberflächenrisse, Verhärtung und Korrosion am sonst festen, funktionsfähigen Puffer sind Verschleiß. Im Zweifel „Beschädigung oder Funktionsverlust\".",
    "visible_when": {
@@ -2346,6 +2494,7 @@
    "domain": "GBU",
    "text": "Bauart der Puffer",
    "category": "G – Schachtgrube",
+   "rolle": "techniker",
    "ui_number": "11.10b",
    "visible_when": {
     "question": "qg_puffer",
@@ -2370,6 +2519,7 @@
    "domain": "GBU",
    "text": "Ölstand hydraulischer Puffer prüfbar (Schauglas, Peilstab oder gleichwertig)?",
    "category": "G – Schachtgrube",
+   "rolle": "techniker",
    "ui_number": "11.10c",
    "help_text": "Regelprüfung 20.09.2026: Aus der früheren Doppelfrage „Ölstand prüfbar UND Kennzeichnung vorhanden\" herausgelöst. Der nicht prüfbare Ölstand lässt die Funktion des Sicherheitsbauteils unbelegt (Mittel); die fehlende Kennzeichnung ist ein Mangel ohne unmittelbaren Gefährdungsbeitrag und steht jetzt unter 11.10d (Niedrig).",
    "visible_when": {
@@ -2386,6 +2536,7 @@
    "domain": "GBU",
    "text": "Hydraulische Puffer gekennzeichnet (Typ, Füllmenge bzw. Ölsorte, zulässiger Ölstand)?",
    "category": "G – Schachtgrube",
+   "rolle": "techniker",
    "ui_number": "11.10d",
    "help_text": "Regelprüfung 20.09.2026: Aus 11.10c herausgelöst; eigener Befund mit Stufe Niedrig.",
    "visible_when": {
@@ -2402,6 +2553,7 @@
    "domain": "GBU",
    "text": "Abtrennung der Gegengewichtsfahrbahn in der Grube",
    "category": "G – Schachtgrube",
+   "rolle": "techniker",
    "ui_number": "11.11",
    "visible_when": {
     "all": [
@@ -2445,6 +2597,7 @@
    "domain": "GBU",
    "text": "Gegengewichtsfüllung gegen Herausfallen gesichert (Rahmen)?",
    "category": "G – Schachtgrube",
+   "rolle": "techniker",
    "ui_number": "11.12",
    "visible_when": {
     "all": [
@@ -2473,6 +2626,7 @@
    "domain": "GBU",
    "text": "Fangvorrichtung am Gegengewicht (oder durchgehendes Fundament) bei betretbarem Raum unter der Grube?",
    "category": "G – Schachtgrube",
+   "rolle": "techniker",
    "ui_number": "11.13",
    "visible_when": {
     "all": [
@@ -2510,6 +2664,7 @@
    "domain": "GBU",
    "text": "Abtrennung zum Nachbaraufzug in der Schachtgrube vorhanden?",
    "category": "G – Schachtgrube",
+   "rolle": "techniker",
    "ui_number": "11.14",
    "visible_when": {
     "question": "qa_mehrere_aufzuege",
@@ -2525,6 +2680,7 @@
    "domain": "GBU",
    "text": "Einrichtung zum automatischen Abschalten des Nachbaraufzugs bei Arbeiten in der Schachtgrube vorhanden?",
    "category": "G – Schachtgrube",
+   "rolle": "techniker",
    "ui_number": "11.14a",
    "visible_when": {
     "all": [
@@ -2548,6 +2704,7 @@
    "domain": "GBU",
    "text": "Automatische Abschaltung in der Funktion geprüft, alle Nachbaranlagen erfasst und Wirkung bei Inspektions- und Rückholbetrieb bestätigt?",
    "category": "G – Schachtgrube",
+   "rolle": "techniker",
    "ui_number": "11.14b",
    "visible_when": {
     "question": "qg_nachbar_abschaltung",
@@ -2563,6 +2720,7 @@
    "domain": "GBU",
    "text": "Wasser oder Feuchtigkeit in der Schachtgrube",
    "category": "G – Schachtgrube",
+   "rolle": "techniker",
    "ui_number": "11.15",
    "help_text": "Regelprüfung 20.09.2026: Aus der Ja/Nein-Frage „Wasser ODER Feuchtigkeit\" geworden. Sie ordnete ausnahmslos Hoch mit Außerbetriebnahme an; feuchte Grubenwände und Kondensat sind in Altschächten aber der Regelfall und rechtfertigen keine Stilllegung. Maßgeblich ist der Kontakt zu Bauteilen: Stehendes Wasser an Puffern, Fangvorrichtung, Grubenschalter oder Leitungen bleibt Hoch – ebenso der nicht beurteilbare Umfang (fail-closed). Die Abgrenzung entspricht der bereits geschärften Frage 15.23a für den Bereich außerhalb der Grube.",
    "options": [
@@ -2592,6 +2750,7 @@
    "domain": "GBU",
    "text": "Öl oder wassergefährdende Stoffe in der Grube ohne Auffangmöglichkeit?",
    "category": "G – Schachtgrube",
+   "rolle": "techniker",
    "ui_number": "11.16",
    "best_case": false,
    "group": "G07"
@@ -2602,6 +2761,7 @@
    "domain": "GBU",
    "text": "Erhebliche Verschmutzungen (Taubenkot, Unrat, Schimmel, Ablagerungen) in der Schachtgrube?",
    "category": "G – Schachtgrube",
+   "rolle": "techniker",
    "ui_number": "11.21",
    "best_case": false,
    "group": "UG1"
@@ -2612,6 +2772,7 @@
    "domain": "GBU",
    "text": "Lagerung brennbarer oder leicht entzündlicher Stoffe in der Schachtgrube?",
    "category": "G – Schachtgrube",
+   "rolle": "techniker",
    "ui_number": "11.22",
    "best_case": false,
    "group": "UG1"
@@ -2622,6 +2783,7 @@
    "domain": "GBU",
    "text": "Schachttürverriegelung vom Sicherheitskreis elektrisch überwacht?",
    "category": "T – Schachttüren und Fahrkorbtür",
+   "rolle": "techniker",
    "ui_number": "7.1",
    "help_text": "Prüfen: Tür bei Fahrkorb außerhalb der Zone öffnen lassen bzw. Kontakt am Verriegelungsbolzen kontrollieren – die Fahrt darf erst bei eingegriffenem Riegel möglich sein (Riegelkontakt im Sicherheitskreis). Nein bei reinen Türkontakten ohne Riegelüberwachung.",
    "best_case": true,
@@ -2633,6 +2795,7 @@
    "domain": "GBU",
    "text": "Fehlschließsicherung / Nachschließeinrichtung an den Schachttüren vorhanden?",
    "category": "T – Schachttüren und Fahrkorbtür",
+   "rolle": "techniker",
    "ui_number": "7.2",
    "help_text": "Prüfen: Tür mit Hindernis nicht vollständig schließen lassen – die Anlage darf nicht anfahren; die Tür muss selbsttätig nachschließen.",
    "best_case": true,
@@ -2644,6 +2807,7 @@
    "domain": "GBU",
    "text": "Schachttüren selbstschließend (Feder oder Gewicht)?",
    "category": "T – Schachttüren und Fahrkorbtür",
+   "rolle": "techniker",
    "ui_number": "7.3",
    "help_text": "Prüfen: Schachttür bei Fahrkorb außerhalb der Zone mit Notentriegelung öffnen und loslassen – sie muss durch Feder oder Gewicht selbsttätig schließen.",
    "best_case": true,
@@ -2655,6 +2819,7 @@
    "domain": "GBU",
    "text": "Schließt die Schachttür nach einer Notentriegelung selbsttätig?",
    "category": "T – Schachttüren und Fahrkorbtür",
+   "rolle": "techniker",
    "ui_number": "7.4",
    "help_text": "Wie 7.3, aber vollständig bis zur Verriegelung: Nach dem Loslassen muss der Riegel wieder eingreifen. Bei jeder Haltestelle prüfen; eine einzige Abweichung = Nein.",
    "best_case": true,
@@ -2666,6 +2831,7 @@
    "domain": "GBU",
    "text": "Notentriegelung an allen Schachttüren vorhanden?",
    "category": "T – Schachttüren und Fahrkorbtür",
+   "rolle": "techniker",
    "ui_number": "7.5",
    "help_text": "An jeder Schachttür prüfen, ob die Notentriegelung vorhanden und mit dem hinterlegten Schlüssel bedienbar ist.",
    "best_case": true,
@@ -2677,6 +2843,7 @@
    "domain": "GBU",
    "text": "Notentriegelung erreichbar (max. 2,00 m über Boden im Türblatt bzw. 2,70 m im Rahmen mit langem Schlüssel)?",
    "category": "T – Schachttüren und Fahrkorbtür",
+   "rolle": "techniker",
    "ui_number": "7.7",
    "visible_when": {
     "question": "qt_notentriegelung_alle",
@@ -2692,6 +2859,7 @@
    "domain": "GBU",
    "text": "Glaseinsätze in Schacht-/Fahrkorbtüren aus normgerechtem Glas (Verbundsicherheitsglas nach EN 81-20 5.3.5.3)?",
    "category": "T – Schachttüren und Fahrkorbtür",
+   "rolle": "techniker",
    "ui_number": "7.8",
    "help_text": "Nur die Glasart. Drahtglas wird unter 7.9 erfasst, Beschädigungen unter 7.8a.",
    "visible_when": {
@@ -2717,6 +2885,7 @@
    "domain": "GBU",
    "text": "Glaseinsatz beschädigt, lose oder nicht sicher befestigt?",
    "category": "T – Schachttüren und Fahrkorbtür",
+   "rolle": "techniker",
    "ui_number": "7.8a",
    "visible_when": {
     "any": [
@@ -2741,6 +2910,7 @@
    "domain": "GBU",
    "text": "Ist das nicht normgerechte Glas ausschließlich Drahtglas (Gitterglas)?",
    "category": "T – Schachttüren und Fahrkorbtür",
+   "rolle": "techniker",
    "ui_number": "7.9",
    "help_text": "Ja nur, wenn außer Drahtglas kein weiteres nicht normgerechtes Glas (Float, ESG, unbekannt) verbaut ist. Bei gemischter oder unbekannter Verglasung: Nein. Regelprüfung 20.09.2026: 7.8 und 7.9 sind zwei unabhängige Fragen zur Anlage insgesamt; bei gemischter Verglasung (Drahtglas an einem Teil der Türen, Float oder ESG am anderen) ergab sich vorher 7.8 = Nein und 7.9 = Ja, der Hoch-Befund für das tatsächlich gefährliche Glas fiel weg und es blieb bei Niedrig – fail-open.",
    "visible_when": {
@@ -2765,6 +2935,7 @@
    "domain": "GBU",
    "text": "Verglaste Türen als kraftbetätigte Schiebetüren ausgeführt?",
    "category": "T – Schachttüren und Fahrkorbtür",
+   "rolle": "techniker",
    "ui_number": "7.9a",
    "visible_when": {
     "any": [
@@ -2789,6 +2960,7 @@
    "domain": "GBU",
    "text": "Glasflächen in den kraftbetätigten Schiebetüren größer als ein Sichtfenster nach DIN EN 81-20 5.3.7.2.1 a) (Breite über 150 mm)?",
    "category": "T – Schachttüren und Fahrkorbtür",
+   "rolle": "techniker",
    "ui_number": "7.9b",
    "help_text": "Regelprüfung 20.09.2026: Am Normtext nachgeschlagen: DIN EN 81-20 5.3.7.2.1 a) 4) lässt für Sichtfenster eine Breite von mindestens 60 mm und höchstens 150 mm zu; 5.3.6.2.2.1 i) verlangt Maßnahmen gegen das Einziehen von Kinderhänden nur für selbsttätig kraftbetätigte Schiebetüren mit Glasscheiben, die GRÖSSER sind als dort angegeben. Eine kraftbetätigte Schiebetür mit bloßem Sichtfenster braucht den Einzugsschutz also nicht. Bei größeren Glasflächen oder wenn die Breite nicht sicher feststellbar ist: Ja – die Im-Zweifel-Ja-Regel hält die Auslegung fail-closed.",
    "visible_when": {
@@ -2823,6 +2995,7 @@
    "domain": "GBU",
    "text": "Schutz gegen Einziehen von Kinderhänden an Glas-Schiebetüren vorhanden (Sensorleiste, Abstand, Beschichtung)?",
    "category": "T – Schachttüren und Fahrkorbtür",
+   "rolle": "techniker",
    "ui_number": "7.10",
    "visible_when": {
     "all": [
@@ -2861,6 +3034,7 @@
    "domain": "GBU",
    "text": "Fahrkorbtür kraftbetätigt (automatisch)?",
    "category": "T – Schachttüren und Fahrkorbtür",
+   "rolle": "techniker",
    "ui_number": "8.7",
    "help_text": "Steuerfrage für 8.8: Eine Schließkantensicherung ist nur bei kraftbetätigten Türen gefordert (EN 81-20 5.3.6.2). Handbetätigte Dreh- oder Schiebetüren brauchen keine (Prüfbericht 20.09.2026).",
    "visible_when": {
@@ -2876,6 +3050,7 @@
    "domain": "GBU",
    "text": "Schließkantensicherung der Fahrkorbtür",
    "category": "T – Schachttüren und Fahrkorbtür",
+   "rolle": "techniker",
    "ui_number": "8.8",
    "visible_when": {
     "all": [
@@ -2922,6 +3097,7 @@
    "domain": "GBU",
    "text": "Ohne Fahrkorbtür: Sicherheitslichtgitter vorhanden?",
    "category": "T – Schachttüren und Fahrkorbtür",
+   "rolle": "techniker",
    "ui_number": "8.9",
    "visible_when": {
     "question": "qa_fahrkorbtuer",
@@ -2936,6 +3112,7 @@
    "domain": "GBU",
    "text": "Ohne Fahrkorbtür: Scherengitter vorhanden?",
    "category": "T – Schachttüren und Fahrkorbtür",
+   "rolle": "techniker",
    "ui_number": "8.9a",
    "visible_when": {
     "question": "qa_fahrkorbtuer",
@@ -2950,6 +3127,7 @@
    "domain": "GBU",
    "text": "Notrufeinrichtung im Fahrkorb vorhanden?",
    "category": "K – Fahrkorb",
+   "rolle": "techniker",
    "ui_number": "8.1",
    "help_text": "Prüfen: Notruf aus dem Fahrkorb auslösen und Verbindung bis zur Notrufstelle nachverfolgen.",
    "best_case": true,
@@ -2961,6 +3139,7 @@
    "domain": "GBU",
    "text": "Art der Notrufeinrichtung",
    "category": "K – Fahrkorb",
+   "rolle": "techniker",
    "ui_number": "8.2",
    "visible_when": {
     "question": "qk_notruf_vorhanden",
@@ -2994,6 +3173,7 @@
    "domain": "GBU",
    "text": "Nachweis: Notruf auf eine rund um die Uhr besetzte Stelle aufgeschaltet (Aufschaltbestätigung, Testruf)?",
    "category": "K – Fahrkorb",
+   "rolle": "techniker",
    "ui_number": "8.3",
    "help_text": "Nur, wenn unter 8.2 eine ständig besetzte Stelle angegeben ist – 8.3 ist deren Nachweis. Bei „nicht ständig besetzt\" oder „Klingel im Schacht\" ist der Mangel bereits unter 8.2 erfasst (Prüfbericht 20.09.2026).",
    "visible_when": {
@@ -3013,6 +3193,7 @@
    "domain": "GBU",
    "text": "Notbeleuchtung im Fahrkorb",
    "category": "K – Fahrkorb",
+   "rolle": "techniker",
    "ui_number": "8.5",
    "options": [
     {
@@ -3037,6 +3218,7 @@
    "domain": "GBU",
    "text": "Größte Stufenbildung / Haltegenauigkeit an den Haltestellen",
    "category": "K – Fahrkorb",
+   "rolle": "techniker",
    "ui_number": "8.10",
    "help_text": "Regelgrenzen 10 mm und 20 mm (DIN EN 81-20 5.12.1.1.4: Anhaltegenauigkeit ± 10 mm). Vorbelegung aus dem ZÜS-Prüfbericht (Hauptprüfung Nr. 5, Haltegenauigkeit in allen Etagen). Messwert optional im Feld daneben.",
    "options": [
@@ -3064,6 +3246,7 @@
    "min": 0,
    "max": 300,
    "optional": true,
+   "rolle": "techniker",
    "help_text": "Dokumentation des Messwerts; die Bewertung nimmt die Bereichsauswahl.",
    "ui_number": "8.10m",
    "group": "K04"
@@ -3074,6 +3257,7 @@
    "domain": "GBU",
    "text": "Fahrkorbtürschürze",
    "category": "K – Fahrkorb",
+   "rolle": "techniker",
    "ui_number": "8.12",
    "help_text": "Regelgrenzen 300 mm und 750 mm (DIN EN 81-20 5.4.5.2: vertikaler Teil mindestens 0,75 m; TRA 200 Nr. 245.1: 0,75 m, Güteraufzüge 0,3 m). Messwert optional im Feld daneben.",
    "options": [
@@ -3101,6 +3285,7 @@
    "min": 0,
    "max": 2500,
    "optional": true,
+   "rolle": "techniker",
    "help_text": "Dokumentation des Messwerts; die Bewertung nimmt die Bereichsauswahl.",
    "ui_number": "8.12m",
    "group": "K05"
@@ -3111,6 +3296,7 @@
    "domain": "GBU",
    "text": "Personenbefreiung ausschließlich durch fachkundige Personen (Betriebsanweisung, keine Selbstbefreiung durch Aufzugswärter)?",
    "category": "K – Fahrkorb",
+   "rolle": "techniker",
    "ui_number": "8.13",
    "visible_when": {
     "question": "qk_schuerze_mm",
@@ -3127,6 +3313,7 @@
    "domain": "GBU",
    "text": "Abstand Fahrkorbschwelle – Schachtwand über 150 mm?",
    "category": "K – Fahrkorb",
+   "rolle": "techniker",
    "ui_number": "8.14",
    "help_text": "Regelgrenze 150 mm (DIN EN 81-20 5.2.5.3.1: höchstens 0,15 m über die gesamte Schachthöhe). Nur bei Ja oder Unsicherheit messen; Messwert optional im Feld daneben.",
    "group": "K06"
@@ -3140,6 +3327,7 @@
    "min": 0,
    "max": 1500,
    "optional": true,
+   "rolle": "techniker",
    "help_text": "Dokumentation des Messwerts; die Bewertung nimmt die Bereichsauswahl.",
    "ui_number": "8.14m",
    "group": "K06"
@@ -3150,6 +3338,7 @@
    "domain": "GBU",
    "text": "Fahrkorbtür-Verriegelung (Fahrkorbtür außerhalb der Entriegelungszone verriegelt)?",
    "category": "K – Fahrkorb",
+   "rolle": "techniker",
    "ui_number": "8.15",
    "visible_when": {
     "question": "qk_abstand_schwelle_mm",
@@ -3165,6 +3354,7 @@
    "domain": "GBU",
    "text": "Zusatzverriegelung an den Schachttüren vorhanden?",
    "category": "K – Fahrkorb",
+   "rolle": "techniker",
    "ui_number": "8.15a",
    "visible_when": {
     "question": "qk_abstand_schwelle_mm",
@@ -3179,6 +3369,7 @@
    "domain": "GBU",
    "text": "Nennlast und zulässige Personenzahl im Fahrkorb gekennzeichnet?",
    "category": "K – Fahrkorb",
+   "rolle": "techniker",
    "ui_number": "8.16",
    "best_case": true,
    "group": "K07"
@@ -3189,6 +3380,7 @@
    "domain": "GBU",
    "text": "Nutzfläche des Fahrkorbs passt zur Nennlast (Tabelle EN 81-20 5.4.2)?",
    "category": "K – Fahrkorb",
+   "rolle": "techniker",
    "ui_number": "8.17",
    "best_case": true,
    "group": "K07"
@@ -3199,6 +3391,7 @@
    "domain": "GBU",
    "text": "Überlastkontrolle / Lastmessung vorhanden?",
    "category": "K – Fahrkorb",
+   "rolle": "techniker",
    "ui_number": "8.18",
    "best_case": true,
    "group": "K08"
@@ -3209,6 +3402,7 @@
    "domain": "GBU",
    "text": "Funktion der Überlastkontrolle nachweislich geprüft?",
    "category": "K – Fahrkorb",
+   "rolle": "techniker",
    "ui_number": "8.18a",
    "visible_when": {
     "question": "qk_ueberlast",
@@ -3224,6 +3418,7 @@
    "domain": "GBU",
    "text": "Hinweisschild „Aufzug im Brandfall nicht benutzen\" an allen Haltestellen vorhanden und lesbar?",
    "category": "K – Fahrkorb",
+   "rolle": "techniker",
    "ui_number": "8.20",
    "best_case": true,
    "group": "K11"
@@ -3234,6 +3429,7 @@
    "domain": "GBU",
    "text": "Brandfallsteuerung vorhanden?",
    "category": "K – Fahrkorb",
+   "rolle": "techniker",
    "ui_number": "8.21",
    "help_text": "Nur das Vorhandensein. Wie sie ausgelöst wird, steht unter 8.21b – bisher war beides in einer Frage, sodass die Maßnahme „Brandfallsteuerung nachrüsten\" auch dann erschien, wenn nur die Einbindung fehlte (Prüfbericht 20.09.2026).",
    "visible_when": {
@@ -3250,6 +3446,7 @@
    "domain": "GBU",
    "text": "Auslösung der Brandfallsteuerung",
    "category": "K – Fahrkorb",
+   "rolle": "techniker",
    "ui_number": "8.21b",
    "help_text": "DIN EN 81-73: Die Brandfallsteuerung wird durch die Branddetektion ausgelöst. Eine nur manuelle Auslösung wirkt erst, wenn jemand vor Ort ist. Regelprüfung 20.09.2026: Die erste Option umfasst ausdrücklich auch Brandmelder im Aufzugsvorraum ohne gebäudeweite Brandmeldeanlage – dieser häufige Fall musste vorher als „nur manuell\" erfasst werden und erzeugte einen Fehlbefund. Schreibt das Brandschutzkonzept ausdrücklich nur die manuelle Auslösung vor, ist das im Prüfbericht zu vermerken; die Abstimmung der Schnittstelle wird über 15.8a/15.8c bewertet.",
    "visible_when": {
@@ -3280,6 +3477,7 @@
    "domain": "GBU",
    "text": "Funktion der Brandfallsteuerung regelmäßig geprüft (Nachweis der Wartung/Prüfung der Aufzugsanlage)?",
    "category": "K – Fahrkorb",
+   "rolle": "techniker",
    "ui_number": "8.21a",
    "help_text": "Funktionsprüfung der Aufzugs-Brandfallsteuerung. Die Wirk-Prinzip-Prüfung des Zusammenwirkens von Brandmeldeanlage und Aufzug (Gebäudeseite, Prüfverordnung der Länder) wird unter 15.8b erfasst.",
    "visible_when": {
@@ -3296,6 +3494,7 @@
    "domain": "GBU",
    "text": "Anlage nach DIN EN 81-70 barrierefrei ausgeführt?",
    "category": "K – Fahrkorb",
+   "rolle": "techniker",
    "ui_number": "8.22",
    "visible_when": {
     "any": [
@@ -3320,6 +3519,7 @@
    "domain": "GBU",
    "text": "Bedienelemente in erreichbarer Höhe und ertastbar?",
    "category": "K – Fahrkorb",
+   "rolle": "techniker",
    "ui_number": "8.23",
    "help_text": "Teilaspekt von 8.22: nur zu prüfen, wenn die Anlage NICHT nach EN 81-70 ausgeführt ist (Prüfbericht 20.09.2026).",
    "visible_when": {
@@ -3354,6 +3554,7 @@
    "domain": "GBU",
    "text": "Fahrkorbabmessungen für Rollstuhlnutzung ausreichend (mind. 1,00 m × 1,25 m, Fahrkorbtyp 1 nach DIN EN 81-70:2022-12)?",
    "category": "K – Fahrkorb",
+   "rolle": "techniker",
    "ui_number": "8.24",
    "help_text": "Teilaspekt von 8.22, nur bei nicht normgerechter Ausführung zu prüfen. Typ 1 nach DIN EN 81-70 ist das Mindestmaß für einen Rollstuhl ohne Begleitperson; fordert die Genehmigung einen größeren Typ (2 oder 3), gilt dieser.",
    "visible_when": {
@@ -3388,6 +3589,7 @@
    "domain": "GBU",
    "text": "Zustand der Fahrkorbausstattung",
    "category": "K – Fahrkorb",
+   "rolle": "techniker",
    "ui_number": "8.25",
    "options": [
     {
@@ -3412,6 +3614,7 @@
    "domain": "GBU",
    "text": "Wiederholte Vandalismusschäden?",
    "category": "K – Fahrkorb",
+   "rolle": "techniker",
    "ui_number": "8.26",
    "best_case": false,
    "group": "K14"
@@ -3422,6 +3625,7 @@
    "domain": "GBU",
    "text": "Vandalismussichere Ausführung nach DIN EN 81-71?",
    "category": "K – Fahrkorb",
+   "rolle": "techniker",
    "ui_number": "8.26a",
    "visible_when": {
     "question": "qk_vandalismus_wiederholt",
@@ -3437,6 +3641,7 @@
    "domain": "GBU",
    "text": "Türüberbrückung (SR-Modul) für Nachregulieren / Voraböffnen mit offener Tür vorhanden?",
    "category": "K – Fahrkorb",
+   "rolle": "techniker",
    "ui_number": "8.27",
    "help_text": "Bei Hydraulikaufzügen nicht gefragt: das Nachregulieren bei Druckverlust setzt die Türüberbrückung immer voraus (Entscheidung 02.09.2026, K-K12).",
    "visible_when": {
@@ -3456,6 +3661,7 @@
    "domain": "GBU",
    "text": "Schutz gegen Übergeschwindigkeit aufwärts / Sturz nach oben",
    "category": "K – Fahrkorb",
+   "rolle": "techniker",
    "ui_number": "8.28",
    "help_text": "Nur bei Treibscheiben- und Trommelantrieb mit Gegengewicht (MF-K13/MF-K14). Ein indirekter Hydraulikaufzug kann nicht durch Treibfähigkeitsverlust nach oben durchgehen (Prüfbericht 20.09.2026).",
    "visible_when": {
@@ -3496,6 +3702,7 @@
    "domain": "GBU",
    "text": "Beleuchtung im Fahrkorb (Normalbetrieb)",
    "category": "K – Fahrkorb",
+   "rolle": "techniker",
    "ui_number": "8.29",
    "help_text": "EN 81-20 5.4.10.1: gemessen an den Befehlsgebern und 1 m über dem Boden an allen Stellen, die nicht mehr als 100 mm von einer Wand entfernt sind. Schatten durch Handlauf oder Klappsitz dürfen vernachlässigt werden.",
    "options": [
@@ -3521,6 +3728,7 @@
    "domain": "GBU",
    "text": "Mindestens zwei parallel geschaltete Lampen im Fahrkorb?",
    "category": "K – Fahrkorb",
+   "rolle": "techniker",
    "ui_number": "8.29a",
    "help_text": "EN 81-20 5.4.10.2: Ausfall einer Lampe darf den Fahrkorb nicht dunkel werden lassen.",
    "best_case": true,
@@ -3532,6 +3740,7 @@
    "domain": "GBU",
    "text": "Fahrkorb ständig beleuchtet (Ausnahme: Parken mit geschlossenen Türen)?",
    "category": "K – Fahrkorb",
+   "rolle": "techniker",
    "ui_number": "8.29b",
    "help_text": "EN 81-20 5.4.10.3.",
    "best_case": true,

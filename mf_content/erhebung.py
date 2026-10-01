@@ -894,6 +894,9 @@ def schwellen(seed, errors):
                 w = {'code': wcode, 'type': 'NUMBER', 'domain': 'GBU', 'text': wtext,
                      'category': q['category'], 'min': mn if mn is not None else 0,
                      'max': mx if mx is not None else 5000, 'optional': True,
+                     # Das Messwertfeld gehoert zu seiner Schwellenfrage und
+                     # wird von derselben Person erhoben (01.10.2026).
+                     'rolle': q.get('rolle', 'techniker'),
                      'help_text': 'Dokumentation des Messwerts; die Bewertung nimmt die Bereichsauswahl.'}
                 if q.get('ui_number'): w['ui_number'] = q['ui_number'] + 'm'
                 if q.get('visible_when'): w['visible_when'] = q['visible_when']

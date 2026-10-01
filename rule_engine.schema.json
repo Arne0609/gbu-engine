@@ -656,6 +656,13 @@
      "type": "string",
      "description": "Schluessel des Feldes im Anlagenstamm."
     },
+    "rolle": {
+     "enum": [
+      "techniker",
+      "betreiber"
+     ],
+     "description": "Wer die Frage beantworten kann (01.10.2026). techniker = Feststellung vor Ort. betreiber = Unterlagen und Betreiberorganisation; der Monteur kann sie nicht erheben, sie gehoeren in den Betreiberabschnitt und in dessen Freigabe."
+    },
     "group": {
      "type": "string",
      "description": "ID der Fragengruppe (question_groups), in der die Frage als Position einer Karte erscheint."

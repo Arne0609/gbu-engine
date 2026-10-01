@@ -47,6 +47,18 @@ _PREFIX2CAT = {'qa_': 'A', 'qz_': 'Z', 'qm_': 'M', 'qt_': 'T', 'qk_': 'K',
                'qf_': 'F', 'qs_': 'S', 'qg_': 'G', 'qu_': 'U', 'qsf_': 'SF',
                'qd_': 'D'}
 
+# Wer eine Frage beantworten kann (01.10.2026). Die GBU wird in der Regel OHNE
+# den Betreiber in dessen Auftrag durchgefuehrt; am Ende prueft und gibt er sie
+# frei. Die Unterlagen- und Organisationsfragen kann ein Monteur im Schacht
+# nicht feststellen - Stromlaufplan, Pruefbuch, Wartungsvertrag, beauftragte
+# Person, Unterweisung. Sie halten die Beurteilung heute auf "unvollstaendig",
+# obwohl niemand vor Ort sie beantworten koennte. Sie bekommen deshalb die
+# Rolle `betreiber` und wandern in einen eigenen Abschnitt.
+#
+# Die Anlagenmerkmale (A) brauchen keine Rolle: 20 ihrer 22 Fragen tragen
+# bereits einen `stamm_key` und kommen aus dem Anlagenstamm.
+BETREIBERBEREICHE = {'D'}
+
 # ---- Baugruppen (Bewertung/Bericht) ----------------------------------------
 GROUPS = [
     'Notruf und Personenbefreiung',
@@ -240,8 +252,11 @@ def not_(x):     return {'not': x}
 _seen_q = set()
 
 def q(code, text, typ='YES_NO', ui=None, options=None, help=None,
-      visible_when=None, legacy=None, cat=None, min=None, max=None):
-    """Frage anlegen. options: Liste aus (value, label) oder Strings (value=label-slug)."""
+      visible_when=None, legacy=None, cat=None, min=None, max=None, rolle=None):
+    """Frage anlegen. options: Liste aus (value, label) oder Strings (value=label-slug).
+
+    rolle: 'techniker' (Feststellung vor Ort) oder 'betreiber'. Ohne Angabe
+    entscheidet der Erhebungsbereich (siehe BETREIBERBEREICHE)."""
     assert code not in _seen_q, 'doppelte Frage ' + code
     _seen_q.add(code)
     if cat is None:
@@ -250,8 +265,11 @@ def q(code, text, typ='YES_NO', ui=None, options=None, help=None,
                 cat = c
                 break
     assert cat in CATS, 'unbekannter Erhebungsbereich für ' + code
+    if rolle is None:
+        rolle = 'betreiber' if cat in BETREIBERBEREICHE else 'techniker'
+    assert rolle in ('techniker', 'betreiber'), code + ': unbekannte Rolle ' + rolle
     d = {'code': code, 'type': typ, 'domain': 'GBU', 'text': text,
-         'category': CATS[cat]}
+         'category': CATS[cat], 'rolle': rolle}
     if ui: d['ui_number'] = ui
     if legacy: d['legacy_id'] = legacy
     if help: d['help_text'] = help
