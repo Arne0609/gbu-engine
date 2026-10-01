@@ -30,13 +30,19 @@ yn('qz_zugangsdaten_bekannt', 'Sind dem Betreiber die Zugangsdaten der Anlage be
    'liegen sie gesichert vor (Übergabe durch Hersteller/Wartungsfirma dokumentiert)?',
    ui='2.5a',
    help='Nein = Mangel: Der Betreiber kann Zugänge weder prüfen noch bei einem Firmenwechsel '
-        'entziehen (TRBS 1115-1, Zugangskontrolle Software).')
+        'entziehen (TRBS 1115-1, Zugangskontrolle Software).',
+   # Ob die Zugangsdaten beim Betreiber hinterlegt sind, weiss nur er. (01.10.2026)
+   rolle='betreiber')
 yn('qz_rollen', 'Sind Zugriffsrechte rollenbasiert vergeben (Betreiber, '
    'Wartungsfirma, Hersteller) und werden sie bei Personal- oder Firmenwechsel '
-   'entzogen?', ui='2.6')
+   'entzogen?', ui='2.6',
+   # Rollenvergabe ist eine Festlegung des Betreibers, keine Feststellung an der Anlage. (01.10.2026)
+   rolle='betreiber')
 yn('qz_servicegeraete', 'Ist geregelt, welche Servicegeräte, Laptops und Wechsel'
    'datenträger an die Anlage angeschlossen werden dürfen (nur freigegebene, '
-   'geprüfte Geräte; kein privater Datenträger)?', ui='2.7')
+   'geprüfte Geräte; kein privater Datenträger)?', ui='2.7',
+   # Eine Regelung, kein Zustand – der Betreiber trifft sie. (01.10.2026)
+   rolle='betreiber')
 
 # ---- Klärungen -------------------------------------------------------------
 k('K-C12', 'Zugang', 'Frei zugängliche Steuerung',

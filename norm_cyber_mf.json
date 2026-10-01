@@ -7,6 +7,7 @@
    "domain": "CYBER",
    "text": "Aufzugsart",
    "category": "A – Anlagenmerkmale und Systemabgrenzung",
+   "rolle": "techniker",
    "ui_number": "1.1",
    "help_text": "Steuert die Komponente „Hydraulischer Steuerblock\".",
    "options": [
@@ -39,6 +40,7 @@
    "domain": "CYBER",
    "text": "Überwachungsbedürftige Anlage nach ÜAnlG (Personen- oder Lastenaufzug mit ZÜS-Prüfpflicht)?",
    "category": "A – Anlagenmerkmale und Systemabgrenzung",
+   "rolle": "techniker",
    "ui_number": "1.2",
    "help_text": "Bei überwachungsbedürftigen Anlagen ist nach ÜAnlG stets von einem erheblichen Risiko für Sicherheit und Gesundheit auszugehen (EK-ZÜS B-002 Anhang 2 Nr. 3). Nein = z. B. Plattformaufzug nach MRL ohne ZÜS-Pflicht.",
    "group": "CY-A"
@@ -49,6 +51,7 @@
    "domain": "CYBER",
    "text": "Art der Aufzugssteuerung",
    "category": "A – Anlagenmerkmale und Systemabgrenzung",
+   "rolle": "techniker",
    "ui_number": "1.3",
    "help_text": "„Relais\" schaltet die komponentenbasierte Betrachtung weitgehend ab: ohne programmierbare Komponente gibt es keine kompromittierbare Datenschnittstelle (Vorscreening nach BA-017).",
    "options": [
@@ -73,6 +76,7 @@
    "domain": "CYBER",
    "text": "Triebwerks-/Maschinenraum vorhanden?",
    "category": "A – Anlagenmerkmale und Systemabgrenzung",
+   "rolle": "techniker",
    "ui_number": "1.4",
    "help_text": "Nein = maschinenraumlos; die Steuerung sitzt dann im Steuerschrank an der Haltestelle oder im Schacht. Dieselbe Angabe wie 4.7 im GBU-Teil (gleicher Fragen-Code) – aus dem Anlagenstamm vorbelegen, nicht zweimal erheben (Prüfbericht 20.09.2026).",
    "group": "CY-A"
@@ -83,6 +87,7 @@
    "domain": "CYBER",
    "text": "Anlage mit Netzwerk- oder Internetanbindung (Fernüberwachung, Fernwartung, Gateway/Router/Modem, Gebäudeleittechnik)?",
    "category": "A – Anlagenmerkmale und Systemabgrenzung",
+   "rolle": "techniker",
    "ui_number": "1.5",
    "help_text": "Steuert den Erhebungsbereich N sowie die Komponenten Fernüberwachung, Remote-Service und Gateway. Muss „Ja\" sein, wenn unter 1.3 „Programmierbare Steuerung mit Netz-/Fernanbindung\" gewählt wurde – die Gebäudeleittechnik wird unter 1.6 erfasst, nicht hier (Prüfbericht 20.09.2026).",
    "group": "CY-A"
@@ -93,6 +98,7 @@
    "domain": "CYBER",
    "text": "Anbindung an bauseitige Systeme vorhanden (Brandmeldeanlage/Brandfallsteuerung, Entrauchung, Gebäudeleittechnik, Zutrittssystem)?",
    "category": "A – Anlagenmerkmale und Systemabgrenzung",
+   "rolle": "techniker",
    "ui_number": "1.6",
    "group": "CY-A"
   },
@@ -102,6 +108,7 @@
    "domain": "CYBER",
    "text": "Vorgaben des Herstellers zur Cybersicherheit",
    "category": "A – Anlagenmerkmale und Systemabgrenzung",
+   "rolle": "betreiber",
    "ui_number": "1.7",
    "help_text": "EK-ZÜS B-002 Anhang 2 Nr. 7. Bewertet in O (Organisation).",
    "options": [
@@ -130,6 +137,7 @@
    "domain": "CYBER",
    "text": "Ist die Aufzugssteuerung (Steuerschrank, Bedien-/Serviceeinheit) für Unbefugte frei zugänglich?",
    "category": "Z – Zugang und Zugriff",
+   "rolle": "techniker",
    "ui_number": "2.1",
    "help_text": "Ja = ohne Schlüssel oder Werkzeug erreichbar (z. B. Steuerschrank im öffentlichen Flur unverschlossen, Schranktür ohne Schloss).",
    "group": "CY-Z"
@@ -140,6 +148,7 @@
    "domain": "CYBER",
    "text": "Ist der Triebwerks-/Maschinenraum für Unbefugte frei zugänglich?",
    "category": "Z – Zugang und Zugriff",
+   "rolle": "techniker",
    "ui_number": "2.2",
    "visible_when": {
     "question": "qa_maschinenraum",
@@ -154,6 +163,7 @@
    "domain": "CYBER",
    "text": "Ist der Aufzugsschacht für Unbefugte frei zugänglich (Grubenzugang, Schachttür ohne Notentriegelungsschutz, offene Wartungsklappe)?",
    "category": "Z – Zugang und Zugriff",
+   "rolle": "techniker",
    "ui_number": "2.3",
    "group": "CY-Z"
   },
@@ -163,6 +173,7 @@
    "domain": "CYBER",
    "text": "Sind die Service- und Programmierschnittstellen (Serviceanschluss, USB, Speicherkarte, Diagnosestecker) gegen unbefugte Nutzung gesichert (verschlossene Abdeckung, Freigabe nur mit Schlüssel/Code)?",
    "category": "Z – Zugang und Zugriff",
+   "rolle": "techniker",
    "ui_number": "2.4",
    "group": "CY-Z"
   },
@@ -172,6 +183,7 @@
    "domain": "CYBER",
    "text": "Werden Standard-/Werkszugangsdaten (Passwörter, PINs, Servicecodes) verwendet?",
    "category": "Z – Zugang und Zugriff",
+   "rolle": "techniker",
    "ui_number": "2.5",
    "help_text": "Ja = Mangel. Gemeint sind alle Zugänge: Steuerung, Notruf, Umrichter, Gateway, Fernwartung. Ob die Zugangsdaten überhaupt bekannt sind, steht unter 2.5a – beides stand bisher in einer Frage, obwohl nur der erste Fall mit „Werkszugangsdaten ändern\" zu beheben ist (Prüfbericht 20.09.2026).",
    "group": "CY-Z"
@@ -182,6 +194,7 @@
    "domain": "CYBER",
    "text": "Sind dem Betreiber die Zugangsdaten der Anlage bekannt und liegen sie gesichert vor (Übergabe durch Hersteller/Wartungsfirma dokumentiert)?",
    "category": "Z – Zugang und Zugriff",
+   "rolle": "betreiber",
    "ui_number": "2.5a",
    "help_text": "Nein = Mangel: Der Betreiber kann Zugänge weder prüfen noch bei einem Firmenwechsel entziehen (TRBS 1115-1, Zugangskontrolle Software).",
    "group": "CY-Z"
@@ -192,6 +205,7 @@
    "domain": "CYBER",
    "text": "Sind Zugriffsrechte rollenbasiert vergeben (Betreiber, Wartungsfirma, Hersteller) und werden sie bei Personal- oder Firmenwechsel entzogen?",
    "category": "Z – Zugang und Zugriff",
+   "rolle": "betreiber",
    "ui_number": "2.6",
    "group": "CY-Z"
   },
@@ -201,6 +215,7 @@
    "domain": "CYBER",
    "text": "Ist geregelt, welche Servicegeräte, Laptops und Wechseldatenträger an die Anlage angeschlossen werden dürfen (nur freigegebene, geprüfte Geräte; kein privater Datenträger)?",
    "category": "Z – Zugang und Zugriff",
+   "rolle": "betreiber",
    "ui_number": "2.7",
    "group": "CY-Z"
   },
@@ -210,6 +225,7 @@
    "domain": "CYBER",
    "text": "Höchste vorhandene Schnittstellenkategorie der Komponente „Aufzugssteuerung\"",
    "category": "C – Komponenten und Schnittstellen",
+   "rolle": "techniker",
    "ui_number": "3.1.2",
    "help_text": "Maßgeblich ist die angreifbarste Schnittstelle. Konkrete Schnittstellen (USB, CAN, Mobilfunk …) in der App dokumentieren.",
    "visible_when": {
@@ -247,6 +263,7 @@
    "domain": "CYBER",
    "text": "Schutzmaßnahmen nach TRBS 1115-1 für „Aufzugssteuerung\"",
    "category": "C – Komponenten und Schnittstellen",
+   "rolle": "techniker",
    "ui_number": "3.1.3",
    "help_text": "Einschlägige Kategorien: Zugangskontrolle (Hardware/Software), Funktionsreduzierung.",
    "visible_when": {
@@ -285,6 +302,7 @@
    "domain": "CYBER",
    "text": "Bleibt der Sicherheitskreis (Türkontakte, Endschalter, Fang-/Begrenzerkontakte) bei Manipulation der Steuerung durch eine unabhängige elektromechanische Kette wirksam?",
    "category": "C – Komponenten und Schnittstellen",
+   "rolle": "techniker",
    "ui_number": "3.1.4",
    "visible_when": {
     "all": [
@@ -308,6 +326,7 @@
    "domain": "CYBER",
    "text": "PESSRAL / programmierbare Sicherheitsschaltung vorhanden?",
    "category": "C – Komponenten und Schnittstellen",
+   "rolle": "techniker",
    "ui_number": "3.2.1",
    "help_text": "Schutzfunktion: Elektronische Sicherheitsfunktionen im Sicherheitsstromkreis. Mögliche Cyberfolge: Manipulation oder Deaktivierung von Sicherheitsfunktionen.",
    "group": "CY-C2"
@@ -318,6 +337,7 @@
    "domain": "CYBER",
    "text": "Höchste vorhandene Schnittstellenkategorie der Komponente „PESSRAL (programmierbare Sicherheitsschaltung)\"",
    "category": "C – Komponenten und Schnittstellen",
+   "rolle": "techniker",
    "ui_number": "3.2.2",
    "help_text": "Maßgeblich ist die angreifbarste Schnittstelle. Konkrete Schnittstellen (USB, CAN, Mobilfunk …) in der App dokumentieren.",
    "visible_when": {
@@ -355,6 +375,7 @@
    "domain": "CYBER",
    "text": "Schutzmaßnahmen nach TRBS 1115-1 für „PESSRAL (programmierbare Sicherheitsschaltung)\"",
    "category": "C – Komponenten und Schnittstellen",
+   "rolle": "techniker",
    "ui_number": "3.2.3",
    "help_text": "Einschlägige Kategorien: Zugangskontrolle (Hardware), Funktionsreduzierung.",
    "visible_when": {
@@ -393,6 +414,7 @@
    "domain": "CYBER",
    "text": "Frequenzumrichter (geregelter Antrieb) vorhanden?",
    "category": "C – Komponenten und Schnittstellen",
+   "rolle": "techniker",
    "ui_number": "3.3.1",
    "help_text": "Schutzfunktion: Regelung von Fahrgeschwindigkeit und Antrieb. Mögliche Cyberfolge: Unzulässige Geschwindigkeit oder Beschleunigung, wenn keine unabhängige Rückfallebene wirkt.",
    "group": "CY-C3"
@@ -403,6 +425,7 @@
    "domain": "CYBER",
    "text": "Höchste vorhandene Schnittstellenkategorie der Komponente „Frequenzumrichter\"",
    "category": "C – Komponenten und Schnittstellen",
+   "rolle": "techniker",
    "ui_number": "3.3.2",
    "help_text": "Maßgeblich ist die angreifbarste Schnittstelle. Konkrete Schnittstellen (USB, CAN, Mobilfunk …) in der App dokumentieren.",
    "visible_when": {
@@ -440,6 +463,7 @@
    "domain": "CYBER",
    "text": "Schutzmaßnahmen nach TRBS 1115-1 für „Frequenzumrichter\"",
    "category": "C – Komponenten und Schnittstellen",
+   "rolle": "techniker",
    "ui_number": "3.3.3",
    "help_text": "Einschlägige Kategorien: Zugangskontrolle (Software), Funktionsreduzierung.",
    "visible_when": {
@@ -478,6 +502,7 @@
    "domain": "CYBER",
    "text": "Wirkt bei Manipulation des Umrichters eine unabhängige Sicherheitskette (STO/sicher abgeschaltetes Moment, Bremse und Geschwindigkeitsbegrenzer unabhängig vom Umrichter)?",
    "category": "C – Komponenten und Schnittstellen",
+   "rolle": "techniker",
    "ui_number": "3.3.4",
    "visible_when": {
     "all": [
@@ -501,6 +526,7 @@
    "domain": "CYBER",
    "text": "Notrufsystem mit digitaler Komponente (Mobilfunk/IP, programmierbares Notrufgerät) vorhanden?",
    "category": "C – Komponenten und Schnittstellen",
+   "rolle": "techniker",
    "ui_number": "3.4.1",
    "help_text": "Schutzfunktion: Hilfe und Kommunikation bei Personeneinschluss. Mögliche Cyberfolge: Notruf wird nicht oder an die falsche Stelle weitergeleitet; Personeneinschluss bleibt unbemerkt.",
    "group": "CY-C4"
@@ -511,6 +537,7 @@
    "domain": "CYBER",
    "text": "Höchste vorhandene Schnittstellenkategorie der Komponente „Notrufsystem (Zwei-Wege-Kommunikation)\"",
    "category": "C – Komponenten und Schnittstellen",
+   "rolle": "techniker",
    "ui_number": "3.4.2",
    "help_text": "Maßgeblich ist die angreifbarste Schnittstelle. Konkrete Schnittstellen (USB, CAN, Mobilfunk …) in der App dokumentieren.",
    "visible_when": {
@@ -548,6 +575,7 @@
    "domain": "CYBER",
    "text": "Schutzmaßnahmen nach TRBS 1115-1 für „Notrufsystem (Zwei-Wege-Kommunikation)\"",
    "category": "C – Komponenten und Schnittstellen",
+   "rolle": "techniker",
    "ui_number": "3.4.3",
    "help_text": "Einschlägige Kategorien: Zugangskontrolle (Software/Hardware), Überwachung.",
    "visible_when": {
@@ -586,6 +614,7 @@
    "domain": "CYBER",
    "text": "Automatischer Testruf mit Ausfallmeldung an die Notrufzentrale (EN 81-28) vorhanden und wirksam?",
    "category": "C – Komponenten und Schnittstellen",
+   "rolle": "techniker",
    "ui_number": "3.4.4",
    "visible_when": {
     "all": [
@@ -609,6 +638,7 @@
    "domain": "CYBER",
    "text": "Digitale Schachtkopierung / Absolutwertgeber vorhanden?",
    "category": "C – Komponenten und Schnittstellen",
+   "rolle": "techniker",
    "ui_number": "3.5.1",
    "help_text": "Schutzfunktion: Positionserfassung und Haltegenauigkeit (Bündigkeit). Mögliche Cyberfolge: Fehlpositionierung oder Fehlbündigkeit; Stolper-/Absturzgefahr.",
    "group": "CY-C5"
@@ -619,6 +649,7 @@
    "domain": "CYBER",
    "text": "Höchste vorhandene Schnittstellenkategorie der Komponente „Schachtkopierung / Positionierung\"",
    "category": "C – Komponenten und Schnittstellen",
+   "rolle": "techniker",
    "ui_number": "3.5.2",
    "help_text": "Maßgeblich ist die angreifbarste Schnittstelle. Konkrete Schnittstellen (USB, CAN, Mobilfunk …) in der App dokumentieren.",
    "visible_when": {
@@ -656,6 +687,7 @@
    "domain": "CYBER",
    "text": "Schutzmaßnahmen nach TRBS 1115-1 für „Schachtkopierung / Positionierung\"",
    "category": "C – Komponenten und Schnittstellen",
+   "rolle": "techniker",
    "ui_number": "3.5.3",
    "help_text": "Einschlägige Kategorien: Zugangskontrolle (Hardware), Funktionsreduzierung.",
    "visible_when": {
@@ -694,6 +726,7 @@
    "domain": "CYBER",
    "text": "Bleiben Bündigkeit und Endlagen bei Manipulation der Kopierung durch unabhängige Schalter/Endschalter gesichert?",
    "category": "C – Komponenten und Schnittstellen",
+   "rolle": "techniker",
    "ui_number": "3.5.4",
    "visible_when": {
     "all": [
@@ -717,6 +750,7 @@
    "domain": "CYBER",
    "text": "Programmierbare Türsteuerung / Türantrieb mit Parametrierzugang vorhanden?",
    "category": "C – Komponenten und Schnittstellen",
+   "rolle": "techniker",
    "ui_number": "3.6.1",
    "help_text": "Schutzfunktion: Türbewegung und Begrenzung der Schließkräfte. Mögliche Cyberfolge: Unzulässige Türkräfte oder Türbewegung; Quetsch-/Schergefahr.",
    "group": "CY-C6"
@@ -727,6 +761,7 @@
    "domain": "CYBER",
    "text": "Höchste vorhandene Schnittstellenkategorie der Komponente „Türsteuerung\"",
    "category": "C – Komponenten und Schnittstellen",
+   "rolle": "techniker",
    "ui_number": "3.6.2",
    "help_text": "Maßgeblich ist die angreifbarste Schnittstelle. Konkrete Schnittstellen (USB, CAN, Mobilfunk …) in der App dokumentieren.",
    "visible_when": {
@@ -764,6 +799,7 @@
    "domain": "CYBER",
    "text": "Schutzmaßnahmen nach TRBS 1115-1 für „Türsteuerung\"",
    "category": "C – Komponenten und Schnittstellen",
+   "rolle": "techniker",
    "ui_number": "3.6.3",
    "help_text": "Einschlägige Kategorien: Zugangskontrolle (Hardware), Funktionsreduzierung.",
    "visible_when": {
@@ -802,6 +838,7 @@
    "domain": "CYBER",
    "text": "Wirkt die Schließkraftbegrenzung/Reversierung unabhängig von der programmierbaren Türsteuerung (mechanisch oder separates Gerät)?",
    "category": "C – Komponenten und Schnittstellen",
+   "rolle": "techniker",
    "ui_number": "3.6.4",
    "visible_when": {
     "all": [
@@ -825,6 +862,7 @@
    "domain": "CYBER",
    "text": "UCM-Erkennung (Schutz gegen unbeabsichtigte Bewegung) mit programmierbarer Komponente vorhanden?",
    "category": "C – Komponenten und Schnittstellen",
+   "rolle": "techniker",
    "ui_number": "3.7.1",
    "help_text": "Schutzfunktion: Verhinderung unkontrollierter Fahrkorbbewegung bei offenen Türen. Mögliche Cyberfolge: Quetsch-/Schergefahr durch Deaktivierung oder Parameteränderung.",
    "group": "CY-C7"
@@ -835,6 +873,7 @@
    "domain": "CYBER",
    "text": "Höchste vorhandene Schnittstellenkategorie der Komponente „UCM-Erkennung\"",
    "category": "C – Komponenten und Schnittstellen",
+   "rolle": "techniker",
    "ui_number": "3.7.2",
    "help_text": "Maßgeblich ist die angreifbarste Schnittstelle. Konkrete Schnittstellen (USB, CAN, Mobilfunk …) in der App dokumentieren.",
    "visible_when": {
@@ -872,6 +911,7 @@
    "domain": "CYBER",
    "text": "Schutzmaßnahmen nach TRBS 1115-1 für „UCM-Erkennung\"",
    "category": "C – Komponenten und Schnittstellen",
+   "rolle": "techniker",
    "ui_number": "3.7.3",
    "help_text": "Einschlägige Kategorien: Zugangskontrolle (Hardware), Funktionsreduzierung.",
    "visible_when": {
@@ -910,6 +950,7 @@
    "domain": "CYBER",
    "text": "Wirkt das UCM-Bremselement (Bremse/Fangvorrichtung) über eine unabhängige, nicht programmierbare Auslösung?",
    "category": "C – Komponenten und Schnittstellen",
+   "rolle": "techniker",
    "ui_number": "3.7.4",
    "visible_when": {
     "all": [
@@ -933,6 +974,7 @@
    "domain": "CYBER",
    "text": "Elektronischer Geschwindigkeitsbegrenzer / SAFÜ mit programmierbarer Komponente vorhanden?",
    "category": "C – Komponenten und Schnittstellen",
+   "rolle": "techniker",
    "ui_number": "3.8.1",
    "help_text": "Schutzfunktion: Schutz gegen Übergeschwindigkeit. Mögliche Cyberfolge: Deaktivierung oder Manipulation des Übergeschwindigkeitsschutzes.",
    "group": "CY-C8"
@@ -943,6 +985,7 @@
    "domain": "CYBER",
    "text": "Höchste vorhandene Schnittstellenkategorie der Komponente „SAFÜ (Schutz gegen Übergeschwindigkeit)\"",
    "category": "C – Komponenten und Schnittstellen",
+   "rolle": "techniker",
    "ui_number": "3.8.2",
    "help_text": "Maßgeblich ist die angreifbarste Schnittstelle. Konkrete Schnittstellen (USB, CAN, Mobilfunk …) in der App dokumentieren.",
    "visible_when": {
@@ -980,6 +1023,7 @@
    "domain": "CYBER",
    "text": "Schutzmaßnahmen nach TRBS 1115-1 für „SAFÜ (Schutz gegen Übergeschwindigkeit)\"",
    "category": "C – Komponenten und Schnittstellen",
+   "rolle": "techniker",
    "ui_number": "3.8.3",
    "help_text": "Einschlägige Kategorien: Zugangskontrolle (Hardware), Funktionsreduzierung.",
    "visible_when": {
@@ -1018,6 +1062,7 @@
    "domain": "CYBER",
    "text": "Bleibt die Fangvorrichtung bei Manipulation der elektronischen Überwachung durch einen mechanischen Begrenzer auslösbar?",
    "category": "C – Komponenten und Schnittstellen",
+   "rolle": "techniker",
    "ui_number": "3.8.4",
    "visible_when": {
     "all": [
@@ -1041,6 +1086,7 @@
    "domain": "CYBER",
    "text": "Elektronische Tragmittelüberwachung (z. B. Riemenüberwachung) vorhanden?",
    "category": "C – Komponenten und Schnittstellen",
+   "rolle": "techniker",
    "ui_number": "3.9.1",
    "help_text": "Schutzfunktion: Überwachung des Zustands der Tragmittel (Riemen/Seile). Mögliche Cyberfolge: Ausfall oder Umgehung der Überwachung bleibt unbemerkt.",
    "group": "CY-C9"
@@ -1051,6 +1097,7 @@
    "domain": "CYBER",
    "text": "Höchste vorhandene Schnittstellenkategorie der Komponente „Tragmittelüberwachung\"",
    "category": "C – Komponenten und Schnittstellen",
+   "rolle": "techniker",
    "ui_number": "3.9.2",
    "help_text": "Maßgeblich ist die angreifbarste Schnittstelle. Konkrete Schnittstellen (USB, CAN, Mobilfunk …) in der App dokumentieren.",
    "visible_when": {
@@ -1088,6 +1135,7 @@
    "domain": "CYBER",
    "text": "Schutzmaßnahmen nach TRBS 1115-1 für „Tragmittelüberwachung\"",
    "category": "C – Komponenten und Schnittstellen",
+   "rolle": "techniker",
    "ui_number": "3.9.3",
    "help_text": "Einschlägige Kategorien: Zugangskontrolle (Hardware), Überwachung.",
    "visible_when": {
@@ -1126,6 +1174,7 @@
    "domain": "CYBER",
    "text": "Wird der Tragmittelzustand zusätzlich unabhängig geprüft (Sichtprüfung nach Wartungsplan, Ablegereife)?",
    "category": "C – Komponenten und Schnittstellen",
+   "rolle": "techniker",
    "ui_number": "3.9.4",
    "visible_when": {
     "all": [
@@ -1149,6 +1198,7 @@
    "domain": "CYBER",
    "text": "Elektronisch geregelter Hydraulik-Steuerblock vorhanden?",
    "category": "C – Komponenten und Schnittstellen",
+   "rolle": "techniker",
    "ui_number": "3.10.1",
    "help_text": "Schutzfunktion: Schutz gegen Absinken und Übergeschwindigkeit bei Hydraulikaufzügen. Mögliche Cyberfolge: Manipulation von Ventilen/Parametern; unkontrolliertes Absinken.",
    "visible_when": {
@@ -1167,6 +1217,7 @@
    "domain": "CYBER",
    "text": "Höchste vorhandene Schnittstellenkategorie der Komponente „Hydraulischer Steuerblock\"",
    "category": "C – Komponenten und Schnittstellen",
+   "rolle": "techniker",
    "ui_number": "3.10.2",
    "help_text": "Maßgeblich ist die angreifbarste Schnittstelle. Konkrete Schnittstellen (USB, CAN, Mobilfunk …) in der App dokumentieren.",
    "visible_when": {
@@ -1216,6 +1267,7 @@
    "domain": "CYBER",
    "text": "Schutzmaßnahmen nach TRBS 1115-1 für „Hydraulischer Steuerblock\"",
    "category": "C – Komponenten und Schnittstellen",
+   "rolle": "techniker",
    "ui_number": "3.10.3",
    "help_text": "Einschlägige Kategorien: Zugangskontrolle (Hardware), Funktionsreduzierung.",
    "visible_when": {
@@ -1266,6 +1318,7 @@
    "domain": "CYBER",
    "text": "Wirken Rohrbruchventil und Absinkschutz mechanisch/hydraulisch unabhängig von der Elektronik?",
    "category": "C – Komponenten und Schnittstellen",
+   "rolle": "techniker",
    "ui_number": "3.10.4",
    "visible_when": {
     "all": [
@@ -1301,6 +1354,7 @@
    "domain": "CYBER",
    "text": "Fernüberwachung (Zustandsmeldung, Störungsmeldung an Leitstelle/Hersteller) vorhanden?",
    "category": "C – Komponenten und Schnittstellen",
+   "rolle": "techniker",
    "ui_number": "3.11.1",
    "visible_when": {
     "question": "qa_vernetzt",
@@ -1315,6 +1369,7 @@
    "domain": "CYBER",
    "text": "Ist die Fernüberwachung ausschließlich lesend (kein Schreib-, Steuer- oder Parametrierzugriff über diesen Kanal)?",
    "category": "C – Komponenten und Schnittstellen",
+   "rolle": "techniker",
    "ui_number": "3.11.2",
    "visible_when": {
     "all": [
@@ -1338,6 +1393,7 @@
    "domain": "CYBER",
    "text": "Remote-Service / Fernwartung (Hersteller-Fernzugriff, Service-App, VPN) vorhanden?",
    "category": "C – Komponenten und Schnittstellen",
+   "rolle": "techniker",
    "ui_number": "3.12.1",
    "visible_when": {
     "question": "qa_vernetzt",
@@ -1352,6 +1408,7 @@
    "domain": "CYBER",
    "text": "Gateway / Router / Modem / WLAN- oder Service-Dongle an der Anlage vorhanden?",
    "category": "C – Komponenten und Schnittstellen",
+   "rolle": "techniker",
    "ui_number": "3.13.1",
    "visible_when": {
     "question": "qa_vernetzt",
@@ -1366,6 +1423,7 @@
    "domain": "CYBER",
    "text": "Ist das Gateway mit Firewall/Netztrennung zur Aufzugssteuerung konfiguriert und sind nur benötigte Ports und Dienste freigegeben?",
    "category": "C – Komponenten und Schnittstellen",
+   "rolle": "techniker",
    "ui_number": "3.13.2",
    "visible_when": {
     "all": [
@@ -1389,6 +1447,7 @@
    "domain": "CYBER",
    "text": "Sind die Werkszugangsdaten des Gateways/Routers geändert und ist die Administration nur für Berechtigte erreichbar?",
    "category": "C – Komponenten und Schnittstellen",
+   "rolle": "techniker",
    "ui_number": "3.13.3",
    "visible_when": {
     "all": [
@@ -1412,6 +1471,7 @@
    "domain": "CYBER",
    "text": "Ist die Firmware des Gateways aktuell und ein Update-Verfahren geregelt?",
    "category": "C – Komponenten und Schnittstellen",
+   "rolle": "techniker",
    "ui_number": "3.13.4",
    "visible_when": {
     "all": [
@@ -1435,6 +1495,7 @@
    "domain": "CYBER",
    "text": "Ist die Schnittstelle zu den bauseitigen Systemen rückwirkungsfrei (definierte Signale/potenzialfreie Kontakte; bauseitige Signale können Sicherheitsfunktionen des Aufzugs nicht außer Kraft setzen)?",
    "category": "C – Komponenten und Schnittstellen",
+   "rolle": "techniker",
    "ui_number": "3.14.1",
    "visible_when": {
     "question": "qa_gebaeude_anbindung",
@@ -1449,6 +1510,7 @@
    "domain": "CYBER",
    "text": "Nimmt der Aufzug bei Ausfall oder Manipulation des bauseitigen Signals (z. B. Brandfallsteuerung) einen sicheren Zustand ein (Brandfallfahrt in die Evakuierungshaltestelle, kein Weiterbetrieb)?",
    "category": "C – Komponenten und Schnittstellen",
+   "rolle": "techniker",
    "ui_number": "3.14.2",
    "visible_when": {
     "question": "qa_gebaeude_anbindung",
@@ -1463,6 +1525,7 @@
    "domain": "CYBER",
    "text": "Ist das Aufzugsnetz vom Gebäude-/Büronetz und vom Internet getrennt (eigenes Segment, Firewall, keine direkte Erreichbarkeit der Steuerung von außen)?",
    "category": "N – Netz, Fernzugriff und Härtung",
+   "rolle": "techniker",
    "ui_number": "4.1",
    "help_text": "Gilt kanalübergreifend für ALLE Zugangswege der Anlage (Fernüberwachung, Remote-Service/Fernwartung, Gateway, Servicegeräte vor Ort). Sind die Kanäle technisch getrennt – etwa Hersteller-Cloud und Wartungs-VPN –, gilt der schlechteste Fall: „Ja\" nur, wenn es für JEDEN vorhandenen Kanal zutrifft (Prüfbericht 20.09.2026).",
    "visible_when": {
@@ -1478,6 +1541,7 @@
    "domain": "CYBER",
    "text": "Wird ein Fernzugriff nur nach Freigabe durch den Betreiber und nur für die Dauer des Bedarfs aktiviert?",
    "category": "N – Netz, Fernzugriff und Härtung",
+   "rolle": "betreiber",
    "ui_number": "4.2",
    "help_text": "Nur bei vorhandenem Remote-Service / vorhandener Fernwartung (3.12.1). Eine reine Fernüberwachung ohne Schreibzugriff braucht kein Freigabeverfahren (Prüfbericht 20.09.2026).",
    "visible_when": {
@@ -1502,6 +1566,7 @@
    "domain": "CYBER",
    "text": "Ist der Fernzugriff individuell authentifiziert (personenbezogene Zugänge, Zwei-Faktor oder gleichwertig) und verschlüsselt?",
    "category": "N – Netz, Fernzugriff und Härtung",
+   "rolle": "betreiber",
    "ui_number": "4.3",
    "help_text": "Gilt kanalübergreifend für ALLE Zugangswege der Anlage (Fernüberwachung, Remote-Service/Fernwartung, Gateway, Servicegeräte vor Ort). Sind die Kanäle technisch getrennt – etwa Hersteller-Cloud und Wartungs-VPN –, gilt der schlechteste Fall: „Ja\" nur, wenn es für JEDEN vorhandenen Kanal zutrifft (Prüfbericht 20.09.2026).",
    "visible_when": {
@@ -1517,6 +1582,7 @@
    "domain": "CYBER",
    "text": "Werden Zugriffe auf die Anlage (vor Ort über Servicegeräte und per Fernzugriff) protokolliert und die Protokolle ausgewertet?",
    "category": "N – Netz, Fernzugriff und Härtung",
+   "rolle": "betreiber",
    "ui_number": "4.4",
    "help_text": "Gilt kanalübergreifend für ALLE Zugangswege der Anlage (Fernüberwachung, Remote-Service/Fernwartung, Gateway, Servicegeräte vor Ort). Sind die Kanäle technisch getrennt – etwa Hersteller-Cloud und Wartungs-VPN –, gilt der schlechteste Fall: „Ja\" nur, wenn es für JEDEN vorhandenen Kanal zutrifft (Prüfbericht 20.09.2026).",
    "group": "CY-N"
@@ -1527,6 +1593,7 @@
    "domain": "CYBER",
    "text": "Software-/Firmwarestand und bekannte Schwachstellen",
    "category": "N – Netz, Fernzugriff und Härtung",
+   "rolle": "techniker",
    "ui_number": "4.5",
    "help_text": "TRBS 1115-1: Herstellerhinweise zu Schwachstellen sind Teil des Stands der Technik (EK-ZÜS B-002 Anhang 2 Nr. 5 und 10).",
    "options": [
@@ -1551,6 +1618,7 @@
    "domain": "CYBER",
    "text": "Sind nicht benötigte Funktionen, Ports, Dienste und Schnittstellen deaktiviert (Funktionsreduzierung)?",
    "category": "N – Netz, Fernzugriff und Härtung",
+   "rolle": "techniker",
    "ui_number": "4.6",
    "group": "CY-N"
   },
@@ -1560,6 +1628,7 @@
    "domain": "CYBER",
    "text": "Ist eine verantwortliche Person des Betreibers für die Cybersicherheit der Anlage benannt und die Zuständigkeit der Wartungsfirma vertraglich geregelt?",
    "category": "O – Organisation, Notfall und Nachweise",
+   "rolle": "betreiber",
    "ui_number": "5.1",
    "group": "CY-O"
   },
@@ -1569,6 +1638,7 @@
    "domain": "CYBER",
    "text": "Wurden die Cyber-Schutzmaßnahmen durch fachkundige Personen festgelegt (TRBS 1115-1 Abschnitt 3.3.2)?",
    "category": "O – Organisation, Notfall und Nachweise",
+   "rolle": "betreiber",
    "ui_number": "5.2",
    "group": "CY-O"
   },
@@ -1578,6 +1648,7 @@
    "domain": "CYBER",
    "text": "Ist ein Notfallmanagement für Cybervorfälle festgelegt (Erkennen, Anlage in sicheren Zustand bringen/außer Betrieb nehmen, Meldung, Wiederinbetriebnahme erst nach Prüfung)?",
    "category": "O – Organisation, Notfall und Nachweise",
+   "rolle": "betreiber",
    "ui_number": "5.3",
    "group": "CY-O"
   },
@@ -1587,6 +1658,7 @@
    "domain": "CYBER",
    "text": "Sind die Beschäftigten (beauftragte Person, Betreiberpersonal) zur Cybersicherheit der Anlage unterwiesen?",
    "category": "O – Organisation, Notfall und Nachweise",
+   "rolle": "betreiber",
    "ui_number": "5.4",
    "group": "CY-O"
   },
@@ -1596,6 +1668,7 @@
    "domain": "CYBER",
    "text": "Sind Art, Umfang und Fristen der Überprüfung und Kontrolle der Cyber-Schutzmaßnahmen schriftlich festgelegt?",
    "category": "O – Organisation, Notfall und Nachweise",
+   "rolle": "betreiber",
    "ui_number": "5.5",
    "group": "CY-O"
   },
@@ -1605,6 +1678,7 @@
    "domain": "CYBER",
    "text": "Liegt ein Nachweis der Wirksamkeit der Cyber-Schutzmaßnahmen vor (TRBS 1115-1 Abschnitt 5)?",
    "category": "O – Organisation, Notfall und Nachweise",
+   "rolle": "betreiber",
    "ui_number": "5.6",
    "group": "CY-D"
   },
@@ -1614,6 +1688,7 @@
    "domain": "CYBER",
    "text": "Liegt eine Bestätigung der Funktionsfähigkeit der Cyber-Schutzmaßnahmen vor (TRBS 1115-1 Abschnitt 8.2)?",
    "category": "O – Organisation, Notfall und Nachweise",
+   "rolle": "betreiber",
    "ui_number": "5.7",
    "group": "CY-D"
   },
@@ -1623,6 +1698,7 @@
    "domain": "CYBER",
    "text": "Ist sichergestellt, dass die Cyber-Schutzmaßnahmen die Sicherheitsfunktionen der Anlage nicht negativ beeinflussen (Rückwirkungsfreiheit, z. B. keine Abschaltung des Notrufs durch die Firewall)?",
    "category": "O – Organisation, Notfall und Nachweise",
+   "rolle": "betreiber",
    "ui_number": "5.8",
    "group": "CY-O"
   },
@@ -1632,6 +1708,7 @@
    "domain": "CYBER",
    "text": "Werden neue Erkenntnisse zur Cybersicherheit (Herstellerhinweise, Schwachstellenmeldungen, CERT-Warnungen) in die Gefährdungsbeurteilung eingebunden?",
    "category": "O – Organisation, Notfall und Nachweise",
+   "rolle": "betreiber",
    "ui_number": "5.9",
    "group": "CY-O"
   },
@@ -1641,6 +1718,7 @@
    "domain": "CYBER",
    "text": "Wurden nach Aussage des Betreibers prüfpflichtige Änderungen mit Einfluss auf die Cybersicherheit durchgeführt (Steuerungstausch, neue Fernanbindung, Software-Update sicherheitsrelevanter Komponenten)?",
    "category": "O – Organisation, Notfall und Nachweise",
+   "rolle": "betreiber",
    "ui_number": "5.10",
    "group": "CY-O"
   },
@@ -1650,6 +1728,7 @@
    "domain": "CYBER",
    "text": "Wurden diese Änderungen geprüft (ZÜS-Prüfung nach prüfpflichtiger Änderung) und in der Gefährdungsbeurteilung nachgezogen?",
    "category": "O – Organisation, Notfall und Nachweise",
+   "rolle": "betreiber",
    "ui_number": "5.10a",
    "visible_when": {
     "question": "qo_aenderungen",
@@ -1664,6 +1743,7 @@
    "domain": "CYBER",
    "text": "Wurden Cyberbedrohungen gemäß TRBS 1115 Teil 1 bei der Gefährdungsbeurteilung der Anlage berücksichtigt (diese Cyber-GBU vollständig bearbeitet und in die Gesamt-GBU übernommen)?",
    "category": "O – Organisation, Notfall und Nachweise",
+   "rolle": "betreiber",
    "ui_number": "5.11",
    "help_text": "EK-ZÜS B-002 Anhang 2 Nr. 1. Dokumentation, keine Stufe.",
    "group": "CY-D"
@@ -1674,6 +1754,7 @@
    "domain": "CYBER",
    "text": "Sind alle sicherheitsrelevanten MSR-Einrichtungen und weiteren schutzbedürftigen Einrichtungen erfasst und dokumentiert (Komponentenliste vollständig, weitere Komponenten als Freitext ergänzt)?",
    "category": "O – Organisation, Notfall und Nachweise",
+   "rolle": "betreiber",
    "ui_number": "5.12",
    "help_text": "EK-ZÜS B-002 Anhang 2 Nr. 2. Dokumentation, keine Stufe.",
    "group": "CY-D"
@@ -1684,6 +1765,7 @@
    "domain": "CYBER",
    "text": "Wurde bei der Festlegung der Maßnahmen berücksichtigt, dass bei überwachungsbedürftigen Anlagen nach ÜAnlG stets von einem erheblichen Risiko für Sicherheit und Gesundheit auszugehen ist?",
    "category": "O – Organisation, Notfall und Nachweise",
+   "rolle": "betreiber",
    "ui_number": "5.13",
    "help_text": "EK-ZÜS B-002 Anhang 2 Nr. 3. Dokumentation, keine Stufe.",
    "visible_when": {
@@ -1699,6 +1781,7 @@
    "domain": "CYBER",
    "text": "Wurde der Stand der Technik herangezogen (TRBS 1115 Teil 1, EK-ZÜS B-002/BA-017, Herstellervorgaben, aktuelle Schwachstellenhinweise)?",
    "category": "O – Organisation, Notfall und Nachweise",
+   "rolle": "betreiber",
    "ui_number": "5.14",
    "help_text": "EK-ZÜS B-002 Anhang 2 Nr. 5. Dokumentation, keine Stufe.",
    "group": "CY-D"

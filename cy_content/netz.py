@@ -16,13 +16,19 @@ yn('qn_fern_freigabe', 'Wird ein Fernzugriff nur nach Freigabe durch den Betreib
    visible_when=all_(yes('qa_vernetzt'), yes('qc_remote_vorhanden')),
    help='Nur bei vorhandenem Remote-Service / vorhandener Fernwartung (3.12.1). Eine reine '
         'Fernüberwachung ohne Schreibzugriff braucht kein Freigabeverfahren '
-        '(Prüfbericht 20.09.2026).')
+        '(Prüfbericht 20.09.2026).',
+   # Die Freigabe des Fernzugriffs erteilt der Betreiber; vor Ort nicht feststellbar. (01.10.2026)
+   rolle='betreiber')
 yn('qn_fern_auth', 'Ist der Fernzugriff individuell authentifiziert (personen'
    'bezogene Zugänge, Zwei-Faktor oder gleichwertig) und verschlüsselt?', ui='4.3',
-   visible_when=yes('qa_vernetzt'), help='Gilt kanalübergreifend für ALLE Zugangswege der Anlage (Fernüberwachung, Remote-Service/Fernwartung, Gateway, Servicegeräte vor Ort). Sind die Kanäle technisch getrennt – etwa Hersteller-Cloud und Wartungs-VPN –, gilt der schlechteste Fall: „Ja" nur, wenn es für JEDEN vorhandenen Kanal zutrifft (Prüfbericht 20.09.2026).')
+   visible_when=yes('qa_vernetzt'), help='Gilt kanalübergreifend für ALLE Zugangswege der Anlage (Fernüberwachung, Remote-Service/Fernwartung, Gateway, Servicegeräte vor Ort). Sind die Kanäle technisch getrennt – etwa Hersteller-Cloud und Wartungs-VPN –, gilt der schlechteste Fall: „Ja" nur, wenn es für JEDEN vorhandenen Kanal zutrifft (Prüfbericht 20.09.2026).',
+   # Wie Fernzugaenge vergeben werden, regelt der Betreiber mit der Wartungsfirma. (01.10.2026)
+   rolle='betreiber')
 yn('qn_protokoll', 'Werden Zugriffe auf die Anlage (vor Ort über Servicegeräte und '
    'per Fernzugriff) protokolliert und die Protokolle ausgewertet?', ui='4.4',
-   help='Gilt kanalübergreifend für ALLE Zugangswege der Anlage (Fernüberwachung, Remote-Service/Fernwartung, Gateway, Servicegeräte vor Ort). Sind die Kanäle technisch getrennt – etwa Hersteller-Cloud und Wartungs-VPN –, gilt der schlechteste Fall: „Ja" nur, wenn es für JEDEN vorhandenen Kanal zutrifft (Prüfbericht 20.09.2026).')
+   help='Gilt kanalübergreifend für ALLE Zugangswege der Anlage (Fernüberwachung, Remote-Service/Fernwartung, Gateway, Servicegeräte vor Ort). Sind die Kanäle technisch getrennt – etwa Hersteller-Cloud und Wartungs-VPN –, gilt der schlechteste Fall: „Ja" nur, wenn es für JEDEN vorhandenen Kanal zutrifft (Prüfbericht 20.09.2026).',
+   # Ob Zugriffe protokolliert UND ausgewertet werden, weiss nur der Betreiber. (01.10.2026)
+   rolle='betreiber')
 sel('qn_softwarestand', 'Software-/Firmwarestand und bekannte Schwachstellen', ui='4.5',
     options=[('geregelt', 'Stand bekannt; Sicherheitsupdates und Schwachstellen'
                           'hinweise des Herstellers werden geregelt umgesetzt'),

@@ -49,4 +49,6 @@ sel('qa_hersteller_vorgaben', 'Vorgaben des Herstellers zur Cybersicherheit', ui
              ('nicht_beruecksichtigt', 'Vorhanden, aber nicht berücksichtigt'),
              ('keine', 'Hersteller stellt keine Vorgaben bereit'),
              ('unbekannt', 'Nicht bekannt / nicht angefragt')],
-    help='EK-ZÜS B-002 Anhang 2 Nr. 7. Bewertet in O (Organisation).')
+    help='EK-ZÜS B-002 Anhang 2 Nr. 7. Bewertet in O (Organisation).',
+   # Herstellerunterlagen liegen beim Betreiber, nicht an der Anlage. (01.10.2026)
+   rolle='betreiber')

@@ -43,6 +43,13 @@ _C.CATS.update([
 _C._PREFIX2CAT.clear()
 _C._PREFIX2CAT.update({'qa_': 'A', 'qz_': 'Z', 'qc_': 'C', 'qn_': 'N', 'qo_': 'O'})
 
+# Rolle je Frage (01.10.2026): Die Cyber-GBU stellt vor Ort fest, welche
+# Komponenten verbaut sind und welche Schnittstellen sie haben. Organisation,
+# Notfallmanagement und Nachweise (O) kann nur der Betreiber beantworten –
+# ebenso einzelne Fragen aus Z und N, die dort ausdruecklich `rolle` tragen.
+_C.BETREIBERBEREICHE.clear()
+_C.BETREIBERBEREICHE.add('O')
+
 # ---- Baugruppen (Bewertung/Bericht) ----------------------------------------
 _C.GROUPS[:] = [
     'Steuerung und Sicherheitslogik',
