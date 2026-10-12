@@ -1,5 +1,5 @@
 {
- "rule_version": "riedl-cyber-2026.2",
+ "rule_version": "riedl-cyber-2026.3",
  "questions": [
   {
    "code": "qa_ueberwachungsbeduerftig",
@@ -187,6 +187,23 @@
    "group": "CY-Z"
   },
   {
+   "code": "qc_steuerung_typ",
+   "type": "TEXT",
+   "domain": "CYBER",
+   "text": "Hersteller und Typ: Aufzugssteuerung",
+   "category": "C – Komponenten und Schnittstellen",
+   "rolle": "techniker",
+   "ui_number": "3.1.1a",
+   "help_text": "Vor Ort am Gerät ablesen (Typenschild, Display), z. B. „NewLift FST-2XT\". Dokumentiert die Systemabgrenzung (TRBS 1115-1 Abschn. 4.2); ohne Einfluss auf die Stufe.",
+   "visible_when": {
+    "question": "qa_steuerungsart",
+    "operator": "NEQ",
+    "value": "relais"
+   },
+   "optional": true,
+   "group": "CY-C0"
+  },
+  {
    "code": "qc_steuerung_schnittstelle",
    "type": "SELECT",
    "domain": "CYBER",
@@ -296,7 +313,24 @@
    "rolle": "techniker",
    "ui_number": "3.2.1",
    "help_text": "Schutzfunktion: Elektronische Sicherheitsfunktionen im Sicherheitsstromkreis. Mögliche Cyberfolge: Manipulation oder Deaktivierung von Sicherheitsfunktionen.",
-   "group": "CY-C2"
+   "group": "CY-C0"
+  },
+  {
+   "code": "qc_pessral_typ",
+   "type": "TEXT",
+   "domain": "CYBER",
+   "text": "Hersteller und Typ: PESSRAL (programmierbare Sicherheitsschaltung)",
+   "category": "C – Komponenten und Schnittstellen",
+   "rolle": "techniker",
+   "ui_number": "3.2.1a",
+   "help_text": "Vor Ort am Gerät ablesen (Typenschild, Display), z. B. „NewLift FST-2XT\". Dokumentiert die Systemabgrenzung (TRBS 1115-1 Abschn. 4.2); ohne Einfluss auf die Stufe.",
+   "visible_when": {
+    "question": "qc_pessral_vorhanden",
+    "operator": "EQ",
+    "value": true
+   },
+   "optional": true,
+   "group": "CY-C0"
   },
   {
    "code": "qc_pessral_schnittstelle",
@@ -384,7 +418,24 @@
    "rolle": "techniker",
    "ui_number": "3.3.1",
    "help_text": "Schutzfunktion: Regelung von Fahrgeschwindigkeit und Antrieb. Mögliche Cyberfolge: Unzulässige Geschwindigkeit oder Beschleunigung, wenn keine unabhängige Rückfallebene wirkt.",
-   "group": "CY-C3"
+   "group": "CY-C0"
+  },
+  {
+   "code": "qc_fu_typ",
+   "type": "TEXT",
+   "domain": "CYBER",
+   "text": "Hersteller und Typ: Frequenzumrichter",
+   "category": "C – Komponenten und Schnittstellen",
+   "rolle": "techniker",
+   "ui_number": "3.3.1a",
+   "help_text": "Vor Ort am Gerät ablesen (Typenschild, Display), z. B. „NewLift FST-2XT\". Dokumentiert die Systemabgrenzung (TRBS 1115-1 Abschn. 4.2); ohne Einfluss auf die Stufe.",
+   "visible_when": {
+    "question": "qc_fu_vorhanden",
+    "operator": "EQ",
+    "value": true
+   },
+   "optional": true,
+   "group": "CY-C0"
   },
   {
    "code": "qc_fu_schnittstelle",
@@ -496,7 +547,24 @@
    "rolle": "techniker",
    "ui_number": "3.4.1",
    "help_text": "Schutzfunktion: Hilfe und Kommunikation bei Personeneinschluss. Mögliche Cyberfolge: Notruf wird nicht oder an die falsche Stelle weitergeleitet; Personeneinschluss bleibt unbemerkt.",
-   "group": "CY-C4"
+   "group": "CY-C0"
+  },
+  {
+   "code": "qc_notruf_typ",
+   "type": "TEXT",
+   "domain": "CYBER",
+   "text": "Hersteller und Typ: Notrufsystem (Zwei-Wege-Kommunikation)",
+   "category": "C – Komponenten und Schnittstellen",
+   "rolle": "techniker",
+   "ui_number": "3.4.1a",
+   "help_text": "Vor Ort am Gerät ablesen (Typenschild, Display), z. B. „NewLift FST-2XT\". Dokumentiert die Systemabgrenzung (TRBS 1115-1 Abschn. 4.2); ohne Einfluss auf die Stufe.",
+   "visible_when": {
+    "question": "qc_notruf_vorhanden",
+    "operator": "EQ",
+    "value": true
+   },
+   "optional": true,
+   "group": "CY-C0"
   },
   {
    "code": "qc_notruf_schnittstelle",
@@ -608,7 +676,24 @@
    "rolle": "techniker",
    "ui_number": "3.6.1",
    "help_text": "Schutzfunktion: Türbewegung und Begrenzung der Schließkräfte. Mögliche Cyberfolge: Unzulässige Türkräfte oder Türbewegung; Quetsch-/Schergefahr.",
-   "group": "CY-C6"
+   "group": "CY-C0"
+  },
+  {
+   "code": "qc_tuer_typ",
+   "type": "TEXT",
+   "domain": "CYBER",
+   "text": "Hersteller und Typ: Türsteuerung",
+   "category": "C – Komponenten und Schnittstellen",
+   "rolle": "techniker",
+   "ui_number": "3.6.1a",
+   "help_text": "Vor Ort am Gerät ablesen (Typenschild, Display), z. B. „NewLift FST-2XT\". Dokumentiert die Systemabgrenzung (TRBS 1115-1 Abschn. 4.2); ohne Einfluss auf die Stufe.",
+   "visible_when": {
+    "question": "qc_tuer_vorhanden",
+    "operator": "EQ",
+    "value": true
+   },
+   "optional": true,
+   "group": "CY-C0"
   },
   {
    "code": "qc_tuer_schnittstelle",
@@ -2003,6 +2088,11 @@
      "notes": "Pflicht, weil bewertungsrelevant (automatisch gesetzt)."
     },
     {
+     "question": "qc_steuerung_typ",
+     "role": "DOCUMENTATION",
+     "required_mode": "NEVER"
+    },
+    {
      "question": "qc_steuerung_unabhaengig",
      "role": "COMPENSATION",
      "required_mode": "CONDITIONAL",
@@ -2130,6 +2220,11 @@
      "notes": "Pflicht, weil bewertungsrelevant (automatisch gesetzt)."
     },
     {
+     "question": "qc_pessral_typ",
+     "role": "DOCUMENTATION",
+     "required_mode": "NEVER"
+    },
+    {
      "question": "qz_steuerung_frei",
      "role": "MODIFIER",
      "required_mode": "ALWAYS",
@@ -2225,6 +2320,11 @@
       ]
      },
      "notes": "Pflicht, weil bewertungsrelevant (automatisch gesetzt)."
+    },
+    {
+     "question": "qc_fu_typ",
+     "role": "DOCUMENTATION",
+     "required_mode": "NEVER"
     },
     {
      "question": "qc_fu_unabhaengig",
@@ -2338,6 +2438,11 @@
       ]
      },
      "notes": "Pflicht, weil bewertungsrelevant (automatisch gesetzt)."
+    },
+    {
+     "question": "qc_notruf_typ",
+     "role": "DOCUMENTATION",
+     "required_mode": "NEVER"
     },
     {
      "question": "qc_notruf_unabhaengig",
@@ -2456,6 +2561,11 @@
       ]
      },
      "notes": "Pflicht, weil bewertungsrelevant (automatisch gesetzt)."
+    },
+    {
+     "question": "qc_tuer_typ",
+     "role": "DOCUMENTATION",
+     "required_mode": "NEVER"
     },
     {
      "question": "qc_tuer_unabhaengig",
@@ -7544,6 +7654,73 @@
    "help": "Zugangskontrolle Hardware und Software nach TRBS 1115-1 Abschn. 4.5.2. Diese Antworten wirken als Modifier auf ALLE Komponenten: freier Zugang oder Werkszugangsdaten heben die Bewertung jeder Komponente mit Schnittstelle an."
   },
   {
+   "id": "CY-C0",
+   "title": "Verbaute Komponenten (Erfassung vor Ort)",
+   "category": "C – Komponenten und Schnittstellen",
+   "kind": "card",
+   "items": [
+    {
+     "question": "qc_steuerung_typ",
+     "mode": "native",
+     "row": "Aufzugssteuerung"
+    },
+    {
+     "question": "qc_pessral_vorhanden",
+     "mode": "check",
+     "label": "PESSRAL (programmierbare Sicherheitsschaltung)",
+     "value": true,
+     "clear": false,
+     "row": "PESSRAL (programmierbare Sicherheitsschaltung)"
+    },
+    {
+     "question": "qc_pessral_typ",
+     "mode": "native",
+     "row": "PESSRAL (programmierbare Sicherheitsschaltung)"
+    },
+    {
+     "question": "qc_fu_vorhanden",
+     "mode": "check",
+     "label": "Frequenzumrichter",
+     "value": true,
+     "clear": false,
+     "row": "Frequenzumrichter"
+    },
+    {
+     "question": "qc_fu_typ",
+     "mode": "native",
+     "row": "Frequenzumrichter"
+    },
+    {
+     "question": "qc_notruf_vorhanden",
+     "mode": "check",
+     "label": "Notrufsystem (Zwei-Wege-Kommunikation)",
+     "value": true,
+     "clear": false,
+     "row": "Notrufsystem (Zwei-Wege-Kommunikation)"
+    },
+    {
+     "question": "qc_notruf_typ",
+     "mode": "native",
+     "row": "Notrufsystem (Zwei-Wege-Kommunikation)"
+    },
+    {
+     "question": "qc_tuer_vorhanden",
+     "mode": "check",
+     "label": "Türsteuerung",
+     "value": true,
+     "clear": false,
+     "row": "Türsteuerung"
+    },
+    {
+     "question": "qc_tuer_typ",
+     "mode": "native",
+     "row": "Türsteuerung"
+    }
+   ],
+   "ui_number": "3.0",
+   "help": "Was im Steuerschrank, im Triebwerksraum und am Fahrkorb tatsaechlich verbaut ist - Grundlage der Systemabgrenzung nach TRBS 1115 Teil 1 Abschn. 4.2. Ankreuzen, was vorhanden ist, und Hersteller und Typ ablesen; „Keine weiteren\" erklaert die uebrigen Komponenten als nicht verbaut. Die Aufzugssteuerung ist immer vorhanden und wird nur mit Typ erfasst. Erst die angekreuzten Komponenten bekommen eigene Karten mit Schnittstelle, Massnahmen und Rueckfallebene."
+  },
+  {
    "id": "CY-C1",
    "title": "Komponente: Aufzugssteuerung",
    "category": "C – Komponenten und Schnittstellen",
@@ -7572,10 +7749,6 @@
    "kind": "card",
    "items": [
     {
-     "question": "qc_pessral_vorhanden",
-     "mode": "native"
-    },
-    {
      "question": "qc_pessral_schnittstelle",
      "mode": "native"
     },
@@ -7593,10 +7766,6 @@
    "category": "C – Komponenten und Schnittstellen",
    "kind": "card",
    "items": [
-    {
-     "question": "qc_fu_vorhanden",
-     "mode": "native"
-    },
     {
      "question": "qc_fu_schnittstelle",
      "mode": "native"
@@ -7620,10 +7789,6 @@
    "kind": "card",
    "items": [
     {
-     "question": "qc_notruf_vorhanden",
-     "mode": "native"
-    },
-    {
      "question": "qc_notruf_schnittstelle",
      "mode": "native"
     },
@@ -7645,10 +7810,6 @@
    "category": "C – Komponenten und Schnittstellen",
    "kind": "card",
    "items": [
-    {
-     "question": "qc_tuer_vorhanden",
-     "mode": "native"
-    },
     {
      "question": "qc_tuer_schnittstelle",
      "mode": "native"

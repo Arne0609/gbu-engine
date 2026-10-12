@@ -52,7 +52,10 @@ App:
    in Begehungsreihenfolge.
 
 Außerdem (Strukturänderungen ohne Regelwirkung):
-   * STREICHEN – vier Fragen ohne Regelbezug entfallen (2.2, 8.4, 8.11, 11.11a);
+   * STREICHEN – drei Fragen ohne Regelbezug entfallen (2.2, 8.11, 11.11a).
+     8.4 (EN 81-28) stand hier bis 12.10.2026 und ist zurueck: Sie traegt
+     seitdem die Ableitung „Notfallplan liegt bei der Notrufzentrale"
+     (mf_content/annahmen.py) und ist damit keine reine Dokumentation mehr;
      8.4 wird im Cyber-Fragebogen erhoben.
    * VERSCHIEBEN – fünf Unterlagen-/Organisationsfragen wandern in den D-Block.
    * D05 – neue Steuerfrage für die Nachweis-Vorbelegung (Gefährdung MF-D04,
@@ -81,7 +84,6 @@ from .common import BJ_AUFZUGSRICHTLINIE, BJ_EN8120, lt
 # ---------------------------------------------------------------------------
 STREICHEN = OrderedDict([
     ('qa_oeffentlich', 'Öffentlich zugänglich – ohne Regelwirkung; Nutzerkreis (A11) und Barrierefreiheit decken den Bedarf.'),
-    ('qk_notruf_en8128', 'EN-81-28-Merkmale – nur Dokumentation; wird im Cyber-Fragebogen (Notrufkomponente) erhoben.'),
     ('qk_nachregulierung', 'Nachregulierung – ohne Regelwirkung; die Stufenbildung (8.10) ist der Befund.'),
     ('qg_gg_abtrennung_hoehe_mm', 'Höhe der Gegengewichtsabtrennung – ohne Regelwirkung; Bewertung über 11.11.'),
 ])

@@ -12,11 +12,14 @@ Vor dem Erweitern lesen: Zustands- und Organisationsfragen gehoeren NICHT
 hierher, und Fragen mit Rolle APPLICABILITY ebenfalls nicht (der Generator
 weist beides zurueck).
 """
-from .common import (annahme, BJ_AUFZUGSRICHTLINIE, BJ_UCM, BJ_EN8120)
+from .common import (annahme, ableitung, all_, eq, yes,
+                     BJ_AUFZUGSRICHTLINIE, BJ_UCM, BJ_EN8120)
 
 # Rechtsstand fuer den Zweiwege-Notruf: EN 81-28 wurde 2004 harmonisiert und
-# ist mit EN 81-20 durchgaengig gefordert. Wir setzen die spaetere, sichere
-# Schwelle - eine Anlage von 2005 kann noch ohne gebaut worden sein.
+# ist mit EN 81-20 durchgaengig gefordert. Die spaetere, sichere Schwelle waere
+# 2017 - eine Anlage von 2005 kann noch ohne gebaut worden sein. Seit
+# 12.10.2026 wird daraus keine Annahme mehr gebildet (siehe unten); die
+# Konstante bleibt als Rechtsstand stehen.
 BJ_NOTRUF_EN8128 = BJ_EN8120
 
 _AR = ('Bei Inverkehrbringen ab 01.07.1999 nach Aufzugsrichtlinie 95/16/EG '
@@ -32,6 +35,28 @@ _20 = ('Bei Inverkehrbringen ab 01.09.2017 nach DIN EN 81-20/50 gefordert und '
 def registriere():
     """Traegt alle Annahmen ein. Wird vom Generator nach dem Laden der
     Fragen und Gefaehrdungen gerufen."""
+
+    # ── Abgeleitet (kein Baujahr): Notfallplan bei der Notrufzentrale ─────
+    # Entscheidung Arne 12.10.2026: Ist die Anlage mit einem Zwei-Wege-
+    # Notrufsystem nach DIN EN 81-28 auf eine staendig besetzte Notruf-
+    # zentrale aufgeschaltet, liegt der Notfallplan dort elektronisch vor -
+    # das ist grundsaetzlich ausreichend. Streng gefasst: Es zaehlt nur die
+    # Sprechverbindung (8.2) MIT Aufschaltnachweis (8.3) UND den
+    # EN-81-28-Merkmalen (8.4). Eine Klingel zu einer staendig besetzten
+    # Stelle genuegt nicht - ein Pfoertner haelt keinen Notfallplan vor.
+    # Nur der Notfallplan (3.2); die anlagenbezogene Notbefreiungsanleitung
+    # (3.3) muss am Ort der Befreiung greifbar bleiben und wird weiter erhoben.
+    ableitung('qd_notfallplan',
+              all_(eq('qk_notruf_art', 'sprech_staendig'),
+                   yes('qk_notruf_24h'),
+                   yes('qk_notruf_en8128')),
+              'Die Anlage ist mit einem Zwei-Wege-Notrufsystem nach '
+              'DIN EN 81-28 auf eine ständig besetzte Notrufzentrale '
+              'aufgeschaltet (8.2, 8.3, 8.4). Der Notfallplan liegt dort '
+              'elektronisch vor: Ansprechpartner, Befreiungsdienst und '
+              'Meldewege sind rund um die Uhr abrufbar (BetrSichV Anh. 1 '
+              'Nr. 4.1, TRBS 3121 Nr. 3.6). Ohne nachgewiesene Aufschaltung '
+              'ist 3.2 zu beantworten.')
 
     # ── Ab 2012: unbeabsichtigte Fahrkorbbewegung ────────────────────────
     # Pruefbericht 20.09.2026 B07 und Entscheidung Arne: Der Hinweistext von 4.5
@@ -134,6 +159,12 @@ def registriere():
     annahme('qt_glas_einzugsschutz', BJ_EN8120, _20)
     annahme('qf_notbeleuchtung', BJ_EN8120, _20)
     annahme('qf_notruf_dach', BJ_EN8120, _20)
-    annahme('qk_notruf_en8128', BJ_NOTRUF_EN8128,
-            'Zweiwege-Notrufsystem nach DIN EN 81-28, mit DIN EN 81-20 ab '
-            '01.09.2017 durchgaengig gefordert und bei der Abnahme geprueft')
+    # 12.10.2026 gestrichen: 8.4 traegt jetzt die Ableitung „Notfallplan liegt
+    # bei der Notrufzentrale" (oben). Eine aus dem Baujahr VERMUTETE
+    # EN-81-28-Ausstattung darf diese organisatorische Aussage nicht tragen -
+    # Arne hat die strenge Fassung gewaehlt: nachgewiesene Aufschaltung. Die
+    # Engine prueft Ableitungsbedingungen ohnehin nur gegen erhobene Antworten,
+    # die Annahme waere also wirkungslos und der Generator weist sie zurueck.
+    # Kosten: eine Technikerfrage mehr (ein Haken, nur wenn 8.1 = Ja), dafuer
+    # eine Betreiberfrage weniger.
+    #   annahme('qk_notruf_en8128', BJ_NOTRUF_EN8128, '...')

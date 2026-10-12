@@ -707,7 +707,7 @@
   },
   "assumption": {
    "type": "object",
-   "description": "Begruendete Annahme fuer eine unbeantwortete Frage. Merkmale, die zum Baujahr vorgeschrieben waren, wurden vor der Inbetriebnahme durch eine ZUES abgenommen; sie muessen nicht erneut erhoben werden. Nur fuer Ausstattungsmerkmale zulaessig - nie fuer Zustands- oder Organisationsfragen und nie fuer Fragen mit Rolle APPLICABILITY. Eine erhobene Antwort wird nie ueberschrieben.",
+   "description": "Begruendete Annahme fuer eine unbeantwortete Frage; art unterscheidet die beiden Faelle. art = baujahr (Voreinstellung): Merkmale, die zum Baujahr vorgeschrieben waren, wurden vor der Inbetriebnahme durch eine ZUES abgenommen und muessen nicht erneut erhoben werden - nur fuer Ausstattungsmerkmale zulaessig, nie fuer Zustands- oder Organisationsfragen. art = ableitung: Die Antwort folgt aus einer anderen erhobenen Feststellung an dieser Anlage - dort sind Organisationsfragen zulaessig. Nie fuer Fragen mit Rolle APPLICABILITY. Eine erhobene Antwort wird nie ueberschrieben.",
    "additionalProperties": false,
    "properties": {
     "question": {
@@ -725,6 +725,15 @@
      "type": "string",
      "minLength": 1,
      "description": "Begruendung mit Rechtsgrundlage - erscheint in Fragebogen, Bewertung und PDF."
+    },
+    "art": {
+     "type": "string",
+     "enum": [
+      "baujahr",
+      "ableitung"
+     ],
+     "default": "baujahr",
+     "description": "baujahr: Annahme aus dem Errichtungsregelwerk; unterliegt assumptions_void_when (fehlende Abnahmeunterlagen heben sie auf). ableitung: Die Antwort folgt aus einer anderen erhobenen Feststellung an dieser Anlage (z. B. Notfallplan aus der nachgewiesenen Aufschaltung auf eine Notrufzentrale) und ist von assumptions_void_when ausgenommen."
     }
    },
    "required": [
@@ -922,7 +931,7 @@
   },
   "assumptions_void_when": {
    "$ref": "#/$defs/expression",
-   "description": "Ist dieser Ausdruck wahr, greift KEINE Annahme (widerlegbare Vermutung; im MF-Katalog: Abnahmeunterlagen liegen nicht vor)."
+   "description": "Ist dieser Ausdruck wahr, greift keine Annahme mit art = baujahr (widerlegbare Vermutung; im MF-Katalog: Abnahmeunterlagen liegen nicht vor). Eintraege mit art = ableitung bleiben davon unberuehrt."
   },
   "question_groups": {
    "type": "array",

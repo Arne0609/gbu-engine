@@ -119,6 +119,18 @@ def komponente(code, key, name, ui, group, factor, persons, schutz, folge,
     else:
         vis2 = vis
     vk2 = {'visible_when': vis2} if vis2 else {}
+    # Hersteller und Typ (12.10.2026, Arne): „Die moeglichen kritischen
+    # Komponenten werden vor Ort erfasst" - zur Komponente gehoert, WELCHE es
+    # ist („Steuerung NewLift FST-2XT"). Das ist Systemabgrenzung nach
+    # TRBS 1115-1 Abschn. 4.2 und Voraussetzung dafuer, Herstellervorgaben
+    # (1.7) und Softwarestand ueberhaupt pruefen zu koennen. Optional: Die
+    # Angabe haelt die Erhebung nicht auf und wird von keiner Regel bewertet.
+    qt = q('qc_%s_typ' % key, 'Hersteller und Typ: %s' % name, 'TEXT',
+           ui=ui + '.1a', optional=True,
+           help='Vor Ort am Gerät ablesen (Typenschild, Display), z. B. '
+                '„NewLift FST-2XT". Dokumentiert die Systemabgrenzung '
+                '(TRBS 1115-1 Abschn. 4.2); ohne Einfluss auf die Stufe.',
+           **vk2)
     qs = sel('qc_%s_schnittstelle' % key, 'Höchste vorhandene Schnittstellenkategorie '
              'der Komponente „%s"' % name, IF_OPTIONS, ui=ui + '.2',
              help='Maßgeblich ist die angreifbarste Schnittstelle. Konkrete '
@@ -218,7 +230,8 @@ def komponente(code, key, name, ui, group, factor, persons, schutz, folge,
     qlist = [(q_, 'APPLICABILITY', 'NEVER', ex) for q_, ex in applic]
     if qv:
         qlist.append((qv, 'APPLICABILITY', 'ALWAYS'))
-    qlist += [(qs, 'TRIGGER', 'ALWAYS'), (qm, 'TRIGGER', 'NEVER')]
+    qlist += [(qs, 'TRIGGER', 'ALWAYS'), (qm, 'TRIGGER', 'NEVER'),
+              (qt, 'DOCUMENTATION', 'NEVER')]
     if qu:
         qlist.append((qu, 'COMPENSATION', 'NEVER'))
     qlist += [(z, 'MODIFIER', 'NEVER') for z in zugang_q]

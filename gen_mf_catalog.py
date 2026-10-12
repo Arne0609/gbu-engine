@@ -30,7 +30,7 @@ for mod in ['anlage', 'zugang', 'triebwerksraum', 'tueren_fahrkorb', 'fahrkorbda
 from mf_content import annahmen as ANN  # noqa: E402
 ANN.registriere()
 
-RULE_VERSION = '81-20-mf-2026.10'  # .10: Prüfbericht Fragenkatalog 20.09.2026 (Lücken, Dopplungen, Bedingungen)
+RULE_VERSION = '81-20-mf-2026.11'  # .11: Notfallplan aus der Notrufaufschaltung abgeleitet (12.10.2026), 8.4 zurück
 # .9: Erhebung gekürzt – Fragengruppen, Nachweis-Vorbelegung, Stammdaten, Phasen, Schwellenfragen 17.09.2026
 # .8: Korrekturen aus zwei Prüfrunden 15./16.09.2026, stabile Regel-IDs
 # .7: best_case je Frage (Sammelantwort) 07.09.2026
@@ -416,8 +416,6 @@ def check(seed):
         collect(q.get('visible_when'), leaves)
         for lf in leaves:
             check_leaf(lf, q['code'] + '/visible_when')
-        if q['code'] not in used_q:
-            warnings.append('Frage %s wird von keiner Gefährdung benutzt' % q['code'])
     for r in seed['rules']:
         if r['hazard'] not in hmap:
             errors.append('%s: Gefährdung %s unbekannt' % (r['code'], r['hazard']))
@@ -430,9 +428,13 @@ def check(seed):
             if hq_['role'] == 'APPLICABILITY':
                 applicability_q.add(hq_['question'])
     gesehen = set()
+    angenommen = {a['question'] for a in seed.get('assumptions', [])}
     for a in seed.get('assumptions', []):
         code = a['question']
-        wo = 'Annahme ' + code
+        art = a.get('art', 'baujahr')
+        wo = ('Ableitung ' if art == 'ableitung' else 'Annahme ') + code
+        if art not in ('baujahr', 'ableitung'):
+            errors.append('%s: unbekannte art %r' % (wo, art))
         if code in gesehen:
             errors.append('%s: doppelt eingetragen' % wo)
         gesehen.add(code)
@@ -450,11 +452,26 @@ def check(seed):
             errors.append('%s: ohne Begründung' % wo)
         for lf in (lambda t: (collect(a['when'], t), t)[1])([]):
             check_leaf(lf, wo + '/when')
+            # Keine Ketten: Eine Ableitung darf sich nicht auf eine Frage
+            # stuetzen, die selbst angenommen oder abgeleitet wird - die
+            # Engine prueft Bedingungen gegen die ERHOBENEN Antworten, eine
+            # solche Bedingung waere also dauerhaft falsch.
+            if art == 'ableitung' and lf['question'] in angenommen:
+                errors.append('%s: Bedingung stuetzt sich auf die angenommene '
+                              'Frage %s' % (wo, lf['question']))
+            # Die Bedingung ist eine echte Verwendung der Frage (sonst meldet
+            # check() sie als unbenutzt - so wie 8.4 fuer den Notfallplan).
+            used_q.add(lf['question'])
     for lf in (lambda t: (collect(seed.get('assumptions_void_when'), t), t)[1])([]):
         check_leaf(lf, 'assumptions_void_when')
     for n in seed.get('nachweise', []):
         for lf in (lambda t: (collect(n['when'], t), t)[1])([]):
             check_leaf(lf, 'Nachweis %s/when' % n['question'])
+    # Erst jetzt, weil Annahmen- und Ableitungsbedingungen oben zu used_q
+    # beitragen (eine Frage kann allein eine Ableitung tragen).
+    for q in seed['questions']:
+        if q['code'] not in used_q:
+            warnings.append('Frage %s wird von keiner Gefährdung benutzt' % q['code'])
     from mf_content import erhebung
     e2, w2 = erhebung.pruefen(seed)
     errors += e2

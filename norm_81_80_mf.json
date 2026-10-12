@@ -1,5 +1,5 @@
 {
- "rule_version": "81-80-mf-2026.8",
+ "rule_version": "81-80-mf-2026.9",
  "questions": [
   {
    "code": "qa_aufzugsart",
@@ -4640,6 +4640,21 @@
    },
    "best_case": true,
    "group": "K01"
+  },
+  {
+   "code": "qk_notruf_en8128",
+   "type": "YES_NO",
+   "domain": "GBU",
+   "text": "Zweiwege-Notrufsystem nach EN 81-28 (Identifikation, Rückmeldung, Testruf)?",
+   "category": "K – Fahrkorb",
+   "rolle": "techniker",
+   "ui_number": "8.4",
+   "help_text": "Die Bewertung des Notrufs selbst läuft über 8.1 bis 8.3. Zusammen mit 8.2 (Sprechverbindung) und 8.3 (Aufschaltnachweis) belegt 8.4 aber die Aufschaltung auf eine ständig besetzte Notrufzentrale – dann gilt der Notfallplan (3.2) als dort elektronisch hinterlegt und muss nicht erhoben werden (Entscheidung Arne 12.10.2026, mf_content/annahmen.py).",
+   "visible_when": {
+    "question": "qk_notruf_vorhanden",
+    "operator": "EQ",
+    "value": true
+   }
   },
   {
    "code": "qk_notbeleuchtung",
@@ -10866,6 +10881,11 @@
        "klingel_staendig"
       ]
      }
+    },
+    {
+     "question": "qk_notruf_en8128",
+     "role": "DOCUMENTATION",
+     "required_mode": "NEVER"
     }
    ],
    "sources": [
@@ -18958,7 +18978,7 @@
    "result": "HIGH",
    "origin": "OWN_RULE",
    "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "VERIFIED",
+   "quality_status": "REVIEW_REQUIRED",
    "measures": [
     {
      "measure": "m_961568b691",
@@ -18973,7 +18993,7 @@
      "mandatory": true
     }
    ],
-   "notes": "Freigegeben 2026-09-20."
+   "notes": "OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
   },
   {
    "hazard": "MF-K01",
@@ -18987,7 +19007,7 @@
    "result": "HIGH",
    "origin": "OWN_RULE",
    "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "VERIFIED",
+   "quality_status": "REVIEW_REQUIRED",
    "measures": [
     {
      "measure": "m_65f40648f5",
@@ -19002,7 +19022,7 @@
      "mandatory": true
     }
    ],
-   "notes": "Regelprüfung 20.09.2026: Eine nur im Schacht läutende Klingel ist in der Wirkung dasselbe wie gar kein Notruf: niemand nimmt das Signal entgegen, die Rettungskette startet nicht. Vorher lag der Fall mit den beiden milderen Ausführungen auf Mittel. Freigegeben 2026-09-20."
+   "notes": "Regelprüfung 20.09.2026: Eine nur im Schacht läutende Klingel ist in der Wirkung dasselbe wie gar kein Notruf: niemand nimmt das Signal entgegen, die Rettungskette startet nicht. Vorher lag der Fall mit den beiden milderen Ausführungen auf Mittel. OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
   },
   {
    "hazard": "MF-K01",
@@ -19016,7 +19036,7 @@
    "result": "MEDIUM",
    "origin": "OWN_RULE",
    "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "VERIFIED",
+   "quality_status": "REVIEW_REQUIRED",
    "measures": [
     {
      "measure": "m_3a4bf41577",
@@ -19031,7 +19051,7 @@
      "mandatory": true
     }
    ],
-   "notes": "Regelprüfung 20.09.2026: Aus der bisherigen Sammelregel herausgelöst: die Rettungskette läuft, die Gegenstelle ist aber nicht ständig besetzt. Freigegeben 2026-09-20."
+   "notes": "Regelprüfung 20.09.2026: Aus der bisherigen Sammelregel herausgelöst: die Rettungskette läuft, die Gegenstelle ist aber nicht ständig besetzt. OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
   },
   {
    "hazard": "MF-K01",
@@ -19045,7 +19065,7 @@
    "result": "MEDIUM",
    "origin": "OWN_RULE",
    "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "VERIFIED",
+   "quality_status": "REVIEW_REQUIRED",
    "measures": [
     {
      "measure": "m_f95436a89e",
@@ -19060,7 +19080,7 @@
      "mandatory": true
     }
    ],
-   "notes": "Regelprüfung 20.09.2026: Mildester Fall: die Rettungskette funktioniert, nur die Sprechverbindung fehlt. Die einschneidende Sperrung aus der Sammelregel war hier unverhältnismäßig. Freigegeben 2026-09-20."
+   "notes": "Regelprüfung 20.09.2026: Mildester Fall: die Rettungskette funktioniert, nur die Sprechverbindung fehlt. Die einschneidende Sperrung aus der Sammelregel war hier unverhältnismäßig. OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
   },
   {
    "hazard": "MF-K01",
@@ -19074,7 +19094,7 @@
    "result": "MEDIUM",
    "origin": "OWN_RULE",
    "evidence": "INFERRED",
-   "quality_status": "VERIFIED",
+   "quality_status": "REVIEW_REQUIRED",
    "measures": [
     {
      "measure": "m_aa313668b3",
@@ -19089,7 +19109,7 @@
      "mandatory": true
     }
    ],
-   "notes": "Entschieden 2026-09-02: K-K01."
+   "notes": "Entschieden 2026-09-02: K-K01. [Freigabe bezog sich auf einen früheren Stand (Regel, abhängige Fragen oder Gefährdungslogik geändert) – neu prüfen]"
   },
   {
    "hazard": "MF-K01",
@@ -19102,7 +19122,7 @@
    "result": "NO_RISK",
    "origin": "OWN_RULE",
    "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "VERIFIED",
+   "quality_status": "REVIEW_REQUIRED",
    "measures": [
     {
      "measure": "m_148f9590b0",
@@ -19111,7 +19131,7 @@
      "mandatory": true
     }
    ],
-   "notes": "Kein Risiko: keine Mangelregel trifft zu, alle Pflichtfragen beantwortet. Freigegeben 2026-09-20."
+   "notes": "Kein Risiko: keine Mangelregel trifft zu, alle Pflichtfragen beantwortet. OFFEN: Regel seit der Entscheidung vom 2026-09-20 geändert – neu prüfen."
   },
   {
    "hazard": "MF-K02",
@@ -27212,6 +27232,31 @@
   }
  ],
  "assumptions": [
+  {
+   "question": "qd_notfallplan",
+   "when": {
+    "all": [
+     {
+      "question": "qk_notruf_art",
+      "operator": "EQ",
+      "value": "sprech_staendig"
+     },
+     {
+      "question": "qk_notruf_24h",
+      "operator": "EQ",
+      "value": true
+     },
+     {
+      "question": "qk_notruf_en8128",
+      "operator": "EQ",
+      "value": true
+     }
+    ]
+   },
+   "value": true,
+   "reason": "Die Anlage ist mit einem Zwei-Wege-Notrufsystem nach DIN EN 81-28 auf eine ständig besetzte Notrufzentrale aufgeschaltet (8.2, 8.3, 8.4). Der Notfallplan liegt dort elektronisch vor: Ansprechpartner, Befreiungsdienst und Meldewege sind rund um die Uhr abrufbar (BetrSichV Anh. 1 Nr. 4.1, TRBS 3121 Nr. 3.6). Ohne nachgewiesene Aufschaltung ist 3.2 zu beantworten.",
+   "art": "ableitung"
+  },
   {
    "question": "qa_ucm_a3",
    "when": {

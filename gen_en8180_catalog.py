@@ -34,7 +34,7 @@ sys.path.insert(0, HERE)
 from en8180_content import ZUORDNUNG  # noqa: E402
 import catalog_check  # noqa: E402
 
-RULE_VERSION = '81-80-mf-2026.8'  # .8: erbt den Prüfbericht-Stand 20.09.2026 des MF-Katalogs
+RULE_VERSION = '81-80-mf-2026.9'  # .9: erbt die Notfallplan-Ableitung des MF-Katalogs (12.10.2026)
 # .7: Erhebung gekürzt (Gruppen, Nachweise, Stammdaten, Phasen, Schwellenfragen) 17.09.2026
 # .6: Korrekturen aus dem externen Prüfbericht 15.09.2026
 # .5: best_case je Frage (Sammelantwort) 07.09.2026

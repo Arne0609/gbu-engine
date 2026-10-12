@@ -244,6 +244,35 @@ def annahme(code, ab_jahr, grund, wert=True):  # noqa: E302
     Rechtsgrundlage nennen, nicht nur das Jahr."""
     ANNAHMEN.append({'question': code, 'when': norm_ab(ab_jahr),
                      'value': wert, 'reason': grund})
+
+
+# ---- Abgeleitete Antworten (art = 'ableitung') ------------------------------
+#
+# Zweite Art von Annahme (12.10.2026): Die Antwort folgt nicht aus dem Baujahr,
+# sondern aus einer anderen ERHOBENEN Feststellung an DIESER Anlage. Darum
+# gelten zwei der Festlegungen von oben hier ausdruecklich nicht:
+#
+#   * Organisatorisches ist zulaessig - genau darum geht es. „Notfallplan
+#     vorhanden" folgt aus der nachgewiesenen Aufschaltung auf eine staendig
+#     besetzte Notrufzentrale, nicht aus dem Alter der Anlage. Grenze 2 oben
+#     sperrt nur die BAUJAHR-Annahme, und zu Recht: Das Baujahr sagt ueber die
+#     Organisation nichts.
+#   * ANNAHMEN_HINFAELLIG greift nicht. Eine fehlende Konformitaetserklaerung
+#     widerlegt die Abnahme von 1999, aber nicht eine heute festgestellte
+#     Aufschaltung. Deshalb traegt der Eintrag art = 'ableitung'; die Engine
+#     nimmt ihn von der globalen Ruecknahmebedingung aus.
+#
+# Unveraendert gilt: eine erhobene Antwort schlaegt die Ableitung, die
+# Bedingung wird gegen die ERHOBENEN Antworten geprueft (keine Ketten - der
+# Generator prueft das), und der Grund erscheint in Fragebogen, Bewertung und
+# PDF. Die Frage bleibt stehen und laesst sich mit einem Klick ueberschreiben.
+
+def ableitung(code, wenn, grund, wert=True):  # noqa: E302
+    """Frage <code> gilt als <wert>, solange sie unbeantwortet bleibt - wenn
+    <wenn> auf die erhobenen Antworten zutrifft. <grund> muss sagen, WORAUS
+    sich die Antwort ergibt; er erscheint in Fragebogen, Bewertung und PDF."""
+    ANNAHMEN.append({'question': code, 'when': wenn, 'value': wert,
+                     'reason': grund, 'art': 'ableitung'})
 def all_(*xs):   return {'all': list(xs)}
 def any_(*xs):   return {'any': list(xs)}
 def not_(x):     return {'not': x}
@@ -252,7 +281,7 @@ def not_(x):     return {'not': x}
 _seen_q = set()
 
 def q(code, text, typ='YES_NO', ui=None, options=None, help=None,
-      visible_when=None, legacy=None, cat=None, min=None, max=None, rolle=None):
+      visible_when=None, legacy=None, cat=None, min=None, max=None, optional=False, rolle=None):
     """Frage anlegen. options: Liste aus (value, label) oder Strings (value=label-slug).
 
     rolle: 'techniker' (Feststellung vor Ort) oder 'betreiber'. Ohne Angabe
@@ -276,6 +305,10 @@ def q(code, text, typ='YES_NO', ui=None, options=None, help=None,
     if visible_when: d['visible_when'] = visible_when
     if min is not None: d['min'] = min
     if max is not None: d['max'] = max
+    # Rein informative Frage: zaehlt nicht im Fortschritt, gilt nie als offen
+    # und wird von der Sammelantwort nie gesetzt (siehe Erhebung._unauffaellig
+    # in der App). Fuer Messwerte setzt erhebung.py das Feld selbst.
+    if optional: d['optional'] = True
     if options:
         opts = []
         for o in options:

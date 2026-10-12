@@ -12,8 +12,9 @@ Wie im 81-20-Typ (mf_content/erhebung.py, Mechanik 1) ist das eine reine
 DARSTELLUNG: Antworten bleiben Antworten auf die Einzelfragen, die Engine
 rechnet unverändert.
 
-Unterschied zum 81-20-Typ – alle Positionen laufen im Modus `native`, keine
-Karte ist eine `checklist`:
+Unterschied zum 81-20-Typ – mit EINER Ausnahme (CY-C0, Erfassung der
+verbauten Komponenten, 12.10.2026) laufen alle Positionen im Modus `native`,
+keine Karte ist eine `checklist`:
   Die Ankreuz-Mechanik der 81-20-Karten setzt beim Bestätigen („keine weiteren
   Auffälligkeiten") alle nicht angekreuzten, sichtbaren Positionen auf ihren
   unauffälligen Wert. Das trägt dort, wo der Befund eine Sichtprüfung ist
@@ -36,10 +37,14 @@ KARTEN = []
 
 
 def k(gid, bereich, titel, items, ui=None, help=None):
-    """items: Frage-Code oder (Frage-Code, Zeile)."""
+    """items: Frage-Code, (Frage-Code, Zeile) oder ein fertiges Item-dict
+    (fuer Ankreuzpositionen: mode 'check' mit label, value und clear)."""
     assert not any(x['id'] == gid for x in KARTEN), 'doppelte Karte ' + gid
     its = []
     for t in items:
+        if isinstance(t, dict):
+            its.append(dict(t))
+            continue
         code, row = (t, None) if isinstance(t, str) else t
         it = {'question': code, 'mode': 'native'}
         if row:
@@ -115,8 +120,45 @@ _HILFE_KOMP = ('Komponentenbasierte Betrachtung nach EK-ZÜS B-002 rev. 5 / BA-0
 # Präfix fiele dadurch auf, dass die Karte leer bliebe (pruefen() meldet dann
 # die verwaisten Fragen).
 _VORHANDEN = {q['code'] for q in C.QUESTIONS}
+
+# ---------------------------------------------------------------------------
+# C0 – Erfassung vor Ort: welche kritischen Komponenten sind verbaut?
+# ---------------------------------------------------------------------------
+# Entscheidung Arne 12.10.2026: „Bei der Cyber-GBU sollen die moeglichen
+# kritischen Komponenten vor Ort erfasst werden." Dafuer steht am Anfang des
+# C-Bereichs eine Ankreuzkarte: angekreuzt = verbaut; „Keine weiteren"
+# setzt die uebrigen auf „nicht verbaut" (clear = False, Herkunft
+# Sammelantwort mit Datum und Name). Daneben je Komponente Hersteller und Typ
+# („Steuerung NewLift FST-2XT").
+#
+# Das ist die eine Ausnahme von der Regel im Modulkopf, dass Cyber-Karten
+# nicht ankreuzen: Ob ein Frequenzumrichter im Schrank steckt oder eine
+# PESSRAL-Platine verbaut ist, SIEHT man vor Ort. Das Bestaetigen behauptet
+# hier also keine ungeprueften Tatsachen - anders als bei „Zugriffsrechte
+# rollenbasiert vergeben?". Die Folgefragen je Komponente (Schnittstelle,
+# Massnahmen, Rueckfallebene) bleiben native und werden einzeln beantwortet;
+# sie erscheinen ohnehin nur fuer die angekreuzten Komponenten.
+_erfassung = []
 for _gid, _titel, _ui, _pre, _hilfe in _KOMPONENTEN:
-    _items = [c for c in ('qc_%s_vorhanden' % _pre, 'qc_%s_schnittstelle' % _pre,
+    _vq, _tq = 'qc_%s_vorhanden' % _pre, 'qc_%s_typ' % _pre
+    if _vq in _VORHANDEN:
+        _erfassung.append({'question': _vq, 'mode': 'check', 'label': _titel,
+                           'value': True, 'clear': False, 'row': _titel})
+    if _tq in _VORHANDEN:
+        _erfassung.append({'question': _tq, 'mode': 'native', 'row': _titel})
+assert _erfassung, 'Erfassungskarte ohne Positionen'
+k('CY-C0', 'C', 'Verbaute Komponenten (Erfassung vor Ort)', _erfassung, ui='3.0',
+  help='Was im Steuerschrank, im Triebwerksraum und am Fahrkorb tatsaechlich '
+       'verbaut ist - Grundlage der Systemabgrenzung nach TRBS 1115 Teil 1 '
+       'Abschn. 4.2. Ankreuzen, was vorhanden ist, und Hersteller und Typ '
+       'ablesen; „Keine weiteren" erklaert die uebrigen Komponenten als nicht '
+       'verbaut. Die Aufzugssteuerung ist immer vorhanden und wird nur mit '
+       'Typ erfasst. Erst die angekreuzten Komponenten bekommen eigene Karten '
+       'mit Schnittstelle, Massnahmen und Rueckfallebene.')
+
+for _gid, _titel, _ui, _pre, _hilfe in _KOMPONENTEN:
+    # „vorhanden?" steht auf der Erfassungskarte CY-C0, nicht hier.
+    _items = [c for c in ('qc_%s_schnittstelle' % _pre,
                           'qc_%s_massnahmen' % _pre, 'qc_%s_unabhaengig' % _pre)
               if c in _VORHANDEN]
     assert _items, 'Komponentenkarte ohne Fragen: ' + _gid

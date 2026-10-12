@@ -144,8 +144,11 @@ yn('qk_notruf_24h', 'Nachweis: Notruf auf eine rund um die Uhr besetzte Stelle a
         'bereits unter 8.2 erfasst (Prüfbericht 20.09.2026).')
 yn('qk_notruf_en8128', 'Zweiwege-Notrufsystem nach EN 81-28 (Identifikation, '
    'Rückmeldung, Testruf)?', ui='8.4', visible_when=yes('qk_notruf_vorhanden'),
-   help='Nur zur Dokumentation – die Bewertung des Notrufs läuft über 8.1 bis 8.3. '
-        'Die Antwort wird in den Cyber-Fragebogen übernommen (automatischer Testruf).')
+   help='Die Bewertung des Notrufs selbst läuft über 8.1 bis 8.3. Zusammen mit 8.2 '
+        '(Sprechverbindung) und 8.3 (Aufschaltnachweis) belegt 8.4 aber die '
+        'Aufschaltung auf eine ständig besetzte Notrufzentrale – dann gilt der '
+        'Notfallplan (3.2) als dort elektronisch hinterlegt und muss nicht erhoben '
+        'werden (Entscheidung Arne 12.10.2026, mf_content/annahmen.py).')
 sel('qk_notbeleuchtung', 'Notbeleuchtung im Fahrkorb', ui='8.5',
     options=[('netzersatz', 'Leuchte mit Netzersatzfunktion (mind. 5 Lux, 1 h)'),
              ('nur_taster', 'Keine Notbeleuchtung, aber beleuchteter Notruftaster'),

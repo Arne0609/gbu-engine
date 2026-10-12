@@ -50,8 +50,8 @@ UNTERTITEL = ('Anlagenbezogene Beurteilung nach ArbSchG, BetrSichV, TRBS 3121 '
               'und TRBS 1115 unter Berücksichtigung der DIN EN 81-20/80')
 VARIANTE = 'Riedl'                 # Anzeigename der Variante
 TYP_SCHLUESSEL = 'riedl'           # Vorschlag für GbuTypen in der App
-RULE_VERSION_GBU = 'riedl-mf-2026.2'      # .2: Prüfbericht Fragenkatalog 20.09.2026
-RULE_VERSION_CYBER = 'riedl-cyber-2026.2'  # .2: Prüfbericht + Erhebungskarten 20.09.2026
+RULE_VERSION_GBU = 'riedl-mf-2026.3'      # .3: Notfallplan aus der Notrufaufschaltung (12.10.2026)
+RULE_VERSION_CYBER = 'riedl-cyber-2026.3'  # .3: Komponentenerfassung vor Ort (12.10.2026)
 VORLAGE_GBU = 'VFA Interlift, Version 21.08.2024 R 1.7.2 (Nutzungsrecht VFA-Akademie)'
 VORLAGE_CYBER = 'Vorlage GBU Cybersicherheit ab 04-26 (TRBS 1115-1, IEC 62443)'
 
@@ -193,7 +193,14 @@ BLAETTER = [
               'Klingel im Schacht ohne Weiterleitung', 'Keine Notruffunktion'],
     'bemerkung': 'Art der Notrufeinrichtung (8.2) bildet die Excel-Liste 1:1 ab; '
                  'Notfallplan und Notbefreiungsanleitung (D01/D02) sind die '
-                 'organisatorische Seite der Personenbefreiung (Excel K10 „Kein Alarmplan").'},
+                 'organisatorische Seite der Personenbefreiung (Excel K10 „Kein Alarmplan"). '
+                 'Seit 12.10.2026 hängen beide Seiten zusammen: Ist die Anlage mit '
+                 'einem Zwei-Wege-Notrufsystem nach EN 81-28 auf eine ständig '
+                 'besetzte Notrufzentrale aufgeschaltet (8.2 Sprechverbindung, 8.3 '
+                 'Aufschaltnachweis, 8.4), liegt der Notfallplan dort elektronisch '
+                 'vor – 3.2 gilt dann als erfüllt und D01 fällt auf Kein Risiko. '
+                 'Die anlagenbezogene Notbefreiungsanleitung (3.3/D02) bleibt davon '
+                 'unberührt: Sie muss am Ort der Befreiung greifbar sein.'},
    {'nr': 2, 'vfa': 'K2', 'titel': 'Kabinenabschlusstür / Schließkantensicherung',
     'hazards': ['MF-T06'], 'deckung': 'voll',
     'excel': ['Kabinenabschlußtür mit Lichtgitter',

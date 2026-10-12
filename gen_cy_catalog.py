@@ -25,7 +25,7 @@ for mod in ['anlage', 'zugang', 'netz', 'komponenten', 'organisation']:
 
 import catalog_check as FT  # noqa: E402  (check/validate ohne Nebenwirkungen)
 
-RULE_VERSION = 'cyber-mf-2026.3'  # .3: Prüfbericht 20.09.2026 (Prioritäten, Sichtbarkeit, Erhebungskarten)
+RULE_VERSION = 'cyber-mf-2026.4'  # .4: Komponenten vor Ort erfassen, Hersteller/Typ je Komponente (12.10.2026)
 # .2 = nach Gegenlesung 03.09.2026, 2026.1 = Entwurf davor
 
 # Zuordnung der 14 ZÜS-Prüfpunkte (EK-ZÜS B-002 rev. 5 Anhang 2) zu Fragen und

@@ -7,7 +7,8 @@
 // GBU_Engine_Datenmodell.md / gbu_engine_schema.sql):
 //
 //   0. Annahmen (ruleset.assumptions): unbeantwortete Fragen, deren Merkmal
-//        zum Baujahr abnahmepflichtig war, bekommen ihren Best-Case-Wert.
+//        zum Baujahr abnahmepflichtig war oder deren Antwort aus einer anderen
+//        erhobenen Feststellung folgt (art), bekommen ihren Best-Case-Wert.
 //        Erhobene Antworten bleiben unangetastet; das Ergebnis weist die
 //        angenommenen Fragen in `assumed` aus.
 //   1. Applicability (hazard_questions.role = APPLICABILITY)
@@ -91,11 +92,20 @@ export interface Rule {
  *  Solche Merkmale muessen nicht erneut erhoben werden – die Frage wird
  *  optional und gilt als „vorhanden", solange niemand widerspricht.
  *
- *  Bewusste Abgrenzung: Annahmen sind NUR fuer Ausstattungsmerkmale zulaessig,
- *  nie fuer Zustandsfragen (Verschleiss, Verschmutzung, Beschaedigung) und nie
- *  fuer Organisationsfragen (Unterweisung, Notfallplan, Pruefnachweise) – eine
- *  Abnahme sagt nichts ueber den heutigen Zustand und nichts ueber die
- *  Betreiberorganisation. */
+ *  Bewusste Abgrenzung: Die BAUJAHR-Annahme (art = 'baujahr', Voreinstellung)
+ *  ist NUR fuer Ausstattungsmerkmale zulaessig, nie fuer Zustandsfragen
+ *  (Verschleiss, Verschmutzung, Beschaedigung) und nie fuer Organisations-
+ *  fragen (Unterweisung, Notfallplan, Pruefnachweise) – eine Abnahme sagt
+ *  nichts ueber den heutigen Zustand und nichts ueber die Betreiber-
+ *  organisation.
+ *
+ *  Zweite Art (art = 'ableitung', 12.10.2026): Die Antwort folgt aus einer
+ *  anderen ERHOBENEN Feststellung an dieser Anlage, nicht aus dem Baujahr.
+ *  Dort sind Organisationsfragen zulaessig – „Notfallplan vorhanden" folgt
+ *  aus der nachgewiesenen Aufschaltung auf eine staendig besetzte
+ *  Notrufzentrale –, und [Ruleset.assumptions_void_when] gilt dafuer nicht:
+ *  Fehlende Abnahmeunterlagen widerlegen eine Abnahme von 1999, aber keine
+ *  heute festgestellte Aufschaltung. */
 export interface Assumption {
   /** Frage, die angenommen wird. */
   question: string;
@@ -105,6 +115,9 @@ export interface Assumption {
   value: AnswerValue;
   /** Begruendung – erscheint im Fragebogen, in der Bewertung und im PDF. */
   reason: string;
+  /** 'baujahr' (Voreinstellung, unterliegt assumptions_void_when) oder
+   *  'ableitung' (aus erhobenen Antworten, davon ausgenommen). */
+  art?: 'baujahr' | 'ableitung';
 }
 
 export interface Ruleset {
@@ -124,6 +137,8 @@ export interface AppliedAssumption {
   question: string;
   value: AnswerValue;
   reason: string;
+  /** 'baujahr' oder 'ableitung' – Bericht und Oberflaeche formulieren danach. */
+  art: 'baujahr' | 'ableitung';
 }
 
 export interface EvaluationResult {
@@ -347,7 +362,8 @@ function collectWinnerKeys(rule: Rule): Set<string> {
  *  2. Die Bedingungen werden gegen die ERHOBENEN Antworten geprueft, nicht
  *     gegen zwischenzeitlich angenommene. So kann keine Annahme eine zweite
  *     ausloesen; das Ergebnis haengt nicht von der Reihenfolge ab.
- *  3. Ist [Ruleset.assumptions_void_when] wahr, greift keine einzige Annahme.
+ *  3. Ist [Ruleset.assumptions_void_when] wahr, greift keine Annahme mit
+ *     art = 'baujahr'. Ableitungen (art = 'ableitung') bleiben bestehen.
  *
  * Liefert eine KOPIE der Antworten; die uebergebene Map bleibt unveraendert.
  */
@@ -357,17 +373,19 @@ export function applyAssumptions(
 ): { answers: AnswerMap; applied: AppliedAssumption[] } {
   const liste = ruleset.assumptions ?? [];
   if (liste.length === 0) return { answers, applied: [] };
-  if (ruleset.assumptions_void_when &&
-      evalExpression(ruleset.assumptions_void_when, answers)) {
-    return { answers, applied: [] };
-  }
+  // Die Ruecknahmebedingung trifft nur die Baujahr-Annahmen; Ableitungen aus
+  // erhobenen Antworten bleiben bestehen (siehe [Assumption]).
+  const hinfaellig = !!ruleset.assumptions_void_when &&
+      evalExpression(ruleset.assumptions_void_when, answers);
   const ergaenzt: AnswerMap = { ...answers };
   const applied: AppliedAssumption[] = [];
   for (const a of liste) {
+    if (hinfaellig && (a.art ?? 'baujahr') === 'baujahr') continue;
     if (isAnswered(answers, a.question)) continue;
     if (!evalExpression(a.when, answers)) continue;
     ergaenzt[a.question] = a.value;
-    applied.push({ question: a.question, value: a.value, reason: a.reason });
+    applied.push({ question: a.question, value: a.value, reason: a.reason,
+                    art: a.art ?? 'baujahr' });
   }
   return { answers: ergaenzt, applied };
 }

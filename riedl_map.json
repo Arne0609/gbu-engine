@@ -9,10 +9,10 @@
   "cyber": "Vorlage GBU Cybersicherheit ab 04-26 (TRBS 1115-1, IEC 62443)"
  },
  "kataloge": {
-  "gbu": "riedl-mf-2026.2",
-  "cyber": "riedl-cyber-2026.2",
-  "gbu_quelle": "81-20-mf-2026.10",
-  "cyber_quelle": "cyber-mf-2026.3"
+  "gbu": "riedl-mf-2026.3",
+  "cyber": "riedl-cyber-2026.3",
+  "gbu_quelle": "81-20-mf-2026.11",
+  "cyber_quelle": "cyber-mf-2026.4"
  },
  "ampel": {
   "NO_RISK": "gruen",
@@ -146,7 +146,7 @@
    "kuerzel": "K",
    "titel": "Kabine und Aufzugsbenutzung",
    "anlagenbereich": "In der Kabine / Aufzugsbenutzung",
-   "katalog": "81-20-mf-2026.10",
+   "katalog": "81-20-mf-2026.11",
    "zeilen": [
     {
      "nr": 1,
@@ -158,7 +158,7 @@
       "MF-D02"
      ],
      "deckung": "voll",
-     "bemerkung": "Art der Notrufeinrichtung (8.2) bildet die Excel-Liste 1:1 ab; Notfallplan und Notbefreiungsanleitung (D01/D02) sind die organisatorische Seite der Personenbefreiung (Excel K10 „Kein Alarmplan\").",
+     "bemerkung": "Art der Notrufeinrichtung (8.2) bildet die Excel-Liste 1:1 ab; Notfallplan und Notbefreiungsanleitung (D01/D02) sind die organisatorische Seite der Personenbefreiung (Excel K10 „Kein Alarmplan\"). Seit 12.10.2026 hängen beide Seiten zusammen: Ist die Anlage mit einem Zwei-Wege-Notrufsystem nach EN 81-28 auf eine ständig besetzte Notrufzentrale aufgeschaltet (8.2 Sprechverbindung, 8.3 Aufschaltnachweis, 8.4), liegt der Notfallplan dort elektronisch vor – 3.2 gilt dann als erfüllt und D01 fällt auf Kein Risiko. Die anlagenbezogene Notbefreiungsanleitung (3.3/D02) bleibt davon unberührt: Sie muss am Ort der Befreiung greifbar sein.",
      "trbs_anhang1": []
     },
     {
@@ -307,7 +307,7 @@
    "kuerzel": "Z",
    "titel": "Zugang zum Maschinenraum",
    "anlagenbereich": "Zugang zum Aufzug, Maschinen- oder Steuerungsraum",
-   "katalog": "81-20-mf-2026.10",
+   "katalog": "81-20-mf-2026.11",
    "zeilen": [
     {
      "nr": 1,
@@ -373,7 +373,7 @@
    "kuerzel": "M",
    "titel": "Maschinenraum",
    "anlagenbereich": "Maschinen- oder Steuerungsraum (wenn nicht im Fahrschacht)",
-   "katalog": "81-20-mf-2026.10",
+   "katalog": "81-20-mf-2026.11",
    "zeilen": [
     {
      "nr": 1,
@@ -460,7 +460,7 @@
    "kuerzel": "F",
    "titel": "Kabinendach",
    "anlagenbereich": "Auf dem Fahrkorbdach",
-   "katalog": "81-20-mf-2026.10",
+   "katalog": "81-20-mf-2026.11",
    "zeilen": [
     {
      "nr": 1,
@@ -533,7 +533,7 @@
    "kuerzel": "S",
    "titel": "Fahrschacht und Schachtgrube",
    "anlagenbereich": "In der Schachtgrube und im Fahrschacht",
-   "katalog": "81-20-mf-2026.10",
+   "katalog": "81-20-mf-2026.11",
    "zeilen": [
     {
      "nr": 1,
@@ -626,7 +626,7 @@
   "kuerzel": "C",
   "titel": "Cybersicherheit",
   "anlagenbereich": "Cybersicherheit – anlagenbezogene Beurteilung nach TRBS 1115-1",
-  "katalog": "cyber-mf-2026.3",
+  "katalog": "cyber-mf-2026.4",
   "zeilen": [
    {
     "nr": 1,
