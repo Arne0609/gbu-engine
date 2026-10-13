@@ -206,33 +206,14 @@ k('CY-G', 'C', 'Bauseitige Einrichtungen (Brandfallsteuerung, Entrauchung, Zutri
 # ---------------------------------------------------------------------------
 # O – Organisation und Notfall
 # ---------------------------------------------------------------------------
-k('CY-O', 'O', 'Organisation, Fachkunde und Notfallmanagement', [
-    ('qo_verantwortlich', 'Verantwortung und Fachkunde'),
-    ('qo_fachkunde', 'Verantwortung und Fachkunde'),
-    ('qo_unterweisung', 'Verantwortung und Fachkunde'),
-    ('qo_notfall', 'Notfall und laufende Kontrolle'),
-    ('qo_pruefung_fristen', 'Notfall und laufende Kontrolle'),
-    ('qo_erkenntnisse', 'Notfall und laufende Kontrolle'),
-    ('qo_rueckwirkung', 'Änderungen und Rückwirkungsfreiheit'),
-    ('qo_aenderungen', 'Änderungen und Rückwirkungsfreiheit'),
-    ('qo_aenderungen_geprueft', 'Änderungen und Rückwirkungsfreiheit')], ui='5a',
-  help='Organisatorische Pflichten des Betreibers: BetrSichV § 3 Abs. 1 und § 12, '
-       'TRBS 1115-1 Abschn. 3.3.2 (Fachkunde) und 4.5.2 (Notfallmanagement).')
-
-# ---------------------------------------------------------------------------
-# O – Nachweise für den ZÜS-Abschlusscheck
-# ---------------------------------------------------------------------------
-k('CY-D', 'O', 'Nachweise für den ZÜS-Abschlusscheck', [
-    ('qo_wirksamkeit', 'Wirksamkeit und Funktion'),
-    ('qo_funktion', 'Wirksamkeit und Funktion'),
-    ('qo_zues_beruecksichtigt', 'Dokumentation der Gefährdungsbeurteilung'),
-    ('qo_zues_erfasst', 'Dokumentation der Gefährdungsbeurteilung'),
-    ('qo_zues_erhebliches_risiko', 'Dokumentation der Gefährdungsbeurteilung'),
-    ('qo_zues_stand_technik', 'Dokumentation der Gefährdungsbeurteilung')], ui='5b',
-  help='Die vier Dokumentationsfragen 5.11–5.14 belegen die ZÜS-Prüfpunkte 1, 2, 3 und 5 '
-       '(EK-ZÜS B-002 rev. 5, Anhang 2); 5.6 und 5.7 belegen die Prüfpunkte 12 und 13 '
-       '(TRBS 1115-1 Abschn. 5 und 8.2). Sie halten die Erhebung nicht auf '
-       '(Pflichtmodus NIE), fehlen aber im Bericht sichtbar.')
+k('CY-O', 'O', 'Prüfpflichtige Änderungen', [
+    ('qo_aenderungen', 'Änderungen seit der letzten Beurteilung'),
+    ('qo_aenderungen_geprueft', 'Änderungen seit der letzten Beurteilung')], ui='5',
+  help='Was von der Organisationserhebung übrig ist (13.10.2026): Nach beiden '
+       'Mustern des TÜV-Prüfers sind Überprüfung, Stand der Technik und neue '
+       'Erkenntnisse feste Zusagen im Bericht, keine Fragen. Prüfpflichtige '
+       'Änderungen bleiben, weil beide Muster sie ausdrücklich nennen '
+       '(BetrSichV § 15/16).')
 
 
 # ---------------------------------------------------------------------------

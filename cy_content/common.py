@@ -38,7 +38,7 @@ _C.CATS.update([
     ('Z', 'Z – Zugang und Zugriff'),
     ('C', 'C – Komponenten und Schnittstellen'),
     ('N', 'N – Netz, Fernzugriff und Härtung'),
-    ('O', 'O – Organisation, Notfall und Nachweise'),
+    ('O', 'O – Prüfpflichtige Änderungen'),
 ])
 _C._PREFIX2CAT.clear()
 _C._PREFIX2CAT.update({'qa_': 'A', 'qz_': 'Z', 'qc_': 'C', 'qn_': 'N', 'qo_': 'O'})

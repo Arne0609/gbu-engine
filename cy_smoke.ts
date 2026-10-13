@@ -25,7 +25,6 @@ function gut(): Record<string, any> {
     qo_verantwortlich: true, qo_fachkunde: true, qo_notfall: true, qo_unterweisung: true,
     qo_pruefung_fristen: true, qo_wirksamkeit: true, qo_funktion: true, qo_rueckwirkung: true,
     qo_erkenntnisse: true, qo_aenderungen: false,
-    qo_zues_beruecksichtigt: true, qo_zues_erfasst: true, qo_zues_erhebliches_risiko: true, qo_zues_stand_technik: true,
   };
   for (const c of COMPS) {
     if (c === 'hydraulik') continue; // Seilaufzug: nicht zutreffend
@@ -114,20 +113,21 @@ expect(r9c.of('CY-C07')?.status === 'NO_RISK', 'Fern umgesetzt nicht Kein Risiko
 // 9d) K-C10: Fernüberwachung rein lesend ohne Segmentierung -> Niedrig
 const r9d = run('Fernüberw. lesend, keine Segm.', { ...gut(), qn_segmentierung: false });
 expect(r9d.of('CY-C11')?.status === 'LOW', 'Fernüberwachung lesend ohne Segmentierung nicht Niedrig (K-C10)');
-// 9e) K-C20 / Prüfbericht 20.09.2026: Die vier ZÜS-Dokumentationsfragen (5.11–5.14)
-//      sind Selbstauskünfte über die Bearbeitung dieser Beurteilung und tragen keine
-//      Stufe. Als Pflichtfragen hielten sie CY-O05 fail-closed offen, ohne etwas zu
-//      bewerten – 5.11 ist vor dem Abschluss gar nicht wahrheitsgemäß zu bejahen.
-//      Sie bleiben Abschluss-Checkliste, blockieren die Bewertung aber nicht mehr.
-const zd = gut();
-for (const k of ['qo_zues_beruecksichtigt', 'qo_zues_erfasst',
-                 'qo_zues_erhebliches_risiko', 'qo_zues_stand_technik']) delete zd[k];
-expect(evaluate(seed as any, zd).find(r => r.hazard === 'CY-O05')?.status === 'NO_RISK',
-  'ZÜS-Dokumentationsfragen halten CY-O05 noch auf');
-expect(seed.hazards.find((h: any) => h.code === 'CY-O05').questions
-  .filter((q: any) => q.question.startsWith('qo_zues_'))
-  .every((q: any) => (q.required_mode ?? 'NEVER') === 'NEVER'),
-  'ZÜS-Dokumentationsfragen sind noch Pflicht');
+// 9e) 13.10.2026: Bereich O gekürzt (zwei Muster eines TÜV-Prüfers für eine
+//      plausible Dokumentation nach TRBS 1115-1 kennen weder den
+//      ZÜS-Abschlusscheck noch Fragen zu Verantwortlichkeit, Fachkunde,
+//      Unterweisung, Notfall, Prüffristen oder Rückwirkungsfreiheit). Übrig
+//      bleiben Herstellervorgaben (CY-O02) und prüfpflichtige Änderungen
+//      (CY-O06); die Zusagen stehen als feste Sätze im Bericht.
+for (const h of ['CY-O01', 'CY-O03', 'CY-O04', 'CY-O05', 'CY-O07', 'CY-O08'])
+  expect(!seed.hazards.some((x: any) => x.code === h), h + ' sollte entfernt sein');
+for (const q of ['qo_verantwortlich', 'qo_fachkunde', 'qo_notfall', 'qo_unterweisung',
+                 'qo_pruefung_fristen', 'qo_wirksamkeit', 'qo_funktion', 'qo_rueckwirkung',
+                 'qo_erkenntnisse', 'qo_zues_beruecksichtigt', 'qo_zues_erfasst',
+                 'qo_zues_erhebliches_risiko', 'qo_zues_stand_technik'])
+  expect(!seed.questions.some((x: any) => x.code === q), 'Frage ' + q + ' sollte entfernt sein');
+expect(seed.questions.filter((q: any) => q.code.startsWith('qo_')).length === 2,
+  'Bereich O hat nicht mehr genau zwei Fragen');
 // 9f) K-C21/K-C24: entfernte Gefährdungen existieren nicht mehr
 for (const h of ['CY-Z02', 'CY-Z03', 'CY-C15']) expect(!seed.hazards.some((x: any) => x.code === h), h + ' sollte entfernt sein');
 
@@ -136,10 +136,10 @@ const r10 = run('Gebäude nicht rückwirkungsfrei', { ...gut(), qc_geb_rueckwirk
 expect(r10.of('CY-C14')?.status === 'HIGH', 'Gebäudeschnittstelle nicht Hoch');
 
 // 11) Eine fehlende Pflichtantwort -> genau diese Gefährdung unvollständig
-const teil = gut(); delete teil['qo_notfall'];
-const r11 = run('qo_notfall fehlt', teil);
+const teil = gut(); delete teil['qz_servicegeraete'];
+const r11 = run('qz_servicegeraete fehlt', teil);
 const inc = r11.res.filter(r => r.status === 'INCOMPLETE').map(r => r.hazard);
-expect(inc.length === 1 && inc[0] === 'CY-O03', 'Pflichtfrage wirkt nicht wie erwartet: ' + JSON.stringify(inc));
+expect(inc.length === 1 && inc[0] === 'CY-Z05', 'Pflichtfrage wirkt nicht wie erwartet: ' + JSON.stringify(inc));
 
 // 12) Unbeantworteter Modifier darf kein milderes Ergebnis erzeugen
 const mod = { ...h5 }; delete mod['qz_steuerung_frei'];

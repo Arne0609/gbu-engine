@@ -141,20 +141,9 @@ def main():
     # ---- Blattstruktur (Bericht / App) ------------------------------------
     blaetter = [blatt_map(b, seed_gbu, mf['rule_version']) for b in rc.BLAETTER]
     cyber = blatt_map(rc.CYBER_BLATT, seed_cy, cy['rule_version'])
-    # Cyber-ZÜS-Abschlusscheck: welche Punkte trägt die Teilmenge noch?
-    zues = lade('cy_zues_map.json')
-    hz = {h['code'] for h in seed_cy['hazards']}
-    qs = {q['code'] for q in seed_cy['questions']}
-    zues_punkte = []
-    for p in zues['punkte']:
-        fr = [f for f in p.get('fragen', []) if f in qs]
-        hzs = [h for h in p.get('hazards', []) if h in hz]
-        deckung = 'voll' if (len(fr) == len(p.get('fragen', [])) and
-                             len(hzs) == len(p.get('hazards', []))) else \
-            ('teilweise' if (fr or hzs) else 'nicht_erhoben')
-        zues_punkte.append({'nr': p['nr'], 'frage': p['frage'], 'erfuellung': p.get('erfuellung'),
-                            'fragen': fr, 'hazards': hzs, 'deckung': deckung})
-
+    # Der ZÜS-Abschlusscheck ist am 13.10.2026 entfallen (siehe
+    # cy_content/organisation.py); der Bericht endet mit den Zusagen und
+    # den Unterschriften.
     daten = {
         'variante': rc.VARIANTE,
         'typ_schluessel': rc.TYP_SCHLUESSEL,
@@ -176,7 +165,6 @@ def main():
         'cyber_allgemeines': rc.CYBER_ALLGEMEINES,
         'cyber_wirksamkeit': rc.CYBER_WIRKSAMKEIT,
         'cyber_unterschrift': rc.CYBER_UNTERSCHRIFT,
-        'cyber_zues': zues_punkte,
         'komponenten_stamm': [dict(key=k, label=l, hersteller=rc.HERSTELLER.get(k, []))
                               for k, l in rc.KOMPONENTEN_STAMM],
         'nicht_enthalten': rc.NICHT_ENTHALTEN,
@@ -206,7 +194,6 @@ def main():
     print('riedl_map.json: %d Blätter mit %d Zeilen, Cyber %d Zeilen; TRBS-Anhang-1-Punkte: %s'
           % (len(blaetter), sum(len(b['zeilen']) for b in blaetter), len(cyber['zeilen']),
              sorted({n for b in blaetter for z in b['zeilen'] for n in z['trbs_anhang1']})))
-    print('  ZÜS-Abschlusscheck Cyber:', dict(Counter(p['deckung'] for p in zues_punkte)))
     print('  Schema: gültig; Inhalte identisch mit MF-/CY-Katalog')
 
 

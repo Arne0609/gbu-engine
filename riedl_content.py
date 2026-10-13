@@ -51,7 +51,8 @@ UNTERTITEL = ('Anlagenbezogene Beurteilung nach ArbSchG, BetrSichV, TRBS 3121 '
 VARIANTE = 'Riedl'                 # Anzeigename der Variante
 TYP_SCHLUESSEL = 'riedl'           # Vorschlag für GbuTypen in der App
 RULE_VERSION_GBU = 'riedl-mf-2026.3'      # .3: Notfallplan aus der Notrufaufschaltung (12.10.2026)
-RULE_VERSION_CYBER = 'riedl-cyber-2026.5'  # .5: Maßnahme zur Gefährdung, nicht Schutzkonzept (13.10.2026)
+RULE_VERSION_CYBER = 'riedl-cyber-2026.6'  # .6: Bereich O gekürzt, ZÜS-Abschlusscheck entfallen (13.10.2026)
+# .5: Maßnahme zur Gefährdung, nicht Schutzkonzept (13.10.2026)
 VORLAGE_GBU = 'VFA Interlift, Version 21.08.2024 R 1.7.2 (Nutzungsrecht VFA-Akademie)'
 VORLAGE_CYBER = 'Vorlage GBU Cybersicherheit ab 04-26 (TRBS 1115-1, IEC 62443)'
 
@@ -531,22 +532,25 @@ CYBER_BLATT = {
    'erlaeuterung': '',
    'bemerkung': 'Ohne Netzanbindung (1.5) sind C11–C13 nicht zutreffend; Softwarestand (4.5) und '
                 'Härtung (4.6) werden immer gefragt.'},
-  {'nr': 10, 'komponente': '', 'titel': 'Organisation und Nachweise: Herstellervorgaben, Rückwirkungsfreiheit, Wirksamkeit, Änderungen',
-   'hazards': ['CY-O02', 'CY-O07', 'CY-O05', 'CY-O06', 'CY-O08'], 'deckung': 'voll',
+  {'nr': 10, 'komponente': '', 'titel': 'Herstellervorgaben und prüfpflichtige Änderungen',
+   'hazards': ['CY-O02', 'CY-O06'], 'deckung': 'voll',
    'excel': ['Allgemeines (Absätze 2–5 der Vorlage)', 'Überprüfung der Wirksamkeit der Cybersicherheitsmaßnahmen'],
    'erlaeuterung': '',
-   'bemerkung': 'Bildet die Textblöcke „Allgemeines" und „Überprüfung der Wirksamkeit" der Vorlage als '
-                'Fragen ab; Verantwortlichkeit/Notfallmanagement/Unterweisung (O01/O03/O04) bewusst nicht.'},
+   'bemerkung': 'Seit 13.10.2026 nur noch zwei Punkte: Herstellervorgaben und prüfpflichtige '
+                'Änderungen. Die Textblöcke „Allgemeines" und „Überprüfung der Wirksamkeit" der '
+                'Vorlage sind feste Zusagen im Bericht, keine Fragen mehr.'},
  ]}
 
 # Texte des Cyber-Deckblatts (eigene Formulierung nach der Vorlage).
 # Externe Prüfung 30.09.2026: Drei dieser Sätze behaupteten Vollzug – „das
 # wurde berücksichtigt", „werden berücksichtigt", „werden geprüft" –, während
-# der ZÜS-Abschlusscheck dieselben Punkte zwei Seiten später als offen bzw.
-# nicht erfüllt auswies (5.5 bis 5.8 alle Nein, 1.7 offen). Ein Dokument, das
-# sich selbst widerspricht, ist vor einer ZÜS nicht zu halten. Der Abschnitt
-# formuliert deshalb Anforderungen; die Feststellungen stehen im
-# ZÜS-Abschlusscheck, der sie aus denselben Antworten ableitet.
+# der ZÜS-Abschlusscheck dieselben Punkte zwei Seiten später als offen auswies.
+# Ein Dokument, das sich selbst widerspricht, ist vor einer ZÜS nicht zu
+# halten. Der Abschnitt formuliert deshalb Anforderungen, keine Feststellungen.
+# Seit dem 13.10.2026 ist der ZÜS-Abschlusscheck entfallen; die beiden Muster
+# eines TÜV-Prüfers kennen ihn nicht. An seine Stelle treten die stehenden
+# Zusagen in CYBER_WIRKSAMKEIT und die Unterschrift des Betreibers – genau
+# der Abschluss, den die Muster vorsehen.
 CYBER_ALLGEMEINES = [
     'Bei überwachungsbedürftigen Anlagen nach ÜAnlG ist grundsätzlich von einem erheblichen '
     'Risiko für die Sicherheit und Gesundheit von Beschäftigten und weiteren Personen im '
@@ -558,12 +562,17 @@ CYBER_ALLGEMEINES = [
     'Maßnahmen zu berücksichtigen.',
     'Wirksamkeit und Funktionsfähigkeit der Maßnahmen sind regelmäßig nach TRBS 1115 Teil 1 '
     '(Abschnitte 5 und 8.2) zu prüfen.',
-    'Die Punkte dieses Abschnitts sind Anforderungen, keine Feststellungen. Ob sie an dieser '
-    'Anlage erfüllt sind, weist der ZÜS-Abschlusscheck aus.',
+    'Die Punkte dieses Abschnitts sind Anforderungen, keine Feststellungen. Was an dieser '
+    'Anlage festgestellt wurde, steht in der Bewertung der Komponenten.',
 ]
+# Die zwei stehenden Zusagen aus dem Muster des TÜV-Prüfers (13.10.2026). Sie
+# treten an die Stelle der gestrichenen Organisationsfragen: Was dort erfragt
+# wurde, wird hier zugesagt und mit der Unterschrift des Betreibers bestätigt.
 CYBER_WIRKSAMKEIT = [
     'Die Maßnahmen sind in geeigneten Zeitabständen, nach Änderungen an der Anlage, bei '
     'Änderung des Stands der Technik und bei neuen Erkenntnissen zu Cyberbedrohungen zu überprüfen.',
+    'Die vollständige Dokumentation (technische Anlagendokumentation, Herstellerinformationen, '
+    'Zertifikate) kann bei Bedarf durch die zugelassene Überwachungsstelle eingesehen werden.',
     'Änderungen im Umfeld der Aufzugsanlage sind der Wartungsfirma unverzüglich mitzuteilen und in '
     'der Gefährdungsbeurteilung zur Cybersicherheit zu vermerken; Maßnahmen sind anzupassen.',
 ]
@@ -671,9 +680,6 @@ NICHT_ENTHALTEN = {
     'CY-C08': 'SAFÜ – in dieser Variante Teil der PESSRAL-Zeile (K-R03).',
     'CY-C09': 'Tragmittelüberwachung – nicht unter den sieben Riedl-Komponenten.',
     'CY-C10': 'Hydraulischer Steuerblock – nicht unter den sieben Riedl-Komponenten.',
-    'CY-O01': 'Verantwortlichkeit/Fachkunde – in der Vorlage nicht abgefragt (Unterschrift des Verwenders).',
-    'CY-O03': 'Notfallmanagement Cyber – in der Vorlage nicht abgefragt.',
-    'CY-O04': 'Unterweisung Cyber – in der Vorlage nur über die Unterschriftserklärung.',
 }
 
 # ---------------------------------------------------------------------------

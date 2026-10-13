@@ -95,7 +95,8 @@
    "CY-C10",
    "CY-C11",
    "CY-C12",
-   "CY-C13"
+   "CY-C13",
+   "CY-C16"
   ],
   "entscheidung": "Vorschlag",
   "festlegung": "Stufe Hoch im Cyber-Teil erreichbar (Fernzugriff/kabellos ohne umgesetzte Maßnahmen an sicherheitsrelevanter Komponente).",
@@ -119,7 +120,8 @@
    "CY-C07",
    "CY-C08",
    "CY-C09",
-   "CY-C10"
+   "CY-C10",
+   "CY-C16"
   ],
   "entscheidung": "Vorschlag",
   "festlegung": "Komponente ohne kompromittierbare Schnittstelle: Kein Risiko (Vorscreening BA-017/DEKRA).",
@@ -173,7 +175,8 @@
    "CY-C07",
    "CY-C08",
    "CY-C09",
-   "CY-C10"
+   "CY-C10",
+   "CY-C16"
   ],
   "entscheidung": "Vorschlag",
   "festlegung": "Lokale Schnittstelle, keine Maßnahmen, Zugang frei: Hoch.",
@@ -197,7 +200,8 @@
    "CY-C07",
    "CY-C08",
    "CY-C09",
-   "CY-C10"
+   "CY-C10",
+   "CY-C16"
   ],
   "entscheidung": "Alternative",
   "festlegung": "Fernzugriff/kabellos mit umgesetzten, nachgewiesenen Maßnahmen: Kein Risiko (statt Niedrig).",
@@ -212,7 +216,8 @@
   "alternativen": "Wie andere Komponenten (Hoch möglich)",
   "grund": "BA-017/zues-Katalog: bei mechanischen Rückfallebenen i. d. R. keine Personengefährdung; es bleibt die Verfügbarkeit.",
   "hazards": [
-   "CY-C03"
+   "CY-C03",
+   "CY-C16"
   ],
   "entscheidung": "Vorschlag",
   "festlegung": "Frequenzumrichter mit unabhängiger Sicherheitskette: Deckel Niedrig.",
@@ -234,7 +239,8 @@
    "CY-C07",
    "CY-C08",
    "CY-C09",
-   "CY-C10"
+   "CY-C10",
+   "CY-C16"
   ],
   "entscheidung": "Vorschlag",
   "festlegung": "Unabhängige Sicherheitseinrichtung als Kompensation: Hoch -> Mittel.",
@@ -314,51 +320,6 @@
   "datum": "2026-09-03"
  },
  {
-  "id": "K-C15",
-  "bereich": "Organisation",
-  "thema": "Notfallmanagement",
-  "frage": "Kein Notfallmanagement für Cybervorfälle: Mittel – und Hoch bei vernetzter Anlage?",
-  "vorschlag": "Mittel; Hoch bei Netz-/Fernanbindung",
-  "alternativen": "Immer Mittel",
-  "grund": "TRBS 1115-1 nennt Notfallmanagement als Mindestinhalt (4.5.2); bei Vernetzung ist ein Vorfall wahrscheinlicher und schneller wirksam.",
-  "hazards": [
-   "CY-O03"
-  ],
-  "entscheidung": "Vorschlag",
-  "festlegung": "Kein Notfallmanagement: Mittel; Hoch bei Netz-/Fernanbindung.",
-  "datum": "2026-09-03"
- },
- {
-  "id": "K-C16",
-  "bereich": "Organisation",
-  "thema": "Unterweisung",
-  "frage": "Fehlende Cyber-Unterweisung der Beschäftigten: Mittel (wie fehlende Unterweisung im 81-20-Typ, K-D04) – oder Niedrig?",
-  "vorschlag": "Mittel",
-  "alternativen": "Niedrig",
-  "grund": "BetrSichV § 12; B-002 Anhang 2 Nr. 11 fragt ausdrücklich danach.",
-  "hazards": [
-   "CY-O04"
-  ],
-  "entscheidung": "Alternative",
-  "festlegung": "Fehlende Cyber-Unterweisung: Niedrig (statt Mittel).",
-  "datum": "2026-09-03"
- },
- {
-  "id": "K-C17",
-  "bereich": "Organisation",
-  "thema": "Nachweise fehlen vollständig",
-  "frage": "Prüffristen, Wirksamkeitsnachweis und Funktionsbestätigung fehlen alle drei: Hoch – oder Mittel (organisatorischer Mangel)?",
-  "vorschlag": "Hoch",
-  "alternativen": "Mittel",
-  "grund": "Ohne jeden Nachweis ist nicht belegbar, dass überhaupt Maßnahmen wirken; die ZÜS wird die GBU als unvollständig werten (Anhang 2 Nr. 8, 12, 13).",
-  "hazards": [
-   "CY-O05"
-  ],
-  "entscheidung": "Vorschlag",
-  "festlegung": "Prüffristen, Wirksamkeitsnachweis und Funktionsbestätigung fehlen alle drei: Hoch.",
-  "datum": "2026-09-03"
- },
- {
   "id": "K-C18",
   "bereich": "Organisation",
   "thema": "Ungeprüfte Änderungen",
@@ -371,34 +332,6 @@
   ],
   "entscheidung": "Vorschlag",
   "festlegung": "Prüfpflichtige Änderung mit Cyber-Einfluss ohne Prüfung: Hoch.",
-  "datum": "2026-09-03"
- },
- {
-  "id": "K-C19",
-  "bereich": "Organisation",
-  "thema": "Rückwirkungsfreiheit",
-  "frage": "Rückwirkung der Cyber-Maßnahmen auf Sicherheitsfunktionen nicht ausgeschlossen: Hoch – oder Mittel?",
-  "vorschlag": "Hoch",
-  "alternativen": "Mittel",
-  "grund": "Eine Schutzmaßnahme, die den Notruf oder den Sicherheitskreis stören kann, ist selbst eine Gefährdung (B-002 Anhang 2 Nr. 9).",
-  "hazards": [
-   "CY-O07"
-  ],
-  "entscheidung": "Vorschlag",
-  "festlegung": "Rückwirkungsfreiheit der Cyber-Maßnahmen nicht sichergestellt: Hoch.",
-  "datum": "2026-09-03"
- },
- {
-  "id": "K-C20",
-  "bereich": "Organisation",
-  "thema": "ZÜS-Prüfpunkte 1, 2, 3, 5 ohne Frage",
-  "frage": "Die Prüfpunkte 1 (Cyberbedrohungen berücksichtigt), 2 (Komponenten erfasst), 3 (ÜAnlG-Annahme) und 5 (Stand der Technik) werden durch die Struktur des Katalogs erfüllt und im Bericht als erfüllt ausgewiesen – ohne eigene Frage. Einverstanden?",
-  "vorschlag": "Ja, strukturell erfüllt",
-  "alternativen": "Als Dokumentationsfragen aufnehmen",
-  "grund": "Eine Ja/Nein-Frage „Wurden Cyberbedrohungen berücksichtigt?\" in der GBU, die genau das tut, wäre inhaltsleer.",
-  "hazards": [],
-  "entscheidung": "Alternative",
-  "festlegung": "ZÜS-Prüfpunkte 1, 2, 3 und 5 werden als Dokumentationsfragen aufgenommen (Pflicht, ohne eigene Stufe; Fragen 5.11–5.14).",
   "datum": "2026-09-03"
  },
  {

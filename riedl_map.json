@@ -10,9 +10,9 @@
  },
  "kataloge": {
   "gbu": "riedl-mf-2026.3",
-  "cyber": "riedl-cyber-2026.5",
+  "cyber": "riedl-cyber-2026.6",
   "gbu_quelle": "81-20-mf-2026.11",
-  "cyber_quelle": "cyber-mf-2026.6"
+  "cyber_quelle": "cyber-mf-2026.7"
  },
  "ampel": {
   "NO_RISK": "gruen",
@@ -626,7 +626,7 @@
   "kuerzel": "C",
   "titel": "Cybersicherheit",
   "anlagenbereich": "Cybersicherheit – anlagenbezogene Beurteilung nach TRBS 1115-1",
-  "katalog": "cyber-mf-2026.6",
+  "katalog": "cyber-mf-2026.7",
   "zeilen": [
    {
     "nr": 1,
@@ -753,17 +753,14 @@
    },
    {
     "nr": 10,
-    "titel": "Organisation und Nachweise: Herstellervorgaben, Rückwirkungsfreiheit, Wirksamkeit, Änderungen",
+    "titel": "Herstellervorgaben und prüfpflichtige Änderungen",
     "vfa": "",
     "hazards": [
      "CY-O02",
-     "CY-O07",
-     "CY-O05",
-     "CY-O06",
-     "CY-O08"
+     "CY-O06"
     ],
     "deckung": "voll",
-    "bemerkung": "Bildet die Textblöcke „Allgemeines\" und „Überprüfung der Wirksamkeit\" der Vorlage als Fragen ab; Verantwortlichkeit/Notfallmanagement/Unterweisung (O01/O03/O04) bewusst nicht.",
+    "bemerkung": "Seit 13.10.2026 nur noch zwei Punkte: Herstellervorgaben und prüfpflichtige Änderungen. Die Textblöcke „Allgemeines\" und „Überprüfung der Wirksamkeit\" der Vorlage sind feste Zusagen im Bericht, keine Fragen mehr.",
     "trbs_anhang1": [],
     "komponente": "",
     "erlaeuterung": ""
@@ -776,196 +773,14 @@
   "Die Umsetzung von Cybersicherheitsmaßnahmen darf bestehende Sicherheitsfunktionen nicht beeinträchtigen; die Rückwirkungsfreiheit ist sicherzustellen.",
   "Die Vorgaben der Hersteller der eingesetzten Komponenten sind bei der Festlegung der Maßnahmen zu berücksichtigen.",
   "Wirksamkeit und Funktionsfähigkeit der Maßnahmen sind regelmäßig nach TRBS 1115 Teil 1 (Abschnitte 5 und 8.2) zu prüfen.",
-  "Die Punkte dieses Abschnitts sind Anforderungen, keine Feststellungen. Ob sie an dieser Anlage erfüllt sind, weist der ZÜS-Abschlusscheck aus."
+  "Die Punkte dieses Abschnitts sind Anforderungen, keine Feststellungen. Was an dieser Anlage festgestellt wurde, steht in der Bewertung der Komponenten."
  ],
  "cyber_wirksamkeit": [
   "Die Maßnahmen sind in geeigneten Zeitabständen, nach Änderungen an der Anlage, bei Änderung des Stands der Technik und bei neuen Erkenntnissen zu Cyberbedrohungen zu überprüfen.",
+  "Die vollständige Dokumentation (technische Anlagendokumentation, Herstellerinformationen, Zertifikate) kann bei Bedarf durch die zugelassene Überwachungsstelle eingesehen werden.",
   "Änderungen im Umfeld der Aufzugsanlage sind der Wartungsfirma unverzüglich mitzuteilen und in der Gefährdungsbeurteilung zur Cybersicherheit zu vermerken; Maßnahmen sind anzupassen."
  ],
  "cyber_unterschrift": "Mit der Unterschrift wird bestätigt, dass die grundlegenden Anforderungen und Prinzipien der Cybersicherheit an Aufzugsanlagen bekannt sind. Das Dokument wird mit beiden Unterschriften gültig.",
- "cyber_zues": [
-  {
-   "nr": 1,
-   "frage": "Wurden Cyberbedrohungen gemäß TRBS 1115 Teil 1 bei der Gefährdungsbeurteilung berücksichtigt?",
-   "erfuellung": "dokumentiert",
-   "fragen": [
-    "qo_zues_beruecksichtigt"
-   ],
-   "hazards": [
-    "CY-O05"
-   ],
-   "deckung": "voll"
-  },
-  {
-   "nr": 2,
-   "frage": "Sind die sicherheitsrelevanten MSR-Einrichtungen und weitere schutzbedürftige Einrichtungen erfasst und dokumentiert?",
-   "erfuellung": "dokumentiert",
-   "fragen": [
-    "qo_zues_erfasst"
-   ],
-   "hazards": [
-    "CY-O05",
-    "CY-C01",
-    "CY-C02",
-    "CY-C03",
-    "CY-C04",
-    "CY-C06"
-   ],
-   "deckung": "teilweise"
-  },
-  {
-   "nr": 3,
-   "frage": "Wurde berücksichtigt, dass bei überwachungsbedürftigen Anlagen gemäß ÜAnlG stets von einem erheblichen Risiko auszugehen ist?",
-   "erfuellung": "dokumentiert",
-   "fragen": [
-    "qa_ueberwachungsbeduerftig",
-    "qo_zues_erhebliches_risiko"
-   ],
-   "hazards": [
-    "CY-O05"
-   ],
-   "deckung": "voll"
-  },
-  {
-   "nr": 4,
-   "frage": "Erfolgte die Festlegung der Maßnahmen durch fachkundige Personen (TRBS 1115-1 3.3.2)?",
-   "erfuellung": null,
-   "fragen": [],
-   "hazards": [],
-   "deckung": "nicht_erhoben"
-  },
-  {
-   "nr": 5,
-   "frage": "Wurde der Stand der Technik herangezogen?",
-   "erfuellung": "dokumentiert",
-   "fragen": [
-    "qo_zues_stand_technik",
-    "qn_softwarestand",
-    "qa_hersteller_vorgaben"
-   ],
-   "hazards": [
-    "CY-O05",
-    "CY-N01",
-    "CY-O02"
-   ],
-   "deckung": "voll"
-  },
-  {
-   "nr": 6,
-   "frage": "Wurden Maßnahmen mit den Mindestinhalten nach TRBS 1115-1 4.5.2 im erforderlichen Umfang festgelegt?",
-   "erfuellung": "abgeleitet",
-   "fragen": [],
-   "hazards": [
-    "CY-C01",
-    "CY-C02",
-    "CY-C03",
-    "CY-C04",
-    "CY-C06",
-    "CY-C11",
-    "CY-C12",
-    "CY-C13",
-    "CY-C14"
-   ],
-   "deckung": "teilweise"
-  },
-  {
-   "nr": 7,
-   "frage": "Gibt es Vorgaben von Herstellern und wurden diese berücksichtigt?",
-   "erfuellung": null,
-   "fragen": [
-    "qa_hersteller_vorgaben"
-   ],
-   "hazards": [
-    "CY-O02"
-   ],
-   "deckung": "voll"
-  },
-  {
-   "nr": 8,
-   "frage": "Sind Art, Umfang und Fristen der Überprüfungen und Kontrollen der Maßnahmen schriftlich festgelegt?",
-   "erfuellung": null,
-   "fragen": [
-    "qo_pruefung_fristen"
-   ],
-   "hazards": [
-    "CY-O05"
-   ],
-   "deckung": "voll"
-  },
-  {
-   "nr": 9,
-   "frage": "Wird sichergestellt, dass CS-Maßnahmen die Sicherheitsmaßnahmen nicht negativ beeinflussen (Rückwirkungsfreiheit)?",
-   "erfuellung": null,
-   "fragen": [
-    "qo_rueckwirkung",
-    "qc_geb_rueckwirkungsfrei"
-   ],
-   "hazards": [
-    "CY-O07",
-    "CY-C14"
-   ],
-   "deckung": "voll"
-  },
-  {
-   "nr": 10,
-   "frage": "Werden neue Erkenntnisse zur Cybersicherheit in die Gefährdungsbeurteilung eingebunden?",
-   "erfuellung": null,
-   "fragen": [
-    "qo_erkenntnisse",
-    "qn_softwarestand"
-   ],
-   "hazards": [
-    "CY-O08",
-    "CY-N01"
-   ],
-   "deckung": "voll"
-  },
-  {
-   "nr": 11,
-   "frage": "Sind Unterweisungen von Beschäftigten zur Cybersicherheit durchgeführt?",
-   "erfuellung": null,
-   "fragen": [],
-   "hazards": [],
-   "deckung": "nicht_erhoben"
-  },
-  {
-   "nr": 12,
-   "frage": "Liegt für die CS-Maßnahmen ein Nachweis der Wirksamkeit (TRBS 1115-1 Abschn. 5) vor?",
-   "erfuellung": null,
-   "fragen": [
-    "qo_wirksamkeit"
-   ],
-   "hazards": [
-    "CY-O05"
-   ],
-   "deckung": "voll"
-  },
-  {
-   "nr": 13,
-   "frage": "Liegt für die CS-Maßnahmen eine Bestätigung der Funktionsfähigkeit (TRBS 1115-1 Abschn. 8.2) vor?",
-   "erfuellung": null,
-   "fragen": [
-    "qo_funktion"
-   ],
-   "hazards": [
-    "CY-O05"
-   ],
-   "deckung": "voll"
-  },
-  {
-   "nr": 14,
-   "frage": "Wurden nach Aussage des Betreibers prüfpflichtige Änderungen mit Einfluss auf die Cybersicherheit durchgeführt?",
-   "erfuellung": null,
-   "fragen": [
-    "qo_aenderungen",
-    "qo_aenderungen_geprueft"
-   ],
-   "hazards": [
-    "CY-O06"
-   ],
-   "deckung": "voll"
-  }
- ],
  "komponenten_stamm": [
   {
    "key": "steuerung",
@@ -1079,10 +894,7 @@
   "CY-C07": "UCM-Erkennung – in dieser Variante Teil der PESSRAL-Zeile (K-R03).",
   "CY-C08": "SAFÜ – in dieser Variante Teil der PESSRAL-Zeile (K-R03).",
   "CY-C09": "Tragmittelüberwachung – nicht unter den sieben Riedl-Komponenten.",
-  "CY-C10": "Hydraulischer Steuerblock – nicht unter den sieben Riedl-Komponenten.",
-  "CY-O01": "Verantwortlichkeit/Fachkunde – in der Vorlage nicht abgefragt (Unterschrift des Verwenders).",
-  "CY-O03": "Notfallmanagement Cyber – in der Vorlage nicht abgefragt.",
-  "CY-O04": "Unterweisung Cyber – in der Vorlage nur über die Unterschriftserklärung."
+  "CY-C10": "Hydraulischer Steuerblock – nicht unter den sieben Riedl-Komponenten."
  },
  "klaerungen": [
   {

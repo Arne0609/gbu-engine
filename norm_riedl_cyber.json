@@ -1,5 +1,5 @@
 {
- "rule_version": "riedl-cyber-2026.5",
+ "rule_version": "riedl-cyber-2026.6",
  "questions": [
   {
    "code": "qa_ueberwachungsbeduerftig",
@@ -1200,63 +1200,13 @@
    "group": "CY-N"
   },
   {
-   "code": "qo_pruefung_fristen",
-   "type": "YES_NO",
-   "domain": "CYBER",
-   "text": "Sind Art, Umfang und Fristen der Überprüfung und Kontrolle der Cyber-Schutzmaßnahmen schriftlich festgelegt?",
-   "category": "O – Organisation, Notfall und Nachweise",
-   "rolle": "betreiber",
-   "ui_number": "5.5",
-   "group": "CY-O"
-  },
-  {
-   "code": "qo_wirksamkeit",
-   "type": "YES_NO",
-   "domain": "CYBER",
-   "text": "Liegt ein Nachweis der Wirksamkeit der Cyber-Schutzmaßnahmen vor (TRBS 1115-1 Abschnitt 5)?",
-   "category": "O – Organisation, Notfall und Nachweise",
-   "rolle": "betreiber",
-   "ui_number": "5.6",
-   "group": "CY-D"
-  },
-  {
-   "code": "qo_funktion",
-   "type": "YES_NO",
-   "domain": "CYBER",
-   "text": "Liegt eine Bestätigung der Funktionsfähigkeit der Cyber-Schutzmaßnahmen vor (TRBS 1115-1 Abschnitt 8.2)?",
-   "category": "O – Organisation, Notfall und Nachweise",
-   "rolle": "betreiber",
-   "ui_number": "5.7",
-   "group": "CY-D"
-  },
-  {
-   "code": "qo_rueckwirkung",
-   "type": "YES_NO",
-   "domain": "CYBER",
-   "text": "Ist sichergestellt, dass die Cyber-Schutzmaßnahmen die Sicherheitsfunktionen der Anlage nicht negativ beeinflussen (Rückwirkungsfreiheit, z. B. keine Abschaltung des Notrufs durch die Firewall)?",
-   "category": "O – Organisation, Notfall und Nachweise",
-   "rolle": "betreiber",
-   "ui_number": "5.8",
-   "group": "CY-O"
-  },
-  {
-   "code": "qo_erkenntnisse",
-   "type": "YES_NO",
-   "domain": "CYBER",
-   "text": "Werden neue Erkenntnisse zur Cybersicherheit (Herstellerhinweise, Schwachstellenmeldungen, CERT-Warnungen) in die Gefährdungsbeurteilung eingebunden?",
-   "category": "O – Organisation, Notfall und Nachweise",
-   "rolle": "betreiber",
-   "ui_number": "5.9",
-   "group": "CY-O"
-  },
-  {
    "code": "qo_aenderungen",
    "type": "YES_NO",
    "domain": "CYBER",
    "text": "Wurden nach Aussage des Betreibers prüfpflichtige Änderungen mit Einfluss auf die Cybersicherheit durchgeführt (Steuerungstausch, neue Fernanbindung, Software-Update sicherheitsrelevanter Komponenten)?",
-   "category": "O – Organisation, Notfall und Nachweise",
+   "category": "O – Prüfpflichtige Änderungen",
    "rolle": "betreiber",
-   "ui_number": "5.10",
+   "ui_number": "5.1",
    "group": "CY-O"
   },
   {
@@ -1264,64 +1214,15 @@
    "type": "YES_NO",
    "domain": "CYBER",
    "text": "Wurden diese Änderungen geprüft (ZÜS-Prüfung nach prüfpflichtiger Änderung) und in der Gefährdungsbeurteilung nachgezogen?",
-   "category": "O – Organisation, Notfall und Nachweise",
+   "category": "O – Prüfpflichtige Änderungen",
    "rolle": "betreiber",
-   "ui_number": "5.10a",
+   "ui_number": "5.1a",
    "visible_when": {
     "question": "qo_aenderungen",
     "operator": "EQ",
     "value": true
    },
    "group": "CY-O"
-  },
-  {
-   "code": "qo_zues_beruecksichtigt",
-   "type": "YES_NO",
-   "domain": "CYBER",
-   "text": "Wurden Cyberbedrohungen gemäß TRBS 1115 Teil 1 bei der Gefährdungsbeurteilung der Anlage berücksichtigt (diese Cyber-GBU vollständig bearbeitet und in die Gesamt-GBU übernommen)?",
-   "category": "O – Organisation, Notfall und Nachweise",
-   "rolle": "betreiber",
-   "ui_number": "5.11",
-   "help_text": "EK-ZÜS B-002 Anhang 2 Nr. 1. Dokumentation, keine Stufe.",
-   "group": "CY-D"
-  },
-  {
-   "code": "qo_zues_erfasst",
-   "type": "YES_NO",
-   "domain": "CYBER",
-   "text": "Sind alle sicherheitsrelevanten MSR-Einrichtungen und weiteren schutzbedürftigen Einrichtungen erfasst und dokumentiert (Komponentenliste vollständig, weitere Komponenten als Freitext ergänzt)?",
-   "category": "O – Organisation, Notfall und Nachweise",
-   "rolle": "betreiber",
-   "ui_number": "5.12",
-   "help_text": "EK-ZÜS B-002 Anhang 2 Nr. 2. Dokumentation, keine Stufe.",
-   "group": "CY-D"
-  },
-  {
-   "code": "qo_zues_erhebliches_risiko",
-   "type": "YES_NO",
-   "domain": "CYBER",
-   "text": "Wurde bei der Festlegung der Maßnahmen berücksichtigt, dass bei überwachungsbedürftigen Anlagen nach ÜAnlG stets von einem erheblichen Risiko für Sicherheit und Gesundheit auszugehen ist?",
-   "category": "O – Organisation, Notfall und Nachweise",
-   "rolle": "betreiber",
-   "ui_number": "5.13",
-   "help_text": "EK-ZÜS B-002 Anhang 2 Nr. 3. Dokumentation, keine Stufe.",
-   "visible_when": {
-    "question": "qa_ueberwachungsbeduerftig",
-    "operator": "EQ",
-    "value": true
-   },
-   "group": "CY-D"
-  },
-  {
-   "code": "qo_zues_stand_technik",
-   "type": "YES_NO",
-   "domain": "CYBER",
-   "text": "Wurde der Stand der Technik herangezogen (TRBS 1115 Teil 1, EK-ZÜS B-002/BA-017, Herstellervorgaben, aktuelle Schwachstellenhinweise)?",
-   "category": "O – Organisation, Notfall und Nachweise",
-   "rolle": "betreiber",
-   "ui_number": "5.14",
-   "help_text": "EK-ZÜS B-002 Anhang 2 Nr. 5. Dokumentation, keine Stufe.",
-   "group": "CY-D"
   }
  ],
  "measures": [
@@ -1890,54 +1791,6 @@
    "priority_class": "MITTELFRISTIG"
   },
   {
-   "code": "m_5236538854",
-   "title": "Wirksamkeit und Funktion der Maßnahmen durch fachkundige Person feststellen lassen",
-   "type": "ORGANISATIONAL",
-   "priority_class": "SOFORT"
-  },
-  {
-   "code": "m_5fbf7e00d2",
-   "title": "Prüforganisation aufbauen: Art, Umfang, Fristen; Wirksamkeitsnachweis (Abschn. 5) und Funktionsbestätigung (Abschn. 8.2) dokumentieren",
-   "type": "ORGANISATIONAL",
-   "priority_class": "MITTELFRISTIG"
-  },
-  {
-   "code": "m_8d3605347d",
-   "title": "Wirksamkeitsnachweis der Maßnahmen nachholen",
-   "type": "ORGANISATIONAL",
-   "priority_class": "SOFORT"
-  },
-  {
-   "code": "m_f56254edbc",
-   "title": "Wirksamkeitsnachweis nach TRBS 1115-1 Abschnitt 5 dokumentieren",
-   "type": "ORGANISATIONAL",
-   "priority_class": "MITTELFRISTIG"
-  },
-  {
-   "code": "m_1532df4345",
-   "title": "Funktionsfähigkeit der Maßnahmen bestätigen lassen",
-   "type": "ORGANISATIONAL",
-   "priority_class": "SOFORT"
-  },
-  {
-   "code": "m_7ea05e79f0",
-   "title": "Funktionsbestätigung nach TRBS 1115-1 Abschnitt 8.2 dokumentieren",
-   "type": "ORGANISATIONAL",
-   "priority_class": "MITTELFRISTIG"
-  },
-  {
-   "code": "m_f807988e5b",
-   "title": "Prüfumfang und -fristen für die Cyber-Maßnahmen festlegen",
-   "type": "ORGANISATIONAL",
-   "priority_class": "SOFORT"
-  },
-  {
-   "code": "m_b326cd51d9",
-   "title": "Prüforganisation schriftlich festlegen und in den Wartungsvertrag aufnehmen",
-   "type": "ORGANISATIONAL",
-   "priority_class": "MITTELFRISTIG"
-  },
-  {
    "code": "m_17367ec07a",
    "title": "Prüfung nach prüfpflichtiger Änderung veranlassen (ZÜS); bis dahin geänderte Fernzugänge/Funktionen deaktivieren",
    "type": "ORGANISATIONAL",
@@ -1946,30 +1799,6 @@
   {
    "code": "m_5075ad4fb8",
    "title": "Änderungen in der Gefährdungsbeurteilung nachziehen und Prüfung dokumentieren",
-   "type": "ORGANISATIONAL",
-   "priority_class": "MITTELFRISTIG"
-  },
-  {
-   "code": "m_4ac1dcb949",
-   "title": "Notruf, Sicherheitskreis und Brandfallsteuerung nach Einführung der Maßnahmen funktional prüfen",
-   "type": "ORGANISATIONAL",
-   "priority_class": "SOFORT"
-  },
-  {
-   "code": "m_b6fd8bec75",
-   "title": "Rückwirkungsfreiheit je Maßnahme bewerten und dokumentieren (TRBS 1115-1; B-002 Anhang 2 Nr. 9)",
-   "type": "ORGANISATIONAL",
-   "priority_class": "MITTELFRISTIG"
-  },
-  {
-   "code": "m_593f54714b",
-   "title": "Bezugsquellen für Schwachstellenhinweise festlegen (Hersteller, CERT)",
-   "type": "ORGANISATIONAL",
-   "priority_class": "SOFORT"
-  },
-  {
-   "code": "m_028ebe25cf",
-   "title": "Fortschreibung der Gefährdungsbeurteilung bei neuen Erkenntnissen als Verfahren festlegen",
    "type": "ORGANISATIONAL",
    "priority_class": "MITTELFRISTIG"
   }
@@ -3307,79 +3136,9 @@
     "Betreiber",
     "Wartungspersonal"
    ],
-   "ui_group": "O – Organisation, Notfall und Nachweise",
+   "ui_group": "O – Prüfpflichtige Änderungen",
    "review_ids": [
     "K-C25"
-   ]
-  },
-  {
-   "code": "CY-O05",
-   "domain": "CYBER",
-   "title": "Fehlende Prüforganisation und Nachweise der Wirksamkeit",
-   "category": "Nachweise und Wirksamkeit",
-   "aggregation_type": "NONE",
-   "evaluation_mode": "STANDARD",
-   "questions": [
-    {
-     "question": "qo_pruefung_fristen",
-     "role": "TRIGGER",
-     "required_mode": "ALWAYS"
-    },
-    {
-     "question": "qo_wirksamkeit",
-     "role": "TRIGGER",
-     "required_mode": "ALWAYS"
-    },
-    {
-     "question": "qo_funktion",
-     "role": "TRIGGER",
-     "required_mode": "ALWAYS"
-    },
-    {
-     "question": "qo_zues_beruecksichtigt",
-     "role": "DOCUMENTATION",
-     "required_mode": "NEVER",
-     "notes": "ZÜS-Prüfpunkt 1 (K-C20). Abschluss-Checkliste, keine Pflichtfrage."
-    },
-    {
-     "question": "qo_zues_erfasst",
-     "role": "DOCUMENTATION",
-     "required_mode": "NEVER",
-     "notes": "ZÜS-Prüfpunkt 2 (K-C20). Abschluss-Checkliste, keine Pflichtfrage."
-    },
-    {
-     "question": "qo_zues_erhebliches_risiko",
-     "role": "DOCUMENTATION",
-     "required_mode": "NEVER",
-     "notes": "ZÜS-Prüfpunkt 3 (K-C20). Abschluss-Checkliste, keine Pflichtfrage."
-    },
-    {
-     "question": "qo_zues_stand_technik",
-     "role": "DOCUMENTATION",
-     "required_mode": "NEVER",
-     "notes": "ZÜS-Prüfpunkt 5 (K-C20). Abschluss-Checkliste, keine Pflichtfrage."
-    }
-   ],
-   "sources": [
-    {
-     "type": "TRBS",
-     "document": "TRBS 1115 Teil 1",
-     "section": "5, 8.2"
-    },
-    {
-     "type": "OTHER",
-     "document": "EK-ZÜS B-002 rev. 5",
-     "section": "Anhang 2 Nr. 8, 12, 13"
-    }
-   ],
-   "hazard_factor": "Gefährdung durch organisatorische Mängel (Verantwortung, Fachkunde, Nachweise)",
-   "person_groups": [
-    "Betreiber",
-    "Wartungspersonal"
-   ],
-   "ui_group": "O – Organisation, Notfall und Nachweise",
-   "review_ids": [
-    "K-C17"
    ]
   },
   {
@@ -3404,6 +3163,12 @@
       "operator": "EQ",
       "value": true
      }
+    },
+    {
+     "question": "qa_ueberwachungsbeduerftig",
+     "role": "DOCUMENTATION",
+     "required_mode": "NEVER",
+     "notes": "ÜAnlG-Einordnung; aus dem GBU-Fragebogen übernommen."
     }
    ],
    "sources": [
@@ -3423,78 +3188,10 @@
     "Nutzer",
     "Betreiber"
    ],
-   "ui_group": "O – Organisation, Notfall und Nachweise",
+   "ui_group": "O – Prüfpflichtige Änderungen",
    "review_ids": [
     "K-C18"
    ]
-  },
-  {
-   "code": "CY-O07",
-   "domain": "CYBER",
-   "title": "Rückwirkung der Cyber-Schutzmaßnahmen auf Sicherheitsfunktionen nicht ausgeschlossen",
-   "category": "Nachweise und Wirksamkeit",
-   "aggregation_type": "NONE",
-   "evaluation_mode": "STANDARD",
-   "questions": [
-    {
-     "question": "qo_rueckwirkung",
-     "role": "TRIGGER",
-     "required_mode": "ALWAYS"
-    }
-   ],
-   "sources": [
-    {
-     "type": "OTHER",
-     "document": "EK-ZÜS B-002 rev. 5",
-     "section": "Anhang 2 Nr. 9"
-    },
-    {
-     "type": "TRBS",
-     "document": "TRBS 1115 Teil 1",
-     "section": "4.5"
-    }
-   ],
-   "hazard_factor": "Gefährdung durch Ausfall oder Fehlfunktion sicherheitsrelevanter Einrichtungen (Cybervorfall)",
-   "person_groups": [
-    "Nutzer",
-    "Feuerwehr"
-   ],
-   "ui_group": "O – Organisation, Notfall und Nachweise",
-   "review_ids": [
-    "K-C19"
-   ]
-  },
-  {
-   "code": "CY-O08",
-   "domain": "CYBER",
-   "title": "Keine Fortschreibung bei neuen Erkenntnissen",
-   "category": "Nachweise und Wirksamkeit",
-   "aggregation_type": "NONE",
-   "evaluation_mode": "STANDARD",
-   "questions": [
-    {
-     "question": "qo_erkenntnisse",
-     "role": "TRIGGER",
-     "required_mode": "ALWAYS"
-    }
-   ],
-   "sources": [
-    {
-     "type": "OTHER",
-     "document": "EK-ZÜS B-002 rev. 5",
-     "section": "Anhang 2 Nr. 10"
-    },
-    {
-     "type": "LAW",
-     "document": "BetrSichV",
-     "section": "§ 3 Abs. 7"
-    }
-   ],
-   "hazard_factor": "Gefährdung durch organisatorische Mängel (Verantwortung, Fachkunde, Nachweise)",
-   "person_groups": [
-    "Betreiber"
-   ],
-   "ui_group": "O – Organisation, Notfall und Nachweise"
   }
  ],
  "rules": [
@@ -8072,158 +7769,6 @@
    "notes": "Kein Risiko: keine Mangelregel trifft zu, alle Pflichtfragen beantwortet. Freigegeben 2026-09-03."
   },
   {
-   "hazard": "CY-O05",
-   "code": "CY-O05-R1",
-   "priority": 300,
-   "condition": {
-    "all": [
-     {
-      "question": "qo_pruefung_fristen",
-      "operator": "EQ",
-      "value": false
-     },
-     {
-      "question": "qo_wirksamkeit",
-      "operator": "EQ",
-      "value": false
-     },
-     {
-      "question": "qo_funktion",
-      "operator": "EQ",
-      "value": false
-     }
-    ]
-   },
-   "result": "HIGH",
-   "origin": "OWN_RULE",
-   "evidence": "INFERRED",
-   "quality_status": "VERIFIED",
-   "measures": [
-    {
-     "measure": "m_5236538854",
-     "group_id": "sofort",
-     "relation": "SINGLE",
-     "mandatory": true
-    },
-    {
-     "measure": "m_5fbf7e00d2",
-     "group_id": "mittel",
-     "relation": "SINGLE",
-     "mandatory": true
-    }
-   ],
-   "notes": "Entschieden 2026-09-03: K-C17."
-  },
-  {
-   "hazard": "CY-O05",
-   "code": "CY-O05-R2",
-   "priority": 260,
-   "condition": {
-    "question": "qo_wirksamkeit",
-    "operator": "EQ",
-    "value": false
-   },
-   "result": "MEDIUM",
-   "origin": "OWN_RULE",
-   "evidence": "INFERRED",
-   "quality_status": "VERIFIED",
-   "measures": [
-    {
-     "measure": "m_8d3605347d",
-     "group_id": "sofort",
-     "relation": "SINGLE",
-     "mandatory": true
-    },
-    {
-     "measure": "m_f56254edbc",
-     "group_id": "mittel",
-     "relation": "SINGLE",
-     "mandatory": true
-    }
-   ],
-   "notes": "Freigegeben 2026-09-03."
-  },
-  {
-   "hazard": "CY-O05",
-   "code": "CY-O05-R3",
-   "priority": 250,
-   "condition": {
-    "question": "qo_funktion",
-    "operator": "EQ",
-    "value": false
-   },
-   "result": "MEDIUM",
-   "origin": "OWN_RULE",
-   "evidence": "INFERRED",
-   "quality_status": "VERIFIED",
-   "measures": [
-    {
-     "measure": "m_1532df4345",
-     "group_id": "sofort",
-     "relation": "SINGLE",
-     "mandatory": true
-    },
-    {
-     "measure": "m_7ea05e79f0",
-     "group_id": "mittel",
-     "relation": "SINGLE",
-     "mandatory": true
-    }
-   ],
-   "notes": "Freigegeben 2026-09-03."
-  },
-  {
-   "hazard": "CY-O05",
-   "code": "CY-O05-R4",
-   "priority": 240,
-   "condition": {
-    "question": "qo_pruefung_fristen",
-    "operator": "EQ",
-    "value": false
-   },
-   "result": "MEDIUM",
-   "origin": "OWN_RULE",
-   "evidence": "INFERRED",
-   "quality_status": "VERIFIED",
-   "measures": [
-    {
-     "measure": "m_f807988e5b",
-     "group_id": "sofort",
-     "relation": "SINGLE",
-     "mandatory": true
-    },
-    {
-     "measure": "m_b326cd51d9",
-     "group_id": "mittel",
-     "relation": "SINGLE",
-     "mandatory": true
-    }
-   ],
-   "notes": "Freigegeben 2026-09-03."
-  },
-  {
-   "hazard": "CY-O05",
-   "code": "CY-O05-R5",
-   "priority": 1,
-   "condition": {
-    "question": "qo_pruefung_fristen",
-    "operator": "ANSWERED"
-   },
-   "result": "NO_RISK",
-   "origin": "OWN_RULE",
-   "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "VERIFIED",
-   "measures": [
-    {
-     "measure": "m_148f9590b0",
-     "group_id": "sofort",
-     "relation": "SINGLE",
-     "mandatory": true
-    }
-   ],
-   "notes": "Kein Risiko: keine Mangelregel trifft zu, alle Pflichtfragen beantwortet. Freigegeben 2026-09-03."
-  },
-  {
    "hazard": "CY-O06",
    "code": "CY-O06-R1",
    "priority": 300,
@@ -8267,108 +7812,6 @@
    "priority": 1,
    "condition": {
     "question": "qo_aenderungen",
-    "operator": "ANSWERED"
-   },
-   "result": "NO_RISK",
-   "origin": "OWN_RULE",
-   "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "VERIFIED",
-   "measures": [
-    {
-     "measure": "m_148f9590b0",
-     "group_id": "sofort",
-     "relation": "SINGLE",
-     "mandatory": true
-    }
-   ],
-   "notes": "Kein Risiko: keine Mangelregel trifft zu, alle Pflichtfragen beantwortet. Freigegeben 2026-09-03."
-  },
-  {
-   "hazard": "CY-O07",
-   "code": "CY-O07-R1",
-   "priority": 300,
-   "condition": {
-    "question": "qo_rueckwirkung",
-    "operator": "EQ",
-    "value": false
-   },
-   "result": "HIGH",
-   "origin": "OWN_RULE",
-   "evidence": "INFERRED",
-   "quality_status": "VERIFIED",
-   "measures": [
-    {
-     "measure": "m_4ac1dcb949",
-     "group_id": "sofort",
-     "relation": "SINGLE",
-     "mandatory": true
-    },
-    {
-     "measure": "m_b6fd8bec75",
-     "group_id": "mittel",
-     "relation": "SINGLE",
-     "mandatory": true
-    }
-   ],
-   "notes": "Entschieden 2026-09-03: K-C19."
-  },
-  {
-   "hazard": "CY-O07",
-   "code": "CY-O07-R2",
-   "priority": 1,
-   "condition": {
-    "question": "qo_rueckwirkung",
-    "operator": "ANSWERED"
-   },
-   "result": "NO_RISK",
-   "origin": "OWN_RULE",
-   "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "VERIFIED",
-   "measures": [
-    {
-     "measure": "m_148f9590b0",
-     "group_id": "sofort",
-     "relation": "SINGLE",
-     "mandatory": true
-    }
-   ],
-   "notes": "Kein Risiko: keine Mangelregel trifft zu, alle Pflichtfragen beantwortet. Freigegeben 2026-09-03."
-  },
-  {
-   "hazard": "CY-O08",
-   "code": "CY-O08-R1",
-   "priority": 250,
-   "condition": {
-    "question": "qo_erkenntnisse",
-    "operator": "EQ",
-    "value": false
-   },
-   "result": "LOW",
-   "origin": "OWN_RULE",
-   "evidence": "INFERRED",
-   "quality_status": "VERIFIED",
-   "measures": [
-    {
-     "measure": "m_593f54714b",
-     "group_id": "sofort",
-     "relation": "SINGLE",
-     "mandatory": true
-    },
-    {
-     "measure": "m_028ebe25cf",
-     "group_id": "mittel",
-     "relation": "SINGLE",
-     "mandatory": true
-    }
-   ],
-   "notes": "Freigegeben 2026-09-03."
-  },
-  {
-   "hazard": "CY-O08",
-   "code": "CY-O08-R2",
-   "priority": 1,
-   "condition": {
-    "question": "qo_erkenntnisse",
     "operator": "ANSWERED"
    },
    "result": "NO_RISK",
@@ -8776,78 +8219,23 @@
   },
   {
    "id": "CY-O",
-   "title": "Organisation, Fachkunde und Notfallmanagement",
-   "category": "O – Organisation, Notfall und Nachweise",
+   "title": "Prüfpflichtige Änderungen",
+   "category": "O – Prüfpflichtige Änderungen",
    "kind": "card",
    "items": [
     {
-     "question": "qo_pruefung_fristen",
-     "mode": "native",
-     "row": "Notfall und laufende Kontrolle"
-    },
-    {
-     "question": "qo_erkenntnisse",
-     "mode": "native",
-     "row": "Notfall und laufende Kontrolle"
-    },
-    {
-     "question": "qo_rueckwirkung",
-     "mode": "native",
-     "row": "Änderungen und Rückwirkungsfreiheit"
-    },
-    {
      "question": "qo_aenderungen",
      "mode": "native",
-     "row": "Änderungen und Rückwirkungsfreiheit"
+     "row": "Änderungen seit der letzten Beurteilung"
     },
     {
      "question": "qo_aenderungen_geprueft",
      "mode": "native",
-     "row": "Änderungen und Rückwirkungsfreiheit"
+     "row": "Änderungen seit der letzten Beurteilung"
     }
    ],
-   "ui_number": "5a",
-   "help": "Organisatorische Pflichten des Betreibers: BetrSichV § 3 Abs. 1 und § 12, TRBS 1115-1 Abschn. 3.3.2 (Fachkunde) und 4.5.2 (Notfallmanagement)."
-  },
-  {
-   "id": "CY-D",
-   "title": "Nachweise für den ZÜS-Abschlusscheck",
-   "category": "O – Organisation, Notfall und Nachweise",
-   "kind": "card",
-   "items": [
-    {
-     "question": "qo_wirksamkeit",
-     "mode": "native",
-     "row": "Wirksamkeit und Funktion"
-    },
-    {
-     "question": "qo_funktion",
-     "mode": "native",
-     "row": "Wirksamkeit und Funktion"
-    },
-    {
-     "question": "qo_zues_beruecksichtigt",
-     "mode": "native",
-     "row": "Dokumentation der Gefährdungsbeurteilung"
-    },
-    {
-     "question": "qo_zues_erfasst",
-     "mode": "native",
-     "row": "Dokumentation der Gefährdungsbeurteilung"
-    },
-    {
-     "question": "qo_zues_erhebliches_risiko",
-     "mode": "native",
-     "row": "Dokumentation der Gefährdungsbeurteilung"
-    },
-    {
-     "question": "qo_zues_stand_technik",
-     "mode": "native",
-     "row": "Dokumentation der Gefährdungsbeurteilung"
-    }
-   ],
-   "ui_number": "5b",
-   "help": "Die vier Dokumentationsfragen 5.11–5.14 belegen die ZÜS-Prüfpunkte 1, 2, 3 und 5 (EK-ZÜS B-002 rev. 5, Anhang 2); 5.6 und 5.7 belegen die Prüfpunkte 12 und 13 (TRBS 1115-1 Abschn. 5 und 8.2). Sie halten die Erhebung nicht auf (Pflichtmodus NIE), fehlen aber im Bericht sichtbar."
+   "ui_number": "5",
+   "help": "Was von der Organisationserhebung übrig ist (13.10.2026): Nach beiden Mustern des TÜV-Prüfers sind Überprüfung, Stand der Technik und neue Erkenntnisse feste Zusagen im Bericht, keine Fragen. Prüfpflichtige Änderungen bleiben, weil beide Muster sie ausdrücklich nennen (BetrSichV § 15/16)."
   }
  ]
 }
