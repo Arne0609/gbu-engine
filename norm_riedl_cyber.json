@@ -1,5 +1,5 @@
 {
- "rule_version": "riedl-cyber-2026.3",
+ "rule_version": "riedl-cyber-2026.4",
  "questions": [
   {
    "code": "qa_ueberwachungsbeduerftig",
@@ -194,7 +194,7 @@
    "category": "C – Komponenten und Schnittstellen",
    "rolle": "techniker",
    "ui_number": "3.1.1a",
-   "help_text": "Vor Ort am Gerät ablesen (Typenschild, Display), z. B. „NewLift FST-2XT\". Dokumentiert die Systemabgrenzung (TRBS 1115-1 Abschn. 4.2); ohne Einfluss auf die Stufe.",
+   "help_text": "Vor Ort am Gerät ablesen (Typenschild, Display), z. B. „NewLift FST-2XT\". Dokumentiert die Systemabgrenzung (TRBS 1115-1 Abschn. 4.2); ohne Einfluss auf die Stufe. Häufige Hersteller: NEW (NewLift), Schneider Lisa, Hydroware, KLST, Kollmorgen, Riedl.",
    "visible_when": {
     "question": "qa_steuerungsart",
     "operator": "NEQ",
@@ -323,7 +323,7 @@
    "category": "C – Komponenten und Schnittstellen",
    "rolle": "techniker",
    "ui_number": "3.2.1a",
-   "help_text": "Vor Ort am Gerät ablesen (Typenschild, Display), z. B. „NewLift FST-2XT\". Dokumentiert die Systemabgrenzung (TRBS 1115-1 Abschn. 4.2); ohne Einfluss auf die Stufe.",
+   "help_text": "Vor Ort am Gerät ablesen (Typenschild, Display), z. B. „NewLift FST-2XT\". Dokumentiert die Systemabgrenzung (TRBS 1115-1 Abschn. 4.2); ohne Einfluss auf die Stufe. Häufige Hersteller: NEW, Elgo (Limax), S1-/S2-Box.",
    "visible_when": {
     "question": "qc_pessral_vorhanden",
     "operator": "EQ",
@@ -428,7 +428,7 @@
    "category": "C – Komponenten und Schnittstellen",
    "rolle": "techniker",
    "ui_number": "3.3.1a",
-   "help_text": "Vor Ort am Gerät ablesen (Typenschild, Display), z. B. „NewLift FST-2XT\". Dokumentiert die Systemabgrenzung (TRBS 1115-1 Abschn. 4.2); ohne Einfluss auf die Stufe.",
+   "help_text": "Vor Ort am Gerät ablesen (Typenschild, Display), z. B. „NewLift FST-2XT\". Dokumentiert die Systemabgrenzung (TRBS 1115-1 Abschn. 4.2); ohne Einfluss auf die Stufe. Häufige Hersteller: Ziehl-Abegg, LiftEquip, Brunner & Fecher, Nidec, KEB, Danfoss.",
    "visible_when": {
     "question": "qc_fu_vorhanden",
     "operator": "EQ",
@@ -557,7 +557,7 @@
    "category": "C – Komponenten und Schnittstellen",
    "rolle": "techniker",
    "ui_number": "3.4.1a",
-   "help_text": "Vor Ort am Gerät ablesen (Typenschild, Display), z. B. „NewLift FST-2XT\". Dokumentiert die Systemabgrenzung (TRBS 1115-1 Abschn. 4.2); ohne Einfluss auf die Stufe.",
+   "help_text": "Vor Ort am Gerät ablesen (Typenschild, Display), z. B. „NewLift FST-2XT\". Dokumentiert die Systemabgrenzung (TRBS 1115-1 Abschn. 4.2); ohne Einfluss auf die Stufe. Häufige Hersteller: Base, Telegärtner, Safeline, Telenot, Behnke, Ascendor, MS AG.",
    "visible_when": {
     "question": "qc_notruf_vorhanden",
     "operator": "EQ",
@@ -686,7 +686,7 @@
    "category": "C – Komponenten und Schnittstellen",
    "rolle": "techniker",
    "ui_number": "3.6.1a",
-   "help_text": "Vor Ort am Gerät ablesen (Typenschild, Display), z. B. „NewLift FST-2XT\". Dokumentiert die Systemabgrenzung (TRBS 1115-1 Abschn. 4.2); ohne Einfluss auf die Stufe.",
+   "help_text": "Vor Ort am Gerät ablesen (Typenschild, Display), z. B. „NewLift FST-2XT\". Dokumentiert die Systemabgrenzung (TRBS 1115-1 Abschn. 4.2); ohne Einfluss auf die Stufe. Häufige Hersteller: Meiller, Fermator, Wittur, Langer & Laumann, Siemens, Riedl Quantum.",
    "visible_when": {
     "question": "qc_tuer_vorhanden",
     "operator": "EQ",
@@ -936,6 +936,135 @@
     ]
    },
    "group": "CY-N"
+  },
+  {
+   "code": "qc_entrauchung_vorhanden",
+   "type": "YES_NO",
+   "domain": "CYBER",
+   "text": "Schachtentrauchung / Rauch- und Wärmeabzug mit eigener Steuerung vorhanden?",
+   "category": "C – Komponenten und Schnittstellen",
+   "rolle": "techniker",
+   "ui_number": "3.15.1",
+   "help_text": "Nur die RWA MIT eigener Steuerung oder Parametrierung. Eine reine Lüftungsöffnung im Schachtkopf ist keine Komponente im Sinne der Cyber-Betrachtung.",
+   "group": "CY-C0"
+  },
+  {
+   "code": "qc_entrauchung_typ",
+   "type": "TEXT",
+   "domain": "CYBER",
+   "text": "Hersteller und Typ: Schachtentrauchung (RWA-Steuerung)",
+   "category": "C – Komponenten und Schnittstellen",
+   "rolle": "techniker",
+   "ui_number": "3.15.1a",
+   "help_text": "Vor Ort am Gerät ablesen (Typenschild, Display), z. B. „NewLift FST-2XT\". Dokumentiert die Systemabgrenzung (TRBS 1115-1 Abschn. 4.2); ohne Einfluss auf die Stufe. Häufige Hersteller: B.A.S.E., D&H.",
+   "visible_when": {
+    "question": "qc_entrauchung_vorhanden",
+    "operator": "EQ",
+    "value": true
+   },
+   "optional": true,
+   "group": "CY-C0"
+  },
+  {
+   "code": "qc_entrauchung_schnittstelle",
+   "type": "SELECT",
+   "domain": "CYBER",
+   "text": "Höchste vorhandene Schnittstellenkategorie der Komponente „Schachtentrauchung (RWA-Steuerung)\"",
+   "category": "C – Komponenten und Schnittstellen",
+   "rolle": "techniker",
+   "ui_number": "3.15.2",
+   "help_text": "Maßgeblich ist die angreifbarste Schnittstelle. Konkrete Schnittstellen (USB, CAN, Mobilfunk …) in der App dokumentieren.",
+   "visible_when": {
+    "question": "qc_entrauchung_vorhanden",
+    "operator": "EQ",
+    "value": true
+   },
+   "options": [
+    {
+     "value": "keine",
+     "label": "Keine bzw. nicht programmierbare Schnittstelle"
+    },
+    {
+     "value": "kabelgebunden",
+     "label": "Kabelgebunden, nur vor Ort (USB, RS232/485, CAN, Ethernet, Serviceanschluss, Speicherkarte)"
+    },
+    {
+     "value": "benutzer",
+     "label": "Benutzerschnittstelle (Bedienfeld, Eingabeterminal, Display mit Parametrierzugang)"
+    },
+    {
+     "value": "kabellos",
+     "label": "Kabellos im Nahbereich (WLAN, Bluetooth, NFC, Mobilfunk/SIM)"
+    },
+    {
+     "value": "fernzugriff",
+     "label": "Fernzugriff (Internet/Cloud, Hersteller-Fernzugriff, Service-App)"
+    }
+   ],
+   "group": "CY-C16"
+  },
+  {
+   "code": "qc_entrauchung_massnahmen",
+   "type": "SELECT",
+   "domain": "CYBER",
+   "text": "Schutzmaßnahmen nach TRBS 1115-1 für „Schachtentrauchung (RWA-Steuerung)\"",
+   "category": "C – Komponenten und Schnittstellen",
+   "rolle": "techniker",
+   "ui_number": "3.15.3",
+   "help_text": "Einschlägige Kategorien: Zugangskontrolle (Hardware), Überwachung.",
+   "visible_when": {
+    "all": [
+     {
+      "question": "qc_entrauchung_vorhanden",
+      "operator": "EQ",
+      "value": true
+     },
+     {
+      "question": "qc_entrauchung_schnittstelle",
+      "operator": "NEQ",
+      "value": "keine"
+     }
+    ]
+   },
+   "options": [
+    {
+     "value": "keine",
+     "label": "Keine Schutzmaßnahmen festgelegt"
+    },
+    {
+     "value": "teilweise",
+     "label": "Festgelegt, aber nicht vollständig umgesetzt oder ohne Wirksamkeitsnachweis"
+    },
+    {
+     "value": "umgesetzt",
+     "label": "Festgelegt, umgesetzt und Wirksamkeit nachgewiesen (TRBS 1115-1 Abschn. 5)"
+    }
+   ],
+   "group": "CY-C16"
+  },
+  {
+   "code": "qc_entrauchung_unabhaengig",
+   "type": "YES_NO",
+   "domain": "CYBER",
+   "text": "Öffnet der Rauchabzug bei Störung und Stromausfall selbsttätig (stromlos offen)?",
+   "category": "C – Komponenten und Schnittstellen",
+   "rolle": "techniker",
+   "ui_number": "3.15.4",
+   "visible_when": {
+    "all": [
+     {
+      "question": "qc_entrauchung_vorhanden",
+      "operator": "EQ",
+      "value": true
+     },
+     {
+      "question": "qc_entrauchung_schnittstelle",
+      "operator": "NEQ",
+      "value": "keine"
+     }
+    ]
+   },
+   "group": "CY-C16"
   },
   {
    "code": "qc_geb_rueckwirkungsfrei",
@@ -1377,8 +1506,8 @@
    "priority_class": "SOFORT"
   },
   {
-   "code": "m_2610af0dfe",
-   "title": "Zugang zu Schnittstellen vor Unbefugten schützen; nicht benötigte Schnittstellen deaktivieren; Parameteränderungen dokumentieren. Wirksamkeit nachweisen (TRBS 1115-1 Abschn. 5).",
+   "code": "m_50fa3ded1e",
+   "title": "Maschinenraum und Steuerschrank verschlossen halten (keine Standardschließung); Parametrierung der Steuerung passwortgeschützt; Handterminal nur bei Montage- und Wartungsarbeiten anstecken und danach sicher verwahren; nicht benötigte Schnittstellen deaktivieren; Parameteränderungen dokumentieren. Wirksamkeit nachweisen (TRBS 1115-1 Abschn. 5).",
    "type": "ORGANISATIONAL",
    "priority_class": "MITTELFRISTIG"
   },
@@ -1461,8 +1590,8 @@
    "priority_class": "SOFORT"
   },
   {
-   "code": "m_67bc571c3f",
-   "title": "Serviceschnittstellen nur für Berechtigte; Parametrierung schützen; nach Eingriffen Sicherheitsfunktionen prüfen. Wirksamkeit nachweisen (TRBS 1115-1 Abschn. 5).",
+   "code": "m_285bf2d353",
+   "title": "Maschinenraum, Schaltschrank und Schacht verschlossen halten; Serviceschnittstellen nur für Berechtigte; Parametrierung schützen; nach Eingriffen Sicherheitsfunktionen prüfen. Ein Eingriff am Modul setzt die Anlage still und wird dadurch bemerkt. Wirksamkeit nachweisen (TRBS 1115-1 Abschn. 5).",
    "type": "ORGANISATIONAL",
    "priority_class": "MITTELFRISTIG"
   },
@@ -1479,8 +1608,8 @@
    "priority_class": "SOFORT"
   },
   {
-   "code": "m_c93486816a",
-   "title": "Parameterzugriff schützen; zulässigen Parametersatz sichern; nach Änderungen Antrieb und Fahrverhalten prüfen. Wirksamkeit nachweisen (TRBS 1115-1 Abschn. 5).",
+   "code": "m_05731578d1",
+   "title": "Maschinenraum und Schaltschrank verschlossen halten; Umrichter passwortgeschützt parametrieren; Handterminal nur bei Montage- und Wartungsarbeiten anstecken und danach sicher verwahren; zulässigen Parametersatz sichern; nach Änderungen Antrieb und Fahrverhalten prüfen. Wirksamkeit nachweisen (TRBS 1115-1 Abschn. 5).",
    "type": "ORGANISATIONAL",
    "priority_class": "MITTELFRISTIG"
   },
@@ -1503,8 +1632,8 @@
    "priority_class": "SOFORT"
   },
   {
-   "code": "m_113b67299f",
-   "title": "Zugriff auf Schnittstellen verhindern/begrenzen; Werkszugangsdaten ändern; Notrufverbindung regelmäßig prüfen. Wirksamkeit nachweisen (TRBS 1115-1 Abschn. 5).",
+   "code": "m_5967189755",
+   "title": "Rufnummer des Notrufgeräts nur dem Befreiungsdienst zugänglich machen und an der Anlage nicht dokumentieren; Notrufgerät passwortgeschützt; Werkszugangsdaten ändern; Routineruf in festen Abständen (EN 81-28: mindestens alle 3 Tage) absetzen und ausbleibende Meldung als Serviceeinsatz behandeln. Wirksamkeit nachweisen (TRBS 1115-1 Abschn. 5).",
    "type": "ORGANISATIONAL",
    "priority_class": "MITTELFRISTIG"
   },
@@ -1521,8 +1650,8 @@
    "priority_class": "SOFORT"
   },
   {
-   "code": "m_64db42df3b",
-   "title": "Serviceschnittstellen nur für Berechtigte; Parameter sichern; nach Eingriffen Türfunktionen und Schutzeinrichtungen prüfen. Wirksamkeit nachweisen (TRBS 1115-1 Abschn. 5).",
+   "code": "m_0cd0966eaa",
+   "title": "Türsteuergerät ist auf dem Fahrkorbdach verbaut und nur über den Schacht erreichbar; Handterminal nur bei Montage- und Wartungsarbeiten anstecken und danach sicher verwahren; Serviceschnittstellen nur für Berechtigte; Parameter sichern; nach Eingriffen Türfunktionen und Schutzeinrichtungen prüfen. Wirksamkeit nachweisen (TRBS 1115-1 Abschn. 5).",
    "type": "ORGANISATIONAL",
    "priority_class": "MITTELFRISTIG"
   },
@@ -1693,6 +1822,24 @@
    "title": "Update-Verfahren für Netzkomponenten festlegen",
    "type": "ORGANISATIONAL",
    "priority_class": "MITTELFRISTIG"
+  },
+  {
+   "code": "m_af6935ebf0",
+   "title": "Steuerung des Rauchabzugs im verschlossenen Maschinenraum oder in einem abgeschlossenen Schaltschrank halten; Einstellungen nur vor Ort; stromlos-offene Ausführung erhalten und die Auslösung bei jeder Prüfung mitprüfen. Wirksamkeit nachweisen (TRBS 1115-1 Abschn. 5).",
+   "type": "ORGANISATIONAL",
+   "priority_class": "MITTELFRISTIG"
+  },
+  {
+   "code": "m_3e2e40306b",
+   "title": "Fernzugang der Komponente „Schachtentrauchung (RWA-Steuerung)\" deaktivieren oder physisch trennen, bis die Schutzmaßnahmen umgesetzt und nachgewiesen sind",
+   "type": "ORGANISATIONAL",
+   "priority_class": "SOFORT"
+  },
+  {
+   "code": "m_cb642ddb98",
+   "title": "Funkschnittstelle der Komponente „Schachtentrauchung (RWA-Steuerung)\" deaktivieren oder auf das Notwendige beschränken, bis die Schutzmaßnahmen umgesetzt sind",
+   "type": "ORGANISATIONAL",
+   "priority_class": "SOFORT"
   },
   {
    "code": "m_574771e16b",
@@ -2933,9 +3080,142 @@
    ]
   },
   {
+   "code": "CY-C16",
+   "domain": "CYBER",
+   "title": "Manipulation oder Ausfall: Schachtentrauchung (RWA-Steuerung)",
+   "category": "Gebäudeschnittstelle",
+   "aggregation_type": "NONE",
+   "evaluation_mode": "STANDARD",
+   "questions": [
+    {
+     "question": "qc_entrauchung_vorhanden",
+     "role": "APPLICABILITY",
+     "required_mode": "ALWAYS"
+    },
+    {
+     "question": "qc_entrauchung_schnittstelle",
+     "role": "TRIGGER",
+     "required_mode": "ALWAYS"
+    },
+    {
+     "question": "qc_entrauchung_massnahmen",
+     "role": "TRIGGER",
+     "required_mode": "CONDITIONAL",
+     "required_when": {
+      "all": [
+       {
+        "question": "qc_entrauchung_vorhanden",
+        "operator": "EQ",
+        "value": true
+       },
+       {
+        "question": "qc_entrauchung_schnittstelle",
+        "operator": "NEQ",
+        "value": "keine"
+       }
+      ]
+     },
+     "notes": "Pflicht, weil bewertungsrelevant (automatisch gesetzt)."
+    },
+    {
+     "question": "qc_entrauchung_typ",
+     "role": "DOCUMENTATION",
+     "required_mode": "NEVER"
+    },
+    {
+     "question": "qc_entrauchung_unabhaengig",
+     "role": "COMPENSATION",
+     "required_mode": "CONDITIONAL",
+     "required_when": {
+      "all": [
+       {
+        "question": "qc_entrauchung_vorhanden",
+        "operator": "EQ",
+        "value": true
+       },
+       {
+        "question": "qc_entrauchung_schnittstelle",
+        "operator": "NEQ",
+        "value": "keine"
+       }
+      ]
+     },
+     "notes": "Pflicht, weil bewertungsrelevant (automatisch gesetzt)."
+    },
+    {
+     "question": "qz_steuerung_frei",
+     "role": "MODIFIER",
+     "required_mode": "ALWAYS",
+     "notes": "Pflicht, weil bewertungsrelevant (automatisch gesetzt)."
+    },
+    {
+     "question": "qz_triebwerksraum_frei",
+     "role": "MODIFIER",
+     "required_mode": "CONDITIONAL",
+     "required_when": {
+      "question": "qa_maschinenraum",
+      "operator": "EQ",
+      "value": true
+     },
+     "notes": "Pflicht, weil bewertungsrelevant (automatisch gesetzt)."
+    },
+    {
+     "question": "qz_schacht_frei",
+     "role": "MODIFIER",
+     "required_mode": "ALWAYS",
+     "notes": "Pflicht, weil bewertungsrelevant (automatisch gesetzt)."
+    }
+   ],
+   "description": "Schutzfunktion: Rauchabführung aus Schacht und Schachtkopf im Brandfall. Mögliche Cyberfolge: Rauchabzug öffnet im Brandfall nicht oder öffnet unbeabsichtigt; Verrauchung des Schachts, Ausfall der Brandfallfahrt.",
+   "sources": [
+    {
+     "type": "TRBS",
+     "document": "TRBS 1115 Teil 1",
+     "section": "4.5.2"
+    },
+    {
+     "type": "EN",
+     "document": "DIN EN 81-73",
+     "section": "5.2"
+    },
+    {
+     "type": "EN",
+     "document": "DIN EN 12101-2"
+    },
+    {
+     "type": "OTHER",
+     "document": "IEC 62443"
+    },
+    {
+     "type": "TRBS",
+     "document": "TRBS 1115 Teil 1",
+     "section": "4.5.2"
+    },
+    {
+     "type": "OTHER",
+     "document": "EK-ZÜS BA-017"
+    }
+   ],
+   "hazard_factor": "Brand- und Explosionsgefährdung (Fehlverhalten im Brandfall)",
+   "person_groups": [
+    "Nutzer",
+    "Feuerwehr",
+    "Betreiber"
+   ],
+   "ui_group": "C – Komponenten und Schnittstellen",
+   "review_ids": [
+    "K-C01",
+    "K-C02",
+    "K-C05",
+    "K-C06",
+    "K-C07",
+    "K-C08"
+   ]
+  },
+  {
    "code": "CY-C14",
    "domain": "CYBER",
-   "title": "Manipulierbare Gebäudeschnittstelle (Brandfallsteuerung, Entrauchung, Gebäudeleittechnik)",
+   "title": "Manipulierbare Gebäudeschnittstelle (Brandfallsteuerung, Gebäudeleittechnik, Zutrittssystem)",
    "category": "Gebäudeschnittstelle",
    "aggregation_type": "NONE",
    "evaluation_mode": "STANDARD",
@@ -3844,7 +4124,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_2610af0dfe",
+     "measure": "m_50fa3ded1e",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -3913,7 +4193,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_2610af0dfe",
+     "measure": "m_50fa3ded1e",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -3951,7 +4231,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_2610af0dfe",
+     "measure": "m_50fa3ded1e",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -3989,7 +4269,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_2610af0dfe",
+     "measure": "m_50fa3ded1e",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -4053,7 +4333,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_2610af0dfe",
+     "measure": "m_50fa3ded1e",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -4094,7 +4374,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_2610af0dfe",
+     "measure": "m_50fa3ded1e",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -4416,7 +4696,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_67bc571c3f",
+     "measure": "m_285bf2d353",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -4454,7 +4734,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_67bc571c3f",
+     "measure": "m_285bf2d353",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -4518,7 +4798,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_67bc571c3f",
+     "measure": "m_285bf2d353",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -4559,7 +4839,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_67bc571c3f",
+     "measure": "m_285bf2d353",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -4886,7 +5166,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_c93486816a",
+     "measure": "m_05731578d1",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -4961,7 +5241,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_c93486816a",
+     "measure": "m_05731578d1",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -4999,7 +5279,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_c93486816a",
+     "measure": "m_05731578d1",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -5063,7 +5343,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_c93486816a",
+     "measure": "m_05731578d1",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -5104,7 +5384,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_c93486816a",
+     "measure": "m_05731578d1",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -5438,7 +5718,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_113b67299f",
+     "measure": "m_5967189755",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -5507,7 +5787,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_113b67299f",
+     "measure": "m_5967189755",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -5545,7 +5825,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_113b67299f",
+     "measure": "m_5967189755",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -5583,7 +5863,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_113b67299f",
+     "measure": "m_5967189755",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -5647,7 +5927,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_113b67299f",
+     "measure": "m_5967189755",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -5688,7 +5968,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_113b67299f",
+     "measure": "m_5967189755",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -6022,7 +6302,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_64db42df3b",
+     "measure": "m_0cd0966eaa",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -6091,7 +6371,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_64db42df3b",
+     "measure": "m_0cd0966eaa",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -6129,7 +6409,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_64db42df3b",
+     "measure": "m_0cd0966eaa",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -6167,7 +6447,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_64db42df3b",
+     "measure": "m_0cd0966eaa",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -6231,7 +6511,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_64db42df3b",
+     "measure": "m_0cd0966eaa",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -6272,7 +6552,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_64db42df3b",
+     "measure": "m_0cd0966eaa",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -7092,6 +7372,546 @@
    "notes": "Kein Risiko: keine Mangelregel trifft zu, alle Pflichtfragen beantwortet. Freigegeben 2026-09-03."
   },
   {
+   "hazard": "CY-C16",
+   "code": "CY-C16-R1",
+   "priority": 600,
+   "condition": {
+    "question": "qc_entrauchung_schnittstelle",
+    "operator": "EQ",
+    "value": "keine"
+   },
+   "result": "NO_RISK",
+   "origin": "OWN_RULE",
+   "evidence": "HIGH_CONFIDENCE",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_518171ac0a",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ],
+   "notes": "Vorscreening: Betrachtung abgeschlossen. Entschieden 2026-09-03: K-C02."
+  },
+  {
+   "hazard": "CY-C16",
+   "code": "CY-C16-R2",
+   "priority": 520,
+   "condition": {
+    "all": [
+     {
+      "question": "qc_entrauchung_unabhaengig",
+      "operator": "EQ",
+      "value": true
+     },
+     {
+      "question": "qc_entrauchung_schnittstelle",
+      "operator": "NEQ",
+      "value": "keine"
+     },
+     {
+      "question": "qc_entrauchung_massnahmen",
+      "operator": "NEQ",
+      "value": "umgesetzt"
+     }
+    ]
+   },
+   "result": "LOW",
+   "origin": "OWN_RULE",
+   "evidence": "INFERRED",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_02a6bfad32",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_af6935ebf0",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ],
+   "notes": "Entschieden 2026-09-03: K-C07."
+  },
+  {
+   "hazard": "CY-C16",
+   "code": "CY-C16-R3",
+   "priority": 510,
+   "condition": {
+    "all": [
+     {
+      "question": "qc_entrauchung_unabhaengig",
+      "operator": "EQ",
+      "value": true
+     },
+     {
+      "question": "qc_entrauchung_schnittstelle",
+      "operator": "NEQ",
+      "value": "keine"
+     },
+     {
+      "question": "qc_entrauchung_massnahmen",
+      "operator": "EQ",
+      "value": "umgesetzt"
+     }
+    ]
+   },
+   "result": "NO_RISK",
+   "origin": "OWN_RULE",
+   "evidence": "INFERRED",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_acfaf2065b",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ],
+   "notes": "Entschieden 2026-09-03: K-C07."
+  },
+  {
+   "hazard": "CY-C16",
+   "code": "CY-C16-R4",
+   "priority": 400,
+   "condition": {
+    "all": [
+     {
+      "question": "qc_entrauchung_schnittstelle",
+      "operator": "EQ",
+      "value": "fernzugriff"
+     },
+     {
+      "question": "qc_entrauchung_massnahmen",
+      "operator": "NEQ",
+      "value": "umgesetzt"
+     }
+    ]
+   },
+   "result": "HIGH",
+   "origin": "OWN_RULE",
+   "evidence": "INFERRED",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_3e2e40306b",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_af6935ebf0",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ],
+   "notes": "Entschieden 2026-09-03: K-C01."
+  },
+  {
+   "hazard": "CY-C16",
+   "code": "CY-C16-R5",
+   "priority": 390,
+   "condition": {
+    "all": [
+     {
+      "question": "qc_entrauchung_schnittstelle",
+      "operator": "EQ",
+      "value": "kabellos"
+     },
+     {
+      "question": "qc_entrauchung_massnahmen",
+      "operator": "NEQ",
+      "value": "umgesetzt"
+     }
+    ]
+   },
+   "result": "HIGH",
+   "origin": "OWN_RULE",
+   "evidence": "INFERRED",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_cb642ddb98",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_af6935ebf0",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ],
+   "notes": "Entschieden 2026-09-03: K-C01."
+  },
+  {
+   "hazard": "CY-C16",
+   "code": "CY-C16-R6",
+   "priority": 380,
+   "condition": {
+    "all": [
+     {
+      "all": [
+       {
+        "question": "qc_entrauchung_schnittstelle",
+        "operator": "IN",
+        "value": [
+         "kabelgebunden",
+         "benutzer"
+        ]
+       },
+       {
+        "question": "qc_entrauchung_massnahmen",
+        "operator": "EQ",
+        "value": "keine"
+       }
+      ]
+     },
+     {
+      "any": [
+       {
+        "question": "qz_steuerung_frei",
+        "operator": "EQ",
+        "value": true
+       },
+       {
+        "question": "qz_triebwerksraum_frei",
+        "operator": "EQ",
+        "value": true
+       },
+       {
+        "question": "qz_schacht_frei",
+        "operator": "EQ",
+        "value": true
+       }
+      ]
+     }
+    ]
+   },
+   "result": "HIGH",
+   "origin": "OWN_RULE",
+   "evidence": "INFERRED",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_7ec1875dfc",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_af6935ebf0",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ],
+   "notes": "Entschieden 2026-09-03: K-C05."
+  },
+  {
+   "hazard": "CY-C16",
+   "code": "CY-C16-R7",
+   "priority": 300,
+   "condition": {
+    "all": [
+     {
+      "question": "qc_entrauchung_schnittstelle",
+      "operator": "IN",
+      "value": [
+       "kabelgebunden",
+       "benutzer"
+      ]
+     },
+     {
+      "question": "qc_entrauchung_massnahmen",
+      "operator": "EQ",
+      "value": "keine"
+     }
+    ]
+   },
+   "result": "MEDIUM",
+   "origin": "OWN_RULE",
+   "evidence": "INFERRED",
+   "quality_status": "REVIEW_REQUIRED",
+   "measures": [
+    {
+     "measure": "m_292ed3e603",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_af6935ebf0",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "CY-C16",
+   "code": "CY-C16-R8",
+   "priority": 290,
+   "condition": {
+    "all": [
+     {
+      "all": [
+       {
+        "question": "qc_entrauchung_schnittstelle",
+        "operator": "IN",
+        "value": [
+         "kabelgebunden",
+         "benutzer"
+        ]
+       },
+       {
+        "question": "qc_entrauchung_massnahmen",
+        "operator": "EQ",
+        "value": "teilweise"
+       }
+      ]
+     },
+     {
+      "any": [
+       {
+        "question": "qz_steuerung_frei",
+        "operator": "EQ",
+        "value": true
+       },
+       {
+        "question": "qz_triebwerksraum_frei",
+        "operator": "EQ",
+        "value": true
+       },
+       {
+        "question": "qz_schacht_frei",
+        "operator": "EQ",
+        "value": true
+       }
+      ]
+     }
+    ]
+   },
+   "result": "MEDIUM",
+   "origin": "OWN_RULE",
+   "evidence": "INFERRED",
+   "quality_status": "REVIEW_REQUIRED",
+   "measures": [
+    {
+     "measure": "m_e0e88af9fb",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_1de985772b",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "CY-C16",
+   "code": "CY-C16-R9",
+   "priority": 280,
+   "condition": {
+    "all": [
+     {
+      "question": "qc_entrauchung_schnittstelle",
+      "operator": "IN",
+      "value": [
+       "kabelgebunden",
+       "benutzer"
+      ]
+     },
+     {
+      "question": "qc_entrauchung_massnahmen",
+      "operator": "EQ",
+      "value": "teilweise"
+     }
+    ]
+   },
+   "result": "LOW",
+   "origin": "OWN_RULE",
+   "evidence": "INFERRED",
+   "quality_status": "REVIEW_REQUIRED",
+   "measures": [
+    {
+     "measure": "m_ef14856d9d",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_1de985772b",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "CY-C16",
+   "code": "CY-C16-R10",
+   "priority": 270,
+   "condition": {
+    "all": [
+     {
+      "question": "qc_entrauchung_schnittstelle",
+      "operator": "IN",
+      "value": [
+       "kabellos",
+       "fernzugriff"
+      ]
+     },
+     {
+      "question": "qc_entrauchung_massnahmen",
+      "operator": "EQ",
+      "value": "umgesetzt"
+     }
+    ]
+   },
+   "result": "NO_RISK",
+   "origin": "OWN_RULE",
+   "evidence": "HIGH_CONFIDENCE",
+   "quality_status": "VERIFIED",
+   "measures": [
+    {
+     "measure": "m_559ab1dd1d",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ],
+   "notes": "Entschieden 2026-09-03: K-C06."
+  },
+  {
+   "hazard": "CY-C16",
+   "code": "CY-C16-R11",
+   "priority": 260,
+   "condition": {
+    "all": [
+     {
+      "all": [
+       {
+        "question": "qc_entrauchung_schnittstelle",
+        "operator": "IN",
+        "value": [
+         "kabelgebunden",
+         "benutzer"
+        ]
+       },
+       {
+        "question": "qc_entrauchung_massnahmen",
+        "operator": "EQ",
+        "value": "umgesetzt"
+       }
+      ]
+     },
+     {
+      "any": [
+       {
+        "question": "qz_steuerung_frei",
+        "operator": "EQ",
+        "value": true
+       },
+       {
+        "question": "qz_triebwerksraum_frei",
+        "operator": "EQ",
+        "value": true
+       },
+       {
+        "question": "qz_schacht_frei",
+        "operator": "EQ",
+        "value": true
+       }
+      ]
+     }
+    ]
+   },
+   "result": "LOW",
+   "origin": "OWN_RULE",
+   "evidence": "INFERRED",
+   "quality_status": "REVIEW_REQUIRED",
+   "measures": [
+    {
+     "measure": "m_4df91eab58",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    },
+    {
+     "measure": "m_b8b7386813",
+     "group_id": "mittel",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "CY-C16",
+   "code": "CY-C16-R12",
+   "priority": 250,
+   "condition": {
+    "all": [
+     {
+      "question": "qc_entrauchung_schnittstelle",
+      "operator": "IN",
+      "value": [
+       "kabelgebunden",
+       "benutzer"
+      ]
+     },
+     {
+      "question": "qc_entrauchung_massnahmen",
+      "operator": "EQ",
+      "value": "umgesetzt"
+     }
+    ]
+   },
+   "result": "NO_RISK",
+   "origin": "OWN_RULE",
+   "evidence": "HIGH_CONFIDENCE",
+   "quality_status": "REVIEW_REQUIRED",
+   "measures": [
+    {
+     "measure": "m_85f0057032",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ]
+  },
+  {
+   "hazard": "CY-C16",
+   "code": "CY-C16-R13",
+   "priority": 1,
+   "condition": {
+    "question": "qc_entrauchung_schnittstelle",
+    "operator": "ANSWERED"
+   },
+   "result": "NO_RISK",
+   "origin": "OWN_RULE",
+   "evidence": "HIGH_CONFIDENCE",
+   "quality_status": "REVIEW_REQUIRED",
+   "measures": [
+    {
+     "measure": "m_148f9590b0",
+     "group_id": "sofort",
+     "relation": "SINGLE",
+     "mandatory": true
+    }
+   ],
+   "notes": "Kein Risiko: keine Mangelregel trifft zu, alle Pflichtfragen beantwortet."
+  },
+  {
    "hazard": "CY-C14",
    "code": "CY-C14-R1",
    "priority": 400,
@@ -7715,6 +8535,19 @@
      "question": "qc_tuer_typ",
      "mode": "native",
      "row": "Türsteuerung"
+    },
+    {
+     "question": "qc_entrauchung_vorhanden",
+     "mode": "check",
+     "label": "Schachtentrauchung (RWA-Steuerung)",
+     "value": true,
+     "clear": false,
+     "row": "Schachtentrauchung (RWA-Steuerung)"
+    },
+    {
+     "question": "qc_entrauchung_typ",
+     "mode": "native",
+     "row": "Schachtentrauchung (RWA-Steuerung)"
     }
    ],
    "ui_number": "3.0",
@@ -7825,6 +8658,28 @@
    ],
    "ui_number": "3.6",
    "help": "Komponentenbasierte Betrachtung nach EK-ZÜS B-002 rev. 5 / BA-017: Ohne kompromittierbare Schnittstelle endet die Betrachtung hier (Vorscreening). Sonst entscheiden die Schutzmaßnahmen nach TRBS 1115-1 Abschn. 4.5.2 und die unabhängige Rückfallebene über die Stufe."
+  },
+  {
+   "id": "CY-C16",
+   "title": "Komponente: Schachtentrauchung (RWA-Steuerung)",
+   "category": "C – Komponenten und Schnittstellen",
+   "kind": "card",
+   "items": [
+    {
+     "question": "qc_entrauchung_schnittstelle",
+     "mode": "native"
+    },
+    {
+     "question": "qc_entrauchung_massnahmen",
+     "mode": "native"
+    },
+    {
+     "question": "qc_entrauchung_unabhaengig",
+     "mode": "native"
+    }
+   ],
+   "ui_number": "3.15",
+   "help": "Eigene Komponente seit 12.10.2026: Die RWA hat eine eigene Steuerung mit eigener Parametrierung. Entscheidend ist die stromlos-offene Ausführung. Komponentenbasierte Betrachtung nach EK-ZÜS B-002 rev. 5 / BA-017: Ohne kompromittierbare Schnittstelle endet die Betrachtung hier (Vorscreening). Sonst entscheiden die Schutzmaßnahmen nach TRBS 1115-1 Abschn. 4.5.2 und die unabhängige Rückfallebene über die Stufe."
   },
   {
    "id": "CY-N",

@@ -4,7 +4,8 @@ import { readFileSync } from 'node:fs';
 import { evaluate, summarize } from './evaluator.ts';
 
 const seed = JSON.parse(readFileSync('./norm_cyber_mf.json', 'utf-8'));
-const COMPS = ['pessral', 'fu', 'notruf', 'kopierung', 'tuer', 'ucm', 'safue', 'tragmittel', 'hydraulik'];
+const COMPS = ['pessral', 'fu', 'notruf', 'kopierung', 'tuer', 'ucm', 'safue', 'tragmittel', 'hydraulik',
+               'entrauchung'];  // entrauchung: eigene Komponente seit cyber-mf-2026.5
 
 /** Vollständig guter Zustand: vernetzter Seilaufzug mit Maschinenraum, alle
  *  Komponenten vorhanden, kabelgebunden, Maßnahmen umgesetzt, Zugang gesichert. */

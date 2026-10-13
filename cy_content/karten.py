@@ -108,6 +108,9 @@ _KOMPONENTEN = [
     ('CY-C8', 'SAFÜ (Schutz gegen Übergeschwindigkeit)', '3.8', 'safue', None),
     ('CY-C9', 'Tragmittelüberwachung', '3.9', 'tragmittel', None),
     ('CY-C10', 'Hydraulischer Steuerblock', '3.10', 'hydraulik', None),
+    ('CY-C16', 'Schachtentrauchung (RWA-Steuerung)', '3.15', 'entrauchung',
+     'Eigene Komponente seit 12.10.2026: Die RWA hat eine eigene Steuerung mit '
+     'eigener Parametrierung. Entscheidend ist die stromlos-offene Ausführung.'),
 ]
 _HILFE_KOMP = ('Komponentenbasierte Betrachtung nach EK-ZÜS B-002 rev. 5 / BA-017: '
                'Ohne kompromittierbare Schnittstelle endet die Betrachtung hier '

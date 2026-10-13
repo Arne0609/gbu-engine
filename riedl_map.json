@@ -10,9 +10,9 @@
  },
  "kataloge": {
   "gbu": "riedl-mf-2026.3",
-  "cyber": "riedl-cyber-2026.3",
+  "cyber": "riedl-cyber-2026.4",
   "gbu_quelle": "81-20-mf-2026.11",
-  "cyber_quelle": "cyber-mf-2026.4"
+  "cyber_quelle": "cyber-mf-2026.5"
  },
  "ampel": {
   "NO_RISK": "gruen",
@@ -626,7 +626,7 @@
   "kuerzel": "C",
   "titel": "Cybersicherheit",
   "anlagenbereich": "Cybersicherheit – anlagenbezogene Beurteilung nach TRBS 1115-1",
-  "katalog": "cyber-mf-2026.4",
+  "katalog": "cyber-mf-2026.5",
   "zeilen": [
    {
     "nr": 1,
@@ -695,19 +695,32 @@
    },
    {
     "nr": 6,
-    "titel": "Schachtentrauchung und bauseitige Einrichtungen (Gebäudeschnittstelle)",
+    "titel": "Schachtentrauchung",
+    "vfa": "",
+    "hazards": [
+     "CY-C16"
+    ],
+    "deckung": "voll",
+    "bemerkung": "Eigene Komponente seit 12.10.2026 (Entscheidung Arne) – vorher Teil der Gebäudeschnittstelle. Hersteller und Typ der RWA-Steuerung werden eigens erfasst; die stromlos-offene Ausführung ist die Kompensation (3.15.4, Deckel Niedrig).",
+    "trbs_anhang1": [],
+    "komponente": "entrauchung",
+    "erlaeuterung": "Die Steuerung der Schachtentrauchung sitzt im Maschinenraum oder in einem abgeschlossenen, für fremde Personen nicht zugänglichen Schaltschrank; Einstellungen sind nur vor Ort möglich. Bei Störung oder Stromausfall öffnet der Rauchabzug (stromlos offen), ein gefährlicher Zustand entsteht dadurch nicht."
+   },
+   {
+    "nr": 7,
+    "titel": "bauseitige Einrichtungen (Gebäudeschnittstelle)",
     "vfa": "",
     "hazards": [
      "CY-C14"
     ],
     "deckung": "voll",
-    "bemerkung": "Die Riedl-Vorlage führt Schachtentrauchung und bauseitige Einrichtungen getrennt; im CY-Katalog ist beides die Gebäudeschnittstelle (3.14.1 rückwirkungsfrei, 3.14.2 sicherer Zustand). Hersteller/Typ werden trotzdem getrennt erfasst.",
+    "bemerkung": "Entscheidend sind 3.14.1 (Rückwirkungsfreiheit) und 3.14.2 (sicherer Zustand bei Ausfall des bauseitigen Signals).",
     "trbs_anhang1": [],
     "komponente": "gebaeude",
-    "erlaeuterung": "Die Steuerung der Schachtentrauchung sitzt im Maschinenraum oder in einem abgeschlossenen Schaltschrank; Einstellungen sind nur vor Ort möglich. Bei Störung oder Stromausfall öffnet der Rauchabzug, ein gefährlicher Zustand entsteht nicht. Bauseitige Systeme (Zutrittskontrolle, Brandmeldeanlage, Kartenleser, Notstrom) wirken über potenzialfreie Kontakte auf den nicht sicherheitsgerichteten Teil der Steuerung; die Schnittstelle ist rückwirkungsfrei. Die Cybersicherheit dieser Systeme selbst beurteilt deren Hersteller bzw. der Betreiber."
+    "erlaeuterung": "Bauseitige Systeme (Zutrittskontrolle, Brandmeldeanlage, Kartenleser, Notstrom) wirken über potenzialfreie Kontakte auf den nicht sicherheitsgerichteten Teil der Steuerung; die Schnittstelle ist rückwirkungsfrei. Die Cybersicherheit dieser Systeme selbst beurteilt deren Hersteller bzw. der Betreiber."
    },
    {
-    "nr": 7,
+    "nr": 8,
     "titel": "Zugang und Zugriff: Maschinenraum/Steuerschrank, Aufzugsschacht, Schlüsseldepot, Servicegeräte",
     "vfa": "",
     "hazards": [
@@ -722,7 +735,7 @@
     "erlaeuterung": "Maschinenraum und Steuerschrank sind nur befugten Personen zugänglich; das Schloss hat keine Standardschließung, der Schlüssel liegt für die Notbefreiung im Schlüsseldepot. Der Schacht ist nur über die Schachttüren mit dem vorgesehenen Werkzeug (Dreikant) betretbar; das Werkzeug ist im Maschinenraum gesichert hinterlegt. Die Schließung des Schlüsseldepots legt der Befreiungsdienst fest, die Ausgabe der Schlüssel ist organisatorisch geregelt."
    },
    {
-    "nr": 8,
+    "nr": 9,
     "titel": "Netz, Fernzugriff und Fernwartung (nur bei vernetzter Anlage)",
     "vfa": "",
     "hazards": [
@@ -739,7 +752,7 @@
     "erlaeuterung": ""
    },
    {
-    "nr": 9,
+    "nr": 10,
     "titel": "Organisation und Nachweise: Herstellervorgaben, Rückwirkungsfreiheit, Wirksamkeit, Änderungen",
     "vfa": "",
     "hazards": [

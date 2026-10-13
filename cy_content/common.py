@@ -91,6 +91,9 @@ def trbs1115(sec=None): return src('TRBS', 'TRBS 1115 Teil 1', sec)
 def zues_b002(sec=None): return src('OTHER', 'EK-ZÜS B-002 rev. 5', sec)
 def zues_ba017(sec=None): return src('OTHER', 'EK-ZÜS BA-017', sec)
 def dekra(sec=None): return src('OTHER', 'DEKRA Ausfüllhilfe Cybersicherheit 09/2024', sec)
+# IEC 62443 ist der Normenrahmen für Cybersicherheit in der Automatisierung und
+# in der Branche die anerkannte Grundlage neben der TRBS 1115-1 (12.10.2026).
+def iec62443(sec=None): return src('OTHER', 'IEC 62443', sec)
 def betrsichv(sec=None): return src('LAW', 'BetrSichV', sec)
 def ueanlg(sec=None): return src('LAW', 'ÜAnlG', sec)
 def en8128(sec=None): return src('EN', 'DIN EN 81-28', sec)

@@ -51,7 +51,7 @@ UNTERTITEL = ('Anlagenbezogene Beurteilung nach ArbSchG, BetrSichV, TRBS 3121 '
 VARIANTE = 'Riedl'                 # Anzeigename der Variante
 TYP_SCHLUESSEL = 'riedl'           # Vorschlag für GbuTypen in der App
 RULE_VERSION_GBU = 'riedl-mf-2026.3'      # .3: Notfallplan aus der Notrufaufschaltung (12.10.2026)
-RULE_VERSION_CYBER = 'riedl-cyber-2026.3'  # .3: Komponentenerfassung vor Ort (12.10.2026)
+RULE_VERSION_CYBER = 'riedl-cyber-2026.4'  # .4: Entrauchung eigene Komponente, konkrete Maßnahmen (12.10.2026)
 VORLAGE_GBU = 'VFA Interlift, Version 21.08.2024 R 1.7.2 (Nutzungsrecht VFA-Akademie)'
 VORLAGE_CYBER = 'Vorlage GBU Cybersicherheit ab 04-26 (TRBS 1115-1, IEC 62443)'
 
@@ -493,21 +493,28 @@ CYBER_BLATT = {
                    'Parametrieren angesteckt und danach sicher verwahrt. Ergänzend gelten die '
                    'Festlegungen zum Aufzugsschacht.',
    'bemerkung': ''},
-  {'nr': 6, 'komponente': 'gebaeude', 'titel': 'Schachtentrauchung und bauseitige Einrichtungen (Gebäudeschnittstelle)',
-   'hazards': ['CY-C14'], 'deckung': 'voll',
-   'excel': ['Schachtentrauchung: nicht vorhanden / Schnittstelle vorhanden / manuelle Manipulation',
-             'bauseitige Einrichtungen: Zutrittskontrolle, Kartenleser, Notstromversorgung, Brandfallsteuerung'],
+  {'nr': 6, 'komponente': 'entrauchung', 'titel': 'Schachtentrauchung',
+   'hazards': ['CY-C16'], 'deckung': 'voll',
+   'excel': ['nicht vorhanden', 'Schnittstelle vorhanden',
+             'manuelle Manipulation: Tastatur vorhanden',
+             'manuelle Manipulation: Schnittstelle Handterminal'],
    'erlaeuterung': 'Die Steuerung der Schachtentrauchung sitzt im Maschinenraum oder in einem '
-                   'abgeschlossenen Schaltschrank; Einstellungen sind nur vor Ort möglich. Bei Störung '
-                   'oder Stromausfall öffnet der Rauchabzug, ein gefährlicher Zustand entsteht nicht. '
-                   'Bauseitige Systeme (Zutrittskontrolle, Brandmeldeanlage, Kartenleser, Notstrom) '
+                   'abgeschlossenen, für fremde Personen nicht zugänglichen Schaltschrank; '
+                   'Einstellungen sind nur vor Ort möglich. Bei Störung oder Stromausfall öffnet der '
+                   'Rauchabzug (stromlos offen), ein gefährlicher Zustand entsteht dadurch nicht.',
+   'bemerkung': 'Eigene Komponente seit 12.10.2026 (Entscheidung Arne) – vorher Teil der '
+                'Gebäudeschnittstelle. Hersteller und Typ der RWA-Steuerung werden eigens erfasst; '
+                'die stromlos-offene Ausführung ist die Kompensation (3.15.4, Deckel Niedrig).'},
+  {'nr': 7, 'komponente': 'gebaeude', 'titel': 'bauseitige Einrichtungen (Gebäudeschnittstelle)',
+   'hazards': ['CY-C14'], 'deckung': 'voll',
+   'excel': ['Zutrittskontrolle', 'Kartenleser', 'Notstromversorgung', 'Brandfallsteuerung'],
+   'erlaeuterung': 'Bauseitige Systeme (Zutrittskontrolle, Brandmeldeanlage, Kartenleser, Notstrom) '
                    'wirken über potenzialfreie Kontakte auf den nicht sicherheitsgerichteten Teil der '
                    'Steuerung; die Schnittstelle ist rückwirkungsfrei. Die Cybersicherheit dieser '
                    'Systeme selbst beurteilt deren Hersteller bzw. der Betreiber.',
-   'bemerkung': 'Die Riedl-Vorlage führt Schachtentrauchung und bauseitige Einrichtungen getrennt; '
-                'im CY-Katalog ist beides die Gebäudeschnittstelle (3.14.1 rückwirkungsfrei, '
-                '3.14.2 sicherer Zustand). Hersteller/Typ werden trotzdem getrennt erfasst.'},
-  {'nr': 7, 'komponente': '', 'titel': 'Zugang und Zugriff: Maschinenraum/Steuerschrank, Aufzugsschacht, Schlüsseldepot, Servicegeräte',
+   'bemerkung': 'Entscheidend sind 3.14.1 (Rückwirkungsfreiheit) und 3.14.2 (sicherer Zustand bei '
+                'Ausfall des bauseitigen Signals).'},
+  {'nr': 8, 'komponente': '', 'titel': 'Zugang und Zugriff: Maschinenraum/Steuerschrank, Aufzugsschacht, Schlüsseldepot, Servicegeräte',
    'hazards': ['CY-Z01', 'CY-Z04', 'CY-Z05'], 'deckung': 'voll',
    'excel': ['Maschinenraum verschlossen halten', 'Schaltschrank verschlossen halten',
              'Handterminal nur bei Montage / Wartungsarbeiten anstecken', 'Steuerung/FU/Notrufgerät passwortgeschützt'],
@@ -518,13 +525,13 @@ CYBER_BLATT = {
                    'hinterlegt. Die Schließung des Schlüsseldepots legt der Befreiungsdienst fest, die '
                    'Ausgabe der Schlüssel ist organisatorisch geregelt.',
    'bemerkung': 'Die Zugangsfragen 2.1–2.3 wirken zusätzlich als Modifier an jeder Komponente (K-C21).'},
-  {'nr': 8, 'komponente': '', 'titel': 'Netz, Fernzugriff und Fernwartung (nur bei vernetzter Anlage)',
+  {'nr': 9, 'komponente': '', 'titel': 'Netz, Fernzugriff und Fernwartung (nur bei vernetzter Anlage)',
    'hazards': ['CY-C11', 'CY-C12', 'CY-C13', 'CY-N01', 'CY-N02'], 'deckung': 'voll',
    'excel': ['Fernzugriff über Netzwerk', 'Vorlage der Beurteilung des vorhandenen Netzes durch Betreiber'],
    'erlaeuterung': '',
    'bemerkung': 'Ohne Netzanbindung (1.5) sind C11–C13 nicht zutreffend; Softwarestand (4.5) und '
                 'Härtung (4.6) werden immer gefragt.'},
-  {'nr': 9, 'komponente': '', 'titel': 'Organisation und Nachweise: Herstellervorgaben, Rückwirkungsfreiheit, Wirksamkeit, Änderungen',
+  {'nr': 10, 'komponente': '', 'titel': 'Organisation und Nachweise: Herstellervorgaben, Rückwirkungsfreiheit, Wirksamkeit, Änderungen',
    'hazards': ['CY-O02', 'CY-O07', 'CY-O05', 'CY-O06', 'CY-O08'], 'deckung': 'voll',
    'excel': ['Allgemeines (Absätze 2–5 der Vorlage)', 'Überprüfung der Wirksamkeit der Cybersicherheitsmaßnahmen'],
    'erlaeuterung': '',
