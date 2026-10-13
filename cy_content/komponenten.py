@@ -265,10 +265,28 @@ def komponente(code, key, name, ui, group, factor, persons, schutz, folge,
 
 
 # ---- Komponenten (Klasse S) -------------------------------------------------
-STEUERUNG_MASS = ('Maschinenraum und Steuerschrank verschlossen halten '
-                  '(keine Standardschließung); Parametrierung der Steuerung '
-                  'passwortgeschützt; Handterminal nur bei Montage- und '
-                  'Wartungsarbeiten anstecken und danach sicher verwahren; nicht '
+#
+# Maßnahmentexte: die Maßnahme ZUR GEFÄHRDUNG, nicht das Schutzkonzept der
+# Anlage (Festlegung Arne 13.10.2026: „Die Riedl-Variante ist nur eine
+# Gefährdungsbeurteilung und kein Sicherheitskonzept.").
+#
+# Am 12.10.2026 waren hier Sätze aus der Riedl-Vorlage eingearbeitet, die dort
+# auf dem Blatt „Erläuterungen" stehen - „Maschinenraum verschlossen halten",
+# „Handterminal nur bei Montage anstecken", „Das Türsteuergerät ist auf dem
+# Kabinendach verbaut". Das ist das Schutzkonzept der Anlage und gehört nicht
+# in die Maßnahme einer Komponentengefährdung:
+#
+#   * Der verschlossene Maschinenraum ist die Maßnahme zu CY-Z01 (örtlicher
+#     Zugang), das Handterminal die zu CY-Z05 (Servicegeräte). Dort stehen sie
+#     - und nur dort greifen sie als Befund, wenn die Frage es hergibt.
+#   * „ist auf dem Kabinendach verbaut" ist eine FESTSTELLUNG, keine Maßnahme.
+#     Feststellungen stehen bei uns in den Antworten, nicht im Maßnahmentext.
+#
+# Hier bleibt deshalb nur, was die Komponente selbst betrifft: Parametrierung,
+# Passwortschutz, Schnittstellenumfang, Nachprüfung nach Änderungen - und die
+# komponenteneigenen organisatorischen Maßnahmen (Notrufnummer, Routineruf,
+# stromlos offene RWA).
+STEUERUNG_MASS = ('Parametrierung der Steuerung passwortgeschützt; nicht '
                   'benötigte Schnittstellen deaktivieren; Parameteränderungen '
                   'dokumentieren.',
                   'Zugangskontrolle (Hardware/Software), Funktionsreduzierung')
@@ -299,11 +317,8 @@ komponente('CY-C02', 'pessral', 'PESSRAL (programmierbare Sicherheitsschaltung)'
            GRP_STEUERUNG, F_MANIP, [NUTZER, WARTUNG],
            schutz='Elektronische Sicherheitsfunktionen im Sicherheitsstromkreis.',
            folge='Manipulation oder Deaktivierung von Sicherheitsfunktionen.',
-           standard=('Maschinenraum, Schaltschrank und Schacht verschlossen halten; '
-                     'Serviceschnittstellen nur für Berechtigte; Parametrierung '
-                     'schützen; nach Eingriffen Sicherheitsfunktionen prüfen. Ein '
-                     'Eingriff am Modul setzt die Anlage still und wird dadurch '
-                     'bemerkt.',
+           standard=('Serviceschnittstellen nur für Berechtigte; Parametrierung '
+                     'schützen; nach Eingriffen Sicherheitsfunktionen prüfen.',
                      'Zugangskontrolle (Hardware), Funktionsreduzierung'),
            sources=[en('DIN EN 81-20', '5.11.2.6'), en8150('5.6')],
            vorhanden_text='PESSRAL / programmierbare Sicherheitsschaltung vorhanden?')
@@ -313,10 +328,8 @@ komponente('CY-C03', 'fu', 'Frequenzumrichter', '3.3', GRP_ANTRIEB, F_MANIP,
            schutz='Regelung von Fahrgeschwindigkeit und Antrieb.',
            folge='Unzulässige Geschwindigkeit oder Beschleunigung, wenn keine unabhängige '
                  'Rückfallebene wirkt.',
-           standard=('Maschinenraum und Schaltschrank verschlossen halten; Umrichter '
-                     'passwortgeschützt parametrieren; Handterminal nur bei Montage- '
-                     'und Wartungsarbeiten anstecken und danach sicher verwahren; '
-                     'zulässigen Parametersatz sichern; nach Änderungen Antrieb und '
+           standard=('Umrichter passwortgeschützt parametrieren; zulässigen '
+                     'Parametersatz sichern; nach Änderungen Antrieb und '
                      'Fahrverhalten prüfen.',
                      'Zugangskontrolle (Software), Funktionsreduzierung'),
            sources=[en('DIN EN 81-20', '5.9')],
@@ -333,9 +346,9 @@ komponente('CY-C04', 'notruf', 'Notrufsystem (Zwei-Wege-Kommunikation)', '3.4',
                  'Personeneinschluss bleibt unbemerkt.',
            standard=('Rufnummer des Notrufgeräts nur dem Befreiungsdienst zugänglich '
                      'machen und an der Anlage nicht dokumentieren; Notrufgerät '
-                     'passwortgeschützt; Werkszugangsdaten ändern; Routineruf in '
-                     'festen Abständen (EN 81-28: mindestens alle 3 Tage) absetzen '
-                     'und ausbleibende Meldung als Serviceeinsatz behandeln.',
+                     'passwortgeschützt; Werkszugangsdaten ändern; Routineruf nach '
+                     'EN 81-28 absetzen und ausbleibende Meldung als Serviceeinsatz '
+                     'behandeln.',
                      'Zugangskontrolle (Software/Hardware), Überwachung'),
            sources=[en8128('4.2'), zues_ba017('Beispiel Notruf')],
            vorhanden_text='Notrufsystem mit digitaler Komponente (Mobilfunk/IP, '
@@ -348,11 +361,8 @@ komponente('CY-C05', 'kopierung', 'Schachtkopierung / Positionierung', '3.5',
            GRP_STEUERUNG, F_MANIP, [NUTZER],
            schutz='Positionserfassung und Haltegenauigkeit (Bündigkeit).',
            folge='Fehlpositionierung oder Fehlbündigkeit; Stolper-/Absturzgefahr.',
-           standard=('Geber und Kopierung sind nur über den Schacht erreichbar; '
-                     'Schacht und Schachttüren gesichert halten (Dreikant im '
-                     'Maschinenraum hinterlegt); Schnittstellen auf das Notwendige '
-                     'beschränken; unbefugte Änderung der Positions-/Schacht'
-                     'information verhindern.',
+           standard=('Schnittstellen auf das Notwendige beschränken; unbefugte '
+                     'Änderung der Positions-/Schachtinformation verhindern.',
                      'Zugangskontrolle (Hardware), Funktionsreduzierung'),
            sources=[en('DIN EN 81-20', '5.12.1')],
            vorhanden_text='Digitale Schachtkopierung / Absolutwertgeber vorhanden?',
@@ -362,11 +372,9 @@ komponente('CY-C05', 'kopierung', 'Schachtkopierung / Positionierung', '3.5',
 komponente('CY-C06', 'tuer', 'Türsteuerung', '3.6', GRP_ANTRIEB, F_MANIP, [NUTZER],
            schutz='Türbewegung und Begrenzung der Schließkräfte.',
            folge='Unzulässige Türkräfte oder Türbewegung; Quetsch-/Schergefahr.',
-           standard=('Türsteuergerät ist auf dem Fahrkorbdach verbaut und nur über den '
-                     'Schacht erreichbar; Handterminal nur bei Montage- und '
-                     'Wartungsarbeiten anstecken und danach sicher verwahren; '
-                     'Serviceschnittstellen nur für Berechtigte; Parameter sichern; '
-                     'nach Eingriffen Türfunktionen und Schutzeinrichtungen prüfen.',
+           standard=('Serviceschnittstellen nur für Berechtigte; Parameter '
+                     'passwortgeschützt sichern; nach Eingriffen Türfunktionen und '
+                     'Schutzeinrichtungen prüfen.',
                      'Zugangskontrolle (Hardware), Funktionsreduzierung'),
            sources=[en('DIN EN 81-20', '5.3.6')],
            vorhanden_text='Programmierbare Türsteuerung / Türantrieb mit Parametrierzugang '
@@ -377,9 +385,8 @@ komponente('CY-C06', 'tuer', 'Türsteuerung', '3.6', GRP_ANTRIEB, F_MANIP, [NUTZ
 komponente('CY-C07', 'ucm', 'UCM-Erkennung', '3.7', GRP_STEUERUNG, F_MANIP, [NUTZER],
            schutz='Verhinderung unkontrollierter Fahrkorbbewegung bei offenen Türen.',
            folge='Quetsch-/Schergefahr durch Deaktivierung oder Parameteränderung.',
-           standard=('Modul im verschlossenen Maschinenraum, Schaltschrank oder Schacht '
-                     'halten; Parametrierung passwortgeschützt; Funktionsumfang auf '
-                     'das Erforderliche reduzieren.',
+           standard=('Parametrierung passwortgeschützt; Funktionsumfang auf das '
+                     'Erforderliche reduzieren.',
                      'Zugangskontrolle (Hardware), Funktionsreduzierung'),
            sources=[en('DIN EN 81-20', '5.6.7')],
            vorhanden_text='UCM-Erkennung (Schutz gegen unbeabsichtigte Bewegung) mit '
@@ -391,9 +398,8 @@ komponente('CY-C08', 'safue', 'SAFÜ (Schutz gegen Übergeschwindigkeit)', '3.8'
            GRP_STEUERUNG, F_MANIP, [NUTZER],
            schutz='Schutz gegen Übergeschwindigkeit.',
            folge='Deaktivierung oder Manipulation des Übergeschwindigkeitsschutzes.',
-           standard=('Modul im verschlossenen Maschinenraum, Schaltschrank oder Schacht '
-                     'halten; Parametrierung passwortgeschützt gegen unbefugte '
-                     'Änderung sichern; Ansprechwerte nach jeder Änderung prüfen.',
+           standard=('Parametrierung passwortgeschützt gegen unbefugte Änderung '
+                     'sichern; Ansprechwerte nach jeder Änderung prüfen.',
                      'Zugangskontrolle (Hardware), Funktionsreduzierung'),
            sources=[en('DIN EN 81-20', '5.6.2')],
            vorhanden_text='Elektronischer Geschwindigkeitsbegrenzer / SAFÜ mit '
@@ -405,9 +411,8 @@ komponente('CY-C09', 'tragmittel', 'Tragmittelüberwachung', '3.9', GRP_STEUERUN
            F_AUSFALL, [NUTZER, WARTUNG],
            schutz='Überwachung des Zustands der Tragmittel (Riemen/Seile).',
            folge='Ausfall oder Umgehung der Überwachung bleibt unbemerkt.',
-           standard=('Überwachungsmodul im verschlossenen Maschinenraum oder '
-                     'Schaltschrank halten; Parametrierung schützen; Wirksamkeit der '
-                     'Überwachung bei jeder Prüfung mitprüfen.',
+           standard=('Parametrierung schützen; Wirksamkeit der Überwachung bei jeder '
+                     'Prüfung mitprüfen.',
                      'Zugangskontrolle (Hardware), Überwachung'),
            sources=[en('DIN EN 81-20', '5.5.5')],
            vorhanden_text='Elektronische Tragmittelüberwachung (z. B. Riemenüberwachung) '
@@ -419,10 +424,9 @@ komponente('CY-C10', 'hydraulik', 'Hydraulischer Steuerblock', '3.10', GRP_ANTRI
            F_MANIP, [NUTZER],
            schutz='Schutz gegen Absinken und Übergeschwindigkeit bei Hydraulikaufzügen.',
            folge='Manipulation von Ventilen/Parametern; unkontrolliertes Absinken.',
-           standard=('Steuerblock und seine Elektronik im verschlossenen Maschinenraum '
-                     'oder Schaltschrank halten; Parametrierung passwortgeschützt '
-                     'sichern; nach Änderungen Fahrverhalten, Absinkverhinderung und '
-                     'Leitungsbruchventil prüfen.',
+           standard=('Parametrierung passwortgeschützt sichern; nach Änderungen '
+                     'Fahrverhalten, Absinkverhinderung und Leitungsbruchventil '
+                     'prüfen.',
                      'Zugangskontrolle (Hardware), Funktionsreduzierung'),
            sources=[en('DIN EN 81-20', '5.9.3')],
            vorhanden_text='Elektronisch geregelter Hydraulik-Steuerblock vorhanden?',
@@ -579,10 +583,9 @@ komponente('CY-C16', 'entrauchung', 'Schachtentrauchung (RWA-Steuerung)', '3.15'
            schutz='Rauchabführung aus Schacht und Schachtkopf im Brandfall.',
            folge='Rauchabzug öffnet im Brandfall nicht oder öffnet unbeabsichtigt; '
                  'Verrauchung des Schachts, Ausfall der Brandfallfahrt.',
-           standard=('Steuerung des Rauchabzugs im verschlossenen Maschinenraum oder in '
-                     'einem abgeschlossenen Schaltschrank halten; Einstellungen nur vor '
-                     'Ort; stromlos-offene Ausführung erhalten und die Auslösung bei '
-                     'jeder Prüfung mitprüfen.',
+           standard=('Parametrierung der RWA-Steuerung schützen; stromlos-offene '
+                     'Ausführung erhalten und die Auslösung bei jeder Prüfung '
+                     'mitprüfen.',
                      'Zugangskontrolle (Hardware), Überwachung'),
            sources=[trbs1115('4.5.2'), en8173('5.2'), en('DIN EN 12101-2'),
                     iec62443()],

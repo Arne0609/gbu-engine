@@ -1,5 +1,5 @@
 {
- "rule_version": "riedl-cyber-2026.4",
+ "rule_version": "riedl-cyber-2026.5",
  "questions": [
   {
    "code": "qa_ueberwachungsbeduerftig",
@@ -1344,9 +1344,9 @@
    "priority_class": "SOFORT"
   },
   {
-   "code": "m_501e2aa43b",
-   "title": "Geeignete Verschließeinrichtung nachrüsten und Schlüsselverwaltung festlegen",
-   "type": "ORGANISATIONAL",
+   "code": "m_522a3065db",
+   "title": "Geeignete Verschließeinrichtung ohne Standardschließung nachrüsten; Schlüsselverwaltung festlegen und den Schlüssel für die Notbefreiung im Schlüsseldepot hinterlegen",
+   "type": "TECHNICAL",
    "priority_class": "MITTELFRISTIG"
   },
   {
@@ -1422,8 +1422,8 @@
    "priority_class": "SOFORT"
   },
   {
-   "code": "m_dd03e432e1",
-   "title": "Freigabeliste für Servicegeräte und Datenträger mit der Wartungsfirma vereinbaren (Härtung nach TRBS 1115-1)",
+   "code": "m_4e8d95dc0d",
+   "title": "Freigabeliste für Servicegeräte und Datenträger mit der Wartungsfirma vereinbaren; Handterminals und Programmiergeräte nur für die Dauer der Arbeiten anstecken und danach gesichert verwahren (Härtung nach TRBS 1115-1)",
    "type": "ORGANISATIONAL",
    "priority_class": "MITTELFRISTIG"
   },
@@ -1506,8 +1506,8 @@
    "priority_class": "SOFORT"
   },
   {
-   "code": "m_50fa3ded1e",
-   "title": "Maschinenraum und Steuerschrank verschlossen halten (keine Standardschließung); Parametrierung der Steuerung passwortgeschützt; Handterminal nur bei Montage- und Wartungsarbeiten anstecken und danach sicher verwahren; nicht benötigte Schnittstellen deaktivieren; Parameteränderungen dokumentieren. Wirksamkeit nachweisen (TRBS 1115-1 Abschn. 5).",
+   "code": "m_6d5793762f",
+   "title": "Parametrierung der Steuerung passwortgeschützt; nicht benötigte Schnittstellen deaktivieren; Parameteränderungen dokumentieren. Wirksamkeit nachweisen (TRBS 1115-1 Abschn. 5).",
    "type": "ORGANISATIONAL",
    "priority_class": "MITTELFRISTIG"
   },
@@ -1590,8 +1590,8 @@
    "priority_class": "SOFORT"
   },
   {
-   "code": "m_285bf2d353",
-   "title": "Maschinenraum, Schaltschrank und Schacht verschlossen halten; Serviceschnittstellen nur für Berechtigte; Parametrierung schützen; nach Eingriffen Sicherheitsfunktionen prüfen. Ein Eingriff am Modul setzt die Anlage still und wird dadurch bemerkt. Wirksamkeit nachweisen (TRBS 1115-1 Abschn. 5).",
+   "code": "m_67bc571c3f",
+   "title": "Serviceschnittstellen nur für Berechtigte; Parametrierung schützen; nach Eingriffen Sicherheitsfunktionen prüfen. Wirksamkeit nachweisen (TRBS 1115-1 Abschn. 5).",
    "type": "ORGANISATIONAL",
    "priority_class": "MITTELFRISTIG"
   },
@@ -1608,8 +1608,8 @@
    "priority_class": "SOFORT"
   },
   {
-   "code": "m_05731578d1",
-   "title": "Maschinenraum und Schaltschrank verschlossen halten; Umrichter passwortgeschützt parametrieren; Handterminal nur bei Montage- und Wartungsarbeiten anstecken und danach sicher verwahren; zulässigen Parametersatz sichern; nach Änderungen Antrieb und Fahrverhalten prüfen. Wirksamkeit nachweisen (TRBS 1115-1 Abschn. 5).",
+   "code": "m_1a5273667c",
+   "title": "Umrichter passwortgeschützt parametrieren; zulässigen Parametersatz sichern; nach Änderungen Antrieb und Fahrverhalten prüfen. Wirksamkeit nachweisen (TRBS 1115-1 Abschn. 5).",
    "type": "ORGANISATIONAL",
    "priority_class": "MITTELFRISTIG"
   },
@@ -1632,8 +1632,8 @@
    "priority_class": "SOFORT"
   },
   {
-   "code": "m_5967189755",
-   "title": "Rufnummer des Notrufgeräts nur dem Befreiungsdienst zugänglich machen und an der Anlage nicht dokumentieren; Notrufgerät passwortgeschützt; Werkszugangsdaten ändern; Routineruf in festen Abständen (EN 81-28: mindestens alle 3 Tage) absetzen und ausbleibende Meldung als Serviceeinsatz behandeln. Wirksamkeit nachweisen (TRBS 1115-1 Abschn. 5).",
+   "code": "m_1d1a7828be",
+   "title": "Rufnummer des Notrufgeräts nur dem Befreiungsdienst zugänglich machen und an der Anlage nicht dokumentieren; Notrufgerät passwortgeschützt; Werkszugangsdaten ändern; Routineruf nach EN 81-28 absetzen und ausbleibende Meldung als Serviceeinsatz behandeln. Wirksamkeit nachweisen (TRBS 1115-1 Abschn. 5).",
    "type": "ORGANISATIONAL",
    "priority_class": "MITTELFRISTIG"
   },
@@ -1650,8 +1650,8 @@
    "priority_class": "SOFORT"
   },
   {
-   "code": "m_0cd0966eaa",
-   "title": "Türsteuergerät ist auf dem Fahrkorbdach verbaut und nur über den Schacht erreichbar; Handterminal nur bei Montage- und Wartungsarbeiten anstecken und danach sicher verwahren; Serviceschnittstellen nur für Berechtigte; Parameter sichern; nach Eingriffen Türfunktionen und Schutzeinrichtungen prüfen. Wirksamkeit nachweisen (TRBS 1115-1 Abschn. 5).",
+   "code": "m_101a8eac8c",
+   "title": "Serviceschnittstellen nur für Berechtigte; Parameter passwortgeschützt sichern; nach Eingriffen Türfunktionen und Schutzeinrichtungen prüfen. Wirksamkeit nachweisen (TRBS 1115-1 Abschn. 5).",
    "type": "ORGANISATIONAL",
    "priority_class": "MITTELFRISTIG"
   },
@@ -1824,8 +1824,8 @@
    "priority_class": "MITTELFRISTIG"
   },
   {
-   "code": "m_af6935ebf0",
-   "title": "Steuerung des Rauchabzugs im verschlossenen Maschinenraum oder in einem abgeschlossenen Schaltschrank halten; Einstellungen nur vor Ort; stromlos-offene Ausführung erhalten und die Auslösung bei jeder Prüfung mitprüfen. Wirksamkeit nachweisen (TRBS 1115-1 Abschn. 5).",
+   "code": "m_5baaa0e94d",
+   "title": "Parametrierung der RWA-Steuerung schützen; stromlos-offene Ausführung erhalten und die Auslösung bei jeder Prüfung mitprüfen. Wirksamkeit nachweisen (TRBS 1115-1 Abschn. 5).",
    "type": "ORGANISATIONAL",
    "priority_class": "MITTELFRISTIG"
   },
@@ -3557,7 +3557,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_501e2aa43b",
+     "measure": "m_522a3065db",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -3784,7 +3784,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_dd03e432e1",
+     "measure": "m_4e8d95dc0d",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -4124,7 +4124,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_50fa3ded1e",
+     "measure": "m_6d5793762f",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -4193,7 +4193,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_50fa3ded1e",
+     "measure": "m_6d5793762f",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -4231,7 +4231,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_50fa3ded1e",
+     "measure": "m_6d5793762f",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -4269,7 +4269,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_50fa3ded1e",
+     "measure": "m_6d5793762f",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -4333,7 +4333,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_50fa3ded1e",
+     "measure": "m_6d5793762f",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -4374,7 +4374,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_50fa3ded1e",
+     "measure": "m_6d5793762f",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -4696,7 +4696,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_285bf2d353",
+     "measure": "m_67bc571c3f",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -4734,7 +4734,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_285bf2d353",
+     "measure": "m_67bc571c3f",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -4798,7 +4798,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_285bf2d353",
+     "measure": "m_67bc571c3f",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -4839,7 +4839,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_285bf2d353",
+     "measure": "m_67bc571c3f",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -5166,7 +5166,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_05731578d1",
+     "measure": "m_1a5273667c",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -5241,7 +5241,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_05731578d1",
+     "measure": "m_1a5273667c",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -5279,7 +5279,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_05731578d1",
+     "measure": "m_1a5273667c",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -5343,7 +5343,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_05731578d1",
+     "measure": "m_1a5273667c",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -5384,7 +5384,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_05731578d1",
+     "measure": "m_1a5273667c",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -5718,7 +5718,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_5967189755",
+     "measure": "m_1d1a7828be",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -5787,7 +5787,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_5967189755",
+     "measure": "m_1d1a7828be",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -5825,7 +5825,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_5967189755",
+     "measure": "m_1d1a7828be",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -5863,7 +5863,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_5967189755",
+     "measure": "m_1d1a7828be",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -5927,7 +5927,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_5967189755",
+     "measure": "m_1d1a7828be",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -5968,7 +5968,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_5967189755",
+     "measure": "m_1d1a7828be",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -6302,7 +6302,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_0cd0966eaa",
+     "measure": "m_101a8eac8c",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -6371,7 +6371,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_0cd0966eaa",
+     "measure": "m_101a8eac8c",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -6409,7 +6409,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_0cd0966eaa",
+     "measure": "m_101a8eac8c",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -6447,7 +6447,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_0cd0966eaa",
+     "measure": "m_101a8eac8c",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -6511,7 +6511,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_0cd0966eaa",
+     "measure": "m_101a8eac8c",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -6552,7 +6552,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_0cd0966eaa",
+     "measure": "m_101a8eac8c",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -7429,7 +7429,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_af6935ebf0",
+     "measure": "m_5baaa0e94d",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -7504,7 +7504,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_af6935ebf0",
+     "measure": "m_5baaa0e94d",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -7542,7 +7542,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_af6935ebf0",
+     "measure": "m_5baaa0e94d",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -7606,7 +7606,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_af6935ebf0",
+     "measure": "m_5baaa0e94d",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true
@@ -7647,7 +7647,7 @@
      "mandatory": true
     },
     {
-     "measure": "m_af6935ebf0",
+     "measure": "m_5baaa0e94d",
      "group_id": "mittel",
      "relation": "SINGLE",
      "mandatory": true

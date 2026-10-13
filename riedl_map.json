@@ -10,9 +10,9 @@
  },
  "kataloge": {
   "gbu": "riedl-mf-2026.3",
-  "cyber": "riedl-cyber-2026.4",
+  "cyber": "riedl-cyber-2026.5",
   "gbu_quelle": "81-20-mf-2026.11",
-  "cyber_quelle": "cyber-mf-2026.5"
+  "cyber_quelle": "cyber-mf-2026.6"
  },
  "ampel": {
   "NO_RISK": "gruen",
@@ -626,7 +626,7 @@
   "kuerzel": "C",
   "titel": "Cybersicherheit",
   "anlagenbereich": "Cybersicherheit – anlagenbezogene Beurteilung nach TRBS 1115-1",
-  "katalog": "cyber-mf-2026.5",
+  "katalog": "cyber-mf-2026.6",
   "zeilen": [
    {
     "nr": 1,

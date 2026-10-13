@@ -79,8 +79,9 @@ hz('CY-Z01', 'Unbefugter physischer Zugang zur Aufzugssteuerung', GRP_ZUGANG,
     r(yes('qz_steuerung_frei'), 'MEDIUM', prio=250,
       sofort='Zugang zur Steuerung auf Berechtigte beschränken (Schloss, '
              'Schlüsselregelung)',
-      mittel='Geeignete Verschließeinrichtung nachrüsten und Schlüsselverwaltung '
-             'festlegen',
+      mittel='Geeignete Verschließeinrichtung ohne Standardschließung nachrüsten; '
+             'Schlüsselverwaltung festlegen und den Schlüssel für die Notbefreiung '
+             'im Schlüsseldepot hinterlegen',
       klaerung=['K-C12'], evidence='HIGH_CONFIDENCE',
       notes='Entspricht dem beobachteten Ergebnis Schindler MC1 (Mittel).'),
     r(no('qz_service_gesichert'), 'LOW', prio=200,
@@ -132,6 +133,8 @@ hz('CY-Z05', 'Ungeregelte Servicegeräte und Wechseldatenträger', GRP_HAERTUNG,
    [r(no('qz_servicegeraete'), 'MEDIUM', prio=250,
       sofort='Anschluss privater oder ungeprüfter Geräte und Datenträger untersagen',
       mittel='Freigabeliste für Servicegeräte und Datenträger mit der Wartungsfirma '
-             'vereinbaren (Härtung nach TRBS 1115-1)')],
+             'vereinbaren; Handterminals und Programmiergeräte nur für die Dauer '
+             'der Arbeiten anstecken und danach gesichert verwahren (Härtung nach '
+             'TRBS 1115-1)')],
    sources=[trbs1115('4.5.2 Härtung'), zues_ba017()],
    factor=F_MANIP, persons=[NUTZER, WARTUNG], bereich='Z')

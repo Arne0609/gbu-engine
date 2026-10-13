@@ -51,7 +51,7 @@ UNTERTITEL = ('Anlagenbezogene Beurteilung nach ArbSchG, BetrSichV, TRBS 3121 '
 VARIANTE = 'Riedl'                 # Anzeigename der Variante
 TYP_SCHLUESSEL = 'riedl'           # Vorschlag für GbuTypen in der App
 RULE_VERSION_GBU = 'riedl-mf-2026.3'      # .3: Notfallplan aus der Notrufaufschaltung (12.10.2026)
-RULE_VERSION_CYBER = 'riedl-cyber-2026.4'  # .4: Entrauchung eigene Komponente, konkrete Maßnahmen (12.10.2026)
+RULE_VERSION_CYBER = 'riedl-cyber-2026.5'  # .5: Maßnahme zur Gefährdung, nicht Schutzkonzept (13.10.2026)
 VORLAGE_GBU = 'VFA Interlift, Version 21.08.2024 R 1.7.2 (Nutzungsrecht VFA-Akademie)'
 VORLAGE_CYBER = 'Vorlage GBU Cybersicherheit ab 04-26 (TRBS 1115-1, IEC 62443)'
 
