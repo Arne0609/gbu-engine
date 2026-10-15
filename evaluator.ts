@@ -185,7 +185,21 @@ const SEVERITY: Record<RiskStatus, number> = {
 };
 
 function isAnswered(answers: AnswerMap, q: string): boolean {
-  return Object.prototype.hasOwnProperty.call(answers, q) && answers[q] !== null;
+  if (!Object.prototype.hasOwnProperty.call(answers, q)) return false;
+  const v = answers[q];
+  if (v === null) return false;
+  // Leere Mehrfachauswahl = nichts angekreuzt = unbeantwortet. Sonst waere
+  // „noch nicht bearbeitet" von „geprueft, es gibt keine" nicht zu
+  // unterscheiden - und die Vorscreening-Regel (keine Schnittstelle ->
+  // Kein Risiko) wuerde fuer jede unbearbeitete Komponente zutreffen.
+  if (Array.isArray(v) && v.length === 0) return false;
+  return true;
+}
+
+/** Antwort als Liste - eine Einfachantwort wird zur einelementigen Liste. */
+function alsListe(v: unknown): AnswerValue[] {
+  if (v === null || v === undefined) return [];
+  return Array.isArray(v) ? (v as AnswerValue[]) : [v as AnswerValue];
 }
 
 /** „Ausdrueckliches Nein" fuer Applicability-Fragen. */
@@ -212,6 +226,15 @@ function evalLeaf(leaf: Leaf, answers: AnswerMap): boolean {
     case 'LTE': return answered && typeof v === 'number' && v <= (leaf.value as number);
     case 'IN':  return answered && Array.isArray(leaf.value) && leaf.value.includes(v as AnswerValue);
     case 'NOT_IN': return answered && Array.isArray(leaf.value) && !leaf.value.includes(v as AnswerValue);
+    // Mehrfachauswahl (16.10.2026): Die ANTWORT ist hier die Liste, nicht der
+    // Wert der Regel. Eine einzelne Antwort wird mitgenommen, damit Bestaende
+    // aus der Zeit der Einfachauswahl weiter bewertet werden.
+    case 'CONTAINS_ANY':
+      return answered && Array.isArray(leaf.value) &&
+        alsListe(v).some((x) => (leaf.value as AnswerValue[]).includes(x));
+    case 'NOT_CONTAINS_ANY':
+      return answered && Array.isArray(leaf.value) &&
+        !alsListe(v).some((x) => (leaf.value as AnswerValue[]).includes(x));
     default: return false;
   }
 }

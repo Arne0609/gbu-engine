@@ -51,7 +51,9 @@ UNTERTITEL = ('Anlagenbezogene Beurteilung nach ArbSchG, BetrSichV, TRBS 3121 '
 VARIANTE = 'Riedl'                 # Anzeigename der Variante
 TYP_SCHLUESSEL = 'riedl'           # Vorschlag für GbuTypen in der App
 RULE_VERSION_GBU = 'riedl-mf-2026.3'      # .3: Notfallplan aus der Notrufaufschaltung (12.10.2026)
-RULE_VERSION_CYBER = 'riedl-cyber-2026.7'  # .7: Bereich Z gekürzt, Netzfragen nach N (16.10.2026)
+RULE_VERSION_CYBER = 'riedl-cyber-2026.8'  # .8: Schnittstellen als Mehrfachauswahl,
+# Funktionsreduzierung statt Härtung (16.10.2026)
+# .7: Bereich Z gekürzt, Netzfragen nach N (16.10.2026)
 # .6: Bereich O gekürzt, ZÜS-Abschlusscheck entfallen (13.10.2026)
 # .5: Maßnahme zur Gefährdung, nicht Schutzkonzept (13.10.2026)
 VORLAGE_GBU = 'VFA Interlift, Version 21.08.2024 R 1.7.2 (Nutzungsrecht VFA-Akademie)'
@@ -536,7 +538,7 @@ CYBER_BLATT = {
    'excel': ['Fernzugriff über Netzwerk', 'Vorlage der Beurteilung des vorhandenen Netzes durch Betreiber'],
    'erlaeuterung': '',
    'bemerkung': 'Ohne Netzanbindung (1.5) sind C11–C13 nicht zutreffend; Softwarestand (4.5) und '
-                'Härtung (4.6) werden immer gefragt.'},
+                'Funktionsreduzierung (4.6) werden immer gefragt.'},
   {'nr': 10, 'komponente': '', 'titel': 'Herstellervorgaben und prüfpflichtige Änderungen',
    'hazards': ['CY-O02', 'CY-O06'], 'deckung': 'voll',
    'excel': ['Allgemeines (Absätze 2–5 der Vorlage)', 'Überprüfung der Wirksamkeit der Cybersicherheitsmaßnahmen'],

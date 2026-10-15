@@ -21,6 +21,8 @@
     "LTE",
     "IN",
     "NOT_IN",
+    "CONTAINS_ANY",
+    "NOT_CONTAINS_ANY",
     "ANSWERED",
     "NOT_ANSWERED"
    ],

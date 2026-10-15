@@ -10,9 +10,9 @@
  },
  "kataloge": {
   "gbu": "riedl-mf-2026.3",
-  "cyber": "riedl-cyber-2026.7",
+  "cyber": "riedl-cyber-2026.8",
   "gbu_quelle": "81-20-mf-2026.11",
-  "cyber_quelle": "cyber-mf-2026.8"
+  "cyber_quelle": "cyber-mf-2026.9"
  },
  "ampel": {
   "NO_RISK": "gruen",
@@ -626,7 +626,7 @@
   "kuerzel": "C",
   "titel": "Cybersicherheit",
   "anlagenbereich": "Cybersicherheit – anlagenbezogene Beurteilung nach TRBS 1115-1",
-  "katalog": "cyber-mf-2026.8",
+  "katalog": "cyber-mf-2026.9",
   "zeilen": [
    {
     "nr": 1,
@@ -744,7 +744,7 @@
      "CY-N02"
     ],
     "deckung": "voll",
-    "bemerkung": "Ohne Netzanbindung (1.5) sind C11–C13 nicht zutreffend; Softwarestand (4.5) und Härtung (4.6) werden immer gefragt.",
+    "bemerkung": "Ohne Netzanbindung (1.5) sind C11–C13 nicht zutreffend; Softwarestand (4.5) und Funktionsreduzierung (4.6) werden immer gefragt.",
     "trbs_anhang1": [],
     "komponente": "",
     "erlaeuterung": ""

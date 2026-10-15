@@ -37,7 +37,7 @@ _C.CATS.update([
     ('A', 'A – Anlagenmerkmale und Systemabgrenzung'),
     ('Z', 'Z – Zugang und Zugriff'),
     ('C', 'C – Komponenten und Schnittstellen'),
-    ('N', 'N – Netz, Fernzugriff und Härtung'),
+    ('N', 'N – Netz, Fernzugriff und Funktionsreduzierung'),
     ('O', 'O – Prüfpflichtige Änderungen'),
 ])
 _C._PREFIX2CAT.clear()
@@ -58,7 +58,7 @@ _C.GROUPS[:] = [
     'Netz, Fernzugriff und Fernwartung',
     'Gebäudeschnittstelle',
     'Zugang und Zugriff',
-    'Härtung und Servicegeräte',
+    'Funktionsreduzierung und Softwarestand',
     'Organisation und Notfallmanagement',
     'Nachweise und Wirksamkeit',
 ]
@@ -113,6 +113,10 @@ IF_OPTIONS = [
 ]
 IF_LOKAL = [IF_KABEL, IF_BENUTZER]
 IF_ENTFERNT = [IF_KABELLOS, IF_FERN]
+# Alles, was angreifbar ist - das Gegenstueck zu „keine". Seit der
+# Mehrfachauswahl (16.10.2026) steht die Vorscreening-Regel nicht mehr auf
+# „Antwort ist keine", sondern auf „nichts hiervon angekreuzt".
+IF_ANGREIFBAR = IF_LOKAL + IF_ENTFERNT
 
 # ---- Maßnahmenstand je Komponente -----------------------------------------
 M_KEINE, M_TEILWEISE, M_UMGESETZT = 'keine', 'teilweise', 'umgesetzt'

@@ -1,5 +1,5 @@
 {
- "rule_version": "cyber-mf-2026.8",
+ "rule_version": "cyber-mf-2026.9",
  "questions": [
   {
    "code": "qa_aufzugsart",
@@ -196,13 +196,13 @@
   },
   {
    "code": "qc_steuerung_schnittstelle",
-   "type": "SELECT",
+   "type": "MULTI_SELECT",
    "domain": "CYBER",
-   "text": "Höchste vorhandene Schnittstellenkategorie der Komponente „Aufzugssteuerung\"",
+   "text": "Vorhandene Schnittstellen der Komponente „Aufzugssteuerung\" (alle zutreffenden)",
    "category": "C – Komponenten und Schnittstellen",
    "rolle": "techniker",
    "ui_number": "3.1.2",
-   "help_text": "Maßgeblich ist die angreifbarste Schnittstelle. Konkrete Schnittstellen (USB, CAN, Mobilfunk …) in der App dokumentieren.",
+   "help_text": "Mehrfachauswahl (16.10.2026, Festlegung Arne): Eine Komponente hat oft mehrere Schnittstellen - etwa einen Serviceanschluss UND ein Funkmodul. Für die Stufe zählt die angreifbarste angekreuzte (keine < kabelgebunden < Benutzerschnittstelle < kabellos < Fernzugriff, K-C03). „Keine\" schließt die übrigen aus. Konkrete Bezeichnungen (USB, CAN, Mobilfunk …) in der Bemerkung dokumentieren.",
    "visible_when": {
     "question": "qa_steuerungsart",
     "operator": "NEQ",
@@ -250,8 +250,13 @@
      },
      {
       "question": "qc_steuerung_schnittstelle",
-      "operator": "NEQ",
-      "value": "keine"
+      "operator": "CONTAINS_ANY",
+      "value": [
+       "kabelgebunden",
+       "benutzer",
+       "kabellos",
+       "fernzugriff"
+      ]
      }
     ]
    },
@@ -288,8 +293,13 @@
      },
      {
       "question": "qc_steuerung_schnittstelle",
-      "operator": "NEQ",
-      "value": "keine"
+      "operator": "CONTAINS_ANY",
+      "value": [
+       "kabelgebunden",
+       "benutzer",
+       "kabellos",
+       "fernzugriff"
+      ]
      }
     ]
    },
@@ -325,13 +335,13 @@
   },
   {
    "code": "qc_pessral_schnittstelle",
-   "type": "SELECT",
+   "type": "MULTI_SELECT",
    "domain": "CYBER",
-   "text": "Höchste vorhandene Schnittstellenkategorie der Komponente „PESSRAL (programmierbare Sicherheitsschaltung)\"",
+   "text": "Vorhandene Schnittstellen der Komponente „PESSRAL (programmierbare Sicherheitsschaltung)\" (alle zutreffenden)",
    "category": "C – Komponenten und Schnittstellen",
    "rolle": "techniker",
    "ui_number": "3.2.2",
-   "help_text": "Maßgeblich ist die angreifbarste Schnittstelle. Konkrete Schnittstellen (USB, CAN, Mobilfunk …) in der App dokumentieren.",
+   "help_text": "Mehrfachauswahl (16.10.2026, Festlegung Arne): Eine Komponente hat oft mehrere Schnittstellen - etwa einen Serviceanschluss UND ein Funkmodul. Für die Stufe zählt die angreifbarste angekreuzte (keine < kabelgebunden < Benutzerschnittstelle < kabellos < Fernzugriff, K-C03). „Keine\" schließt die übrigen aus. Konkrete Bezeichnungen (USB, CAN, Mobilfunk …) in der Bemerkung dokumentieren.",
    "visible_when": {
     "question": "qc_pessral_vorhanden",
     "operator": "EQ",
@@ -379,8 +389,13 @@
      },
      {
       "question": "qc_pessral_schnittstelle",
-      "operator": "NEQ",
-      "value": "keine"
+      "operator": "CONTAINS_ANY",
+      "value": [
+       "kabelgebunden",
+       "benutzer",
+       "kabellos",
+       "fernzugriff"
+      ]
      }
     ]
    },
@@ -430,13 +445,13 @@
   },
   {
    "code": "qc_fu_schnittstelle",
-   "type": "SELECT",
+   "type": "MULTI_SELECT",
    "domain": "CYBER",
-   "text": "Höchste vorhandene Schnittstellenkategorie der Komponente „Frequenzumrichter\"",
+   "text": "Vorhandene Schnittstellen der Komponente „Frequenzumrichter\" (alle zutreffenden)",
    "category": "C – Komponenten und Schnittstellen",
    "rolle": "techniker",
    "ui_number": "3.3.2",
-   "help_text": "Maßgeblich ist die angreifbarste Schnittstelle. Konkrete Schnittstellen (USB, CAN, Mobilfunk …) in der App dokumentieren.",
+   "help_text": "Mehrfachauswahl (16.10.2026, Festlegung Arne): Eine Komponente hat oft mehrere Schnittstellen - etwa einen Serviceanschluss UND ein Funkmodul. Für die Stufe zählt die angreifbarste angekreuzte (keine < kabelgebunden < Benutzerschnittstelle < kabellos < Fernzugriff, K-C03). „Keine\" schließt die übrigen aus. Konkrete Bezeichnungen (USB, CAN, Mobilfunk …) in der Bemerkung dokumentieren.",
    "visible_when": {
     "question": "qc_fu_vorhanden",
     "operator": "EQ",
@@ -484,8 +499,13 @@
      },
      {
       "question": "qc_fu_schnittstelle",
-      "operator": "NEQ",
-      "value": "keine"
+      "operator": "CONTAINS_ANY",
+      "value": [
+       "kabelgebunden",
+       "benutzer",
+       "kabellos",
+       "fernzugriff"
+      ]
      }
     ]
    },
@@ -522,8 +542,13 @@
      },
      {
       "question": "qc_fu_schnittstelle",
-      "operator": "NEQ",
-      "value": "keine"
+      "operator": "CONTAINS_ANY",
+      "value": [
+       "kabelgebunden",
+       "benutzer",
+       "kabellos",
+       "fernzugriff"
+      ]
      }
     ]
    },
@@ -559,13 +584,13 @@
   },
   {
    "code": "qc_notruf_schnittstelle",
-   "type": "SELECT",
+   "type": "MULTI_SELECT",
    "domain": "CYBER",
-   "text": "Höchste vorhandene Schnittstellenkategorie der Komponente „Notrufsystem (Zwei-Wege-Kommunikation)\"",
+   "text": "Vorhandene Schnittstellen der Komponente „Notrufsystem (Zwei-Wege-Kommunikation)\" (alle zutreffenden)",
    "category": "C – Komponenten und Schnittstellen",
    "rolle": "techniker",
    "ui_number": "3.4.2",
-   "help_text": "Maßgeblich ist die angreifbarste Schnittstelle. Konkrete Schnittstellen (USB, CAN, Mobilfunk …) in der App dokumentieren.",
+   "help_text": "Mehrfachauswahl (16.10.2026, Festlegung Arne): Eine Komponente hat oft mehrere Schnittstellen - etwa einen Serviceanschluss UND ein Funkmodul. Für die Stufe zählt die angreifbarste angekreuzte (keine < kabelgebunden < Benutzerschnittstelle < kabellos < Fernzugriff, K-C03). „Keine\" schließt die übrigen aus. Konkrete Bezeichnungen (USB, CAN, Mobilfunk …) in der Bemerkung dokumentieren.",
    "visible_when": {
     "question": "qc_notruf_vorhanden",
     "operator": "EQ",
@@ -613,8 +638,13 @@
      },
      {
       "question": "qc_notruf_schnittstelle",
-      "operator": "NEQ",
-      "value": "keine"
+      "operator": "CONTAINS_ANY",
+      "value": [
+       "kabelgebunden",
+       "benutzer",
+       "kabellos",
+       "fernzugriff"
+      ]
      }
     ]
    },
@@ -651,8 +681,13 @@
      },
      {
       "question": "qc_notruf_schnittstelle",
-      "operator": "NEQ",
-      "value": "keine"
+      "operator": "CONTAINS_ANY",
+      "value": [
+       "kabelgebunden",
+       "benutzer",
+       "kabellos",
+       "fernzugriff"
+      ]
      }
     ]
    },
@@ -688,13 +723,13 @@
   },
   {
    "code": "qc_kopierung_schnittstelle",
-   "type": "SELECT",
+   "type": "MULTI_SELECT",
    "domain": "CYBER",
-   "text": "Höchste vorhandene Schnittstellenkategorie der Komponente „Schachtkopierung / Positionierung\"",
+   "text": "Vorhandene Schnittstellen der Komponente „Schachtkopierung / Positionierung\" (alle zutreffenden)",
    "category": "C – Komponenten und Schnittstellen",
    "rolle": "techniker",
    "ui_number": "3.5.2",
-   "help_text": "Maßgeblich ist die angreifbarste Schnittstelle. Konkrete Schnittstellen (USB, CAN, Mobilfunk …) in der App dokumentieren.",
+   "help_text": "Mehrfachauswahl (16.10.2026, Festlegung Arne): Eine Komponente hat oft mehrere Schnittstellen - etwa einen Serviceanschluss UND ein Funkmodul. Für die Stufe zählt die angreifbarste angekreuzte (keine < kabelgebunden < Benutzerschnittstelle < kabellos < Fernzugriff, K-C03). „Keine\" schließt die übrigen aus. Konkrete Bezeichnungen (USB, CAN, Mobilfunk …) in der Bemerkung dokumentieren.",
    "visible_when": {
     "question": "qc_kopierung_vorhanden",
     "operator": "EQ",
@@ -742,8 +777,13 @@
      },
      {
       "question": "qc_kopierung_schnittstelle",
-      "operator": "NEQ",
-      "value": "keine"
+      "operator": "CONTAINS_ANY",
+      "value": [
+       "kabelgebunden",
+       "benutzer",
+       "kabellos",
+       "fernzugriff"
+      ]
      }
     ]
    },
@@ -780,8 +820,13 @@
      },
      {
       "question": "qc_kopierung_schnittstelle",
-      "operator": "NEQ",
-      "value": "keine"
+      "operator": "CONTAINS_ANY",
+      "value": [
+       "kabelgebunden",
+       "benutzer",
+       "kabellos",
+       "fernzugriff"
+      ]
      }
     ]
    },
@@ -817,13 +862,13 @@
   },
   {
    "code": "qc_tuer_schnittstelle",
-   "type": "SELECT",
+   "type": "MULTI_SELECT",
    "domain": "CYBER",
-   "text": "Höchste vorhandene Schnittstellenkategorie der Komponente „Türsteuerung\"",
+   "text": "Vorhandene Schnittstellen der Komponente „Türsteuerung\" (alle zutreffenden)",
    "category": "C – Komponenten und Schnittstellen",
    "rolle": "techniker",
    "ui_number": "3.6.2",
-   "help_text": "Maßgeblich ist die angreifbarste Schnittstelle. Konkrete Schnittstellen (USB, CAN, Mobilfunk …) in der App dokumentieren.",
+   "help_text": "Mehrfachauswahl (16.10.2026, Festlegung Arne): Eine Komponente hat oft mehrere Schnittstellen - etwa einen Serviceanschluss UND ein Funkmodul. Für die Stufe zählt die angreifbarste angekreuzte (keine < kabelgebunden < Benutzerschnittstelle < kabellos < Fernzugriff, K-C03). „Keine\" schließt die übrigen aus. Konkrete Bezeichnungen (USB, CAN, Mobilfunk …) in der Bemerkung dokumentieren.",
    "visible_when": {
     "question": "qc_tuer_vorhanden",
     "operator": "EQ",
@@ -871,8 +916,13 @@
      },
      {
       "question": "qc_tuer_schnittstelle",
-      "operator": "NEQ",
-      "value": "keine"
+      "operator": "CONTAINS_ANY",
+      "value": [
+       "kabelgebunden",
+       "benutzer",
+       "kabellos",
+       "fernzugriff"
+      ]
      }
     ]
    },
@@ -909,8 +959,13 @@
      },
      {
       "question": "qc_tuer_schnittstelle",
-      "operator": "NEQ",
-      "value": "keine"
+      "operator": "CONTAINS_ANY",
+      "value": [
+       "kabelgebunden",
+       "benutzer",
+       "kabellos",
+       "fernzugriff"
+      ]
      }
     ]
    },
@@ -946,13 +1001,13 @@
   },
   {
    "code": "qc_ucm_schnittstelle",
-   "type": "SELECT",
+   "type": "MULTI_SELECT",
    "domain": "CYBER",
-   "text": "Höchste vorhandene Schnittstellenkategorie der Komponente „UCM-Erkennung\"",
+   "text": "Vorhandene Schnittstellen der Komponente „UCM-Erkennung\" (alle zutreffenden)",
    "category": "C – Komponenten und Schnittstellen",
    "rolle": "techniker",
    "ui_number": "3.7.2",
-   "help_text": "Maßgeblich ist die angreifbarste Schnittstelle. Konkrete Schnittstellen (USB, CAN, Mobilfunk …) in der App dokumentieren.",
+   "help_text": "Mehrfachauswahl (16.10.2026, Festlegung Arne): Eine Komponente hat oft mehrere Schnittstellen - etwa einen Serviceanschluss UND ein Funkmodul. Für die Stufe zählt die angreifbarste angekreuzte (keine < kabelgebunden < Benutzerschnittstelle < kabellos < Fernzugriff, K-C03). „Keine\" schließt die übrigen aus. Konkrete Bezeichnungen (USB, CAN, Mobilfunk …) in der Bemerkung dokumentieren.",
    "visible_when": {
     "question": "qc_ucm_vorhanden",
     "operator": "EQ",
@@ -1000,8 +1055,13 @@
      },
      {
       "question": "qc_ucm_schnittstelle",
-      "operator": "NEQ",
-      "value": "keine"
+      "operator": "CONTAINS_ANY",
+      "value": [
+       "kabelgebunden",
+       "benutzer",
+       "kabellos",
+       "fernzugriff"
+      ]
      }
     ]
    },
@@ -1038,8 +1098,13 @@
      },
      {
       "question": "qc_ucm_schnittstelle",
-      "operator": "NEQ",
-      "value": "keine"
+      "operator": "CONTAINS_ANY",
+      "value": [
+       "kabelgebunden",
+       "benutzer",
+       "kabellos",
+       "fernzugriff"
+      ]
      }
     ]
    },
@@ -1075,13 +1140,13 @@
   },
   {
    "code": "qc_safue_schnittstelle",
-   "type": "SELECT",
+   "type": "MULTI_SELECT",
    "domain": "CYBER",
-   "text": "Höchste vorhandene Schnittstellenkategorie der Komponente „SAFÜ (Schutz gegen Übergeschwindigkeit)\"",
+   "text": "Vorhandene Schnittstellen der Komponente „SAFÜ (Schutz gegen Übergeschwindigkeit)\" (alle zutreffenden)",
    "category": "C – Komponenten und Schnittstellen",
    "rolle": "techniker",
    "ui_number": "3.8.2",
-   "help_text": "Maßgeblich ist die angreifbarste Schnittstelle. Konkrete Schnittstellen (USB, CAN, Mobilfunk …) in der App dokumentieren.",
+   "help_text": "Mehrfachauswahl (16.10.2026, Festlegung Arne): Eine Komponente hat oft mehrere Schnittstellen - etwa einen Serviceanschluss UND ein Funkmodul. Für die Stufe zählt die angreifbarste angekreuzte (keine < kabelgebunden < Benutzerschnittstelle < kabellos < Fernzugriff, K-C03). „Keine\" schließt die übrigen aus. Konkrete Bezeichnungen (USB, CAN, Mobilfunk …) in der Bemerkung dokumentieren.",
    "visible_when": {
     "question": "qc_safue_vorhanden",
     "operator": "EQ",
@@ -1129,8 +1194,13 @@
      },
      {
       "question": "qc_safue_schnittstelle",
-      "operator": "NEQ",
-      "value": "keine"
+      "operator": "CONTAINS_ANY",
+      "value": [
+       "kabelgebunden",
+       "benutzer",
+       "kabellos",
+       "fernzugriff"
+      ]
      }
     ]
    },
@@ -1167,8 +1237,13 @@
      },
      {
       "question": "qc_safue_schnittstelle",
-      "operator": "NEQ",
-      "value": "keine"
+      "operator": "CONTAINS_ANY",
+      "value": [
+       "kabelgebunden",
+       "benutzer",
+       "kabellos",
+       "fernzugriff"
+      ]
      }
     ]
    },
@@ -1204,13 +1279,13 @@
   },
   {
    "code": "qc_tragmittel_schnittstelle",
-   "type": "SELECT",
+   "type": "MULTI_SELECT",
    "domain": "CYBER",
-   "text": "Höchste vorhandene Schnittstellenkategorie der Komponente „Tragmittelüberwachung\"",
+   "text": "Vorhandene Schnittstellen der Komponente „Tragmittelüberwachung\" (alle zutreffenden)",
    "category": "C – Komponenten und Schnittstellen",
    "rolle": "techniker",
    "ui_number": "3.9.2",
-   "help_text": "Maßgeblich ist die angreifbarste Schnittstelle. Konkrete Schnittstellen (USB, CAN, Mobilfunk …) in der App dokumentieren.",
+   "help_text": "Mehrfachauswahl (16.10.2026, Festlegung Arne): Eine Komponente hat oft mehrere Schnittstellen - etwa einen Serviceanschluss UND ein Funkmodul. Für die Stufe zählt die angreifbarste angekreuzte (keine < kabelgebunden < Benutzerschnittstelle < kabellos < Fernzugriff, K-C03). „Keine\" schließt die übrigen aus. Konkrete Bezeichnungen (USB, CAN, Mobilfunk …) in der Bemerkung dokumentieren.",
    "visible_when": {
     "question": "qc_tragmittel_vorhanden",
     "operator": "EQ",
@@ -1258,8 +1333,13 @@
      },
      {
       "question": "qc_tragmittel_schnittstelle",
-      "operator": "NEQ",
-      "value": "keine"
+      "operator": "CONTAINS_ANY",
+      "value": [
+       "kabelgebunden",
+       "benutzer",
+       "kabellos",
+       "fernzugriff"
+      ]
      }
     ]
    },
@@ -1296,8 +1376,13 @@
      },
      {
       "question": "qc_tragmittel_schnittstelle",
-      "operator": "NEQ",
-      "value": "keine"
+      "operator": "CONTAINS_ANY",
+      "value": [
+       "kabelgebunden",
+       "benutzer",
+       "kabellos",
+       "fernzugriff"
+      ]
      }
     ]
    },
@@ -1353,13 +1438,13 @@
   },
   {
    "code": "qc_hydraulik_schnittstelle",
-   "type": "SELECT",
+   "type": "MULTI_SELECT",
    "domain": "CYBER",
-   "text": "Höchste vorhandene Schnittstellenkategorie der Komponente „Hydraulischer Steuerblock\"",
+   "text": "Vorhandene Schnittstellen der Komponente „Hydraulischer Steuerblock\" (alle zutreffenden)",
    "category": "C – Komponenten und Schnittstellen",
    "rolle": "techniker",
    "ui_number": "3.10.2",
-   "help_text": "Maßgeblich ist die angreifbarste Schnittstelle. Konkrete Schnittstellen (USB, CAN, Mobilfunk …) in der App dokumentieren.",
+   "help_text": "Mehrfachauswahl (16.10.2026, Festlegung Arne): Eine Komponente hat oft mehrere Schnittstellen - etwa einen Serviceanschluss UND ein Funkmodul. Für die Stufe zählt die angreifbarste angekreuzte (keine < kabelgebunden < Benutzerschnittstelle < kabellos < Fernzugriff, K-C03). „Keine\" schließt die übrigen aus. Konkrete Bezeichnungen (USB, CAN, Mobilfunk …) in der Bemerkung dokumentieren.",
    "visible_when": {
     "all": [
      {
@@ -1431,8 +1516,13 @@
      },
      {
       "question": "qc_hydraulik_schnittstelle",
-      "operator": "NEQ",
-      "value": "keine"
+      "operator": "CONTAINS_ANY",
+      "value": [
+       "kabelgebunden",
+       "benutzer",
+       "kabellos",
+       "fernzugriff"
+      ]
      }
     ]
    },
@@ -1481,8 +1571,13 @@
      },
      {
       "question": "qc_hydraulik_schnittstelle",
-      "operator": "NEQ",
-      "value": "keine"
+      "operator": "CONTAINS_ANY",
+      "value": [
+       "kabelgebunden",
+       "benutzer",
+       "kabellos",
+       "fernzugriff"
+      ]
      }
     ]
    },
@@ -1518,13 +1613,13 @@
   },
   {
    "code": "qc_entrauchung_schnittstelle",
-   "type": "SELECT",
+   "type": "MULTI_SELECT",
    "domain": "CYBER",
-   "text": "Höchste vorhandene Schnittstellenkategorie der Komponente „Schachtentrauchung (RWA-Steuerung)\"",
+   "text": "Vorhandene Schnittstellen der Komponente „Schachtentrauchung (RWA-Steuerung)\" (alle zutreffenden)",
    "category": "C – Komponenten und Schnittstellen",
    "rolle": "techniker",
    "ui_number": "3.15.2",
-   "help_text": "Maßgeblich ist die angreifbarste Schnittstelle. Konkrete Schnittstellen (USB, CAN, Mobilfunk …) in der App dokumentieren.",
+   "help_text": "Mehrfachauswahl (16.10.2026, Festlegung Arne): Eine Komponente hat oft mehrere Schnittstellen - etwa einen Serviceanschluss UND ein Funkmodul. Für die Stufe zählt die angreifbarste angekreuzte (keine < kabelgebunden < Benutzerschnittstelle < kabellos < Fernzugriff, K-C03). „Keine\" schließt die übrigen aus. Konkrete Bezeichnungen (USB, CAN, Mobilfunk …) in der Bemerkung dokumentieren.",
    "visible_when": {
     "question": "qc_entrauchung_vorhanden",
     "operator": "EQ",
@@ -1572,8 +1667,13 @@
      },
      {
       "question": "qc_entrauchung_schnittstelle",
-      "operator": "NEQ",
-      "value": "keine"
+      "operator": "CONTAINS_ANY",
+      "value": [
+       "kabelgebunden",
+       "benutzer",
+       "kabellos",
+       "fernzugriff"
+      ]
      }
     ]
    },
@@ -1610,8 +1710,13 @@
      },
      {
       "question": "qc_entrauchung_schnittstelle",
-      "operator": "NEQ",
-      "value": "keine"
+      "operator": "CONTAINS_ANY",
+      "value": [
+       "kabelgebunden",
+       "benutzer",
+       "kabellos",
+       "fernzugriff"
+      ]
      }
     ]
    },
@@ -1652,7 +1757,7 @@
    "type": "YES_NO",
    "domain": "CYBER",
    "text": "Ist das Aufzugsnetz vom Gebäude-/Büronetz und vom Internet getrennt (eigenes Segment, Firewall, keine direkte Erreichbarkeit der Steuerung von außen)?",
-   "category": "N – Netz, Fernzugriff und Härtung",
+   "category": "N – Netz, Fernzugriff und Funktionsreduzierung",
    "rolle": "techniker",
    "ui_number": "4.1",
    "help_text": "Gilt kanalübergreifend für ALLE Zugangswege der Anlage (Fernüberwachung, Remote-Service/Fernwartung, Gateway, Servicegeräte vor Ort). Sind die Kanäle technisch getrennt – etwa Hersteller-Cloud und Wartungs-VPN –, gilt der schlechteste Fall: „Ja\" nur, wenn es für JEDEN vorhandenen Kanal zutrifft (Prüfbericht 20.09.2026).",
@@ -1668,7 +1773,7 @@
    "type": "YES_NO",
    "domain": "CYBER",
    "text": "Wird ein Fernzugriff nur nach Freigabe durch den Betreiber und nur für die Dauer des Bedarfs aktiviert?",
-   "category": "N – Netz, Fernzugriff und Härtung",
+   "category": "N – Netz, Fernzugriff und Funktionsreduzierung",
    "rolle": "betreiber",
    "ui_number": "4.2",
    "help_text": "Nur bei vorhandenem Remote-Service / vorhandener Fernwartung (3.12.1). Eine reine Fernüberwachung ohne Schreibzugriff braucht kein Freigabeverfahren (Prüfbericht 20.09.2026).",
@@ -1693,7 +1798,7 @@
    "type": "YES_NO",
    "domain": "CYBER",
    "text": "Ist der Fernzugriff individuell authentifiziert (personenbezogene Zugänge, Zwei-Faktor oder gleichwertig) und verschlüsselt?",
-   "category": "N – Netz, Fernzugriff und Härtung",
+   "category": "N – Netz, Fernzugriff und Funktionsreduzierung",
    "rolle": "betreiber",
    "ui_number": "4.3",
    "help_text": "Gilt kanalübergreifend für ALLE Zugangswege der Anlage (Fernüberwachung, Remote-Service/Fernwartung, Gateway, Servicegeräte vor Ort). Sind die Kanäle technisch getrennt – etwa Hersteller-Cloud und Wartungs-VPN –, gilt der schlechteste Fall: „Ja\" nur, wenn es für JEDEN vorhandenen Kanal zutrifft (Prüfbericht 20.09.2026).",
@@ -1709,7 +1814,7 @@
    "type": "YES_NO",
    "domain": "CYBER",
    "text": "Werden Zugriffe auf die Anlage (vor Ort über Servicegeräte und per Fernzugriff) protokolliert und die Protokolle ausgewertet?",
-   "category": "N – Netz, Fernzugriff und Härtung",
+   "category": "N – Netz, Fernzugriff und Funktionsreduzierung",
    "rolle": "betreiber",
    "ui_number": "4.4",
    "help_text": "Gilt kanalübergreifend für ALLE Zugangswege der Anlage (Fernüberwachung, Remote-Service/Fernwartung, Gateway, Servicegeräte vor Ort). Sind die Kanäle technisch getrennt – etwa Hersteller-Cloud und Wartungs-VPN –, gilt der schlechteste Fall: „Ja\" nur, wenn es für JEDEN vorhandenen Kanal zutrifft (Prüfbericht 20.09.2026).",
@@ -1720,7 +1825,7 @@
    "type": "SELECT",
    "domain": "CYBER",
    "text": "Software-/Firmwarestand und bekannte Schwachstellen",
-   "category": "N – Netz, Fernzugriff und Härtung",
+   "category": "N – Netz, Fernzugriff und Funktionsreduzierung",
    "rolle": "techniker",
    "ui_number": "4.5",
    "help_text": "TRBS 1115-1: Herstellerhinweise zu Schwachstellen sind Teil des Stands der Technik (EK-ZÜS B-002 Anhang 2 Nr. 5 und 10).",
@@ -1745,7 +1850,7 @@
    "type": "YES_NO",
    "domain": "CYBER",
    "text": "Sind nicht benötigte Funktionen, Ports, Dienste und Schnittstellen deaktiviert (Funktionsreduzierung)?",
-   "category": "N – Netz, Fernzugriff und Härtung",
+   "category": "N – Netz, Fernzugriff und Funktionsreduzierung",
    "rolle": "techniker",
    "ui_number": "4.6",
    "group": "CY-N"
@@ -1755,7 +1860,7 @@
    "type": "YES_NO",
    "domain": "CYBER",
    "text": "Fernüberwachung (Zustandsmeldung, Störungsmeldung an Leitstelle/Hersteller) vorhanden?",
-   "category": "N – Netz, Fernzugriff und Härtung",
+   "category": "N – Netz, Fernzugriff und Funktionsreduzierung",
    "rolle": "techniker",
    "ui_number": "3.11.1",
    "visible_when": {
@@ -1770,7 +1875,7 @@
    "type": "YES_NO",
    "domain": "CYBER",
    "text": "Ist die Fernüberwachung ausschließlich lesend (kein Schreib-, Steuer- oder Parametrierzugriff über diesen Kanal)?",
-   "category": "N – Netz, Fernzugriff und Härtung",
+   "category": "N – Netz, Fernzugriff und Funktionsreduzierung",
    "rolle": "techniker",
    "ui_number": "3.11.2",
    "visible_when": {
@@ -1794,7 +1899,7 @@
    "type": "YES_NO",
    "domain": "CYBER",
    "text": "Remote-Service / Fernwartung (Hersteller-Fernzugriff, Service-App, VPN) vorhanden?",
-   "category": "N – Netz, Fernzugriff und Härtung",
+   "category": "N – Netz, Fernzugriff und Funktionsreduzierung",
    "rolle": "techniker",
    "ui_number": "3.12.1",
    "visible_when": {
@@ -1809,7 +1914,7 @@
    "type": "YES_NO",
    "domain": "CYBER",
    "text": "Gateway / Router / Modem / WLAN- oder Service-Dongle an der Anlage vorhanden?",
-   "category": "N – Netz, Fernzugriff und Härtung",
+   "category": "N – Netz, Fernzugriff und Funktionsreduzierung",
    "rolle": "techniker",
    "ui_number": "3.13.1",
    "visible_when": {
@@ -1824,7 +1929,7 @@
    "type": "YES_NO",
    "domain": "CYBER",
    "text": "Ist das Gateway mit Firewall/Netztrennung zur Aufzugssteuerung konfiguriert und sind nur benötigte Ports und Dienste freigegeben?",
-   "category": "N – Netz, Fernzugriff und Härtung",
+   "category": "N – Netz, Fernzugriff und Funktionsreduzierung",
    "rolle": "techniker",
    "ui_number": "3.13.2",
    "visible_when": {
@@ -1848,7 +1953,7 @@
    "type": "YES_NO",
    "domain": "CYBER",
    "text": "Sind die Werkszugangsdaten des Gateways/Routers geändert und ist die Administration nur für Berechtigte erreichbar?",
-   "category": "N – Netz, Fernzugriff und Härtung",
+   "category": "N – Netz, Fernzugriff und Funktionsreduzierung",
    "rolle": "techniker",
    "ui_number": "3.13.3",
    "visible_when": {
@@ -1872,7 +1977,7 @@
    "type": "YES_NO",
    "domain": "CYBER",
    "text": "Ist die Firmware des Gateways aktuell und ein Update-Verfahren geregelt?",
-   "category": "N – Netz, Fernzugriff und Härtung",
+   "category": "N – Netz, Fernzugriff und Funktionsreduzierung",
    "rolle": "techniker",
    "ui_number": "3.13.4",
    "visible_when": {
@@ -2576,7 +2681,7 @@
    "code": "CY-N01",
    "domain": "CYBER",
    "title": "Unbekannte oder ungepatchte Schwachstellen (Softwarestand)",
-   "category": "Härtung und Servicegeräte",
+   "category": "Funktionsreduzierung und Softwarestand",
    "aggregation_type": "NONE",
    "evaluation_mode": "STANDARD",
    "questions": [
@@ -2610,7 +2715,7 @@
     "Wartungspersonal",
     "Betreiber"
    ],
-   "ui_group": "N – Netz, Fernzugriff und Härtung",
+   "ui_group": "N – Netz, Fernzugriff und Funktionsreduzierung",
    "review_ids": [
     "K-C14"
    ]
@@ -2618,8 +2723,8 @@
   {
    "code": "CY-N02",
    "domain": "CYBER",
-   "title": "Fehlende Härtung: nicht benötigte Funktionen und Schnittstellen aktiv",
-   "category": "Härtung und Servicegeräte",
+   "title": "Fehlende Funktionsreduzierung: nicht benötigte Funktionen und Schnittstellen aktiv",
+   "category": "Funktionsreduzierung und Softwarestand",
    "aggregation_type": "NONE",
    "evaluation_mode": "STANDARD",
    "questions": [
@@ -2652,7 +2757,7 @@
     "Nutzer",
     "Wartungspersonal"
    ],
-   "ui_group": "N – Netz, Fernzugriff und Härtung",
+   "ui_group": "N – Netz, Fernzugriff und Funktionsreduzierung",
    "review_ids": [
     "K-C22"
    ]
@@ -2693,8 +2798,13 @@
        },
        {
         "question": "qc_steuerung_schnittstelle",
-        "operator": "NEQ",
-        "value": "keine"
+        "operator": "CONTAINS_ANY",
+        "value": [
+         "kabelgebunden",
+         "benutzer",
+         "kabellos",
+         "fernzugriff"
+        ]
        }
       ]
      },
@@ -2718,8 +2828,13 @@
        },
        {
         "question": "qc_steuerung_schnittstelle",
-        "operator": "NEQ",
-        "value": "keine"
+        "operator": "CONTAINS_ANY",
+        "value": [
+         "kabelgebunden",
+         "benutzer",
+         "kabellos",
+         "fernzugriff"
+        ]
        }
       ]
      },
@@ -2825,8 +2940,13 @@
        },
        {
         "question": "qc_pessral_schnittstelle",
-        "operator": "NEQ",
-        "value": "keine"
+        "operator": "CONTAINS_ANY",
+        "value": [
+         "kabelgebunden",
+         "benutzer",
+         "kabellos",
+         "fernzugriff"
+        ]
        }
       ]
      },
@@ -2927,8 +3047,13 @@
        },
        {
         "question": "qc_fu_schnittstelle",
-        "operator": "NEQ",
-        "value": "keine"
+        "operator": "CONTAINS_ANY",
+        "value": [
+         "kabelgebunden",
+         "benutzer",
+         "kabellos",
+         "fernzugriff"
+        ]
        }
       ]
      },
@@ -2952,8 +3077,13 @@
        },
        {
         "question": "qc_fu_schnittstelle",
-        "operator": "NEQ",
-        "value": "keine"
+        "operator": "CONTAINS_ANY",
+        "value": [
+         "kabelgebunden",
+         "benutzer",
+         "kabellos",
+         "fernzugriff"
+        ]
        }
       ]
      },
@@ -3045,8 +3175,13 @@
        },
        {
         "question": "qc_notruf_schnittstelle",
-        "operator": "NEQ",
-        "value": "keine"
+        "operator": "CONTAINS_ANY",
+        "value": [
+         "kabelgebunden",
+         "benutzer",
+         "kabellos",
+         "fernzugriff"
+        ]
        }
       ]
      },
@@ -3070,8 +3205,13 @@
        },
        {
         "question": "qc_notruf_schnittstelle",
-        "operator": "NEQ",
-        "value": "keine"
+        "operator": "CONTAINS_ANY",
+        "value": [
+         "kabelgebunden",
+         "benutzer",
+         "kabellos",
+         "fernzugriff"
+        ]
        }
       ]
      },
@@ -3168,8 +3308,13 @@
        },
        {
         "question": "qc_kopierung_schnittstelle",
-        "operator": "NEQ",
-        "value": "keine"
+        "operator": "CONTAINS_ANY",
+        "value": [
+         "kabelgebunden",
+         "benutzer",
+         "kabellos",
+         "fernzugriff"
+        ]
        }
       ]
      },
@@ -3193,8 +3338,13 @@
        },
        {
         "question": "qc_kopierung_schnittstelle",
-        "operator": "NEQ",
-        "value": "keine"
+        "operator": "CONTAINS_ANY",
+        "value": [
+         "kabelgebunden",
+         "benutzer",
+         "kabellos",
+         "fernzugriff"
+        ]
        }
       ]
      },
@@ -3285,8 +3435,13 @@
        },
        {
         "question": "qc_tuer_schnittstelle",
-        "operator": "NEQ",
-        "value": "keine"
+        "operator": "CONTAINS_ANY",
+        "value": [
+         "kabelgebunden",
+         "benutzer",
+         "kabellos",
+         "fernzugriff"
+        ]
        }
       ]
      },
@@ -3310,8 +3465,13 @@
        },
        {
         "question": "qc_tuer_schnittstelle",
-        "operator": "NEQ",
-        "value": "keine"
+        "operator": "CONTAINS_ANY",
+        "value": [
+         "kabelgebunden",
+         "benutzer",
+         "kabellos",
+         "fernzugriff"
+        ]
        }
       ]
      },
@@ -3402,8 +3562,13 @@
        },
        {
         "question": "qc_ucm_schnittstelle",
-        "operator": "NEQ",
-        "value": "keine"
+        "operator": "CONTAINS_ANY",
+        "value": [
+         "kabelgebunden",
+         "benutzer",
+         "kabellos",
+         "fernzugriff"
+        ]
        }
       ]
      },
@@ -3427,8 +3592,13 @@
        },
        {
         "question": "qc_ucm_schnittstelle",
-        "operator": "NEQ",
-        "value": "keine"
+        "operator": "CONTAINS_ANY",
+        "value": [
+         "kabelgebunden",
+         "benutzer",
+         "kabellos",
+         "fernzugriff"
+        ]
        }
       ]
      },
@@ -3519,8 +3689,13 @@
        },
        {
         "question": "qc_safue_schnittstelle",
-        "operator": "NEQ",
-        "value": "keine"
+        "operator": "CONTAINS_ANY",
+        "value": [
+         "kabelgebunden",
+         "benutzer",
+         "kabellos",
+         "fernzugriff"
+        ]
        }
       ]
      },
@@ -3544,8 +3719,13 @@
        },
        {
         "question": "qc_safue_schnittstelle",
-        "operator": "NEQ",
-        "value": "keine"
+        "operator": "CONTAINS_ANY",
+        "value": [
+         "kabelgebunden",
+         "benutzer",
+         "kabellos",
+         "fernzugriff"
+        ]
        }
       ]
      },
@@ -3636,8 +3816,13 @@
        },
        {
         "question": "qc_tragmittel_schnittstelle",
-        "operator": "NEQ",
-        "value": "keine"
+        "operator": "CONTAINS_ANY",
+        "value": [
+         "kabelgebunden",
+         "benutzer",
+         "kabellos",
+         "fernzugriff"
+        ]
        }
       ]
      },
@@ -3661,8 +3846,13 @@
        },
        {
         "question": "qc_tragmittel_schnittstelle",
-        "operator": "NEQ",
-        "value": "keine"
+        "operator": "CONTAINS_ANY",
+        "value": [
+         "kabelgebunden",
+         "benutzer",
+         "kabellos",
+         "fernzugriff"
+        ]
        }
       ]
      },
@@ -3779,8 +3969,13 @@
        },
        {
         "question": "qc_hydraulik_schnittstelle",
-        "operator": "NEQ",
-        "value": "keine"
+        "operator": "CONTAINS_ANY",
+        "value": [
+         "kabelgebunden",
+         "benutzer",
+         "kabellos",
+         "fernzugriff"
+        ]
        }
       ]
      },
@@ -3816,8 +4011,13 @@
        },
        {
         "question": "qc_hydraulik_schnittstelle",
-        "operator": "NEQ",
-        "value": "keine"
+        "operator": "CONTAINS_ANY",
+        "value": [
+         "kabelgebunden",
+         "benutzer",
+         "kabellos",
+         "fernzugriff"
+        ]
        }
       ]
      },
@@ -4149,7 +4349,7 @@
     {
      "type": "TRBS",
      "document": "TRBS 1115 Teil 1",
-     "section": "4.5.2 Segmentierung, Härtung"
+     "section": "4.5.2 Segmentierung, Funktionsreduzierung"
     },
     {
      "type": "OTHER",
@@ -4199,8 +4399,13 @@
        },
        {
         "question": "qc_entrauchung_schnittstelle",
-        "operator": "NEQ",
-        "value": "keine"
+        "operator": "CONTAINS_ANY",
+        "value": [
+         "kabelgebunden",
+         "benutzer",
+         "kabellos",
+         "fernzugriff"
+        ]
        }
       ]
      },
@@ -4224,8 +4429,13 @@
        },
        {
         "question": "qc_entrauchung_schnittstelle",
-        "operator": "NEQ",
-        "value": "keine"
+        "operator": "CONTAINS_ANY",
+        "value": [
+         "kabelgebunden",
+         "benutzer",
+         "kabellos",
+         "fernzugriff"
+        ]
        }
       ]
      },
@@ -4824,8 +5034,13 @@
    "priority": 600,
    "condition": {
     "question": "qc_steuerung_schnittstelle",
-    "operator": "EQ",
-    "value": "keine"
+    "operator": "NOT_CONTAINS_ANY",
+    "value": [
+     "kabelgebunden",
+     "benutzer",
+     "kabellos",
+     "fernzugriff"
+    ]
    },
    "result": "NO_RISK",
    "origin": "OWN_RULE",
@@ -4856,7 +5071,7 @@
       "all": [
        {
         "question": "qc_steuerung_schnittstelle",
-        "operator": "IN",
+        "operator": "CONTAINS_ANY",
         "value": [
          "kabellos",
          "fernzugriff"
@@ -4906,7 +5121,7 @@
       "all": [
        {
         "question": "qc_steuerung_schnittstelle",
-        "operator": "IN",
+        "operator": "CONTAINS_ANY",
         "value": [
          "kabelgebunden",
          "benutzer"
@@ -4968,8 +5183,10 @@
     "all": [
      {
       "question": "qc_steuerung_schnittstelle",
-      "operator": "EQ",
-      "value": "fernzugriff"
+      "operator": "CONTAINS_ANY",
+      "value": [
+       "fernzugriff"
+      ]
      },
      {
       "question": "qc_steuerung_massnahmen",
@@ -5006,8 +5223,10 @@
     "all": [
      {
       "question": "qc_steuerung_schnittstelle",
-      "operator": "EQ",
-      "value": "kabellos"
+      "operator": "CONTAINS_ANY",
+      "value": [
+       "kabellos"
+      ]
      },
      {
       "question": "qc_steuerung_massnahmen",
@@ -5046,7 +5265,7 @@
       "all": [
        {
         "question": "qc_steuerung_schnittstelle",
-        "operator": "IN",
+        "operator": "CONTAINS_ANY",
         "value": [
          "kabelgebunden",
          "benutzer"
@@ -5108,7 +5327,7 @@
     "all": [
      {
       "question": "qc_steuerung_schnittstelle",
-      "operator": "IN",
+      "operator": "CONTAINS_ANY",
       "value": [
        "kabelgebunden",
        "benutzer"
@@ -5151,7 +5370,7 @@
       "all": [
        {
         "question": "qc_steuerung_schnittstelle",
-        "operator": "IN",
+        "operator": "CONTAINS_ANY",
         "value": [
          "kabelgebunden",
          "benutzer"
@@ -5213,7 +5432,7 @@
     "all": [
      {
       "question": "qc_steuerung_schnittstelle",
-      "operator": "IN",
+      "operator": "CONTAINS_ANY",
       "value": [
        "kabelgebunden",
        "benutzer"
@@ -5254,7 +5473,7 @@
     "all": [
      {
       "question": "qc_steuerung_schnittstelle",
-      "operator": "IN",
+      "operator": "CONTAINS_ANY",
       "value": [
        "kabellos",
        "fernzugriff"
@@ -5284,14 +5503,14 @@
   {
    "hazard": "CY-C01",
    "code": "CY-C01-R11",
-   "priority": 260,
+   "priority": 275,
    "condition": {
     "all": [
      {
       "all": [
        {
         "question": "qc_steuerung_schnittstelle",
-        "operator": "IN",
+        "operator": "CONTAINS_ANY",
         "value": [
          "kabelgebunden",
          "benutzer"
@@ -5353,7 +5572,7 @@
     "all": [
      {
       "question": "qc_steuerung_schnittstelle",
-      "operator": "IN",
+      "operator": "CONTAINS_ANY",
       "value": [
        "kabelgebunden",
        "benutzer"
@@ -5408,8 +5627,13 @@
    "priority": 600,
    "condition": {
     "question": "qc_pessral_schnittstelle",
-    "operator": "EQ",
-    "value": "keine"
+    "operator": "NOT_CONTAINS_ANY",
+    "value": [
+     "kabelgebunden",
+     "benutzer",
+     "kabellos",
+     "fernzugriff"
+    ]
    },
    "result": "NO_RISK",
    "origin": "OWN_RULE",
@@ -5433,8 +5657,10 @@
     "all": [
      {
       "question": "qc_pessral_schnittstelle",
-      "operator": "EQ",
-      "value": "fernzugriff"
+      "operator": "CONTAINS_ANY",
+      "value": [
+       "fernzugriff"
+      ]
      },
      {
       "question": "qc_pessral_massnahmen",
@@ -5471,8 +5697,10 @@
     "all": [
      {
       "question": "qc_pessral_schnittstelle",
-      "operator": "EQ",
-      "value": "kabellos"
+      "operator": "CONTAINS_ANY",
+      "value": [
+       "kabellos"
+      ]
      },
      {
       "question": "qc_pessral_massnahmen",
@@ -5511,7 +5739,7 @@
       "all": [
        {
         "question": "qc_pessral_schnittstelle",
-        "operator": "IN",
+        "operator": "CONTAINS_ANY",
         "value": [
          "kabelgebunden",
          "benutzer"
@@ -5573,7 +5801,7 @@
     "all": [
      {
       "question": "qc_pessral_schnittstelle",
-      "operator": "IN",
+      "operator": "CONTAINS_ANY",
       "value": [
        "kabelgebunden",
        "benutzer"
@@ -5616,7 +5844,7 @@
       "all": [
        {
         "question": "qc_pessral_schnittstelle",
-        "operator": "IN",
+        "operator": "CONTAINS_ANY",
         "value": [
          "kabelgebunden",
          "benutzer"
@@ -5678,7 +5906,7 @@
     "all": [
      {
       "question": "qc_pessral_schnittstelle",
-      "operator": "IN",
+      "operator": "CONTAINS_ANY",
       "value": [
        "kabelgebunden",
        "benutzer"
@@ -5719,7 +5947,7 @@
     "all": [
      {
       "question": "qc_pessral_schnittstelle",
-      "operator": "IN",
+      "operator": "CONTAINS_ANY",
       "value": [
        "kabellos",
        "fernzugriff"
@@ -5749,14 +5977,14 @@
   {
    "hazard": "CY-C02",
    "code": "CY-C02-R9",
-   "priority": 260,
+   "priority": 275,
    "condition": {
     "all": [
      {
       "all": [
        {
         "question": "qc_pessral_schnittstelle",
-        "operator": "IN",
+        "operator": "CONTAINS_ANY",
         "value": [
          "kabelgebunden",
          "benutzer"
@@ -5818,7 +6046,7 @@
     "all": [
      {
       "question": "qc_pessral_schnittstelle",
-      "operator": "IN",
+      "operator": "CONTAINS_ANY",
       "value": [
        "kabelgebunden",
        "benutzer"
@@ -5873,8 +6101,13 @@
    "priority": 600,
    "condition": {
     "question": "qc_fu_schnittstelle",
-    "operator": "EQ",
-    "value": "keine"
+    "operator": "NOT_CONTAINS_ANY",
+    "value": [
+     "kabelgebunden",
+     "benutzer",
+     "kabellos",
+     "fernzugriff"
+    ]
    },
    "result": "NO_RISK",
    "origin": "OWN_RULE",
@@ -5903,8 +6136,13 @@
      },
      {
       "question": "qc_fu_schnittstelle",
-      "operator": "NEQ",
-      "value": "keine"
+      "operator": "CONTAINS_ANY",
+      "value": [
+       "kabelgebunden",
+       "benutzer",
+       "kabellos",
+       "fernzugriff"
+      ]
      },
      {
       "question": "qc_fu_massnahmen",
@@ -5946,8 +6184,13 @@
      },
      {
       "question": "qc_fu_schnittstelle",
-      "operator": "NEQ",
-      "value": "keine"
+      "operator": "CONTAINS_ANY",
+      "value": [
+       "kabelgebunden",
+       "benutzer",
+       "kabellos",
+       "fernzugriff"
+      ]
      },
      {
       "question": "qc_fu_massnahmen",
@@ -5978,8 +6221,10 @@
     "all": [
      {
       "question": "qc_fu_schnittstelle",
-      "operator": "EQ",
-      "value": "fernzugriff"
+      "operator": "CONTAINS_ANY",
+      "value": [
+       "fernzugriff"
+      ]
      },
      {
       "question": "qc_fu_massnahmen",
@@ -6016,8 +6261,10 @@
     "all": [
      {
       "question": "qc_fu_schnittstelle",
-      "operator": "EQ",
-      "value": "kabellos"
+      "operator": "CONTAINS_ANY",
+      "value": [
+       "kabellos"
+      ]
      },
      {
       "question": "qc_fu_massnahmen",
@@ -6056,7 +6303,7 @@
       "all": [
        {
         "question": "qc_fu_schnittstelle",
-        "operator": "IN",
+        "operator": "CONTAINS_ANY",
         "value": [
          "kabelgebunden",
          "benutzer"
@@ -6118,7 +6365,7 @@
     "all": [
      {
       "question": "qc_fu_schnittstelle",
-      "operator": "IN",
+      "operator": "CONTAINS_ANY",
       "value": [
        "kabelgebunden",
        "benutzer"
@@ -6161,7 +6408,7 @@
       "all": [
        {
         "question": "qc_fu_schnittstelle",
-        "operator": "IN",
+        "operator": "CONTAINS_ANY",
         "value": [
          "kabelgebunden",
          "benutzer"
@@ -6223,7 +6470,7 @@
     "all": [
      {
       "question": "qc_fu_schnittstelle",
-      "operator": "IN",
+      "operator": "CONTAINS_ANY",
       "value": [
        "kabelgebunden",
        "benutzer"
@@ -6264,7 +6511,7 @@
     "all": [
      {
       "question": "qc_fu_schnittstelle",
-      "operator": "IN",
+      "operator": "CONTAINS_ANY",
       "value": [
        "kabellos",
        "fernzugriff"
@@ -6294,14 +6541,14 @@
   {
    "hazard": "CY-C03",
    "code": "CY-C03-R11",
-   "priority": 260,
+   "priority": 275,
    "condition": {
     "all": [
      {
       "all": [
        {
         "question": "qc_fu_schnittstelle",
-        "operator": "IN",
+        "operator": "CONTAINS_ANY",
         "value": [
          "kabelgebunden",
          "benutzer"
@@ -6363,7 +6610,7 @@
     "all": [
      {
       "question": "qc_fu_schnittstelle",
-      "operator": "IN",
+      "operator": "CONTAINS_ANY",
       "value": [
        "kabelgebunden",
        "benutzer"
@@ -6418,8 +6665,13 @@
    "priority": 600,
    "condition": {
     "question": "qc_notruf_schnittstelle",
-    "operator": "EQ",
-    "value": "keine"
+    "operator": "NOT_CONTAINS_ANY",
+    "value": [
+     "kabelgebunden",
+     "benutzer",
+     "kabellos",
+     "fernzugriff"
+    ]
    },
    "result": "NO_RISK",
    "origin": "OWN_RULE",
@@ -6450,7 +6702,7 @@
       "all": [
        {
         "question": "qc_notruf_schnittstelle",
-        "operator": "IN",
+        "operator": "CONTAINS_ANY",
         "value": [
          "kabellos",
          "fernzugriff"
@@ -6500,7 +6752,7 @@
       "all": [
        {
         "question": "qc_notruf_schnittstelle",
-        "operator": "IN",
+        "operator": "CONTAINS_ANY",
         "value": [
          "kabelgebunden",
          "benutzer"
@@ -6562,8 +6814,10 @@
     "all": [
      {
       "question": "qc_notruf_schnittstelle",
-      "operator": "EQ",
-      "value": "fernzugriff"
+      "operator": "CONTAINS_ANY",
+      "value": [
+       "fernzugriff"
+      ]
      },
      {
       "question": "qc_notruf_massnahmen",
@@ -6600,8 +6854,10 @@
     "all": [
      {
       "question": "qc_notruf_schnittstelle",
-      "operator": "EQ",
-      "value": "kabellos"
+      "operator": "CONTAINS_ANY",
+      "value": [
+       "kabellos"
+      ]
      },
      {
       "question": "qc_notruf_massnahmen",
@@ -6640,7 +6896,7 @@
       "all": [
        {
         "question": "qc_notruf_schnittstelle",
-        "operator": "IN",
+        "operator": "CONTAINS_ANY",
         "value": [
          "kabelgebunden",
          "benutzer"
@@ -6702,7 +6958,7 @@
     "all": [
      {
       "question": "qc_notruf_schnittstelle",
-      "operator": "IN",
+      "operator": "CONTAINS_ANY",
       "value": [
        "kabelgebunden",
        "benutzer"
@@ -6745,7 +7001,7 @@
       "all": [
        {
         "question": "qc_notruf_schnittstelle",
-        "operator": "IN",
+        "operator": "CONTAINS_ANY",
         "value": [
          "kabelgebunden",
          "benutzer"
@@ -6807,7 +7063,7 @@
     "all": [
      {
       "question": "qc_notruf_schnittstelle",
-      "operator": "IN",
+      "operator": "CONTAINS_ANY",
       "value": [
        "kabelgebunden",
        "benutzer"
@@ -6848,7 +7104,7 @@
     "all": [
      {
       "question": "qc_notruf_schnittstelle",
-      "operator": "IN",
+      "operator": "CONTAINS_ANY",
       "value": [
        "kabellos",
        "fernzugriff"
@@ -6878,14 +7134,14 @@
   {
    "hazard": "CY-C04",
    "code": "CY-C04-R11",
-   "priority": 260,
+   "priority": 275,
    "condition": {
     "all": [
      {
       "all": [
        {
         "question": "qc_notruf_schnittstelle",
-        "operator": "IN",
+        "operator": "CONTAINS_ANY",
         "value": [
          "kabelgebunden",
          "benutzer"
@@ -6947,7 +7203,7 @@
     "all": [
      {
       "question": "qc_notruf_schnittstelle",
-      "operator": "IN",
+      "operator": "CONTAINS_ANY",
       "value": [
        "kabelgebunden",
        "benutzer"
@@ -7002,8 +7258,13 @@
    "priority": 600,
    "condition": {
     "question": "qc_kopierung_schnittstelle",
-    "operator": "EQ",
-    "value": "keine"
+    "operator": "NOT_CONTAINS_ANY",
+    "value": [
+     "kabelgebunden",
+     "benutzer",
+     "kabellos",
+     "fernzugriff"
+    ]
    },
    "result": "NO_RISK",
    "origin": "OWN_RULE",
@@ -7034,7 +7295,7 @@
       "all": [
        {
         "question": "qc_kopierung_schnittstelle",
-        "operator": "IN",
+        "operator": "CONTAINS_ANY",
         "value": [
          "kabellos",
          "fernzugriff"
@@ -7084,7 +7345,7 @@
       "all": [
        {
         "question": "qc_kopierung_schnittstelle",
-        "operator": "IN",
+        "operator": "CONTAINS_ANY",
         "value": [
          "kabelgebunden",
          "benutzer"
@@ -7146,8 +7407,10 @@
     "all": [
      {
       "question": "qc_kopierung_schnittstelle",
-      "operator": "EQ",
-      "value": "fernzugriff"
+      "operator": "CONTAINS_ANY",
+      "value": [
+       "fernzugriff"
+      ]
      },
      {
       "question": "qc_kopierung_massnahmen",
@@ -7184,8 +7447,10 @@
     "all": [
      {
       "question": "qc_kopierung_schnittstelle",
-      "operator": "EQ",
-      "value": "kabellos"
+      "operator": "CONTAINS_ANY",
+      "value": [
+       "kabellos"
+      ]
      },
      {
       "question": "qc_kopierung_massnahmen",
@@ -7224,7 +7489,7 @@
       "all": [
        {
         "question": "qc_kopierung_schnittstelle",
-        "operator": "IN",
+        "operator": "CONTAINS_ANY",
         "value": [
          "kabelgebunden",
          "benutzer"
@@ -7286,7 +7551,7 @@
     "all": [
      {
       "question": "qc_kopierung_schnittstelle",
-      "operator": "IN",
+      "operator": "CONTAINS_ANY",
       "value": [
        "kabelgebunden",
        "benutzer"
@@ -7329,7 +7594,7 @@
       "all": [
        {
         "question": "qc_kopierung_schnittstelle",
-        "operator": "IN",
+        "operator": "CONTAINS_ANY",
         "value": [
          "kabelgebunden",
          "benutzer"
@@ -7391,7 +7656,7 @@
     "all": [
      {
       "question": "qc_kopierung_schnittstelle",
-      "operator": "IN",
+      "operator": "CONTAINS_ANY",
       "value": [
        "kabelgebunden",
        "benutzer"
@@ -7432,7 +7697,7 @@
     "all": [
      {
       "question": "qc_kopierung_schnittstelle",
-      "operator": "IN",
+      "operator": "CONTAINS_ANY",
       "value": [
        "kabellos",
        "fernzugriff"
@@ -7462,14 +7727,14 @@
   {
    "hazard": "CY-C05",
    "code": "CY-C05-R11",
-   "priority": 260,
+   "priority": 275,
    "condition": {
     "all": [
      {
       "all": [
        {
         "question": "qc_kopierung_schnittstelle",
-        "operator": "IN",
+        "operator": "CONTAINS_ANY",
         "value": [
          "kabelgebunden",
          "benutzer"
@@ -7531,7 +7796,7 @@
     "all": [
      {
       "question": "qc_kopierung_schnittstelle",
-      "operator": "IN",
+      "operator": "CONTAINS_ANY",
       "value": [
        "kabelgebunden",
        "benutzer"
@@ -7586,8 +7851,13 @@
    "priority": 600,
    "condition": {
     "question": "qc_tuer_schnittstelle",
-    "operator": "EQ",
-    "value": "keine"
+    "operator": "NOT_CONTAINS_ANY",
+    "value": [
+     "kabelgebunden",
+     "benutzer",
+     "kabellos",
+     "fernzugriff"
+    ]
    },
    "result": "NO_RISK",
    "origin": "OWN_RULE",
@@ -7618,7 +7888,7 @@
       "all": [
        {
         "question": "qc_tuer_schnittstelle",
-        "operator": "IN",
+        "operator": "CONTAINS_ANY",
         "value": [
          "kabellos",
          "fernzugriff"
@@ -7668,7 +7938,7 @@
       "all": [
        {
         "question": "qc_tuer_schnittstelle",
-        "operator": "IN",
+        "operator": "CONTAINS_ANY",
         "value": [
          "kabelgebunden",
          "benutzer"
@@ -7730,8 +8000,10 @@
     "all": [
      {
       "question": "qc_tuer_schnittstelle",
-      "operator": "EQ",
-      "value": "fernzugriff"
+      "operator": "CONTAINS_ANY",
+      "value": [
+       "fernzugriff"
+      ]
      },
      {
       "question": "qc_tuer_massnahmen",
@@ -7768,8 +8040,10 @@
     "all": [
      {
       "question": "qc_tuer_schnittstelle",
-      "operator": "EQ",
-      "value": "kabellos"
+      "operator": "CONTAINS_ANY",
+      "value": [
+       "kabellos"
+      ]
      },
      {
       "question": "qc_tuer_massnahmen",
@@ -7808,7 +8082,7 @@
       "all": [
        {
         "question": "qc_tuer_schnittstelle",
-        "operator": "IN",
+        "operator": "CONTAINS_ANY",
         "value": [
          "kabelgebunden",
          "benutzer"
@@ -7870,7 +8144,7 @@
     "all": [
      {
       "question": "qc_tuer_schnittstelle",
-      "operator": "IN",
+      "operator": "CONTAINS_ANY",
       "value": [
        "kabelgebunden",
        "benutzer"
@@ -7913,7 +8187,7 @@
       "all": [
        {
         "question": "qc_tuer_schnittstelle",
-        "operator": "IN",
+        "operator": "CONTAINS_ANY",
         "value": [
          "kabelgebunden",
          "benutzer"
@@ -7975,7 +8249,7 @@
     "all": [
      {
       "question": "qc_tuer_schnittstelle",
-      "operator": "IN",
+      "operator": "CONTAINS_ANY",
       "value": [
        "kabelgebunden",
        "benutzer"
@@ -8016,7 +8290,7 @@
     "all": [
      {
       "question": "qc_tuer_schnittstelle",
-      "operator": "IN",
+      "operator": "CONTAINS_ANY",
       "value": [
        "kabellos",
        "fernzugriff"
@@ -8046,14 +8320,14 @@
   {
    "hazard": "CY-C06",
    "code": "CY-C06-R11",
-   "priority": 260,
+   "priority": 275,
    "condition": {
     "all": [
      {
       "all": [
        {
         "question": "qc_tuer_schnittstelle",
-        "operator": "IN",
+        "operator": "CONTAINS_ANY",
         "value": [
          "kabelgebunden",
          "benutzer"
@@ -8115,7 +8389,7 @@
     "all": [
      {
       "question": "qc_tuer_schnittstelle",
-      "operator": "IN",
+      "operator": "CONTAINS_ANY",
       "value": [
        "kabelgebunden",
        "benutzer"
@@ -8170,8 +8444,13 @@
    "priority": 600,
    "condition": {
     "question": "qc_ucm_schnittstelle",
-    "operator": "EQ",
-    "value": "keine"
+    "operator": "NOT_CONTAINS_ANY",
+    "value": [
+     "kabelgebunden",
+     "benutzer",
+     "kabellos",
+     "fernzugriff"
+    ]
    },
    "result": "NO_RISK",
    "origin": "OWN_RULE",
@@ -8202,7 +8481,7 @@
       "all": [
        {
         "question": "qc_ucm_schnittstelle",
-        "operator": "IN",
+        "operator": "CONTAINS_ANY",
         "value": [
          "kabellos",
          "fernzugriff"
@@ -8252,7 +8531,7 @@
       "all": [
        {
         "question": "qc_ucm_schnittstelle",
-        "operator": "IN",
+        "operator": "CONTAINS_ANY",
         "value": [
          "kabelgebunden",
          "benutzer"
@@ -8314,8 +8593,10 @@
     "all": [
      {
       "question": "qc_ucm_schnittstelle",
-      "operator": "EQ",
-      "value": "fernzugriff"
+      "operator": "CONTAINS_ANY",
+      "value": [
+       "fernzugriff"
+      ]
      },
      {
       "question": "qc_ucm_massnahmen",
@@ -8352,8 +8633,10 @@
     "all": [
      {
       "question": "qc_ucm_schnittstelle",
-      "operator": "EQ",
-      "value": "kabellos"
+      "operator": "CONTAINS_ANY",
+      "value": [
+       "kabellos"
+      ]
      },
      {
       "question": "qc_ucm_massnahmen",
@@ -8392,7 +8675,7 @@
       "all": [
        {
         "question": "qc_ucm_schnittstelle",
-        "operator": "IN",
+        "operator": "CONTAINS_ANY",
         "value": [
          "kabelgebunden",
          "benutzer"
@@ -8454,7 +8737,7 @@
     "all": [
      {
       "question": "qc_ucm_schnittstelle",
-      "operator": "IN",
+      "operator": "CONTAINS_ANY",
       "value": [
        "kabelgebunden",
        "benutzer"
@@ -8497,7 +8780,7 @@
       "all": [
        {
         "question": "qc_ucm_schnittstelle",
-        "operator": "IN",
+        "operator": "CONTAINS_ANY",
         "value": [
          "kabelgebunden",
          "benutzer"
@@ -8559,7 +8842,7 @@
     "all": [
      {
       "question": "qc_ucm_schnittstelle",
-      "operator": "IN",
+      "operator": "CONTAINS_ANY",
       "value": [
        "kabelgebunden",
        "benutzer"
@@ -8600,7 +8883,7 @@
     "all": [
      {
       "question": "qc_ucm_schnittstelle",
-      "operator": "IN",
+      "operator": "CONTAINS_ANY",
       "value": [
        "kabellos",
        "fernzugriff"
@@ -8630,14 +8913,14 @@
   {
    "hazard": "CY-C07",
    "code": "CY-C07-R11",
-   "priority": 260,
+   "priority": 275,
    "condition": {
     "all": [
      {
       "all": [
        {
         "question": "qc_ucm_schnittstelle",
-        "operator": "IN",
+        "operator": "CONTAINS_ANY",
         "value": [
          "kabelgebunden",
          "benutzer"
@@ -8699,7 +8982,7 @@
     "all": [
      {
       "question": "qc_ucm_schnittstelle",
-      "operator": "IN",
+      "operator": "CONTAINS_ANY",
       "value": [
        "kabelgebunden",
        "benutzer"
@@ -8754,8 +9037,13 @@
    "priority": 600,
    "condition": {
     "question": "qc_safue_schnittstelle",
-    "operator": "EQ",
-    "value": "keine"
+    "operator": "NOT_CONTAINS_ANY",
+    "value": [
+     "kabelgebunden",
+     "benutzer",
+     "kabellos",
+     "fernzugriff"
+    ]
    },
    "result": "NO_RISK",
    "origin": "OWN_RULE",
@@ -8786,7 +9074,7 @@
       "all": [
        {
         "question": "qc_safue_schnittstelle",
-        "operator": "IN",
+        "operator": "CONTAINS_ANY",
         "value": [
          "kabellos",
          "fernzugriff"
@@ -8836,7 +9124,7 @@
       "all": [
        {
         "question": "qc_safue_schnittstelle",
-        "operator": "IN",
+        "operator": "CONTAINS_ANY",
         "value": [
          "kabelgebunden",
          "benutzer"
@@ -8898,8 +9186,10 @@
     "all": [
      {
       "question": "qc_safue_schnittstelle",
-      "operator": "EQ",
-      "value": "fernzugriff"
+      "operator": "CONTAINS_ANY",
+      "value": [
+       "fernzugriff"
+      ]
      },
      {
       "question": "qc_safue_massnahmen",
@@ -8936,8 +9226,10 @@
     "all": [
      {
       "question": "qc_safue_schnittstelle",
-      "operator": "EQ",
-      "value": "kabellos"
+      "operator": "CONTAINS_ANY",
+      "value": [
+       "kabellos"
+      ]
      },
      {
       "question": "qc_safue_massnahmen",
@@ -8976,7 +9268,7 @@
       "all": [
        {
         "question": "qc_safue_schnittstelle",
-        "operator": "IN",
+        "operator": "CONTAINS_ANY",
         "value": [
          "kabelgebunden",
          "benutzer"
@@ -9038,7 +9330,7 @@
     "all": [
      {
       "question": "qc_safue_schnittstelle",
-      "operator": "IN",
+      "operator": "CONTAINS_ANY",
       "value": [
        "kabelgebunden",
        "benutzer"
@@ -9081,7 +9373,7 @@
       "all": [
        {
         "question": "qc_safue_schnittstelle",
-        "operator": "IN",
+        "operator": "CONTAINS_ANY",
         "value": [
          "kabelgebunden",
          "benutzer"
@@ -9143,7 +9435,7 @@
     "all": [
      {
       "question": "qc_safue_schnittstelle",
-      "operator": "IN",
+      "operator": "CONTAINS_ANY",
       "value": [
        "kabelgebunden",
        "benutzer"
@@ -9184,7 +9476,7 @@
     "all": [
      {
       "question": "qc_safue_schnittstelle",
-      "operator": "IN",
+      "operator": "CONTAINS_ANY",
       "value": [
        "kabellos",
        "fernzugriff"
@@ -9214,14 +9506,14 @@
   {
    "hazard": "CY-C08",
    "code": "CY-C08-R11",
-   "priority": 260,
+   "priority": 275,
    "condition": {
     "all": [
      {
       "all": [
        {
         "question": "qc_safue_schnittstelle",
-        "operator": "IN",
+        "operator": "CONTAINS_ANY",
         "value": [
          "kabelgebunden",
          "benutzer"
@@ -9283,7 +9575,7 @@
     "all": [
      {
       "question": "qc_safue_schnittstelle",
-      "operator": "IN",
+      "operator": "CONTAINS_ANY",
       "value": [
        "kabelgebunden",
        "benutzer"
@@ -9338,8 +9630,13 @@
    "priority": 600,
    "condition": {
     "question": "qc_tragmittel_schnittstelle",
-    "operator": "EQ",
-    "value": "keine"
+    "operator": "NOT_CONTAINS_ANY",
+    "value": [
+     "kabelgebunden",
+     "benutzer",
+     "kabellos",
+     "fernzugriff"
+    ]
    },
    "result": "NO_RISK",
    "origin": "OWN_RULE",
@@ -9370,7 +9667,7 @@
       "all": [
        {
         "question": "qc_tragmittel_schnittstelle",
-        "operator": "IN",
+        "operator": "CONTAINS_ANY",
         "value": [
          "kabellos",
          "fernzugriff"
@@ -9420,7 +9717,7 @@
       "all": [
        {
         "question": "qc_tragmittel_schnittstelle",
-        "operator": "IN",
+        "operator": "CONTAINS_ANY",
         "value": [
          "kabelgebunden",
          "benutzer"
@@ -9482,8 +9779,10 @@
     "all": [
      {
       "question": "qc_tragmittel_schnittstelle",
-      "operator": "EQ",
-      "value": "fernzugriff"
+      "operator": "CONTAINS_ANY",
+      "value": [
+       "fernzugriff"
+      ]
      },
      {
       "question": "qc_tragmittel_massnahmen",
@@ -9520,8 +9819,10 @@
     "all": [
      {
       "question": "qc_tragmittel_schnittstelle",
-      "operator": "EQ",
-      "value": "kabellos"
+      "operator": "CONTAINS_ANY",
+      "value": [
+       "kabellos"
+      ]
      },
      {
       "question": "qc_tragmittel_massnahmen",
@@ -9560,7 +9861,7 @@
       "all": [
        {
         "question": "qc_tragmittel_schnittstelle",
-        "operator": "IN",
+        "operator": "CONTAINS_ANY",
         "value": [
          "kabelgebunden",
          "benutzer"
@@ -9622,7 +9923,7 @@
     "all": [
      {
       "question": "qc_tragmittel_schnittstelle",
-      "operator": "IN",
+      "operator": "CONTAINS_ANY",
       "value": [
        "kabelgebunden",
        "benutzer"
@@ -9665,7 +9966,7 @@
       "all": [
        {
         "question": "qc_tragmittel_schnittstelle",
-        "operator": "IN",
+        "operator": "CONTAINS_ANY",
         "value": [
          "kabelgebunden",
          "benutzer"
@@ -9727,7 +10028,7 @@
     "all": [
      {
       "question": "qc_tragmittel_schnittstelle",
-      "operator": "IN",
+      "operator": "CONTAINS_ANY",
       "value": [
        "kabelgebunden",
        "benutzer"
@@ -9768,7 +10069,7 @@
     "all": [
      {
       "question": "qc_tragmittel_schnittstelle",
-      "operator": "IN",
+      "operator": "CONTAINS_ANY",
       "value": [
        "kabellos",
        "fernzugriff"
@@ -9798,14 +10099,14 @@
   {
    "hazard": "CY-C09",
    "code": "CY-C09-R11",
-   "priority": 260,
+   "priority": 275,
    "condition": {
     "all": [
      {
       "all": [
        {
         "question": "qc_tragmittel_schnittstelle",
-        "operator": "IN",
+        "operator": "CONTAINS_ANY",
         "value": [
          "kabelgebunden",
          "benutzer"
@@ -9867,7 +10168,7 @@
     "all": [
      {
       "question": "qc_tragmittel_schnittstelle",
-      "operator": "IN",
+      "operator": "CONTAINS_ANY",
       "value": [
        "kabelgebunden",
        "benutzer"
@@ -9922,8 +10223,13 @@
    "priority": 600,
    "condition": {
     "question": "qc_hydraulik_schnittstelle",
-    "operator": "EQ",
-    "value": "keine"
+    "operator": "NOT_CONTAINS_ANY",
+    "value": [
+     "kabelgebunden",
+     "benutzer",
+     "kabellos",
+     "fernzugriff"
+    ]
    },
    "result": "NO_RISK",
    "origin": "OWN_RULE",
@@ -9954,7 +10260,7 @@
       "all": [
        {
         "question": "qc_hydraulik_schnittstelle",
-        "operator": "IN",
+        "operator": "CONTAINS_ANY",
         "value": [
          "kabellos",
          "fernzugriff"
@@ -10004,7 +10310,7 @@
       "all": [
        {
         "question": "qc_hydraulik_schnittstelle",
-        "operator": "IN",
+        "operator": "CONTAINS_ANY",
         "value": [
          "kabelgebunden",
          "benutzer"
@@ -10066,8 +10372,10 @@
     "all": [
      {
       "question": "qc_hydraulik_schnittstelle",
-      "operator": "EQ",
-      "value": "fernzugriff"
+      "operator": "CONTAINS_ANY",
+      "value": [
+       "fernzugriff"
+      ]
      },
      {
       "question": "qc_hydraulik_massnahmen",
@@ -10104,8 +10412,10 @@
     "all": [
      {
       "question": "qc_hydraulik_schnittstelle",
-      "operator": "EQ",
-      "value": "kabellos"
+      "operator": "CONTAINS_ANY",
+      "value": [
+       "kabellos"
+      ]
      },
      {
       "question": "qc_hydraulik_massnahmen",
@@ -10144,7 +10454,7 @@
       "all": [
        {
         "question": "qc_hydraulik_schnittstelle",
-        "operator": "IN",
+        "operator": "CONTAINS_ANY",
         "value": [
          "kabelgebunden",
          "benutzer"
@@ -10206,7 +10516,7 @@
     "all": [
      {
       "question": "qc_hydraulik_schnittstelle",
-      "operator": "IN",
+      "operator": "CONTAINS_ANY",
       "value": [
        "kabelgebunden",
        "benutzer"
@@ -10249,7 +10559,7 @@
       "all": [
        {
         "question": "qc_hydraulik_schnittstelle",
-        "operator": "IN",
+        "operator": "CONTAINS_ANY",
         "value": [
          "kabelgebunden",
          "benutzer"
@@ -10311,7 +10621,7 @@
     "all": [
      {
       "question": "qc_hydraulik_schnittstelle",
-      "operator": "IN",
+      "operator": "CONTAINS_ANY",
       "value": [
        "kabelgebunden",
        "benutzer"
@@ -10352,7 +10662,7 @@
     "all": [
      {
       "question": "qc_hydraulik_schnittstelle",
-      "operator": "IN",
+      "operator": "CONTAINS_ANY",
       "value": [
        "kabellos",
        "fernzugriff"
@@ -10382,14 +10692,14 @@
   {
    "hazard": "CY-C10",
    "code": "CY-C10-R11",
-   "priority": 260,
+   "priority": 275,
    "condition": {
     "all": [
      {
       "all": [
        {
         "question": "qc_hydraulik_schnittstelle",
-        "operator": "IN",
+        "operator": "CONTAINS_ANY",
         "value": [
          "kabelgebunden",
          "benutzer"
@@ -10451,7 +10761,7 @@
     "all": [
      {
       "question": "qc_hydraulik_schnittstelle",
-      "operator": "IN",
+      "operator": "CONTAINS_ANY",
       "value": [
        "kabelgebunden",
        "benutzer"
@@ -11056,8 +11366,13 @@
    "priority": 600,
    "condition": {
     "question": "qc_entrauchung_schnittstelle",
-    "operator": "EQ",
-    "value": "keine"
+    "operator": "NOT_CONTAINS_ANY",
+    "value": [
+     "kabelgebunden",
+     "benutzer",
+     "kabellos",
+     "fernzugriff"
+    ]
    },
    "result": "NO_RISK",
    "origin": "OWN_RULE",
@@ -11086,8 +11401,13 @@
      },
      {
       "question": "qc_entrauchung_schnittstelle",
-      "operator": "NEQ",
-      "value": "keine"
+      "operator": "CONTAINS_ANY",
+      "value": [
+       "kabelgebunden",
+       "benutzer",
+       "kabellos",
+       "fernzugriff"
+      ]
      },
      {
       "question": "qc_entrauchung_massnahmen",
@@ -11129,8 +11449,13 @@
      },
      {
       "question": "qc_entrauchung_schnittstelle",
-      "operator": "NEQ",
-      "value": "keine"
+      "operator": "CONTAINS_ANY",
+      "value": [
+       "kabelgebunden",
+       "benutzer",
+       "kabellos",
+       "fernzugriff"
+      ]
      },
      {
       "question": "qc_entrauchung_massnahmen",
@@ -11161,8 +11486,10 @@
     "all": [
      {
       "question": "qc_entrauchung_schnittstelle",
-      "operator": "EQ",
-      "value": "fernzugriff"
+      "operator": "CONTAINS_ANY",
+      "value": [
+       "fernzugriff"
+      ]
      },
      {
       "question": "qc_entrauchung_massnahmen",
@@ -11199,8 +11526,10 @@
     "all": [
      {
       "question": "qc_entrauchung_schnittstelle",
-      "operator": "EQ",
-      "value": "kabellos"
+      "operator": "CONTAINS_ANY",
+      "value": [
+       "kabellos"
+      ]
      },
      {
       "question": "qc_entrauchung_massnahmen",
@@ -11239,7 +11568,7 @@
       "all": [
        {
         "question": "qc_entrauchung_schnittstelle",
-        "operator": "IN",
+        "operator": "CONTAINS_ANY",
         "value": [
          "kabelgebunden",
          "benutzer"
@@ -11301,7 +11630,7 @@
     "all": [
      {
       "question": "qc_entrauchung_schnittstelle",
-      "operator": "IN",
+      "operator": "CONTAINS_ANY",
       "value": [
        "kabelgebunden",
        "benutzer"
@@ -11343,7 +11672,7 @@
       "all": [
        {
         "question": "qc_entrauchung_schnittstelle",
-        "operator": "IN",
+        "operator": "CONTAINS_ANY",
         "value": [
          "kabelgebunden",
          "benutzer"
@@ -11404,7 +11733,7 @@
     "all": [
      {
       "question": "qc_entrauchung_schnittstelle",
-      "operator": "IN",
+      "operator": "CONTAINS_ANY",
       "value": [
        "kabelgebunden",
        "benutzer"
@@ -11444,7 +11773,7 @@
     "all": [
      {
       "question": "qc_entrauchung_schnittstelle",
-      "operator": "IN",
+      "operator": "CONTAINS_ANY",
       "value": [
        "kabellos",
        "fernzugriff"
@@ -11474,14 +11803,14 @@
   {
    "hazard": "CY-C16",
    "code": "CY-C16-R11",
-   "priority": 260,
+   "priority": 275,
    "condition": {
     "all": [
      {
       "all": [
        {
         "question": "qc_entrauchung_schnittstelle",
-        "operator": "IN",
+        "operator": "CONTAINS_ANY",
         "value": [
          "kabelgebunden",
          "benutzer"
@@ -11542,7 +11871,7 @@
     "all": [
      {
       "question": "qc_entrauchung_schnittstelle",
-      "operator": "IN",
+      "operator": "CONTAINS_ANY",
       "value": [
        "kabelgebunden",
        "benutzer"
@@ -11850,7 +12179,7 @@
     }
    ],
    "ui_number": "1",
-   "help": "Systemabgrenzung nach TRBS 1115 Teil 1 Abschn. 4.2: Welche Einrichtungen gehören zum betrachteten System und welche Schnittstellen führen aus ihm heraus? Die Antworten auf 1.5 (Netzanbindung) und 1.6 (bauseitige Systeme) schalten die Karten „Netz, Fernzugriff und Härtung\" und „Bauseitige Einrichtungen\"."
+   "help": "Systemabgrenzung nach TRBS 1115 Teil 1 Abschn. 4.2: Welche Einrichtungen gehören zum betrachteten System und welche Schnittstellen führen aus ihm heraus? Die Antworten auf 1.5 (Netzanbindung) und 1.6 (bauseitige Systeme) schalten die Karten „Netz, Fernzugriff und Funktionsreduzierung\" und „Bauseitige Einrichtungen\"."
   },
   {
    "id": "CY-Z",
@@ -12267,8 +12596,8 @@
   },
   {
    "id": "CY-N",
-   "title": "Netz, Fernzugriff, Gateway und Härtung",
-   "category": "N – Netz, Fernzugriff und Härtung",
+   "title": "Netz, Fernzugriff, Gateway und Funktionsreduzierung",
+   "category": "N – Netz, Fernzugriff und Funktionsreduzierung",
    "kind": "card",
    "items": [
     {
@@ -12329,16 +12658,16 @@
     {
      "question": "qn_softwarestand",
      "mode": "native",
-     "row": "Härtung und Softwarestand"
+     "row": "Funktionsreduzierung und Softwarestand"
     },
     {
      "question": "qn_funktionsreduzierung",
      "mode": "native",
-     "row": "Härtung und Softwarestand"
+     "row": "Funktionsreduzierung und Softwarestand"
     }
    ],
    "ui_number": "4",
-   "help": "Segmentierung, Funktionsreduzierung und Überwachung nach TRBS 1115-1 Abschn. 4.5.2. Die Zeilen Fernüberwachung, Fernwartung und Gateway erscheinen nur bei vernetzter Anlage (1.5); Protokollierung und Härtung gelten auch ohne Netzanbindung, weil Servicegeräte vor Ort dieselben Schnittstellen benutzen."
+   "help": "Segmentierung, Funktionsreduzierung und Überwachung nach TRBS 1115-1 Abschn. 4.5.2. Die Zeilen Fernüberwachung, Fernwartung und Gateway erscheinen nur bei vernetzter Anlage (1.5); Protokollierung und Funktionsreduzierung gelten auch ohne Netzanbindung, weil Servicegeräte vor Ort dieselben Schnittstellen benutzen."
   },
   {
    "id": "CY-G",

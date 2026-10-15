@@ -41,13 +41,19 @@ def check(seed):
             if op not in ('EQ', 'NEQ') or not isinstance(val, bool):
                 errors.append('%s: %s ist YES_NO, Vergleich %s %r ungültig'
                               % (where, qc, op, val))
-        elif q['type'] == 'SELECT':
+        elif q['type'] in ('SELECT', 'MULTI_SELECT'):
             opts = {o['value'] for o in q.get('options', [])}
             vals = val if isinstance(val, list) else [val]
             for v in vals:
                 if v not in opts:
                     errors.append('%s: Wert %r nicht in Optionen von %s'
                                   % (where, v, qc))
+            # Die Antwort einer Mehrfachauswahl ist eine Liste - ein
+            # Gleichheitsvergleich darauf trifft nie zu.
+            if q['type'] == 'MULTI_SELECT' and op not in (
+                    'CONTAINS_ANY', 'NOT_CONTAINS_ANY'):
+                errors.append('%s: %s ist MULTI_SELECT, Vergleich %s unzulaessig '
+                              '(CONTAINS_ANY/NOT_CONTAINS_ANY)' % (where, qc, op))
         elif q['type'] == 'NUMBER':
             if op not in ('GT', 'GTE', 'LT', 'LTE', 'EQ', 'NEQ') or \
                     not isinstance(val, (int, float)):

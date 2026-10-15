@@ -73,7 +73,8 @@ k('CY-A', 'A', 'Systemabgrenzung der Anlage', [
   help='Systemabgrenzung nach TRBS 1115 Teil 1 Abschn. 4.2: Welche Einrichtungen gehören '
        'zum betrachteten System und welche Schnittstellen führen aus ihm heraus? Die '
        'Antworten auf 1.5 (Netzanbindung) und 1.6 (bauseitige Systeme) schalten die '
-       'Karten „Netz, Fernzugriff und Härtung" und „Bauseitige Einrichtungen".')
+       'Karten „Netz, Fernzugriff und Funktionsreduzierung" und „Bauseitige '
+       'Einrichtungen".')
 
 # ---------------------------------------------------------------------------
 # Z – Zugang und Zugriff (geteilte Modifier über alle Komponenten)
@@ -165,11 +166,11 @@ for _gid, _titel, _ui, _pre, _hilfe in _KOMPONENTEN:
       help=(_hilfe + ' ' + _HILFE_KOMP) if _hilfe else _HILFE_KOMP)
 
 # ---------------------------------------------------------------------------
-# N – Netz, Fernzugriff, Gateway und Härtung
+# N – Netz, Fernzugriff, Gateway und Funktionsreduzierung
 #     (Karte quer über die Bereiche C und N: die Gateway-/Fernzugriffsfragen
 #      sind fachlich ein Block, auch wenn sie im Datenmodell auf C und N liegen.)
 # ---------------------------------------------------------------------------
-k('CY-N', 'N', 'Netz, Fernzugriff, Gateway und Härtung', [
+k('CY-N', 'N', 'Netz, Fernzugriff, Gateway und Funktionsreduzierung', [
     ('qc_fernueb_vorhanden', 'Fernüberwachung'),
     ('qc_fernueb_lesend', 'Fernüberwachung'),
     ('qc_remote_vorhanden', 'Fernwartung / Remote-Service'),
@@ -181,11 +182,12 @@ k('CY-N', 'N', 'Netz, Fernzugriff, Gateway und Härtung', [
     ('qc_gateway_updates', 'Gateway / Router / Dongle'),
     ('qn_segmentierung', 'Netztrennung und Protokollierung'),
     ('qn_protokoll', 'Netztrennung und Protokollierung'),
-    ('qn_softwarestand', 'Härtung und Softwarestand'),
-    ('qn_funktionsreduzierung', 'Härtung und Softwarestand')], ui='4',
+    ('qn_softwarestand', 'Funktionsreduzierung und Softwarestand'),
+    ('qn_funktionsreduzierung', 'Funktionsreduzierung und Softwarestand')], ui='4',
   help='Segmentierung, Funktionsreduzierung und Überwachung nach TRBS 1115-1 '
        'Abschn. 4.5.2. Die Zeilen Fernüberwachung, Fernwartung und Gateway erscheinen '
-       'nur bei vernetzter Anlage (1.5); Protokollierung und Härtung gelten auch ohne '
+       'nur bei vernetzter Anlage (1.5); Protokollierung und Funktionsreduzierung '
+       'gelten auch ohne '
        'Netzanbindung, weil Servicegeräte vor Ort dieselben Schnittstellen benutzen.')
 
 # ---------------------------------------------------------------------------

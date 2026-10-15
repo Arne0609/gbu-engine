@@ -152,12 +152,18 @@ def komponente(code, key, name, ui, group, factor, persons, schutz, folge,
                 '(TRBS 1115-1 Abschn. 4.2); ohne Einfluss auf die Stufe. '
                 'Häufige Hersteller: %s.' % HERSTELLER.get(key, 'siehe Anlagenunterlagen'),
            **vk2)
-    qs = sel('qc_%s_schnittstelle' % key, 'Höchste vorhandene Schnittstellenkategorie '
-             'der Komponente „%s"' % name, IF_OPTIONS, ui=ui + '.2',
-             help='Maßgeblich ist die angreifbarste Schnittstelle. Konkrete '
-                  'Schnittstellen (USB, CAN, Mobilfunk …) in der App dokumentieren.',
-             **vk2)
-    vis3 = all_(vis2, neq(qs, IF_KEINE)) if vis2 else neq(qs, IF_KEINE)
+    qs = multi('qc_%s_schnittstelle' % key, 'Vorhandene Schnittstellen der '
+               'Komponente „%s" (alle zutreffenden)' % name, IF_OPTIONS,
+               ui=ui + '.2',
+               help='Mehrfachauswahl (16.10.2026, Festlegung Arne): Eine '
+                    'Komponente hat oft mehrere Schnittstellen - etwa einen '
+                    'Serviceanschluss UND ein Funkmodul. Für die Stufe zählt '
+                    'die angreifbarste angekreuzte (keine < kabelgebunden < '
+                    'Benutzerschnittstelle < kabellos < Fernzugriff, K-C03). '
+                    '„Keine" schließt die übrigen aus. Konkrete Bezeichnungen '
+                    '(USB, CAN, Mobilfunk …) in der Bemerkung dokumentieren.',
+               **vk2)
+    vis3 = all_(vis2, has(qs, IF_ANGREIFBAR)) if vis2 else has(qs, IF_ANGREIFBAR)
     qm = sel('qc_%s_massnahmen' % key, 'Schutzmaßnahmen nach TRBS 1115-1 für „%s"'
              % name, M_OPTIONS, ui=ui + '.3',
              help='Einschlägige Kategorien: %s.' % standard[1],
@@ -165,11 +171,11 @@ def komponente(code, key, name, ui, group, factor, persons, schutz, folge,
     if unab_text:
         qu = yn('qc_%s_unabhaengig' % key, unab_text, ui=ui + '.4', visible_when=vis3)
 
-    lokal_none = all_(in_(qs, IF_LOKAL), eq(qm, M_KEINE))
-    lokal_teil = all_(in_(qs, IF_LOKAL), eq(qm, M_TEILWEISE))
-    lokal_ok = all_(in_(qs, IF_LOKAL), eq(qm, M_UMGESETZT))
-    fern_bad = all_(in_(qs, IF_ENTFERNT), neq(qm, M_UMGESETZT))
-    fern_ok = all_(in_(qs, IF_ENTFERNT), eq(qm, M_UMGESETZT))
+    lokal_none = all_(has(qs, IF_LOKAL), eq(qm, M_KEINE))
+    lokal_teil = all_(has(qs, IF_LOKAL), eq(qm, M_TEILWEISE))
+    lokal_ok = all_(has(qs, IF_LOKAL), eq(qm, M_UMGESETZT))
+    fern_bad = all_(has(qs, IF_ENTFERNT), neq(qm, M_UMGESETZT))
+    fern_ok = all_(has(qs, IF_ENTFERNT), eq(qm, M_UMGESETZT))
     # Prüfbericht 20.09.2026: Der Zusatz „Wirksamkeit nachweisen" stand nur an
     # einem Teil der Regeln und erzeugte fünf Maßnahmenpaare, die sich allein
     # durch diesen Satz unterschieden. Der Nachweis ist nach TRBS 1115-1 Abschn. 5
@@ -181,7 +187,7 @@ def komponente(code, key, name, ui, group, factor, persons, schutz, folge,
     mittel += ' Wirksamkeit nachweisen (TRBS 1115-1 Abschn. 5).'
 
     rules = [
-        r(eq(qs, IF_KEINE), 'NO_RISK', prio=600, evidence='HIGH_CONFIDENCE',
+        r(has_not(qs, IF_ANGREIFBAR), 'NO_RISK', prio=600, evidence='HIGH_CONFIDENCE',
           sofort='Keine kompromittierbare Schnittstelle – Feststellung dokumentieren '
                  '(Vorscreening nach BA-017); bei Nachrüstung erneut bewerten',
           klaerung=['K-C02'], notes='Vorscreening: Betrachtung abgeschlossen.'),
@@ -189,11 +195,11 @@ def komponente(code, key, name, ui, group, factor, persons, schutz, folge,
     if unab_text:
         if unab_deckel == 'LOW':
             rules += [
-                r(all_(yes(qu), neq(qs, IF_KEINE), neq(qm, M_UMGESETZT)), 'LOW', prio=520,
+                r(all_(yes(qu), has(qs, IF_ANGREIFBAR), neq(qm, M_UMGESETZT)), 'LOW', prio=520,
                   sofort='Unabhängige Sicherheitskette bei jeder Prüfung mitprüfen',
                   mittel=mittel,
                   klaerung=['K-C07']),
-                r(all_(yes(qu), neq(qs, IF_KEINE), eq(qm, M_UMGESETZT)), 'NO_RISK', prio=510,
+                r(all_(yes(qu), has(qs, IF_ANGREIFBAR), eq(qm, M_UMGESETZT)), 'NO_RISK', prio=510,
                   sofort='Zustand erhalten; unabhängige Sicherheitskette und Maßnahmen '
                          'bei der wiederkehrenden Prüfung erneut prüfen',
                   klaerung=['K-C07']),
@@ -213,12 +219,12 @@ def komponente(code, key, name, ui, group, factor, persons, schutz, folge,
                   mittel=mittel, klaerung=['K-C08']),
             ]
     rules += [
-        r(all_(eq(qs, IF_FERN), neq(qm, M_UMGESETZT)), 'HIGH', prio=400,
+        r(all_(has(qs, [IF_FERN]), neq(qm, M_UMGESETZT)), 'HIGH', prio=400,
           sofort='Fernzugang der Komponente „%s" deaktivieren oder physisch trennen, '
                  'bis die Schutzmaßnahmen umgesetzt und nachgewiesen sind' % name,
           mittel=mittel,
           klaerung=['K-C01']),
-        r(all_(eq(qs, IF_KABELLOS), neq(qm, M_UMGESETZT)), 'HIGH', prio=390,
+        r(all_(has(qs, [IF_KABELLOS]), neq(qm, M_UMGESETZT)), 'HIGH', prio=390,
           sofort='Funkschnittstelle der Komponente „%s" deaktivieren oder auf das '
                  'Notwendige beschränken, bis die Schutzmaßnahmen umgesetzt sind' % name,
           mittel=mittel,
@@ -240,7 +246,12 @@ def komponente(code, key, name, ui, group, factor, persons, schutz, folge,
           sofort='Zustand erhalten; Fern-/Funkzugang regelmäßig auf Notwendigkeit prüfen, '
                  'Wirksamkeit bei der wiederkehrenden Prüfung erneut nachweisen',
           klaerung=['K-C06']),
-        r(all_(lokal_ok, zugang), 'LOW', prio=260,
+        # prio 275, nicht 260: Seit der Mehrfachauswahl kann eine Komponente
+        # gleichzeitig eine lokale UND eine entfernte Schnittstelle haben.
+        # Stuende diese Regel unter fern_ok (270), wuerde ein zusaetzlicher
+        # Fernzugriff das Ergebnis von Niedrig auf Kein Risiko VERBESSERN -
+        # das Gegenteil von „die angreifbarste zaehlt".
+        r(all_(lokal_ok, zugang), 'LOW', prio=275,
           sofort='Physischen Zugang zur Steuerung bzw. zum Raum beschränken '
                  '(siehe Gefährdungen Zugang)',
           mittel='Zugangskontrolle (Hardware) dauerhaft herstellen'),
@@ -568,7 +579,7 @@ hz('CY-C13', 'Ungesichertes Gateway / Router / Modem als Einstieg in das Aufzugs
     r(no('qc_gateway_updates'), 'LOW', prio=250,
       sofort='Firmwarestand prüfen und Herstellerhinweise einholen',
       mittel='Update-Verfahren für Netzkomponenten festlegen')],
-   sources=[trbs1115('4.5.2 Segmentierung, Härtung'), dekra('Schritt 3')],
+   sources=[trbs1115('4.5.2 Segmentierung, Funktionsreduzierung'), dekra('Schritt 3')],
    factor=F_MANIP, persons=[NUTZER, WARTUNG, BETREIBER], agg='NONE',
    description='TRBS-1115-1-Prüffeld „Gateway / Router / Modem / WLAN-/Service-Dongle".',
    bereich='C')

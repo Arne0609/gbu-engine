@@ -116,6 +116,13 @@ def no(q):       return {'question': q, 'operator': 'EQ', 'value': False}
 def eq(q, v):    return {'question': q, 'operator': 'EQ', 'value': v}
 def neq(q, v):   return {'question': q, 'operator': 'NEQ', 'value': v}
 def in_(q, vs):  return {'question': q, 'operator': 'IN', 'value': list(vs)}
+# Mehrfachauswahl (MULTI_SELECT, 16.10.2026): Die Antwort IST eine Liste.
+# IN passt dafuer nicht - IN fragt, ob die eine Antwort in der Liste der
+# Regel steht. has() fragt umgekehrt, ob die Antwortliste einen der Werte
+# der Regel enthaelt. Eine leere Auswahl gilt als unbeantwortet, deshalb
+# ist has_not() nicht einfach die Verneinung von has().
+def has(q, vs):     return {'question': q, 'operator': 'CONTAINS_ANY', 'value': list(vs)}
+def has_not(q, vs): return {'question': q, 'operator': 'NOT_CONTAINS_ANY', 'value': list(vs)}
 def nin(q, vs):  return {'question': q, 'operator': 'NOT_IN', 'value': list(vs)}
 def gt(q, v):    return {'question': q, 'operator': 'GT', 'value': v}
 def gte(q, v):   return {'question': q, 'operator': 'GTE', 'value': v}
@@ -325,6 +332,11 @@ def yn(code, text, **kw):
 
 def sel(code, text, options, **kw):
     return q(code, text, 'SELECT', options=options, **kw)
+
+def multi(code, text, options, **kw):
+    """Mehrfachauswahl. Antwort ist eine Liste von Optionswerten; leere
+    Liste gilt als unbeantwortet. Bedingungen mit has()/has_not()."""
+    return q(code, text, 'MULTI_SELECT', options=options, **kw)
 
 def num(code, text, **kw):
     """Zahlenfrage; min/max = fachlich plausibler Wertebereich (UI-Eingabegrenze)."""

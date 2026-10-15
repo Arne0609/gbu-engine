@@ -188,6 +188,59 @@ expect(r14.sum.INCOMPLETE === 0 && r14.sum.NO_RISK === 0, 'Worst case: Unvollst�
 // Gefährdungen entfallen, die im Worst case beide Hoch ergaben.
 expect(r14.sum.HIGH >= 16, 'Worst case: zu wenig Hoch (' + r14.sum.HIGH + ')');
 
+// 14b) Mehrfachauswahl der Schnittstellen (16.10.2026, Festlegung Arne).
+//      Die Stufe richtet sich nach der angreifbarsten angekreuzten Schnittstelle.
+const m1 = run('Kabel + Fernzugriff, keine Maßn.',
+  { ...gut(), qc_steuerung_schnittstelle: ['kabelgebunden', 'fernzugriff'],
+    qc_steuerung_massnahmen: 'keine', qc_steuerung_unabhaengig: false });
+expect(m1.of('CY-C01')?.status === 'HIGH',
+  'Mehrfachauswahl: Fernzugriff neben Kabel ergibt nicht Hoch: ' + m1.of('CY-C01')?.status);
+
+const m2 = run('nur Kabel, keine Maßn.',
+  { ...gut(), qc_steuerung_schnittstelle: ['kabelgebunden'],
+    qc_steuerung_massnahmen: 'keine', qc_steuerung_unabhaengig: false });
+expect(m2.of('CY-C01')?.status === 'MEDIUM',
+  'Mehrfachauswahl: Kabel allein ohne Maßnahmen ergibt nicht Mittel: ' + m2.of('CY-C01')?.status);
+
+// Die Prioritätenfalle: Eine zusätzliche entfernte Schnittstelle darf das
+// Ergebnis NIE verbessern. Lokal + Zugang frei + Maßnahmen umgesetzt = Niedrig;
+// mit zusätzlichem Fernzugriff muss es mindestens Niedrig bleiben.
+const zugangFrei = { ...gut(), qz_steuerung_frei: true };
+const m3 = run('Kabel, Maßn. ok, Zugang frei',
+  { ...zugangFrei, qc_steuerung_schnittstelle: ['kabelgebunden'] });
+const m4 = run('… zusätzlich Fernzugriff',
+  { ...zugangFrei, qc_steuerung_schnittstelle: ['kabelgebunden', 'fernzugriff'] });
+const RANG: Record<string, number> = { NO_RISK: 0, LOW: 1, MEDIUM: 2, HIGH: 3 };
+expect(m3.of('CY-C01')?.status === 'LOW',
+  'Lokal mit freiem Zugang und umgesetzten Maßnahmen nicht Niedrig: ' + m3.of('CY-C01')?.status);
+expect(RANG[m4.of('CY-C01')!.status] >= RANG[m3.of('CY-C01')!.status],
+  'Eine zusätzliche Schnittstelle hat die Stufe VERBESSERT: '
+  + m3.of('CY-C01')?.status + ' -> ' + m4.of('CY-C01')?.status);
+
+// Leere Auswahl = nichts angekreuzt = unbeantwortet, nicht „keine Schnittstelle".
+const m5 = run('Schnittstellen leer',
+  { ...gut(), qc_steuerung_schnittstelle: [] });
+expect(m5.of('CY-C01')?.status === 'INCOMPLETE',
+  'Leere Mehrfachauswahl gilt nicht als unbeantwortet: ' + m5.of('CY-C01')?.status);
+
+// Ausdrücklich „keine" -> Vorscreening, Kein Risiko.
+const m6 = run('Schnittstellen: keine', { ...gut(), qc_steuerung_schnittstelle: ['keine'] });
+expect(m6.of('CY-C01')?.status === 'NO_RISK',
+  '„keine" ergibt nicht Kein Risiko: ' + m6.of('CY-C01')?.status);
+
+// Einzelantwort aus der Zeit vor der Mehrfachauswahl wird weiter bewertet.
+const m7 = run('Altbestand: Einzelantwort',
+  { ...gut(), qc_steuerung_schnittstelle: 'fernzugriff',
+    qc_steuerung_massnahmen: 'keine', qc_steuerung_unabhaengig: false });
+expect(m7.of('CY-C01')?.status === 'HIGH',
+  'Einzelantwort wird nicht mehr bewertet: ' + m7.of('CY-C01')?.status);
+
+// Der Fragetyp steht im Katalog.
+for (const c of ['steuerung', ...COMPS]) {
+  const f = seed.questions.find((x: any) => x.code === `qc_${c}_schnittstelle`);
+  if (f) expect(f.type === 'MULTI_SELECT', `qc_${c}_schnittstelle ist kein MULTI_SELECT`);
+}
+
 // 15) Regellücken-Suche: alle Kombinationen je Klasse-S-Komponente müssen eine Regel treffen
 const IF = ['keine', 'kabelgebunden', 'benutzer', 'kabellos', 'fernzugriff'];
 const MS = ['keine', 'teilweise', 'umgesetzt'];
