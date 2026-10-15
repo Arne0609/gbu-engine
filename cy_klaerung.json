@@ -15,21 +15,6 @@
   "datum": "2026-09-03"
  },
  {
-  "id": "K-C13",
-  "bereich": "Zugang",
-  "thema": "Default-Zugangsdaten",
-  "frage": "Werkszugangsdaten in Gebrauch: Mittel – und Hoch bei vernetzter Anlage?",
-  "vorschlag": "Mittel; Hoch bei Netz-/Fernanbindung",
-  "alternativen": "Immer Mittel",
-  "grund": "Bei Fernanbindung sind Werkspasswörter aus der Ferne ausnutzbar; TRBS 1115-1 nennt Zugangskontrolle (Software) als Mindestmaßnahme.",
-  "hazards": [
-   "CY-Z04"
-  ],
-  "entscheidung": "Vorschlag",
-  "festlegung": "Werkszugangsdaten: Mittel; bei Netz-/Fernanbindung Hoch.",
-  "datum": "2026-09-03"
- },
- {
   "id": "K-C21",
   "bereich": "Zugang",
   "thema": "Triebwerksraum und Schacht",

@@ -20,30 +20,6 @@ yn('qz_service_gesichert', 'Sind die Service- und Programmierschnittstellen '
    '(Serviceanschluss, USB, Speicherkarte, Diagnosestecker) gegen unbefugte '
    'Nutzung gesichert (verschlossene Abdeckung, Freigabe nur mit Schlüssel/'
    'Code)?', ui='2.4')
-yn('qz_default_zugangsdaten', 'Werden Standard-/Werkszugangsdaten (Passwörter, PINs, '
-   'Servicecodes) verwendet?', ui='2.5',
-   help='Ja = Mangel. Gemeint sind alle Zugänge: Steuerung, Notruf, Umrichter, Gateway, '
-        'Fernwartung. Ob die Zugangsdaten überhaupt bekannt sind, steht unter 2.5a – beides '
-        'stand bisher in einer Frage, obwohl nur der erste Fall mit „Werkszugangsdaten '
-        'ändern" zu beheben ist (Prüfbericht 20.09.2026).')
-yn('qz_zugangsdaten_bekannt', 'Sind dem Betreiber die Zugangsdaten der Anlage bekannt und '
-   'liegen sie gesichert vor (Übergabe durch Hersteller/Wartungsfirma dokumentiert)?',
-   ui='2.5a',
-   help='Nein = Mangel: Der Betreiber kann Zugänge weder prüfen noch bei einem Firmenwechsel '
-        'entziehen (TRBS 1115-1, Zugangskontrolle Software).',
-   # Ob die Zugangsdaten beim Betreiber hinterlegt sind, weiss nur er. (01.10.2026)
-   rolle='betreiber')
-yn('qz_rollen', 'Sind Zugriffsrechte rollenbasiert vergeben (Betreiber, '
-   'Wartungsfirma, Hersteller) und werden sie bei Personal- oder Firmenwechsel '
-   'entzogen?', ui='2.6',
-   # Rollenvergabe ist eine Festlegung des Betreibers, keine Feststellung an der Anlage. (01.10.2026)
-   rolle='betreiber')
-yn('qz_servicegeraete', 'Ist geregelt, welche Servicegeräte, Laptops und Wechsel'
-   'datenträger an die Anlage angeschlossen werden dürfen (nur freigegebene, '
-   'geprüfte Geräte; kein privater Datenträger)?', ui='2.7',
-   # Eine Regelung, kein Zustand – der Betreiber trifft sie. (01.10.2026)
-   rolle='betreiber')
-
 # ---- Klärungen -------------------------------------------------------------
 k('K-C12', 'Zugang', 'Frei zugängliche Steuerung',
   'Steuerung für Unbefugte frei zugänglich: Mittel (wie Schindler MC1) – und '
@@ -52,12 +28,6 @@ k('K-C12', 'Zugang', 'Frei zugängliche Steuerung',
   'Durchgängig Mittel (Schindler-Verhalten)',
   'Schindler MC1 kennt nur „Für Unbefugte ist der Zugang möglich" = Mittel; die '
   'Kombination mit offenem Serviceanschluss ist dort nicht abgebildet.')
-k('K-C13', 'Zugang', 'Default-Zugangsdaten',
-  'Werkszugangsdaten in Gebrauch: Mittel – und Hoch bei vernetzter Anlage?',
-  'Mittel; Hoch bei Netz-/Fernanbindung',
-  'Immer Mittel',
-  'Bei Fernanbindung sind Werkspasswörter aus der Ferne ausnutzbar; TRBS 1115-1 '
-  'nennt Zugangskontrolle (Software) als Mindestmaßnahme.')
 k('K-C21', 'Zugang', 'Triebwerksraum und Schacht',
   'Freier Zugang zu Triebwerksraum bzw. Schacht als eigene Cyber-Gefährdung '
   '(Mittel) – oder nur als Modifier an den Komponenten?',
@@ -96,45 +66,8 @@ hz('CY-Z01', 'Unbefugter physischer Zugang zur Aufzugssteuerung', GRP_ZUGANG,
 # die Zugangsfragen wirken nur noch als Modifier an den Komponenten; der
 # Zugang selbst wird in der technischen GBU bewertet.
 
-hz('CY-Z04', 'Unzureichende logische Zugangskontrolle (Werkszugangsdaten, fehlende '
-   'Rollen)', GRP_ZUGANG,
-   [('qz_default_zugangsdaten', 'TRIGGER', 'ALWAYS'),
-    ('qz_zugangsdaten_bekannt', 'TRIGGER', 'ALWAYS'),
-    ('qz_rollen', 'TRIGGER', 'ALWAYS'),
-    ('qa_vernetzt', 'MODIFIER', 'NEVER')],
-   [r(all_(yes('qz_default_zugangsdaten'), yes('qa_vernetzt')), 'HIGH', prio=300,
-      sofort='Werkszugangsdaten unverzüglich ändern; Fernzugänge bis dahin '
-             'deaktivieren',
-      mittel='Passwort-/Berechtigungskonzept (Zugangskontrolle Software) mit '
-             'individuellen Zugängen einführen',
-      klaerung=['K-C13']),
-    r(yes('qz_default_zugangsdaten'), 'MEDIUM', prio=250,
-      sofort='Werkszugangsdaten ändern und sicher verwahren',
-      mittel='Passwort-/Berechtigungskonzept einführen und Wechsel bei '
-             'Personal- oder Firmenwechsel festlegen',
-      klaerung=['K-C13']),
-    r(no('qz_zugangsdaten_bekannt'), 'MEDIUM', prio=220,
-      sofort='Zugangsdaten bei Hersteller und Wartungsfirma anfordern und gesichert '
-             'hinterlegen (Passwortverwaltung des Betreibers)',
-      mittel='Übergabe der Zugangsdaten vertraglich regeln; Zugänge des Betreibers bei '
-             'jedem Firmenwechsel prüfen und erneuern',
-      notes='Prüfbericht 20.09.2026: aus der bisherigen Doppelfrage 2.5 herausgelöst – '
-            '„Zugangsdaten nicht bekannt" ist nicht mit „Werkszugangsdaten ändern" zu '
-            'beheben und brauchte eine eigene Maßnahme.'),
-    r(no('qz_rollen'), 'LOW', prio=200,
-      sofort='Zugriffsrechte prüfen und nicht mehr benötigte Zugänge entziehen',
-      mittel='Rollenkonzept (Betreiber, Wartung, Hersteller) mit Entzug bei '
-             'Wechsel festlegen')],
-   sources=[trbs1115('4.5.2 Zugangskontrolle (Software)'), dekra('Schritt 3')],
-   factor=F_ZUGANG, persons=[NUTZER, WARTUNG, BETREIBER], bereich='Z')
-
-hz('CY-Z05', 'Ungeregelte Servicegeräte und Wechseldatenträger', GRP_HAERTUNG,
-   [('qz_servicegeraete', 'TRIGGER', 'ALWAYS')],
-   [r(no('qz_servicegeraete'), 'MEDIUM', prio=250,
-      sofort='Anschluss privater oder ungeprüfter Geräte und Datenträger untersagen',
-      mittel='Freigabeliste für Servicegeräte und Datenträger mit der Wartungsfirma '
-             'vereinbaren; Handterminals und Programmiergeräte nur für die Dauer '
-             'der Arbeiten anstecken und danach gesichert verwahren (Härtung nach '
-             'TRBS 1115-1)')],
-   sources=[trbs1115('4.5.2 Härtung'), zues_ba017()],
-   factor=F_MANIP, persons=[NUTZER, WARTUNG], bereich='Z')
+# CY-Z04 (logische Zugangskontrolle) und CY-Z05 (Servicegeraete und
+# Wechseldatentraeger) sind am 16.10.2026 entfallen (Festlegung Arne), mit
+# ihnen die Fragen 2.5 Werkszugangsdaten, 2.5a Zugangsdaten bekannt,
+# 2.6 Rollenvergabe und 2.7 Servicegeräte sowie die Klärung K-C13.
+# Der Bereich Z fragt seitdem nur noch den physischen Zugang ab (2.1-2.4).

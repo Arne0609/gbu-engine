@@ -51,7 +51,8 @@ UNTERTITEL = ('Anlagenbezogene Beurteilung nach ArbSchG, BetrSichV, TRBS 3121 '
 VARIANTE = 'Riedl'                 # Anzeigename der Variante
 TYP_SCHLUESSEL = 'riedl'           # Vorschlag für GbuTypen in der App
 RULE_VERSION_GBU = 'riedl-mf-2026.3'      # .3: Notfallplan aus der Notrufaufschaltung (12.10.2026)
-RULE_VERSION_CYBER = 'riedl-cyber-2026.6'  # .6: Bereich O gekürzt, ZÜS-Abschlusscheck entfallen (13.10.2026)
+RULE_VERSION_CYBER = 'riedl-cyber-2026.7'  # .7: Bereich Z gekürzt, Netzfragen nach N (16.10.2026)
+# .6: Bereich O gekürzt, ZÜS-Abschlusscheck entfallen (13.10.2026)
 # .5: Maßnahme zur Gefährdung, nicht Schutzkonzept (13.10.2026)
 VORLAGE_GBU = 'VFA Interlift, Version 21.08.2024 R 1.7.2 (Nutzungsrecht VFA-Akademie)'
 VORLAGE_CYBER = 'Vorlage GBU Cybersicherheit ab 04-26 (TRBS 1115-1, IEC 62443)'
@@ -516,7 +517,11 @@ CYBER_BLATT = {
    'bemerkung': 'Entscheidend sind 3.14.1 (Rückwirkungsfreiheit) und 3.14.2 (sicherer Zustand bei '
                 'Ausfall des bauseitigen Signals).'},
   {'nr': 8, 'komponente': '', 'titel': 'Zugang und Zugriff: Maschinenraum/Steuerschrank, Aufzugsschacht, Schlüsseldepot, Servicegeräte',
-   'hazards': ['CY-Z01', 'CY-Z04', 'CY-Z05'], 'deckung': 'voll',
+   # 16.10.2026: CY-Z04 (logische Zugangskontrolle) und CY-Z05 (Servicegeräte)
+   # sind aus dem Katalog entfallen. Die Zeile deckt seitdem nur noch den
+   # physischen Zugang ab; Titel und Erläuterung nennen Servicegeräte und
+   # Passwortschutz weiterhin - das ist beim nächsten Gegenlesen zu prüfen.
+   'hazards': ['CY-Z01'], 'deckung': 'teilweise',
    'excel': ['Maschinenraum verschlossen halten', 'Schaltschrank verschlossen halten',
              'Handterminal nur bei Montage / Wartungsarbeiten anstecken', 'Steuerung/FU/Notrufgerät passwortgeschützt'],
    'erlaeuterung': 'Maschinenraum und Steuerschrank sind nur befugten Personen zugänglich; das Schloss '

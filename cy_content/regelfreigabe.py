@@ -113,13 +113,8 @@ FREIGABE = {
     'CY-O08-R2': ('Freigeben', ''),
     'CY-Z01-R3': ('Freigeben', ''),
     'CY-Z01-R4': ('Freigeben', ''),
-    'CY-Z04-R3': ('Freigeben', ''),
-    'CY-Z04-R4': ('Freigeben', ''),
-    'CY-Z05-R1': ('Freigeben', ''),
-    'CY-Z05-R2': ('Freigeben', ''),
     # Nachfreigabe 20.09.2026 (Regelprüfung zum Prüfbericht Fragenkatalog):
     # zwei neue Auffangregeln und die in der Priorität korrigierte CY-C12-R3.
     'CY-C12-R3': ('Freigeben', '', '2026-09-20'),
     'CY-N01-R5': ('Freigeben', '', '2026-09-20'),
-    'CY-Z04-R5': ('Freigeben', '', '2026-09-20'),
 }

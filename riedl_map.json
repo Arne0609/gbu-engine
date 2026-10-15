@@ -10,9 +10,9 @@
  },
  "kataloge": {
   "gbu": "riedl-mf-2026.3",
-  "cyber": "riedl-cyber-2026.6",
+  "cyber": "riedl-cyber-2026.7",
   "gbu_quelle": "81-20-mf-2026.11",
-  "cyber_quelle": "cyber-mf-2026.7"
+  "cyber_quelle": "cyber-mf-2026.8"
  },
  "ampel": {
   "NO_RISK": "gruen",
@@ -626,7 +626,7 @@
   "kuerzel": "C",
   "titel": "Cybersicherheit",
   "anlagenbereich": "Cybersicherheit – anlagenbezogene Beurteilung nach TRBS 1115-1",
-  "katalog": "cyber-mf-2026.7",
+  "katalog": "cyber-mf-2026.8",
   "zeilen": [
    {
     "nr": 1,
@@ -724,11 +724,9 @@
     "titel": "Zugang und Zugriff: Maschinenraum/Steuerschrank, Aufzugsschacht, Schlüsseldepot, Servicegeräte",
     "vfa": "",
     "hazards": [
-     "CY-Z01",
-     "CY-Z04",
-     "CY-Z05"
+     "CY-Z01"
     ],
-    "deckung": "voll",
+    "deckung": "teilweise",
     "bemerkung": "Die Zugangsfragen 2.1–2.3 wirken zusätzlich als Modifier an jeder Komponente (K-C21).",
     "trbs_anhang1": [],
     "komponente": "",

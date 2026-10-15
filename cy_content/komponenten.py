@@ -442,10 +442,12 @@ komponente('CY-C10', 'hydraulik', 'Hydraulischer Steuerblock', '3.10', GRP_ANTRI
 # ---- Kanal-Komponenten (Klasse K) --------------------------------------------
 NETZ_VIS = yes('qa_vernetzt')
 yn('qc_fernueb_vorhanden', 'Fernüberwachung (Zustandsmeldung, Störungsmeldung an '
-   'Leitstelle/Hersteller) vorhanden?', ui='3.11.1', visible_when=NETZ_VIS)
+   'Leitstelle/Hersteller) vorhanden?', ui='3.11.1', visible_when=NETZ_VIS,
+   cat='N')
 yn('qc_fernueb_lesend', 'Ist die Fernüberwachung ausschließlich lesend (kein Schreib-, '
    'Steuer- oder Parametrierzugriff über diesen Kanal)?', ui='3.11.2',
-   visible_when=all_(NETZ_VIS, yes('qc_fernueb_vorhanden')))
+   visible_when=all_(NETZ_VIS, yes('qc_fernueb_vorhanden')),
+   cat='N')
 
 hz('CY-C11', 'Unbefugter Zugriff über die Fernüberwachung', GRP_NETZ,
    [('qa_vernetzt', 'APPLICABILITY', 'ALWAYS'),
@@ -481,7 +483,8 @@ hz('CY-C11', 'Unbefugter Zugriff über die Fernüberwachung', GRP_NETZ,
                'Fremdzugriff auf das Aufzugsnetz.', bereich='C')
 
 yn('qc_remote_vorhanden', 'Remote-Service / Fernwartung (Hersteller-Fernzugriff, '
-   'Service-App, VPN) vorhanden?', ui='3.12.1', visible_when=NETZ_VIS)
+   'Service-App, VPN) vorhanden?', ui='3.12.1', visible_when=NETZ_VIS,
+   cat='N')
 
 hz('CY-C12', 'Unbefugter Fernzugriff über Remote-Service / Fernwartung', GRP_NETZ,
    [('qa_vernetzt', 'APPLICABILITY', 'ALWAYS'),
@@ -527,16 +530,20 @@ hz('CY-C12', 'Unbefugter Fernzugriff über Remote-Service / Fernwartung', GRP_NE
                'unbefugter Fernzugriff auf Steuerung und Parameter.', bereich='C')
 
 yn('qc_gateway_vorhanden', 'Gateway / Router / Modem / WLAN- oder Service-Dongle an der '
-   'Anlage vorhanden?', ui='3.13.1', visible_when=NETZ_VIS)
+   'Anlage vorhanden?', ui='3.13.1', visible_when=NETZ_VIS,
+   cat='N')
 GW_VIS = all_(NETZ_VIS, yes('qc_gateway_vorhanden'))
 yn('qc_gateway_firewall', 'Ist das Gateway mit Firewall/Netztrennung zur Aufzugssteuerung '
    'konfiguriert und sind nur benötigte Ports und Dienste freigegeben?', ui='3.13.2',
-   visible_when=GW_VIS)
+   visible_when=GW_VIS,
+   cat='N')
 yn('qc_gateway_default', 'Sind die Werkszugangsdaten des Gateways/Routers geändert und '
    'ist die Administration nur für Berechtigte erreichbar?', ui='3.13.3',
-   visible_when=GW_VIS)
+   visible_when=GW_VIS,
+   cat='N')
 yn('qc_gateway_updates', 'Ist die Firmware des Gateways aktuell und ein Update-Verfahren '
-   'geregelt?', ui='3.13.4', visible_when=GW_VIS)
+   'geregelt?', ui='3.13.4', visible_when=GW_VIS,
+   cat='N')
 
 hz('CY-C13', 'Ungesichertes Gateway / Router / Modem als Einstieg in das Aufzugsnetz',
    GRP_NETZ,

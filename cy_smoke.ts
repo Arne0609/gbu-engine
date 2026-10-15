@@ -15,7 +15,7 @@ function gut(): Record<string, any> {
     qa_maschinenraum: true, qa_vernetzt: true, qa_gebaeude_anbindung: true,
     qa_hersteller_vorgaben: 'beruecksichtigt',
     qz_steuerung_frei: false, qz_triebwerksraum_frei: false, qz_schacht_frei: false,
-    qz_service_gesichert: true, qz_default_zugangsdaten: false, qz_zugangsdaten_bekannt: true, qz_rollen: true, qz_servicegeraete: true,
+    qz_service_gesichert: true,
     qc_steuerung_schnittstelle: 'kabelgebunden', qc_steuerung_massnahmen: 'umgesetzt', qc_steuerung_unabhaengig: true,
     qn_segmentierung: true, qn_fern_freigabe: true, qn_fern_auth: true, qn_protokoll: true,
     qn_softwarestand: 'geregelt', qn_funktionsreduzierung: true,
@@ -130,16 +130,34 @@ expect(seed.questions.filter((q: any) => q.code.startsWith('qo_')).length === 2,
   'Bereich O hat nicht mehr genau zwei Fragen');
 // 9f) K-C21/K-C24: entfernte Gefährdungen existieren nicht mehr
 for (const h of ['CY-Z02', 'CY-Z03', 'CY-C15']) expect(!seed.hazards.some((x: any) => x.code === h), h + ' sollte entfernt sein');
+// 9g) 16.10.2026: Bereich Z auf den physischen Zugang gekürzt (Festlegung
+//      Arne). Logische Zugangskontrolle (CY-Z04) und Servicegeräte (CY-Z05)
+//      sind entfallen, mit ihnen die Fragen 2.5 bis 2.7.
+for (const h of ['CY-Z04', 'CY-Z05']) expect(!seed.hazards.some((x: any) => x.code === h), h + ' sollte entfernt sein');
+for (const q of ['qz_default_zugangsdaten', 'qz_zugangsdaten_bekannt', 'qz_rollen', 'qz_servicegeraete'])
+  expect(!seed.questions.some((x: any) => x.code === q), 'Frage ' + q + ' sollte entfernt sein');
+expect(seed.questions.filter((q: any) => q.code.startsWith('qz_')).length === 4,
+  'Bereich Z hat nicht mehr genau vier Fragen');
+// 9h) Die Netzfragen zählen zum Erhebungsbereich N, nicht zu C: sonst
+//      erscheinen sie unter C UND als Bereich 4 (Festlegung Arne 16.10.2026).
+for (const q of ['qc_fernueb_vorhanden', 'qc_fernueb_lesend', 'qc_remote_vorhanden',
+                 'qc_gateway_vorhanden', 'qc_gateway_firewall', 'qc_gateway_default',
+                 'qc_gateway_updates']) {
+  const f = seed.questions.find((x: any) => x.code === q);
+  expect(!!f && String(f.category).startsWith('N'), q + ' steht nicht im Bereich N');
+}
 
 // 10) Gebäudeschnittstelle nicht rückwirkungsfrei -> Hoch
 const r10 = run('Gebäude nicht rückwirkungsfrei', { ...gut(), qc_geb_rueckwirkungsfrei: false });
 expect(r10.of('CY-C14')?.status === 'HIGH', 'Gebäudeschnittstelle nicht Hoch');
 
 // 11) Eine fehlende Pflichtantwort -> genau diese Gefährdung unvollständig
-const teil = gut(); delete teil['qz_servicegeraete'];
-const r11 = run('qz_servicegeraete fehlt', teil);
+//     (seit 16.10.2026 über qz_service_gesichert/CY-Z01; die vorher benutzte
+//      Frage qz_servicegeraete ist mit CY-Z05 entfallen)
+const teil = gut(); delete teil['qz_service_gesichert'];
+const r11 = run('qz_service_gesichert fehlt', teil);
 const inc = r11.res.filter(r => r.status === 'INCOMPLETE').map(r => r.hazard);
-expect(inc.length === 1 && inc[0] === 'CY-Z05', 'Pflichtfrage wirkt nicht wie erwartet: ' + JSON.stringify(inc));
+expect(inc.length === 1 && inc[0] === 'CY-Z01', 'Pflichtfrage wirkt nicht wie erwartet: ' + JSON.stringify(inc));
 
 // 12) Unbeantworteter Modifier darf kein milderes Ergebnis erzeugen
 const mod = { ...h5 }; delete mod['qz_steuerung_frei'];
@@ -154,7 +172,7 @@ expect(r13b.of('CY-O06')?.status === 'NO_RISK', 'geprüfte Änderung nicht Kein 
 
 // 14) Worst case: alles schlecht
 const bad: Record<string, any> = { ...gut(), qz_steuerung_frei: true, qz_triebwerksraum_frei: true, qz_schacht_frei: true,
-  qz_service_gesichert: false, qz_default_zugangsdaten: true, qz_rollen: false, qz_servicegeraete: false,
+  qz_service_gesichert: false,
   qn_segmentierung: false, qn_fern_freigabe: false, qn_fern_auth: false, qn_protokoll: false,
   qn_softwarestand: 'bekannt_ungeregelt', qn_funktionsreduzierung: false, qc_fernueb_lesend: false,
   qc_gateway_firewall: false, qc_gateway_default: false, qc_gateway_updates: false,
@@ -166,7 +184,9 @@ const bad: Record<string, any> = { ...gut(), qz_steuerung_frei: true, qz_triebwe
 for (const c of COMPS) { if (c === 'hydraulik') continue; bad[`qc_${c}_schnittstelle`] = 'kabellos'; bad[`qc_${c}_massnahmen`] = 'keine'; bad[`qc_${c}_unabhaengig`] = false; }
 const r14 = run('alles schlecht', bad);
 expect(r14.sum.INCOMPLETE === 0 && r14.sum.NO_RISK === 0, 'Worst case: Unvollständig/Kein Risiko übrig');
-expect(r14.sum.HIGH >= 18, 'Worst case: zu wenig Hoch (' + r14.sum.HIGH + ')');
+// 16.10.2026: Schwelle 18 -> 16. Mit CY-Z04 und CY-Z05 sind zwei
+// Gefährdungen entfallen, die im Worst case beide Hoch ergaben.
+expect(r14.sum.HIGH >= 16, 'Worst case: zu wenig Hoch (' + r14.sum.HIGH + ')');
 
 // 15) Regellücken-Suche: alle Kombinationen je Klasse-S-Komponente müssen eine Regel treffen
 const IF = ['keine', 'kabelgebunden', 'benutzer', 'kabellos', 'fernzugriff'];

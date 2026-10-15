@@ -1,5 +1,5 @@
 {
- "rule_version": "riedl-cyber-2026.6",
+ "rule_version": "riedl-cyber-2026.7",
  "questions": [
   {
    "code": "qa_ueberwachungsbeduerftig",
@@ -142,48 +142,6 @@
    "category": "Z – Zugang und Zugriff",
    "rolle": "techniker",
    "ui_number": "2.4",
-   "group": "CY-Z"
-  },
-  {
-   "code": "qz_default_zugangsdaten",
-   "type": "YES_NO",
-   "domain": "CYBER",
-   "text": "Werden Standard-/Werkszugangsdaten (Passwörter, PINs, Servicecodes) verwendet?",
-   "category": "Z – Zugang und Zugriff",
-   "rolle": "techniker",
-   "ui_number": "2.5",
-   "help_text": "Ja = Mangel. Gemeint sind alle Zugänge: Steuerung, Notruf, Umrichter, Gateway, Fernwartung. Ob die Zugangsdaten überhaupt bekannt sind, steht unter 2.5a – beides stand bisher in einer Frage, obwohl nur der erste Fall mit „Werkszugangsdaten ändern\" zu beheben ist (Prüfbericht 20.09.2026).",
-   "group": "CY-Z"
-  },
-  {
-   "code": "qz_zugangsdaten_bekannt",
-   "type": "YES_NO",
-   "domain": "CYBER",
-   "text": "Sind dem Betreiber die Zugangsdaten der Anlage bekannt und liegen sie gesichert vor (Übergabe durch Hersteller/Wartungsfirma dokumentiert)?",
-   "category": "Z – Zugang und Zugriff",
-   "rolle": "betreiber",
-   "ui_number": "2.5a",
-   "help_text": "Nein = Mangel: Der Betreiber kann Zugänge weder prüfen noch bei einem Firmenwechsel entziehen (TRBS 1115-1, Zugangskontrolle Software).",
-   "group": "CY-Z"
-  },
-  {
-   "code": "qz_rollen",
-   "type": "YES_NO",
-   "domain": "CYBER",
-   "text": "Sind Zugriffsrechte rollenbasiert vergeben (Betreiber, Wartungsfirma, Hersteller) und werden sie bei Personal- oder Firmenwechsel entzogen?",
-   "category": "Z – Zugang und Zugriff",
-   "rolle": "betreiber",
-   "ui_number": "2.6",
-   "group": "CY-Z"
-  },
-  {
-   "code": "qz_servicegeraete",
-   "type": "YES_NO",
-   "domain": "CYBER",
-   "text": "Ist geregelt, welche Servicegeräte, Laptops und Wechseldatenträger an die Anlage angeschlossen werden dürfen (nur freigegebene, geprüfte Geräte; kein privater Datenträger)?",
-   "category": "Z – Zugang und Zugriff",
-   "rolle": "betreiber",
-   "ui_number": "2.7",
    "group": "CY-Z"
   },
   {
@@ -797,147 +755,6 @@
    "group": "CY-C6"
   },
   {
-   "code": "qc_fernueb_vorhanden",
-   "type": "YES_NO",
-   "domain": "CYBER",
-   "text": "Fernüberwachung (Zustandsmeldung, Störungsmeldung an Leitstelle/Hersteller) vorhanden?",
-   "category": "C – Komponenten und Schnittstellen",
-   "rolle": "techniker",
-   "ui_number": "3.11.1",
-   "visible_when": {
-    "question": "qa_vernetzt",
-    "operator": "EQ",
-    "value": true
-   },
-   "group": "CY-N"
-  },
-  {
-   "code": "qc_fernueb_lesend",
-   "type": "YES_NO",
-   "domain": "CYBER",
-   "text": "Ist die Fernüberwachung ausschließlich lesend (kein Schreib-, Steuer- oder Parametrierzugriff über diesen Kanal)?",
-   "category": "C – Komponenten und Schnittstellen",
-   "rolle": "techniker",
-   "ui_number": "3.11.2",
-   "visible_when": {
-    "all": [
-     {
-      "question": "qa_vernetzt",
-      "operator": "EQ",
-      "value": true
-     },
-     {
-      "question": "qc_fernueb_vorhanden",
-      "operator": "EQ",
-      "value": true
-     }
-    ]
-   },
-   "group": "CY-N"
-  },
-  {
-   "code": "qc_remote_vorhanden",
-   "type": "YES_NO",
-   "domain": "CYBER",
-   "text": "Remote-Service / Fernwartung (Hersteller-Fernzugriff, Service-App, VPN) vorhanden?",
-   "category": "C – Komponenten und Schnittstellen",
-   "rolle": "techniker",
-   "ui_number": "3.12.1",
-   "visible_when": {
-    "question": "qa_vernetzt",
-    "operator": "EQ",
-    "value": true
-   },
-   "group": "CY-N"
-  },
-  {
-   "code": "qc_gateway_vorhanden",
-   "type": "YES_NO",
-   "domain": "CYBER",
-   "text": "Gateway / Router / Modem / WLAN- oder Service-Dongle an der Anlage vorhanden?",
-   "category": "C – Komponenten und Schnittstellen",
-   "rolle": "techniker",
-   "ui_number": "3.13.1",
-   "visible_when": {
-    "question": "qa_vernetzt",
-    "operator": "EQ",
-    "value": true
-   },
-   "group": "CY-N"
-  },
-  {
-   "code": "qc_gateway_firewall",
-   "type": "YES_NO",
-   "domain": "CYBER",
-   "text": "Ist das Gateway mit Firewall/Netztrennung zur Aufzugssteuerung konfiguriert und sind nur benötigte Ports und Dienste freigegeben?",
-   "category": "C – Komponenten und Schnittstellen",
-   "rolle": "techniker",
-   "ui_number": "3.13.2",
-   "visible_when": {
-    "all": [
-     {
-      "question": "qa_vernetzt",
-      "operator": "EQ",
-      "value": true
-     },
-     {
-      "question": "qc_gateway_vorhanden",
-      "operator": "EQ",
-      "value": true
-     }
-    ]
-   },
-   "group": "CY-N"
-  },
-  {
-   "code": "qc_gateway_default",
-   "type": "YES_NO",
-   "domain": "CYBER",
-   "text": "Sind die Werkszugangsdaten des Gateways/Routers geändert und ist die Administration nur für Berechtigte erreichbar?",
-   "category": "C – Komponenten und Schnittstellen",
-   "rolle": "techniker",
-   "ui_number": "3.13.3",
-   "visible_when": {
-    "all": [
-     {
-      "question": "qa_vernetzt",
-      "operator": "EQ",
-      "value": true
-     },
-     {
-      "question": "qc_gateway_vorhanden",
-      "operator": "EQ",
-      "value": true
-     }
-    ]
-   },
-   "group": "CY-N"
-  },
-  {
-   "code": "qc_gateway_updates",
-   "type": "YES_NO",
-   "domain": "CYBER",
-   "text": "Ist die Firmware des Gateways aktuell und ein Update-Verfahren geregelt?",
-   "category": "C – Komponenten und Schnittstellen",
-   "rolle": "techniker",
-   "ui_number": "3.13.4",
-   "visible_when": {
-    "all": [
-     {
-      "question": "qa_vernetzt",
-      "operator": "EQ",
-      "value": true
-     },
-     {
-      "question": "qc_gateway_vorhanden",
-      "operator": "EQ",
-      "value": true
-     }
-    ]
-   },
-   "group": "CY-N"
-  },
-  {
    "code": "qc_entrauchung_vorhanden",
    "type": "YES_NO",
    "domain": "CYBER",
@@ -1200,6 +1017,147 @@
    "group": "CY-N"
   },
   {
+   "code": "qc_fernueb_vorhanden",
+   "type": "YES_NO",
+   "domain": "CYBER",
+   "text": "Fernüberwachung (Zustandsmeldung, Störungsmeldung an Leitstelle/Hersteller) vorhanden?",
+   "category": "N – Netz, Fernzugriff und Härtung",
+   "rolle": "techniker",
+   "ui_number": "3.11.1",
+   "visible_when": {
+    "question": "qa_vernetzt",
+    "operator": "EQ",
+    "value": true
+   },
+   "group": "CY-N"
+  },
+  {
+   "code": "qc_fernueb_lesend",
+   "type": "YES_NO",
+   "domain": "CYBER",
+   "text": "Ist die Fernüberwachung ausschließlich lesend (kein Schreib-, Steuer- oder Parametrierzugriff über diesen Kanal)?",
+   "category": "N – Netz, Fernzugriff und Härtung",
+   "rolle": "techniker",
+   "ui_number": "3.11.2",
+   "visible_when": {
+    "all": [
+     {
+      "question": "qa_vernetzt",
+      "operator": "EQ",
+      "value": true
+     },
+     {
+      "question": "qc_fernueb_vorhanden",
+      "operator": "EQ",
+      "value": true
+     }
+    ]
+   },
+   "group": "CY-N"
+  },
+  {
+   "code": "qc_remote_vorhanden",
+   "type": "YES_NO",
+   "domain": "CYBER",
+   "text": "Remote-Service / Fernwartung (Hersteller-Fernzugriff, Service-App, VPN) vorhanden?",
+   "category": "N – Netz, Fernzugriff und Härtung",
+   "rolle": "techniker",
+   "ui_number": "3.12.1",
+   "visible_when": {
+    "question": "qa_vernetzt",
+    "operator": "EQ",
+    "value": true
+   },
+   "group": "CY-N"
+  },
+  {
+   "code": "qc_gateway_vorhanden",
+   "type": "YES_NO",
+   "domain": "CYBER",
+   "text": "Gateway / Router / Modem / WLAN- oder Service-Dongle an der Anlage vorhanden?",
+   "category": "N – Netz, Fernzugriff und Härtung",
+   "rolle": "techniker",
+   "ui_number": "3.13.1",
+   "visible_when": {
+    "question": "qa_vernetzt",
+    "operator": "EQ",
+    "value": true
+   },
+   "group": "CY-N"
+  },
+  {
+   "code": "qc_gateway_firewall",
+   "type": "YES_NO",
+   "domain": "CYBER",
+   "text": "Ist das Gateway mit Firewall/Netztrennung zur Aufzugssteuerung konfiguriert und sind nur benötigte Ports und Dienste freigegeben?",
+   "category": "N – Netz, Fernzugriff und Härtung",
+   "rolle": "techniker",
+   "ui_number": "3.13.2",
+   "visible_when": {
+    "all": [
+     {
+      "question": "qa_vernetzt",
+      "operator": "EQ",
+      "value": true
+     },
+     {
+      "question": "qc_gateway_vorhanden",
+      "operator": "EQ",
+      "value": true
+     }
+    ]
+   },
+   "group": "CY-N"
+  },
+  {
+   "code": "qc_gateway_default",
+   "type": "YES_NO",
+   "domain": "CYBER",
+   "text": "Sind die Werkszugangsdaten des Gateways/Routers geändert und ist die Administration nur für Berechtigte erreichbar?",
+   "category": "N – Netz, Fernzugriff und Härtung",
+   "rolle": "techniker",
+   "ui_number": "3.13.3",
+   "visible_when": {
+    "all": [
+     {
+      "question": "qa_vernetzt",
+      "operator": "EQ",
+      "value": true
+     },
+     {
+      "question": "qc_gateway_vorhanden",
+      "operator": "EQ",
+      "value": true
+     }
+    ]
+   },
+   "group": "CY-N"
+  },
+  {
+   "code": "qc_gateway_updates",
+   "type": "YES_NO",
+   "domain": "CYBER",
+   "text": "Ist die Firmware des Gateways aktuell und ein Update-Verfahren geregelt?",
+   "category": "N – Netz, Fernzugriff und Härtung",
+   "rolle": "techniker",
+   "ui_number": "3.13.4",
+   "visible_when": {
+    "all": [
+     {
+      "question": "qa_vernetzt",
+      "operator": "EQ",
+      "value": true
+     },
+     {
+      "question": "qc_gateway_vorhanden",
+      "operator": "EQ",
+      "value": true
+     }
+    ]
+   },
+   "group": "CY-N"
+  },
+  {
    "code": "qo_aenderungen",
    "type": "YES_NO",
    "domain": "CYBER",
@@ -1267,66 +1225,6 @@
    "title": "Zustand erhalten; bei der wiederkehrenden Prüfung und der Betreiberkontrolle erneut prüfen",
    "type": "ORGANISATIONAL",
    "priority_class": "SOFORT"
-  },
-  {
-   "code": "m_aba80211b8",
-   "title": "Werkszugangsdaten unverzüglich ändern; Fernzugänge bis dahin deaktivieren",
-   "type": "TECHNICAL",
-   "priority_class": "SOFORT"
-  },
-  {
-   "code": "m_c85fd1a8ff",
-   "title": "Passwort-/Berechtigungskonzept (Zugangskontrolle Software) mit individuellen Zugängen einführen",
-   "type": "ORGANISATIONAL",
-   "priority_class": "MITTELFRISTIG"
-  },
-  {
-   "code": "m_7b5e9e644c",
-   "title": "Werkszugangsdaten ändern und sicher verwahren",
-   "type": "TECHNICAL",
-   "priority_class": "SOFORT"
-  },
-  {
-   "code": "m_e502960069",
-   "title": "Passwort-/Berechtigungskonzept einführen und Wechsel bei Personal- oder Firmenwechsel festlegen",
-   "type": "ORGANISATIONAL",
-   "priority_class": "MITTELFRISTIG"
-  },
-  {
-   "code": "m_ef66af30da",
-   "title": "Zugangsdaten bei Hersteller und Wartungsfirma anfordern und gesichert hinterlegen (Passwortverwaltung des Betreibers)",
-   "type": "ORGANISATIONAL",
-   "priority_class": "SOFORT"
-  },
-  {
-   "code": "m_a03d26c6ba",
-   "title": "Übergabe der Zugangsdaten vertraglich regeln; Zugänge des Betreibers bei jedem Firmenwechsel prüfen und erneuern",
-   "type": "ORGANISATIONAL",
-   "priority_class": "MITTELFRISTIG"
-  },
-  {
-   "code": "m_97f8be80b0",
-   "title": "Zugriffsrechte prüfen und nicht mehr benötigte Zugänge entziehen",
-   "type": "ORGANISATIONAL",
-   "priority_class": "SOFORT"
-  },
-  {
-   "code": "m_2643db0c0a",
-   "title": "Rollenkonzept (Betreiber, Wartung, Hersteller) mit Entzug bei Wechsel festlegen",
-   "type": "ORGANISATIONAL",
-   "priority_class": "MITTELFRISTIG"
-  },
-  {
-   "code": "m_ea270199b9",
-   "title": "Anschluss privater oder ungeprüfter Geräte und Datenträger untersagen",
-   "type": "ORGANISATIONAL",
-   "priority_class": "SOFORT"
-  },
-  {
-   "code": "m_4e8d95dc0d",
-   "title": "Freigabeliste für Servicegeräte und Datenträger mit der Wartungsfirma vereinbaren; Handterminals und Programmiergeräte nur für die Dauer der Arbeiten anstecken und danach gesichert verwahren (Härtung nach TRBS 1115-1)",
-   "type": "ORGANISATIONAL",
-   "priority_class": "MITTELFRISTIG"
   },
   {
    "code": "m_c1a1a08e49",
@@ -1849,91 +1747,6 @@
    "review_ids": [
     "K-C12"
    ]
-  },
-  {
-   "code": "CY-Z04",
-   "domain": "CYBER",
-   "title": "Unzureichende logische Zugangskontrolle (Werkszugangsdaten, fehlende Rollen)",
-   "category": "Zugang und Zugriff",
-   "aggregation_type": "NONE",
-   "evaluation_mode": "STANDARD",
-   "questions": [
-    {
-     "question": "qz_default_zugangsdaten",
-     "role": "TRIGGER",
-     "required_mode": "ALWAYS"
-    },
-    {
-     "question": "qz_zugangsdaten_bekannt",
-     "role": "TRIGGER",
-     "required_mode": "ALWAYS"
-    },
-    {
-     "question": "qz_rollen",
-     "role": "TRIGGER",
-     "required_mode": "ALWAYS"
-    },
-    {
-     "question": "qa_vernetzt",
-     "role": "MODIFIER",
-     "required_mode": "ALWAYS",
-     "notes": "Pflicht, weil bewertungsrelevant (automatisch gesetzt)."
-    }
-   ],
-   "sources": [
-    {
-     "type": "TRBS",
-     "document": "TRBS 1115 Teil 1",
-     "section": "4.5.2 Zugangskontrolle (Software)"
-    },
-    {
-     "type": "OTHER",
-     "document": "DEKRA Ausfüllhilfe Cybersicherheit 09/2024",
-     "section": "Schritt 3"
-    }
-   ],
-   "hazard_factor": "Gefährdung durch unbefugten Zugang zu sicherheitsrelevanten Einrichtungen",
-   "person_groups": [
-    "Nutzer",
-    "Wartungspersonal",
-    "Betreiber"
-   ],
-   "ui_group": "Z – Zugang und Zugriff",
-   "review_ids": [
-    "K-C13"
-   ]
-  },
-  {
-   "code": "CY-Z05",
-   "domain": "CYBER",
-   "title": "Ungeregelte Servicegeräte und Wechseldatenträger",
-   "category": "Härtung und Servicegeräte",
-   "aggregation_type": "NONE",
-   "evaluation_mode": "STANDARD",
-   "questions": [
-    {
-     "question": "qz_servicegeraete",
-     "role": "TRIGGER",
-     "required_mode": "ALWAYS"
-    }
-   ],
-   "sources": [
-    {
-     "type": "TRBS",
-     "document": "TRBS 1115 Teil 1",
-     "section": "4.5.2 Härtung"
-    },
-    {
-     "type": "OTHER",
-     "document": "EK-ZÜS BA-017"
-    }
-   ],
-   "hazard_factor": "Gefährdung durch Manipulation sicherheitsrelevanter Steuerungsfunktionen",
-   "person_groups": [
-    "Nutzer",
-    "Wartungspersonal"
-   ],
-   "ui_group": "Z – Zugang und Zugriff"
   },
   {
    "code": "CY-N01",
@@ -3297,204 +3110,6 @@
    "priority": 1,
    "condition": {
     "question": "qz_steuerung_frei",
-    "operator": "ANSWERED"
-   },
-   "result": "NO_RISK",
-   "origin": "OWN_RULE",
-   "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "VERIFIED",
-   "measures": [
-    {
-     "measure": "m_148f9590b0",
-     "group_id": "sofort",
-     "relation": "SINGLE",
-     "mandatory": true
-    }
-   ],
-   "notes": "Kein Risiko: keine Mangelregel trifft zu, alle Pflichtfragen beantwortet. Freigegeben 2026-09-03."
-  },
-  {
-   "hazard": "CY-Z04",
-   "code": "CY-Z04-R1",
-   "priority": 300,
-   "condition": {
-    "all": [
-     {
-      "question": "qz_default_zugangsdaten",
-      "operator": "EQ",
-      "value": true
-     },
-     {
-      "question": "qa_vernetzt",
-      "operator": "EQ",
-      "value": true
-     }
-    ]
-   },
-   "result": "HIGH",
-   "origin": "OWN_RULE",
-   "evidence": "INFERRED",
-   "quality_status": "VERIFIED",
-   "measures": [
-    {
-     "measure": "m_aba80211b8",
-     "group_id": "sofort",
-     "relation": "SINGLE",
-     "mandatory": true
-    },
-    {
-     "measure": "m_c85fd1a8ff",
-     "group_id": "mittel",
-     "relation": "SINGLE",
-     "mandatory": true
-    }
-   ],
-   "notes": "Entschieden 2026-09-03: K-C13."
-  },
-  {
-   "hazard": "CY-Z04",
-   "code": "CY-Z04-R2",
-   "priority": 250,
-   "condition": {
-    "question": "qz_default_zugangsdaten",
-    "operator": "EQ",
-    "value": true
-   },
-   "result": "MEDIUM",
-   "origin": "OWN_RULE",
-   "evidence": "INFERRED",
-   "quality_status": "VERIFIED",
-   "measures": [
-    {
-     "measure": "m_7b5e9e644c",
-     "group_id": "sofort",
-     "relation": "SINGLE",
-     "mandatory": true
-    },
-    {
-     "measure": "m_e502960069",
-     "group_id": "mittel",
-     "relation": "SINGLE",
-     "mandatory": true
-    }
-   ],
-   "notes": "Entschieden 2026-09-03: K-C13."
-  },
-  {
-   "hazard": "CY-Z04",
-   "code": "CY-Z04-R3",
-   "priority": 220,
-   "condition": {
-    "question": "qz_zugangsdaten_bekannt",
-    "operator": "EQ",
-    "value": false
-   },
-   "result": "MEDIUM",
-   "origin": "OWN_RULE",
-   "evidence": "INFERRED",
-   "quality_status": "VERIFIED",
-   "measures": [
-    {
-     "measure": "m_ef66af30da",
-     "group_id": "sofort",
-     "relation": "SINGLE",
-     "mandatory": true
-    },
-    {
-     "measure": "m_a03d26c6ba",
-     "group_id": "mittel",
-     "relation": "SINGLE",
-     "mandatory": true
-    }
-   ],
-   "notes": "Prüfbericht 20.09.2026: aus der bisherigen Doppelfrage 2.5 herausgelöst – „Zugangsdaten nicht bekannt\" ist nicht mit „Werkszugangsdaten ändern\" zu beheben und brauchte eine eigene Maßnahme. Freigegeben 2026-09-03."
-  },
-  {
-   "hazard": "CY-Z04",
-   "code": "CY-Z04-R4",
-   "priority": 200,
-   "condition": {
-    "question": "qz_rollen",
-    "operator": "EQ",
-    "value": false
-   },
-   "result": "LOW",
-   "origin": "OWN_RULE",
-   "evidence": "INFERRED",
-   "quality_status": "VERIFIED",
-   "measures": [
-    {
-     "measure": "m_97f8be80b0",
-     "group_id": "sofort",
-     "relation": "SINGLE",
-     "mandatory": true
-    },
-    {
-     "measure": "m_2643db0c0a",
-     "group_id": "mittel",
-     "relation": "SINGLE",
-     "mandatory": true
-    }
-   ],
-   "notes": "Freigegeben 2026-09-03."
-  },
-  {
-   "hazard": "CY-Z04",
-   "code": "CY-Z04-R5",
-   "priority": 1,
-   "condition": {
-    "question": "qz_default_zugangsdaten",
-    "operator": "ANSWERED"
-   },
-   "result": "NO_RISK",
-   "origin": "OWN_RULE",
-   "evidence": "HIGH_CONFIDENCE",
-   "quality_status": "VERIFIED",
-   "measures": [
-    {
-     "measure": "m_148f9590b0",
-     "group_id": "sofort",
-     "relation": "SINGLE",
-     "mandatory": true
-    }
-   ],
-   "notes": "Kein Risiko: keine Mangelregel trifft zu, alle Pflichtfragen beantwortet. Freigegeben 2026-09-20."
-  },
-  {
-   "hazard": "CY-Z05",
-   "code": "CY-Z05-R1",
-   "priority": 250,
-   "condition": {
-    "question": "qz_servicegeraete",
-    "operator": "EQ",
-    "value": false
-   },
-   "result": "MEDIUM",
-   "origin": "OWN_RULE",
-   "evidence": "INFERRED",
-   "quality_status": "VERIFIED",
-   "measures": [
-    {
-     "measure": "m_ea270199b9",
-     "group_id": "sofort",
-     "relation": "SINGLE",
-     "mandatory": true
-    },
-    {
-     "measure": "m_4e8d95dc0d",
-     "group_id": "mittel",
-     "relation": "SINGLE",
-     "mandatory": true
-    }
-   ],
-   "notes": "Freigegeben 2026-09-03."
-  },
-  {
-   "hazard": "CY-Z05",
-   "code": "CY-Z05-R2",
-   "priority": 1,
-   "condition": {
-    "question": "qz_servicegeraete",
     "operator": "ANSWERED"
    },
    "result": "NO_RISK",
@@ -7891,26 +7506,6 @@
      "question": "qz_service_gesichert",
      "mode": "native",
      "row": "Schnittstellen und Zugangsdaten"
-    },
-    {
-     "question": "qz_default_zugangsdaten",
-     "mode": "native",
-     "row": "Schnittstellen und Zugangsdaten"
-    },
-    {
-     "question": "qz_zugangsdaten_bekannt",
-     "mode": "native",
-     "row": "Schnittstellen und Zugangsdaten"
-    },
-    {
-     "question": "qz_rollen",
-     "mode": "native",
-     "row": "Rollen und Geräte"
-    },
-    {
-     "question": "qz_servicegeraete",
-     "mode": "native",
-     "row": "Rollen und Geräte"
     }
    ],
    "ui_number": "2",

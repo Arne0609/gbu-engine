@@ -82,11 +82,7 @@ k('CY-Z', 'Z', 'Zugang und Servicezugriff', [
     ('qz_steuerung_frei', 'Örtlicher Zugang'),
     ('qz_triebwerksraum_frei', 'Örtlicher Zugang'),
     ('qz_schacht_frei', 'Örtlicher Zugang'),
-    ('qz_service_gesichert', 'Schnittstellen und Zugangsdaten'),
-    ('qz_default_zugangsdaten', 'Schnittstellen und Zugangsdaten'),
-    ('qz_zugangsdaten_bekannt', 'Schnittstellen und Zugangsdaten'),
-    ('qz_rollen', 'Rollen und Geräte'),
-    ('qz_servicegeraete', 'Rollen und Geräte')], ui='2',
+    ('qz_service_gesichert', 'Schnittstellen und Zugangsdaten')], ui='2',
   help='Zugangskontrolle Hardware und Software nach TRBS 1115-1 Abschn. 4.5.2. Diese '
        'Antworten wirken als Modifier auf ALLE Komponenten: freier Zugang oder '
        'Werkszugangsdaten heben die Bewertung jeder Komponente mit Schnittstelle an.')
